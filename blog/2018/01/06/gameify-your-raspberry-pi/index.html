@@ -6,7 +6,7 @@
         <meta name="author" content="Shannon Quinn">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-        <title>Summer of Data Science 2017: Wrap-up | Stochastic Stenography</title>
+        <title>Game-ify Your Raspberry Pi | Stochastic Stenography</title>
 
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -426,80 +426,76 @@ article .meta a.comments_btn:hover {
 <div class="container post">
     <article>
         <header>
-            <h1>Summer of Data Science 2017: Wrap-up</h1>
-            <time class="left" datetime="article.date.isoformat()" pubdate>Posted on August 15 in the year 2017, at 16:38PM. It was Tuesday.</time>
+            <h1>Game-ify Your Raspberry Pi</h1>
+            <time class="left" datetime="article.date.isoformat()" pubdate>Posted on January 6 in the year 2018, at 17:18PM. It was Saturday.</time>
         </header>
 
         <div class="article_content">
-            <h2>tl;dr</h2>
-<p>Mixed bag.</p>
-<p><blockquote class="twitter-tweet" align="center"><a href="https://twitter.com/BecomingDataSci/status/895856449687080960">Tweet of BecomingDataSci/895856449687080960</a></blockquote></p>
-<h2>The Long Version</h2>
-<p>Something that's stuck with me from my middle school obsession with the <em>Wing Commander</em> books and video games was this quote:</p>
-<div class="highlight"><pre><span></span>No battle plan survives contact with the enemy.
+            <p><img src="/images/rpi/raspberrypi3.jpg"></p>
+<p>My project over the 2016 holiday season was to take the Raspberry Pi 3 I've had sitting around the house idling for the previous nine months and turn it into a <a href="https://retropie.org.uk/">RetroPie-ified gaming emulator</a>.</p>
+<p>RetroPie is a phenomenal bit of software that combines the work of several projects into a single package that was primarily designed to be deployed on Raspberry Pis, but which can also be set up on a regular ol' PC. If you're using a Raspberry Pi, it's built on top of the <a href="https://www.raspberrypi.org/downloads/raspbian/">Raspbian OS</a>, so all the commands familiar to you will still be available.</p>
+<p>I have to say up front: the folks with RetroPie have done an <em>amazing</em> job. The documentation was excellent, and while I'll walk through the installation and configuration here, with only one notable exception everything went exactly as prescribed.</p>
+<h2>RetroPie</h2>
+<p>Assuming you have all the <a href="https://retropie.org.uk/documentation/building-your-own-retropie-machine/">needed hardware</a>, installing the RetroPie OS on your Pi is <a href="https://github.com/RetroPie/RetroPie-Setup/wiki/First-Installation">pretty straightforward</a>.</p>
+<ul>
+<li>Use some sort of imaging software to write the RetroPie image to an SD card (I used <a href="http://www.tweaking4all.com/hardware/raspberry-pi/macosx-apple-pi-baker/">ApplePi Baker</a> without any problems, but you could also just use the <code>dd</code> command in the Terminal, which directly moves bytes from one place to another).</li>
+<li>Insert the SD card into your Pi.</li>
+<li>Boot! I had a few false-starts that were the result of the SD card not being fully inserted, so nothing came up.</li>
+</ul>
+<p>If all goes well, you should see the wonderful Raspbian logo.</p>
+<p><img src="/images/rpi/raspberry-pi-logo.png"></p>
+<h3>Configuring RetroPie</h3>
+<p>The first thing you'll need to do when RetroPie boots is to configure whatever controller you're going to use. I went out and purchased some standard-issue <a href="http://gaming.logitech.com/en-us/product/f310-gamepad">Logitech USB gamepads</a> and they seem to be functioning very well. You can also use your keyboard if you want for this, but it pretty much has to be something that can be connected via USB directly to the Pi.</p>
+<p>A few pointers in this step:</p>
+<ul>
+<li>To skip a particular button configuration, just <strong>press and hold any button for a second</strong>.</li>
+<li>If you make a mistake in configuring a button, you have to get all the way to the bottom before you can scroll back up and fix it.</li>
+<li>It took me 5-6 tries to get this completely right. Just go back and do it again if you mess something up.</li>
+</ul>
+<h3>EmulationStation</h3>
+<p>Once you successfully configure a gamepad, you'll be taken to the main landing page: EmulationStation.</p>
+<p><img src="/images/rpi/emulationstation.png"></p>
+<p><em>Where are teh gamez0rz?!1</em>, you might be saying. Well, since ROMs are a legal gray area, you're kinda on your own there. BUT! We have something else we need to do first anyway: set up a network configuration.</p>
+<h3>Network Configuration</h3>
+<p>If you have a Raspberry Pi 2 or earlier, your network choices are limited to an ethernet connection. With the advent of Raspberry Pi 3s, suddenly wifi is an option! Turns out, I have a 3, and it is this wifi that caused me a couple hours' grief until I figured out what was going on.</p>
+<p>Go to the wifi configuration in EmulationStation. You'll be taken to a network selection screen--protip, the Pi 3 <strong>cannot</strong> connect to 5GHz networks--where you can select your wifi network.</p>
+<p>You'll then need to type in the wifi password. Provided you get it right, that should be it! You're all set to go!</p>
+<p>If you find yourself entering your password again...and again...and again...and again...and can't figure out why it's failing, read on.</p>
+<h3>Keyboard Layout</h3>
+<p>For whatever reason, my keyboard was misconfigured--the layout was set to English (U.K.), resulting in some special characters being remapped. However, since the Raspbian password interface echoes stars <code>*</code> back, I had no idea I was typing a completely wrong password until I fired up a command prompt.</p>
+<p>Luckily, once you diagnose this issue, it's fairly easy to fix. Raspbian has a <a href="https://www.raspberrypi.org/forums/viewtopic.php?f=28&amp;t=80127">utility built-in for changing your keyboard layout</a>. You just have to navigate in EmulationStation to the option that gives you a command prompt.</p>
+<p>In my case, once I had a working network connection, I just used SSH to perform any other operations on the Pi (e.g. uploading new games). The default username/password for RetroPie is <code>pi/raspberry</code>, which I suggest you change either from the EmulationStation main menu, or after your first SSH login.</p>
+<h2>Moonlight on Raspberry Pi</h2>
+<p>You should have a working RetroPie at this point, so that's cool!</p>
+<p>However, as awesome as the Pis are, they're not exactly brimming with horsepower. As such, if you try running N64 or PS2 emulators, you may find as I did that anything requiring 3D shaders gets <em>very</em> jittery, to the point of unplayable. RetroPie has <a href="https://github.com/RetroPie/RetroPie-Setup/wiki">detailed configuration options for every emulator</a> to help you get the absolute most out of your Pi, but there are some things a tiny CPU with an embedded stock GPU just can't do, and one of those is render 3D shaders the way they were meant to be.</p>
+<p>So what? Give up? <em>Nay!</em></p>
+<p><img src="/images/rpi/moonlight.jpg"></p>
+<p><a href="https://github.com/irtimmer/moonlight-embedded/wiki">Moonlight Embedded</a> is the open source version of NVIDIA's GameStream as used by the NVIDIA Shield. Basically, it's a way of streaming the output of an NVIDIA GPU to another input, like a TV.</p>
+<p>In this case, we're basically turning our Pi into a glorified Chromecast--it'll take the output from a dedicated GPU and stream it directly to the TV it's connected to. Yes, this means you're not actually playing games <em>on</em> the Raspberry Pi--you're playing them on whatever computer has the GPU in it (oh and it has to be an NVIDIA GPU, GTX 650 or higher)--but all Moonlight requires is Raspbian, which is what RetroPie is built on!</p>
+<p>I found <a href="https://blog.jhot.me/guide-install-moonlight-on-raspbian-retropie-9d1318b8ddf8#.etf7g4bo6">this installation guide</a> perfect (make sure you download the latest versions of everything!), with the lone exception that, just before downloading and installing Moonlight itself, I also needed to install one more library:</p>
+<div class="highlight"><pre><span></span>sudo apt-get install libenet-dev
 </pre></div>
 
 
-<p>Certainly as true as ever with the admittedly <em>extremely ambitious</em> <a href="https://magsol.github.io/blog/2017/05/31/summer-of-data-science-2017/">SoDS 2017 goals I laid out in my previous post</a>. Still, they're worthwhile to go through and reflect over in preparation for the inevitable SoDS 2018.</p>
-<h3>Teaching: 1360E improvements and 4360/6360 preparation</h3>
-<p>This one I've done well with, and am continuing to work on (though <a href="https://twitter.com/SpectralFilter/status/896119490324201472">today's nuking of the AutoLab grading VM</a> will set me back a bit).</p>
-<p>This summer was the second rendition of <a href="https://eds-uga.github.io/csci1360e-su17/">CSCI 1360E, also taught as an online course</a> just like last summer's (there is scheduled to be one more, next summer 2018. after that, who knows?). It started with over 20 students and ended with around 12--a pretty tough attrition rate--but still a vast improvement over last summer's 6/3. Ran into fewer autograder problems, the questions were more relevant and targeted to the lecture material, and the lectures themselves were smoother overall.</p>
-<p>I'm now deep in the process of building the fifth and final course I proposed back in Fall 2015 to fruition: <a href="https://eds-uga.github.io/csci4360-fa17/">CSCI 4360/6360 Data Science II</a>. I've planned out the lecture schedule for the semester, linked them up with the primary sources I'll be referencing, and even managed to snag all the necessary guest lecturers for the various trips I have to make. Of course, I'm lagging on the concrete lecture material, and as stated I nuked the VM that would host and autograde homework assignments, so this is still a mixed bag...</p>
-<p>To update the enrollment numbers: currently 36 students registered (30 graduates, 6 undergraduates). I expect this to wobble considerably over the next week as classes officially begin.</p>
-<p>(yes, you read that right: I proposed five brand-new courses my first fall semester; I've since taught three of them. a fourth was taught by another professor, since we couldn't figure out a way to clone me a <em>seventeenth</em> time)</p>
-<p><strong>Overall</strong>: I'd give myself a B/B+, A- if you bring in the fact that, by the end of the summer, I was fully integrated with <a href="https://airflow.incubator.apache.org/">Airflow</a> for auto-posting lectures in 1360E.</p>
-<h3>Research: NSF CAREER proposal</h3>
-<p>This was quite the process: an internal peer review with other colleagues at UGA, edits from my wife, and a night-before top-down rewrite reminiscent of when I scrapped my Ph.D. dissertation slides at 10pm the night before my defense. But I submitted something I was proud of, even if it doesn't stand a snowball's chance in hell of being funded. I stated before that I submitted for the feedback; even though I'd really, really love to have the grant funded, any feedback from the agency itself will be valuable.</p>
-<p>Of course, that was my one grant-writing goal. I've managed to pick up a few others this summer:</p>
-<ul>
-<li><a href="https://aigrant.org/">AIGrant</a>: Submitted this a few weeks ago. Really excited to work on the project I proposed; I hope the folks there are as excited as I am about it!</li>
-<li><a href="https://www.nsf.gov/pubs/2017/nsf17552/nsf17552.htm">NSF CRII</a>: This is sort of a "CAREER Lite", since it's only 2 years and a <em>hard</em> upper limit on the amount of funding you can request. But it's likewise geared toward young investigators like myself; however, I've applied the last two years and been rejected both times, and this is my last year of eligibility, so we'll see. I submitted this just this past week on Wednesday; fingers crossed!</li>
-<li><a href="https://ropensci.org/fellowships/">rOpenSci Fellowships</a>: I have a completed draft that I've edited a few times with some feedback from the program officers. I'm still not ready to submit, but I think I have a compelling application for the Sept 1 deadline.</li>
-<li><a href="https://grants.nih.gov/grants/guide/rfa-files/RFA-RM-17-006.html">NIH New Innovator</a>: This one is a bit of a reach, considering it's a 10-page application due Sept 8, and it's pretty much the only one on this list I haven't had a chance to start on. Plus, I've received conflicting information from the informational webinar I attended and someone who applied last year and was rejected, so I'm wondering if I should let this one slide this year.</li>
-<li><a href="https://sloan.org/fellowships/">Sloan Research Fellowships</a>: Running my one-page application through the meatgrinder to get the best submission possible for the Sept 15 deadline.</li>
-<li><a href="https://www.simonsfoundation.org/mathematics-and-physical-science/simons-investigators/#mmls-investigators">Simons Investigators</a>: the internal deadline for this is Sept 15, but assuming I get the nod (evidently no one else at UGA usually applies for this one?!), I'll be getting some feedback from previous Simons Investigators for some help in addressing what the foundation is really looking for.</li>
-</ul>
-<p>Then there's a grant I'm working on with Continuum Analytics' Matt Rocklin (yes, <a href="https://twitter.com/mrocklin">that Matt Rocklin!</a>), a smaller NIH grant on biosurveillance with the awesome folks at UGA Public Health, a potential biology grant to NSF with my Cellular Biology colleagues, and a mentored NIH K-award in neuroscience.</p>
-<p>That's all <em>this year</em>.</p>
-<p>Admittedly, this is somewhat atypical. If I really do end up submitting to all these, I will have substantially increased my grantwriting output, exceeding that of my first two years <em>combined</em>. I'm really, really hoping I land on something!</p>
-<p><strong>Overall</strong>: A (upgrade to A+ if any actually get <em>funded</em>)</p>
-<h3>Personal: Coursera's optimization course</h3>
-<p>This <em>literally did not happen.</em> I think I completed the first week of lectures and the practice assignment. Nothing after that.</p>
-<p>Definitely want to take another crack at this next summer, though.</p>
-<p><strong>Overall</strong>: F.</p>
-<h2>Conclusion</h2>
-<p>As stated at the beginning, a mixed bag. I've had some really great momentum with grantwriting this year, far better than any year so far. Teaching has been pretty productive as well (if not exhausting with all the brand-new courses), though the Coursera goal was a bust. </p>
-<p>Still, that may have something to do with a completely inadvertent achievement: my running this year has come roaring back. My last five weeks have been particularly awesome:</p>
-<p><img src="/images/sods2017wrapup/strava.png" width="960"></p>
-<p>The first two years after my wife and I moved to Athens (2015 and 2016) were both injury-plagued and just plain stressful. Consequently, my running took a hit: I haven't set a PR in any distance since 2014, I haven't run a full marathon since <a href="https://wherearethepancakes.wordpress.com/2015/06/19/race-report-the-hilliest-marathon-evar/">early 2015</a>, and in general my mileage has taken a dive:</p>
-<p><img src="/images/sods2017wrapup/yearly.png"></p>
-<p>But check out this year's trajectory! Nearly 800 miles, and we're only a week into August. That puts me on pace for right around 1,300 miles--a nice comfy middle ground between the monster year that was 2014 and each of the subsequent years.</p>
-<p>I've also started noticing that I'm actually getting faster, which is something I likewise haven't experienced with my running for a couple years. Where I've typically felt as though I'm just on "cruise control", this increased mileage has also seen my finishing times go down without any conscious decision on my part.</p>
-<p>Which led me--perhaps in a half-crazed moment of weakness--to put the following goals on the Athens Fleet Feet board several weeks ago at their four-year anniversary celebration:</p>
-<p><img src="https://scontent-atl3-1.cdninstagram.com/t51.2885-15/s320x320/e35/20214572_910864472387859_726197266590728192_n.jpg"></p>
-<p>Running is my release. Without it, nothing else I do is going to be very good. When running is going well, other things are going well, and vice versa. So here's hoping I've set myself on a good track!</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>Include that with the other libraries installed just before Moonlight, and everything else should just work. The rest of the instructions take you through configuring the gamepads so they correctly send their input back to the GPU (so, y'know, you don't have to sit at your computer while staring at your TV).</p>
+<h2>Happy Fun Times!</h2>
+<p>Yes, lots of happy fun times. But also <a href="http://docs.happyfuntimes.net/docs/introduction.html">HappyFunTimes</a>!</p>
+<p>If you're really into the party games, installing this gaming server may be the best thing ever. It's a brilliant setup: gamepads are HTML5 canvases that run on smartphones, essentially mimicking controllers so everyone with a smartphone can play. The games range from stupidly simple to shockingly sophisticated. I may post configuration for that later, but I figure: if you're building the Ultimate Gaming Pi, why not include that, too?</p>
+<p>And with that, I give you the results at our house:</p>
+<p><img src="/images/rpi/zelda.jpeg"></p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
 
         <div class="meta">
             <div>
-                    <a href="https://magsol.github.io/tag/data-science.html" class="tag">data science</a>
-                    <a href="https://magsol.github.io/tag/python.html" class="tag">python</a>
-                    <a href="https://magsol.github.io/tag/computer-vision.html" class="tag">computer vision</a>
-                    <a href="https://magsol.github.io/tag/imaging.html" class="tag">imaging</a>
-                    <a href="https://magsol.github.io/tag/machine-learning.html" class="tag">machine learning</a>
-                    <a href="https://magsol.github.io/tag/deep-learning.html" class="tag">deep learning</a>
+                    <a href="https://magsol.github.io/tag/pi.html" class="tag">pi</a>
+                    <a href="https://magsol.github.io/tag/raspberry-pi.html" class="tag">raspberry pi</a>
+                    <a href="https://magsol.github.io/tag/retropie.html" class="tag">retropie</a>
+                    <a href="https://magsol.github.io/tag/retro.html" class="tag">retro</a>
+                    <a href="https://magsol.github.io/tag/gaming.html" class="tag">gaming</a>
+                    <a href="https://magsol.github.io/tag/video-games.html" class="tag">video games</a>
                     <a href="https://magsol.github.io/tag/nvidia.html" class="tag">nvidia</a>
-                    <a href="https://magsol.github.io/tag/gpu.html" class="tag">gpu</a>
-                    <a href="https://magsol.github.io/tag/online-courses.html" class="tag">online courses</a>
-                    <a href="https://magsol.github.io/tag/teaching.html" class="tag">teaching</a>
-                    <a href="https://magsol.github.io/tag/education.html" class="tag">education</a>
-                    <a href="https://magsol.github.io/tag/cat-detector.html" class="tag">cat detector</a>
-                    <a href="https://magsol.github.io/tag/generative-adversarial-networks.html" class="tag">generative adversarial networks</a>
-                    <a href="https://magsol.github.io/tag/latent-subspace.html" class="tag">latent subspace</a>
-                    <a href="https://magsol.github.io/tag/manifolds.html" class="tag">manifolds</a>
-                    <a href="https://magsol.github.io/tag/bioimaging.html" class="tag">bioimaging</a>
-                    <a href="https://magsol.github.io/tag/grant-writing.html" class="tag">grant writing</a>
-                    <a href="https://magsol.github.io/tag/running.html" class="tag">running</a>
+                    <a href="https://magsol.github.io/tag/shield.html" class="tag">shield</a>
+                    <a href="https://magsol.github.io/tag/steam.html" class="tag">steam</a>
             </div>
         </div>
     </article>
@@ -509,9 +505,9 @@ article .meta a.comments_btn:hover {
     <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
     <script type="text/javascript">
       var disqus_shortname = 'stochasticstenography';
-      var disqus_identifier = '/blog/2017/08/15/sods-2017-wrap-up/';
-      var disqus_url = 'https://magsol.github.io/blog/2017/08/15/sods-2017-wrap-up/';
-      var disqus_title = 'Summer of Data Science 2017: Wrap-up';
+      var disqus_identifier = '/blog/2018/01/06/gameify-your-raspberry-pi/';
+      var disqus_url = 'https://magsol.github.io/blog/2018/01/06/gameify-your-raspberry-pi/';
+      var disqus_title = 'Game-ify Your Raspberry Pi';
       (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = "//" + disqus_shortname + '.disqus.com/embed.js';
