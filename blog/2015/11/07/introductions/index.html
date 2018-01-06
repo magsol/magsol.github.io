@@ -6,7 +6,7 @@
         <meta name="author" content="Shannon Quinn">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-        <title>Summer of Data Science 2017 | Stochastic Stenography</title>
+        <title>Introductions | Stochastic Stenography</title>
 
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -426,55 +426,23 @@ article .meta a.comments_btn:hover {
 <div class="container post">
     <article>
         <header>
-            <h1>Summer of Data Science 2017</h1>
-            <time class="left" datetime="article.date.isoformat()" pubdate>Posted on January 6 in the year 2018, at 17:18PM. It was Saturday.</time>
+            <h1>Introductions</h1>
+            <time class="left" datetime="article.date.isoformat()" pubdate>Posted on November 7 in the year 2015, at 12:14PM. It was Saturday.</time>
         </header>
 
         <div class="article_content">
-            <p><center><img src="/images/carpelibrum.png"></center></p>
-<p>A few days ago, while I was still in Portland, OR enjoying the last few days of <a href="https://us.pycon.org/2017/">PyCon 2017</a>, Renee (<a href="https://twitter.com/BecomingDataSci"><a href="https://twitter.com/BecomingDataSci">@BecomingDataSci</a></a>) mentioned on Twitter that she might bring back the "Summer of Data Science" she kicked off last year.</p>
-<p>In short: use the summer as an opportunity to learn and/or accomplish something data science-related in a goal-oriented, data-driven way.</p>
-<p><blockquote class="twitter-tweet" align="center"><a href="https://twitter.com/BecomingDataSci/status/869608575978676226">Tweet of BecomingDataSci/869608575978676226</a></blockquote></p>
-<p>As a tenure-track professor still yet to endure the 3rd-year review, pretty much everything data science related revolves around furthering my eventual tenure dossier. But the summers are still considerably more flexible for me to accomplish some of these goals than the fall or spring (I love teaching, but it's all-consuming). I also have more than just myself--networks of collaborators and research assistants who can help me with these goals.</p>
-<p>So without further adieu, I'd like to put forth my own Summer of Data Science, 2017 Edition:</p>
-<h3>Teaching: 1360E improvements and 4360/6360 preparation</h3>
-<p>I'm teaching an online course this summer, starting June 5 and continuing through the end of July: <a href="https://eds-uga.github.io/csci1360e-su17/">CSCI 1360E Foundations of Informatics and Analytics</a>.</p>
-<p>Or, more colloquially, I just call it "introduction to data science."</p>
-<p>It's one of the five courses I proposed in my first year (a story for another time, believe me...) and taught for the first time last summer, and in-person last fall. I'm teaching it again this summer and hoping to make some of the standard improvements, such as sprucing up slides and fixing autograder bugs from previous incarnations.</p>
-<p>More pressing is CSCI 4360/6360 Data Science II, which has yet to have its own website. This course has <em>never</em> been taught, but is slated for Fall 2017.</p>
-<p>Did I mention there are already over 40 students registered, undergraduate and graduate combined?</p>
-<p>This is supposed to be the "corner cases" of data science: lesser-used and/or more powerful analysis methods that aren't necessarily the first tools or techniques you reach for in a given situation. This will include, but certainly not be limited to, concepts like randomized algorithms, semi-supervised learning, and backpropagation; techniques like out-of-core processing, distributed computing, and functional programming; tools like <a href="https://julialang.org/">Julia</a>, <a href="http://numba.pydata.org/">numba</a>, and <a href="http://dask.pydata.org/en/latest/">dask</a>.</p>
-<p>Before you ask: No. I'm <em>not</em> covering Spark.</p>
-<p>At any rate, the conceptual framework is in place, but practically none of the architectural logistics have been established. So this will take up virtually all of my time for the remainder of the summer, once the following item is completed...</p>
-<h3>Research: NSF CAREER proposal</h3>
-<p>The advantage of this goal is it has a hard end date: <strong>July 19</strong>.</p>
-<p>The disadvantage is that the <a href="https://www.nsf.gov/pubs/2017/nsf17537/nsf17537.htm">NSF CAREER</a> is the pinnacle of NSF early-career investigator awards. Its importance cannot be overstated; its <em>je ne sais quoi</em> is on display in the faces of new investigators when you mention it around them.</p>
-<p>I've connected with my university's grant proposal officers, and am participating in a peer review process that involves two rounds of review: first with fellow CAREER submitees (as in, we exchange each other's current drafts!), and second with the university grant officers.</p>
-<p>An investigator can only make three submission attempts for the CAREER. The CAREER is only open for submissions once per year. If chosen, the investigator must still be un-tenured at time of award. These conditions place brutal limits on how long you can wait to start making submissions, and I already skipped submitting my first two years. Still, I have no illusions about the uphill battle I have, so my goal this first time around is simply to <strong>acquire feedback</strong>: from my peers, from my grants officers, and from the NSF reviewers.</p>
-<h3>Personal: Coursera's optimization course</h3>
-<p>I signed up to take Coursera's <a href="https://www.coursera.org/learn/discrete-optimization/home/welcome">Discrete Optimization course</a> out of the University of Melbourne, taught by none other than <a href="https://pascalvanhentenryck.engin.umich.edu/">Professor Pascal Van Hentenryck</a> at Michigan and <a href="http://www.coffr.in/">Dr. Carleton Coffrin</a>, currently at Los Alamos.</p>
-<p>Optimization is pretty much the backbone of modern machine learning, and yet I have almost no formal training in it--beyond incidentally covering it in various machine learning and statistics courses as part of some broader topic in which it's used. Oddly, the most rigorous instruction I received as a graduate student in optimization was a <a href="https://sites.google.com/site/cellandsystemsmodeling/">Cell &amp; Systems Modeling course</a> where we used various optimization techniques to find parameter values for population models.</p>
-<p>Especially in conjunction with what I hope to teach in CSCI 4360 in the fall, this would be invaluable both professionally as well as personally.</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <p>Well, this seems to be working. Kinda.</p>
+<p>I took some inspiration from <a href="http://jakevdp.github.io/">Jake VanderPlas' Pythonic Perambulations</a> and opted for a similar route: Pelican as the backend blogging machine, github as the host, and (eventually) embedded Jupyter notebooks. Unfortunately, Jake's addition to the Pelican plugins to <a href="https://github.com/getpelican/pelican-plugins/blob/master/liquid_tags/notebook.py">allow Jupyter notebooks</a> uses CSS that is, shall we say, unfriendly to Pelican themes outside of the Octopress default.</p>
+<p>So that part is still incomplete. As are many of the links and some of the plugins. But ultimately, I'm hoping to use this to supplant my current pair of blogs that jointly detail what my plan for this space is: academia, general data science, and other musings.</p>
+<p>Stay tuned!</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
 
         <div class="meta">
             <div>
-                    <a href="https://magsol.github.io/tag/data-science.html" class="tag">data science</a>
+                    <a href="https://magsol.github.io/tag/pelican.html" class="tag">pelican</a>
                     <a href="https://magsol.github.io/tag/python.html" class="tag">python</a>
-                    <a href="https://magsol.github.io/tag/computer-vision.html" class="tag">computer vision</a>
-                    <a href="https://magsol.github.io/tag/imaging.html" class="tag">imaging</a>
-                    <a href="https://magsol.github.io/tag/machine-learning.html" class="tag">machine learning</a>
-                    <a href="https://magsol.github.io/tag/deep-learning.html" class="tag">deep learning</a>
-                    <a href="https://magsol.github.io/tag/nvidia.html" class="tag">nvidia</a>
-                    <a href="https://magsol.github.io/tag/gpu.html" class="tag">gpu</a>
-                    <a href="https://magsol.github.io/tag/online-courses.html" class="tag">online courses</a>
-                    <a href="https://magsol.github.io/tag/teaching.html" class="tag">teaching</a>
-                    <a href="https://magsol.github.io/tag/education.html" class="tag">education</a>
-                    <a href="https://magsol.github.io/tag/cat-detector.html" class="tag">cat detector</a>
-                    <a href="https://magsol.github.io/tag/generative-adversarial-networks.html" class="tag">generative adversarial networks</a>
-                    <a href="https://magsol.github.io/tag/latent-subspace.html" class="tag">latent subspace</a>
-                    <a href="https://magsol.github.io/tag/manifolds.html" class="tag">manifolds</a>
-                    <a href="https://magsol.github.io/tag/bioimaging.html" class="tag">bioimaging</a>
+                    <a href="https://magsol.github.io/tag/github.html" class="tag">github</a>
+                    <a href="https://magsol.github.io/tag/jupyter.html" class="tag">jupyter</a>
             </div>
         </div>
     </article>
@@ -484,9 +452,9 @@ article .meta a.comments_btn:hover {
     <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
     <script type="text/javascript">
       var disqus_shortname = 'stochasticstenography';
-      var disqus_identifier = '/blog/2018/01/06/summer-of-data-science-2017/';
-      var disqus_url = 'https://magsol.github.io/blog/2018/01/06/summer-of-data-science-2017/';
-      var disqus_title = 'Summer of Data Science 2017';
+      var disqus_identifier = '/blog/2015/11/07/introductions/';
+      var disqus_url = 'https://magsol.github.io/blog/2015/11/07/introductions/';
+      var disqus_title = 'Introductions';
       (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = "//" + disqus_shortname + '.disqus.com/embed.js';
