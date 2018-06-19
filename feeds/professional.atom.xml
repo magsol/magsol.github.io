@@ -1,5 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Stochastic Stenography - professional</title><link href="https://magsol.github.io/" rel="alternate"></link><link href="https://magsol.github.io/feeds/professional.atom.xml" rel="self"></link><id>https://magsol.github.io/</id><updated>2017-03-16T15:59:21-04:00</updated><entry><title>So, you want to conduct research with me?</title><link href="https://magsol.github.io/blog/2017/03/16/so-you-want-to-conduct-research-with-me/" rel="alternate"></link><published>2017-03-16T15:59:21-04:00</published><updated>2017-03-16T15:59:21-04:00</updated><author><name>Shannon Quinn</name></author><id>tag:magsol.github.io,2017-03-16:blog/2017/03/16/so-you-want-to-conduct-research-with-me/</id><summary type="html">&lt;p&gt;&lt;center&gt;&lt;img src="/images/joker_play_a_game.jpg"&gt;&lt;/center&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Stochastic Stenography - professional</title><link href="https://magsol.github.io/" rel="alternate"></link><link href="https://magsol.github.io/feeds/professional.atom.xml" rel="self"></link><id>https://magsol.github.io/</id><updated>2018-06-19T16:58:19-04:00</updated><entry><title>An einsum use-case</title><link href="https://magsol.github.io/blog/2018/06/19/an-einsum-use-case/" rel="alternate"></link><published>2018-06-19T16:58:19-04:00</published><updated>2018-06-19T16:58:19-04:00</updated><author><name>Shannon Quinn</name></author><id>tag:magsol.github.io,2018-06-19:blog/2018/06/19/an-einsum-use-case/</id><summary type="html">&lt;style type="text/css"&gt;/*!
+*
+* IPython notebook
+*
+*/
+/* CSS font colors for translated ANSI colors. */
+.ansibold {
+  font-weight: bold;
+}
+/* use dark versions for foreground, to improve visibility */
+.ansiblack {
+  color: black;
+}
+.ansired {
+  color: darkred;
+}
+.ansigreen {
+  color: darkgreen;
+}
+.ansiyellow {
+  color: #c4a000;
+}
+.ansiblue {
+  color: darkblue;
+}
+.ansipurple {
+  color: darkviolet;
+}
+.ansicyan {
+  color: steelblue;
+}
+.ansigray {
+  color: gray;
+}
+/* and light for background, for the …&lt;/style&gt;</summary><category term="einsum"></category><category term="python"></category><category term="gmm"></category><category term="gaussian mixture model"></category><category term="einstein summation"></category></entry><entry><title>So, you want to conduct research with me?</title><link href="https://magsol.github.io/blog/2017/03/16/so-you-want-to-conduct-research-with-me/" rel="alternate"></link><published>2017-03-16T15:59:21-04:00</published><updated>2017-03-16T15:59:21-04:00</updated><author><name>Shannon Quinn</name></author><id>tag:magsol.github.io,2017-03-16:blog/2017/03/16/so-you-want-to-conduct-research-with-me/</id><summary type="html">&lt;p&gt;&lt;center&gt;&lt;img src="/images/joker_play_a_game.jpg"&gt;&lt;/center&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Deviation #1&lt;/em&gt;: This is wholly separate from the &lt;a href="http://shouldigetaphd.com/"&gt;"should I get a Ph.D."&lt;/a&gt; question. For that I would recommend one of numerous guides that ask all the right questions.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Deviation #2&lt;/em&gt;: This is also wholly separate from how to &lt;em&gt;succeed&lt;/em&gt; in a Ph.D. program, though there is some …&lt;/p&gt;</summary><category term="phd"></category><category term="graduate school"></category><category term="research"></category><category term="mentoring"></category><category term="computer science"></category><category term="graduate student"></category></entry><entry><title>Open Science in Big Data (OSBD) Workshop</title><link href="https://magsol.github.io/blog/2016/09/26/osbd2016-workshop/" rel="alternate"></link><published>2016-09-26T09:10:19-04:00</published><updated>2016-09-26T09:10:19-04:00</updated><author><name>Shannon Quinn</name></author><id>tag:magsol.github.io,2016-09-26:blog/2016/09/26/osbd2016-workshop/</id><summary type="html">&lt;p&gt;&lt;img src="/images/washingtondc.png"&gt;&lt;/p&gt;
 &lt;p&gt;Back in May of this year, some of the other computer science professors and I put together a proposal for a workshop. The workshop would be in conjunction with the December 2016 &lt;a href="http://cci.drexel.edu/bigdata/bigdata2016/"&gt;IEEE BigData Conference&lt;/a&gt;, and would focus specifically on the intersection of big data and open science.&lt;/p&gt;
