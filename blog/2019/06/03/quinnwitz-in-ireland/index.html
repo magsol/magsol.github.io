@@ -6,7 +6,7 @@
         <meta name="author" content="Shannon Quinn">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-        <title>Summer of Data Science 2017: Wrap-up | Stochastic Stenography</title>
+        <title>Quinnwitz in Ireland | Stochastic Stenography</title>
 
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -426,80 +426,84 @@ article .meta a.comments_btn:hover {
 <div class="container post">
     <article>
         <header>
-            <h1>Summer of Data Science 2017: Wrap-up</h1>
-            <time class="left" datetime="article.date.isoformat()" pubdate>Posted on August 15 in the year 2017, at 16:38PM. It was Tuesday.</time>
+            <h1>Quinnwitz in Ireland</h1>
+            <time class="left" datetime="article.date.isoformat()" pubdate>Posted on June 3 in the year 2019, at 16:22PM. It was Monday.</time>
         </header>
 
         <div class="article_content">
-            <h2>tl;dr</h2>
-<p>Mixed bag.</p>
-<p><blockquote class="twitter-tweet" align="center"><a href="https://twitter.com/BecomingDataSci/status/895856449687080960">Tweet of BecomingDataSci/895856449687080960</a></blockquote></p>
-<h2>The Long Version</h2>
-<p>Something that's stuck with me from my middle school obsession with the <em>Wing Commander</em> books and video games was this quote:</p>
-<div class="highlight"><pre><span></span>No battle plan survives contact with the enemy.
-</pre></div>
-
-
-<p>Certainly as true as ever with the admittedly <em>extremely ambitious</em> <a href="https://magsol.github.io/blog/2017/05/31/summer-of-data-science-2017/">SoDS 2017 goals I laid out in my previous post</a>. Still, they're worthwhile to go through and reflect over in preparation for the inevitable SoDS 2018.</p>
-<h3>Teaching: 1360E improvements and 4360/6360 preparation</h3>
-<p>This one I've done well with, and am continuing to work on (though <a href="https://twitter.com/SpectralFilter/status/896119490324201472">today's nuking of the AutoLab grading VM</a> will set me back a bit).</p>
-<p>This summer was the second rendition of <a href="https://eds-uga.github.io/csci1360e-su17/">CSCI 1360E, also taught as an online course</a> just like last summer's (there is scheduled to be one more, next summer 2018. after that, who knows?). It started with over 20 students and ended with around 12--a pretty tough attrition rate--but still a vast improvement over last summer's 6/3. Ran into fewer autograder problems, the questions were more relevant and targeted to the lecture material, and the lectures themselves were smoother overall.</p>
-<p>I'm now deep in the process of building the fifth and final course I proposed back in Fall 2015 to fruition: <a href="https://eds-uga.github.io/csci4360-fa17/">CSCI 4360/6360 Data Science II</a>. I've planned out the lecture schedule for the semester, linked them up with the primary sources I'll be referencing, and even managed to snag all the necessary guest lecturers for the various trips I have to make. Of course, I'm lagging on the concrete lecture material, and as stated I nuked the VM that would host and autograde homework assignments, so this is still a mixed bag...</p>
-<p>To update the enrollment numbers: currently 36 students registered (30 graduates, 6 undergraduates). I expect this to wobble considerably over the next week as classes officially begin.</p>
-<p>(yes, you read that right: I proposed five brand-new courses my first fall semester; I've since taught three of them. a fourth was taught by another professor, since we couldn't figure out a way to clone me a <em>seventeenth</em> time)</p>
-<p><strong>Overall</strong>: I'd give myself a B/B+, A- if you bring in the fact that, by the end of the summer, I was fully integrated with <a href="https://airflow.incubator.apache.org/">Airflow</a> for auto-posting lectures in 1360E.</p>
-<h3>Research: NSF CAREER proposal</h3>
-<p>This was quite the process: an internal peer review with other colleagues at UGA, edits from my wife, and a night-before top-down rewrite reminiscent of when I scrapped my Ph.D. dissertation slides at 10pm the night before my defense. But I submitted something I was proud of, even if it doesn't stand a snowball's chance in hell of being funded. I stated before that I submitted for the feedback; even though I'd really, really love to have the grant funded, any feedback from the agency itself will be valuable.</p>
-<p>Of course, that was my one grant-writing goal. I've managed to pick up a few others this summer:</p>
-<ul>
-<li><a href="https://aigrant.org/">AIGrant</a>: Submitted this a few weeks ago. Really excited to work on the project I proposed; I hope the folks there are as excited as I am about it!</li>
-<li><a href="https://www.nsf.gov/pubs/2017/nsf17552/nsf17552.htm">NSF CRII</a>: This is sort of a "CAREER Lite", since it's only 2 years and a <em>hard</em> upper limit on the amount of funding you can request. But it's likewise geared toward young investigators like myself; however, I've applied the last two years and been rejected both times, and this is my last year of eligibility, so we'll see. I submitted this just this past week on Wednesday; fingers crossed!</li>
-<li><a href="https://ropensci.org/fellowships/">rOpenSci Fellowships</a>: I have a completed draft that I've edited a few times with some feedback from the program officers. I'm still not ready to submit, but I think I have a compelling application for the Sept 1 deadline.</li>
-<li><a href="https://grants.nih.gov/grants/guide/rfa-files/RFA-RM-17-006.html">NIH New Innovator</a>: This one is a bit of a reach, considering it's a 10-page application due Sept 8, and it's pretty much the only one on this list I haven't had a chance to start on. Plus, I've received conflicting information from the informational webinar I attended and someone who applied last year and was rejected, so I'm wondering if I should let this one slide this year.</li>
-<li><a href="https://sloan.org/fellowships/">Sloan Research Fellowships</a>: Running my one-page application through the meatgrinder to get the best submission possible for the Sept 15 deadline.</li>
-<li><a href="https://www.simonsfoundation.org/mathematics-and-physical-science/simons-investigators/#mmls-investigators">Simons Investigators</a>: the internal deadline for this is Sept 15, but assuming I get the nod (evidently no one else at UGA usually applies for this one?!), I'll be getting some feedback from previous Simons Investigators for some help in addressing what the foundation is really looking for.</li>
-</ul>
-<p>Then there's a grant I'm working on with Continuum Analytics' Matt Rocklin (yes, <a href="https://twitter.com/mrocklin">that Matt Rocklin!</a>), a smaller NIH grant on biosurveillance with the awesome folks at UGA Public Health, a potential biology grant to NSF with my Cellular Biology colleagues, and a mentored NIH K-award in neuroscience.</p>
-<p>That's all <em>this year</em>.</p>
-<p>Admittedly, this is somewhat atypical. If I really do end up submitting to all these, I will have substantially increased my grantwriting output, exceeding that of my first two years <em>combined</em>. I'm really, really hoping I land on something!</p>
-<p><strong>Overall</strong>: A (upgrade to A+ if any actually get <em>funded</em>)</p>
-<h3>Personal: Coursera's optimization course</h3>
-<p>This <em>literally did not happen.</em> I think I completed the first week of lectures and the practice assignment. Nothing after that.</p>
-<p>Definitely want to take another crack at this next summer, though.</p>
-<p><strong>Overall</strong>: F.</p>
-<h2>Conclusion</h2>
-<p>As stated at the beginning, a mixed bag. I've had some really great momentum with grantwriting this year, far better than any year so far. Teaching has been pretty productive as well (if not exhausting with all the brand-new courses), though the Coursera goal was a bust.</p>
-<p>Still, that may have something to do with a completely inadvertent achievement: my running this year has come roaring back. My last five weeks have been particularly awesome:</p>
-<p><img width="960" src="/images/sods2017wrapup/strava.png"></p>
-<p>The first two years after my wife and I moved to Athens (2015 and 2016) were both injury-plagued and just plain stressful. Consequently, my running took a hit: I haven't set a PR in any distance since 2014, I haven't run a full marathon since <a href="https://wherearethepancakes.wordpress.com/2015/06/19/race-report-the-hilliest-marathon-evar/">early 2015</a>, and in general my mileage has taken a dive:</p>
-<p><img src="/images/sods2017wrapup/yearly.png"></p>
-<p>But check out this year's trajectory! Nearly 800 miles, and we're only a week into August. That puts me on pace for right around 1,300 miles--a nice comfy middle ground between the monster year that was 2014 and each of the subsequent years.</p>
-<p>I've also started noticing that I'm actually getting faster, which is something I likewise haven't experienced with my running for a couple years. Where I've typically felt as though I'm just on "cruise control", this increased mileage has also seen my finishing times go down without any conscious decision on my part.</p>
-<p>Which led me--perhaps in a half-crazed moment of weakness--to put the following goals on the Athens Fleet Feet board several weeks ago at their four-year anniversary celebration:</p>
-<p><img src="https://scontent-los2-1.cdninstagram.com/vp/b37642715074ddcf36f2926d5e6e6f7a/5D7CF890/t51.2885-15/e35/s320x320/20214572_910864472387859_726197266590728192_n.jpg?_nc_ht=scontent-los2-1.cdninstagram.com"></p>
-<p>Running is my release. Without it, nothing else I do is going to be very good. When running is going well, other things are going well, and vice versa. So here's hoping I've set myself on a good track!</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <p><img src="/images/ireland/gapofdunloe.jpg">
+<p style="text-align: center;">(<a href="images/ireland/gapofdunloe_orig.jpg">click to embiggen</a>)</p></p>
+<p>The Lady and I just returned from a 12-day trip to Ireland (with a stop at the
+very start in Kent, England, to visit some <a href="https://twitter.com/kmorrell04">dear friends</a>
+and their <a href="images/ireland/kent.jpg">6-month old</a> twins!).</p>
+<p>I can't begin to describe how incredible the trip was. It was one of those dreams
+you realize at some point you've been discussing with your significant other for
+<em>years</em>--quips here and there about "wouldn't it be awesome to visit x" or
+"when we visit y someday...". Ireland had been at the top of our list of
+international locations to see since years before we even got married, but it
+was always 5-10 years in the future, and never got any closer to reality.</p>
+<p>Until that dear friend's wedding in Bedford, England, in late summer 2017. At
+some point during some downtime in that long weekend, Ireland came up again in
+the same way it always did, but whether it was the international setting we were
+already in or some other twist of fate, The Lady suddenly said: "Let's set a date."</p>
+<p>That day in August 2017, we set a tentative, but <em>actual</em>, date of May 2019.
+And we nailed it.</p>
+<h3>Overview</h3>
+<p>The logistics of the trip were pretty complicated. First, we wanted to fly
+into London and spend a day visiting those friends of ours out in Kent. Next,
+we wanted to start our journey in Ireland by spending a few days in Dublin.</p>
+<p>From there, we wanted to hike in <a href="https://www.wicklowmountainsnationalpark.ie/">Wicklow National Park</a>
+before spending a few days in Killarney, exploring the <a href="https://ringofkerrytourism.com/">Ring of Kerry</a>
+(important note: not a "ring" as in a piece of jewelry).</p>
+<p>Finally, we wanted to drive to Galway and spend a few days there, before
+returning to Dublin and flying back home.</p>
+<p><strong>tl;dr A travel agent will make your life a lot easier when your international
+travels have a lot of moving parts.</strong></p>
+<h3>The Emerald Isle</h3>
+<p>The country was seriously amazing. Ireland is the most incredible combination
+of different landscapes and ecosystems all coexisting side by side; driving
+from Dublin to Killarney to Galway and back will show multiple distinct
+countrysides that change seamlessly yet suddenly.</p>
+<p>Without further adieu, I'll post some of my favorite pictures here from the
+trip.</p>
+<p><img src="/images/ireland/oscar_wilde.jpg"></p>
+<p>In front of the Oscar Wilde statue in Dublin.</p>
+<p><img src="/images/ireland/guinness_storehouse.jpg"></p>
+<p>The Guinness Storehouse in Dublin.</p>
+<p><img src="/images/ireland/book_of_kells.jpg"></p>
+<p>In the <a href="https://www.tcd.ie/visitors/book-of-kells/">Book of Kells exhibit</a> at Trinity College in Dublin.</p>
+<p><img src="/images/ireland/wicklow_park.jpg"></p>
+<p>At Wicklow park, before a 9-mile hike.</p>
+<p><img src="/images/ireland/wicklow_park2.jpg"></p>
+<p>Also Wicklow park, about halfway through the hike.</p>
+<p><img src="/images/ireland/gap_of_dunloe.jpg"></p>
+<p>Running the <a href="http://www.theringofkerry.com/the-gap-of-dunloe">Gap of Dunloe</a> in Killarney.</p>
+<p><img src="/images/ireland/gap_me.jpg">
+<img src="/images/ireland/gap_lady.jpg"></p>
+<p>The Lady and myself running in the Gap.</p>
+<p><img src="/images/ireland/irish_wolfhound.jpg"></p>
+<p>The Lady meets an adorable Irish wolfhound during our Ring of Kerry tour.</p>
+<p><img src="/images/ireland/ring_of_kerry.jpg"></p>
+<p>Coastline stop along the Ring of Kerry tour.</p>
+<p><img src="/images/ireland/secret_garden.jpg"></p>
+<p>We met a very friendly regular at the <a href="http://www.secretgardengalway.com/">Secret Garden</a> in Galway.</p>
+<p><img src="/images/ireland/galway.jpg"></p>
+<p>Sitting in the main square at Galway.</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
 
         <div class="meta">
             <div>
-                    <a href="https://magsol.github.io/tag/data-science.html" class="tag">data science</a>
-                    <a href="https://magsol.github.io/tag/python.html" class="tag">python</a>
-                    <a href="https://magsol.github.io/tag/computer-vision.html" class="tag">computer vision</a>
-                    <a href="https://magsol.github.io/tag/imaging.html" class="tag">imaging</a>
-                    <a href="https://magsol.github.io/tag/machine-learning.html" class="tag">machine learning</a>
-                    <a href="https://magsol.github.io/tag/deep-learning.html" class="tag">deep learning</a>
-                    <a href="https://magsol.github.io/tag/nvidia.html" class="tag">nvidia</a>
-                    <a href="https://magsol.github.io/tag/gpu.html" class="tag">gpu</a>
-                    <a href="https://magsol.github.io/tag/online-courses.html" class="tag">online courses</a>
-                    <a href="https://magsol.github.io/tag/teaching.html" class="tag">teaching</a>
-                    <a href="https://magsol.github.io/tag/education.html" class="tag">education</a>
-                    <a href="https://magsol.github.io/tag/cat-detector.html" class="tag">cat detector</a>
-                    <a href="https://magsol.github.io/tag/generative-adversarial-networks.html" class="tag">generative adversarial networks</a>
-                    <a href="https://magsol.github.io/tag/latent-subspace.html" class="tag">latent subspace</a>
-                    <a href="https://magsol.github.io/tag/manifolds.html" class="tag">manifolds</a>
-                    <a href="https://magsol.github.io/tag/bioimaging.html" class="tag">bioimaging</a>
-                    <a href="https://magsol.github.io/tag/grant-writing.html" class="tag">grant writing</a>
-                    <a href="https://magsol.github.io/tag/running.html" class="tag">running</a>
+                    <a href="https://magsol.github.io/tag/travel.html" class="tag">travel</a>
+                    <a href="https://magsol.github.io/tag/ireland.html" class="tag">ireland</a>
+                    <a href="https://magsol.github.io/tag/quinnwitzabroad.html" class="tag">#quinnwitzabroad</a>
+                    <a href="https://magsol.github.io/tag/heritage.html" class="tag">heritage</a>
+                    <a href="https://magsol.github.io/tag/dublin.html" class="tag">dublin</a>
+                    <a href="https://magsol.github.io/tag/killarney.html" class="tag">killarney</a>
+                    <a href="https://magsol.github.io/tag/galway.html" class="tag">galway</a>
+                    <a href="https://magsol.github.io/tag/ring-of-kerry.html" class="tag">ring of kerry</a>
+                    <a href="https://magsol.github.io/tag/cliffs-of-moher.html" class="tag">cliffs of moher</a>
+                    <a href="https://magsol.github.io/tag/cliffs-of-insanity.html" class="tag">cliffs of insanity</a>
+                    <a href="https://magsol.github.io/tag/wicklow.html" class="tag">wicklow</a>
             </div>
         </div>
     </article>
@@ -509,9 +513,9 @@ article .meta a.comments_btn:hover {
     <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
     <script type="text/javascript">
       var disqus_shortname = 'stochasticstenography';
-      var disqus_identifier = '/blog/2017/08/15/sods-2017-wrap-up/';
-      var disqus_url = 'https://magsol.github.io/blog/2017/08/15/sods-2017-wrap-up/';
-      var disqus_title = 'Summer of Data Science 2017: Wrap-up';
+      var disqus_identifier = '/blog/2019/06/03/quinnwitz-in-ireland/';
+      var disqus_url = 'https://magsol.github.io/blog/2019/06/03/quinnwitz-in-ireland/';
+      var disqus_title = 'Quinnwitz in Ireland';
       (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = "//" + disqus_shortname + '.disqus.com/embed.js';
