@@ -416,7 +416,6 @@ article .meta a.comments_btn:hover {
 		    <ul class="nav navbar-nav navbar-right">
                             <li><a href="/pages/about.html" title="About">About</a></li>
                             <li><a href="/archives.html" title="Archive">Archive</a></li>
-                            <li><a class="nodec icon-rss" href="/feeds/all.atom.xml" title="jakevdp.github.io RSS feed" rel="me"></a></li>
                     </ul>
                 </nav>
             </div>
@@ -452,40 +451,40 @@ article .meta a.comments_btn:hover {
 <h4><strong>Step 1: Create a Strava app</strong></h4>
 <p>Go to your <a href="https://www.strava.com/settings/api">user settings</a> and create an app that can interface with your account. Important pieces of information you'll need later: <strong>Client ID</strong>, <strong>Client Secret</strong>, and <strong>Your access token</strong>.</p>
 <p>We can test if it works. Fire up an IPython terminal, get your <code>access_token</code>, and run the following code:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">stravalib</span> <span class="kn">import</span> <span class="n">Client</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">stravalib</span> <span class="kn">import</span> <span class="n">Client</span>
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">access_token</span> <span class="o">=</span> <span class="n">access_token</span><span class="p">)</span>
 <span class="n">client</span><span class="o">.</span><span class="n">get_athlete</span><span class="p">()</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>You should see something along the lines of:</p>
-<div class="highlight"><pre><span></span><span class="n">Out</span><span class="p">[]:</span> <span class="o">&lt;</span><span class="n">Athlete</span> <span class="nb">id</span><span class="o">=</span><span class="mi">1234567</span> <span class="n">firstname</span><span class="o">=</span><span class="sa">b</span><span class="s1">&#39;Firstname&#39;</span> <span class="n">lastname</span><span class="o">=</span><span class="sa">b</span><span class="s1">&#39;Lastname&#39;</span><span class="o">&gt;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">Out</span><span class="p">[]:</span> <span class="o">&lt;</span><span class="n">Athlete</span> <span class="nb">id</span><span class="o">=</span><span class="mi">1234567</span> <span class="n">firstname</span><span class="o">=</span><span class="sa">b</span><span class="s1">&#39;Firstname&#39;</span> <span class="n">lastname</span><span class="o">=</span><span class="sa">b</span><span class="s1">&#39;Lastname&#39;</span><span class="o">&gt;</span>
+</code></pre></div>
 
 
 <h4><strong>Step 2: Retrieve last week's data</strong></h4>
 <p>The whole point is to get weekly mileage reports. Thankfully, the <code>get_activities</code> method in stravalib has an <code>after</code> optional parameter we can use to precisely tune what time interval we want.</p>
 <p>First, though, we need to create a timestamp that represents the 1-week time frame. If we assume this will only be executed on the day we want the summary--say, every Monday--then we need to tally up all the runs from the day before all the way back to the previous Monday, inclusive.</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">datetime</span>
 <span class="n">current</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
 <span class="n">last_week</span> <span class="o">=</span> <span class="n">current</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">weeks</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">after</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="n">last_week</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">last_week</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">last_week</span><span class="o">.</span><span class="n">day</span><span class="p">)</span>
 <span class="n">activities</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_activities</span><span class="p">(</span><span class="n">after</span> <span class="o">=</span> <span class="n">after</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Assuming we run this chunk of code on a Monday, it should give us every Strava activity from the previous Monday up to the present.</p>
 <p>However, we're not done yet. This includes everything--not just our runs, but any other activities that we recorded; yoga, weights, elliptical, and so on. We need to filter these out. We also need to filter out the edge case of any activities that have been recorded <em>today</em>, since we don't want to include these in a report of <em>last</em> week's activities!</p>
-<div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="n">activity</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">activity</span> <span class="ow">in</span> <span class="n">activities</span> <span class="k">if</span> <span class="n">activity</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;Run&#39;</span> \
+<div class="highlight"><pre><span></span><code><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="n">activity</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">activity</span> <span class="ow">in</span> <span class="n">activities</span> <span class="k">if</span> <span class="n">activity</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;Run&#39;</span> \
     <span class="ow">and</span> <span class="n">a</span><span class="o">.</span><span class="n">start_date_local</span><span class="o">.</span><span class="n">day</span> <span class="o">!=</span> <span class="n">current</span><span class="o">.</span><span class="n">day</span><span class="p">]</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Ok, let's pause and discuss what's happening here.</p>
 <p>First, the most obvious: we're looping through the <code>activities</code> generator we obtained in the last line of the previous step. Second, the <code>if</code> statement at the end filters out any activities that aren't a run. Finally, the <code>activity.id</code> part out front says, we're building a list of the unique IDs that identify each activity. The last part is our timeframe edge case: if we recorded an activity today, even a running activity, don't include it.</p>
 <p>Why are we only holding onto the IDs? It has to do with detail. Strava maintains a hierarchy of details available to users that vary with authentication, connection, etc. Simply put, when we request a list of activities, <a href="http://strava.github.io/api/v3/activities/#get-activities">the default detail level is 2, which is "summary" level</a>. However, some of the metrics we need--calories in particular!--require level 3, or "detailed". To get this level of detail, we need to query for individual activities...one at a time.</p>
 <p>Hence, a list of activity IDs! Now we can loop through the IDs, requesting details on each run and tabulating up the mileage and calories.</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">stravalib</span> <span class="kn">import</span> <span class="n">unithelper</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">stravalib</span> <span class="kn">import</span> <span class="n">unithelper</span>
 
 <span class="n">mileage</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">calories</span> <span class="o">=</span> <span class="mf">0.0</span>
 <span class="k">for</span> <span class="n">activity_id</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
@@ -496,25 +495,25 @@ article .meta a.comments_btn:hover {
     <span class="n">distance</span> <span class="o">=</span> <span class="n">unithelper</span><span class="o">.</span><span class="n">miles</span><span class="p">(</span><span class="n">activity</span><span class="o">.</span><span class="n">distance</span><span class="p">)</span>
     <span class="n">mileage</span> <span class="o">+=</span> <span class="nb">round</span><span class="p">(</span><span class="n">distance</span><span class="o">.</span><span class="n">num</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># Rounds to 2 sig figs.</span>
     <span class="n">calories</span> <span class="o">+=</span> <span class="n">activity</span><span class="o">.</span><span class="n">calories</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>There you have it! In those two variables--<code>mileage</code> and <code>calories</code>--you have all the data you need to summarize your running workouts for the last week. Now we just need to post this information on Twitter!</p>
 <h4><strong>Step 3: Create a PyBot</strong></h4>
 <p>Ok, time for a shameless plug: yes, I'm the <a href="https://github.com/magsol/pybot">pybot</a> author. It's still highly experimental, and largely uncompleted, but for our purposes it will suffice nicely as a barebones framework to interact with Twitter.</p>
 <p>Clone the repo and follow the setup script to create a Twitter app and connect it to your account.</p>
-<div class="highlight"><pre><span></span>git clone https://github.com/magsol/pybot.git
-cd pybot
-sbin/create_pybot.py
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">git clone https://github.com/magsol/pybot.git</span>
+<span class="err">cd pybot</span>
+<span class="err">sbin/create_pybot.py</span>
+</code></pre></div>
 
 
 <p>That will walk you through the instructions for creating an app, generating OAuth credentials, and stubbing out your first pybot. Feel free to give it whatever name you'd like; for the purposes of this tutorial, I'll assume we've named it <code>artbot</code> (don't ask). Congratulations! You've created a twitter bot!</p>
 <h4><strong>Step 4: Customize the bot's behavior</strong></h4>
 <p>Our bot is pretty simple: every Monday at some specified time, it will wake up, read all the prior week's running activities, and post the summary before going back to sleep for another week.</p>
 <p>It won't be prompted by anything other than time. So the specific action override we're looking for in PyBot parlance is <code>on_tweet</code>, and the interval we'll use is <code>tweet_interval</code>. The latter is easy enough--a full week between tweets!</p>
-<div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;tweet_interval&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">7</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;tweet_interval&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">7</span>
+</code></pre></div>
 
 
 <p>Before we go any further: does anyone see anything wrong with the above code snippet?</p>
@@ -523,19 +522,19 @@ sbin/create_pybot.py
 <p>A neat component of PyBot is that, in addition to giving hard time frames, you can also specify functions to compute the interval on-the-fly, subject to some other constraints that are dynamic (like on what day of the week you happen to fire up the bot).</p>
 <p>To make things easy on us, we'll use the <code>datetime</code> convention in the Python documentation for <a href="https://docs.python.org/3.5/library/datetime.html#datetime.datetime.weekday">identifying individual days of the week</a>. This tutorial assumes Mondays (which corresponds to <code>0</code>), but you can use whatever value you want.</p>
 <p>We need to store this as a configuration parameter in the bot.</p>
-<div class="highlight"><pre><span></span><span class="c1"># Put this somewhere in the bot_init() method</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Put this somewhere in the bot_init() method</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;update_day&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Corresponds to Monday.</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Now, we need a <em>function</em> to compute the interval between updates.</p>
-<div class="highlight"><pre><span></span><span class="c1"># Put this somewhere in the bot_init() method</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Put this somewhere in the bot_init() method</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;tweet_interval&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compute_interval</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>We've referenced an internal method we're calling <code>_compute_interval</code>, as of yet undefined. Let's go ahead and define it!</p>
-<div class="highlight"><pre><span></span><span class="c1"># Put this somewhere in the bot class declaration</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Put this somewhere in the bot class declaration</span>
 <span class="k">def</span> <span class="nf">_compute_interval</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="n">interval</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">7</span>  <span class="c1"># The default interval; we&#39;ll start here</span>
 
@@ -558,11 +557,11 @@ sbin/create_pybot.py
     <span class="c1"># Essentially, all we&#39;ve done is replace the 7 above with whatever</span>
     <span class="c1"># it needs to be in order to get us to our target day.</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">target</span> <span class="o">-</span> <span class="n">now</span><span class="p">)</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Now that our interval is in place, we'll need to override the <code>on_tweet</code> action to do what we want whenever it's called (which will be once each week on the day we've specified!). Remember, this method is called once we've hit our interval. So this is where it all comes together!</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_tweet</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">on_tweet</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 
     <span class="c1"># First, pull in the stats from Strava.</span>
     <span class="n">current</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
@@ -584,14 +583,14 @@ sbin/create_pybot.py
 
     <span class="c1"># Finally, use the stats to craft a tweet. This can be any format</span>
     <span class="c1"># you want, but I&#39;ll use the example one from the start of the post.</span>
-    <span class="n">tweet</span> <span class="o">=</span> <span class="s2">&quot;My training last week: {:d} workouts for {:.2f} miles and {:d} calories burned.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">),</span> <span class="n">mileage</span><span class="p">,</span> <span class="n">calories</span><span class="p">)</span>
+    <span class="n">tweet</span> <span class="o">=</span> <span class="s2">&quot;My training last week: </span><span class="si">{:d}</span><span class="s2"> workouts for </span><span class="si">{:.2f}</span><span class="s2"> miles and </span><span class="si">{:d}</span><span class="s2"> calories burned.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">),</span> <span class="n">mileage</span><span class="p">,</span> <span class="n">calories</span><span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">update_status</span><span class="p">(</span><span class="n">tweet</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>That's it! You have everything you need; now, just set the bot to run <em>ad nauseum</em>:</p>
-<div class="highlight"><pre><span></span>python artbot.py
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">python artbot.py</span>
+</code></pre></div>
 
 
 <p>It should run forever, sleeping for most of it but waking every week to post your summary. If you notice something isn't working right, check the logs; they should specify if there are problems e.g. with permissions posting to Twitter, or connections hanging and disconnecting.</p>

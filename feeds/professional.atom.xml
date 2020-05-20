@@ -1,14 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Stochastic Stenography - professional</title><link href="https://magsol.github.io/" rel="alternate"></link><link href="https://magsol.github.io/feeds/professional.atom.xml" rel="self"></link><id>https://magsol.github.io/</id><updated>2018-07-12T12:57:36-04:00</updated><entry><title>An einsum use-case</title><link href="https://magsol.github.io/blog/2018/06/19/an-einsum-use-case/" rel="alternate"></link><published>2018-07-12T12:57:36-04:00</published><updated>2018-07-12T12:57:36-04:00</updated><author><name>Shannon Quinn</name></author><id>tag:magsol.github.io,2018-06-19:blog/2018/06/19/an-einsum-use-case/</id><summary type="html">&lt;p&gt;&lt;img src="/images/einsum/kOqM5.png"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Stochastic Stenography - professional</title><link href="https://magsol.github.io/" rel="alternate"></link><link href="https://magsol.github.io/feeds/professional.atom.xml" rel="self"></link><id>https://magsol.github.io/</id><updated>2018-06-19T16:58:02-04:00</updated><subtitle>Data science, academia, and donuts</subtitle><entry><title>An einsum use-case</title><link href="https://magsol.github.io/blog/2018/06/19/an-einsum-use-case/" rel="alternate"></link><published>2018-06-19T16:58:02-04:00</published><updated>2018-06-19T16:58:02-04:00</updated><author><name>Shannon Quinn</name></author><id>tag:magsol.github.io,2018-06-19:/blog/2018/06/19/an-einsum-use-case/</id><summary type="html">&lt;p&gt;&lt;img src="/images/einsum/kOqM5.png"&gt;
 (&lt;a href="https://stackoverflow.com/questions/26089893/understanding-numpys-einsum"&gt;Source&lt;/a&gt;)&lt;/p&gt;
 &lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
 */
-/* CSS font colors for translated ANSI colors. */
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg …&lt;/style&gt;</summary><content type="html">&lt;p&gt;&lt;img src="/images/einsum/kOqM5.png"&gt;
+(&lt;a href="https://stackoverflow.com/questions/26089893/understanding-numpys-einsum"&gt;Source&lt;/a&gt;)&lt;/p&gt;
+&lt;style type="text/css"&gt;/*!
+*
+* IPython notebook
+*
+*/
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
 .ansibold {
   font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
 }
 /* use dark versions for foreground, to improve visibility */
 .ansiblack {
@@ -35,8 +179,1666 @@
 .ansigray {
   color: gray;
 }
-/* and light for background, for …&lt;/style&gt;</summary><category term="einsum"></category><category term="python"></category><category term="gmm"></category><category term="gaussian mixture model"></category><category term="einstein summation"></category></entry><entry><title>So, you want to conduct research with me?</title><link href="https://magsol.github.io/blog/2017/03/16/so-you-want-to-conduct-research-with-me/" rel="alternate"></link><published>2017-03-16T15:59:21-04:00</published><updated>2017-03-16T15:59:21-04:00</updated><author><name>Shannon Quinn</name></author><id>tag:magsol.github.io,2017-03-16:blog/2017/03/16/so-you-want-to-conduct-research-with-me/</id><summary type="html">&lt;p&gt;&lt;center&gt;&lt;img src="/images/joker_play_a_game.jpg"&gt;&lt;/center&gt;&lt;/p&gt;
+/* and light for background, for the same reason */
+.ansibgblack {
+  background-color: black;
+}
+.ansibgred {
+  background-color: red;
+}
+.ansibggreen {
+  background-color: green;
+}
+.ansibgyellow {
+  background-color: yellow;
+}
+.ansibgblue {
+  background-color: blue;
+}
+.ansibgpurple {
+  background-color: magenta;
+}
+.ansibgcyan {
+  background-color: cyan;
+}
+.ansibggray {
+  background-color: gray;
+}
+div.cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  width: 100%;
+  padding: 5px;
+  /* This acts as a spacer between cells, that is outside the border */
+  margin: 0px;
+  outline: none;
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
+}
+div.cell.jupyter-soft-selected {
+  border-left-color: #E3F2FD;
+  border-left-width: 1px;
+  padding-left: 5px;
+  border-right-color: #E3F2FD;
+  border-right-width: 1px;
+  background: #E3F2FD;
+}
+@media print {
+  div.cell.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
+  border-color: #ababab;
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
+}
+@media print {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+.edit_mode div.cell.selected {
+  border-color: #66BB6A;
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
+}
+@media print {
+  .edit_mode div.cell.selected {
+    border-color: transparent;
+  }
+}
+.prompt {
+  /* This needs to be wide enough for 3 digit prompt numbers: In[100]: */
+  min-width: 14ex;
+  /* This padding is tuned to match the padding on the CodeMirror editor. */
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace;
+  text-align: right;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+  /* Don't highlight prompt number selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Use default cursor */
+  cursor: default;
+}
+@media (max-width: 540px) {
+  .prompt {
+    text-align: left;
+  }
+}
+div.inner_cell {
+  min-width: 0;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_area {
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+  background: #f7f7f7;
+  line-height: 1.21429em;
+}
+/* This is needed so that empty prompt areas can collapse to zero height when there
+   is no content in the output_subarea and the prompt. The main purpose of this is
+   to make sure that empty JavaScript output_subareas have no height. */
+div.prompt:empty {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+div.unrecognized_cell {
+  padding: 5px 5px 5px 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.unrecognized_cell .inner_cell {
+  border-radius: 2px;
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+  border: 1px solid #cfcfcf;
+  background: #eaeaea;
+}
+div.unrecognized_cell .inner_cell a {
+  color: inherit;
+  text-decoration: none;
+}
+div.unrecognized_cell .inner_cell a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+@media (max-width: 540px) {
+  div.unrecognized_cell &gt; div.prompt {
+    display: none;
+  }
+}
+div.code_cell {
+  /* avoid page breaking on code cells when printing */
+}
+@media print {
+  div.code_cell {
+    page-break-inside: avoid;
+  }
+}
+/* any special styling for code cells that are currently running goes here */
+div.input {
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.input {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_prompt {
+  color: #303F9F;
+  border-top: 1px solid transparent;
+}
+div.input_area &gt; div.highlight {
+  margin: 0.4em;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+div.input_area &gt; div.highlight &gt; pre {
+  margin: 0px;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+/* The following gets added to the &lt;head&gt; if it is detected that the user has a
+ * monospace font with inconsistent normal/bold/italic height.  See
+ * notebookmain.js.  Such fonts will have keywords vertically offset with
+ * respect to the rest of the text.  The user should select a better font.
+ * See: https://github.com/ipython/ipython/issues/1503
+ *
+ * .CodeMirror span {
+ *      vertical-align: bottom;
+ * }
+ */
+.CodeMirror {
+  line-height: 1.21429em;
+  /* Changed from 1em to our global default */
+  font-size: 14px;
+  height: auto;
+  /* Changed to auto to autogrow */
+  background: none;
+  /* Changed from white to allow our bg to show through */
+}
+.CodeMirror-scroll {
+  /*  The CodeMirror docs are a bit fuzzy on if overflow-y should be hidden or visible.*/
+  /*  We have found that if it is visible, vertical scrollbars appear with font size changes.*/
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.CodeMirror-lines {
+  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
+  /* we have set a different line-height and want this to scale with that. */
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
+}
+.CodeMirror-linenumber {
+  padding: 0 8px 0 4px;
+}
+.CodeMirror-gutters {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+.CodeMirror pre {
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
+  border: 0;
+  border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
+}
+/*
+
+Original style from softwaremaniacs.org (c) Ivan Sagalaev &lt;Maniac@SoftwareManiacs.Org&gt;
+Adapted from GitHub theme
+
+*/
+.highlight-base {
+  color: #000;
+}
+.highlight-variable {
+  color: #000;
+}
+.highlight-variable-2 {
+  color: #1a1a1a;
+}
+.highlight-variable-3 {
+  color: #333333;
+}
+.highlight-string {
+  color: #BA2121;
+}
+.highlight-comment {
+  color: #408080;
+  font-style: italic;
+}
+.highlight-number {
+  color: #080;
+}
+.highlight-atom {
+  color: #88F;
+}
+.highlight-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.highlight-builtin {
+  color: #008000;
+}
+.highlight-error {
+  color: #f00;
+}
+.highlight-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.highlight-meta {
+  color: #AA22FF;
+}
+/* previously not defined, copying from default codemirror */
+.highlight-def {
+  color: #00f;
+}
+.highlight-string-2 {
+  color: #f50;
+}
+.highlight-qualifier {
+  color: #555;
+}
+.highlight-bracket {
+  color: #997;
+}
+.highlight-tag {
+  color: #170;
+}
+.highlight-attribute {
+  color: #00c;
+}
+.highlight-header {
+  color: blue;
+}
+.highlight-quote {
+  color: #090;
+}
+.highlight-link {
+  color: #00c;
+}
+/* apply the same style to codemirror */
+.cm-s-ipython span.cm-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-atom {
+  color: #88F;
+}
+.cm-s-ipython span.cm-number {
+  color: #080;
+}
+.cm-s-ipython span.cm-def {
+  color: #00f;
+}
+.cm-s-ipython span.cm-variable {
+  color: #000;
+}
+.cm-s-ipython span.cm-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-variable-2 {
+  color: #1a1a1a;
+}
+.cm-s-ipython span.cm-variable-3 {
+  color: #333333;
+}
+.cm-s-ipython span.cm-comment {
+  color: #408080;
+  font-style: italic;
+}
+.cm-s-ipython span.cm-string {
+  color: #BA2121;
+}
+.cm-s-ipython span.cm-string-2 {
+  color: #f50;
+}
+.cm-s-ipython span.cm-meta {
+  color: #AA22FF;
+}
+.cm-s-ipython span.cm-qualifier {
+  color: #555;
+}
+.cm-s-ipython span.cm-builtin {
+  color: #008000;
+}
+.cm-s-ipython span.cm-bracket {
+  color: #997;
+}
+.cm-s-ipython span.cm-tag {
+  color: #170;
+}
+.cm-s-ipython span.cm-attribute {
+  color: #00c;
+}
+.cm-s-ipython span.cm-header {
+  color: blue;
+}
+.cm-s-ipython span.cm-quote {
+  color: #090;
+}
+.cm-s-ipython span.cm-link {
+  color: #00c;
+}
+.cm-s-ipython span.cm-error {
+  color: #f00;
+}
+.cm-s-ipython span.cm-tab {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+div.output_wrapper {
+  /* this position must be relative to enable descendents to be absolute within it */
+  position: relative;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1;
+}
+/* class for the output area when it should be height-limited */
+div.output_scroll {
+  /* ideally, this would be max-height, but FF barfs all over that */
+  height: 24em;
+  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  width: 100%;
+  overflow: auto;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  display: block;
+}
+/* output div while it is collapsed */
+div.output_collapsed {
+  margin: 0px;
+  padding: 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+div.out_prompt_overlay {
+  height: 100%;
+  padding: 0px 0.4em;
+  position: absolute;
+  border-radius: 2px;
+}
+div.out_prompt_overlay:hover {
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
+  -webkit-box-shadow: inset 0 0 1px #000;
+  box-shadow: inset 0 0 1px #000;
+  background: rgba(240, 240, 240, 0.5);
+}
+div.output_prompt {
+  color: #D84315;
+}
+/* This class is the outer container of all output sections. */
+div.output_area {
+  padding: 0px;
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.output_area .MathJax_Display {
+  text-align: left !important;
+}
+div.output_area 
+div.output_area 
+div.output_area img,
+div.output_area svg {
+  max-width: 100%;
+  height: auto;
+}
+div.output_area img.unconfined,
+div.output_area svg.unconfined {
+  max-width: none;
+}
+div.output_area .mglyph &gt; img {
+  max-width: none;
+}
+/* This is needed to protect the pre formating from global settings such
+   as that of bootstrap */
+.output {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.output_area {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+div.output_area pre {
+  margin: 0;
+  padding: 1px 0 1px 0;
+  border: 0;
+  vertical-align: baseline;
+  color: black;
+  background-color: transparent;
+  border-radius: 0;
+}
+/* This class is for the output subarea inside the output_area and after
+   the prompt div. */
+div.output_subarea {
+  overflow-x: auto;
+  padding: 0.4em;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+  max-width: calc(100% - 14ex);
+}
+div.output_scroll div.output_subarea {
+  overflow-x: visible;
+}
+/* The rest of the output_* classes are for special styling of the different
+   output types */
+/* all text output has this class: */
+div.output_text {
+  text-align: left;
+  color: #000;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+}
+/* stdout/stderr are 'text' as well as 'stream', but execute_result/error are *not* streams */
+div.output_stderr {
+  background: #fdd;
+  /* very light red background for stderr */
+}
+div.output_latex {
+  text-align: left;
+}
+/* Empty output_javascript divs should have no height */
+div.output_javascript:empty {
+  padding: 0;
+}
+.js-error {
+  color: darkred;
+}
+/* raw_input styles */
+div.raw_input_container {
+  line-height: 1.21429em;
+  padding-top: 5px;
+}
+pre.raw_input_prompt {
+  /* nothing needed here. */
+}
+input.raw_input {
+  font-family: monospace;
+  font-size: inherit;
+  color: inherit;
+  width: auto;
+  /* make sure input baseline aligns with prompt */
+  vertical-align: baseline;
+  /* padding + margin = 0.5em between prompt and cursor */
+  padding: 0em 0.25em;
+  margin: 0em 0.25em;
+}
+input.raw_input:focus {
+  box-shadow: none;
+}
+p.p-space {
+  margin-bottom: 10px;
+}
+div.output_unrecognized {
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+}
+div.output_unrecognized a {
+  color: inherit;
+  text-decoration: none;
+}
+div.output_unrecognized a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.rendered_html {
+  color: #000;
+  /* any extras will just be numbers: */
+}
+
+
+
+.rendered_html :link {
+  text-decoration: underline;
+}
+.rendered_html :visited {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+.rendered_html h1:first-child {
+  margin-top: 0.538em;
+}
+.rendered_html h2:first-child {
+  margin-top: 0.636em;
+}
+.rendered_html h3:first-child {
+  margin-top: 0.777em;
+}
+.rendered_html h4:first-child {
+  margin-top: 1em;
+}
+.rendered_html h5:first-child {
+  margin-top: 1em;
+}
+.rendered_html h6:first-child {
+  margin-top: 1em;
+}
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
+
+
+
+
+
+
+
+
+.rendered_html * + ul {
+  margin-top: 1em;
+}
+.rendered_html * + ol {
+  margin-top: 1em;
+}
+
+
+
+
+
+.rendered_html pre,
+
+
+
+
+.rendered_html tr,
+.rendered_html th,
+
+
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+.rendered_html * + table {
+  margin-top: 1em;
+}
+
+.rendered_html * + p {
+  margin-top: 1em;
+}
+
+.rendered_html * + img {
+  margin-top: 1em;
+}
+.rendered_html img,
+
+.rendered_html img.unconfined,
+
+
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] 
+div.text_cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.text_cell &gt; div.prompt {
+    display: none;
+  }
+}
+div.text_cell_render {
+  /*font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;*/
+  outline: none;
+  resize: none;
+  width: inherit;
+  border-style: none;
+  padding: 0.5em 0.5em 0.5em 0.4em;
+  color: #000;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+a.anchor-link:link {
+  text-decoration: none;
+  padding: 0px 20px;
+  visibility: hidden;
+}
+h1:hover .anchor-link,
+h2:hover .anchor-link,
+h3:hover .anchor-link,
+h4:hover .anchor-link,
+h5:hover .anchor-link,
+h6:hover .anchor-link {
+  visibility: visible;
+}
+.text_cell.rendered .input_area {
+  display: none;
+}
+.text_cell.rendered 
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered 
+.text_cell.unrendered .text_cell_render {
+  display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
+}
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cm-header-1 {
+  font-size: 185.7%;
+}
+.cm-header-2 {
+  font-size: 157.1%;
+}
+.cm-header-3 {
+  font-size: 128.6%;
+}
+.cm-header-4 {
+  font-size: 110%;
+}
+.cm-header-5 {
+  font-size: 100%;
+  font-style: italic;
+}
+.cm-header-6 {
+  font-size: 100%;
+  font-style: italic;
+}
+&lt;/style&gt;
+&lt;style type="text/css"&gt;.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Recently I've been working with some of my students on a paper for the &lt;a href="https://scipy2018.scipy.org/"&gt;SciPy Conference&lt;/a&gt; related to our OrNet project. Part of this involved designing our own &lt;a href="https://en.wikipedia.org/wiki/Mixture_model#Gaussian_mixture_model"&gt;Gaussian Mixture Model&lt;/a&gt; (GMM). In doing so, I somewhat accidentally-on-purpose stumbled upon the beauty of &lt;code&gt;einsum&lt;/code&gt;. So I wanted to briefly motivate its use (expanding upon the &lt;a href="https://medium.com/the-quarks/an-einsum-use-case-8dafcb933c66"&gt;short use-case I wrote on my research group's blog&lt;/a&gt;) and show the performance results of re-implementing iterative computations using &lt;code&gt;einsum&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="Gaussian-Madness"&gt;Gaussian Madness&lt;a class="anchor-link" href="#Gaussian-Madness"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;One of the critical steps of this algorithm is to evaluate the probability of any given point $\vec{x}$ under the model that we've learned so far (the current values of $\vec{\mu}$ and $\Sigma$. In higher dimensions (as in, higher than 1), this has a pretty tricky formula:&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+$$
+P(\vec{x} | \vec{\mu}, \Sigma) = \frac{\exp{(-\frac{1}{2}(\vec{x} - \vec{\mu})^T \Sigma^{-1} (\vec{x} - \vec{\mu}) )}} {\sqrt{(2 \pi)^2 \det{(\Sigma)} }}
+$$
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;It's...messy. The things that make it particularly tough to efficiently evaluate include:&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;ul&gt;
+&lt;li&gt;the matrix multiplication in the numerator&lt;/li&gt;
+&lt;li&gt;the inversion of $\Sigma$ in the numerator&lt;/li&gt;
+&lt;li&gt;the determinant of $\Sigma$ in the denominator&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;the fact that this has to be computed for &lt;em&gt;every&lt;/em&gt; $\vec{x}$ (thousands), under &lt;em&gt;every&lt;/em&gt; combination of $\mu$ and $\Sigma$ (often a few dozen), at &lt;em&gt;every&lt;/em&gt; iteration of the algorithm (often a few dozen)&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;But wait! That's not all!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Also critical to the GMM are the &lt;em&gt;update&lt;/em&gt; steps: re-estimating the current values of the parameters so they (hopefully) better fit your data. This happens &lt;em&gt;a lot&lt;/em&gt;!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;In multidimensional wonderlands, the updates of the parameters look something like this:&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+$$
+\vec{\mu}_{ki} = \frac{1}{N_k} \sum_{n = 1}^N r_{kn} \vec{x}_n
+$$
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+$$
+\Sigma_{ki} = \frac{1}{N_k} \sum_{n = 1}^N r_{kn} (\vec{x}_n - \vec{\mu}_{ki})(\vec{x}_n - \vec{\mu}_{ki})^T
+$$
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;The first equation for $\vec{\mu}_{ki}$--the $k^{th}$ component (one of the 50-100) at the $i^{th}$ iteration (often at least a few dozen)--is a "fairly" easy multiplication of each data point $\vec{x}_n$ by some number $r_{kn}$, all summed up and scaled by $\frac{1}{N_k}$.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;The second equation is a lot harder.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;For every $\vec{\mu}_{ki}$ we have a corresponding $\Sigma_{ki}$. Which, remember, is a full matrix. This involves taking the $\vec{\mu}_{ki}$ we computed in the first equation, and computing outer products with every data point $\vec{x}_n$.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;"Outer product" is a fancy name for "matrix multiplication"!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="Bring-on-the-Code"&gt;Bring on the Code&lt;a class="anchor-link" href="#Bring-on-the-Code"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [1]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;scipy.linalg&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;sla&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;So of course, I initially implemented these two core operations in the way that made the most sense: using &lt;code&gt;numpy&lt;/code&gt; functions and Python comprehensions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;strong&gt;For computing $P(\vec{x})$&lt;/strong&gt;:&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [2]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;px1&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;mu&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sigma&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;det&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sla&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;det&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sigma&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;inv&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sla&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;inv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sigma&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;mu&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;inv&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;mu&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+    &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="p"&gt;((((&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pi&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;det&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt; &lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;px&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;0.5&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;px&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;And &lt;strong&gt;for re-computing $\mu$ and $\Sigma$&lt;/strong&gt;:&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [3]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;musig1&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;N&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="n"&gt;mu_next&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;[:,&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;newaxis&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;axis&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;N&lt;/span&gt;
+    
+    &lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;zeros&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;shape&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;shape&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;shape&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]))&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ri&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;zip&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;mu_next&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;outer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;ri&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;sigma_next&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;N&lt;/span&gt;
+
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;mu_next&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sigma_next&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;These were computational &lt;em&gt;bears&lt;/em&gt;. In &lt;code&gt;px1&lt;/code&gt;, the line starting &lt;code&gt;p = ...&lt;/code&gt; is a &lt;em&gt;huge&lt;/em&gt; computational cost: doing two dot products inside a loop over all the data points $\vec{x}_n$ is really, really expensive.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;And in &lt;code&gt;musig1&lt;/code&gt;, the operation to compute the next value of $\Sigma$ involves computing the outer product of every $\vec{x}_n$ subtracted by the current value of $\vec{\mu}$.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Suffice to say, when it came time to actually run the algorithm, it shouldn't come as a surprise that, with a dataset of roughly 130,000 points in 2 dimensions, each iteration of our algorithm took about &lt;strong&gt;52 seconds&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;...the &lt;em&gt;vast majority&lt;/em&gt; of which was spent computing dot products!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;img alt="before" src="/images/einsum/before.png"/&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;More than half of a single iteration was devoted to dot products in the &lt;code&gt;px1&lt;/code&gt; function above. That's &lt;em&gt;bad&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Just for grins, let's time everything:&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [4]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;size&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;130000&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;  &lt;span class="c1"&gt;# To simulate the data I was working with.&lt;/span&gt;
+&lt;span class="n"&gt;mu&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;axis&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# Compute an actual mean.&lt;/span&gt;
+&lt;span class="n"&gt;sigma&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([[&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;]])&lt;/span&gt;
+&lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;130000&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [5]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;timeit&lt;/span&gt; px1(X, mu, sigma)
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;301 ms ± 6.99 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [6]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;timeit&lt;/span&gt; musig1(X, r)
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;847 ms ± 5.47 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;That's a full second of computation just for 1 of the Gaussian components (i.e., one pair of $\mu$ and $\Sigma$). Crank that number of components up to 50 and, well, there's your ~50-second runtime.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;I was admittedly at a bit of a loss here, considering I was already using NumPy constructs. But at the same time, these were highly structured linear algebra operations; there had to be something more efficient?&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="einsum-to-the-Rescue"&gt;&lt;code&gt;einsum&lt;/code&gt; to the Rescue&lt;a class="anchor-link" href="#einsum-to-the-Rescue"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;DISCLAIMER: I should highlight that I &lt;em&gt;didn't immediately land on this&lt;/em&gt;. It took some Googling around and some sitting and thinking before I figured out how this could be used. Then it took some more trial-and-error to actually get it to work.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;But work, it did. Holy crap.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;code&gt;np.einsum&lt;/code&gt; is an implementation of the &lt;a href="http://mathworld.wolfram.com/EinsteinSummation.html"&gt;Einstein Summation&lt;/a&gt;, which is a super-fancy term for a cool (but admittedly tricky-to-grasp) shorthand notation for dealing with multiplications and summations of vectors, matrices, and tensors.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;I won't rehash the basic examples I've found across the web that helped me understand how this works, but I will give special emphasis to two articles:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://obilaniu6266h16.wordpress.com/2016/02/04/einstein-summation-in-numpy/"&gt;Einstein Summation in NumPy&lt;/a&gt;, and&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://ajcr.net/Basic-guide-to-einsum/"&gt;A basic introduction to NumPy's einsum&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I found #2 particularly accessible, but I'd recommend both.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;It took some doing, but I managed to rewrite both equations using &lt;code&gt;einsum&lt;/code&gt;s:&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [7]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;px2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;mu&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sigma&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;det&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sla&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;det&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sigma&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;inv&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sla&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;inv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sigma&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="c1"&gt;###&lt;/span&gt;
+    &lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;einsum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'ni,ji,ni-&amp;gt;n'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;mu&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;inv&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;mu&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="c1"&gt;###&lt;/span&gt;
+
+    &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="p"&gt;((((&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pi&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;det&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt; &lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;px&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;0.5&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;px&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [8]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;musig2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;N&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="n"&gt;mu_next&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;[:,&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;newaxis&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;axis&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;N&lt;/span&gt;
+
+    &lt;span class="c1"&gt;###&lt;/span&gt;
+    &lt;span class="n"&gt;sigma_next&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;einsum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"ni,nj-&amp;gt;ij"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;mu_next&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;[:,&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;newaxis&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;mu_next&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;N&lt;/span&gt;
+    &lt;span class="c1"&gt;###&lt;/span&gt;
+
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;mu_next&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sigma_next&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;The &lt;code&gt;musig2&lt;/code&gt; use actually ended up being a straightforward application of the "each row of $A$ multiplied by $B$" rule at the end of the #2 link above, with the slight wrinkle of making the &lt;em&gt;first&lt;/em&gt; axis, &lt;code&gt;n&lt;/code&gt;, the one that is summed over in the result.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;The one in &lt;code&gt;px2&lt;/code&gt; was a lot harder, and for a time I wasn't convinced it could be done. At one point I was able to basically split the operation in two &lt;code&gt;einsums&lt;/code&gt; that were more or less identical to the one in &lt;code&gt;musig2&lt;/code&gt;; it basically involved a repeated application of "multiply each row of $A$ by $B$". But I kept hunting around the web, particularly for examples of multiplying many matrices together, and eventually managed to figure this one out.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;It boiled down to basics of how &lt;code&gt;einsum&lt;/code&gt; works: I knew the output had to be a list of numbers &lt;code&gt;n&lt;/code&gt; long, and that the first and third inputs were identical (&lt;code&gt;ni&lt;/code&gt;). The key was: if everything had 2 axes going in, but only 1 axis was coming out, then all three inputs needed to share one axis that could be summed over.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="With-great-power-blah-blah-blah"&gt;With great power blah blah blah&lt;a class="anchor-link" href="#With-great-power-blah-blah-blah"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Just for fun, let's run our examples again:&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [9]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;timeit&lt;/span&gt; px2(X, mu, sigma)
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;6.82 ms ± 32.7 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [10]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;timeit&lt;/span&gt; musig2(X, r)
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;7.37 ms ± 260 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;To sum up:&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;ul&gt;
+&lt;li&gt;Going from a list comprehension of calls to &lt;code&gt;numpy.dot&lt;/code&gt; to a single &lt;code&gt;einsum&lt;/code&gt; decreased runtime of a single iteration from &lt;strong&gt;300ms&lt;/strong&gt; to &lt;strong&gt;7ms&lt;/strong&gt;, a speed-up of over 40x.&lt;/li&gt;
+&lt;li&gt;Going from a loop of &lt;code&gt;numpy.outer&lt;/code&gt; products to a single &lt;code&gt;einsum&lt;/code&gt; decreased runtime of a single iteration from &lt;strong&gt;847ms&lt;/strong&gt; to &lt;strong&gt;7.5ms&lt;/strong&gt;, a speed-up of over 110x.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;I re-ran &lt;code&gt;cProfile&lt;/code&gt; to see what my performance gains were, and holy &lt;em&gt;crap&lt;/em&gt; Batman.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;img alt="after" src="/images/einsum/after.png"/&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Not only was my total runtime down from ~52 seconds per iteration to a mere &lt;strong&gt;1.5 seconds per iteration&lt;/strong&gt;, but the most time-consuming block of my code was now &lt;code&gt;einsum&lt;/code&gt; itself!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Of course, I wasn't going to argue with a full &lt;em&gt;order of magnitude&lt;/em&gt; reduction in runtime.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Our SciPy paper is still under review, so feel free to &lt;a href="https://github.com/scipy-conference/scipy_proceedings/pull/396"&gt;head over there and check out&lt;/a&gt; how we're putting GMMs to use for bioimaging!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['$','$'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        " linebreaks: { automatic: true, width: '95% container' }, " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="professional"></category><category term="einsum"></category><category term="python"></category><category term="gmm"></category><category term="gaussian mixture model"></category><category term="einstein summation"></category></entry><entry><title>So, you want to conduct research with me?</title><link href="https://magsol.github.io/blog/2017/03/16/so-you-want-to-conduct-research-with-me/" rel="alternate"></link><published>2017-03-16T15:59:21-04:00</published><updated>2017-03-16T15:59:21-04:00</updated><author><name>Shannon Quinn</name></author><id>tag:magsol.github.io,2017-03-16:/blog/2017/03/16/so-you-want-to-conduct-research-with-me/</id><summary type="html">&lt;p&gt;&lt;center&gt;&lt;img src="/images/joker_play_a_game.jpg"&gt;&lt;/center&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Deviation #1&lt;/em&gt;: This is wholly separate from the &lt;a href="http://shouldigetaphd.com/"&gt;"should I get a Ph.D."&lt;/a&gt; question. For that I would recommend one of numerous guides that ask all the right questions.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Deviation #2&lt;/em&gt;: This is also wholly separate from how to &lt;em&gt;succeed&lt;/em&gt; in a Ph.D. program, though there is some …&lt;/p&gt;</summary><category term="phd"></category><category term="graduate school"></category><category term="research"></category><category term="mentoring"></category><category term="computer science"></category><category term="graduate student"></category></entry><entry><title>Open Science in Big Data (OSBD) Workshop</title><link href="https://magsol.github.io/blog/2016/09/26/osbd2016-workshop/" rel="alternate"></link><published>2016-09-26T09:10:19-04:00</published><updated>2016-09-26T09:10:19-04:00</updated><author><name>Shannon Quinn</name></author><id>tag:magsol.github.io,2016-09-26:blog/2016/09/26/osbd2016-workshop/</id><summary type="html">&lt;p&gt;&lt;img src="/images/washingtondc.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Deviation #2&lt;/em&gt;: This is also wholly separate from how to &lt;em&gt;succeed&lt;/em&gt; in a Ph.D. program, though there is some …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;center&gt;&lt;img src="/images/joker_play_a_game.jpg"&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Deviation #1&lt;/em&gt;: This is wholly separate from the &lt;a href="http://shouldigetaphd.com/"&gt;"should I get a Ph.D."&lt;/a&gt; question. For that I would recommend one of numerous guides that ask all the right questions.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Deviation #2&lt;/em&gt;: This is also wholly separate from how to &lt;em&gt;succeed&lt;/em&gt; in a Ph.D. program, though there is some overlap. In general, there are some key items to consider and habits to build as you work your way through a Ph.D., and for those questions I highly recommend &lt;a href="http://karpathy.github.io/2016/09/07/phd/"&gt;Andrej Karpathy's excellent survival guide to a Ph.D.&lt;/a&gt;, some of which may be mirrored here.&lt;/p&gt;
+&lt;p&gt;No, the specific question I'm addressing here is &lt;strong&gt;how to succeed in graduate research as one of my students.&lt;/strong&gt; In order of somewhat-importance:&lt;/p&gt;
+&lt;h3&gt;1: Familiarize yourself with my research interests.&lt;/h3&gt;
+&lt;p&gt;This may seem like a no-brainer, but you'd be surprised how many emails I get from individuals expressing profound interest in working with me, only to see they have &lt;strong&gt;i)&lt;/strong&gt; no experience whatsoever in any of my interests (which isn't necessarily a deal-breaker!), and &lt;strong&gt;ii)&lt;/strong&gt; don't appear to know what I work on (which &lt;em&gt;is&lt;/em&gt; a deal-breaker). If you work with me, you're going to do something at the intersection of bioimaging + distributed computing + biosurveillance; something that involves computer vision and machine learning in a public health setting.&lt;/p&gt;
+&lt;p&gt;Check out my &lt;a href="http://scholar.google.com/citations?user=4EjRiycAAAAJ"&gt;Google Scholar&lt;/a&gt; record, my group's &lt;a href="https://github.com/quinngroup"&gt;GitHub repositories&lt;/a&gt;, and my &lt;a href="https://quinngroup.github.io/"&gt;lab website&lt;/a&gt; to get at least a basic idea of the sort of work I do, and to jog your thinking along the lines of what you might be able to contribute.&lt;/p&gt;
+&lt;h3&gt;2: Take into consideration the following expectations.&lt;/h3&gt;
+&lt;p&gt;Work hard, play hard, and be able to talk about both:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I expect my students to develop into excellent scientific communicators. In practice, this means I want you to be able to talk about your work to experts in the same field, experts in different fields, and even non-scientists. I want you to get comfortable giving talks and writing papers. If English isn't your first language, that's ok! Just be aware this expectation may take more time than you think.&lt;/li&gt;
+&lt;li&gt;I expect my students to participate in &lt;a href="https://en.wikipedia.org/wiki/Open_science"&gt;Open Science&lt;/a&gt;. In practice, this means I want you to publish all the code you write in &lt;a href="https://github.com/quinngroup"&gt;public repositories&lt;/a&gt;, mirror all your papers on &lt;a href="https://arxiv.org/"&gt;arXiv&lt;/a&gt;, participate in and contribute to open source projects, and maybe even contribute to a blog. Research is only interesting when you can pick through the code, explore the data, and regenerate the results. Know or learn how to use &lt;a href="http://jupyter.org/"&gt;scientific notebooks&lt;/a&gt;, &lt;a href="https://git-scm.com/"&gt;version control&lt;/a&gt;, wikis, and even &lt;a href="https://www.docker.com/"&gt;containers&lt;/a&gt;!&lt;/li&gt;
+&lt;li&gt;I expect my students to demonstrate a &lt;a href="https://twitter.com/sama/status/792823320441786368"&gt;promising slope of accomplishment&lt;/a&gt;. Put simply, &lt;a href="https://josh.works/blog/2015/6/25/a-little-bit-of-slope-makes-up-for-a-lot-of-y-intercept"&gt;I recruit for potential (slope), not experience (y-intercept)&lt;/a&gt;. You don't have to know everything about machine learning, statistics, and linear algebra, &lt;em&gt;and&lt;/em&gt; be an expert programming in Python just to be able to work with me. However, I do expect that you will be able to pick up these skills very quickly.&lt;/li&gt;
+&lt;li&gt;I expect my students to take ownership of their projects, pushing the envelope of what is known and beyond what even I would suggest.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Speaking of which...&lt;/p&gt;
+&lt;h3&gt;3: Prepare yourself to be a self-sufficient researcher.&lt;/h3&gt;
+&lt;p&gt;This &lt;strong&gt;does NOT mean&lt;/strong&gt; I expect you to do everything! The whole point of being a student is that you have a mentor, a supervisor who is (in theory) more experienced than you, from whom you can learn. It is indeed my job to guide you and teach you what I know, and I will most certainly do that.&lt;/p&gt;
+&lt;p&gt;This &lt;strong&gt;DOES mean&lt;/strong&gt; that, by the end of your time here, I want you to be the expert on your project! You should take the project and run with it, rather than wait for me to tell you what to do next. Build your intuition about the problem through "moving fast and breaking things," to use the tech startup parlance. Ask forgiveness rather than permission. Insert witticism here that basically says KEEP TRYING THINGS.&lt;/p&gt;
+&lt;p&gt;Even as you start your project, you may come across roadblocks that I don't have an answer for. That's how research works: we're pushing the limits of our collective knowledge! I may have some intuition from previous problems, and I'll certainly share that, but asking me "What do I do next?" is going to frustrate both of us very, very quickly.&lt;/p&gt;
+&lt;p&gt;Here's another example: &lt;a href="http://simplystatistics.org/2017/03/16/evo-ds-class/"&gt;the levels of data science classes&lt;/a&gt;. You don't have to be anywhere above Level 2 when you arrive (maybe you're still working your way through Level 1!), but I expect you to work &lt;strong&gt;through Level 7 by the time you leave.&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;If you've made it this far, and are still interested...&lt;/h3&gt;
+&lt;p&gt;...then I encourage you to reach out to me and express your interest! I have just a few final pieces of advice:&lt;/p&gt;
+&lt;p&gt;First, &lt;a href="https://twitter.com/DavidBindel/status/1054859324143616000"&gt;read this brief Twitter thread&lt;/a&gt; and &lt;a href="https://twitter.com/mickeykats/status/1074874785795112960"&gt;this brief Twitter thread as well&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Next, &lt;strong&gt;do NOT&lt;/strong&gt; send me&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;a form email with a 10-page summary of your accomplishments (as I said, I don't hire for y-intercept, I hire for slope)&lt;/li&gt;
+&lt;li&gt;an email with misspellings or grammatical errors (recall that I emphasize good scientific communication skills)&lt;/li&gt;
+&lt;li&gt;a message that starts with "Dear Ms Quinn" (first, I'm a doctor; second, I'm a guy)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I won't respond.&lt;/p&gt;
+&lt;p&gt;Finally, &lt;a href="https://magsol.github.io/pages/contact.html"&gt;write an email&lt;/a&gt; that's 3-5 sentences at most, &lt;strong&gt;with a specific mention of the work you find interesting and want to pursue further&lt;/strong&gt;. For extra credit, mention some kind of improvement or extension to the work that you came up with on your own. This tells me a lot of things all at once, most important of which is that you're serious about wanting to work with me.&lt;/p&gt;
+&lt;p&gt;Because if you can handle graduate school...&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;img src="/images/grad-school.jpg"&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;...I really do believe you can handle anything.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="professional"></category><category term="phd"></category><category term="graduate school"></category><category term="research"></category><category term="mentoring"></category><category term="computer science"></category><category term="graduate student"></category></entry><entry><title>Open Science in Big Data (OSBD) Workshop</title><link href="https://magsol.github.io/blog/2016/09/26/osbd2016-workshop/" rel="alternate"></link><published>2016-09-26T09:10:19-04:00</published><updated>2016-09-26T09:10:19-04:00</updated><author><name>Shannon Quinn</name></author><id>tag:magsol.github.io,2016-09-26:/blog/2016/09/26/osbd2016-workshop/</id><summary type="html">&lt;p&gt;&lt;img src="/images/washingtondc.png"&gt;&lt;/p&gt;
 &lt;p&gt;Back in May of this year, some of the other computer science professors and I put together a proposal for a workshop. The workshop would be in conjunction with the December 2016 &lt;a href="http://cci.drexel.edu/bigdata/bigdata2016/"&gt;IEEE BigData Conference&lt;/a&gt;, and would focus specifically on the intersection of big data and open science.&lt;/p&gt;
-&lt;p&gt;In June …&lt;/p&gt;</summary><category term="workshop"></category><category term="big data"></category><category term="ieee"></category><category term="open science"></category></entry><entry><title>Reviewing a reviewed grant's reviews</title><link href="https://magsol.github.io/blog/2016/02/02/reviewing-a-reviewed-grants-reviews/" rel="alternate"></link><published>2016-02-02T10:18:34-05:00</published><updated>2016-02-02T10:18:34-05:00</updated><author><name>Shannon Quinn</name></author><id>tag:magsol.github.io,2016-02-02:blog/2016/02/02/reviewing-a-reviewed-grants-reviews/</id><summary type="html">&lt;p&gt;Rejection in any context sucks. As a new faculty trying to prove himself (to himself, but most importantly, to his tenure committee), I particularly hate rejections in the context of grant proposals and paper submissions. The "nice" thing about the latter rejection is that it's marginally easier to resubmit a …&lt;/p&gt;</summary><category term="academia"></category><category term="grants"></category><category term="reviewer feedback"></category><category term="rejection"></category></entry></feed>
+&lt;p&gt;In June …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img src="/images/washingtondc.png"&gt;&lt;/p&gt;
+&lt;p&gt;Back in May of this year, some of the other computer science professors and I put together a proposal for a workshop. The workshop would be in conjunction with the December 2016 &lt;a href="http://cci.drexel.edu/bigdata/bigdata2016/"&gt;IEEE BigData Conference&lt;/a&gt;, and would focus specifically on the intersection of big data and open science.&lt;/p&gt;
+&lt;p&gt;In June, we got the good news: it was accepted!&lt;/p&gt;
+&lt;h3&gt;&lt;em&gt;What is "Open Science"?&lt;/em&gt;&lt;/h3&gt;
+&lt;p&gt;I've been interested in &lt;a href="https://en.wikipedia.org/wiki/Open_science"&gt;open science&lt;/a&gt; since I started graduate school. I'd been using Apache projects since college, learning how to set up and configure my own LAMP stack (yes, I'll admit I dabbled in PHP for a few years, but I'm clean now!), but had never really contributed to an open source project until the 2010 Google Summer of Code. During that time, I worked on adding spectral clustering the &lt;a href="http://mahout.apache.org"&gt;Apache Mahout&lt;/a&gt; library.&lt;/p&gt;
+&lt;p&gt;While open source is great and wonderful, this is just one component of Open Science. It's another reason I'm incredibly excited about the "container revolution": Docker and its ilk. This concept makes entire pipelines perfectly reproducible, to the point where it's now possible for entire scientific projects to be replicated with a single command: from running the analysis, to building the figures, to assembling the final PDF file (which, by the way, can be uploaded to &lt;a href="http://arxiv.org"&gt;arXiv&lt;/a&gt; for everyone to read!)&lt;/p&gt;
+&lt;p&gt;These other aspects--open sourcing data, reproducibility scripts, and entire pipelines--are veritable educational and research gold mines, but are arguably much more difficult than simply dumping some code on GitHub. &lt;strong&gt;These difficulties are only exacerbated in the realm of "big data".&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;em&gt;What are the goals of the workshop?&lt;/em&gt;&lt;/h3&gt;
+&lt;p&gt;The goals of the workshop are threefold.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;First&lt;/strong&gt;: we aim to &lt;em&gt;identify some of the biggest challenges&lt;/em&gt; in democratizing big data analytics. Open Science is a critical component of both educational pedagogy and scientific research. With the increasing relevance of big data analytics, making these tools and resources available to the next generation of scientists and big data practitioners is crucial. Unfortunately, this is also extremely challenging.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Second&lt;/strong&gt;: we aim to bring together big data practitioners from multiple backgrounds to &lt;em&gt;discuss and establish the current state of affairs&lt;/em&gt; with respect to reproducibility in big data analytics and machine learning. Priorities change and constraints differ between researchers and developers in academia versus industry versus government; nonetheless, open science and big data are important to practitioners in each of these areas.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Third&lt;/strong&gt;: we aim to &lt;em&gt;examine and propose possible routes forward&lt;/em&gt; to advance the continued integration of open science in big data analytics, putting tools, techniques, data, and documentation in the hands of researchers, students, and other big data practitioners. We will identify emerging trends in terms of open science best practices, and how these can be incorporated into current big data endeavors.&lt;/p&gt;
+&lt;h3&gt;&lt;em&gt;What kinds of proceedings is the workshop accepting?&lt;/em&gt;&lt;/h3&gt;
+&lt;p&gt;We hope to have two tracks: a full research paper session, and a student (short) paper session.&lt;/p&gt;
+&lt;p&gt;Papers submitted to the OSBD workshop should, at the very minimum, have a significant Open Science component. This can take several forms, including but not limited to any combination of the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Uses free and open source packages&lt;/li&gt;
+&lt;li&gt;Openly available online, e.g. GitHub&lt;/li&gt;
+&lt;li&gt;Scripts are available to reproduce figures&lt;/li&gt;
+&lt;li&gt;Data are openly available e.g. dat, datahub.io&lt;/li&gt;
+&lt;li&gt;etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We are welcoming of original research into big data analytics, so long as there is an open science component.&lt;/p&gt;
+&lt;p&gt;Furthermore, in the spirit of Open Science and reproducibility, we strongly encourage our presenters to incorporate live code demos, data walkthroughs, or some other hands-on activity into their talks.&lt;/p&gt;
+&lt;h3&gt;&lt;em&gt;When is the submission deadline?&lt;/em&gt;&lt;/h3&gt;
+&lt;p&gt;The deadline for workshop paper submissions is &lt;strong&gt;Sunday, October 25, 2016&lt;/strong&gt;. This provides a 2-week buffer zone between the notification deadline of the main IEEE BigData conference, in case you want to repackage your conference submission for the workshop.&lt;/p&gt;
+&lt;h3&gt;&lt;em&gt;Where can one find more information about OSBD?&lt;/em&gt;&lt;/h3&gt;
+&lt;p&gt;We have a website: &lt;strong&gt;&lt;a href="https://osbd.github.io/" target="_blank"&gt;https://osbd.github.io/&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The website contains information about the topics around the workshop, the invited speakers who will be attending (keynote and panelists), the important dates around the workshop, and the instructions for formatting and submitting your paper to the workshop.&lt;/p&gt;
+&lt;p&gt;We are very excited about this workshop, and encourage you to submit! We look forward to seeing you in December!&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/openscience.png"&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://cs.uga.edu/~squinn"&gt;Shannon Quinn&lt;/a&gt;, Co-chair&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://cs.uga.edu/~jam/"&gt;John Miller&lt;/a&gt;, Co-chair&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://cs.uga.edu/~suchi/"&gt;Suchi Bhandarkar&lt;/a&gt;, Co-chair&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://cs.uga.edu/~yihong/"&gt;Yi Hong&lt;/a&gt;, Co-chair&lt;/li&gt;
+&lt;/ul&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="professional"></category><category term="workshop"></category><category term="big data"></category><category term="ieee"></category><category term="open science"></category></entry><entry><title>Reviewing a reviewed grant's reviews</title><link href="https://magsol.github.io/blog/2016/02/02/reviewing-a-reviewed-grants-reviews/" rel="alternate"></link><published>2016-02-02T10:18:34-05:00</published><updated>2016-02-02T10:18:34-05:00</updated><author><name>Shannon Quinn</name></author><id>tag:magsol.github.io,2016-02-02:/blog/2016/02/02/reviewing-a-reviewed-grants-reviews/</id><summary type="html">&lt;p&gt;Rejection in any context sucks. As a new faculty trying to prove himself (to himself, but most importantly, to his tenure committee), I particularly hate rejections in the context of grant proposals and paper submissions. The "nice" thing about the latter rejection is that it's marginally easier to resubmit a …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Rejection in any context sucks. As a new faculty trying to prove himself (to himself, but most importantly, to his tenure committee), I particularly hate rejections in the context of grant proposals and paper submissions. The "nice" thing about the latter rejection is that it's marginally easier to resubmit a manuscript elsewhere; there are more journals and conferences than ever, especially in computer science.&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/write_grants.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;Last September, I submitted a proposal in line with &lt;a href="http://www.nsf.gov/pubs/2015/nsf15569/nsf15569.htm"&gt;NSF's 15-569 program solicitation&lt;/a&gt;: the Research Initiation Initiative in Computer and Information Science and Engineering.&lt;/p&gt;
+&lt;p&gt;Insert jokes involving "initiation initiative" imagery here (sorry, I don't have an avalanche of Advil).&lt;/p&gt;
+&lt;p&gt;Somewhat unsurprisingly but nonetheless disappointingly, I received notification today that the proposal was rejected. I say unsurprising because the proposal itself was incredibly rushed; we hit "submit" about two minutes before deadline. It was my first major grant proposal, so there were bound to be some mishaps.&lt;/p&gt;
+&lt;p&gt;So: let's get into the reviewer feedback!&lt;/p&gt;
+&lt;h2&gt;Reviewer 1&lt;/h2&gt;
+&lt;p&gt;This was the longest review (aside from the Panel Summary). The reviewer listed the Strengths and Weaknesses of the proposal (which I appreciate). For instance, one of the given strengths:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The proposed work seeks to address these limitations: the innovation of this work is the combination of traditional and nontraditional data sets in a tool for disease forecasting.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;And weaknesses:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The research plan is lacking detail, which significantly call into question the intellectual merit of the proposal. For example, very little detail is given regarding how the models in Task 1 and 2 will be tested. Eg, how will the team determine that the models are operating at a sufficient level of accuracy?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This point is particularly brutal:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;It's unclear how the proposed work will help him differentiate his work from work done previously with graduate advisors.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;That, more than anything else, is dangerous territory. The first weakness can be described as a consequence of rushed writing. The second is systemic and not trivial to assuage.&lt;/p&gt;
+&lt;p&gt;Overall, this reviewer gave the proposal a rating of "Fair."&lt;/p&gt;
+&lt;h2&gt;Reviewer 2&lt;/h2&gt;
+&lt;p&gt;The feedback here wasn't quite as structured as Reviewer 1, but still provided a reasonable level of detail.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Strengths are the concept of developing a [...] based on [...], and [...], both in terms of [...] and [...]. Another strength is the PI's experience with [...], and in using [...].&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Put another way: the reviewer liked the general idea, and the fact that I've had a little experience with it in the past.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;However, several major concerns are: 1) as far as I can see, the PI doesn't have a great deal of experience working with [...].&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This was an excellent point. I mentioned a particular strategy but formally don't have any training with it. I neglected my own rule of "justify everything" here.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;2) No clear description of the data mining and statistical methods for error evaluation and estimation of signals from the inevitable noise from [...]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Rookie mistake on my part.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;3) validation of system predictions underdeveloped, when this would be of major importance&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Also a rookie mistake.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;4) finally, the choice of [...] seems idiosyncratic. The budget is for [...]. No involvement of [...], which again casts some uncertainty as to successfully developing and implementing the [...].&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This ties back with the reviewer's first criticism: since I don't have much experience with this certain strategy, the next best thing would be to provide funding for someone who does, which I did not do.&lt;/p&gt;
+&lt;p&gt;Part of the reviewer's summary included this line:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;It will also be remarkable if all the activities proposed can be achieved within 2 years, especially given that most of the work will presumably be carried out by graduate and undergraduate students.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In a way, this is something of a relief: my original plan had been to submit a &lt;a href="http://www.nsf.gov/pubs/2015/nsf15555/nsf15555.htm"&gt;CAREER proposal&lt;/a&gt; on this topic; if a reviewer thinks the topic is too large-scale to be done in two years, it may be the right scale for a 5-year CAREER award.&lt;/p&gt;
+&lt;p&gt;Overall, the reviewer gave the proposal a rating of "Fair."&lt;/p&gt;
+&lt;h2&gt;Reviewer 3&lt;/h2&gt;
+&lt;p&gt;The third reviewer is something of an outlier, though &lt;a href="https://www.youtube.com/watch?v=-VRBWLpYCPY"&gt;not in the usual way&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The feedback was extremely succinct, and universally positive (knee-jerk aside: was this a student?). It was also at a very high level; it never addressed the details of the proposal, only the big-picture ideas. Here's the summary:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Overall, the proposed research activities have significant potential to be transformative. The two core objectives and corresponding tasks ([...]) seem ambitious to the reviewer. Integration of research and educational activities are relevant and intersect various disciplines (computer sciences, cellular biology, genetics).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Well-written, but nonetheless out of sync with the other two reviewers. Don't get me wrong--I &lt;strong&gt;greatly&lt;/strong&gt; appreciate some positive feedback on my first NSF proposal as PI! This reviewer gave the proposal a "Very Good" rating, which is also a nice shot to the ego. But it's clear there were some glaring weaknesses that, for whatever reason, this reviewer chose not to elucidate.&lt;/p&gt;
+&lt;h2&gt;Panel Summary&lt;/h2&gt;
+&lt;p&gt;Nothing surprising here. The strengths from the previous reviewers were identified, along with the numerous accompanying weaknesses. The panel did address the issue of broader impacts:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Although the proposal has merits, the PI may need to clarify clearly as to the major justification for developing the proposed tool in relation to other initiatives in this area, eg [...]. The panel also highlighted several problems and questions with regards to [...]. Until these problems are addressed, it was felt that the broader impact of this project, particularly the probability of [...], is likely to be moderate to low&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;That, along with a "Low Competitive" panel recommendation, pretty much sums things up.&lt;/p&gt;
+&lt;h1&gt;Conclusions&lt;/h1&gt;
+&lt;p&gt;For the vast majority of weaknesses, their immediate impetus can be summed up thusly: &lt;em&gt;I started writing the grant the day before deadline.&lt;/em&gt; That's a no-no, and contributed directly to the panicked flurry at the end and lack of detail in the proposal itself. Starting earlier will solve these problems.&lt;/p&gt;
+&lt;p&gt;The last point that genuinely concerns me, though, is the first reviewer's comment on differentiating myself from my graduate advisors. It's true that this proposal took work I started as a graduate student, and I agree that it's important to build an independent research group such that I don't have to rely on my graduate advisors for funding.&lt;/p&gt;
+&lt;p&gt;But I suppose I could boil this down to time constraints as well: given more elbow room, I could have provided a more detailed development plan that clearly differentiated itself from work done before. Rather than relying on the "we propose to &lt;em&gt;extend&lt;/em&gt;..." mantra, I could have delved into much greater detail on the methods I'd wanted to use and why their application would be novel.&lt;/p&gt;
+&lt;p&gt;So there you have it: a review of grant reviews. Nothing left to do here but incorporate the feedback and push out more effective proposals in the months to come!&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="professional"></category><category term="academia"></category><category term="grants"></category><category term="reviewer feedback"></category><category term="rejection"></category></entry></feed>

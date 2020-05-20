@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="author" content="Shannon Quinn">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <title>At home during COVID-19 | Stochastic Stenography</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="alternate" type="application/atom+xml" title="Stochastic Stenography blog atom feed" href="/feeds/all.atom.xml" />
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/theme/css/icons.css"/>
+        <link rel="stylesheet" type="text/css" href="/theme/fa/css/font-awesome.min.css" />
+        <style>.highlight .hll { background-color: #ffffcc }
+.highlight .c { color: #60a0b0; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #007020; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #60a0b0; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #007020 } /* Comment.Preproc */
+.highlight .c1 { color: #60a0b0; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #60a0b0; background-color: #fff0f0 } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #808080 } /* Generic.Output */
+.highlight .gp { color: #c65d09; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0040D0 } /* Generic.Traceback */
+.highlight .kc { color: #007020; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #007020; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #007020; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #007020 } /* Keyword.Pseudo */
+.highlight .kr { color: #007020; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #902000 } /* Keyword.Type */
+.highlight .m { color: #40a070 } /* Literal.Number */
+.highlight .s { color: #4070a0 } /* Literal.String */
+.highlight .na { color: #4070a0 } /* Name.Attribute */
+.highlight .nb { color: #007020 } /* Name.Builtin */
+.highlight .nc { color: #0e84b5; font-weight: bold } /* Name.Class */
+.highlight .no { color: #60add5 } /* Name.Constant */
+.highlight .nd { color: #555555; font-weight: bold } /* Name.Decorator */
+.highlight .ni { color: #d55537; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #007020 } /* Name.Exception */
+.highlight .nf { color: #06287e } /* Name.Function */
+.highlight .nl { color: #002070; font-weight: bold } /* Name.Label */
+.highlight .nn { color: #0e84b5; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #062873; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #bb60d5 } /* Name.Variable */
+.highlight .ow { color: #007020; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #40a070 } /* Literal.Number.Float */
+.highlight .mh { color: #40a070 } /* Literal.Number.Hex */
+.highlight .mi { color: #40a070 } /* Literal.Number.Integer */
+.highlight .mo { color: #40a070 } /* Literal.Number.Oct */
+.highlight .sb { color: #4070a0 } /* Literal.String.Backtick */
+.highlight .sc { color: #4070a0 } /* Literal.String.Char */
+.highlight .sd { color: #4070a0; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #4070a0 } /* Literal.String.Double */
+.highlight .se { color: #4070a0; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #4070a0 } /* Literal.String.Heredoc */
+.highlight .si { color: #70a0d0; font-style: italic } /* Literal.String.Interpol */
+.highlight .sx { color: #c65d09 } /* Literal.String.Other */
+.highlight .sr { color: #235388 } /* Literal.String.Regex */
+.highlight .s1 { color: #4070a0 } /* Literal.String.Single */
+.highlight .ss { color: #517918 } /* Literal.String.Symbol */
+.highlight .bp { color: #007020 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #bb60d5 } /* Name.Variable.Class */
+.highlight .vg { color: #bb60d5 } /* Name.Variable.Global */
+.highlight .vi { color: #bb60d5 } /* Name.Variable.Instance */
+.highlight .il { color: #40a070 } /* Literal.Number.Integer.Long */</style>
+        <style>body {
+  margin: 0;
+  padding: 0;
+  font: 16px 'Source Sans Pro', sans-serif;
+  line-height: 1.6em;
+  color: #222;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: #007EE5;
+  text-decoration: none;
+}
+a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+header.main-header {
+  background: none repeat scroll 0% 0% #2A66C0;
+  margin-bottom: 0px;
+}
+header.main-header a {
+  color: #c0d4f1;
+}
+header.main-header a:hover {
+  color: #fff;
+  background-color: #2A66C0;
+}
+header.main-header .container {
+  max-width: 1000px;
+}
+article {
+  margin: 0;
+}
+article header.about {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+article header {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+article header h1 {
+  margin-bottom: 2px;
+  font-weight: 700;
+  color: #000;
+}
+article header time {
+  color: #9E9E9E;
+  font-size: 0.95em;
+  float: right;
+}
+article header time.left {
+  color: #9E9E9E;
+  font-size: 0.95em;
+  float: left;
+}
+article div.social-links ul {
+  padding: 0px;
+}
+article div.social-links li {
+  display: inline;
+  font-size: 24px;
+}
+article div.social-links li a {
+  color: #000;
+  padding: 10px;
+}
+article div.social-links li a:hover {
+  color: #666;
+  text-decoration: none;
+}
+article p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  line-height: 1.6em;
+}
+article p.note {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 0.533em 0.733em;
+}
+article p.update {
+  background-color: #FEEFB3;
+  border: 1px solid #e6e68a;
+  padding: 0.533em 0.733em;
+}
+article p.alert {
+  background-color: #ffe2e2;
+  border: 1px solid #ffb2b2;
+  padding: 0.533em 0.733em;
+}
+article ul,
+article ol {
+  margin-top: 0px;
+  margin-bottom: 25px;
+}
+article li {
+  font-size: 18px;
+  line-height: 1.6em;
+}
+article a:hover {
+  text-decoration: underline;
+}
+article blockquote {
+  border-left: 2px solid #c7c7cc;
+  color: #666;
+  margin: 30px 0;
+  padding: 0 0 0 25px;
+}
+article img {
+  max-width: 100%;
+}
+article code {
+  color: #333;
+  background-color: #EEE;
+  border-radius: 0;
+  font-size: 14px;
+}
+article .meta {
+  font-size: 12px;
+}
+article .meta a:hover {
+  text-decoration: none;
+}
+article .meta div {
+  margin-bottom: 20px;
+  display: block;
+}
+article .meta a.tag {
+  margin: 0 10px 10px 0;
+  padding: 1px 12px;
+  display: inline-block;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.05);
+}
+article .meta a.tag:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+article .meta a.read_more,
+article .meta a.comments_btn {
+  font-size: 16px;
+  font-weight: 800;
+  padding: 10px 20px;
+  color: #2A66C0;
+  background: #FFF;
+  border: 1px solid #2A66C0;
+}
+article .meta a.read_more:hover,
+article .meta a.comments_btn:hover {
+  color: #FFF;
+  background: #2A66C0;
+}
+.index {
+  max-width: 800px;
+}
+.index article header h2 {
+  font-size: 36px;
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+.index article header h2 a {
+  color: #000;
+}
+.index article header h2 a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+.index .separator {
+  padding: 40px 0 0 0;
+  margin: 0 0 40px 0;
+  height: 10px;
+  border-bottom: solid 1px #CCC;
+}
+.index .pagination {
+  display: block;
+  margin-bottom: 100px;
+}
+.index .pagination .left {
+  text-align: right;
+}
+.index .pagination .right {
+  text-align: left;
+}
+.index .pagination a {
+  display: inline-block;
+  border: 2px solid #5C881C;
+  margin: 0 5px;
+  padding: 8px 20px;
+  font-weight: bold;
+  color: #5C881C;
+}
+.index .pagination a:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.post {
+  max-width: 800px;
+}
+.post h2:before {
+  content: "# ";
+  font-weight: bold;
+  color: #DDD;
+}
+.post h3:before {
+  content: "## ";
+  font-weight: bold;
+  color: #DDD;
+}
+.post h4:before {
+  content: "### ";
+  font-weight: bold;
+  color: #DDD;
+}
+.post article .meta {
+  margin: 50px 0 100px;
+}
+.list {
+  max-width: 700px;
+}
+.list ul.double-list {
+  margin: 0 auto 60px;
+  padding: 0;
+  list-style-type: none;
+}
+.list ul.double-list li {
+  padding: 5px 0;
+}
+.list ul.double-list li h2 {
+  font-size: 1em;
+  display: inline;
+  font-weight: normal;
+}
+.list ul.double-list li span {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-align: right;
+  float: right;
+  padding-top: 3px;
+  font-size: 14px;
+  color: #999;
+}
+.full-width-content {
+  padding-top: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+.col-xs-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-xs-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-xs-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-xs-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-xs-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-xs-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+  padding-right: 0px;
+  padding-left: 0px;
+}</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+        <script type="text/javascript">
+        init_mathjax = function() {
+            if (window.MathJax) {
+                // MathJax loaded
+                MathJax.Hub.Config({
+                    tex2jax: {
+                        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                        displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+                    },
+                    displayAlign: 'left', // Change this to 'center' to center equations.
+                    "HTML-CSS": {
+                        styles: {'.MathJax_Display': {"margin": 0}}
+                    }
+                });
+                MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+            }
+        }
+        init_mathjax();
+        </script>
+
+    </head>
+
+    <body>
+        <!--<header class="navbar navbar-inverse bs-docs-nav">-->
+        <header class="navbar navbar-static-top bs-docs-nav main-header">
+            <div class="container">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="/" title="Home" class="title">Stochastic Stenography</a>
+                </div>
+                <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation" id="theNavbar">
+		    <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/pages/about.html" title="About">About</a></li>
+                            <li><a href="/archives.html" title="Archive">Archive</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div id="wrap">
+<div class="container post">
+    <article>
+        <header>
+            <h1>At home during COVID-19</h1>
+            <time class="left" datetime="article.date.isoformat()" pubdate>Posted on May 20 in the year 2020, at 15:39PM. It was Wednesday.</time>
+        </header>
+
+        <div class="article_content">
+            <p><img src="/images/wfh/instachaaz.png"></p>
+<p><small>Image source: <a href="https://instachaaz.threadless.com/">instachaaz</a> (the stuff is awesome)</small></p>
+<p>Well, this has certainly been a <strong>unique</strong> past couple of months. I had a lot of things in mind for the spring 2020 semester and beyond, but I can safely say it's all been completely upended now.</p>
+<p>I don't want to trivialize COVID-19 to the suburban equivalent of "can't go to the community pool for a few months because of a particularly bad case of the fiery poops;" there are real people whose livelihoods are suffering: financially, professionally, and literally, and I think the world as a whole would be a lot better off if we collectively recognized that and pitched in to help.</p>
+<p>The Lady and I have been establishing new habits and routines, while trying to maintain a semblance of normality during the pandemic. There have been a lot of snacks (peanut butter M&amp;Ms, cookie dough ice cream, hint of lime chips, and of course, Lucky Charms cereal), some creativity in workplace setup (moved an extra computer monitor from upstairs, and set up a surge protector behind the dining table--also had to line one end of the table with aluminum foil, because our cat kept jumping up on the table from that side), and digging out some old mainstays.</p>
+<h3>Classics Never Go Out of Style</h3>
+<p>Early on in the lockdown, The Lady and I kicked off a Zelda-thon, starting with <em>Skyward Sword</em> on the Nintendo Wii. There's a strange story there: I'd purchased the game for her way back when we lived in separate apartments in Pittsburgh, because she was the Zelda fan between the two of us. Yeah, I'm a gamer, but she's a <em>Zelda</em> gamer. It was a lot of fun to watch her play the game, and <a href="https://www.youtube.com/watch?v=Cbwq8ev-EXA">I occasionally jumped in when she needed to tap out</a>. But after reaching the penultimate boss, we just... stopped playing.</p>
+<p>For <em>eight years</em>. We knew this, because when we fired up the game again on the weekend of March 14, we saw the last save file pop up for March 28, 2012. Almost eight years <em>to the day</em>.</p>
+<p>Since The Lady played most of the game eight years ago, I ended up "driving" this time around. She jumped in whenever she wanted, but we ended up tearing through the game in <strong>10 days</strong>. It was pretty impressive, and it was great to finally see the end of the game that has been referenced SO MUCH in theory videos around <em>Breath of the Wild</em> (which we'll get to!).</p>
+<p>Once we knocked out <em>Skyward Sword</em>, The Lady took the driver's seat for <em>Twilight Princess</em>. I'd never seen the game played start to finish, and had really never seen anything beyond the quests involving collecting light shards (which is, as I discovered, a meager portion of the game's introduction). Suffice to say, this one took a lot longer; most of the month of April, if memory serves.</p>
+<p>After that, I took a deep breath and fired up <em>Breath of the Wild</em>... in <strong>Master Mode</strong>. Yes, <a href="https://magsol.github.io/blog/2019/08/12/breath-of-fresh-air/">I've posted about this game here before</a>, and we ended up beating it sometime in November 2019. But the DLC included an evil modification called "Master Mode", which among other terrible things, has the following effects:</p>
+<ul>
+<li>Every enemy in the game is upgraded by one level (red become blue, blue become brown, brown become silver, silver become <a href="https://cdn.gamer-network.net/2017/usgamer/Breath-of-the-Wild-DLC-Guide-header.jpg/EG11/thumbnail/1920x1080/format/jpg/quality/65/18-12-2018-the-legend-of-zelda-breath-of-the-wild-dlc-everything-we-know.jpg">gold</a>, a brand-new level)</li>
+<li>Enemies heal when they've been out of combat for two seconds (not hyperbole; literally two seconds)</li>
+<li>Brand-new <a href="https://imgix.bustle.com/mic/knzgpkctoycksfpvki9e3kuc7fozfcugpfqn63lps6nee90vzthnydlbjtvt26lx.jpg?w=1020&amp;h=576&amp;fit=crop&amp;crop=faces&amp;auto=format%2Ccompress&amp;cs=srgb&amp;q=70">floating platforms</a> with enemies, because fuck you that's why</li>
+</ul>
+<p>It is <em>brutal</em>, especially in the first quarter of the game. You end up skipping fights by default, sneaking around a lot more, and fighting as though you cannot take a single hit (because in all likelihood, you can't). I haven't finished it yet, but just this past weekend we completed the last of the DLC "Ballad of the Champions," so really the only thing left of the Main Quests is to destroy Calamity Ganon.</p>
+<p>Once this is done, The Lady plans to break out the game that really and truly started it all: <em>Ocarina of Time</em>, which I've also never seen played start to finish, so that will be fun to watch!</p>
+<p>On a completely separate video gaming front, I managed to get a Stargate mod working for <em>Sins of a Solar Empire</em>, and even started playing a small 1v1 as the Ancients against the Wraith. It looks incredible!</p>
+<p><img src="/images/wfh/destiny.jpg">
+For fans of <em>Stargate: Universe</em>, you'll recognize this class of Ancient ship.</p>
+<p><img src="/images/wfh/gateship.jpg">
+Fans of both <em>SG-1</em> and <em>Atlantis</em> will instantly recognize this "gate ship"!</p>
+<p><img src="/images/wfh/superhive.jpg">
+This looks like a scene straight out of the <em>Atlantis</em> finale!</p>
+<p>I can't wait to explore some of the other races--Asgard, Goa'uld, and Ori round out the playable races, while a recent update includes some "minor factions" that are always AI-controlled but can still change the dynamics of play: Tau'ri (that's us!), Free Jaffa, Vanir (rogue Asgard offshoot seen in <em>Atlantis</em>), and Michael's Hybrids.</p>
+<h3>Variety is the Pribe of Libe</h3>
+<p>While The Lady and I have been re-visiting the classics to keep us grounded, we've also been branching out.</p>
+<p>First, like most, we tried our hand at baking sourdough. And, frankly, it turned out incredible!</p>
+<p><img src="/images/wfh/sourdough.jpg"></p>
+<p>We've since baked a new recipe of chocolate chip cookies (which <em>mostly</em> turned out chewy), and have plans to whip up some butterscotch bars.</p>
+<p>We've also been starting up some regular remote get-togethers, from weekly chats with my family to weekly post-run "coffee chats" with some of our running friends. We'll go out for runs by ourselves, come home, get cleaned up, and FaceTime each other while making coffee and getting ready for the day. We're also about to try out remote gaming tomorrow with some friends of ours from Pittsburgh--they, like us, are big board gaming geeks. I'm not sure exactly what we're going to play or how it'll pan out, but I'm excited to try!</p>
+<p>The Lady and I took a page from a <a href="https://arstechnica.com/gaming/2020/04/the-best-board-games-to-play-with-your-quarantined-housemates/">recent list of recommended quarantine board games</a> and purchased <em>Star Realms</em>. Think: a super-simple mash-up of <em>Magic: The Gathering</em> and <em>Dominion</em>. It's a deck-building game with a common "market" of cards you can purchase, and the goal is to use those cards to bludgeon your opponent to death in the most sci-fi manner possible. Meanwhile, I sunk several days in over at <a href="https://www.heroforge.com/">Hero Forge</a> designing avatars for her and me. I think they came out pretty well!</p>
+<p><img src="/images/wfh/heroforge.jpg"></p>
+<p>Speaking of remote activities together, we actually did try our hand at a "remote viewing" of a movie, and it worked remarkably well! Two of our runners friends joined us to watch <em>A League Of Their Own</em>, both because one of them had never seen it before, and because of <a href="https://bleacherreport.com/articles/2890923-mary-pratt-last-surviving-rockford-peach-dies-at-age-101">last week's news that the last of the original Rockford Peaches passed away at 101</a>. We'd originally hoped to use a video synchronization platform like <a href="https://www.netflixparty.com/">Netflix Party</a>, but Netflix doesn't have <em>A League Of Their Own</em>; Amazon Prime does. So we looked into <a href="https://www.kastapp.co/">Kast</a>, but after 30 minutes of tinkering, it was clear the app is still too young and rough around the edges; we were constantly having either sound or video issues. So we did it the old-fashioned way: fired up a Zoom chat, and counted down to hitting "Play" out loud. And it actually worked quite well! We were never more than 20 seconds off each other.</p>
+<p><img src="/images/wfh/aloto.jpg"></p>
+<p>Our sudden and constant presence all day every may have caught our pets off guard, but they sure seem to be enjoying it. Zippy is scampering around us, jumping on our laps, and trying to jump on our work table one minute, then is passed out on the couch for hours on end the next. Clover, meanwhile, seems to find a napping spot anywhere she goes, but has started expecting treats at all hours of the day (partly our fault for giving her the occasional piece of banana with breakfast... and piece of fruit or veggie for lunch... and for dinner... ). </p>
+<p><img src="/images/wfh/aminals.jpg"></p>
+<p>One of the biggest changes on my end (besides the obvious, of course), was buying a new laptop. This has been on my list for several months, as my aging MacBook Pro Mid-2014 has been struggling more and more to keep up with workloads. When the new laptop arrived, it took three entire days to fully transfer and configure it just right; I'm still coming across things here and there that need to be fully fleshed out (e.g., screen saver still isn't the picture collage, and it's not properly password protected, and the desktop backgrounds don't switch out, and other small but noticeable things).</p>
+<p>But the thing I wasn't expecting that hit me really hard when it was time to shut down, wipe, and ship out the old laptop was the melancholy.</p>
+<p>I'd purchased this old laptop (aptly-named "Apollo") in September 2014 in the throes of writing my dissertation. I remember it distinctly: sitting in the Squirrel Hill Starbucks, ear pods in, listening to some Pandora station while typing away in the Latex document... when suddenly my ear pods <em>screeeeeched</em>, my screen froze, and moments later, my ear pods went silent and the screen went dark. I rebooted, and... nothing. According to the Apple Geniuses later that evening, the motherboard has inexplicably fried. It was well out of warranty, so my only option was to purchase a brand-new laptop.</p>
+<p><img src="/images/wfh/apollo.jpg"></p>
+<p>That was Apollo. It got me through my PhD dissertation and defense, the move to Athens and the start of my tenure-track position at UGA, and through the first five years of it--well into my promotion and tenure process, my first couple of successful grants, and so, so many papers. It was a veritable workhorse of a laptop that, with a little sprucing up, still has some life in it.</p>
+<p>Now, I have a laptop that is literal orders of magnitude more powerful than the previous one, yet it has huge shoes to fill. We'll see if the new laptop--<a href="https://www.zeldadungeon.net/wiki/images/5/52/Dinraal.jpg">Dinraal</a>--is up to the task.</p>
+<p><img src="/images/wfh/dinraal.jpg"></p>
+<h3>What's next?</h3>
+<p>Not sure, honestly. We're taking it one day at a time. We're being kind to each other and ourselves. We're trying to be safe, not just for us, but for everyone else around us. </p>
+<p>Stay safe and happy, my friends.</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+
+        <div class="meta">
+            <div>
+                    <a href="https://magsol.github.io/tag/covid-19.html" class="tag">covid-19</a>
+                    <a href="https://magsol.github.io/tag/sars-cov-2.html" class="tag">sars-cov-2</a>
+                    <a href="https://magsol.github.io/tag/work-from-home.html" class="tag">work from home</a>
+                    <a href="https://magsol.github.io/tag/wfh.html" class="tag">wfh</a>
+                    <a href="https://magsol.github.io/tag/zelda.html" class="tag">zelda</a>
+                    <a href="https://magsol.github.io/tag/snacks.html" class="tag">snacks</a>
+                    <a href="https://magsol.github.io/tag/running.html" class="tag">running</a>
+                    <a href="https://magsol.github.io/tag/social-distancing.html" class="tag">social distancing</a>
+                    <a href="https://magsol.github.io/tag/projects.html" class="tag">projects</a>
+                    <a href="https://magsol.github.io/tag/pandemic.html" class="tag">pandemic</a>
+                    <a href="https://magsol.github.io/tag/the-lady.html" class="tag">the lady</a>
+                    <a href="https://magsol.github.io/tag/furbabies.html" class="tag">furbabies</a>
+                    <a href="https://magsol.github.io/tag/zippy-the-cat.html" class="tag">zippy the cat</a>
+                    <a href="https://magsol.github.io/tag/clover-the-bun.html" class="tag">clover the bun</a>
+            </div>
+        </div>
+    </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+    <script type="text/javascript">
+      var disqus_shortname = 'stochasticstenography';
+      var disqus_identifier = '/blog/2020/05/20/at-home-during-covid-19/';
+      var disqus_url = 'https://magsol.github.io/blog/2020/05/20/at-home-during-covid-19/';
+      var disqus_title = 'At home during COVID-19';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = "//" + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+  </section>
+
+</div>
+
+<style type="text/css">
+{
+    max-width: 700px;
+}
+
+.text_cell .prompt {
+    display: none;
+}
+
+div.cell {
+    padding: 0;
+}
+
+div.text_cell_render {
+    padding: 0;
+}
+
+div.prompt {
+    font-size: 13px;
+}
+
+div.input_prompt {
+    padding: .7em 0.2em;
+}
+
+div.output_prompt {
+    padding: .4em .2em;
+}
+
+div.input_area {
+    margin: .2em 0.4em;
+    max-width: 580px;
+}
+
+table.dataframe {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+table.dataframe th, td {
+    padding: 4px;
+    text-align: left;
+}
+
+pre code {
+    background-color: inherit;
+}</style>
+
+        </div>
+<!--
+    <footer>
+      <p>
+        © 2012-2017 Shannon Quinn, license <a href="https://github.com/magsol/magsol.github.io-source/blob/master/LICENSE"> </a>
+        unless otherwise noted.
+        Generated by <a href= "http://docs.getpelican.com/">Pelican</a>.
+      </p>
+    </footer>
+-->
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-6646270-2']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-6646270-2');
+    ga('send', 'pageview');
+</script>
+    </body>
+</html>

@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="author" content="Shannon Quinn">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <title>Breath of Fresh (albeit, indoor) Air | Stochastic Stenography</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="alternate" type="application/atom+xml" title="Stochastic Stenography blog atom feed" href="/feeds/all.atom.xml" />
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/theme/css/icons.css"/>
+        <link rel="stylesheet" type="text/css" href="/theme/fa/css/font-awesome.min.css" />
+        <style>.highlight .hll { background-color: #ffffcc }
+.highlight .c { color: #60a0b0; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #007020; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #60a0b0; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #007020 } /* Comment.Preproc */
+.highlight .c1 { color: #60a0b0; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #60a0b0; background-color: #fff0f0 } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #808080 } /* Generic.Output */
+.highlight .gp { color: #c65d09; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0040D0 } /* Generic.Traceback */
+.highlight .kc { color: #007020; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #007020; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #007020; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #007020 } /* Keyword.Pseudo */
+.highlight .kr { color: #007020; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #902000 } /* Keyword.Type */
+.highlight .m { color: #40a070 } /* Literal.Number */
+.highlight .s { color: #4070a0 } /* Literal.String */
+.highlight .na { color: #4070a0 } /* Name.Attribute */
+.highlight .nb { color: #007020 } /* Name.Builtin */
+.highlight .nc { color: #0e84b5; font-weight: bold } /* Name.Class */
+.highlight .no { color: #60add5 } /* Name.Constant */
+.highlight .nd { color: #555555; font-weight: bold } /* Name.Decorator */
+.highlight .ni { color: #d55537; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #007020 } /* Name.Exception */
+.highlight .nf { color: #06287e } /* Name.Function */
+.highlight .nl { color: #002070; font-weight: bold } /* Name.Label */
+.highlight .nn { color: #0e84b5; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #062873; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #bb60d5 } /* Name.Variable */
+.highlight .ow { color: #007020; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #40a070 } /* Literal.Number.Float */
+.highlight .mh { color: #40a070 } /* Literal.Number.Hex */
+.highlight .mi { color: #40a070 } /* Literal.Number.Integer */
+.highlight .mo { color: #40a070 } /* Literal.Number.Oct */
+.highlight .sb { color: #4070a0 } /* Literal.String.Backtick */
+.highlight .sc { color: #4070a0 } /* Literal.String.Char */
+.highlight .sd { color: #4070a0; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #4070a0 } /* Literal.String.Double */
+.highlight .se { color: #4070a0; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #4070a0 } /* Literal.String.Heredoc */
+.highlight .si { color: #70a0d0; font-style: italic } /* Literal.String.Interpol */
+.highlight .sx { color: #c65d09 } /* Literal.String.Other */
+.highlight .sr { color: #235388 } /* Literal.String.Regex */
+.highlight .s1 { color: #4070a0 } /* Literal.String.Single */
+.highlight .ss { color: #517918 } /* Literal.String.Symbol */
+.highlight .bp { color: #007020 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #bb60d5 } /* Name.Variable.Class */
+.highlight .vg { color: #bb60d5 } /* Name.Variable.Global */
+.highlight .vi { color: #bb60d5 } /* Name.Variable.Instance */
+.highlight .il { color: #40a070 } /* Literal.Number.Integer.Long */</style>
+        <style>body {
+  margin: 0;
+  padding: 0;
+  font: 16px 'Source Sans Pro', sans-serif;
+  line-height: 1.6em;
+  color: #222;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: #007EE5;
+  text-decoration: none;
+}
+a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+header.main-header {
+  background: none repeat scroll 0% 0% #2A66C0;
+  margin-bottom: 0px;
+}
+header.main-header a {
+  color: #c0d4f1;
+}
+header.main-header a:hover {
+  color: #fff;
+  background-color: #2A66C0;
+}
+header.main-header .container {
+  max-width: 1000px;
+}
+article {
+  margin: 0;
+}
+article header.about {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+article header {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+article header h1 {
+  margin-bottom: 2px;
+  font-weight: 700;
+  color: #000;
+}
+article header time {
+  color: #9E9E9E;
+  font-size: 0.95em;
+  float: right;
+}
+article header time.left {
+  color: #9E9E9E;
+  font-size: 0.95em;
+  float: left;
+}
+article div.social-links ul {
+  padding: 0px;
+}
+article div.social-links li {
+  display: inline;
+  font-size: 24px;
+}
+article div.social-links li a {
+  color: #000;
+  padding: 10px;
+}
+article div.social-links li a:hover {
+  color: #666;
+  text-decoration: none;
+}
+article p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  line-height: 1.6em;
+}
+article p.note {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 0.533em 0.733em;
+}
+article p.update {
+  background-color: #FEEFB3;
+  border: 1px solid #e6e68a;
+  padding: 0.533em 0.733em;
+}
+article p.alert {
+  background-color: #ffe2e2;
+  border: 1px solid #ffb2b2;
+  padding: 0.533em 0.733em;
+}
+article ul,
+article ol {
+  margin-top: 0px;
+  margin-bottom: 25px;
+}
+article li {
+  font-size: 18px;
+  line-height: 1.6em;
+}
+article a:hover {
+  text-decoration: underline;
+}
+article blockquote {
+  border-left: 2px solid #c7c7cc;
+  color: #666;
+  margin: 30px 0;
+  padding: 0 0 0 25px;
+}
+article img {
+  max-width: 100%;
+}
+article code {
+  color: #333;
+  background-color: #EEE;
+  border-radius: 0;
+  font-size: 14px;
+}
+article .meta {
+  font-size: 12px;
+}
+article .meta a:hover {
+  text-decoration: none;
+}
+article .meta div {
+  margin-bottom: 20px;
+  display: block;
+}
+article .meta a.tag {
+  margin: 0 10px 10px 0;
+  padding: 1px 12px;
+  display: inline-block;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.05);
+}
+article .meta a.tag:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+article .meta a.read_more,
+article .meta a.comments_btn {
+  font-size: 16px;
+  font-weight: 800;
+  padding: 10px 20px;
+  color: #2A66C0;
+  background: #FFF;
+  border: 1px solid #2A66C0;
+}
+article .meta a.read_more:hover,
+article .meta a.comments_btn:hover {
+  color: #FFF;
+  background: #2A66C0;
+}
+.index {
+  max-width: 800px;
+}
+.index article header h2 {
+  font-size: 36px;
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+.index article header h2 a {
+  color: #000;
+}
+.index article header h2 a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+.index .separator {
+  padding: 40px 0 0 0;
+  margin: 0 0 40px 0;
+  height: 10px;
+  border-bottom: solid 1px #CCC;
+}
+.index .pagination {
+  display: block;
+  margin-bottom: 100px;
+}
+.index .pagination .left {
+  text-align: right;
+}
+.index .pagination .right {
+  text-align: left;
+}
+.index .pagination a {
+  display: inline-block;
+  border: 2px solid #5C881C;
+  margin: 0 5px;
+  padding: 8px 20px;
+  font-weight: bold;
+  color: #5C881C;
+}
+.index .pagination a:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.post {
+  max-width: 800px;
+}
+.post h2:before {
+  content: "# ";
+  font-weight: bold;
+  color: #DDD;
+}
+.post h3:before {
+  content: "## ";
+  font-weight: bold;
+  color: #DDD;
+}
+.post h4:before {
+  content: "### ";
+  font-weight: bold;
+  color: #DDD;
+}
+.post article .meta {
+  margin: 50px 0 100px;
+}
+.list {
+  max-width: 700px;
+}
+.list ul.double-list {
+  margin: 0 auto 60px;
+  padding: 0;
+  list-style-type: none;
+}
+.list ul.double-list li {
+  padding: 5px 0;
+}
+.list ul.double-list li h2 {
+  font-size: 1em;
+  display: inline;
+  font-weight: normal;
+}
+.list ul.double-list li span {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-align: right;
+  float: right;
+  padding-top: 3px;
+  font-size: 14px;
+  color: #999;
+}
+.full-width-content {
+  padding-top: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+.col-xs-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-xs-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-xs-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-xs-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-xs-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-xs-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+  padding-right: 0px;
+  padding-left: 0px;
+}</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+        <script type="text/javascript">
+        init_mathjax = function() {
+            if (window.MathJax) {
+                // MathJax loaded
+                MathJax.Hub.Config({
+                    tex2jax: {
+                        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                        displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+                    },
+                    displayAlign: 'left', // Change this to 'center' to center equations.
+                    "HTML-CSS": {
+                        styles: {'.MathJax_Display': {"margin": 0}}
+                    }
+                });
+                MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+            }
+        }
+        init_mathjax();
+        </script>
+
+    </head>
+
+    <body>
+        <!--<header class="navbar navbar-inverse bs-docs-nav">-->
+        <header class="navbar navbar-static-top bs-docs-nav main-header">
+            <div class="container">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="/" title="Home" class="title">Stochastic Stenography</a>
+                </div>
+                <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation" id="theNavbar">
+		    <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/pages/about.html" title="About">About</a></li>
+                            <li><a href="/archives.html" title="Archive">Archive</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div id="wrap">
+<div class="container post">
+    <article>
+        <header>
+            <h1>Breath of Fresh (albeit, indoor) Air</h1>
+            <time class="left" datetime="article.date.isoformat()" pubdate>Posted on May 20 in the year 2020, at 14:12PM. It was Wednesday.</time>
+        </header>
+
+        <div class="article_content">
+            <p><img src="/images/botw/lakehylia.jpg"></p>
+<p>This is a divergence that is simultaneously strange and entirely predictable.</p>
+<p>Allow me to explain.</p>
+<p>First and foremost, <a href="https://wherearethepancakes.wordpress.com/2019/08/07/marathon-training-mode-enable/">I've been training for my first marathon in 4.5 years for
+the past several months</a>.
+It's largely consisted of <a href="https://www.runnersworld.com/training/a20807188/how-do-i-build-a-training-base/">base-building</a>,
+but in the last couple of weeks we entered the "official" 16-week marathon training
+period...</p>
+<p>...and my knee started pulling. Oh! And it coincided with the first week of
+decent summer weather we've had here in Athens since...2018? And if the past
+two weeks are any indication, this summer is going to be <a href="https://wherearethepancakes.wordpress.com/2016/08/23/the-summer-doldrums-arent-all-theyre-cracked-up-to-be/">as bad as that brutal
+one in 2016</a>.</p>
+<p><img src="/images/botw/goroncity.jpg"></p>
+<p>Anyway!</p>
+<p>Since I noticed the pulling in my knee the week before "official" training was
+to begin, my coach and I agreed--in the name of being super-cautious this early
+in the training cycle--that I would take a week off from running, focus on
+cross-training and physical therapy exercises, and let my knee heal up. During
+this time, I dove into the 2017 hit <em>Zelda: Breath of the Wild</em>, the new Zelda
+release for the Nintendo Switch, and logged--to use the technical term--a shitton
+of hours.</p>
+<p><img src="/images/botw/hillside.jpg"></p>
+<p>Let me back up a little further.</p>
+<p>I've never been secretive about my love of video gaming (and board gaming, and
+regular old sportsball gaming... any kind of gaming, really). But my real passion
+in video games has largely been constrained to variants of
+<a href="https://en.wikipedia.org/wiki/First-person_shooter">first-person shooters</a>
+and <a href="https://en.wikipedia.org/wiki/Real-time_strategy">real-time strategy</a>. This
+includes the usual suspects like <em>Left 4 Dead 2</em> and <em>StarCraft II</em>,
+but also slight variations like <em>Civilization V</em> (haven't gotten the hang of <em>VI</em>
+yet), <em>Cities: Skylines</em>, <em>Homeworld</em>, and <em>Sins of a Solar Empire</em>.</p>
+<p>The upshot: <em>Zelda</em> has never really been on my radar.</p>
+<p>I mean, <strong>of course</strong> I'm familiar with the Zelda franchise. Back in the days
+of the <a href="https://www.dkoldies.com/game-boy-original-system-nintendo/">OG GameBoy</a>,
+I played <em>Link's Awakening</em>. A lot of it. I played through it so many times I
+eventually figured out how to find enough "secret seashells" to get the Master
+Sword just before completing the 4th of the 8 main dungeons.</p>
+<p><img src="/images/botw/linksawakening_orig.jpg"></p>
+<p>(if it's possible to get the sword sooner than that, don't bother,
+I don't want to know)</p>
+<p>But for those who know the larger Zelda lore, this installment exists awkwardly
+both within but also without the Zelda story. I mean--SPOILERS for a 20+ year old
+game SPOILERS--it was all a dream. Or was it instead a reality that existed
+within our own, but vanished when the Wind Fish woke up? Who knows?</p>
+<p><img src="/images/botw/linksawakening_switch.jpg"></p>
+<p>(apparently there was a Nintendo Switch remake of <em>Link's Awakening</em>?)</p>
+<p>Regardless, while the usual Zelda themes certainly exist in <em>Link's Awakening</em>,
+the specific story points don't. So years later it was a shock to learn that
+Link actually had a primary antagonist, <strong>Ganon</strong>.</p>
+<p>When I first met my future wife, one of the many things about her that charmed
+me was her love of the <em>Zelda</em> franchise, especially <em>Ocarina of Time</em>. I was
+never super motivated to play the games myself, but something that seems almost
+uniquely exclusive to Zelda games: they're incredibly fun to watch someone else
+play! Even better, The Lady and I soon discovered that, not only did we have
+different playstyles when it came to video games, but they complemented each other
+in a way that really helped her/us solve the puzzles in these games with
+ruthless efficiency.</p>
+<p>But even after watching her crush Ganon in <em>Ocarina of Time</em>, <em>Twilight Princess</em>,
+and Ganon's progenitor in <em>Skyward Sword</em> (which I bought her as a gift on the
+very first Nintendo console we ever owned together... awwwwwww), I still never
+felt the itch to play the game myself.</p>
+<p>And when I likewise bought <em>Breath of the Wild</em>, again for her to play, I once
+more assumed I'd watch, point things out here and there, and let her Zelda
+fandom run wild. Plus, I'd seen the reviews of this installment, and knew that
+while they'd thrown out a lot of "typical" Zelda grind, they also added a bunch
+of new gaming mechanisms that, on the surface, I held my nose for:</p>
+<ul>
+<li>Breakable weapons: I'd played games where weapons only lasted for finite
+ amounts of time, and <em>holy shit</em> did this mechanic annoy the crap out of me.</li>
+<li>Recipes: I haven't actually played a game with this mechanic, but it's been
+ showing up more frequently in RPGs, a gaming genre I generally have a very,
+ very hard time getting into.</li>
+<li>Seasonality: This encompasses not only night/day changes, but also changes
+ in weather patterns in-game, and subsequent changes in clothing / preparation
+ of countermeasures (food, elixirs) in order to survive. I've played a lot of games
+ with the night/day mechanic and have found it "meh" at best, super f*ckin
+ annoying at worst. Combined with the need to constantly swap out clothing
+ to adjust (and potentially lose abilities the previous clothing gave me) was
+ irksome just to think about.</li>
+<li>Nonlinear open world: Again, nothing against nonlinear gameplay--I for one
+ love that <em>Civilization</em> has multiple win conditions, and that the <em>StarCraft II</em>
+ missions are built to discourage "turtling" and force you to get creative--but
+ as an avid follower of <a href="https://www.escapistmagazine.com/v2/series/zero-punctuation/">Zero Punctuation</a>
+ I know how "well" Ubisoft's (for example) "nonlinear" "open world" games have
+ faired, and for the life of me I couldn't see a game on Zelda's scope doing
+ any better.</li>
+</ul>
+<p>Boy oh boy, was I <em>wrong</em>.</p>
+<p><img src="/images/botw/lostwoods.jpg"></p>
+<p>I watched The Lady play a game of her own for quite awhile, and at some point just
+kinda thought: eh, why not? and started my own game.</p>
+<p>I was <em>hooked</em>. I can't even explain why; even while writing that list of
+grievances, I kept thinking of examples <em>other</em> than <em>Breath of the Wild</em> with
+those mechanics and getting annoyed all over again. And yet, these are so well-done
+in <em>Breath of the Wild</em> that I don't even notice them. Even moreso, annoyances
+in previous Zelda iterations--the "forced save points" of <em>Skyward Sword</em>,
+the nails-on-a-chalkboard running-back-and-forth over the <em>Ocarina</em> landscape to
+finish a simple side quest, the rupee limitations of literally every other
+<em>Zelda</em> game (until you bought a bigger rupee purse ???), the constant hunt for
+more arrows, and the lack of any jumping ability--they're all gone!</p>
+<p>The best thing I can say about this game is that they did an incredible job of
+1) identifying the annoying things of previous Zelda games and cutting them out,
+and 2) introducing these new mechanics in a way that felt natural and intuitive.
+That's really the crux of it: the game is <em>easy to figure out</em>, even while the
+actual gameplay is incredibly, brutally, and satisfyingly challenging.</p>
+<p>That mastery of basics is why the game scales to such a <em>massive</em> landscape (thank
+you, travel points!); that's why there's enough room for three distinct and gorgeous
+dragons that fill you with excitement every time their music comes out of nowhere;</p>
+<p><img src="/images/botw/dinraal.jpg"></p>
+<p>that's why staying in the nearest stable during a thunderstorm or going deep
+into the arctic tundra feels so much like curling up in front of a crackling
+fire on a freezing cold day;</p>
+<p><img src="/images/botw/snow.jpg"></p>
+<p>that's why, even after completing part of a main quest, you'll find yourself
+returning over and over to the same points on the map--to see an old friend,
+find a new side quest, or exchange some shiny rocks you could sell anywhere for
+a better price but you keep coming here because something about it makes you
+feel at home;</p>
+<p><img src="/images/botw/zoradomain.jpg"></p>
+<p>that's why you can take a break in between main quests
+to try and ride a stag;</p>
+<p><img src="/images/botw/shrinequest.jpg"></p>
+<p>and yes, this is an actual side quest.</p>
+<p>Nintendo knocked this one clear out of the park. It's so wonderfully and
+incredibly immersive: I go from exploring the freezing cold peaks of the
+Hebra mountains to chasing down a monster aficionado with a nighttime shop along
+the southeastern coastline with absolutely no recollection of how I transitioned
+from one to the other.</p>
+<p>But by far, the single biggest surprise is <strong>the plot</strong>. It’s nuanced, and
+mysterious, and even chilling in some cases, and it has me on the edge of my
+seat wanting to know what happens next. Previously, I’ve always felt the plot in
+Zelda games was a perpetual weakness: Zelda/Link good, Ganon bad, bludgeon Ganon
+until bad goes away and credits roll. But this game--at least so far (I’m not
+done yet)--makes me think there’s something at work beyond Ganon and his usual
+hijinks. The "good guys" in particular don’t seem perfect; I’m being led to
+think they made mistakes!</p>
+<p>Sadly, classes start this week, so it's unlikely I'll be making fast progress
+over the next few months. But I do know The Lady was pretty thrilled to unlock
+one particular character from previous Zelda games who, while technically
+present in this game, required some external convincing to join the quest:</p>
+<p><img src="/images/botw/epona.jpg"></p>
+<p>I am loving everything about this game. Go buy it and forget reality! It's a
+great way to kill time while healing from an injury.</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+
+        <div class="meta">
+            <div>
+                    <a href="https://magsol.github.io/tag/breath-of-the-wild.html" class="tag">breath of the wild</a>
+                    <a href="https://magsol.github.io/tag/zelda.html" class="tag">zelda</a>
+                    <a href="https://magsol.github.io/tag/running-injury.html" class="tag">running injury</a>
+                    <a href="https://magsol.github.io/tag/running.html" class="tag">running</a>
+                    <a href="https://magsol.github.io/tag/gaming.html" class="tag">gaming</a>
+                    <a href="https://magsol.github.io/tag/video-gaming.html" class="tag">video gaming</a>
+                    <a href="https://magsol.github.io/tag/nintendo.html" class="tag">nintendo</a>
+                    <a href="https://magsol.github.io/tag/nintendo-switch.html" class="tag">nintendo switch</a>
+                    <a href="https://magsol.github.io/tag/ocarina-of-time.html" class="tag">ocarina of time</a>
+                    <a href="https://magsol.github.io/tag/links-awakening.html" class="tag">link's awakening</a>
+                    <a href="https://magsol.github.io/tag/skyward-sword.html" class="tag">skyward sword</a>
+                    <a href="https://magsol.github.io/tag/gaming-nerds.html" class="tag">gaming nerds</a>
+                    <a href="https://magsol.github.io/tag/the-lady.html" class="tag">the lady</a>
+            </div>
+        </div>
+    </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+    <script type="text/javascript">
+      var disqus_shortname = 'stochasticstenography';
+      var disqus_identifier = '/blog/2020/05/20/breath-of-fresh-air/';
+      var disqus_url = 'https://magsol.github.io/blog/2020/05/20/breath-of-fresh-air/';
+      var disqus_title = 'Breath of Fresh (albeit, indoor) Air';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = "//" + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+  </section>
+
+</div>
+
+<style type="text/css">
+{
+    max-width: 700px;
+}
+
+.text_cell .prompt {
+    display: none;
+}
+
+div.cell {
+    padding: 0;
+}
+
+div.text_cell_render {
+    padding: 0;
+}
+
+div.prompt {
+    font-size: 13px;
+}
+
+div.input_prompt {
+    padding: .7em 0.2em;
+}
+
+div.output_prompt {
+    padding: .4em .2em;
+}
+
+div.input_area {
+    margin: .2em 0.4em;
+    max-width: 580px;
+}
+
+table.dataframe {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+table.dataframe th, td {
+    padding: 4px;
+    text-align: left;
+}
+
+pre code {
+    background-color: inherit;
+}</style>
+
+        </div>
+<!--
+    <footer>
+      <p>
+        © 2012-2017 Shannon Quinn, license <a href="https://github.com/magsol/magsol.github.io-source/blob/master/LICENSE"> </a>
+        unless otherwise noted.
+        Generated by <a href= "http://docs.getpelican.com/">Pelican</a>.
+      </p>
+    </footer>
+-->
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-6646270-2']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-6646270-2');
+    ga('send', 'pageview');
+</script>
+    </body>
+</html>
