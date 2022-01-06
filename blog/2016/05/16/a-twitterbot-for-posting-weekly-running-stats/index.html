@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="author" content="Shannon Quinn">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <title>A twitterbot for posting weekly running stats | Stochastic Stenography</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="alternate" type="application/atom+xml" title="Stochastic Stenography blog atom feed" href="/feeds/all.atom.xml" />
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/theme/css/icons.css"/>
+        <link rel="stylesheet" type="text/css" href="/theme/fa/css/font-awesome.min.css" />
+        <style>.highlight .hll { background-color: #ffffcc }
+.highlight .c { color: #60a0b0; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #007020; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #60a0b0; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #007020 } /* Comment.Preproc */
+.highlight .c1 { color: #60a0b0; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #60a0b0; background-color: #fff0f0 } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #808080 } /* Generic.Output */
+.highlight .gp { color: #c65d09; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0040D0 } /* Generic.Traceback */
+.highlight .kc { color: #007020; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #007020; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #007020; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #007020 } /* Keyword.Pseudo */
+.highlight .kr { color: #007020; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #902000 } /* Keyword.Type */
+.highlight .m { color: #40a070 } /* Literal.Number */
+.highlight .s { color: #4070a0 } /* Literal.String */
+.highlight .na { color: #4070a0 } /* Name.Attribute */
+.highlight .nb { color: #007020 } /* Name.Builtin */
+.highlight .nc { color: #0e84b5; font-weight: bold } /* Name.Class */
+.highlight .no { color: #60add5 } /* Name.Constant */
+.highlight .nd { color: #555555; font-weight: bold } /* Name.Decorator */
+.highlight .ni { color: #d55537; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #007020 } /* Name.Exception */
+.highlight .nf { color: #06287e } /* Name.Function */
+.highlight .nl { color: #002070; font-weight: bold } /* Name.Label */
+.highlight .nn { color: #0e84b5; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #062873; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #bb60d5 } /* Name.Variable */
+.highlight .ow { color: #007020; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #40a070 } /* Literal.Number.Float */
+.highlight .mh { color: #40a070 } /* Literal.Number.Hex */
+.highlight .mi { color: #40a070 } /* Literal.Number.Integer */
+.highlight .mo { color: #40a070 } /* Literal.Number.Oct */
+.highlight .sb { color: #4070a0 } /* Literal.String.Backtick */
+.highlight .sc { color: #4070a0 } /* Literal.String.Char */
+.highlight .sd { color: #4070a0; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #4070a0 } /* Literal.String.Double */
+.highlight .se { color: #4070a0; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #4070a0 } /* Literal.String.Heredoc */
+.highlight .si { color: #70a0d0; font-style: italic } /* Literal.String.Interpol */
+.highlight .sx { color: #c65d09 } /* Literal.String.Other */
+.highlight .sr { color: #235388 } /* Literal.String.Regex */
+.highlight .s1 { color: #4070a0 } /* Literal.String.Single */
+.highlight .ss { color: #517918 } /* Literal.String.Symbol */
+.highlight .bp { color: #007020 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #bb60d5 } /* Name.Variable.Class */
+.highlight .vg { color: #bb60d5 } /* Name.Variable.Global */
+.highlight .vi { color: #bb60d5 } /* Name.Variable.Instance */
+.highlight .il { color: #40a070 } /* Literal.Number.Integer.Long */</style>
+        <style>body {
+  margin: 0;
+  padding: 0;
+  font: 16px 'Source Sans Pro', sans-serif;
+  line-height: 1.6em;
+  color: #222;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: #007EE5;
+  text-decoration: none;
+}
+a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+header.main-header {
+  background: none repeat scroll 0% 0% #2A66C0;
+  margin-bottom: 0px;
+}
+header.main-header a {
+  color: #c0d4f1;
+}
+header.main-header a:hover {
+  color: #fff;
+  background-color: #2A66C0;
+}
+header.main-header .container {
+  max-width: 1000px;
+}
+article {
+  margin: 0;
+}
+article header.about {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+article header {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+article header h1 {
+  margin-bottom: 2px;
+  font-weight: 700;
+  color: #000;
+}
+article header time {
+  color: #9E9E9E;
+  font-size: 0.95em;
+  float: right;
+}
+article header time.left {
+  color: #9E9E9E;
+  font-size: 0.95em;
+  float: left;
+}
+article div.social-links ul {
+  padding: 0px;
+}
+article div.social-links li {
+  display: inline;
+  font-size: 24px;
+}
+article div.social-links li a {
+  color: #000;
+  padding: 10px;
+}
+article div.social-links li a:hover {
+  color: #666;
+  text-decoration: none;
+}
+article p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  line-height: 1.6em;
+}
+article p.note {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 0.533em 0.733em;
+}
+article p.update {
+  background-color: #FEEFB3;
+  border: 1px solid #e6e68a;
+  padding: 0.533em 0.733em;
+}
+article p.alert {
+  background-color: #ffe2e2;
+  border: 1px solid #ffb2b2;
+  padding: 0.533em 0.733em;
+}
+article ul,
+article ol {
+  margin-top: 0px;
+  margin-bottom: 25px;
+}
+article li {
+  font-size: 18px;
+  line-height: 1.6em;
+}
+article a:hover {
+  text-decoration: underline;
+}
+article blockquote {
+  border-left: 2px solid #c7c7cc;
+  color: #666;
+  margin: 30px 0;
+  padding: 0 0 0 25px;
+}
+article img {
+  max-width: 100%;
+}
+article code {
+  color: #333;
+  background-color: #EEE;
+  border-radius: 0;
+  font-size: 14px;
+}
+article .meta {
+  font-size: 12px;
+}
+article .meta a:hover {
+  text-decoration: none;
+}
+article .meta div {
+  margin-bottom: 20px;
+  display: block;
+}
+article .meta a.tag {
+  margin: 0 10px 10px 0;
+  padding: 1px 12px;
+  display: inline-block;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.05);
+}
+article .meta a.tag:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+article .meta a.read_more,
+article .meta a.comments_btn {
+  font-size: 16px;
+  font-weight: 800;
+  padding: 10px 20px;
+  color: #2A66C0;
+  background: #FFF;
+  border: 1px solid #2A66C0;
+}
+article .meta a.read_more:hover,
+article .meta a.comments_btn:hover {
+  color: #FFF;
+  background: #2A66C0;
+}
+.index {
+  max-width: 800px;
+}
+.index article header h2 {
+  font-size: 36px;
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+.index article header h2 a {
+  color: #000;
+}
+.index article header h2 a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+.index .separator {
+  padding: 40px 0 0 0;
+  margin: 0 0 40px 0;
+  height: 10px;
+  border-bottom: solid 1px #CCC;
+}
+.index .pagination {
+  display: block;
+  margin-bottom: 100px;
+}
+.index .pagination .left {
+  text-align: right;
+}
+.index .pagination .right {
+  text-align: left;
+}
+.index .pagination a {
+  display: inline-block;
+  border: 2px solid #5C881C;
+  margin: 0 5px;
+  padding: 8px 20px;
+  font-weight: bold;
+  color: #5C881C;
+}
+.index .pagination a:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.post {
+  max-width: 800px;
+}
+.post h2:before {
+  content: "# ";
+  font-weight: bold;
+  color: #DDD;
+}
+.post h3:before {
+  content: "## ";
+  font-weight: bold;
+  color: #DDD;
+}
+.post h4:before {
+  content: "### ";
+  font-weight: bold;
+  color: #DDD;
+}
+.post article .meta {
+  margin: 50px 0 100px;
+}
+.list {
+  max-width: 700px;
+}
+.list ul.double-list {
+  margin: 0 auto 60px;
+  padding: 0;
+  list-style-type: none;
+}
+.list ul.double-list li {
+  padding: 5px 0;
+}
+.list ul.double-list li h2 {
+  font-size: 1em;
+  display: inline;
+  font-weight: normal;
+}
+.list ul.double-list li span {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-align: right;
+  float: right;
+  padding-top: 3px;
+  font-size: 14px;
+  color: #999;
+}
+.full-width-content {
+  padding-top: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+.col-xs-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-xs-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-xs-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-xs-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-xs-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-xs-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+  padding-right: 0px;
+  padding-left: 0px;
+}</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+        <script type="text/javascript">
+        init_mathjax = function() {
+            if (window.MathJax) {
+                // MathJax loaded
+                MathJax.Hub.Config({
+                    tex2jax: {
+                        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                        displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+                    },
+                    displayAlign: 'left', // Change this to 'center' to center equations.
+                    "HTML-CSS": {
+                        styles: {'.MathJax_Display': {"margin": 0}}
+                    }
+                });
+                MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+            }
+        }
+        init_mathjax();
+        </script>
+
+    </head>
+
+    <body>
+        <!--<header class="navbar navbar-inverse bs-docs-nav">-->
+        <header class="navbar navbar-static-top bs-docs-nav main-header">
+            <div class="container">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="/" title="Home" class="title">Stochastic Stenography</a>
+                </div>
+                <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation" id="theNavbar">
+		    <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/pages/about.html" title="About">About</a></li>
+                            <li><a href="/archives.html" title="Archive">Archive</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div id="wrap">
+<div class="container post">
+    <article>
+        <header>
+            <h1>A twitterbot for posting weekly running stats</h1>
+            <time class="left" datetime="article.date.isoformat()" pubdate>Posted on May 16 in the year 2016, at 15:09PM. It was Monday.</time>
+        </header>
+
+        <div class="article_content">
+            <p><img src="/images/stravatwitter.png"></p>
+<p>We runners (we're a crazy bunch), for the most part, like our stats. How many miles do you log each week? Each month? How are your average race paces trending? Are your long runs both feeling good and getting faster?</p>
+<p>Yes, we're a little obsessed with our numbers.</p>
+<p>It's no surprise, then, that web services have popped up to help us aggregate some of these numbers. One of the most obvious is <a href="https://connect.garmin.com/">Garmin Connect</a>, home for pretty much anyone who uses the Garmin GPS watches.</p>
+<p>Another that I've used before is <a href="http://www.dailymile.com/">Daily Mile</a>. However in recent months I've become frustrated enough with the site to leave entirely. By all accounts, no part of the site has been updated in <em>years</em>, and <a href="https://wherearethepancakes.wordpress.com/2013/05/20/my-ideal-running-statistics-site/">other alternatives</a> are simply much more pleasant to use.</p>
+<p>Unfortunately, there was one crucial feature of Daily Mile I really liked: connecting it to your Twitter account to post weekly summaries of your recorded workouts. I liked it so much, in fact, I created a small web service to do the same thing, <a href="https://wherearethepancakes.wordpress.com/2014/06/11/open-beta-for-twathletic/">but for monthly summaries</a>:</p>
+<p><img src="https://wherearethepancakes.files.wordpress.com/2014/06/example.png"></p>
+<p>Obviously that service no longer exists, but ever since I've been wanting to get something similar up and running again. Especially now that I don't even have weekly summaries anymore--just couldn't stomach Daily Mile any longer--I wanted to take the opportunity (and the shiny new blog) to go through a step-by-step procedure of creating your own Twitter / Strava app for posting weekly summaries on Twitter of your running mileage!</p>
+<h3><strong>Preliminaries</strong></h3>
+<p>A few things you'll need before we get started:</p>
+<ul>
+<li>Python 3.5</li>
+<li><a href="http://www.tweepy.org/">tweepy</a> (for interfacing with Twitter)</li>
+<li><a href="http://pythonhosted.org/stravalib/">stravalib</a> (for interfacing with Strava)</li>
+<li><a href="https://github.com/magsol/pybot">pybot</a> (shameless plug, but it will help)</li>
+</ul>
+<p>Both Twitter and Strava use OAuth as their method of app authentication. These libraries just make it easier to interact with the services; they abstract a lot of the details of authentication and communication.</p>
+<p>But in case you're interested: <a href="https://dev.twitter.com/overview/documentation">Twitter's docs</a> and <a href="http://strava.github.io/api/">Strava's docs</a>.</p>
+<h4><strong>Step 1: Create a Strava app</strong></h4>
+<p>Go to your <a href="https://www.strava.com/settings/api">user settings</a> and create an app that can interface with your account. Important pieces of information you'll need later: <strong>Client ID</strong>, <strong>Client Secret</strong>, and <strong>Your access token</strong>.</p>
+<p>We can test if it works. Fire up an IPython terminal, get your <code>access_token</code>, and run the following code:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">stravalib</span> <span class="kn">import</span> <span class="n">Client</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">access_token</span> <span class="o">=</span> <span class="n">access_token</span><span class="p">)</span>
+<span class="n">client</span><span class="o">.</span><span class="n">get_athlete</span><span class="p">()</span>
+</code></pre></div>
+
+<p>You should see something along the lines of:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Out</span><span class="p">[]:</span> <span class="o">&lt;</span><span class="n">Athlete</span> <span class="nb">id</span><span class="o">=</span><span class="mi">1234567</span> <span class="n">firstname</span><span class="o">=</span><span class="sa">b</span><span class="s1">&#39;Firstname&#39;</span> <span class="n">lastname</span><span class="o">=</span><span class="sa">b</span><span class="s1">&#39;Lastname&#39;</span><span class="o">&gt;</span>
+</code></pre></div>
+
+<h4><strong>Step 2: Retrieve last week's data</strong></h4>
+<p>The whole point is to get weekly mileage reports. Thankfully, the <code>get_activities</code> method in stravalib has an <code>after</code> optional parameter we can use to precisely tune what time interval we want.</p>
+<p>First, though, we need to create a timestamp that represents the 1-week time frame. If we assume this will only be executed on the day we want the summary--say, every Monday--then we need to tally up all the runs from the day before all the way back to the previous Monday, inclusive.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">datetime</span>
+<span class="n">current</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="n">last_week</span> <span class="o">=</span> <span class="n">current</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">weeks</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">after</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="n">last_week</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">last_week</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">last_week</span><span class="o">.</span><span class="n">day</span><span class="p">)</span>
+<span class="n">activities</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_activities</span><span class="p">(</span><span class="n">after</span> <span class="o">=</span> <span class="n">after</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Assuming we run this chunk of code on a Monday, it should give us every Strava activity from the previous Monday up to the present.</p>
+<p>However, we're not done yet. This includes everything--not just our runs, but any other activities that we recorded; yoga, weights, elliptical, and so on. We need to filter these out. We also need to filter out the edge case of any activities that have been recorded <em>today</em>, since we don't want to include these in a report of <em>last</em> week's activities!</p>
+<div class="highlight"><pre><span></span><code><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="n">activity</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">activity</span> <span class="ow">in</span> <span class="n">activities</span> <span class="k">if</span> <span class="n">activity</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;Run&#39;</span> \
+    <span class="ow">and</span> <span class="n">a</span><span class="o">.</span><span class="n">start_date_local</span><span class="o">.</span><span class="n">day</span> <span class="o">!=</span> <span class="n">current</span><span class="o">.</span><span class="n">day</span><span class="p">]</span>
+</code></pre></div>
+
+<p>Ok, let's pause and discuss what's happening here.</p>
+<p>First, the most obvious: we're looping through the <code>activities</code> generator we obtained in the last line of the previous step. Second, the <code>if</code> statement at the end filters out any activities that aren't a run. Finally, the <code>activity.id</code> part out front says, we're building a list of the unique IDs that identify each activity. The last part is our timeframe edge case: if we recorded an activity today, even a running activity, don't include it.</p>
+<p>Why are we only holding onto the IDs? It has to do with detail. Strava maintains a hierarchy of details available to users that vary with authentication, connection, etc. Simply put, when we request a list of activities, <a href="http://strava.github.io/api/v3/activities/#get-activities">the default detail level is 2, which is "summary" level</a>. However, some of the metrics we need--calories in particular!--require level 3, or "detailed". To get this level of detail, we need to query for individual activities...one at a time.</p>
+<p>Hence, a list of activity IDs! Now we can loop through the IDs, requesting details on each run and tabulating up the mileage and calories.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">stravalib</span> <span class="kn">import</span> <span class="n">unithelper</span>
+
+<span class="n">mileage</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">calories</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="k">for</span> <span class="n">activity_id</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
+    <span class="n">activity</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_activity</span><span class="p">(</span><span class="n">activity_id</span><span class="p">)</span>
+
+    <span class="c1"># This is annoying; all the default distances are in meters! Luckily,</span>
+    <span class="c1"># stravalib comes with a nice unit helper utility to do the conversion.</span>
+    <span class="n">distance</span> <span class="o">=</span> <span class="n">unithelper</span><span class="o">.</span><span class="n">miles</span><span class="p">(</span><span class="n">activity</span><span class="o">.</span><span class="n">distance</span><span class="p">)</span>
+    <span class="n">mileage</span> <span class="o">+=</span> <span class="nb">round</span><span class="p">(</span><span class="n">distance</span><span class="o">.</span><span class="n">num</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># Rounds to 2 sig figs.</span>
+    <span class="n">calories</span> <span class="o">+=</span> <span class="n">activity</span><span class="o">.</span><span class="n">calories</span>
+</code></pre></div>
+
+<p>There you have it! In those two variables--<code>mileage</code> and <code>calories</code>--you have all the data you need to summarize your running workouts for the last week. Now we just need to post this information on Twitter!</p>
+<h4><strong>Step 3: Create a PyBot</strong></h4>
+<p>Ok, time for a shameless plug: yes, I'm the <a href="https://github.com/magsol/pybot">pybot</a> author. It's still highly experimental, and largely uncompleted, but for our purposes it will suffice nicely as a barebones framework to interact with Twitter.</p>
+<p>Clone the repo and follow the setup script to create a Twitter app and connect it to your account.</p>
+<div class="highlight"><pre><span></span><code><span class="err">git clone https://github.com/magsol/pybot.git</span>
+<span class="err">cd pybot</span>
+<span class="err">sbin/create_pybot.py</span>
+</code></pre></div>
+
+<p>That will walk you through the instructions for creating an app, generating OAuth credentials, and stubbing out your first pybot. Feel free to give it whatever name you'd like; for the purposes of this tutorial, I'll assume we've named it <code>artbot</code> (don't ask). Congratulations! You've created a twitter bot!</p>
+<h4><strong>Step 4: Customize the bot's behavior</strong></h4>
+<p>Our bot is pretty simple: every Monday at some specified time, it will wake up, read all the prior week's running activities, and post the summary before going back to sleep for another week.</p>
+<p>It won't be prompted by anything other than time. So the specific action override we're looking for in PyBot parlance is <code>on_tweet</code>, and the interval we'll use is <code>tweet_interval</code>. The latter is easy enough--a full week between tweets!</p>
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;tweet_interval&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">7</span>
+</code></pre></div>
+
+<p>Before we go any further: does anyone see anything wrong with the above code snippet?</p>
+<p>I'll give you a hint: imagine you started this bot on a Tuesday, instead of a Monday.</p>
+<p>Yep, there it is. This interval we've defined is exactly 1 week, but it <em>doesn't account for when we actually START the bot</em>. We need this to be a little more intelligent. If you want the posting to happen weekly every Monday, it shouldn't matter when you actually start running the bot, right? It should be smart enough to figure out when it needs to post for the first time, <em>then</em> post weekly thereafter.</p>
+<p>A neat component of PyBot is that, in addition to giving hard time frames, you can also specify functions to compute the interval on-the-fly, subject to some other constraints that are dynamic (like on what day of the week you happen to fire up the bot).</p>
+<p>To make things easy on us, we'll use the <code>datetime</code> convention in the Python documentation for <a href="https://docs.python.org/3.5/library/datetime.html#datetime.datetime.weekday">identifying individual days of the week</a>. This tutorial assumes Mondays (which corresponds to <code>0</code>), but you can use whatever value you want.</p>
+<p>We need to store this as a configuration parameter in the bot.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Put this somewhere in the bot_init() method</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;update_day&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Corresponds to Monday.</span>
+</code></pre></div>
+
+<p>Now, we need a <em>function</em> to compute the interval between updates.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Put this somewhere in the bot_init() method</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;tweet_interval&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compute_interval</span>
+</code></pre></div>
+
+<p>We've referenced an internal method we're calling <code>_compute_interval</code>, as of yet undefined. Let's go ahead and define it!</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Put this somewhere in the bot class declaration</span>
+<span class="k">def</span> <span class="nf">_compute_interval</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">interval</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">7</span>  <span class="c1"># The default interval; we&#39;ll start here</span>
+
+    <span class="c1"># Are we on the right day of the week?</span>
+    <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">weekday</span><span class="p">()</span>
+    <span class="n">target</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;update_day&#39;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">now</span> <span class="o">==</span> <span class="n">target</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">interval</span>  <span class="c1"># Nothing to do! Yay!</span>
+
+    <span class="c1"># If we get to this point, it means the index of the current day--</span>
+    <span class="c1"># as in, right when the code gets HERE--doesn&#39;t match the index of the</span>
+    <span class="c1"># day we&#39;ve said we want to perform this update. So we need to do a</span>
+    <span class="c1"># little bit of work to compute that date.</span>
+
+    <span class="k">if</span> <span class="n">now</span> <span class="o">&gt;</span> <span class="n">target</span><span class="p">:</span>
+        <span class="c1"># This is a hack, so the index of the CURRENT day will always be</span>
+        <span class="c1"># smaller than the index of the TARGET day.</span>
+        <span class="n">now</span> <span class="o">-=</span> <span class="mi">7</span>
+
+    <span class="c1"># Essentially, all we&#39;ve done is replace the 7 above with whatever</span>
+    <span class="c1"># it needs to be in order to get us to our target day.</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">target</span> <span class="o">-</span> <span class="n">now</span><span class="p">)</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span>
+</code></pre></div>
+
+<p>Now that our interval is in place, we'll need to override the <code>on_tweet</code> action to do what we want whenever it's called (which will be once each week on the day we've specified!). Remember, this method is called once we've hit our interval. So this is where it all comes together!</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">on_tweet</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+    <span class="c1"># First, pull in the stats from Strava.</span>
+    <span class="n">current</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+    <span class="n">last_week</span> <span class="o">=</span> <span class="n">current</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">weeks</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">after</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="n">last_week</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">last_week</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">last_week</span><span class="o">.</span><span class="n">day</span><span class="p">)</span>
+    <span class="n">activities</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_activities</span><span class="p">(</span><span class="n">after</span> <span class="o">=</span> <span class="n">after</span><span class="p">)</span>
+
+    <span class="c1"># Second, filter by activity type and time frame.</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="n">activity</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">activity</span> <span class="ow">in</span> <span class="n">activities</span> <span class="k">if</span> <span class="n">activity</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;Run&#39;</span> <span class="ow">and</span>
+        <span class="n">a</span><span class="o">.</span><span class="n">start_date_local</span><span class="o">.</span><span class="n">day</span> <span class="o">!=</span> <span class="n">current</span><span class="o">.</span><span class="n">day</span><span class="p">]</span>
+
+    <span class="c1"># Third, tabulate up the stats for mileage and calories.</span>
+    <span class="n">mileage</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">calories</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="k">for</span> <span class="n">activity_id</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
+        <span class="n">activity</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_activity</span><span class="p">(</span><span class="n">activity_id</span><span class="p">)</span>
+        <span class="n">distance</span> <span class="o">=</span> <span class="n">unithelper</span><span class="o">.</span><span class="n">miles</span><span class="p">(</span><span class="n">activity</span><span class="o">.</span><span class="n">distance</span><span class="p">)</span>
+        <span class="n">mileage</span> <span class="o">+=</span> <span class="nb">round</span><span class="p">(</span><span class="n">distance</span><span class="o">.</span><span class="n">num</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># Rounds to 2 sig figs.</span>
+        <span class="n">calories</span> <span class="o">+=</span> <span class="n">activity</span><span class="o">.</span><span class="n">calories</span>
+
+    <span class="c1"># Finally, use the stats to craft a tweet. This can be any format</span>
+    <span class="c1"># you want, but I&#39;ll use the example one from the start of the post.</span>
+    <span class="n">tweet</span> <span class="o">=</span> <span class="s2">&quot;My training last week: </span><span class="si">{:d}</span><span class="s2"> workouts for </span><span class="si">{:.2f}</span><span class="s2"> miles and </span><span class="si">{:d}</span><span class="s2"> calories burned.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">),</span> <span class="n">mileage</span><span class="p">,</span> <span class="n">calories</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">update_status</span><span class="p">(</span><span class="n">tweet</span><span class="p">)</span>
+</code></pre></div>
+
+<p>That's it! You have everything you need; now, just set the bot to run <em>ad nauseum</em>:</p>
+<div class="highlight"><pre><span></span><code><span class="err">python artbot.py</span>
+</code></pre></div>
+
+<p>It should run forever, sleeping for most of it but waking every week to post your summary. If you notice something isn't working right, check the logs; they should specify if there are problems e.g. with permissions posting to Twitter, or connections hanging and disconnecting.</p>
+<h3><strong>Conclusion</strong></h3>
+<p>That's all there is to it! There are obviously a lot of technical hurdles I largely glossed over--creating the apps for both Strava and Twitter can be a little more involved than the average person would like, and Python versions (especially 2.x vs 3.x) can wreak havoc on your code. I tried to be as reproducible as I could, though until Jupyter notebooks decide to play nice with Pelican (or maybe the other way around?) these code embeddings will have to suffice. Sigh.</p>
+<p>Please feel free to leave a comment if you have any questions! I've also posted the bot in the <code>examples</code> folder in the <a href="https://github.com/magsol/pybot">pybot GitHub repository</a> as <code>artbot.py</code>. Happy tweeting!</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+
+        <div class="meta">
+            <div>
+                    <a href="https://magsol.github.io/tag/howto.html" class="tag">howto</a>
+                    <a href="https://magsol.github.io/tag/python.html" class="tag">python</a>
+                    <a href="https://magsol.github.io/tag/strava.html" class="tag">strava</a>
+                    <a href="https://magsol.github.io/tag/running.html" class="tag">running</a>
+                    <a href="https://magsol.github.io/tag/oauth.html" class="tag">oauth</a>
+                    <a href="https://magsol.github.io/tag/tweepy.html" class="tag">tweepy</a>
+                    <a href="https://magsol.github.io/tag/twitter.html" class="tag">twitter</a>
+                    <a href="https://magsol.github.io/tag/pybot.html" class="tag">pybot</a>
+            </div>
+        </div>
+    </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+    <script type="text/javascript">
+      var disqus_shortname = 'stochasticstenography';
+      var disqus_identifier = '/blog/2016/05/16/a-twitterbot-for-posting-weekly-running-stats/';
+      var disqus_url = 'https://magsol.github.io/blog/2016/05/16/a-twitterbot-for-posting-weekly-running-stats/';
+      var disqus_title = 'A twitterbot for posting weekly running stats';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = "//" + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+  </section>
+
+</div>
+
+<style type="text/css">
+{
+    max-width: 700px;
+}
+
+.text_cell .prompt {
+    display: none;
+}
+
+div.cell {
+    padding: 0;
+}
+
+div.text_cell_render {
+    padding: 0;
+}
+
+div.prompt {
+    font-size: 13px;
+}
+
+div.input_prompt {
+    padding: .7em 0.2em;
+}
+
+div.output_prompt {
+    padding: .4em .2em;
+}
+
+div.input_area {
+    margin: .2em 0.4em;
+    max-width: 580px;
+}
+
+table.dataframe {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+table.dataframe th, td {
+    padding: 4px;
+    text-align: left;
+}
+
+pre code {
+    background-color: inherit;
+}</style>
+
+        </div>
+<!--
+    <footer>
+      <p>
+        © 2012-2017 Shannon Quinn, license <a href="https://github.com/magsol/magsol.github.io-source/blob/master/LICENSE"> </a>
+        unless otherwise noted.
+        Generated by <a href= "http://docs.getpelican.com/">Pelican</a>.
+      </p>
+    </footer>
+-->
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-6646270-2']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-6646270-2');
+    ga('send', 'pageview');
+</script>
+    </body>
+</html>

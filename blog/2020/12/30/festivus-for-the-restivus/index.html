@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="author" content="Shannon Quinn">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <title>Festivus for the Restivus | Stochastic Stenography</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="alternate" type="application/atom+xml" title="Stochastic Stenography blog atom feed" href="/feeds/all.atom.xml" />
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/theme/css/icons.css"/>
+        <link rel="stylesheet" type="text/css" href="/theme/fa/css/font-awesome.min.css" />
+        <style>.highlight .hll { background-color: #ffffcc }
+.highlight .c { color: #60a0b0; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #007020; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #60a0b0; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #007020 } /* Comment.Preproc */
+.highlight .c1 { color: #60a0b0; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #60a0b0; background-color: #fff0f0 } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #808080 } /* Generic.Output */
+.highlight .gp { color: #c65d09; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0040D0 } /* Generic.Traceback */
+.highlight .kc { color: #007020; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #007020; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #007020; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #007020 } /* Keyword.Pseudo */
+.highlight .kr { color: #007020; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #902000 } /* Keyword.Type */
+.highlight .m { color: #40a070 } /* Literal.Number */
+.highlight .s { color: #4070a0 } /* Literal.String */
+.highlight .na { color: #4070a0 } /* Name.Attribute */
+.highlight .nb { color: #007020 } /* Name.Builtin */
+.highlight .nc { color: #0e84b5; font-weight: bold } /* Name.Class */
+.highlight .no { color: #60add5 } /* Name.Constant */
+.highlight .nd { color: #555555; font-weight: bold } /* Name.Decorator */
+.highlight .ni { color: #d55537; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #007020 } /* Name.Exception */
+.highlight .nf { color: #06287e } /* Name.Function */
+.highlight .nl { color: #002070; font-weight: bold } /* Name.Label */
+.highlight .nn { color: #0e84b5; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #062873; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #bb60d5 } /* Name.Variable */
+.highlight .ow { color: #007020; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #40a070 } /* Literal.Number.Float */
+.highlight .mh { color: #40a070 } /* Literal.Number.Hex */
+.highlight .mi { color: #40a070 } /* Literal.Number.Integer */
+.highlight .mo { color: #40a070 } /* Literal.Number.Oct */
+.highlight .sb { color: #4070a0 } /* Literal.String.Backtick */
+.highlight .sc { color: #4070a0 } /* Literal.String.Char */
+.highlight .sd { color: #4070a0; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #4070a0 } /* Literal.String.Double */
+.highlight .se { color: #4070a0; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #4070a0 } /* Literal.String.Heredoc */
+.highlight .si { color: #70a0d0; font-style: italic } /* Literal.String.Interpol */
+.highlight .sx { color: #c65d09 } /* Literal.String.Other */
+.highlight .sr { color: #235388 } /* Literal.String.Regex */
+.highlight .s1 { color: #4070a0 } /* Literal.String.Single */
+.highlight .ss { color: #517918 } /* Literal.String.Symbol */
+.highlight .bp { color: #007020 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #bb60d5 } /* Name.Variable.Class */
+.highlight .vg { color: #bb60d5 } /* Name.Variable.Global */
+.highlight .vi { color: #bb60d5 } /* Name.Variable.Instance */
+.highlight .il { color: #40a070 } /* Literal.Number.Integer.Long */</style>
+        <style>body {
+  margin: 0;
+  padding: 0;
+  font: 16px 'Source Sans Pro', sans-serif;
+  line-height: 1.6em;
+  color: #222;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: #007EE5;
+  text-decoration: none;
+}
+a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+header.main-header {
+  background: none repeat scroll 0% 0% #2A66C0;
+  margin-bottom: 0px;
+}
+header.main-header a {
+  color: #c0d4f1;
+}
+header.main-header a:hover {
+  color: #fff;
+  background-color: #2A66C0;
+}
+header.main-header .container {
+  max-width: 1000px;
+}
+article {
+  margin: 0;
+}
+article header.about {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+article header {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+article header h1 {
+  margin-bottom: 2px;
+  font-weight: 700;
+  color: #000;
+}
+article header time {
+  color: #9E9E9E;
+  font-size: 0.95em;
+  float: right;
+}
+article header time.left {
+  color: #9E9E9E;
+  font-size: 0.95em;
+  float: left;
+}
+article div.social-links ul {
+  padding: 0px;
+}
+article div.social-links li {
+  display: inline;
+  font-size: 24px;
+}
+article div.social-links li a {
+  color: #000;
+  padding: 10px;
+}
+article div.social-links li a:hover {
+  color: #666;
+  text-decoration: none;
+}
+article p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  line-height: 1.6em;
+}
+article p.note {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 0.533em 0.733em;
+}
+article p.update {
+  background-color: #FEEFB3;
+  border: 1px solid #e6e68a;
+  padding: 0.533em 0.733em;
+}
+article p.alert {
+  background-color: #ffe2e2;
+  border: 1px solid #ffb2b2;
+  padding: 0.533em 0.733em;
+}
+article ul,
+article ol {
+  margin-top: 0px;
+  margin-bottom: 25px;
+}
+article li {
+  font-size: 18px;
+  line-height: 1.6em;
+}
+article a:hover {
+  text-decoration: underline;
+}
+article blockquote {
+  border-left: 2px solid #c7c7cc;
+  color: #666;
+  margin: 30px 0;
+  padding: 0 0 0 25px;
+}
+article img {
+  max-width: 100%;
+}
+article code {
+  color: #333;
+  background-color: #EEE;
+  border-radius: 0;
+  font-size: 14px;
+}
+article .meta {
+  font-size: 12px;
+}
+article .meta a:hover {
+  text-decoration: none;
+}
+article .meta div {
+  margin-bottom: 20px;
+  display: block;
+}
+article .meta a.tag {
+  margin: 0 10px 10px 0;
+  padding: 1px 12px;
+  display: inline-block;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.05);
+}
+article .meta a.tag:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+article .meta a.read_more,
+article .meta a.comments_btn {
+  font-size: 16px;
+  font-weight: 800;
+  padding: 10px 20px;
+  color: #2A66C0;
+  background: #FFF;
+  border: 1px solid #2A66C0;
+}
+article .meta a.read_more:hover,
+article .meta a.comments_btn:hover {
+  color: #FFF;
+  background: #2A66C0;
+}
+.index {
+  max-width: 800px;
+}
+.index article header h2 {
+  font-size: 36px;
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+.index article header h2 a {
+  color: #000;
+}
+.index article header h2 a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+.index .separator {
+  padding: 40px 0 0 0;
+  margin: 0 0 40px 0;
+  height: 10px;
+  border-bottom: solid 1px #CCC;
+}
+.index .pagination {
+  display: block;
+  margin-bottom: 100px;
+}
+.index .pagination .left {
+  text-align: right;
+}
+.index .pagination .right {
+  text-align: left;
+}
+.index .pagination a {
+  display: inline-block;
+  border: 2px solid #5C881C;
+  margin: 0 5px;
+  padding: 8px 20px;
+  font-weight: bold;
+  color: #5C881C;
+}
+.index .pagination a:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.post {
+  max-width: 800px;
+}
+.post h2:before {
+  content: "# ";
+  font-weight: bold;
+  color: #DDD;
+}
+.post h3:before {
+  content: "## ";
+  font-weight: bold;
+  color: #DDD;
+}
+.post h4:before {
+  content: "### ";
+  font-weight: bold;
+  color: #DDD;
+}
+.post article .meta {
+  margin: 50px 0 100px;
+}
+.list {
+  max-width: 700px;
+}
+.list ul.double-list {
+  margin: 0 auto 60px;
+  padding: 0;
+  list-style-type: none;
+}
+.list ul.double-list li {
+  padding: 5px 0;
+}
+.list ul.double-list li h2 {
+  font-size: 1em;
+  display: inline;
+  font-weight: normal;
+}
+.list ul.double-list li span {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-align: right;
+  float: right;
+  padding-top: 3px;
+  font-size: 14px;
+  color: #999;
+}
+.full-width-content {
+  padding-top: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+.col-xs-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-xs-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-xs-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-xs-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-xs-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-xs-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+  padding-right: 0px;
+  padding-left: 0px;
+}</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+        <script type="text/javascript">
+        init_mathjax = function() {
+            if (window.MathJax) {
+                // MathJax loaded
+                MathJax.Hub.Config({
+                    tex2jax: {
+                        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                        displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+                    },
+                    displayAlign: 'left', // Change this to 'center' to center equations.
+                    "HTML-CSS": {
+                        styles: {'.MathJax_Display': {"margin": 0}}
+                    }
+                });
+                MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+            }
+        }
+        init_mathjax();
+        </script>
+
+    </head>
+
+    <body>
+        <!--<header class="navbar navbar-inverse bs-docs-nav">-->
+        <header class="navbar navbar-static-top bs-docs-nav main-header">
+            <div class="container">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="/" title="Home" class="title">Stochastic Stenography</a>
+                </div>
+                <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation" id="theNavbar">
+		    <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/pages/about.html" title="About">About</a></li>
+                            <li><a href="/archives.html" title="Archive">Archive</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div id="wrap">
+<div class="container post">
+    <article>
+        <header>
+            <h1>Festivus for the Restivus</h1>
+            <time class="left" datetime="article.date.isoformat()" pubdate>Posted on December 30 in the year 2020, at 14:17PM. It was Wednesday.</time>
+        </header>
+
+        <div class="article_content">
+            <p><img src="/images/festivus/festivus.png"></p>
+<p><em>[Content warning: rough language ahead. You've been warned.]</em></p>
+<p>Jerry Seinfeld isn't on board with Festivus this year.</p>
+<p><blockquote class="twitter-tweet" align="center"><a href="https://twitter.com/JerrySeinfeld/status/1341820840149733377">Tweet of JerrySeinfeld/1341820840149733377</a></blockquote></p>
+<p>I get it, I do. And I respect it. But I'm gonna air me some grievances. My therapist has continued to insist that I do what I need and not to feel guilty about it, and right now I need to air some <em>fucking</em> grievances. So strap in folks; here we go.</p>
+<p>Running has been a sick joke for most of this year. I've been logging miles with some kind of GPS watch since mid-2011, and 2020 has been the lowest-mileage year by a massive margin. For comparison, long-time readers may remember the boondoggles of 2015-2016 when I had metatarsalgia in my feet. Both those years, I still managed to tip the 1,000-mile scale. This year? <strong>711 miles</strong>. Fuck that shit. Running wasn't an escape; it was a fucking trap of preferring the evil I knew over the evil I didn't.</p>
+<p>Of course, halting my running didn't help much, either. I was still exhausted beyond all measures, and not just physically: mentally, emotionally, and grammatically <em>burned. out.</em> I managed a couple of walks most days, largely amounting to 10,000 steps or thereabouts, so I guess I met the minimum recommended daily physical activity threshold for the most part. But boy did running leave me stuck with the bill this year.</p>
+<p>On the note of bills, let's talk about how much help we've gotten in that area, shall we? As in, fucking none? We'd have gotten more tangible pandemic assistance if we'd wholesale replaced our Georgia state and US federal governments with fucking nail salons, as opposed to the leadership vacuums from Kemp, Congress, and the White House. Jesus goddamn tap-dancing Christ. Frank Underwood in <em>House of Cards</em> killed people, but he got things done in the process. These Republicans just... kill people; whether it's because of willful incompetence or callous indifference I can't say, but holy shit: literal poop-flinging monkeys could have accomplished more in their steads. You have to put forth actual effort to be <em>this fucking ineffective</em>. You wanted individualistic self-sufficiency? Well, this is what it looks like, fuckers: if you've already got money, you're fine. If not, welp.</p>
+<p>I've felt a real kinship these past several months with Jeff Daniels' Will McAvoy, <a href="https://www.youtube.com/watch?v=wTjMqda19wk">particularly as he picks apart this fantasy of America being the "greatest country in the world."</a> What the fuck does that even mean? That we lead the world in COVID cases and deaths? That we're so star-spangled awesome that anyone with an internet connection can be an armchair epidemiologist? That some so-called moderates are so concerned with curating their centrist appearance that they completely lose sight of the fact that not all (or even most) issues have two sides? That an entire political spectrum in this country has managed to openly flirt with becoming the very thing we fought a war against barely a century ago? That we're so worried about giving anyone slightly more than they "deserve" that we'll decimate public institutions, neglect infrastructure, and reinforce existing inequities, so that only the people who already had money will succeed? Are we really this collectively fucking stupid?</p>
+<p>Twitter is a fucking nazi cesspool. Facebook is even worse, and Amazon takes the cake for most unethical CEO. Google isn't innocent, either: I've lost any respect I had for my former employer after they fired Timnit Gebru. Then I lost respect for luminaries like Jeff Dean after he doubled-down on some shady post-hoc justification that simultaneously made no sense and also revealed that Google has no collective interest in addressing its structural issues. Then, I lost respect for a number of current Googlers whose work I've admired over the years of following them since graduate school when they kept quiet over this whole thing. Meanwhile, Google is being hammered in EU antitrust courts and I frankly couldn't be happier about it. I hope Facebook gets splintered into dozens of tiny pieces.</p>
+<p>Can I just say again--people who selectively listen to experts or "experts" because they confirm what said people already believed can go jump in this fire.</p>
+<p><img src="/images/festivus/diaf.jpg"></p>
+<p>Sex work is work, and <em>The West Wing</em> really got this one wrong. Donna, in fact, had it right.</p>
+<p><em>Sex and the City</em>, for as much as it may have been ahead of its time in general, is super problematic around trans and nonbinary folks.</p>
+<p>I have to divorce J.K. Rowling the person from the author of the <em>Harry Potter</em> books, because she is doing literally everything possible to shit all over what is left of her legacy. I don't know what her problem with trans people is, or why she's so threatened by them, but she can likewise join the aforementioned people who listen only to the "experts" they already agree with.</p>
+<p>Brandon Sanderson doesn't write books nearly fast enough.</p>
+<p>James S.A. Corey doesn't write books nearly fast enough.</p>
+<p>Patrick Rothfuss doesn't write books nearly fast enough.</p>
+<p>Oh yeah, a massive <strong>FUCK YOU</strong> to the folks I've been seeing on Instagram who don't seem to realize COVID is a thing? Who keep gathering with more people than could possibly be in their pods? Who post pictures of themselves at gyms, bars, restaurants, group runs, and family gatherings for the holidays? They truly are the fuckwads from high school and college who would go off and party instead of working on the team project, difference being that when they invariably came back for the presentation, they'll end up spontaneously combusting and killing both themselves, their teammates, and half their classmates. I've been aggressively un-following these dipshits because if they can't think about anyone other than themselves in the midst of a global pandemic, why would I want to associate with them when the stakes are eventually more mundane? There are a lot of folks who've shown me exactly who they are during this pandemic and they're not anyone I care to know once COVID is done.</p>
+<p>SERIOUSLY. A MODICUM OF LEADERSHIP WOULD HAVE PREVENTED THOUSANDS OF NEEDLESS DEATHS, YOU STAR SPANGLED CESSPOOLS.</p>
+<p>Telecommunications in the United States is a fucking travesty. In any other [western] country there are dozens of companies in close competition with one another. Here, we have what amounts to local monopolies on broadband, and an effective duopoly on cell providers. And this gets passed off as "innovation"? Our telecom industry is 20 years behind the rest of the world!</p>
+<p>The Georgia Board of Regents: Governor Kemp's cronies, or just that fucking incompetent? They couldn't be bothered to implement a mask mandate back at the start of the first COVID surge until the entire university system was practically in a state of open rebellion. Rumor has it there's really only a couple bad apples among them, but--in much the same vein as the United States Senate--the fact that a single moronic board member can bring everything to a screeching halt is a bug, not a feature. Ted Cruz can bring the Senate to its knees simply by virtue of his vapid tripe; he doesn't also need a legal basis for his subversion of democracy.</p>
+<p>Wear. A. Goddamn. Mask. <em>Fuck.</em></p>
+<p>When did it become a feature of a functioning democracy to allow a <a href="https://twitter.com/rmayemsinger/status/1343978502551310337">decaying Confederate monument from Kentucky</a> to singlehandedly decide the fate of any and all legislation that made its way to the US Senate?</p>
+<p>Perhaps the single biggest driver of my growing cynicism has been not the pathetic ineptitudes of our government leaders or even the disinformation being sown by talking heads making untold millions of dollars, but instead the seemingly smart, incisive, and compassionate individuals I knew before the pandemic (or even before the election of Trump) who have since turned into people I no longer recognize. Of course I realize the "change" was, in fact, there all along--it is only my perception that has changed. But it has been truly disheartening and enraging to see acquaintances, friends, and even family here in Athens and elsewhere in the United States who forward along conspiracy theories, repeat hate-filled talking points, and play the role of armchair epidemiologists in magnifying misleading or outright false information around COVID-19. From claiming that supplements can reduce severity of COVID symptoms, to somehow dismissing US oubreak numbers by equating them with China, and since "China's numbers are fudged" therefore the US is doing just fine, to demonizing and even threatening the livelihood of health care workers for the crime of doing their jobs, to giving Trump credit for the rollout of the Pfizer and Moderna vaccines, to <strong>continuing to push back against and ignoring the advice of actual medical and public health experts</strong>.</p>
+<p><img src="/images/festivus/dumb.png"></p>
+<p>Seems reasonable, right? Until you include the surrounding context: this person initially claimed Trump should take credit for "Operation Warp Speed," followed by a hand-waving rationalization of the <a href="https://www.cnn.com/2020/12/29/politics/vaccine-rollout-behind-schedule/index.html">slow</a> <a href="https://www.washingtonpost.com/opinions/2020/12/29/covid-19-vaccine-distribution-slow-testing/">vaccine</a> <a href="https://www.nbcnews.com/news/us-news/current-rate-it-ll-be-10-years-americans-adequately-vaccinated-n1252486">rollout</a> by blaming supply chain hiccups that come with large-scale product manufacturing. Ignoring, of course, that a vaccine has literally been the single goal of the entire US public health sector since January 2020; how the infrastructure for such a rollout wasn't in place by the summer is a sin worthy of excommunication. But rather than admit as much, we get the above response.</p>
+<p>It's <strong>infuriating</strong> that we can't just let the experts do their fucking jobs; instead, we have to stake out some pointless fucking pseudo-centrist landscape that doesn't exist, for the purpose of... what? Appealing to the better demons of both sides? That would be reasonable, except for the small problem of one side being a highly imperfect conglomerate of diverse and often conflicting viewpoints, and the other side being a militaristic theocrat's wet dream. But sure, states' rights and framers' intent and all that.</p>
+<p>Oh, that reminds me: I am fucking DONE with <a href="https://en.wikipedia.org/wiki/Originalism">originalism</a> (yes, that goes for the Bible too). There is no 21st-century world in which the intentions of 18th century slaveholders would be remotely interesting, worth considering, or at all relevant. Much like how <a href="https://xkcd.com/1357/">an argument of free speech is effectively a concession</a>, an argument of framers' intent is likewise an indication that your argument stands on the rhetorical equivalent of a sinkhole; continuing to scream "bUt ThE fRaMeRs!" only reveals your partisan / intellectual / insert motivated reasoning hackery here.</p>
+<p><blockquote class="twitter-tweet" align="center"><a href="https://twitter.com/dril/status/134787490526658561">Tweet of dril/134787490526658561</a></blockquote></p>
+<p>Oh, one final grievance. With all due respect to Bill Watterson: <a href="https://www.gocomics.com/calvinandhobbes/1993/05/11">excessively positive people</a>. In fact, we've even come up with a name for this: toxic positivity. Emphasizing the positive in a given situation, <strong>with the unstated assumption</strong> that said positives entirely cancel out all negatives. It's been coming up a lot in the context of the pandemic: "well the pandemic has been bad but at least I haven't had to see my boss as much!", as if the two things were even remotely on the same playing field. Granted, it's a specific incarnation of the more general ALWAYS LOOK ON THE BRIGHT SIDE mantra, but it's important to understand that, as complex human beings, we are capable of holding <em>more than one truth</em> in our heads simultaneously. </p>
+<p>2020 is both the year Z entered our lives, and it can also die in a fucking fire. Both are true.</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+
+        <div class="meta">
+            <div>
+                    <a href="https://magsol.github.io/tag/festivus.html" class="tag">festivus</a>
+                    <a href="https://magsol.github.io/tag/2020.html" class="tag">2020</a>
+                    <a href="https://magsol.github.io/tag/fuck-2020.html" class="tag">fuck 2020</a>
+                    <a href="https://magsol.github.io/tag/fuck-that-shit.html" class="tag">fuck that shit</a>
+                    <a href="https://magsol.github.io/tag/airing-of-grievances.html" class="tag">airing of grievances</a>
+            </div>
+        </div>
+    </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+    <script type="text/javascript">
+      var disqus_shortname = 'stochasticstenography';
+      var disqus_identifier = '/blog/2020/12/30/festivus-for-the-restivus/';
+      var disqus_url = 'https://magsol.github.io/blog/2020/12/30/festivus-for-the-restivus/';
+      var disqus_title = 'Festivus for the Restivus';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = "//" + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+  </section>
+
+</div>
+
+<style type="text/css">
+{
+    max-width: 700px;
+}
+
+.text_cell .prompt {
+    display: none;
+}
+
+div.cell {
+    padding: 0;
+}
+
+div.text_cell_render {
+    padding: 0;
+}
+
+div.prompt {
+    font-size: 13px;
+}
+
+div.input_prompt {
+    padding: .7em 0.2em;
+}
+
+div.output_prompt {
+    padding: .4em .2em;
+}
+
+div.input_area {
+    margin: .2em 0.4em;
+    max-width: 580px;
+}
+
+table.dataframe {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+table.dataframe th, td {
+    padding: 4px;
+    text-align: left;
+}
+
+pre code {
+    background-color: inherit;
+}</style>
+
+        </div>
+<!--
+    <footer>
+      <p>
+        © 2012-2017 Shannon Quinn, license <a href="https://github.com/magsol/magsol.github.io-source/blob/master/LICENSE"> </a>
+        unless otherwise noted.
+        Generated by <a href= "http://docs.getpelican.com/">Pelican</a>.
+      </p>
+    </footer>
+-->
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-6646270-2']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-6646270-2');
+    ga('send', 'pageview');
+</script>
+    </body>
+</html>

@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="author" content="Shannon Quinn">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <title>Game-ify Your Raspberry Pi | Stochastic Stenography</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="alternate" type="application/atom+xml" title="Stochastic Stenography blog atom feed" href="/feeds/all.atom.xml" />
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/theme/css/icons.css"/>
+        <link rel="stylesheet" type="text/css" href="/theme/fa/css/font-awesome.min.css" />
+        <style>.highlight .hll { background-color: #ffffcc }
+.highlight .c { color: #60a0b0; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #007020; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #60a0b0; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #007020 } /* Comment.Preproc */
+.highlight .c1 { color: #60a0b0; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #60a0b0; background-color: #fff0f0 } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #808080 } /* Generic.Output */
+.highlight .gp { color: #c65d09; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0040D0 } /* Generic.Traceback */
+.highlight .kc { color: #007020; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #007020; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #007020; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #007020 } /* Keyword.Pseudo */
+.highlight .kr { color: #007020; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #902000 } /* Keyword.Type */
+.highlight .m { color: #40a070 } /* Literal.Number */
+.highlight .s { color: #4070a0 } /* Literal.String */
+.highlight .na { color: #4070a0 } /* Name.Attribute */
+.highlight .nb { color: #007020 } /* Name.Builtin */
+.highlight .nc { color: #0e84b5; font-weight: bold } /* Name.Class */
+.highlight .no { color: #60add5 } /* Name.Constant */
+.highlight .nd { color: #555555; font-weight: bold } /* Name.Decorator */
+.highlight .ni { color: #d55537; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #007020 } /* Name.Exception */
+.highlight .nf { color: #06287e } /* Name.Function */
+.highlight .nl { color: #002070; font-weight: bold } /* Name.Label */
+.highlight .nn { color: #0e84b5; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #062873; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #bb60d5 } /* Name.Variable */
+.highlight .ow { color: #007020; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #40a070 } /* Literal.Number.Float */
+.highlight .mh { color: #40a070 } /* Literal.Number.Hex */
+.highlight .mi { color: #40a070 } /* Literal.Number.Integer */
+.highlight .mo { color: #40a070 } /* Literal.Number.Oct */
+.highlight .sb { color: #4070a0 } /* Literal.String.Backtick */
+.highlight .sc { color: #4070a0 } /* Literal.String.Char */
+.highlight .sd { color: #4070a0; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #4070a0 } /* Literal.String.Double */
+.highlight .se { color: #4070a0; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #4070a0 } /* Literal.String.Heredoc */
+.highlight .si { color: #70a0d0; font-style: italic } /* Literal.String.Interpol */
+.highlight .sx { color: #c65d09 } /* Literal.String.Other */
+.highlight .sr { color: #235388 } /* Literal.String.Regex */
+.highlight .s1 { color: #4070a0 } /* Literal.String.Single */
+.highlight .ss { color: #517918 } /* Literal.String.Symbol */
+.highlight .bp { color: #007020 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #bb60d5 } /* Name.Variable.Class */
+.highlight .vg { color: #bb60d5 } /* Name.Variable.Global */
+.highlight .vi { color: #bb60d5 } /* Name.Variable.Instance */
+.highlight .il { color: #40a070 } /* Literal.Number.Integer.Long */</style>
+        <style>body {
+  margin: 0;
+  padding: 0;
+  font: 16px 'Source Sans Pro', sans-serif;
+  line-height: 1.6em;
+  color: #222;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: #007EE5;
+  text-decoration: none;
+}
+a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+header.main-header {
+  background: none repeat scroll 0% 0% #2A66C0;
+  margin-bottom: 0px;
+}
+header.main-header a {
+  color: #c0d4f1;
+}
+header.main-header a:hover {
+  color: #fff;
+  background-color: #2A66C0;
+}
+header.main-header .container {
+  max-width: 1000px;
+}
+article {
+  margin: 0;
+}
+article header.about {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+article header {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+article header h1 {
+  margin-bottom: 2px;
+  font-weight: 700;
+  color: #000;
+}
+article header time {
+  color: #9E9E9E;
+  font-size: 0.95em;
+  float: right;
+}
+article header time.left {
+  color: #9E9E9E;
+  font-size: 0.95em;
+  float: left;
+}
+article div.social-links ul {
+  padding: 0px;
+}
+article div.social-links li {
+  display: inline;
+  font-size: 24px;
+}
+article div.social-links li a {
+  color: #000;
+  padding: 10px;
+}
+article div.social-links li a:hover {
+  color: #666;
+  text-decoration: none;
+}
+article p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  line-height: 1.6em;
+}
+article p.note {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 0.533em 0.733em;
+}
+article p.update {
+  background-color: #FEEFB3;
+  border: 1px solid #e6e68a;
+  padding: 0.533em 0.733em;
+}
+article p.alert {
+  background-color: #ffe2e2;
+  border: 1px solid #ffb2b2;
+  padding: 0.533em 0.733em;
+}
+article ul,
+article ol {
+  margin-top: 0px;
+  margin-bottom: 25px;
+}
+article li {
+  font-size: 18px;
+  line-height: 1.6em;
+}
+article a:hover {
+  text-decoration: underline;
+}
+article blockquote {
+  border-left: 2px solid #c7c7cc;
+  color: #666;
+  margin: 30px 0;
+  padding: 0 0 0 25px;
+}
+article img {
+  max-width: 100%;
+}
+article code {
+  color: #333;
+  background-color: #EEE;
+  border-radius: 0;
+  font-size: 14px;
+}
+article .meta {
+  font-size: 12px;
+}
+article .meta a:hover {
+  text-decoration: none;
+}
+article .meta div {
+  margin-bottom: 20px;
+  display: block;
+}
+article .meta a.tag {
+  margin: 0 10px 10px 0;
+  padding: 1px 12px;
+  display: inline-block;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.05);
+}
+article .meta a.tag:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+article .meta a.read_more,
+article .meta a.comments_btn {
+  font-size: 16px;
+  font-weight: 800;
+  padding: 10px 20px;
+  color: #2A66C0;
+  background: #FFF;
+  border: 1px solid #2A66C0;
+}
+article .meta a.read_more:hover,
+article .meta a.comments_btn:hover {
+  color: #FFF;
+  background: #2A66C0;
+}
+.index {
+  max-width: 800px;
+}
+.index article header h2 {
+  font-size: 36px;
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+.index article header h2 a {
+  color: #000;
+}
+.index article header h2 a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+.index .separator {
+  padding: 40px 0 0 0;
+  margin: 0 0 40px 0;
+  height: 10px;
+  border-bottom: solid 1px #CCC;
+}
+.index .pagination {
+  display: block;
+  margin-bottom: 100px;
+}
+.index .pagination .left {
+  text-align: right;
+}
+.index .pagination .right {
+  text-align: left;
+}
+.index .pagination a {
+  display: inline-block;
+  border: 2px solid #5C881C;
+  margin: 0 5px;
+  padding: 8px 20px;
+  font-weight: bold;
+  color: #5C881C;
+}
+.index .pagination a:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.post {
+  max-width: 800px;
+}
+.post h2:before {
+  content: "# ";
+  font-weight: bold;
+  color: #DDD;
+}
+.post h3:before {
+  content: "## ";
+  font-weight: bold;
+  color: #DDD;
+}
+.post h4:before {
+  content: "### ";
+  font-weight: bold;
+  color: #DDD;
+}
+.post article .meta {
+  margin: 50px 0 100px;
+}
+.list {
+  max-width: 700px;
+}
+.list ul.double-list {
+  margin: 0 auto 60px;
+  padding: 0;
+  list-style-type: none;
+}
+.list ul.double-list li {
+  padding: 5px 0;
+}
+.list ul.double-list li h2 {
+  font-size: 1em;
+  display: inline;
+  font-weight: normal;
+}
+.list ul.double-list li span {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-align: right;
+  float: right;
+  padding-top: 3px;
+  font-size: 14px;
+  color: #999;
+}
+.full-width-content {
+  padding-top: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+.col-xs-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-xs-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-xs-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-xs-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-xs-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-xs-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+  padding-right: 0px;
+  padding-left: 0px;
+}</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+        <script type="text/javascript">
+        init_mathjax = function() {
+            if (window.MathJax) {
+                // MathJax loaded
+                MathJax.Hub.Config({
+                    tex2jax: {
+                        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                        displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+                    },
+                    displayAlign: 'left', // Change this to 'center' to center equations.
+                    "HTML-CSS": {
+                        styles: {'.MathJax_Display': {"margin": 0}}
+                    }
+                });
+                MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+            }
+        }
+        init_mathjax();
+        </script>
+
+    </head>
+
+    <body>
+        <!--<header class="navbar navbar-inverse bs-docs-nav">-->
+        <header class="navbar navbar-static-top bs-docs-nav main-header">
+            <div class="container">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="/" title="Home" class="title">Stochastic Stenography</a>
+                </div>
+                <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation" id="theNavbar">
+		    <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/pages/about.html" title="About">About</a></li>
+                            <li><a href="/archives.html" title="Archive">Archive</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div id="wrap">
+<div class="container post">
+    <article>
+        <header>
+            <h1>Game-ify Your Raspberry Pi</h1>
+            <time class="left" datetime="article.date.isoformat()" pubdate>Posted on January 6 in the year 2017, at 18:47PM. It was Friday.</time>
+        </header>
+
+        <div class="article_content">
+            <p><img src="/images/rpi/raspberrypi3.jpg"></p>
+<p>My project over the 2016 holiday season was to take the Raspberry Pi 3 I've had sitting around the house idling for the previous nine months and turn it into a <a href="https://retropie.org.uk/">RetroPie-ified gaming emulator</a>.</p>
+<p>RetroPie is a phenomenal bit of software that combines the work of several projects into a single package that was primarily designed to be deployed on Raspberry Pis, but which can also be set up on a regular ol' PC. If you're using a Raspberry Pi, it's built on top of the <a href="https://www.raspberrypi.org/downloads/raspbian/">Raspbian OS</a>, so all the commands familiar to you will still be available.</p>
+<p>I have to say up front: the folks with RetroPie have done an <em>amazing</em> job. The documentation was excellent, and while I'll walk through the installation and configuration here, with only one notable exception everything went exactly as prescribed.</p>
+<h2>RetroPie</h2>
+<p>Assuming you have all the <a href="https://retropie.org.uk/documentation/building-your-own-retropie-machine/">needed hardware</a>, installing the RetroPie OS on your Pi is <a href="https://github.com/RetroPie/RetroPie-Setup/wiki/First-Installation">pretty straightforward</a>.</p>
+<ul>
+<li>Use some sort of imaging software to write the RetroPie image to an SD card (I used <a href="http://www.tweaking4all.com/hardware/raspberry-pi/macosx-apple-pi-baker/">ApplePi Baker</a> without any problems, but you could also just use the <code>dd</code> command in the Terminal, which directly moves bytes from one place to another).</li>
+<li>Insert the SD card into your Pi.</li>
+<li>Boot! I had a few false-starts that were the result of the SD card not being fully inserted, so nothing came up.</li>
+</ul>
+<p>If all goes well, you should see the wonderful Raspbian logo.</p>
+<p><img src="/images/rpi/raspberry-pi-logo.png"></p>
+<h3>Configuring RetroPie</h3>
+<p>The first thing you'll need to do when RetroPie boots is to configure whatever controller you're going to use. I went out and purchased some standard-issue <a href="http://gaming.logitech.com/en-us/product/f310-gamepad">Logitech USB gamepads</a> and they seem to be functioning very well. You can also use your keyboard if you want for this, but it pretty much has to be something that can be connected via USB directly to the Pi.</p>
+<p>A few pointers in this step:</p>
+<ul>
+<li>To skip a particular button configuration, just <strong>press and hold any button for a second</strong>.</li>
+<li>If you make a mistake in configuring a button, you have to get all the way to the bottom before you can scroll back up and fix it.</li>
+<li>It took me 5-6 tries to get this completely right. Just go back and do it again if you mess something up.</li>
+</ul>
+<h3>EmulationStation</h3>
+<p>Once you successfully configure a gamepad, you'll be taken to the main landing page: EmulationStation.</p>
+<p><img src="/images/rpi/emulationstation.png"></p>
+<p><em>Where are teh gamez0rz?!1</em>, you might be saying. Well, since ROMs are a legal gray area, you're kinda on your own there. BUT! We have something else we need to do first anyway: set up a network configuration.</p>
+<h3>Network Configuration</h3>
+<p>If you have a Raspberry Pi 2 or earlier, your network choices are limited to an ethernet connection. With the advent of Raspberry Pi 3s, suddenly wifi is an option! Turns out, I have a 3, and it is this wifi that caused me a couple hours' grief until I figured out what was going on.</p>
+<p>Go to the wifi configuration in EmulationStation. You'll be taken to a network selection screen--protip, the Pi 3 <strong>cannot</strong> connect to 5GHz networks--where you can select your wifi network.</p>
+<p>You'll then need to type in the wifi password. Provided you get it right, that should be it! You're all set to go!</p>
+<p>If you find yourself entering your password again...and again...and again...and again...and can't figure out why it's failing, read on.</p>
+<h3>Keyboard Layout</h3>
+<p>For whatever reason, my keyboard was misconfigured--the layout was set to English (U.K.), resulting in some special characters being remapped. However, since the Raspbian password interface echoes stars <code>*</code> back, I had no idea I was typing a completely wrong password until I fired up a command prompt.</p>
+<p>Luckily, once you diagnose this issue, it's fairly easy to fix. Raspbian has a <a href="https://www.raspberrypi.org/forums/viewtopic.php?f=28&amp;t=80127">utility built-in for changing your keyboard layout</a>. You just have to navigate in EmulationStation to the option that gives you a command prompt.</p>
+<p>In my case, once I had a working network connection, I just used SSH to perform any other operations on the Pi (e.g. uploading new games). The default username/password for RetroPie is <code>pi/raspberry</code>, which I suggest you change either from the EmulationStation main menu, or after your first SSH login.</p>
+<h2>Moonlight on Raspberry Pi</h2>
+<p>You should have a working RetroPie at this point, so that's cool!</p>
+<p>However, as awesome as the Pis are, they're not exactly brimming with horsepower. As such, if you try running N64 or PS2 emulators, you may find as I did that anything requiring 3D shaders gets <em>very</em> jittery, to the point of unplayable. RetroPie has <a href="https://github.com/RetroPie/RetroPie-Setup/wiki">detailed configuration options for every emulator</a> to help you get the absolute most out of your Pi, but there are some things a tiny CPU with an embedded stock GPU just can't do, and one of those is render 3D shaders the way they were meant to be.</p>
+<p>So what? Give up? <em>Nay!</em></p>
+<p><img src="/images/rpi/moonlight.jpg"></p>
+<p><a href="https://github.com/irtimmer/moonlight-embedded/wiki">Moonlight Embedded</a> is the open source version of NVIDIA's GameStream as used by the NVIDIA Shield. Basically, it's a way of streaming the output of an NVIDIA GPU to another input, like a TV.</p>
+<p>In this case, we're basically turning our Pi into a glorified Chromecast--it'll take the output from a dedicated GPU and stream it directly to the TV it's connected to. Yes, this means you're not actually playing games <em>on</em> the Raspberry Pi--you're playing them on whatever computer has the GPU in it (oh and it has to be an NVIDIA GPU, GTX 650 or higher)--but all Moonlight requires is Raspbian, which is what RetroPie is built on!</p>
+<p>I found <a href="https://blog.jhot.me/guide-install-moonlight-on-raspbian-retropie-9d1318b8ddf8#.etf7g4bo6">this installation guide</a> perfect (make sure you download the latest versions of everything!), with the lone exception that, just before downloading and installing Moonlight itself, I also needed to install one more library:</p>
+<div class="highlight"><pre><span></span><code><span class="err">sudo apt-get install libenet-dev</span>
+</code></pre></div>
+
+<p>Include that with the other libraries installed just before Moonlight, and everything else should just work. The rest of the instructions take you through configuring the gamepads so they correctly send their input back to the GPU (so, y'know, you don't have to sit at your computer while staring at your TV).</p>
+<h2>Happy Fun Times!</h2>
+<p>Yes, lots of happy fun times. But also <a href="http://docs.happyfuntimes.net/docs/introduction.html">HappyFunTimes</a>!</p>
+<p>If you're really into the party games, installing this gaming server may be the best thing ever. It's a brilliant setup: gamepads are HTML5 canvases that run on smartphones, essentially mimicking controllers so everyone with a smartphone can play. The games range from stupidly simple to shockingly sophisticated. I may post configuration for that later, but I figure: if you're building the Ultimate Gaming Pi, why not include that, too?</p>
+<p>And with that, I give you the results at our house:</p>
+<p><img src="/images/rpi/zelda.jpeg"></p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+
+        <div class="meta">
+            <div>
+                    <a href="https://magsol.github.io/tag/pi.html" class="tag">pi</a>
+                    <a href="https://magsol.github.io/tag/raspberry-pi.html" class="tag">raspberry pi</a>
+                    <a href="https://magsol.github.io/tag/retropie.html" class="tag">retropie</a>
+                    <a href="https://magsol.github.io/tag/retro.html" class="tag">retro</a>
+                    <a href="https://magsol.github.io/tag/gaming.html" class="tag">gaming</a>
+                    <a href="https://magsol.github.io/tag/video-games.html" class="tag">video games</a>
+                    <a href="https://magsol.github.io/tag/nvidia.html" class="tag">nvidia</a>
+                    <a href="https://magsol.github.io/tag/shield.html" class="tag">shield</a>
+                    <a href="https://magsol.github.io/tag/steam.html" class="tag">steam</a>
+            </div>
+        </div>
+    </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+    <script type="text/javascript">
+      var disqus_shortname = 'stochasticstenography';
+      var disqus_identifier = '/blog/2017/01/06/gameify-your-raspberry-pi/';
+      var disqus_url = 'https://magsol.github.io/blog/2017/01/06/gameify-your-raspberry-pi/';
+      var disqus_title = 'Game-ify Your Raspberry Pi';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = "//" + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+  </section>
+
+</div>
+
+<style type="text/css">
+{
+    max-width: 700px;
+}
+
+.text_cell .prompt {
+    display: none;
+}
+
+div.cell {
+    padding: 0;
+}
+
+div.text_cell_render {
+    padding: 0;
+}
+
+div.prompt {
+    font-size: 13px;
+}
+
+div.input_prompt {
+    padding: .7em 0.2em;
+}
+
+div.output_prompt {
+    padding: .4em .2em;
+}
+
+div.input_area {
+    margin: .2em 0.4em;
+    max-width: 580px;
+}
+
+table.dataframe {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+table.dataframe th, td {
+    padding: 4px;
+    text-align: left;
+}
+
+pre code {
+    background-color: inherit;
+}</style>
+
+        </div>
+<!--
+    <footer>
+      <p>
+        © 2012-2017 Shannon Quinn, license <a href="https://github.com/magsol/magsol.github.io-source/blob/master/LICENSE"> </a>
+        unless otherwise noted.
+        Generated by <a href= "http://docs.getpelican.com/">Pelican</a>.
+      </p>
+    </footer>
+-->
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-6646270-2']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-6646270-2');
+    ga('send', 'pageview');
+</script>
+    </body>
+</html>
