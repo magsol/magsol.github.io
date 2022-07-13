@@ -472,7 +472,7 @@ article .meta a.comments_btn:hover {
 <p><a href="https://github.com/irtimmer/moonlight-embedded/wiki">Moonlight Embedded</a> is the open source version of NVIDIA's GameStream as used by the NVIDIA Shield. Basically, it's a way of streaming the output of an NVIDIA GPU to another input, like a TV.</p>
 <p>In this case, we're basically turning our Pi into a glorified Chromecast--it'll take the output from a dedicated GPU and stream it directly to the TV it's connected to. Yes, this means you're not actually playing games <em>on</em> the Raspberry Pi--you're playing them on whatever computer has the GPU in it (oh and it has to be an NVIDIA GPU, GTX 650 or higher)--but all Moonlight requires is Raspbian, which is what RetroPie is built on!</p>
 <p>I found <a href="https://blog.jhot.me/guide-install-moonlight-on-raspbian-retropie-9d1318b8ddf8#.etf7g4bo6">this installation guide</a> perfect (make sure you download the latest versions of everything!), with the lone exception that, just before downloading and installing Moonlight itself, I also needed to install one more library:</p>
-<div class="highlight"><pre><span></span><code><span class="err">sudo apt-get install libenet-dev</span>
+<div class="highlight"><pre><span></span><code>sudo apt-get install libenet-dev
 </code></pre></div>
 
 <p>Include that with the other libraries installed just before Moonlight, and everything else should just work. The rest of the instructions take you through configuring the gamepads so they correctly send their input back to the GPU (so, y'know, you don't have to sit at your computer while staring at your TV).</p>

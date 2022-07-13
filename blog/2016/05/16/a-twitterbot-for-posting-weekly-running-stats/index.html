@@ -497,9 +497,9 @@ article .meta a.comments_btn:hover {
 <h4><strong>Step 3: Create a PyBot</strong></h4>
 <p>Ok, time for a shameless plug: yes, I'm the <a href="https://github.com/magsol/pybot">pybot</a> author. It's still highly experimental, and largely uncompleted, but for our purposes it will suffice nicely as a barebones framework to interact with Twitter.</p>
 <p>Clone the repo and follow the setup script to create a Twitter app and connect it to your account.</p>
-<div class="highlight"><pre><span></span><code><span class="err">git clone https://github.com/magsol/pybot.git</span>
-<span class="err">cd pybot</span>
-<span class="err">sbin/create_pybot.py</span>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/magsol/pybot.git
+cd pybot
+sbin/create_pybot.py
 </code></pre></div>
 
 <p>That will walk you through the instructions for creating an app, generating OAuth credentials, and stubbing out your first pybot. Feel free to give it whatever name you'd like; for the purposes of this tutorial, I'll assume we've named it <code>artbot</code> (don't ask). Congratulations! You've created a twitter bot!</p>
@@ -578,7 +578,7 @@ article .meta a.comments_btn:hover {
 </code></pre></div>
 
 <p>That's it! You have everything you need; now, just set the bot to run <em>ad nauseum</em>:</p>
-<div class="highlight"><pre><span></span><code><span class="err">python artbot.py</span>
+<div class="highlight"><pre><span></span><code>python artbot.py
 </code></pre></div>
 
 <p>It should run forever, sleeping for most of it but waking every week to post your summary. If you notice something isn't working right, check the logs; they should specify if there are problems e.g. with permissions posting to Twitter, or connections hanging and disconnecting.</p>
