@@ -6,7 +6,7 @@
         <meta name="author" content="Shannon Quinn">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-        <title>Stochastic Stenography - Categories | Stochastic Stenography</title>
+        <title>Fiddling with generative art models | Stochastic Stenography</title>
 
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -422,12 +422,129 @@ article .meta a.comments_btn:hover {
         </header>
 
         <div id="wrap">
-    <h1>Categories on Stochastic Stenography</h1>
-    <ul>
-        <li><a href="https://magsol.github.io/category/personal.html">personal</a> (11)</li>
-        <li><a href="https://magsol.github.io/category/personal-professional.html">personal, professional</a> (6)</li>
-        <li><a href="https://magsol.github.io/category/professional.html">professional</a> (4)</li>
-    </ul>
+<div class="container post">
+    <article>
+        <header>
+            <h1>Fiddling with generative art models</h1>
+            <time class="left" datetime="article.date.isoformat()" pubdate>Posted on August 3 in the year 2022, at 11:54AM. It was Wednesday.</time>
+        </header>
+
+        <div class="article_content">
+            <p><img src="/images/ai-art/starfield.png"><br />
+<em>Generated with the text: <code>4K, wide angle, hyper detailed, starfield, nighttime sky, crescent moons, stars, nebulae, cosmic</code></em></p>
+<p>Much like a lot of the internet over the past couple months, I've been tinkering with some AI art generators, mainly <a href="https://www.midjourney.com/">Midjourney</a> (if only because I'm waitlisted on <a href="https://openai.com/dall-e-2/">DALL-E 2</a>).</p>
+<p>It's been surprisingly fun, if challenging. This isn't really my area of research, but I understand the basic underpinnings:</p>
+<p>These models are trained using vast swaths of image-and-text pairings, so the model can develop an association between features in images and the corresponding text that describes them. Obviously this process is <em>very</em> complicated, and also requires not only a great deal of data but also a considerable amount of computing power, so it's still a very active area of research and is largely out of reach of your every day researcher or individual training their own model. But once the model is trained, users can provide snippets of text, which the model then translates into an image.</p>
+<p>Therein lies the magic. There's a lot of randomness involved in the image generation process, since even a text input as simple as "cat" could mean a LOT of different things, image-wise. That's partly a feature: two people who give the exact same text input will likely get slight variations of the same concept, and possibly get wildly divergent results.</p>
+<p>But it also makes for a challenging user experience: there's a sort of "lingo" that you have to wrap your head around, a "way of talking to the model" that goes beyond simple word-concept mappings, that only comes with extended use of the models. It gets harder the more specific of an idea you have: your conceptual understanding of the idea may not bear any resemblance to the concept the model learned!</p>
+<p>(man this is getting philosophical! let's see if I can make this a bit more concrete with some examples)</p>
+<p><img src="/images/ai-art/empty_beach_v1.png"><br />
+<em>Generated with the text: <code>empty beach, dark storm in distance, one flower blooms from the sand to the side, high detail, atmosphere, Arnold render, ultra-realistic, dramatic lighting, glow, cinematic lighting, epic, 8k</code></em></p>
+<p>This was actually an image that I generated based off an image <em>someone else had already generated</em> (yeah, we can take public images and run them back through the model with new or additional text).</p>
+<p>From here, I ran a couple more of my own modifications:</p>
+<p><img src="/images/ai-art/empty_beach_v2.png"></p>
+<p><img src="/images/ai-art/empty_beach_v3.png"></p>
+<p>I really liked the second one, though with the third I love the ambiguity in the landscape: is it water, or is it snow? Hard to say in that lighting.</p>
+<p>From here, I started focusing a bit more on landscapes under a starlit sky (like the cover photo). I eventually settled on this one, which I really kinda love (so I made the highest-res version of it that I could):</p>
+<p><img src="/images/ai-art/mountains_starfield.png"><br />
+<em>Generated with the text: <code>wooded mountainous winter landscape under cosmic night sky with distant glowing small town in a valley, nebulae, crescent moon, planetary rings, cinematic, atmospheric, 8k, dramatic lighting, ultra realistic</code></em></p>
+<p>I will say, it definitely takes some doing to get a feel for how it works--what I had in mind was nowhere near what the model spat out, even though I <em>love</em> what it created. Still, there weren't really any planetary rings (I was thinking of Gaal's homeworld in the AppleTV+ <em>Foundation</em> series), and the "glowing small town in a valley" seems to have been diffusely spread over the <em>entire</em> valley, almost like fireflies, rather than distinct. Beautiful, no question, but not exactly what I'd had in mind.</p>
+<p>One final bit I tried before my trial ran out was a completely different direction:</p>
+<p><img src="/images/ai-art/rpi_madeof_raspberries.png"><br />
+<em>Generated with the text: <code>raspberry pi computer made out of raspberries, modern, futuristic</code></em></p>
+<p>I see a lot of super awesome art being generated from very terse prompts, so I was trying to capture that a little bit here (as opposed to the downright locquacious landscape prompts above).</p>
+<p>It's fun to tinker with. In all honesty I'll probably keep playing with it here and there as the mood strikes; if you want to follow along, <a href="https://www.midjourney.com/app/users/730084120558043179/">there's a public feed of all the pictures I generate here</a> (note: it's "public" in that you have to create a free account to see it), since there's no way I'm going to shell out the $ required to make my images private.</p>
+<h3>Legal Disclaimer</h3>
+<p>At least, I'll keep tinkering until copyright catches up... which, on that note, I should mention: I agree with everything in this twitter thread on the topic. I want to end on this note, because I think this is very important to keep in mind.</p>
+<p><blockquote class="twitter-tweet" align="center"><a href="https://twitter.com/BunchesOfBees/status/1553079149232734208">Tweet of BunchesOfBees/1553079149232734208</a></blockquote></p>
+<p>Keep in mind, I am not a lawyer, but based on my read there are two legal interpretations of these models: as an <em>author</em> that learns and creates novel work, or a <em>product</em> that synthesizes derivative works. In the case of the former, any kind of substantive duplication of existing work created by someone else is copyright infringement; and in the case of the latter, it's using novel, <em>unlicensed</em> work in a paid product, which is also copyright infringement.</p>
+<p>As someone whose background is in exactly this kind of generative "AI" work, I would generally fall under the latter interpretation of these models as a product (what they "learn" is dubious at best; I would never call their reproductions "novel"). As such, I also agree with the tweet's author that the moment these companies begin monetizing these models is when, at the very least, they've committed a moral rights violation. It's the same exact reason I'm very uncomfortable with the <a href="https://github.com/features/copilot">GitHub CoPilot product</a>: it's been trained using billions of lines of code that was written, tested, debugged, scrutinized, and labored over by humans <em>who did not consent to nor were reimbursed for having their code used in a paid product</em>.</p>
+<p>That last tweet in the thread is particularly poignant for me, and distills much of the reason for my disillusionment with the tech sector in general. I'm sorry to end on such a sour note, but while I do love the amazing things machine learning is doing, we have to keep at the forefront of our minds that <a href="https://vicki.substack.com/p/neural-nets-are-just-people-all-the">machine learning is, ultimately, a human endeavor</a>, and if it won't work without humans, we should make sure those humans are <em>taken care of</em>: recognition, compensation, empathy, and so on.</p>
+<p><em>steps off soap box...for now</em></p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+
+        <div class="meta">
+            <div>
+                    <a href="https://magsol.github.io/tag/midjourney.html" class="tag">midjourney</a>
+                    <a href="https://magsol.github.io/tag/ai.html" class="tag">ai</a>
+                    <a href="https://magsol.github.io/tag/generative-modeling.html" class="tag">generative modeling</a>
+                    <a href="https://magsol.github.io/tag/dall-e.html" class="tag">dall-e</a>
+                    <a href="https://magsol.github.io/tag/text-to-images.html" class="tag">text-to-images</a>
+                    <a href="https://magsol.github.io/tag/deep-learning.html" class="tag">deep learning</a>
+                    <a href="https://magsol.github.io/tag/art.html" class="tag">art</a>
+                    <a href="https://magsol.github.io/tag/sadly-proprietary.html" class="tag">sadly proprietary</a>
+                    <a href="https://magsol.github.io/tag/when-will-these-models-be-open-sourced.html" class="tag">when will these models be open sourced</a>
+            </div>
+        </div>
+    </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+    <script type="text/javascript">
+      var disqus_shortname = 'stochasticstenography';
+      var disqus_identifier = '/blog/2022/08/03/fiddling-with-generative-art/';
+      var disqus_url = 'https://magsol.github.io/blog/2022/08/03/fiddling-with-generative-art/';
+      var disqus_title = 'Fiddling with generative art models';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = "//" + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+  </section>
+
+</div>
+
+<style type="text/css">
+{
+    max-width: 700px;
+}
+
+.text_cell .prompt {
+    display: none;
+}
+
+div.cell {
+    padding: 0;
+}
+
+div.text_cell_render {
+    padding: 0;
+}
+
+div.prompt {
+    font-size: 13px;
+}
+
+div.input_prompt {
+    padding: .7em 0.2em;
+}
+
+div.output_prompt {
+    padding: .4em .2em;
+}
+
+div.input_area {
+    margin: .2em 0.4em;
+    max-width: 580px;
+}
+
+table.dataframe {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+table.dataframe th, td {
+    padding: 4px;
+    text-align: left;
+}
+
+pre code {
+    background-color: inherit;
+}</style>
+
         </div>
 <!--
     <footer>
