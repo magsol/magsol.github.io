@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Stochastic Stenography</title>
+<link>https://magsol.github.io/index.html</link>
+<atom:link href="https://magsol.github.io/index.xml" rel="self" type="application/rss+xml"/>
+<description></description>
+<generator>quarto-1.2.269</generator>
+<lastBuildDate>Tue, 13 Dec 2022 20:48:00 GMT</lastBuildDate>
+<item>
+  <title>Pardon de dust (2)</title>
+  <link>https://magsol.github.io/posts/pardon-the-dust/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><img src="https://magsol.github.io/posts/pardon-the-dust/clover.jpg" class="img-fluid"></p>
+<p>Why hello there. You may have noticed that things look a little bit different around here.</p>
+<p>I’m in the process of migrating my blog <em>off</em> <a href="https://getpelican.com/">Pelican</a> and <em>on</em> to <a href="https://quarto.org/">Quarto</a>.</p>
+<p>Why, you ask? Honestly, I got tired of having to fix a broken plugin or failed <code>git push</code> <em>every. single. time.</em> that I finished writing out a blog post. It gave an already-infrequent task an even higher activation threshold, and during a stretch where spare bandwidth was an incredible luxury.</p>
+<p>In short: I’d really like to blog more often, and from what I’ve seen, Quarto will help me do just that. It definitely requires some extra bandwidth to get things migrated over, but fortunately: I have some of that at the moment :)</p>
+<p>Stay tuned! In the meantime, please enjoy the above recent photo of Clover helping us put up our tree.</p>
+
+
+
+ ]]></description>
+  <category>personal</category>
+  <category>professional</category>
+  <category>news</category>
+  <guid>https://magsol.github.io/posts/pardon-the-dust/index.html</guid>
+  <pubDate>Tue, 13 Dec 2022 20:48:00 GMT</pubDate>
+  <media:content url="https://magsol.github.io/posts/pardon-the-dust/clover.jpg" medium="image" type="image/jpeg"/>
+</item>
+</channel>
+</rss>

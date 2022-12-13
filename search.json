@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "posts/pardon-the-dust/index.html",
+    "href": "posts/pardon-the-dust/index.html",
+    "title": "Pardon de dust (2)",
+    "section": "",
+    "text": "Why hello there. You may have noticed that things look a little bit different around here.\nI’m in the process of migrating my blog off Pelican and on to Quarto.\nWhy, you ask? Honestly, I got tired of having to fix a broken plugin or failed git push every. single. time. that I finished writing out a blog post. It gave an already-infrequent task an even higher activation threshold, and during a stretch where spare bandwidth was an incredible luxury.\nIn short: I’d really like to blog more often, and from what I’ve seen, Quarto will help me do just that. It definitely requires some extra bandwidth to get things migrated over, but fortunately: I have some of that at the moment :)\nStay tuned! In the meantime, please enjoy the above recent photo of Clover helping us put up our tree."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Data, donuts, and disjunctives",
+    "section": "",
+    "text": "Pardon de dust (2)\n\n\n\n\n\n\n\npersonal\n\n\nprofessional\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nPosted on the 13th of December in the year 2022, at 3:48pm. It was Tuesday.\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "My name is Shannon Quinn. I’m an associate professor in the School of Computer Science and Department of Cellular Biology at the University of Georgia. Which is ironic at some level, considering my undergraduate degree in Computer Science came from Georgia Tech (GO JACKETS).\nMy interests are pretty broad, but the best summary I can give is that I enjoy hacking at large-scale data science problems. Recently I’ve been getting into DevOps, and ways of operationalizing machine learning; reproducibility is very important to me, and anything that helps make the hidden work of preprocessing, pretraining, and even precoding explicit is a good idea in my book. Perhaps unsurprisingly, I’m a huge proponent of open source development, and a big believer in open science. I try to make tools, data, and course materials all available with open source licenses, and try to give back to the open source communities whenever and however I can.\nIn my copious (lulz) free time, I enjoy board gaming, video gaming, and anything that involves working up a sweat: baseball, football, basketball, racquetball, cycling, hiking, and especially running."
+  }
+]
