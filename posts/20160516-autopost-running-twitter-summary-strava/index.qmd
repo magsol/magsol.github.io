@@ -1,0 +1,219 @@
+---
+title: "A twitterbot for posting weekly running stats"
+categories: [personal, howto, python, strava, running, oauth, tweepy, twitter, pybot]
+date: "2016-05-16 15:09:59"
+image: stravatwitter.png
+author: Shannon Quinn
+---
+![](stravatwitter.png)
+
+We runners (we're a crazy bunch), for the most part, like our stats. How many miles do you log each week? Each month? How are your average race paces trending? Are your long runs both feeling good and getting faster?
+
+Yes, we're a little obsessed with our numbers.
+
+It's no surprise, then, that web services have popped up to help us aggregate some of these numbers. One of the most obvious is [Garmin Connect](https://connect.garmin.com/), home for pretty much anyone who uses the Garmin GPS watches.
+
+Another that I've used before is [Daily Mile](http://www.dailymile.com/). However in recent months I've become frustrated enough with the site to leave entirely. By all accounts, no part of the site has been updated in *years*, and [other alternatives](https://wherearethepancakes.wordpress.com/2013/05/20/my-ideal-running-statistics-site/) are simply much more pleasant to use.
+
+Unfortunately, there was one crucial feature of Daily Mile I really liked: connecting it to your Twitter account to post weekly summaries of your recorded workouts. I liked it so much, in fact, I created a small web service to do the same thing, [but for monthly summaries](https://wherearethepancakes.wordpress.com/2014/06/11/open-beta-for-twathletic/):
+
+![](https://wherearethepancakes.files.wordpress.com/2014/06/example.png)
+
+Obviously that service no longer exists, but ever since I've been wanting to get something similar up and running again. Especially now that I don't even have weekly summaries anymore--just couldn't stomach Daily Mile any longer--I wanted to take the opportunity (and the shiny new blog) to go through a step-by-step procedure of creating your own Twitter / Strava app for posting weekly summaries on Twitter of your running mileage!
+
+### **Preliminaries**
+
+A few things you'll need before we get started:
+
+ - Python 3.5
+ - [tweepy](http://www.tweepy.org/) (for interfacing with Twitter)
+ - [stravalib](http://pythonhosted.org/stravalib/) (for interfacing with Strava)
+ - [pybot](https://github.com/magsol/pybot) (shameless plug, but it will help)
+
+Both Twitter and Strava use OAuth as their method of app authentication. These libraries just make it easier to interact with the services; they abstract a lot of the details of authentication and communication.
+
+But in case you're interested: [Twitter's docs](https://dev.twitter.com/overview/documentation) and [Strava's docs](http://strava.github.io/api/).
+
+#### **Step 1: Create a Strava app**
+
+Go to your [user settings](https://www.strava.com/settings/api) and create an app that can interface with your account. Important pieces of information you'll need later: **Client ID**, **Client Secret**, and **Your access token**.
+
+We can test if it works. Fire up an IPython terminal, get your `access_token`, and run the following code:
+
+```python
+    from stravalib import Client
+    client = Client(access_token = access_token)
+    client.get_athlete()
+```
+
+You should see something along the lines of:
+
+```python
+    Out[]: <Athlete id=1234567 firstname=b'Firstname' lastname=b'Lastname'>
+```
+
+#### **Step 2: Retrieve last week's data**
+
+The whole point is to get weekly mileage reports. Thankfully, the `get_activities` method in stravalib has an `after` optional parameter we can use to precisely tune what time interval we want.
+
+First, though, we need to create a timestamp that represents the 1-week time frame. If we assume this will only be executed on the day we want the summary--say, every Monday--then we need to tally up all the runs from the day before all the way back to the previous Monday, inclusive.
+
+```python
+    import datetime
+    current = datetime.datetime.now()
+    last_week = current + datetime.timedelta(weeks = -1)
+    after = datetime.datetime(last_week.year, last_week.month, last_week.day)
+    activities = client.get_activities(after = after)
+```
+
+Assuming we run this chunk of code on a Monday, it should give us every Strava activity from the previous Monday up to the present.
+
+However, we're not done yet. This includes everything--not just our runs, but any other activities that we recorded; yoga, weights, elliptical, and so on. We need to filter these out. We also need to filter out the edge case of any activities that have been recorded *today*, since we don't want to include these in a report of *last* week's activities!
+
+```python
+    l = [activity.id for activity in activities if activity.type == 'Run' \
+        and a.start_date_local.day != current.day]
+```
+
+Ok, let's pause and discuss what's happening here.
+
+First, the most obvious: we're looping through the `activities` generator we obtained in the last line of the previous step. Second, the `if` statement at the end filters out any activities that aren't a run. Finally, the `activity.id` part out front says, we're building a list of the unique IDs that identify each activity. The last part is our timeframe edge case: if we recorded an activity today, even a running activity, don't include it.
+
+Why are we only holding onto the IDs? It has to do with detail. Strava maintains a hierarchy of details available to users that vary with authentication, connection, etc. Simply put, when we request a list of activities, [the default detail level is 2, which is "summary" level](http://strava.github.io/api/v3/activities/#get-activities). However, some of the metrics we need--calories in particular!--require level 3, or "detailed". To get this level of detail, we need to query for individual activities...one at a time.
+
+Hence, a list of activity IDs! Now we can loop through the IDs, requesting details on each run and tabulating up the mileage and calories.
+
+```python
+    from stravalib import unithelper
+
+    mileage = 0.0, calories = 0.0
+    for activity_id in l:
+        activity = client.get_activity(activity_id)
+
+        # This is annoying; all the default distances are in meters! Luckily,
+        # stravalib comes with a nice unit helper utility to do the conversion.
+        distance = unithelper.miles(activity.distance)
+        mileage += round(distance.num, 2)  # Rounds to 2 sig figs.
+        calories += activity.calories
+```
+
+There you have it! In those two variables--`mileage` and `calories`--you have all the data you need to summarize your running workouts for the last week. Now we just need to post this information on Twitter!
+
+#### **Step 3: Create a PyBot**
+
+Ok, time for a shameless plug: yes, I'm the [pybot](https://github.com/magsol/pybot) author. It's still highly experimental, and largely uncompleted, but for our purposes it will suffice nicely as a barebones framework to interact with Twitter.
+
+Clone the repo and follow the setup script to create a Twitter app and connect it to your account.
+
+```bash
+    git clone https://github.com/magsol/pybot.git
+    cd pybot
+    sbin/create_pybot.py
+```
+
+That will walk you through the instructions for creating an app, generating OAuth credentials, and stubbing out your first pybot. Feel free to give it whatever name you'd like; for the purposes of this tutorial, I'll assume we've named it `artbot` (don't ask). Congratulations! You've created a twitter bot!
+
+#### **Step 4: Customize the bot's behavior**
+
+Our bot is pretty simple: every Monday at some specified time, it will wake up, read all the prior week's running activities, and post the summary before going back to sleep for another week.
+
+It won't be prompted by anything other than time. So the specific action override we're looking for in PyBot parlance is `on_tweet`, and the interval we'll use is `tweet_interval`. The latter is easy enough--a full week between tweets!
+
+```python
+    self.config['tweet_interval'] = 60 * 60 * 24 * 7
+```
+
+Before we go any further: does anyone see anything wrong with the above code snippet?
+
+I'll give you a hint: imagine you started this bot on a Tuesday, instead of a Monday.
+
+Yep, there it is. This interval we've defined is exactly 1 week, but it *doesn't account for when we actually START the bot*. We need this to be a little more intelligent. If you want the posting to happen weekly every Monday, it shouldn't matter when you actually start running the bot, right? It should be smart enough to figure out when it needs to post for the first time, *then* post weekly thereafter.
+
+A neat component of PyBot is that, in addition to giving hard time frames, you can also specify functions to compute the interval on-the-fly, subject to some other constraints that are dynamic (like on what day of the week you happen to fire up the bot).
+
+To make things easy on us, we'll use the `datetime` convention in the Python documentation for [identifying individual days of the week](https://docs.python.org/3.5/library/datetime.html#datetime.datetime.weekday). This tutorial assumes Mondays (which corresponds to `0`), but you can use whatever value you want.
+
+We need to store this as a configuration parameter in the bot.
+
+```python
+    # Put this somewhere in the bot_init() method
+    self.config['update_day'] = 0  # Corresponds to Monday.
+```
+
+Now, we need a *function* to compute the interval between updates.
+
+```python
+    # Put this somewhere in the bot_init() method
+    self.config['tweet_interval'] = self._compute_interval
+```
+
+We've referenced an internal method we're calling `_compute_interval`, as of yet undefined. Let's go ahead and define it!
+
+```python
+    # Put this somewhere in the bot class declaration
+    def _compute_interval(self):
+        interval = 60 * 60 * 24 * 7  # The default interval; we'll start here
+
+        # Are we on the right day of the week?
+        now = datetime.datetime.now().weekday()
+        target = self.config['update_day']
+        if now == target:
+            return interval  # Nothing to do! Yay!
+
+        # If we get to this point, it means the index of the current day--
+        # as in, right when the code gets HERE--doesn't match the index of the
+        # day we've said we want to perform this update. So we need to do a
+        # little bit of work to compute that date.
+
+        if now > target:
+            # This is a hack, so the index of the CURRENT day will always be
+            # smaller than the index of the TARGET day.
+            now -= 7
+
+        # Essentially, all we've done is replace the 7 above with whatever
+        # it needs to be in order to get us to our target day.
+        return (target - now) * 24 * 60 * 60
+```
+
+Now that our interval is in place, we'll need to override the `on_tweet` action to do what we want whenever it's called (which will be once each week on the day we've specified!). Remember, this method is called once we've hit our interval. So this is where it all comes together!
+
+```python
+    def on_tweet(self):
+
+        # First, pull in the stats from Strava.
+        current = datetime.datetime.now()
+        last_week = current + datetime.timedelta(weeks = -1)
+        after = datetime.datetime(last_week.year, last_week.month, last_week.day)
+        activities = client.get_activities(after = after)
+
+        # Second, filter by activity type and time frame.
+        l = [activity.id for activity in activities if activity.type == 'Run' and
+            a.start_date_local.day != current.day]
+
+        # Third, tabulate up the stats for mileage and calories.
+        mileage = 0.0, calories = 0.0
+        for activity_id in l:
+            activity = client.get_activity(activity_id)
+            distance = unithelper.miles(activity.distance)
+            mileage += round(distance.num, 2)  # Rounds to 2 sig figs.
+            calories += activity.calories
+
+        # Finally, use the stats to craft a tweet. This can be any format
+        # you want, but I'll use the example one from the start of the post.
+        tweet = "My training last week: {:d} workouts for {:.2f} miles and {:d} calories burned.".format(len(l), mileage, calories)
+        self.update_status(tweet)
+```
+
+That's it! You have everything you need; now, just set the bot to run *ad nauseum*:
+
+```bash
+    python artbot.py
+```
+
+It should run forever, sleeping for most of it but waking every week to post your summary. If you notice something isn't working right, check the logs; they should specify if there are problems e.g. with permissions posting to Twitter, or connections hanging and disconnecting.
+
+### **Conclusion**
+
+That's all there is to it! There are obviously a lot of technical hurdles I largely glossed over--creating the apps for both Strava and Twitter can be a little more involved than the average person would like, and Python versions (especially 2.x vs 3.x) can wreak havoc on your code. I tried to be as reproducible as I could, though until Jupyter notebooks decide to play nice with Pelican (or maybe the other way around?) these code embeddings will have to suffice. Sigh.
+
+Please feel free to leave a comment if you have any questions! I've also posted the bot in the `examples` folder in the [pybot GitHub repository](https://github.com/magsol/pybot) as `artbot.py`. Happy tweeting!

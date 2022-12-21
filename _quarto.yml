@@ -3,13 +3,11 @@ project:
 
 website:
   favicon: images/favicon.png
-  title: "Stochastic Stenography"
+  title: "Stochastic Stenography ✍️"
   site-url: "https://magsol.github.io"
   google-analytics: "G-XHDW9H78Z1"
   image: images/logo.png
   navbar:
-    logo: images/logo_nb.png
-    logo-alt: "Stochastic Stenography blog logo"
     search: true
     right:
       - about.qmd

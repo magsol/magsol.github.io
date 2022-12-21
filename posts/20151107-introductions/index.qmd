@@ -1,0 +1,15 @@
+---
+title: "Introductions"
+date: "2015-11-07 12:14:02"
+categories: [personal, pelican, python, github, jupyter]
+author: "Shannon Quinn"
+image: /images/logo.png
+---
+
+Well, this seems to be working. Kinda.
+
+I took some inspiration from [Jake VanderPlas' Pythonic Perambulations](http://jakevdp.github.io/) and opted for a similar route: Pelican as the backend blogging machine, github as the host, and (eventually) embedded Jupyter notebooks. Unfortunately, Jake's addition to the Pelican plugins to [allow Jupyter notebooks](https://github.com/getpelican/pelican-plugins/blob/master/liquid_tags/notebook.py) uses CSS that is, shall we say, unfriendly to Pelican themes outside of the Octopress default.
+
+So that part is still incomplete. As are many of the links and some of the plugins. But ultimately, I'm hoping to use this to supplant my current pair of blogs that jointly detail what my plan for this space is: academia, general data science, and other musings.
+
+Stay tuned!

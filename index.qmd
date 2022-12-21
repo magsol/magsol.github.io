@@ -1,5 +1,5 @@
 ---
-title: "Stochastic Stenography ✍️"
+title: "Blogging, take 14,000,605; action!"
 subtitle: "Data, donuts, and disjunctives"
 listing:
   # Contents can be super specific
@@ -13,7 +13,7 @@ listing:
   sort-ui: false
   # Disables filter box
   filter-ui: false
-  date-format: "dddd[,] MMMM D"
+  date-format: "MMMM D[,] YYYY"
 page-layout: full
 title-block-banner: true
 ---
