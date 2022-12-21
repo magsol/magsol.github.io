@@ -2,14 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://magsol.github.io/about.html</loc>
-    <lastmod>2022-12-21T19:35:54.884Z</lastmod>
+    <lastmod>2022-12-21T20:44:07.664Z</lastmod>
   </url>
   <url>
-    <loc>https://magsol.github.io/posts/pardon-the-dust/index.html</loc>
-    <lastmod>2022-12-21T19:35:55.540Z</lastmod>
+    <loc>https://magsol.github.io/posts/20160202-nsf-crii-reviewer-feedback/index.html</loc>
+    <lastmod>2022-12-21T20:44:08.396Z</lastmod>
+  </url>
+  <url>
+    <loc>https://magsol.github.io/posts/20170531-summer-of-data-science/index.html</loc>
+    <lastmod>2022-12-21T20:44:08.760Z</lastmod>
+  </url>
+  <url>
+    <loc>https://magsol.github.io/posts/20151107-introductions/index.html</loc>
+    <lastmod>2022-12-21T20:44:09.092Z</lastmod>
+  </url>
+  <url>
+    <loc>https://magsol.github.io/posts/20160516-autopost-running-twitter-summary-strava/index.html</loc>
+    <lastmod>2022-12-21T20:44:09.572Z</lastmod>
+  </url>
+  <url>
+    <loc>https://magsol.github.io/posts/20170316-so-you-want-to-conduct-research-with-me/index.html</loc>
+    <lastmod>2022-12-21T20:44:09.920Z</lastmod>
+  </url>
+  <url>
+    <loc>https://magsol.github.io/posts/20221213-pardon-the-dust/index.html</loc>
+    <lastmod>2022-12-21T20:44:10.216Z</lastmod>
+  </url>
+  <url>
+    <loc>https://magsol.github.io/posts/20160926-osbd2016-workshop/index.html</loc>
+    <lastmod>2022-12-21T20:44:10.560Z</lastmod>
+  </url>
+  <url>
+    <loc>https://magsol.github.io/posts/20170106-gameify-your-raspberry-pi/index.html</loc>
+    <lastmod>2022-12-21T20:44:10.952Z</lastmod>
   </url>
   <url>
     <loc>https://magsol.github.io/index.html</loc>
-    <lastmod>2022-12-21T19:35:55.900Z</lastmod>
+    <lastmod>2022-12-21T20:44:11.424Z</lastmod>
   </url>
 </urlset>

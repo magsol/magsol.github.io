@@ -5,13 +5,13 @@
       xmlns:dc="http://purl.org/dc/elements/1.1/" 
       version="2.0">
 <channel>
-<title>Stochastic Stenography</title>
+<title>Stochastic Stenography ✍️</title>
 <link>https://magsol.github.io/index.html</link>
 <atom:link href="https://magsol.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <image>
 <url>https://magsol.github.io/images/logo.png</url>
-<title>Stochastic Stenography</title>
+<title>Stochastic Stenography ✍️</title>
 <link>https://magsol.github.io/index.html</link>
 <height>144</height>
 <width>144</width>
@@ -21,13 +21,13 @@
 <item>
   <title>Pardon de dust (2)</title>
   <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/pardon-the-dust/index.html</link>
+  <link>https://magsol.github.io/posts/20221213-pardon-the-dust/index.html</link>
   <description><![CDATA[ 
 
 
 
 
-<p><img src="https://magsol.github.io/posts/pardon-the-dust/clover.jpg" class="img-fluid"></p>
+<p><img src="https://magsol.github.io/posts/20221213-pardon-the-dust/clover.jpg" class="img-fluid"></p>
 <p>Why hello there. You may have noticed that things look a little bit different around here.</p>
 <p>I’m in the process of migrating my blog <em>off</em> <a href="https://getpelican.com/">Pelican</a> and <em>on</em> to <a href="https://quarto.org/">Quarto</a>.</p>
 <p>Why, you ask? Honestly, I got tired of having to fix a broken plugin or failed <code>git push</code> <em>every. single. time.</em> that I finished writing out a blog post. It gave an already-infrequent task an even higher activation threshold, and during a stretch where spare bandwidth was an incredible luxury.</p>
@@ -40,9 +40,599 @@
   <category>personal</category>
   <category>professional</category>
   <category>news</category>
-  <guid>https://magsol.github.io/posts/pardon-the-dust/index.html</guid>
+  <guid>https://magsol.github.io/posts/20221213-pardon-the-dust/index.html</guid>
   <pubDate>Tue, 13 Dec 2022 15:48:00 GMT</pubDate>
-  <media:content url="https://magsol.github.io/posts/pardon-the-dust/clover.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://magsol.github.io/posts/20221213-pardon-the-dust/clover.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Summer of Data Science 2017</title>
+  <dc:creator>Shannon Quinn</dc:creator>
+  <link>https://magsol.github.io/posts/20170531-summer-of-data-science/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><img src="https://magsol.github.io/posts/20170531-summer-of-data-science/carpelibrum.png" class="img-fluid"></p>
+<p>A few days ago, while I was still in Portland, OR enjoying the last few days of <a href="https://us.pycon.org/2017/">PyCon 2017</a>, Renee (<a href="https://twitter.com/BecomingDataSci"><span class="citation" data-cites="BecomingDataSci">@BecomingDataSci</span></a>) mentioned on Twitter that she might bring back the “Summer of Data Science” she kicked off last year.</p>
+<p>In short: use the summer as an opportunity to learn and/or accomplish something data science-related in a goal-oriented, data-driven way.</p>
+<p>As a tenure-track professor still yet to endure the 3rd-year review, pretty much everything data science related revolves around furthering my eventual tenure dossier. But the summers are still considerably more flexible for me to accomplish some of these goals than the fall or spring (I love teaching, but it’s all-consuming). I also have more than just myself–networks of collaborators and research assistants who can help me with these goals.</p>
+<p>So without further adieu, I’d like to put forth my own Summer of Data Science, 2017 Edition:</p>
+<section id="teaching-1360e-improvements-and-43606360-preparation" class="level3">
+<h3 class="anchored" data-anchor-id="teaching-1360e-improvements-and-43606360-preparation">Teaching: 1360E improvements and 4360/6360 preparation</h3>
+<p>I’m teaching an online course this summer, starting June 5 and continuing through the end of July: <a href="https://eds-uga.github.io/csci1360e-su17/">CSCI 1360E Foundations of Informatics and Analytics</a>.</p>
+<p>Or, more colloquially, I just call it “introduction to data science.”</p>
+<p>It’s one of the five courses I proposed in my first year (a story for another time, believe me…) and taught for the first time last summer, and in-person last fall. I’m teaching it again this summer and hoping to make some of the standard improvements, such as sprucing up slides and fixing autograder bugs from previous incarnations.</p>
+<p>More pressing is CSCI 4360/6360 Data Science II, which has yet to have its own website. This course has <em>never</em> been taught, but is slated for Fall 2017.</p>
+<p>Did I mention there are already over 40 students registered, undergraduate and graduate combined?</p>
+<p>This is supposed to be the “corner cases” of data science: lesser-used and/or more powerful analysis methods that aren’t necessarily the first tools or techniques you reach for in a given situation. This will include, but certainly not be limited to, concepts like randomized algorithms, semi-supervised learning, and backpropagation; techniques like out-of-core processing, distributed computing, and functional programming; tools like <a href="https://julialang.org/">Julia</a>, <a href="http://numba.pydata.org/">numba</a>, and <a href="http://dask.pydata.org/en/latest/">dask</a>.</p>
+<p>Before you ask: No.&nbsp;I’m <em>not</em> covering Spark.</p>
+<p>At any rate, the conceptual framework is in place, but practically none of the architectural logistics have been established. So this will take up virtually all of my time for the remainder of the summer, once the following item is completed…</p>
+</section>
+<section id="research-nsf-career-proposal" class="level3">
+<h3 class="anchored" data-anchor-id="research-nsf-career-proposal">Research: NSF CAREER proposal</h3>
+<p>The advantage of this goal is it has a hard end date: <strong>July 19</strong>.</p>
+<p>The disadvantage is that the <a href="https://www.nsf.gov/pubs/2017/nsf17537/nsf17537.htm">NSF CAREER</a> is the pinnacle of NSF early-career investigator awards. Its importance cannot be overstated; its <em>je ne sais quoi</em> is on display in the faces of new investigators when you mention it around them.</p>
+<p>I’ve connected with my university’s grant proposal officers, and am participating in a peer review process that involves two rounds of review: first with fellow CAREER submitees (as in, we exchange each other’s current drafts!), and second with the university grant officers.</p>
+<p>An investigator can only make three submission attempts for the CAREER. The CAREER is only open for submissions once per year. If chosen, the investigator must still be un-tenured at time of award. These conditions place brutal limits on how long you can wait to start making submissions, and I already skipped submitting my first two years. Still, I have no illusions about the uphill battle I have, so my goal this first time around is simply to <strong>acquire feedback</strong>: from my peers, from my grants officers, and from the NSF reviewers.</p>
+</section>
+<section id="personal-courseras-optimization-course" class="level3">
+<h3 class="anchored" data-anchor-id="personal-courseras-optimization-course">Personal: Coursera’s optimization course</h3>
+<p>I signed up to take Coursera’s <a href="https://www.coursera.org/learn/discrete-optimization/home/welcome">Discrete Optimization course</a> out of the University of Melbourne, taught by none other than <a href="https://pascalvanhentenryck.engin.umich.edu/">Professor Pascal Van Hentenryck</a> at Michigan and <a href="http://www.coffr.in/">Dr.&nbsp;Carleton Coffrin</a>, currently at Los Alamos.</p>
+<p>Optimization is pretty much the backbone of modern machine learning, and yet I have almost no formal training in it–beyond incidentally covering it in various machine learning and statistics courses as part of some broader topic in which it’s used. Oddly, the most rigorous instruction I received as a graduate student in optimization was a <a href="https://sites.google.com/site/cellandsystemsmodeling/">Cell &amp; Systems Modeling course</a> where we used various optimization techniques to find parameter values for population models.</p>
+<p>Especially in conjunction with what I hope to teach in CSCI 4360 in the fall, this would be invaluable both professionally as well as personally.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>professional</category>
+  <category>personal</category>
+  <category>data science</category>
+  <category>python</category>
+  <category>computer vision</category>
+  <category>imaging</category>
+  <category>machine learning</category>
+  <category>deep learning</category>
+  <category>nvidia</category>
+  <category>gpu</category>
+  <category>online courses</category>
+  <category>teaching</category>
+  <category>education</category>
+  <category>cat detector</category>
+  <category>generative adversarial networks</category>
+  <category>latent subspace</category>
+  <category>manifolds</category>
+  <category>bioimaging</category>
+  <guid>https://magsol.github.io/posts/20170531-summer-of-data-science/index.html</guid>
+  <pubDate>Wed, 31 May 2017 23:03:42 GMT</pubDate>
+  <media:content url="https://magsol.github.io/posts/20170531-summer-of-data-science/carpelibrum.png" medium="image" type="image/png" height="120" width="144"/>
+</item>
+<item>
+  <title>So, you want to conduct research with me?</title>
+  <dc:creator>Shannon Quinn</dc:creator>
+  <link>https://magsol.github.io/posts/20170316-so-you-want-to-conduct-research-with-me/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><img src="https://magsol.github.io/posts/20170316-so-you-want-to-conduct-research-with-me/joker_play_a_game.jpg" class="img-fluid"></p>
+<p><em>Deviation #1</em>: This is wholly separate from the <a href="http://shouldigetaphd.com/">“should I get a Ph.D.”</a> question. For that I would recommend one of numerous guides that ask all the right questions.</p>
+<p><em>Deviation #2</em>: This is also wholly separate from how to <em>succeed</em> in a Ph.D.&nbsp;program, though there is some overlap. In general, there are some key items to consider and habits to build as you work your way through a Ph.D., and for those questions I highly recommend <a href="http://karpathy.github.io/2016/09/07/phd/">Andrej Karpathy’s excellent survival guide to a Ph.D.</a>, some of which may be mirrored here.</p>
+<p>No, the specific question I’m addressing here is <strong>how to succeed in graduate research as one of my students.</strong> In order of somewhat-importance:</p>
+<section id="familiarize-yourself-with-my-research-interests." class="level3">
+<h3 class="anchored" data-anchor-id="familiarize-yourself-with-my-research-interests.">1: Familiarize yourself with my research interests.</h3>
+<p>This may seem like a no-brainer, but you’d be surprised how many emails I get from individuals expressing profound interest in working with me, only to see they have <strong>i)</strong> no experience whatsoever in any of my interests (which isn’t necessarily a deal-breaker!), and <strong>ii)</strong> don’t appear to know what I work on (which <em>is</em> a deal-breaker). If you work with me, you’re going to do something at the intersection of bioimaging + distributed computing + biosurveillance; something that involves computer vision and machine learning in a public health setting.</p>
+<p>Check out my <a href="http://scholar.google.com/citations?user=4EjRiycAAAAJ">Google Scholar</a> record, my group’s <a href="https://github.com/quinngroup">GitHub repositories</a>, and my <a href="https://quinngroup.github.io/">lab website</a> to get at least a basic idea of the sort of work I do, and to jog your thinking along the lines of what you might be able to contribute.</p>
+</section>
+<section id="take-into-consideration-the-following-expectations." class="level3">
+<h3 class="anchored" data-anchor-id="take-into-consideration-the-following-expectations.">2: Take into consideration the following expectations.</h3>
+<p>Work hard, play hard, and be able to talk about both:</p>
+<ul>
+<li>I expect my students to develop into excellent scientific communicators. In practice, this means I want you to be able to talk about your work to experts in the same field, experts in different fields, and even non-scientists. I want you to get comfortable giving talks and writing papers. If English isn’t your first language, that’s ok! Just be aware this expectation may take more time than you think.</li>
+<li>I expect my students to participate in <a href="https://en.wikipedia.org/wiki/Open_science">Open Science</a>. In practice, this means I want you to publish all the code you write in <a href="https://github.com/quinngroup">public repositories</a>, mirror all your papers on <a href="https://arxiv.org/">arXiv</a>, participate in and contribute to open source projects, and maybe even contribute to a blog. Research is only interesting when you can pick through the code, explore the data, and regenerate the results. Know or learn how to use <a href="http://jupyter.org/">scientific notebooks</a>, <a href="https://git-scm.com/">version control</a>, wikis, and even <a href="https://www.docker.com/">containers</a>!</li>
+<li>I expect my students to demonstrate a <a href="https://twitter.com/sama/status/792823320441786368">promising slope of accomplishment</a>. Put simply, <a href="https://josh.works/blog/2015/6/25/a-little-bit-of-slope-makes-up-for-a-lot-of-y-intercept">I recruit for potential (slope), not experience (y-intercept)</a>. You don’t have to know everything about machine learning, statistics, and linear algebra, <em>and</em> be an expert programming in Python just to be able to work with me. However, I do expect that you will be able to pick up these skills very quickly.</li>
+<li>I expect my students to take ownership of their projects, pushing the envelope of what is known and beyond what even I would suggest.</li>
+</ul>
+<p>Speaking of which…</p>
+</section>
+<section id="prepare-yourself-to-be-a-self-sufficient-researcher." class="level3">
+<h3 class="anchored" data-anchor-id="prepare-yourself-to-be-a-self-sufficient-researcher.">3: Prepare yourself to be a self-sufficient researcher.</h3>
+<p>This <strong>does NOT mean</strong> I expect you to do everything! The whole point of being a student is that you have a mentor, a supervisor who is (in theory) more experienced than you, from whom you can learn. It is indeed my job to guide you and teach you what I know, and I will most certainly do that.</p>
+<p>This <strong>DOES mean</strong> that, by the end of your time here, I want you to be the expert on your project! You should take the project and run with it, rather than wait for me to tell you what to do next. Build your intuition about the problem through “moving fast and breaking things,” to use the tech startup parlance. Ask forgiveness rather than permission. Insert witticism here that basically says KEEP TRYING THINGS.</p>
+<p>Even as you start your project, you may come across roadblocks that I don’t have an answer for. That’s how research works: we’re pushing the limits of our collective knowledge! I may have some intuition from previous problems, and I’ll certainly share that, but asking me “What do I do next?” is going to frustrate both of us very, very quickly.</p>
+<p>Here’s another example: <a href="http://simplystatistics.org/2017/03/16/evo-ds-class/">the levels of data science classes</a>. You don’t have to be anywhere above Level 2 when you arrive (maybe you’re still working your way through Level 1!), but I expect you to work <strong>through Level 7 by the time you leave.</strong></p>
+</section>
+<section id="if-youve-made-it-this-far-and-are-still-interested" class="level3">
+<h3 class="anchored" data-anchor-id="if-youve-made-it-this-far-and-are-still-interested">If you’ve made it this far, and are still interested…</h3>
+<p>…then I encourage you to reach out to me and express your interest! I have just a few final pieces of advice:</p>
+<p>First, <a href="https://twitter.com/DavidBindel/status/1054859324143616000">read this brief Twitter thread</a> and <a href="https://twitter.com/mickeykats/status/1074874785795112960">this brief Twitter thread as well</a>.</p>
+<p>Next, <strong>do NOT</strong> send me</p>
+<ol type="1">
+<li>a form email with a 10-page summary of your accomplishments (as I said, I don’t hire for y-intercept, I hire for slope)</li>
+<li>an email with misspellings or grammatical errors (recall that I emphasize good scientific communication skills)</li>
+<li>a message that starts with “Dear Ms Quinn” (first, I’m a doctor; second, I’m a guy)</li>
+</ol>
+<p>I won’t respond.</p>
+<p>Finally, <a href="https://magsol.github.io/pages/contact.html">write an email</a> that’s 3-5 sentences at most, <strong>with a specific mention of the work you find interesting and want to pursue further</strong>. For extra credit, mention some kind of improvement or extension to the work that you came up with on your own. This tells me a lot of things all at once, most important of which is that you’re serious about wanting to work with me.</p>
+<p>Because if you can handle graduate school…</p>
+<p><img src="https://magsol.github.io/posts/20170316-so-you-want-to-conduct-research-with-me/grad-school.jpg" class="img-fluid"></p>
+<p>…I really do believe you can handle anything.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>professional</category>
+  <category>phd</category>
+  <category>graduate school</category>
+  <category>research</category>
+  <category>mentoring</category>
+  <category>computer science</category>
+  <category>graduate student</category>
+  <guid>https://magsol.github.io/posts/20170316-so-you-want-to-conduct-research-with-me/index.html</guid>
+  <pubDate>Thu, 16 Mar 2017 15:59:21 GMT</pubDate>
+  <media:content url="https://magsol.github.io/posts/20170316-so-you-want-to-conduct-research-with-me/joker_play_a_game.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Game-ify Your Raspberry Pi</title>
+  <dc:creator>Shannon Quinn</dc:creator>
+  <link>https://magsol.github.io/posts/20170106-gameify-your-raspberry-pi/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><img src="https://magsol.github.io/posts/20170106-gameify-your-raspberry-pi/raspberrypi3.jpg" class="img-fluid"></p>
+<p>My project over the 2016 holiday season was to take the Raspberry Pi 3 I’ve had sitting around the house idling for the previous nine months and turn it into a <a href="https://retropie.org.uk/">RetroPie-ified gaming emulator</a>.</p>
+<p>RetroPie is a phenomenal bit of software that combines the work of several projects into a single package that was primarily designed to be deployed on Raspberry Pis, but which can also be set up on a regular ol’ PC. If you’re using a Raspberry Pi, it’s built on top of the <a href="https://www.raspberrypi.org/downloads/raspbian/">Raspbian OS</a>, so all the commands familiar to you will still be available.</p>
+<p>I have to say up front: the folks with RetroPie have done an <em>amazing</em> job. The documentation was excellent, and while I’ll walk through the installation and configuration here, with only one notable exception everything went exactly as prescribed.</p>
+<section id="retropie" class="level3">
+<h3 class="anchored" data-anchor-id="retropie">RetroPie</h3>
+<p>Assuming you have all the <a href="https://retropie.org.uk/documentation/building-your-own-retropie-machine/">needed hardware</a>, installing the RetroPie OS on your Pi is <a href="https://github.com/RetroPie/RetroPie-Setup/wiki/First-Installation">pretty straightforward</a>.</p>
+<ul>
+<li>Use some sort of imaging software to write the RetroPie image to an SD card (I used <a href="http://www.tweaking4all.com/hardware/raspberry-pi/macosx-apple-pi-baker/">ApplePi Baker</a> without any problems, but you could also just use the <code>dd</code> command in the Terminal, which directly moves bytes from one place to another).</li>
+<li>Insert the SD card into your Pi.</li>
+<li>Boot! I had a few false-starts that were the result of the SD card not being fully inserted, so nothing came up.</li>
+</ul>
+<p>If all goes well, you should see the wonderful Raspbian logo.</p>
+<p><img src="https://magsol.github.io/posts/20170106-gameify-your-raspberry-pi/raspberry-pi-logo.png" class="img-fluid"></p>
+</section>
+<section id="configuring-retropie" class="level3">
+<h3 class="anchored" data-anchor-id="configuring-retropie">Configuring RetroPie</h3>
+<p>The first thing you’ll need to do when RetroPie boots is to configure whatever controller you’re going to use. I went out and purchased some standard-issue <a href="http://gaming.logitech.com/en-us/product/f310-gamepad">Logitech USB gamepads</a> and they seem to be functioning very well. You can also use your keyboard if you want for this, but it pretty much has to be something that can be connected via USB directly to the Pi.</p>
+<p>A few pointers in this step:</p>
+<ul>
+<li>To skip a particular button configuration, just <strong>press and hold any button for a second</strong>.</li>
+<li>If you make a mistake in configuring a button, you have to get all the way to the bottom before you can scroll back up and fix it.</li>
+<li>It took me 5-6 tries to get this completely right. Just go back and do it again if you mess something up.</li>
+</ul>
+</section>
+<section id="emulationstation" class="level3">
+<h3 class="anchored" data-anchor-id="emulationstation">EmulationStation</h3>
+<p>Once you successfully configure a gamepad, you’ll be taken to the main landing page: EmulationStation.</p>
+<p><img src="https://magsol.github.io/posts/20170106-gameify-your-raspberry-pi/emulationstation.png" class="img-fluid"></p>
+<p><em>Where are teh gamez0rz?!1</em>, you might be saying. Well, since ROMs are a legal gray area, you’re kinda on your own there. BUT! We have something else we need to do first anyway: set up a network configuration.</p>
+</section>
+<section id="network-configuration" class="level3">
+<h3 class="anchored" data-anchor-id="network-configuration">Network Configuration</h3>
+<p>If you have a Raspberry Pi 2 or earlier, your network choices are limited to an ethernet connection. With the advent of Raspberry Pi 3s, suddenly wifi is an option! Turns out, I have a 3, and it is this wifi that caused me a couple hours’ grief until I figured out what was going on.</p>
+<p>Go to the wifi configuration in EmulationStation. You’ll be taken to a network selection screen–protip, the Pi 3 <strong>cannot</strong> connect to 5GHz networks–where you can select your wifi network.</p>
+<p>You’ll then need to type in the wifi password. Provided you get it right, that should be it! You’re all set to go!</p>
+<p>If you find yourself entering your password again…and again…and again…and again…and can’t figure out why it’s failing, read on.</p>
+</section>
+<section id="keyboard-layout" class="level3">
+<h3 class="anchored" data-anchor-id="keyboard-layout">Keyboard Layout</h3>
+<p>For whatever reason, my keyboard was misconfigured–the layout was set to English (U.K.), resulting in some special characters being remapped. However, since the Raspbian password interface echoes stars <code>*</code> back, I had no idea I was typing a completely wrong password until I fired up a command prompt.</p>
+<p>Luckily, once you diagnose this issue, it’s fairly easy to fix. Raspbian has a <a href="https://www.raspberrypi.org/forums/viewtopic.php?f=28&amp;t=80127">utility built-in for changing your keyboard layout</a>. You just have to navigate in EmulationStation to the option that gives you a command prompt.</p>
+<p>In my case, once I had a working network connection, I just used SSH to perform any other operations on the Pi (e.g.&nbsp;uploading new games). The default username/password for RetroPie is <code>pi/raspberry</code>, which I suggest you change either from the EmulationStation main menu, or after your first SSH login.</p>
+</section>
+<section id="moonlight-on-raspberry-pi" class="level3">
+<h3 class="anchored" data-anchor-id="moonlight-on-raspberry-pi">Moonlight on Raspberry Pi</h3>
+<p>You should have a working RetroPie at this point, so that’s cool!</p>
+<p>However, as awesome as the Pis are, they’re not exactly brimming with horsepower. As such, if you try running N64 or PS2 emulators, you may find as I did that anything requiring 3D shaders gets <em>very</em> jittery, to the point of unplayable. RetroPie has <a href="https://github.com/RetroPie/RetroPie-Setup/wiki">detailed configuration options for every emulator</a> to help you get the absolute most out of your Pi, but there are some things a tiny CPU with an embedded stock GPU just can’t do, and one of those is render 3D shaders the way they were meant to be.</p>
+<p>So what? Give up? <em>Nay!</em></p>
+<p><img src="https://magsol.github.io/posts/20170106-gameify-your-raspberry-pi/moonlight.jpg" class="img-fluid"></p>
+<p><a href="https://github.com/irtimmer/moonlight-embedded/wiki">Moonlight Embedded</a> is the open source version of NVIDIA’s GameStream as used by the NVIDIA Shield. Basically, it’s a way of streaming the output of an NVIDIA GPU to another input, like a TV.</p>
+<p>In this case, we’re basically turning our Pi into a glorified Chromecast–it’ll take the output from a dedicated GPU and stream it directly to the TV it’s connected to. Yes, this means you’re not actually playing games <em>on</em> the Raspberry Pi–you’re playing them on whatever computer has the GPU in it (oh and it has to be an NVIDIA GPU, GTX 650 or higher)–but all Moonlight requires is Raspbian, which is what RetroPie is built on!</p>
+<p>I found <a href="https://blog.jhot.me/guide-install-moonlight-on-raspbian-retropie-9d1318b8ddf8#.etf7g4bo6">this installation guide</a> perfect (make sure you download the latest versions of everything!), with the lone exception that, just before downloading and installing Moonlight itself, I also needed to install one more library:</p>
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1">    <span class="fu" style="color: #4758AB;">sudo</span> apt-get install libenet-dev</span></code></pre></div>
+<p>Include that with the other libraries installed just before Moonlight, and everything else should just work. The rest of the instructions take you through configuring the gamepads so they correctly send their input back to the GPU (so, y’know, you don’t have to sit at your computer while staring at your TV).</p>
+</section>
+<section id="happy-fun-times" class="level3">
+<h3 class="anchored" data-anchor-id="happy-fun-times">Happy Fun Times!</h3>
+<p>Yes, lots of happy fun times. But also <a href="http://docs.happyfuntimes.net/docs/introduction.html">HappyFunTimes</a>!</p>
+<p>If you’re really into the party games, installing this gaming server may be the best thing ever. It’s a brilliant setup: gamepads are HTML5 canvases that run on smartphones, essentially mimicking controllers so everyone with a smartphone can play. The games range from stupidly simple to shockingly sophisticated. I may post configuration for that later, but I figure: if you’re building the Ultimate Gaming Pi, why not include that, too?</p>
+<p>And with that, I give you the results at our house:</p>
+<p><img src="https://magsol.github.io/posts/20170106-gameify-your-raspberry-pi/zelda.jpeg" class="img-fluid"></p>
+
+
+</section>
+
+ ]]></description>
+  <category>personal</category>
+  <category>pi</category>
+  <category>raspberry pi</category>
+  <category>retropie</category>
+  <category>retro</category>
+  <category>gaming</category>
+  <category>video games</category>
+  <category>nvidia</category>
+  <category>shield</category>
+  <category>steam</category>
+  <guid>https://magsol.github.io/posts/20170106-gameify-your-raspberry-pi/index.html</guid>
+  <pubDate>Fri, 06 Jan 2017 18:47:37 GMT</pubDate>
+  <media:content url="https://magsol.github.io/posts/20170106-gameify-your-raspberry-pi/raspberrypi3.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Open Science in Big Data (OSBD) Workshop</title>
+  <dc:creator>Shannon Quinn</dc:creator>
+  <link>https://magsol.github.io/posts/20160926-osbd2016-workshop/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><img src="https://magsol.github.io/posts/20160926-osbd2016-workshop/washingtondc.png" class="img-fluid"></p>
+<p>Back in May of this year, some of the other computer science professors and I put together a proposal for a workshop. The workshop would be in conjunction with the December 2016 <a href="http://cci.drexel.edu/bigdata/bigdata2016/">IEEE BigData Conference</a>, and would focus specifically on the intersection of big data and open science.</p>
+<p>In June, we got the good news: it was accepted!</p>
+<section id="what-is-open-science" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-open-science"><em>What is “Open Science”?</em></h3>
+<p>I’ve been interested in <a href="https://en.wikipedia.org/wiki/Open_science">open science</a> since I started graduate school. I’d been using Apache projects since college, learning how to set up and configure my own LAMP stack (yes, I’ll admit I dabbled in PHP for a few years, but I’m clean now!), but had never really contributed to an open source project until the 2010 Google Summer of Code. During that time, I worked on adding spectral clustering the <a href="http://mahout.apache.org">Apache Mahout</a> library.</p>
+<p>While open source is great and wonderful, this is just one component of Open Science. It’s another reason I’m incredibly excited about the “container revolution”: Docker and its ilk. This concept makes entire pipelines perfectly reproducible, to the point where it’s now possible for entire scientific projects to be replicated with a single command: from running the analysis, to building the figures, to assembling the final PDF file (which, by the way, can be uploaded to <a href="http://arxiv.org">arXiv</a> for everyone to read!)</p>
+<p>These other aspects–open sourcing data, reproducibility scripts, and entire pipelines–are veritable educational and research gold mines, but are arguably much more difficult than simply dumping some code on GitHub. <strong>These difficulties are only exacerbated in the realm of “big data”.</strong></p>
+</section>
+<section id="what-are-the-goals-of-the-workshop" class="level3">
+<h3 class="anchored" data-anchor-id="what-are-the-goals-of-the-workshop"><em>What are the goals of the workshop?</em></h3>
+<p>The goals of the workshop are threefold.</p>
+<p><strong>First</strong>: we aim to <em>identify some of the biggest challenges</em> in democratizing big data analytics. Open Science is a critical component of both educational pedagogy and scientific research. With the increasing relevance of big data analytics, making these tools and resources available to the next generation of scientists and big data practitioners is crucial. Unfortunately, this is also extremely challenging.</p>
+<p><strong>Second</strong>: we aim to bring together big data practitioners from multiple backgrounds to <em>discuss and establish the current state of affairs</em> with respect to reproducibility in big data analytics and machine learning. Priorities change and constraints differ between researchers and developers in academia versus industry versus government; nonetheless, open science and big data are important to practitioners in each of these areas.</p>
+<p><strong>Third</strong>: we aim to <em>examine and propose possible routes forward</em> to advance the continued integration of open science in big data analytics, putting tools, techniques, data, and documentation in the hands of researchers, students, and other big data practitioners. We will identify emerging trends in terms of open science best practices, and how these can be incorporated into current big data endeavors.</p>
+</section>
+<section id="what-kinds-of-proceedings-is-the-workshop-accepting" class="level3">
+<h3 class="anchored" data-anchor-id="what-kinds-of-proceedings-is-the-workshop-accepting"><em>What kinds of proceedings is the workshop accepting?</em></h3>
+<p>We hope to have two tracks: a full research paper session, and a student (short) paper session.</p>
+<p>Papers submitted to the OSBD workshop should, at the very minimum, have a significant Open Science component. This can take several forms, including but not limited to any combination of the following:</p>
+<ul>
+<li>Uses free and open source packages</li>
+<li>Openly available online, e.g.&nbsp;GitHub</li>
+<li>Scripts are available to reproduce figures</li>
+<li>Data are openly available e.g.&nbsp;dat, datahub.io</li>
+<li>etc.</li>
+</ul>
+<p>We are welcoming of original research into big data analytics, so long as there is an open science component.</p>
+<p>Furthermore, in the spirit of Open Science and reproducibility, we strongly encourage our presenters to incorporate live code demos, data walkthroughs, or some other hands-on activity into their talks.</p>
+</section>
+<section id="when-is-the-submission-deadline" class="level3">
+<h3 class="anchored" data-anchor-id="when-is-the-submission-deadline"><em>When is the submission deadline?</em></h3>
+<p>The deadline for workshop paper submissions is <strong>Sunday, October 25, 2016</strong>. This provides a 2-week buffer zone between the notification deadline of the main IEEE BigData conference, in case you want to repackage your conference submission for the workshop.</p>
+</section>
+<section id="where-can-one-find-more-information-about-osbd" class="level3">
+<h3 class="anchored" data-anchor-id="where-can-one-find-more-information-about-osbd"><em>Where can one find more information about OSBD?</em></h3>
+<p>We have a website: <strong><a href="https://osbd.github.io/" target="_blank">https://osbd.github.io/</a></strong></p>
+<p>The website contains information about the topics around the workshop, the invited speakers who will be attending (keynote and panelists), the important dates around the workshop, and the instructions for formatting and submitting your paper to the workshop.</p>
+<p>We are very excited about this workshop, and encourage you to submit! We look forward to seeing you in December!</p>
+<p><img src="https://magsol.github.io/posts/20160926-osbd2016-workshop/openscience.png" class="img-fluid"></p>
+<ul>
+<li><a href="http://cs.uga.edu/~squinn">Shannon Quinn</a>, Co-chair</li>
+<li><a href="http://cs.uga.edu/~jam/">John Miller</a>, Co-chair</li>
+<li><a href="http://cs.uga.edu/~suchi/">Suchi Bhandarkar</a>, Co-chair</li>
+<li><a href="http://cs.uga.edu/~yihong/">Yi Hong</a>, Co-chair</li>
+</ul>
+
+
+</section>
+
+ ]]></description>
+  <category>professional</category>
+  <category>workshop</category>
+  <category>big data</category>
+  <category>ieee</category>
+  <category>open science</category>
+  <guid>https://magsol.github.io/posts/20160926-osbd2016-workshop/index.html</guid>
+  <pubDate>Mon, 26 Sep 2016 09:10:19 GMT</pubDate>
+  <media:content url="https://magsol.github.io/posts/20160926-osbd2016-workshop/washingtondc.png" medium="image" type="image/png" height="47" width="144"/>
+</item>
+<item>
+  <title>A twitterbot for posting weekly running stats</title>
+  <dc:creator>Shannon Quinn</dc:creator>
+  <link>https://magsol.github.io/posts/20160516-autopost-running-twitter-summary-strava/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><img src="https://magsol.github.io/posts/20160516-autopost-running-twitter-summary-strava/stravatwitter.png" class="img-fluid"></p>
+<p>We runners (we’re a crazy bunch), for the most part, like our stats. How many miles do you log each week? Each month? How are your average race paces trending? Are your long runs both feeling good and getting faster?</p>
+<p>Yes, we’re a little obsessed with our numbers.</p>
+<p>It’s no surprise, then, that web services have popped up to help us aggregate some of these numbers. One of the most obvious is <a href="https://connect.garmin.com/">Garmin Connect</a>, home for pretty much anyone who uses the Garmin GPS watches.</p>
+<p>Another that I’ve used before is <a href="http://www.dailymile.com/">Daily Mile</a>. However in recent months I’ve become frustrated enough with the site to leave entirely. By all accounts, no part of the site has been updated in <em>years</em>, and <a href="https://wherearethepancakes.wordpress.com/2013/05/20/my-ideal-running-statistics-site/">other alternatives</a> are simply much more pleasant to use.</p>
+<p>Unfortunately, there was one crucial feature of Daily Mile I really liked: connecting it to your Twitter account to post weekly summaries of your recorded workouts. I liked it so much, in fact, I created a small web service to do the same thing, <a href="https://wherearethepancakes.wordpress.com/2014/06/11/open-beta-for-twathletic/">but for monthly summaries</a>:</p>
+<p><img src="https://magsol.github.io/posts/20160516-autopost-running-twitter-summary-strava/https:/wherearethepancakes.files.wordpress.com/2014/06/example.png" class="img-fluid"></p>
+<p>Obviously that service no longer exists, but ever since I’ve been wanting to get something similar up and running again. Especially now that I don’t even have weekly summaries anymore–just couldn’t stomach Daily Mile any longer–I wanted to take the opportunity (and the shiny new blog) to go through a step-by-step procedure of creating your own Twitter / Strava app for posting weekly summaries on Twitter of your running mileage!</p>
+<section id="preliminaries" class="level3">
+<h3 class="anchored" data-anchor-id="preliminaries"><strong>Preliminaries</strong></h3>
+<p>A few things you’ll need before we get started:</p>
+<ul>
+<li>Python 3.5</li>
+<li><a href="http://www.tweepy.org/">tweepy</a> (for interfacing with Twitter)</li>
+<li><a href="http://pythonhosted.org/stravalib/">stravalib</a> (for interfacing with Strava)</li>
+<li><a href="https://github.com/magsol/pybot">pybot</a> (shameless plug, but it will help)</li>
+</ul>
+<p>Both Twitter and Strava use OAuth as their method of app authentication. These libraries just make it easier to interact with the services; they abstract a lot of the details of authentication and communication.</p>
+<p>But in case you’re interested: <a href="https://dev.twitter.com/overview/documentation">Twitter’s docs</a> and <a href="http://strava.github.io/api/">Strava’s docs</a>.</p>
+<section id="step-1-create-a-strava-app" class="level4">
+<h4 class="anchored" data-anchor-id="step-1-create-a-strava-app"><strong>Step 1: Create a Strava app</strong></h4>
+<p>Go to your <a href="https://www.strava.com/settings/api">user settings</a> and create an app that can interface with your account. Important pieces of information you’ll need later: <strong>Client ID</strong>, <strong>Client Secret</strong>, and <strong>Your access token</strong>.</p>
+<p>We can test if it works. Fire up an IPython terminal, get your <code>access_token</code>, and run the following code:</p>
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1">    <span class="im" style="color: #00769E;">from</span> stravalib <span class="im" style="color: #00769E;">import</span> Client</span>
+<span id="cb1-2">    client <span class="op" style="color: #5E5E5E;">=</span> Client(access_token <span class="op" style="color: #5E5E5E;">=</span> access_token)</span>
+<span id="cb1-3">    client.get_athlete()</span></code></pre></div>
+<p>You should see something along the lines of:</p>
+<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1">    Out[]: <span class="op" style="color: #5E5E5E;">&lt;</span>Athlete <span class="bu" style="color: null;">id</span><span class="op" style="color: #5E5E5E;">=</span><span class="dv" style="color: #AD0000;">1234567</span> firstname<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">b'Firstname'</span> lastname<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">b'Lastname'</span><span class="op" style="color: #5E5E5E;">&gt;</span></span></code></pre></div>
+</section>
+<section id="step-2-retrieve-last-weeks-data" class="level4">
+<h4 class="anchored" data-anchor-id="step-2-retrieve-last-weeks-data"><strong>Step 2: Retrieve last week’s data</strong></h4>
+<p>The whole point is to get weekly mileage reports. Thankfully, the <code>get_activities</code> method in stravalib has an <code>after</code> optional parameter we can use to precisely tune what time interval we want.</p>
+<p>First, though, we need to create a timestamp that represents the 1-week time frame. If we assume this will only be executed on the day we want the summary–say, every Monday–then we need to tally up all the runs from the day before all the way back to the previous Monday, inclusive.</p>
+<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1">    <span class="im" style="color: #00769E;">import</span> datetime</span>
+<span id="cb3-2">    current <span class="op" style="color: #5E5E5E;">=</span> datetime.datetime.now()</span>
+<span id="cb3-3">    last_week <span class="op" style="color: #5E5E5E;">=</span> current <span class="op" style="color: #5E5E5E;">+</span> datetime.timedelta(weeks <span class="op" style="color: #5E5E5E;">=</span> <span class="op" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">1</span>)</span>
+<span id="cb3-4">    after <span class="op" style="color: #5E5E5E;">=</span> datetime.datetime(last_week.year, last_week.month, last_week.day)</span>
+<span id="cb3-5">    activities <span class="op" style="color: #5E5E5E;">=</span> client.get_activities(after <span class="op" style="color: #5E5E5E;">=</span> after)</span></code></pre></div>
+<p>Assuming we run this chunk of code on a Monday, it should give us every Strava activity from the previous Monday up to the present.</p>
+<p>However, we’re not done yet. This includes everything–not just our runs, but any other activities that we recorded; yoga, weights, elliptical, and so on. We need to filter these out. We also need to filter out the edge case of any activities that have been recorded <em>today</em>, since we don’t want to include these in a report of <em>last</em> week’s activities!</p>
+<div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1">    l <span class="op" style="color: #5E5E5E;">=</span> [activity.<span class="bu" style="color: null;">id</span> <span class="cf" style="color: #003B4F;">for</span> activity <span class="kw" style="color: #003B4F;">in</span> activities <span class="cf" style="color: #003B4F;">if</span> activity.<span class="bu" style="color: null;">type</span> <span class="op" style="color: #5E5E5E;">==</span> <span class="st" style="color: #20794D;">'Run'</span> \</span>
+<span id="cb4-2">        <span class="kw" style="color: #003B4F;">and</span> a.start_date_local.day <span class="op" style="color: #5E5E5E;">!=</span> current.day]</span></code></pre></div>
+<p>Ok, let’s pause and discuss what’s happening here.</p>
+<p>First, the most obvious: we’re looping through the <code>activities</code> generator we obtained in the last line of the previous step. Second, the <code>if</code> statement at the end filters out any activities that aren’t a run. Finally, the <code>activity.id</code> part out front says, we’re building a list of the unique IDs that identify each activity. The last part is our timeframe edge case: if we recorded an activity today, even a running activity, don’t include it.</p>
+<p>Why are we only holding onto the IDs? It has to do with detail. Strava maintains a hierarchy of details available to users that vary with authentication, connection, etc. Simply put, when we request a list of activities, <a href="http://strava.github.io/api/v3/activities/#get-activities">the default detail level is 2, which is “summary” level</a>. However, some of the metrics we need–calories in particular!–require level 3, or “detailed”. To get this level of detail, we need to query for individual activities…one at a time.</p>
+<p>Hence, a list of activity IDs! Now we can loop through the IDs, requesting details on each run and tabulating up the mileage and calories.</p>
+<div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1">    <span class="im" style="color: #00769E;">from</span> stravalib <span class="im" style="color: #00769E;">import</span> unithelper</span>
+<span id="cb5-2"></span>
+<span id="cb5-3">    mileage <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">0.0</span>, calories <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">0.0</span></span>
+<span id="cb5-4">    <span class="cf" style="color: #003B4F;">for</span> activity_id <span class="kw" style="color: #003B4F;">in</span> l:</span>
+<span id="cb5-5">        activity <span class="op" style="color: #5E5E5E;">=</span> client.get_activity(activity_id)</span>
+<span id="cb5-6"></span>
+<span id="cb5-7">        <span class="co" style="color: #5E5E5E;"># This is annoying; all the default distances are in meters! Luckily,</span></span>
+<span id="cb5-8">        <span class="co" style="color: #5E5E5E;"># stravalib comes with a nice unit helper utility to do the conversion.</span></span>
+<span id="cb5-9">        distance <span class="op" style="color: #5E5E5E;">=</span> unithelper.miles(activity.distance)</span>
+<span id="cb5-10">        mileage <span class="op" style="color: #5E5E5E;">+=</span> <span class="bu" style="color: null;">round</span>(distance.num, <span class="dv" style="color: #AD0000;">2</span>)  <span class="co" style="color: #5E5E5E;"># Rounds to 2 sig figs.</span></span>
+<span id="cb5-11">        calories <span class="op" style="color: #5E5E5E;">+=</span> activity.calories</span></code></pre></div>
+<p>There you have it! In those two variables–<code>mileage</code> and <code>calories</code>–you have all the data you need to summarize your running workouts for the last week. Now we just need to post this information on Twitter!</p>
+</section>
+<section id="step-3-create-a-pybot" class="level4">
+<h4 class="anchored" data-anchor-id="step-3-create-a-pybot"><strong>Step 3: Create a PyBot</strong></h4>
+<p>Ok, time for a shameless plug: yes, I’m the <a href="https://github.com/magsol/pybot">pybot</a> author. It’s still highly experimental, and largely uncompleted, but for our purposes it will suffice nicely as a barebones framework to interact with Twitter.</p>
+<p>Clone the repo and follow the setup script to create a Twitter app and connect it to your account.</p>
+<div class="sourceCode" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1">    <span class="fu" style="color: #4758AB;">git</span> clone https://github.com/magsol/pybot.git</span>
+<span id="cb6-2">    <span class="bu" style="color: null;">cd</span> pybot</span>
+<span id="cb6-3">    <span class="ex" style="color: null;">sbin/create_pybot.py</span></span></code></pre></div>
+<p>That will walk you through the instructions for creating an app, generating OAuth credentials, and stubbing out your first pybot. Feel free to give it whatever name you’d like; for the purposes of this tutorial, I’ll assume we’ve named it <code>artbot</code> (don’t ask). Congratulations! You’ve created a twitter bot!</p>
+</section>
+<section id="step-4-customize-the-bots-behavior" class="level4">
+<h4 class="anchored" data-anchor-id="step-4-customize-the-bots-behavior"><strong>Step 4: Customize the bot’s behavior</strong></h4>
+<p>Our bot is pretty simple: every Monday at some specified time, it will wake up, read all the prior week’s running activities, and post the summary before going back to sleep for another week.</p>
+<p>It won’t be prompted by anything other than time. So the specific action override we’re looking for in PyBot parlance is <code>on_tweet</code>, and the interval we’ll use is <code>tweet_interval</code>. The latter is easy enough–a full week between tweets!</p>
+<div class="sourceCode" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1">    <span class="va" style="color: #111111;">self</span>.config[<span class="st" style="color: #20794D;">'tweet_interval'</span>] <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">60</span> <span class="op" style="color: #5E5E5E;">*</span> <span class="dv" style="color: #AD0000;">60</span> <span class="op" style="color: #5E5E5E;">*</span> <span class="dv" style="color: #AD0000;">24</span> <span class="op" style="color: #5E5E5E;">*</span> <span class="dv" style="color: #AD0000;">7</span></span></code></pre></div>
+<p>Before we go any further: does anyone see anything wrong with the above code snippet?</p>
+<p>I’ll give you a hint: imagine you started this bot on a Tuesday, instead of a Monday.</p>
+<p>Yep, there it is. This interval we’ve defined is exactly 1 week, but it <em>doesn’t account for when we actually START the bot</em>. We need this to be a little more intelligent. If you want the posting to happen weekly every Monday, it shouldn’t matter when you actually start running the bot, right? It should be smart enough to figure out when it needs to post for the first time, <em>then</em> post weekly thereafter.</p>
+<p>A neat component of PyBot is that, in addition to giving hard time frames, you can also specify functions to compute the interval on-the-fly, subject to some other constraints that are dynamic (like on what day of the week you happen to fire up the bot).</p>
+<p>To make things easy on us, we’ll use the <code>datetime</code> convention in the Python documentation for <a href="https://docs.python.org/3.5/library/datetime.html#datetime.datetime.weekday">identifying individual days of the week</a>. This tutorial assumes Mondays (which corresponds to <code>0</code>), but you can use whatever value you want.</p>
+<p>We need to store this as a configuration parameter in the bot.</p>
+<div class="sourceCode" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1">    <span class="co" style="color: #5E5E5E;"># Put this somewhere in the bot_init() method</span></span>
+<span id="cb8-2">    <span class="va" style="color: #111111;">self</span>.config[<span class="st" style="color: #20794D;">'update_day'</span>] <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">0</span>  <span class="co" style="color: #5E5E5E;"># Corresponds to Monday.</span></span></code></pre></div>
+<p>Now, we need a <em>function</em> to compute the interval between updates.</p>
+<div class="sourceCode" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1">    <span class="co" style="color: #5E5E5E;"># Put this somewhere in the bot_init() method</span></span>
+<span id="cb9-2">    <span class="va" style="color: #111111;">self</span>.config[<span class="st" style="color: #20794D;">'tweet_interval'</span>] <span class="op" style="color: #5E5E5E;">=</span> <span class="va" style="color: #111111;">self</span>._compute_interval</span></code></pre></div>
+<p>We’ve referenced an internal method we’re calling <code>_compute_interval</code>, as of yet undefined. Let’s go ahead and define it!</p>
+<div class="sourceCode" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1">    <span class="co" style="color: #5E5E5E;"># Put this somewhere in the bot class declaration</span></span>
+<span id="cb10-2">    <span class="kw" style="color: #003B4F;">def</span> _compute_interval(<span class="va" style="color: #111111;">self</span>):</span>
+<span id="cb10-3">        interval <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">60</span> <span class="op" style="color: #5E5E5E;">*</span> <span class="dv" style="color: #AD0000;">60</span> <span class="op" style="color: #5E5E5E;">*</span> <span class="dv" style="color: #AD0000;">24</span> <span class="op" style="color: #5E5E5E;">*</span> <span class="dv" style="color: #AD0000;">7</span>  <span class="co" style="color: #5E5E5E;"># The default interval; we'll start here</span></span>
+<span id="cb10-4"></span>
+<span id="cb10-5">        <span class="co" style="color: #5E5E5E;"># Are we on the right day of the week?</span></span>
+<span id="cb10-6">        now <span class="op" style="color: #5E5E5E;">=</span> datetime.datetime.now().weekday()</span>
+<span id="cb10-7">        target <span class="op" style="color: #5E5E5E;">=</span> <span class="va" style="color: #111111;">self</span>.config[<span class="st" style="color: #20794D;">'update_day'</span>]</span>
+<span id="cb10-8">        <span class="cf" style="color: #003B4F;">if</span> now <span class="op" style="color: #5E5E5E;">==</span> target:</span>
+<span id="cb10-9">            <span class="cf" style="color: #003B4F;">return</span> interval  <span class="co" style="color: #5E5E5E;"># Nothing to do! Yay!</span></span>
+<span id="cb10-10"></span>
+<span id="cb10-11">        <span class="co" style="color: #5E5E5E;"># If we get to this point, it means the index of the current day--</span></span>
+<span id="cb10-12">        <span class="co" style="color: #5E5E5E;"># as in, right when the code gets HERE--doesn't match the index of the</span></span>
+<span id="cb10-13">        <span class="co" style="color: #5E5E5E;"># day we've said we want to perform this update. So we need to do a</span></span>
+<span id="cb10-14">        <span class="co" style="color: #5E5E5E;"># little bit of work to compute that date.</span></span>
+<span id="cb10-15"></span>
+<span id="cb10-16">        <span class="cf" style="color: #003B4F;">if</span> now <span class="op" style="color: #5E5E5E;">&gt;</span> target:</span>
+<span id="cb10-17">            <span class="co" style="color: #5E5E5E;"># This is a hack, so the index of the CURRENT day will always be</span></span>
+<span id="cb10-18">            <span class="co" style="color: #5E5E5E;"># smaller than the index of the TARGET day.</span></span>
+<span id="cb10-19">            now <span class="op" style="color: #5E5E5E;">-=</span> <span class="dv" style="color: #AD0000;">7</span></span>
+<span id="cb10-20"></span>
+<span id="cb10-21">        <span class="co" style="color: #5E5E5E;"># Essentially, all we've done is replace the 7 above with whatever</span></span>
+<span id="cb10-22">        <span class="co" style="color: #5E5E5E;"># it needs to be in order to get us to our target day.</span></span>
+<span id="cb10-23">        <span class="cf" style="color: #003B4F;">return</span> (target <span class="op" style="color: #5E5E5E;">-</span> now) <span class="op" style="color: #5E5E5E;">*</span> <span class="dv" style="color: #AD0000;">24</span> <span class="op" style="color: #5E5E5E;">*</span> <span class="dv" style="color: #AD0000;">60</span> <span class="op" style="color: #5E5E5E;">*</span> <span class="dv" style="color: #AD0000;">60</span></span></code></pre></div>
+<p>Now that our interval is in place, we’ll need to override the <code>on_tweet</code> action to do what we want whenever it’s called (which will be once each week on the day we’ve specified!). Remember, this method is called once we’ve hit our interval. So this is where it all comes together!</p>
+<div class="sourceCode" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1">    <span class="kw" style="color: #003B4F;">def</span> on_tweet(<span class="va" style="color: #111111;">self</span>):</span>
+<span id="cb11-2"></span>
+<span id="cb11-3">        <span class="co" style="color: #5E5E5E;"># First, pull in the stats from Strava.</span></span>
+<span id="cb11-4">        current <span class="op" style="color: #5E5E5E;">=</span> datetime.datetime.now()</span>
+<span id="cb11-5">        last_week <span class="op" style="color: #5E5E5E;">=</span> current <span class="op" style="color: #5E5E5E;">+</span> datetime.timedelta(weeks <span class="op" style="color: #5E5E5E;">=</span> <span class="op" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">1</span>)</span>
+<span id="cb11-6">        after <span class="op" style="color: #5E5E5E;">=</span> datetime.datetime(last_week.year, last_week.month, last_week.day)</span>
+<span id="cb11-7">        activities <span class="op" style="color: #5E5E5E;">=</span> client.get_activities(after <span class="op" style="color: #5E5E5E;">=</span> after)</span>
+<span id="cb11-8"></span>
+<span id="cb11-9">        <span class="co" style="color: #5E5E5E;"># Second, filter by activity type and time frame.</span></span>
+<span id="cb11-10">        l <span class="op" style="color: #5E5E5E;">=</span> [activity.<span class="bu" style="color: null;">id</span> <span class="cf" style="color: #003B4F;">for</span> activity <span class="kw" style="color: #003B4F;">in</span> activities <span class="cf" style="color: #003B4F;">if</span> activity.<span class="bu" style="color: null;">type</span> <span class="op" style="color: #5E5E5E;">==</span> <span class="st" style="color: #20794D;">'Run'</span> <span class="kw" style="color: #003B4F;">and</span></span>
+<span id="cb11-11">            a.start_date_local.day <span class="op" style="color: #5E5E5E;">!=</span> current.day]</span>
+<span id="cb11-12"></span>
+<span id="cb11-13">        <span class="co" style="color: #5E5E5E;"># Third, tabulate up the stats for mileage and calories.</span></span>
+<span id="cb11-14">        mileage <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">0.0</span>, calories <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">0.0</span></span>
+<span id="cb11-15">        <span class="cf" style="color: #003B4F;">for</span> activity_id <span class="kw" style="color: #003B4F;">in</span> l:</span>
+<span id="cb11-16">            activity <span class="op" style="color: #5E5E5E;">=</span> client.get_activity(activity_id)</span>
+<span id="cb11-17">            distance <span class="op" style="color: #5E5E5E;">=</span> unithelper.miles(activity.distance)</span>
+<span id="cb11-18">            mileage <span class="op" style="color: #5E5E5E;">+=</span> <span class="bu" style="color: null;">round</span>(distance.num, <span class="dv" style="color: #AD0000;">2</span>)  <span class="co" style="color: #5E5E5E;"># Rounds to 2 sig figs.</span></span>
+<span id="cb11-19">            calories <span class="op" style="color: #5E5E5E;">+=</span> activity.calories</span>
+<span id="cb11-20"></span>
+<span id="cb11-21">        <span class="co" style="color: #5E5E5E;"># Finally, use the stats to craft a tweet. This can be any format</span></span>
+<span id="cb11-22">        <span class="co" style="color: #5E5E5E;"># you want, but I'll use the example one from the start of the post.</span></span>
+<span id="cb11-23">        tweet <span class="op" style="color: #5E5E5E;">=</span> <span class="st" style="color: #20794D;">"My training last week: </span><span class="sc" style="color: #5E5E5E;">{:d}</span><span class="st" style="color: #20794D;"> workouts for </span><span class="sc" style="color: #5E5E5E;">{:.2f}</span><span class="st" style="color: #20794D;"> miles and </span><span class="sc" style="color: #5E5E5E;">{:d}</span><span class="st" style="color: #20794D;"> calories burned."</span>.<span class="bu" style="color: null;">format</span>(<span class="bu" style="color: null;">len</span>(l), mileage, calories)</span>
+<span id="cb11-24">        <span class="va" style="color: #111111;">self</span>.update_status(tweet)</span></code></pre></div>
+<p>That’s it! You have everything you need; now, just set the bot to run <em>ad nauseum</em>:</p>
+<div class="sourceCode" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1">    <span class="ex" style="color: null;">python</span> artbot.py</span></code></pre></div>
+<p>It should run forever, sleeping for most of it but waking every week to post your summary. If you notice something isn’t working right, check the logs; they should specify if there are problems e.g.&nbsp;with permissions posting to Twitter, or connections hanging and disconnecting.</p>
+</section>
+</section>
+<section id="conclusion" class="level3">
+<h3 class="anchored" data-anchor-id="conclusion"><strong>Conclusion</strong></h3>
+<p>That’s all there is to it! There are obviously a lot of technical hurdles I largely glossed over–creating the apps for both Strava and Twitter can be a little more involved than the average person would like, and Python versions (especially 2.x vs 3.x) can wreak havoc on your code. I tried to be as reproducible as I could, though until Jupyter notebooks decide to play nice with Pelican (or maybe the other way around?) these code embeddings will have to suffice. Sigh.</p>
+<p>Please feel free to leave a comment if you have any questions! I’ve also posted the bot in the <code>examples</code> folder in the <a href="https://github.com/magsol/pybot">pybot GitHub repository</a> as <code>artbot.py</code>. Happy tweeting!</p>
+
+
+</section>
+
+ ]]></description>
+  <category>personal</category>
+  <category>howto</category>
+  <category>python</category>
+  <category>strava</category>
+  <category>running</category>
+  <category>oauth</category>
+  <category>tweepy</category>
+  <category>twitter</category>
+  <category>pybot</category>
+  <guid>https://magsol.github.io/posts/20160516-autopost-running-twitter-summary-strava/index.html</guid>
+  <pubDate>Mon, 16 May 2016 15:09:59 GMT</pubDate>
+  <media:content url="https://magsol.github.io/posts/20160516-autopost-running-twitter-summary-strava/stravatwitter.png" medium="image" type="image/png" height="66" width="144"/>
+</item>
+<item>
+  <title>Reviewing a reviewed grant’s reviews</title>
+  <dc:creator>Shannon Quinn</dc:creator>
+  <link>https://magsol.github.io/posts/20160202-nsf-crii-reviewer-feedback/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Rejection in any context sucks. As a new faculty trying to prove himself (to himself, but most importantly, to his tenure committee), I particularly hate rejections in the context of grant proposals and paper submissions. The “nice” thing about the latter rejection is that it’s marginally easier to resubmit a manuscript elsewhere; there are more journals and conferences than ever, especially in computer science.</p>
+<p><img src="https://magsol.github.io/posts/20160202-nsf-crii-reviewer-feedback/write_grants.jpg" class="img-fluid"></p>
+<p>Last September, I submitted a proposal in line with <a href="http://www.nsf.gov/pubs/2015/nsf15569/nsf15569.htm">NSF’s 15-569 program solicitation</a>: the Research Initiation Initiative in Computer and Information Science and Engineering.</p>
+<p>Insert jokes involving “initiation initiative” imagery here (sorry, I don’t have an avalanche of Advil).</p>
+<p>Somewhat unsurprisingly but nonetheless disappointingly, I received notification today that the proposal was rejected. I say unsurprising because the proposal itself was incredibly rushed; we hit “submit” about two minutes before deadline. It was my first major grant proposal, so there were bound to be some mishaps.</p>
+<p>So: let’s get into the reviewer feedback!</p>
+<section id="reviewer-1" class="level3">
+<h3 class="anchored" data-anchor-id="reviewer-1">Reviewer 1</h3>
+<p>This was the longest review (aside from the Panel Summary). The reviewer listed the Strengths and Weaknesses of the proposal (which I appreciate). For instance, one of the given strengths:</p>
+<blockquote class="blockquote">
+<p>The proposed work seeks to address these limitations: the innovation of this work is the combination of traditional and nontraditional data sets in a tool for disease forecasting.</p>
+</blockquote>
+<p>And weaknesses:</p>
+<blockquote class="blockquote">
+<p>The research plan is lacking detail, which significantly call into question the intellectual merit of the proposal. For example, very little detail is given regarding how the models in Task 1 and 2 will be tested. Eg, how will the team determine that the models are operating at a sufficient level of accuracy?</p>
+</blockquote>
+<p>This point is particularly brutal:</p>
+<blockquote class="blockquote">
+<p>It’s unclear how the proposed work will help him differentiate his work from work done previously with graduate advisors.</p>
+</blockquote>
+<p>That, more than anything else, is dangerous territory. The first weakness can be described as a consequence of rushed writing. The second is systemic and not trivial to assuage.</p>
+<p>Overall, this reviewer gave the proposal a rating of “Fair.”</p>
+</section>
+<section id="reviewer-2" class="level3">
+<h3 class="anchored" data-anchor-id="reviewer-2">Reviewer 2</h3>
+<p>The feedback here wasn’t quite as structured as Reviewer 1, but still provided a reasonable level of detail.</p>
+<blockquote class="blockquote">
+<p>Strengths are the concept of developing a […] based on […], and […], both in terms of […] and […]. Another strength is the PI’s experience with […], and in using […].</p>
+</blockquote>
+<p>Put another way: the reviewer liked the general idea, and the fact that I’ve had a little experience with it in the past.</p>
+<blockquote class="blockquote">
+<p>However, several major concerns are: 1) as far as I can see, the PI doesn’t have a great deal of experience working with […].</p>
+</blockquote>
+<p>This was an excellent point. I mentioned a particular strategy but formally don’t have any training with it. I neglected my own rule of “justify everything” here.</p>
+<blockquote class="blockquote">
+<ol start="2" type="1">
+<li>No clear description of the data mining and statistical methods for error evaluation and estimation of signals from the inevitable noise from […]</li>
+</ol>
+</blockquote>
+<p>Rookie mistake on my part.</p>
+<blockquote class="blockquote">
+<ol start="3" type="1">
+<li>validation of system predictions underdeveloped, when this would be of major importance</li>
+</ol>
+</blockquote>
+<p>Also a rookie mistake.</p>
+<blockquote class="blockquote">
+<ol start="4" type="1">
+<li>finally, the choice of […] seems idiosyncratic. The budget is for […]. No involvement of […], which again casts some uncertainty as to successfully developing and implementing the […].</li>
+</ol>
+</blockquote>
+<p>This ties back with the reviewer’s first criticism: since I don’t have much experience with this certain strategy, the next best thing would be to provide funding for someone who does, which I did not do.</p>
+<p>Part of the reviewer’s summary included this line:</p>
+<blockquote class="blockquote">
+<p>It will also be remarkable if all the activities proposed can be achieved within 2 years, especially given that most of the work will presumably be carried out by graduate and undergraduate students.</p>
+</blockquote>
+<p>In a way, this is something of a relief: my original plan had been to submit a <a href="http://www.nsf.gov/pubs/2015/nsf15555/nsf15555.htm">CAREER proposal</a> on this topic; if a reviewer thinks the topic is too large-scale to be done in two years, it may be the right scale for a 5-year CAREER award.</p>
+<p>Overall, the reviewer gave the proposal a rating of “Fair.”</p>
+</section>
+<section id="reviewer-3" class="level3">
+<h3 class="anchored" data-anchor-id="reviewer-3">Reviewer 3</h3>
+<p>The third reviewer is something of an outlier, though <a href="https://www.youtube.com/watch?v=-VRBWLpYCPY">not in the usual way</a>.</p>
+<p>The feedback was extremely succinct, and universally positive (knee-jerk aside: was this a student?). It was also at a very high level; it never addressed the details of the proposal, only the big-picture ideas. Here’s the summary:</p>
+<blockquote class="blockquote">
+<p>Overall, the proposed research activities have significant potential to be transformative. The two core objectives and corresponding tasks ([…]) seem ambitious to the reviewer. Integration of research and educational activities are relevant and intersect various disciplines (computer sciences, cellular biology, genetics).</p>
+</blockquote>
+<p>Well-written, but nonetheless out of sync with the other two reviewers. Don’t get me wrong–I <strong>greatly</strong> appreciate some positive feedback on my first NSF proposal as PI! This reviewer gave the proposal a “Very Good” rating, which is also a nice shot to the ego. But it’s clear there were some glaring weaknesses that, for whatever reason, this reviewer chose not to elucidate.</p>
+</section>
+<section id="panel-summary" class="level3">
+<h3 class="anchored" data-anchor-id="panel-summary">Panel Summary</h3>
+<p>Nothing surprising here. The strengths from the previous reviewers were identified, along with the numerous accompanying weaknesses. The panel did address the issue of broader impacts:</p>
+<blockquote class="blockquote">
+<p>Although the proposal has merits, the PI may need to clarify clearly as to the major justification for developing the proposed tool in relation to other initiatives in this area, eg […]. The panel also highlighted several problems and questions with regards to […]. Until these problems are addressed, it was felt that the broader impact of this project, particularly the probability of […], is likely to be moderate to low</p>
+</blockquote>
+<p>That, along with a “Low Competitive” panel recommendation, pretty much sums things up.</p>
+</section>
+<section id="conclusions" class="level2">
+<h2 class="anchored" data-anchor-id="conclusions">Conclusions</h2>
+<p>For the vast majority of weaknesses, their immediate impetus can be summed up thusly: <em>I started writing the grant the day before deadline.</em> That’s a no-no, and contributed directly to the panicked flurry at the end and lack of detail in the proposal itself. Starting earlier will solve these problems.</p>
+<p>The last point that genuinely concerns me, though, is the first reviewer’s comment on differentiating myself from my graduate advisors. It’s true that this proposal took work I started as a graduate student, and I agree that it’s important to build an independent research group such that I don’t have to rely on my graduate advisors for funding.</p>
+<p>But I suppose I could boil this down to time constraints as well: given more elbow room, I could have provided a more detailed development plan that clearly differentiated itself from work done before. Rather than relying on the “we propose to <em>extend</em>…” mantra, I could have delved into much greater detail on the methods I’d wanted to use and why their application would be novel.</p>
+<p>So there you have it: a review of grant reviews. Nothing left to do here but incorporate the feedback and push out more effective proposals in the months to come!</p>
+
+
+</section>
+
+ ]]></description>
+  <category>professional</category>
+  <category>academia</category>
+  <category>grants</category>
+  <category>reviewer feedback</category>
+  <category>rejection</category>
+  <guid>https://magsol.github.io/posts/20160202-nsf-crii-reviewer-feedback/index.html</guid>
+  <pubDate>Tue, 02 Feb 2016 10:18:34 GMT</pubDate>
+  <media:content url="https://magsol.github.io/posts/20160202-nsf-crii-reviewer-feedback/write_grants.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Introductions</title>
+  <dc:creator>Shannon Quinn</dc:creator>
+  <link>https://magsol.github.io/posts/20151107-introductions/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Well, this seems to be working. Kinda.</p>
+<p>I took some inspiration from <a href="http://jakevdp.github.io/">Jake VanderPlas’ Pythonic Perambulations</a> and opted for a similar route: Pelican as the backend blogging machine, github as the host, and (eventually) embedded Jupyter notebooks. Unfortunately, Jake’s addition to the Pelican plugins to <a href="https://github.com/getpelican/pelican-plugins/blob/master/liquid_tags/notebook.py">allow Jupyter notebooks</a> uses CSS that is, shall we say, unfriendly to Pelican themes outside of the Octopress default.</p>
+<p>So that part is still incomplete. As are many of the links and some of the plugins. But ultimately, I’m hoping to use this to supplant my current pair of blogs that jointly detail what my plan for this space is: academia, general data science, and other musings.</p>
+<p>Stay tuned!</p>
+
+
+
+ ]]></description>
+  <category>personal</category>
+  <category>pelican</category>
+  <category>python</category>
+  <category>github</category>
+  <category>jupyter</category>
+  <guid>https://magsol.github.io/posts/20151107-introductions/index.html</guid>
+  <pubDate>Sat, 07 Nov 2015 12:14:02 GMT</pubDate>
+  <media:content url="https://magsol.github.io/images/logo.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 </channel>
 </rss>

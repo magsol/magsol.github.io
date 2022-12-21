@@ -2,7 +2,14 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/pardon-the-dust/index.html"
+      "/posts/20221213-pardon-the-dust/index.html",
+      "/posts/20170531-summer-of-data-science/index.html",
+      "/posts/20170316-so-you-want-to-conduct-research-with-me/index.html",
+      "/posts/20170106-gameify-your-raspberry-pi/index.html",
+      "/posts/20160926-osbd2016-workshop/index.html",
+      "/posts/20160516-autopost-running-twitter-summary-strava/index.html",
+      "/posts/20160202-nsf-crii-reviewer-feedback/index.html",
+      "/posts/20151107-introductions/index.html"
     ]
   }
 ]
