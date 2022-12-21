@@ -1,0 +1,20 @@
+---
+title: "Pardon de dust (2)"
+subtitle: "Migrating blog backends is hard"
+date: "2022-12-13 15:48:00"
+categories: [personal, professional, news]
+image: "clover.jpg"
+image-alt: "Our bunny Clover."
+author: "Shannon Quinn"
+---
+![](clover.jpg)
+
+Why hello there. You may have noticed that things look a little bit different around here.
+
+I'm in the process of migrating my blog *off* [Pelican](https://getpelican.com/) and *on* to [Quarto](https://quarto.org/).
+
+Why, you ask? Honestly, I got tired of having to fix a broken plugin or failed `git push` *every. single. time.* that I finished writing out a blog post. It gave an already-infrequent task an even higher activation threshold, and during a stretch where spare bandwidth was an incredible luxury.
+
+In short: I'd really like to blog more often, and from what I've seen, Quarto will help me do just that. It definitely requires some extra bandwidth to get things migrated over, but fortunately: I have some of that at the moment :)
+
+Stay tuned! In the meantime, please enjoy the above recent photo of Clover helping us put up our tree.

@@ -1,0 +1,30 @@
+project:
+  type: website
+
+website:
+  favicon: images/favicon.png
+  title: "Stochastic Stenography"
+  site-url: "https://magsol.github.io"
+  google-analytics: "G-XHDW9H78Z1"
+  image: images/logo.png
+  navbar:
+    logo: images/logo_nb.png
+    logo-alt: "Stochastic Stenography blog logo"
+    search: true
+    right:
+      - about.qmd
+  twitter-card:
+    title: "Stochastic Stenography"
+    description: "Data, donuts, and disjunctives"
+    card-style: summary
+    creator: "@SpectralFilter"
+  open-graph:
+    locale: en_US
+    site-name: "Stochastic Stenography"
+    description: "Data, donuts, and disjunctives"
+format:
+  html:
+    theme: darkly
+    css: styles.css
+execute:
+  freeze: auto

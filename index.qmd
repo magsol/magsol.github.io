@@ -1,0 +1,21 @@
+---
+title: "Stochastic Stenography ✍️"
+subtitle: "Data, donuts, and disjunctives"
+listing:
+  # Contents can be super specific
+  contents: posts
+  feed: true
+  sort: "date desc"
+  # default, grid, or table
+  type: default
+  categories: unnumbered
+  # Disables user's ability to sort
+  sort-ui: false
+  # Disables filter box
+  filter-ui: false
+  date-format: "dddd[,] MMMM D"
+page-layout: full
+title-block-banner: true
+---
+
+

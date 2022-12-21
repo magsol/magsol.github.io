@@ -1,0 +1,36 @@
+---
+title: "About Me"
+image: images/profile.jpg
+about:
+  template: broadside
+  links:
+    - icon: envelope
+      href: mailto:magsol@gmail.com
+    - icon: github
+      href: https://github.com/magsol
+    - icon: mastodon
+      href: https://quinnwitz.house/@magsol
+    - icon: linkedin
+      href: https://www.linkedin.com/in/shannonpquinn
+    - icon: wordpress
+      href: https://wherearethepancakes.wordpress.com/
+    - icon: instagram
+      href: https://www.instagram.com/magsolium/
+    - icon: stack-overflow
+      href: http://stackoverflow.com/users/13604/magsol
+    - icon: twitter
+      href: https://twitter.com/SpectralFilter
+    - icon: building
+      href: https://quinngroup.github.io/
+    - icon: google
+      href: http://scholar.google.com/citations?user=4EjRiycAAAAJ
+    - icon: flower3
+      href: https://orcid.org/0000-0002-8916-6335
+
+---
+
+My name is Shannon Quinn. I'm an associate professor in the [School of Computer Science](https://cobweb.cs.uga.edu/~squinn/) and [Department of Cellular Biology](https://cellbio.uga.edu/directory/people/shannon-quinn) at the University of Georgia. Which is ironic at some level, considering my undergraduate degree in Computer Science came from Georgia Tech ([GO JACKETS](https://www.youtube.com/watch?v=ygxDs_zcayo)).
+
+My interests are pretty broad, but the best summary I can give is that I enjoy hacking at large-scale data science problems. Recently I've been getting into DevOps, and ways of operationalizing machine learning; reproducibility is very important to me, and anything that helps make the hidden work of preprocessing, pretraining, and even precoding explicit is a good idea in my book. Perhaps unsurprisingly, I'm a huge proponent of open source development, and a big believer in open science. I try to make tools, data, and course materials all available with open source licenses, and try to give back to the open source communities whenever and however I can.
+
+In my copious (lulz) free time, I enjoy board gaming, video gaming, and anything that involves working up a sweat: baseball, football, basketball, racquetball, cycling, hiking, and [especially running](https://wherearethepancakes.wordpress.com/).
