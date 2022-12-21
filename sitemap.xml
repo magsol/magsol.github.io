@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://magsol.github.io/about.html</loc>
+    <lastmod>2022-12-21T19:33:34.095Z</lastmod>
+  </url>
+  <url>
     <loc>https://magsol.github.io/posts/pardon-the-dust/index.html</loc>
-    <lastmod>2022-12-13T21:27:54.820Z</lastmod>
+    <lastmod>2022-12-21T19:33:34.775Z</lastmod>
   </url>
   <url>
     <loc>https://magsol.github.io/index.html</loc>
-    <lastmod>2022-12-13T21:27:55.126Z</lastmod>
-  </url>
-  <url>
-    <loc>https://magsol.github.io/about.html</loc>
-    <lastmod>2022-12-13T21:27:55.388Z</lastmod>
+    <lastmod>2022-12-21T19:33:35.151Z</lastmod>
   </url>
 </urlset>
