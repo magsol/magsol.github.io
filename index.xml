@@ -5,18 +5,18 @@
       xmlns:dc="http://purl.org/dc/elements/1.1/" 
       version="2.0">
 <channel>
-<title>Stochastic Stenography ✍️</title>
+<title>Stochastic Stenography</title>
 <link>https://magsol.github.io/index.html</link>
 <atom:link href="https://magsol.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <image>
 <url>https://magsol.github.io/images/logo.png</url>
-<title>Stochastic Stenography ✍️</title>
+<title>Stochastic Stenography</title>
 <link>https://magsol.github.io/index.html</link>
 <height>144</height>
 <width>144</width>
 </image>
-<generator>quarto-1.2.280</generator>
+<generator>quarto-1.2.313</generator>
 <lastBuildDate>Tue, 13 Dec 2022 15:48:00 GMT</lastBuildDate>
 <item>
   <title>Pardon de dust (2)</title>
