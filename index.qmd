@@ -1,6 +1,6 @@
 ---
-title: "Blogging, take 14,000,605; action!"
-subtitle: "Data, donuts, and disjunctives"
+title: "Data, donuts, and detours"
+# subtitle: ""
 listing:
   # Contents can be super specific
   contents: posts
