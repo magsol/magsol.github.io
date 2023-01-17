@@ -13,13 +13,13 @@ website:
       - about.qmd
   twitter-card:
     title: "Stochastic Stenography"
-    description: "Data, donuts, and disjunctives"
+    description: "Data, donuts, and detours"
     card-style: summary
     creator: "@SpectralFilter"
   open-graph:
     locale: en_US
     site-name: "Stochastic Stenography"
-    description: "Data, donuts, and disjunctives"
+    description: "Data, donuts, and detours"
 format:
   html:
     theme: darkly
