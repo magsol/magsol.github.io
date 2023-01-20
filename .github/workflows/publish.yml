@@ -38,10 +38,10 @@ jobs:
           replace: "<a rel=\"me\" href=\"https://quinnwitz.house/@magsol\" class=\"about-link\">"
           regex: false
           include: about.html
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git commit about.html -m "Added rel=me attribute to Mastodon link."
+      - name: Add and commit changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: "Added rel=me attribute to Mastodon link."
       - name: Push changes back
         uses: ad-m/github-push-action@master
         with:
