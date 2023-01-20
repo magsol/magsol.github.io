@@ -2,15 +2,16 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/20230114-year-that-almost-was/index.html",
-      "/posts/20221213-pardon-the-dust/index.html",
-      "/posts/20170531-summer-of-data-science/index.html",
-      "/posts/20170316-so-you-want-to-conduct-research-with-me/index.html",
-      "/posts/20170106-gameify-your-raspberry-pi/index.html",
-      "/posts/20160926-osbd2016-workshop/index.html",
-      "/posts/20160516-autopost-running-twitter-summary-strava/index.html",
-      "/posts/20160202-nsf-crii-reviewer-feedback/index.html",
-      "/posts/20151107-introductions/index.html"
+      "/posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/index.html",
+      "/posts/2023-01-14-year-that-almost-was/index.html",
+      "/posts/2022-12-13-pardon-the-dust/index.html",
+      "/posts/2017-05-31-summer-of-data-science/index.html",
+      "/posts/2017-03-16-so-you-want-to-conduct-research-with-me/index.html",
+      "/posts/2017-01-06-gameify-your-raspberry-pi/index.html",
+      "/posts/2016-09-26-osbd2016-workshop/index.html",
+      "/posts/2016-05-16-autopost-running-twitter-summary-strava/index.html",
+      "/posts/2016-02-02-nsf-crii-reviewer-feedback/index.html",
+      "/posts/2015-11-07-introductions/index.html"
     ]
   }
 ]

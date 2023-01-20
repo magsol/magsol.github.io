@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Shannon Quinn">
+
+<title>Stochastic Stenography - Game-ify Your Raspberry Pi</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XHDW9H78Z1"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
+</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Stochastic Stenography - Game-ify Your Raspberry Pi">
+<meta property="og:description" content="Data, donuts, and detours">
+<meta property="og:image" content="https://magsol.github.io/posts/2017-01-06-gameify-your-raspberry-pi/raspberrypi3.jpg">
+<meta property="og:site-name" content="Stochastic Stenography">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:title" content="Stochastic Stenography">
+<meta name="twitter:description" content="Data, donuts, and detours">
+<meta name="twitter:image" content="https://magsol.github.io/posts/2017-01-06-gameify-your-raspberry-pi/raspberrypi3.jpg">
+<meta name="twitter:creator" content="@SpectralFilter">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Stochastic Stenography</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About Me</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Game-ify Your Raspberry Pi</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">personal</div>
+                <div class="quarto-category">raspberry pi</div>
+                <div class="quarto-category">gaming</div>
+                <div class="quarto-category">video games</div>
+                <div class="quarto-category">nvidia</div>
+                <div class="quarto-category">steam</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Shannon Quinn </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">Posted on the 6th of January in the year 2017, at 6:47pm. It was Friday.</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p><img src="raspberrypi3.jpg" class="img-fluid"></p>
+<p>My project over the 2016 holiday season was to take the Raspberry Pi 3 I’ve had sitting around the house idling for the previous nine months and turn it into a <a href="https://retropie.org.uk/">RetroPie-ified gaming emulator</a>.</p>
+<p>RetroPie is a phenomenal bit of software that combines the work of several projects into a single package that was primarily designed to be deployed on Raspberry Pis, but which can also be set up on a regular ol’ PC. If you’re using a Raspberry Pi, it’s built on top of the <a href="https://www.raspberrypi.org/downloads/raspbian/">Raspbian OS</a>, so all the commands familiar to you will still be available.</p>
+<p>I have to say up front: the folks with RetroPie have done an <em>amazing</em> job. The documentation was excellent, and while I’ll walk through the installation and configuration here, with only one notable exception everything went exactly as prescribed.</p>
+<section id="retropie" class="level3">
+<h3 class="anchored" data-anchor-id="retropie">RetroPie</h3>
+<p>Assuming you have all the <a href="https://retropie.org.uk/documentation/building-your-own-retropie-machine/">needed hardware</a>, installing the RetroPie OS on your Pi is <a href="https://github.com/RetroPie/RetroPie-Setup/wiki/First-Installation">pretty straightforward</a>.</p>
+<ul>
+<li>Use some sort of imaging software to write the RetroPie image to an SD card (I used <a href="http://www.tweaking4all.com/hardware/raspberry-pi/macosx-apple-pi-baker/">ApplePi Baker</a> without any problems, but you could also just use the <code>dd</code> command in the Terminal, which directly moves bytes from one place to another).</li>
+<li>Insert the SD card into your Pi.</li>
+<li>Boot! I had a few false-starts that were the result of the SD card not being fully inserted, so nothing came up.</li>
+</ul>
+<p>If all goes well, you should see the wonderful Raspbian logo.</p>
+<p><img src="raspberry-pi-logo.png" class="img-fluid"></p>
+</section>
+<section id="configuring-retropie" class="level3">
+<h3 class="anchored" data-anchor-id="configuring-retropie">Configuring RetroPie</h3>
+<p>The first thing you’ll need to do when RetroPie boots is to configure whatever controller you’re going to use. I went out and purchased some standard-issue <a href="http://gaming.logitech.com/en-us/product/f310-gamepad">Logitech USB gamepads</a> and they seem to be functioning very well. You can also use your keyboard if you want for this, but it pretty much has to be something that can be connected via USB directly to the Pi.</p>
+<p>A few pointers in this step:</p>
+<ul>
+<li>To skip a particular button configuration, just <strong>press and hold any button for a second</strong>.</li>
+<li>If you make a mistake in configuring a button, you have to get all the way to the bottom before you can scroll back up and fix it.</li>
+<li>It took me 5-6 tries to get this completely right. Just go back and do it again if you mess something up.</li>
+</ul>
+</section>
+<section id="emulationstation" class="level3">
+<h3 class="anchored" data-anchor-id="emulationstation">EmulationStation</h3>
+<p>Once you successfully configure a gamepad, you’ll be taken to the main landing page: EmulationStation.</p>
+<p><img src="emulationstation.png" class="img-fluid"></p>
+<p><em>Where are teh gamez0rz?!1</em>, you might be saying. Well, since ROMs are a legal gray area, you’re kinda on your own there. BUT! We have something else we need to do first anyway: set up a network configuration.</p>
+</section>
+<section id="network-configuration" class="level3">
+<h3 class="anchored" data-anchor-id="network-configuration">Network Configuration</h3>
+<p>If you have a Raspberry Pi 2 or earlier, your network choices are limited to an ethernet connection. With the advent of Raspberry Pi 3s, suddenly wifi is an option! Turns out, I have a 3, and it is this wifi that caused me a couple hours’ grief until I figured out what was going on.</p>
+<p>Go to the wifi configuration in EmulationStation. You’ll be taken to a network selection screen–protip, the Pi 3 <strong>cannot</strong> connect to 5GHz networks–where you can select your wifi network.</p>
+<p>You’ll then need to type in the wifi password. Provided you get it right, that should be it! You’re all set to go!</p>
+<p>If you find yourself entering your password again…and again…and again…and again…and can’t figure out why it’s failing, read on.</p>
+</section>
+<section id="keyboard-layout" class="level3">
+<h3 class="anchored" data-anchor-id="keyboard-layout">Keyboard Layout</h3>
+<p>For whatever reason, my keyboard was misconfigured–the layout was set to English (U.K.), resulting in some special characters being remapped. However, since the Raspbian password interface echoes stars <code>*</code> back, I had no idea I was typing a completely wrong password until I fired up a command prompt.</p>
+<p>Luckily, once you diagnose this issue, it’s fairly easy to fix. Raspbian has a <a href="https://www.raspberrypi.org/forums/viewtopic.php?f=28&amp;t=80127">utility built-in for changing your keyboard layout</a>. You just have to navigate in EmulationStation to the option that gives you a command prompt.</p>
+<p>In my case, once I had a working network connection, I just used SSH to perform any other operations on the Pi (e.g.&nbsp;uploading new games). The default username/password for RetroPie is <code>pi/raspberry</code>, which I suggest you change either from the EmulationStation main menu, or after your first SSH login.</p>
+</section>
+<section id="moonlight-on-raspberry-pi" class="level3">
+<h3 class="anchored" data-anchor-id="moonlight-on-raspberry-pi">Moonlight on Raspberry Pi</h3>
+<p>You should have a working RetroPie at this point, so that’s cool!</p>
+<p>However, as awesome as the Pis are, they’re not exactly brimming with horsepower. As such, if you try running N64 or PS2 emulators, you may find as I did that anything requiring 3D shaders gets <em>very</em> jittery, to the point of unplayable. RetroPie has <a href="https://github.com/RetroPie/RetroPie-Setup/wiki">detailed configuration options for every emulator</a> to help you get the absolute most out of your Pi, but there are some things a tiny CPU with an embedded stock GPU just can’t do, and one of those is render 3D shaders the way they were meant to be.</p>
+<p>So what? Give up? <em>Nay!</em></p>
+<p><img src="moonlight.jpg" class="img-fluid"></p>
+<p><a href="https://github.com/irtimmer/moonlight-embedded/wiki">Moonlight Embedded</a> is the open source version of NVIDIA’s GameStream as used by the NVIDIA Shield. Basically, it’s a way of streaming the output of an NVIDIA GPU to another input, like a TV.</p>
+<p>In this case, we’re basically turning our Pi into a glorified Chromecast–it’ll take the output from a dedicated GPU and stream it directly to the TV it’s connected to. Yes, this means you’re not actually playing games <em>on</em> the Raspberry Pi–you’re playing them on whatever computer has the GPU in it (oh and it has to be an NVIDIA GPU, GTX 650 or higher)–but all Moonlight requires is Raspbian, which is what RetroPie is built on!</p>
+<p>I found <a href="https://blog.jhot.me/guide-install-moonlight-on-raspbian-retropie-9d1318b8ddf8#.etf7g4bo6">this installation guide</a> perfect (make sure you download the latest versions of everything!), with the lone exception that, just before downloading and installing Moonlight itself, I also needed to install one more library:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> apt-get install libenet-dev</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Include that with the other libraries installed just before Moonlight, and everything else should just work. The rest of the instructions take you through configuring the gamepads so they correctly send their input back to the GPU (so, y’know, you don’t have to sit at your computer while staring at your TV).</p>
+</section>
+<section id="happy-fun-times" class="level3">
+<h3 class="anchored" data-anchor-id="happy-fun-times">Happy Fun Times!</h3>
+<p>Yes, lots of happy fun times. But also <a href="http://docs.happyfuntimes.net/docs/introduction.html">HappyFunTimes</a>!</p>
+<p>If you’re really into the party games, installing this gaming server may be the best thing ever. It’s a brilliant setup: gamepads are HTML5 canvases that run on smartphones, essentially mimicking controllers so everyone with a smartphone can play. The games range from stupidly simple to shockingly sophisticated. I may post configuration for that later, but I figure: if you’re building the Ultimate Gaming Pi, why not include that, too?</p>
+<p>And with that, I give you the results at our house:</p>
+<p><img src="zelda.jpeg" class="img-fluid"></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
