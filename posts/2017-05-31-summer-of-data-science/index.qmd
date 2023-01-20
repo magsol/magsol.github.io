@@ -1,7 +1,7 @@
 ---
 title: "Summer of Data Science 2017"
 date: "2017-05-31 23:03:42"
-categories: [professional, personal, data science, python, computer vision, imaging, machine learning, deep learning, nvidia, gpu, online courses, teaching, education, cat detector, generative adversarial networks, latent subspace, manifolds, bioimaging]
+categories: [professional, personal, data science, python, computer vision, imaging, machine learning, deep learning, nvidia, gpu, teaching, education, bioimaging]
 image: carpelibrum.png
 author: "Shannon Quinn"
 ---

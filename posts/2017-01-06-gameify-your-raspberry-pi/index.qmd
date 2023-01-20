@@ -1,7 +1,7 @@
 ---
 title: "Game-ify Your Raspberry Pi"
 date: "2017-01-06 18:47:37"
-categories: [personal, pi, raspberry pi, retropie, retro, gaming, video games, nvidia, shield, steam]
+categories: [personal, raspberry pi, gaming, video games, nvidia, steam]
 image: "raspberrypi3.jpg"
 author: "Shannon Quinn"
 ---

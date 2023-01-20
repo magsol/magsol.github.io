@@ -1,6 +1,6 @@
 ---
 title: "Reviewing a reviewed grant's reviews"
-categories: [professional, academia, grants, reviewer feedback, rejection]
+categories: [professional, academia, grants, feedback, rejection]
 date: "2016-02-02 10:18:34"
 image: write_grants.jpg
 author: Shannon Quinn

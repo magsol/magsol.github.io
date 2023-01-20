@@ -1,6 +1,6 @@
 ---
 title: "A twitterbot for posting weekly running stats"
-categories: [personal, howto, python, strava, running, oauth, tweepy, twitter, pybot]
+categories: [personal, python, strava, running, oauth, tweepy, twitter, pybot]
 date: "2016-05-16 15:09:59"
 image: stravatwitter.png
 author: Shannon Quinn
