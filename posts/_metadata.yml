@@ -8,3 +8,17 @@ date-format: "[Posted on the] Do [of] MMMM [in the year] YYYY[, at] h[:]mma[. It
 
 # Enable banner style title blocks
 title-block-banner: true
+
+# Enable Giscus comments on all posts (unless overridden on a post-by-post basis)
+comments:
+  giscus:
+    repo: "magsol/magsol.github.io"
+    repo-id: "MDEwOlJlcG9zaXRvcnkyNzYwNTYxNw=="
+    category: "Announcements"
+    category-id: "DIC_kwDOAaU6cc4CTutY"
+    mapping: "pathname"
+    reactions-enabled: true
+    loading: "lazy"
+    input-position: "top"
+    theme: "dark"
+    language: "en"
