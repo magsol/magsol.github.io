@@ -5,6 +5,7 @@ categories: [personal, professional, new year, blog, writing, side projects, res
 citation:
     url: https://magsol.github.io/posts/2018-01-19-new-years-resolutions/
 author: "Shannon Quinn"
+image: /images/logo.png
 ---
 
 A solid three weeks late on the new year's resolutions, but still a marked improvement over last year.
