@@ -33,4 +33,4 @@ research--I have yet to really bring that idea to fruition. That changes this ye
 There are quite a few side projects that have languished over the last several
 months (changing this blog's layout was one). I'd love to actually finish one!
 
-![](snow_bunny.jpg){.preview-image fig-alt="Our showshoe hare, aka our white rabbit, Clover, out exploring in the snow dusting we recently got."}
+![](snow_bunny.png){.preview-image fig-alt="Our showshoe hare, aka our white rabbit, Clover, out exploring in the snow dusting we recently got."}
