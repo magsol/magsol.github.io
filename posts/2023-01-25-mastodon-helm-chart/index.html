@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Shannon Quinn">
+
+<title>Stochastic Stenography - Mastodon, Part II: The Mastodon Helm chart</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XHDW9H78Z1"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
+</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Stochastic Stenography - Mastodon, Part II: The Mastodon Helm chart">
+<meta property="og:description" content="A package manager for people who enjoy pain I guess">
+<meta property="og:image" content="https://magsol.github.io/posts/2023-01-25-mastodon-helm-chart/helmsperson.png">
+<meta property="og:site-name" content="Stochastic Stenography">
+<meta property="og:locale" content="en_US">
+<meta property="og:image:height" content="1024">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:alt" content="Dramatic image of a galleon sailing on stormy seas (generated by Midjourney).">
+<meta name="twitter:title" content="Stochastic Stenography - Mastodon, Part II: The Mastodon Helm chart">
+<meta name="twitter:description" content="A package manager for people who enjoy pain I guess">
+<meta name="twitter:image" content="https://magsol.github.io/posts/2023-01-25-mastodon-helm-chart/helmsperson.png">
+<meta name="twitter:creator" content="@SpectralFilter">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image-height" content="1024">
+<meta name="twitter:image-width" content="1024">
+<meta name="twitter:image:alt" content="Dramatic image of a galleon sailing on stormy seas (generated by Midjourney).">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Stochastic Stenography</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About Me</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Mastodon, Part II: The Mastodon Helm chart</h1>
+            <p class="subtitle lead">A package manager for people who enjoy pain I guess</p>
+                                <div class="quarto-categories">
+                <div class="quarto-category">personal</div>
+                <div class="quarto-category">raspberry pi</div>
+                <div class="quarto-category">k3s</div>
+                <div class="quarto-category">mastodon</div>
+                <div class="quarto-category">helm</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Shannon Quinn </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">Posted on the 25th of January in the year 2023, at 4:27pm. It was Wednesday.</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p><img src="helmsperson.png" class="preview-image img-fluid" alt="Dramatic image of a galleon sailing on stormy seas (generated by Midjourney)."></p>
+<p><em>This article is part of a series about installing and configuring a Mastodon instance on a cluster of Raspberry Pi computers running k3s. To go back to previous articles in the series, try any of the links below:</em></p>
+<ol type="1">
+<li><a href="../../posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/index.html">Introduction</a></li>
+<li><a href="../../posts/2023-01-23-mastodon-home-network-topology/index.html">Part I: My home network topology</a></li>
+<li>Part II: The Mastodon Helm chart <em>(this post)</em></li>
+<li>Part III: Configuring and installing prerequisites</li>
+<li>Part IV: The waking nightmare that is Let’s Encrypt</li>
+<li>Part V: Actually installing Mastodon</li>
+<li>Conclusions</li>
+</ol>
+<p>I don’t know about you, dear reader, but when I first started this journey into teaching myself kubernetes, I was elated at the prospect of Helm: a “package manager for kubernetes”, it said! Thank the cloudless heavens; I was getting so bogged down with managing separate yaml files, I was thrilled at the prospect of someone just setting some reasonable defaults and packaging it all together.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="take-this-helmchart.jpg" class="img-fluid figure-img" alt="Spongebob meme base, with text reading 'Take this helm chart they said, everything will work they said.'"></p>
+<p></p><figcaption class="figure-caption">Such a cruel realization.</figcaption><p></p>
+</figure>
+</div>
+<section id="introducing-the-mastodon-chart" class="level3">
+<h3 class="anchored" data-anchor-id="introducing-the-mastodon-chart">Introducing the Mastodon chart</h3>
+<p>You can find the latest version of the Mastodon chart <a href="https://github.com/mastodon/chart">here</a>.</p>
+<p>I should mention: when I started working on this in early December, the chart was actually still part of the main Mastodon repo! This meant that changes were much slower to be merged, and as a result I had to implement some workarounds that have since been fixed in the newest chart. Even so, I’ll point out 1) any changes I made, 2) whether those changes still need to be made now, and 3) relevant PRs.</p>
+<p>The chart repo’s README linked above provides pretty good instructions for getting up and running. Or, in my case, to get some initial error messages that pointed me where I needed to go next.</p>
+<p>At the bare minimum, <a href="https://github.com/mastodon/chart#configuration"><em>everyone</em> has to fill in</a>:</p>
+<ul>
+<li>the whole <code>mastodon.secrets</code> section (four keys)</li>
+<li>the <code>postgres</code> and <code>redis</code> sections (whether or not they’re enabled in the chart)</li>
+<li>the <code>mastodon.stmp</code> section for the mailer’s SMTP settings (not <em>technically</em> required, but nobody will be able to register with your instance or reset their passwords without them)</li>
+</ul>
+<p>Because of my circumstances, I also had to modify the <code>elasticsearch</code> section (that’s another bitnami image that wasn’t ARM-compatible, like redis and postgres; but I’m leaving all three of these for the next post!), the <code>ingress</code> section (because I was running <a href="https://github.com/traefik/traefik-helm-chart">traefik</a> instead of the default nginx), and the <code>mastodon.persistence</code> section (because I was using a local NAS for storage–I know, not recommended for production, but for a two-user instance? no problem).</p>
+<p>So with that lengthy introduction and background out of the way, the salient points here and the primary guiding principles in diving into the chart are:</p>
+<ul>
+<li><em>Disabling</em> the dependencies (elasticsearch, redis, postgres) so I could install them myself later (next post!)</li>
+<li><em>Adding</em> NAS storage as the primary storage mechanism (I was using <a href="https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner">nfs subdir external provisioner</a>)</li>
+<li><em>Configuring</em> ingress to work with traefik instead of nginx</li>
+</ul>
+</section>
+<section id="the-easy-stuff-storage-and-ingress" class="level3">
+<h3 class="anchored" data-anchor-id="the-easy-stuff-storage-and-ingress">The “easy” stuff: storage and ingress</h3>
+<p>Probably the easiest modification to make was the storage. Under <code>mastodon.persistence</code>, there are two main groups: <code>assets</code> and <code>system</code>. They both have their own persistent volumes in case you need to dramatically alter their respective configurations, but I went with the default, adding only one line to each subsection (since <code>storageClassName</code> wasn’t even listed in the default chart, but has templates in the backend that will handle the key-values if provided):</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">persistence</span><span class="kw">:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">assets</span><span class="kw">:</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">      # -- ReadWriteOnce is more widely supported than ReadWriteMany, but limits</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">      # scalability, since it requires the Rails and Sidekiq pods to run on the</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">      # same node.</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">accessMode</span><span class="kw">:</span><span class="at"> ReadWriteOnce</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">storageClassName</span><span class="kw">:</span><span class="at"> my-nfs-storage-class</span><span class="co"> ### ADDED THIS LINE</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">resources</span><span class="kw">:</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">requests</span><span class="kw">:</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">storage</span><span class="kw">:</span><span class="at"> 10Gi</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">system</span><span class="kw">:</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">accessMode</span><span class="kw">:</span><span class="at"> ReadWriteOnce</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">storageClassName</span><span class="kw">:</span><span class="at"> my-nfs-storage-class</span><span class="co"> ### ADDED THIS LINE</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">resources</span><span class="kw">:</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">requests</span><span class="kw">:</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">storage</span><span class="kw">:</span><span class="at"> 100Gi</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>That’s it! Mischief managed.</p>
+<p>For ingress, things were a little more complicated. Not because it required more configuration in the chart itself, but because it required more configuration <em>ahead of using the chart at all</em>. The ingress configuration in the Mastodon chart itself masks the hours spent getting traefik set up exactly the way I wanted. Sadly, this is beyond the scope of the Mastodon instance setup (it will definitely appear in a blog post about just getting my k3s cluster off the ground!), but I <em>will</em> discuss configuring the TLS support / SSL certificates in a later post in this series, so stay tuned.</p>
+<p>Here was my configuration (changes from the current default are marked, and comments are deleted for brevity):</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ingress</span><span class="kw">:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">enabled</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">annotations</span><span class="kw">:</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">cert-manager.io/cluster-issuer</span><span class="kw">:</span><span class="at"> </span><span class="st">"letsencrypt-prod-dns"</span><span class="co"> ### ADDED - will go over in detail in a future post in this series</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">ingressClassName</span><span class="kw">:</span><span class="at"> traefik</span><span class="co">  ### MODIFIED - added the ingress class name I used</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">hosts</span><span class="kw">:</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">host</span><span class="kw">:</span><span class="at"> quinnwitz.house</span><span class="co">  ### MODIFIED - my instance domain name</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">paths</span><span class="kw">:</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="fu">path</span><span class="kw">:</span><span class="at"> </span><span class="st">'/'</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tls</span><span class="kw">:</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">secretName</span><span class="kw">:</span><span class="at"> mastodon-tls</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">hosts</span><span class="kw">:</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="kw">-</span><span class="at"> quinnwitz.house</span><span class="co"> ### MODIFIED - my instance domain name</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>That’s it! Relatively tame modifications, but belie a groundswell of configuration and wrangling that had already happened. In particular, note the <code>tls.secretName</code> field: I may not have modified it, but I did have to create a Secret named <code>mastodon-tls</code> ahead of deploying the chart! That was part of the magic of cert-manager behind the scenes, communicating with Let’s Encrypt and getting an SSL certificate set up (again, a future post–stay tuned).</p>
+</section>
+<section id="the-harder-stuff-disabling-dependencies-and-modifying-templates" class="level3">
+<h3 class="anchored" data-anchor-id="the-harder-stuff-disabling-dependencies-and-modifying-templates">The harder stuff: disabling dependencies and modifying templates</h3>
+<p>Ok, disabling the dependencies was actually easy. Here’s all it took:</p>
+<ol type="1">
+<li>Go to <code>redis</code>, <code>postgresql</code>, and <code>elasticsearch</code> sections</li>
+<li>Each one has an <code>enabled:</code> key–set it to <code>false</code></li>
+</ol>
+<p>That’s it! They’re disabled. <strong>Your Helm chart is now fully ARM-compatible!</strong></p>
+<p>…except by disabling all the bitnami charts, you’ve introduced an insidious bug where, for some reason, the <a href="https://artifacthub.io/packages/helm/bitnami/common">Bitnami Common Library chart</a> can no longer be found. Fortunately, the fix is easy.</p>
+<p>Go to the <a href="https://github.com/mastodon/chart/blob/main/Chart.yaml">Chart.yaml file</a> and add a new entry under the <code>dependencies:</code> list:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="at"> </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> common</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">   </span><span class="fu">version</span><span class="kw">:</span><span class="at"> 1.x.x</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">   </span><span class="fu">repository</span><span class="kw">:</span><span class="at"> https://charts.bitnami.com/bitnami</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now when you run <code>helm dep update</code> before installing the chart, the Common chart will still be downloaded and everything will work, even with the other bitnami dependencies disabled.</p>
+<p>Unfortunately, this leaves us with the trickiest part of the Helm chart modifications: actually tweaking the redis, postgres, and elasticsearch sections (and, in some cases, templates!) to work with the separate instances we’ll spin up later.</p>
+<p><strong>Elasticsearch</strong> doesn’t require any extra tweaking, so we can leave that alone for now.</p>
+<p><strong>Postgres</strong> needs the following fields:</p>
+<ul>
+<li><code>postgresqlHostname</code>: postgres automatically spits this out when you succesfully install it for the first time, so just copy/paste from that</li>
+<li><code>postgresqlPort</code>: this is almost always 5432, to the point where that’s the default in the helm chart’s backend template</li>
+<li><code>auth.database</code>, <code>auth.username</code>, and <code>auth.password</code> / <code>auth.postgresPassword</code> are set <strong>by you, the user</strong> when you install postgres separately; we’ll go over this in the following blog post</li>
+<li>it’s very important to note that <code>auth.password</code> and <code>auth.postgresPassword</code> <strong>should have the same value</strong></li>
+</ul>
+<p>Finally, <strong>redis</strong> needs the following fields:</p>
+<ul>
+<li><code>hostname</code>: like postgres, this is spit out automatically when you successfully spin up redis for the first time, so take note of it and copy/paste it here</li>
+<li><code>password</code>: this is set <strong>by you, the user</strong> when you install redis separately; we’ll go over this in the following blog post</li>
+<li>weirdly, I needed to set <code>auth.existingSecret</code> too</li>
+</ul>
+<p>To the last point, I created the following <code>redis-password.yaml</code> file:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apiVersion</span><span class="kw">:</span><span class="at"> v1</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kind</span><span class="kw">:</span><span class="at"> Secret</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">metadata</span><span class="kw">:</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> mastodon-redis</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">namespace</span><span class="kw">:</span><span class="at"> mastodon</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">type</span><span class="kw">:</span><span class="at"> Opaque</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">stringData</span><span class="kw">:</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">redis-password</span><span class="kw">:</span><span class="at"> &lt;same value as password&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Running <code>kubectl apply -f redis-password.yaml</code> into the Mastodon namespace got it working. I still don’t know why I needed both the Secret and the password in the helm chart to get it to work–it may work with just the Secret, or maybe whatever weird situation caused it was fixed and now just the password in the helm chart will work–but this operation was fairly simple and got everything working so I went with it. I <a href="https://github.com/mastodon/mastodon/pull/20819">created a PR for this</a> a few months back, but it was rolled into a broader PR tasked with migrating the chart over to its own repository, so I’m not sure if its fixes were ever implemented.</p>
+<p>There were some changes directly to the <code>templates/configmap-env.yaml</code> file that were needed, but thankfully many of these have already been addressed courtesy of some PRs:</p>
+<ul>
+<li><a href="https://github.com/mastodon/mastodon/pull/19678">Fix helm postgresql secret</a> (#19678)</li>
+<li><a href="https://github.com/mastodon/chart/pull/6">Allow external redis instance</a> (#6, replaces <a href="https://github.com/mastodon/mastodon/pull/20322">#20322</a>)</li>
+<li><a href="https://github.com/mastodon/mastodon/pull/20370">Add option to configure external postgresql port</a> (#20370)</li>
+<li><a href="https://github.com/mastodon/mastodon/pull/19826">Helm chart improved for ingress</a> (#19826)</li>
+</ul>
+</section>
+<section id="thanks-helm" class="level3">
+<h3 class="anchored" data-anchor-id="thanks-helm">Thanks Helm!</h3>
+<p>That about does it for setting up the Helm chart and its corresponding values ahead of installing it… which we won’t actually do for a couple more blog posts yet.</p>
+<p>For now, I need to rewind a bit to go over 1) how to install the dependencies we just spent an entire blog post disabling and then configuring anyway, and 2) how to get SSL to work.</p>
+<p>Once we get those items squared away, then we can circle back to the completed Helm chart and install a functioning Mastodon instance! Isn’t being a sysadmin great?!</p>
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
+  author = {Shannon Quinn},
+  title = {Mastodon, {Part} {II:} {The} {Mastodon} {Helm} Chart},
+  date = {2023-01-25},
+  url = {https://magsol.github.io/2023-01-25-mastodon-helm-chart},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2023" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
+Shannon Quinn. 2023. <span>“Mastodon, Part II: The Mastodon Helm
+Chart.”</span> January 25, 2023. <a href="https://magsol.github.io/2023-01-25-mastodon-helm-chart">https://magsol.github.io/2023-01-25-mastodon-helm-chart</a>.
+</div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://giscus.app/client.js" data-repo="magsol/magsol.github.io" data-repo-id="MDEwOlJlcG9zaXRvcnkyNzYwNTYxNw==" data-category="Announcements" data-category-id="DIC_kwDOAaU6cc4CTutY" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="dark" data-lang="en" crossorigin="anonymous" data-loading="lazy" async="">
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
