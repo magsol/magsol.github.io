@@ -3,11 +3,13 @@ title: "Pardon de dust (2)"
 subtitle: "Migrating blog backends is hard"
 date: "2022-12-13 15:48:00"
 categories: [personal, professional, news]
+citation:
+    url: https://magsol.github.io/posts/2022-12-13-pardon-the-dust/
 image: "clover.jpg"
 image-alt: "Our bunny Clover."
 author: "Shannon Quinn"
 ---
-![](clover.jpg)
+![](clover.jpg){.preview-image fig-alt="Our bunny, Clover."}
 
 Why hello there. You may have noticed that things look a little bit different around here.
 
