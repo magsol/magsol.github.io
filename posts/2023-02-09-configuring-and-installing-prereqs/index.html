@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Shannon Quinn">
+
+<title>Stochastic Stenography - Mastodon, Part III: Configuring and installing the prerequisites</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XHDW9H78Z1"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
+</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Stochastic Stenography - Mastodon, Part III: Configuring and installing the prerequisites">
+<meta property="og:description" content="Welcome to dependency hell, we have recursion">
+<meta property="og:image" content="https://imgs.xkcd.com/comics/tech_loops.png">
+<meta property="og:site-name" content="Stochastic Stenography">
+<meta property="og:locale" content="en_US">
+<meta property="og:image:alt" content="XKCD comic #1579, Tech Loops">
+<meta name="twitter:title" content="Stochastic Stenography - Mastodon, Part III: Configuring and installing the prerequisites">
+<meta name="twitter:description" content="Welcome to dependency hell, we have recursion">
+<meta name="twitter:image" content="https://imgs.xkcd.com/comics/tech_loops.png">
+<meta name="twitter:creator" content="@SpectralFilter">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image:alt" content="XKCD comic #1579, Tech Loops">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Stochastic Stenography</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About Me</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Mastodon, Part III: Configuring and installing the prerequisites</h1>
+            <p class="subtitle lead">Welcome to dependency hell, we have recursion</p>
+                                <div class="quarto-categories">
+                <div class="quarto-category">personal</div>
+                <div class="quarto-category">raspberry pi</div>
+                <div class="quarto-category">k3s</div>
+                <div class="quarto-category">mastodon</div>
+                <div class="quarto-category">dependencies</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Shannon Quinn </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">Posted on the 9th of February in the year 2023, at 2:39pm. It was Thursday.</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p><img src="https://imgs.xkcd.com/comics/tech_loops.png" class="preview-image img-fluid" alt="XKCD comic #1579, Tech Loops."></p>
+<p><em>This article is part of a series about installing and configuring a Mastodon instance on a cluster of Raspberry Pi computers running k3s. To go back to previous articles in the series, try any of the links below:</em></p>
+<ol type="1">
+<li><a href="../../posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/index.html">Introduction</a></li>
+<li><a href="../../posts/2023-01-23-mastodon-home-network-topology/index.html">Part I: My home network topology</a></li>
+<li><a href="../../posts/2023-01-25-mastodon-helm-chart/index.html">Part II: The Mastodon Helm chart</a></li>
+<li>Part III: Configuring and installing prerequisites <em>(this post)</em></li>
+<li>Part IV: The waking nightmare that is Let’s Encrypt</li>
+<li>Part V: Actually installing Mastodon</li>
+<li>Conclusions</li>
+</ol>
+<section id="preamble" class="level3">
+<h3 class="anchored" data-anchor-id="preamble">Preamble</h3>
+<p>As stated previously, the Mastodon image is fully arm64-compatible. However, if and until the dev team chooses to unbundle Mastodon from its dependencies in the Helm chart, we have to worry about multiple applications Mastodon relies on which themselves rely on images that are <em>not</em> arm64-compatible.</p>
+<p>This isn’t exactly <a href="https://en.wikipedia.org/wiki/Dependency_hell">dependency hell</a>, but it did bring to mind a recent blog post by <a href="https://vickiboykis.com/">Vicki Boykis</a>–who you should absolutely follow if you don’t already–about <a href="https://vickiboykis.com/2022/12/05/the-cloudy-layers-of-modern-day-programming/">how layered modern software engineering and programming have become</a>:</p>
+<blockquote class="blockquote">
+<p>Modern software is hard to develop locally, hard to build the internal logic for, and intrinsically hard to deploy, especially so in the case of machine learning. Just take a look at <a href="https://arxiv.org/ftp/arxiv/papers/2205/2205.02302.pdf">the MLOps paper</a>, which I have nightmares about occasionally.</p>
+<p>The problem has gotten so bad that you can usually no longer start from scratch and develop and test <a href="https://twitter.com/vboykis/status/1592576567305474049">a single piece of software in a single, preferably local environment</a>.</p>
+</blockquote>
+<p>As someone in the data science and machine learning space for the past decade+, I can definitely say that this is true. So I hope this post provides some clarity so you can proceed with installing arm64-compatible Mastodon without spending as much time as I did getting it to run.</p>
+</section>
+<section id="the-short-version" class="level3">
+<h3 class="anchored" data-anchor-id="the-short-version">The short version</h3>
+<p>The upshot is that the three major dependencies of Mastodon–redis, postgres, and elasticsearch–are all <a href="https://bitnami.com/">bitnami</a> images, and <strong>none of bitnami’s images are arm64-compatible</strong>.</p>
+<p>(<a href="https://github.com/bitnami/charts/issues/7305">there is a mega-thread open</a> discussing bitnami’s <em>eventual</em> migration to arm64-compatible images, but they’ve made it very clear that it just isn’t a priority for them right now)</p>
+<p>In mid-November 2022, <a href="https://github.com/mastodon/chart/issues/22">this issue</a> was posted. I was still working on getting my own Mastodon instance up and running, so it wasn’t until <a href="https://github.com/mastodon/chart/issues/22#issuecomment-1350081697">Dec 1 that I was finally able to respond</a> with something concrete (though by no means a complete picture–I still couldn’t figure out what to do about elasticsearch).</p>
+<p>My response should have some familiar notes from the previous post, specifically regarding the modifications that needed to be made to <code>Chart.yaml</code>.</p>
+<p>Another user in the issue mentioned the <a href="https://github.com/mastodon/chart/issues/22#issuecomment-1363930695">“bitnami-compat” project</a>, which I highly recommend checking out, but which I didn’t end up using, for reasons I’ll get into later in this post.</p>
+<p>The OP on the issue <a href="https://github.com/mastodon/mastodon/discussions/22319">opened up a Discussion</a>, where I answered with the <a href="https://github.com/mastodon/mastodon/discussions/22319#discussioncomment-4410612">short version</a> of what this post will contain (along with, again, some content from the last post). You can read that if you like, or continue here! Or both!</p>
+<p>The key approach I took: rather than swapping out entire charts, I stuck with the bitnami charts referenced in the Mastodon chart, but modified the <em>images</em> each of the bitnami charts referred to. In this way, I could minimize the amount of yaml reconfiguration I was doing to keep things at a reasonable amount of crazy.</p>
+</section>
+<section id="postgresql" class="level3">
+<h3 class="anchored" data-anchor-id="postgresql">postgresql</h3>
+<p>PostgreSQL was the easiest change, at least if minimizing “number of switches I needed to flip” is our metric of choice here for determining easy versus difficult.</p>
+<p>The only real change I needed to make was how I performed the <code>helm install</code> process of the bitnami chart for postgres. Here’s the command I used:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">helm</span> install postgres bitnami/postgresql <span class="dt">\</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">--set</span> global.postgresql.auth.postgresPassword=<span class="st">"my_postgres_password"</span> <span class="dt">\</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">--set</span> global.postgresql.auth.username=<span class="st">"my_postgres_username"</span> <span class="dt">\</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">--set</span> global.postgresql.auth.password=<span class="st">"my_postgres_password"</span> <span class="dt">\</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">--set</span> global.postgresql.auth.database=<span class="st">"my_postgres_database"</span> <span class="dt">\</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">--set</span> image.repository=<span class="st">"postgres"</span> <span class="dt">\</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">--set</span> image.tag=<span class="st">"15.0"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>That’s it. The only <em>real</em> change of note is the <code>image.repository</code> target: it’s pointing to the <a href="https://hub.docker.com/_/postgres">official PostgreSQL image on DockerHub</a>, which has arm64-compatible images. The other items related to username, password, and database are items that need to be filled in anyway (here or in the <code>values.yaml</code> file), and the tag just ensures I’m using the same version that the bitnami image would have used, again to minimize any downstream conflicts.</p>
+<p>And that was it! I used the bitnami <em>chart</em> with the postgres <em>image</em>, and it worked!</p>
+</section>
+<section id="redis" class="level3">
+<h3 class="anchored" data-anchor-id="redis">redis</h3>
+<p>Next up, our in-memory data broker.</p>
+<p>This process was largely the same as with PostgreSQL, with one notable deviation: I also set the flag to put redis in <code>standalone</code> mode, given that my Pi cluster is resource-constrained and couldn’t afford to have the HA version that, I believe, is the default for the bitnami chart.</p>
+<p>Here’s the helm command:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">helm</span> install redis bitnami/redis <span class="dt">\</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">--set</span> global.redis.password=<span class="st">"my_redis_password"</span> <span class="dt">\</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">--set</span> architecture=<span class="st">"standalone"</span> <span class="dt">\</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">--set</span> image.repository=<span class="st">"redis"</span> <span class="dt">\</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">--set</span> image.tag=<span class="st">"7.0"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Again, the password is something we need to set up anyway, the architecture is set to <code>standalone</code> to minimize its in-memory footprint, tag is meant to match with the bitnami version, and finally the <code>image.repository</code> points to the <a href="https://hub.docker.com/_/redis">official redis image on DockerHub</a> which, like PostgreSQL, has an arm64-compatible version.</p>
+</section>
+<section id="elasticsearch-opensearch" class="level3">
+<h3 class="anchored" data-anchor-id="elasticsearch-opensearch"><del>elasticsearch</del> OpenSearch</h3>
+<p>I tried to get elasticsearch to work. I really did.</p>
+<p>I started off the same way as with postgres and redis: like the first two, there are <a href="https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch#global-parameters">only a few critical global parameters</a> that need to be set, and they’re the usual suspects–change the image registry to point to the official image on DockerHub, change the image tag to match the bitnami image version, and… that’s really about it.</p>
+<p>The hang-ups, crashes, and reboots started immediately. Turns out, elasticsearch is <em>incredibly resource-intensive</em>. So I set about trying to set absolutely minimal overheads: setting master and data replicas to 1, constraining the java heap size, and disabling ingest… none of which worked.</p>
+<p>Even aside from the resource constraints, there was a second problem. For whatever reason, the bitnami chart for elasticsearch has a <em>second</em> container–the “kernel settings modifier”–that is part of the pod, and which also has an image that, by default, is not compatible with ARM. So in theory, to get elasticsearch to work with the same technique, the following fields would also have to be changed in the helm chart:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">--set</span> sysctlImage.registry=<span class="st">"ghcr.io"</span> <span class="dt">\</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">--set</span> sysctlImage.repository=<span class="st">"zcube/bitnami-compat/bitnami-shell"</span> <span class="dt">\</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">--set</span> sysctlImage.tag=<span class="st">"11.0.0-debian-11-r39"</span> <span class="dt">\</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This is a bit different from the changes made with postgres and redis. There is no “official” distribution of the “kernel settings modifier” image, as this is exclusive to bitnami. Instead, we needed to go to the <a href="https://github.com/ZCube/bitnami-compat">bitnami-compat project</a> which is attempting to make bitnami-compatible arm64 images for all the major charts, and which could feasibly serve as drop-in replacements for redis and postgres as well (I just didn’t try them because I got them working before discovering bitnami-compat). But it’s perfect for this situation.</p>
+<p>Suffice to say, this completely solved the architectural compatibility issues, but I still could not fix the resourcing problems without fundamentally hobbling elasticsearch to the point of futility.</p>
+<p>Instead, I followed some advice from the Mastodon devs who have, unofficially, been able to get <a href="https://opensearch.org/docs/latest/about/">OpenSearch to work as a drop-in elasticsearch replacement</a> in Mastodon.</p>
+<p>(Side note: OpenSearch is based on Apache Lucene, which was the progenitor project to <a href="https://mahout.apache.org/">Apache Mahout</a>, for which I’m a member of its PMC! Small world. I love open source &lt;3 )</p>
+<p>Turns out, OpenSearch is <em>remarkable</em>, both in its minimal resource usage <em>and</em> with its ease of dropping right in where elasticsearch would go. My only complaint was the chart’s use of a multi-line yaml string in its settings, which–to my limited knowledge and experience, at least–precluded its exclusive command-line use, and forced me instead to modify the <code>values.yaml</code> and pass that directly to helm. Still, there were very few modifications I needed to make–here’s an indicator with line numbers corresponding to <a href="https://github.com/opensearch-project/helm-charts/blob/c6ebc864c92e6d64cb2097269290193b3844a8e7/charts/opensearch/values.yaml">what is <em>currently</em> the latest version of the chart</a> (committed Jan 3, 2023):</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Line 8: again, needed to keep things minimal</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">singleNode</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Line 22: just to be obnoxiously consistent</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">replicas</span><span class="kw">:</span><span class="at"> </span><span class="dv">1</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># config.opensearch.yml | plugins.security</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Insert the following line just below Line 61</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># *** This might be the single most important change! ***</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="fu">disabled</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Added somewhere under persistence, after Line 187</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="fu">storageClass</span><span class="kw">:</span><span class="at"> &lt;my storage class&gt;</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Line 299</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="fu">securityConfig.enabled</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>That’s all I needed. Then by passing the edited <code>values.yaml</code> to <code>helm install</code>, it ran just fine.</p>
+</section>
+<section id="postamble" class="level3">
+<h3 class="anchored" data-anchor-id="postamble">Postamble</h3>
+<p>That’s it for the prerequisites! At this point, you could pretty much spin up a Mastodon instance as configured. However, before getting to how I went about that process, I wanted to touch on one final problem I ran into, which–despite the nit-picky-ness of getting these arm64-compatible dependencies working–is where I <em>actually</em> spent most of my time trying to get Mastodon up and running: obtaining an SSL certificate through Let’s Encrypt.</p>
+<p>Until next time!</p>
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
+  author = {Shannon Quinn},
+  title = {Mastodon, {Part} {III:} {Configuring} and Installing the
+    Prerequisites},
+  date = {2023-02-09},
+  url = {https://magsol.github.io/2023-02-09-configuring-and-installing-prereqs},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2023" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
+Shannon Quinn. 2023. <span>“Mastodon, Part III: Configuring and
+Installing the Prerequisites.”</span> February 9, 2023. <a href="https://magsol.github.io/2023-02-09-configuring-and-installing-prereqs">https://magsol.github.io/2023-02-09-configuring-and-installing-prereqs</a>.
+</div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://giscus.app/client.js" data-repo="magsol/magsol.github.io" data-repo-id="MDEwOlJlcG9zaXRvcnkyNzYwNTYxNw==" data-category="Announcements" data-category-id="DIC_kwDOAaU6cc4CTutY" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="dark" data-lang="en" crossorigin="anonymous" data-loading="lazy" async="">
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

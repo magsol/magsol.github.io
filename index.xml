@@ -16,8 +16,135 @@
 <height>144</height>
 <width>144</width>
 </image>
-<generator>quarto-1.2.313</generator>
-<lastBuildDate>Wed, 25 Jan 2023 16:27:00 GMT</lastBuildDate>
+<generator>quarto-1.2.335</generator>
+<lastBuildDate>Thu, 09 Feb 2023 14:39:00 GMT</lastBuildDate>
+<item>
+  <title>Mastodon, Part III: Configuring and installing the prerequisites</title>
+  <dc:creator>Shannon Quinn</dc:creator>
+  <link>https://magsol.github.io/posts/2023-02-09-configuring-and-installing-prereqs/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><img src="https://magsol.github.io/posts/2023-02-09-configuring-and-installing-prereqs/https:/imgs.xkcd.com/comics/tech_loops.png" class="preview-image img-fluid" alt="XKCD comic #1579, Tech Loops."></p>
+<p><em>This article is part of a series about installing and configuring a Mastodon instance on a cluster of Raspberry Pi computers running k3s. To go back to previous articles in the series, try any of the links below:</em></p>
+<ol type="1">
+<li><a href="../../posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/index.html">Introduction</a></li>
+<li><a href="../../posts/2023-01-23-mastodon-home-network-topology/index.html">Part I: My home network topology</a></li>
+<li><a href="../../posts/2023-01-25-mastodon-helm-chart/index.html">Part II: The Mastodon Helm chart</a></li>
+<li>Part III: Configuring and installing prerequisites <em>(this post)</em></li>
+<li>Part IV: The waking nightmare that is Let’s Encrypt</li>
+<li>Part V: Actually installing Mastodon</li>
+<li>Conclusions</li>
+</ol>
+<section id="preamble" class="level3">
+<h3 class="anchored" data-anchor-id="preamble">Preamble</h3>
+<p>As stated previously, the Mastodon image is fully arm64-compatible. However, if and until the dev team chooses to unbundle Mastodon from its dependencies in the Helm chart, we have to worry about multiple applications Mastodon relies on which themselves rely on images that are <em>not</em> arm64-compatible.</p>
+<p>This isn’t exactly <a href="https://en.wikipedia.org/wiki/Dependency_hell">dependency hell</a>, but it did bring to mind a recent blog post by <a href="https://vickiboykis.com/">Vicki Boykis</a>–who you should absolutely follow if you don’t already–about <a href="https://vickiboykis.com/2022/12/05/the-cloudy-layers-of-modern-day-programming/">how layered modern software engineering and programming have become</a>:</p>
+<blockquote class="blockquote">
+<p>Modern software is hard to develop locally, hard to build the internal logic for, and intrinsically hard to deploy, especially so in the case of machine learning. Just take a look at <a href="https://arxiv.org/ftp/arxiv/papers/2205/2205.02302.pdf">the MLOps paper</a>, which I have nightmares about occasionally.</p>
+<p>The problem has gotten so bad that you can usually no longer start from scratch and develop and test <a href="https://twitter.com/vboykis/status/1592576567305474049">a single piece of software in a single, preferably local environment</a>.</p>
+</blockquote>
+<p>As someone in the data science and machine learning space for the past decade+, I can definitely say that this is true. So I hope this post provides some clarity so you can proceed with installing arm64-compatible Mastodon without spending as much time as I did getting it to run.</p>
+</section>
+<section id="the-short-version" class="level3">
+<h3 class="anchored" data-anchor-id="the-short-version">The short version</h3>
+<p>The upshot is that the three major dependencies of Mastodon–redis, postgres, and elasticsearch–are all <a href="https://bitnami.com/">bitnami</a> images, and <strong>none of bitnami’s images are arm64-compatible</strong>.</p>
+<p>(<a href="https://github.com/bitnami/charts/issues/7305">there is a mega-thread open</a> discussing bitnami’s <em>eventual</em> migration to arm64-compatible images, but they’ve made it very clear that it just isn’t a priority for them right now)</p>
+<p>In mid-November 2022, <a href="https://github.com/mastodon/chart/issues/22">this issue</a> was posted. I was still working on getting my own Mastodon instance up and running, so it wasn’t until <a href="https://github.com/mastodon/chart/issues/22#issuecomment-1350081697">Dec 1 that I was finally able to respond</a> with something concrete (though by no means a complete picture–I still couldn’t figure out what to do about elasticsearch).</p>
+<p>My response should have some familiar notes from the previous post, specifically regarding the modifications that needed to be made to <code>Chart.yaml</code>.</p>
+<p>Another user in the issue mentioned the <a href="https://github.com/mastodon/chart/issues/22#issuecomment-1363930695">“bitnami-compat” project</a>, which I highly recommend checking out, but which I didn’t end up using, for reasons I’ll get into later in this post.</p>
+<p>The OP on the issue <a href="https://github.com/mastodon/mastodon/discussions/22319">opened up a Discussion</a>, where I answered with the <a href="https://github.com/mastodon/mastodon/discussions/22319#discussioncomment-4410612">short version</a> of what this post will contain (along with, again, some content from the last post). You can read that if you like, or continue here! Or both!</p>
+<p>The key approach I took: rather than swapping out entire charts, I stuck with the bitnami charts referenced in the Mastodon chart, but modified the <em>images</em> each of the bitnami charts referred to. In this way, I could minimize the amount of yaml reconfiguration I was doing to keep things at a reasonable amount of crazy.</p>
+</section>
+<section id="postgresql" class="level3">
+<h3 class="anchored" data-anchor-id="postgresql">postgresql</h3>
+<p>PostgreSQL was the easiest change, at least if minimizing “number of switches I needed to flip” is our metric of choice here for determining easy versus difficult.</p>
+<p>The only real change I needed to make was how I performed the <code>helm install</code> process of the bitnami chart for postgres. Here’s the command I used:</p>
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><span class="ex" style="color: null;">helm</span> install postgres bitnami/postgresql <span class="dt" style="color: #AD0000;">\</span></span>
+<span id="cb1-2">    <span class="at" style="color: #657422;">--set</span> global.postgresql.auth.postgresPassword=<span class="st" style="color: #20794D;">"my_postgres_password"</span> <span class="dt" style="color: #AD0000;">\</span></span>
+<span id="cb1-3">    <span class="at" style="color: #657422;">--set</span> global.postgresql.auth.username=<span class="st" style="color: #20794D;">"my_postgres_username"</span> <span class="dt" style="color: #AD0000;">\</span></span>
+<span id="cb1-4">    <span class="at" style="color: #657422;">--set</span> global.postgresql.auth.password=<span class="st" style="color: #20794D;">"my_postgres_password"</span> <span class="dt" style="color: #AD0000;">\</span></span>
+<span id="cb1-5">    <span class="at" style="color: #657422;">--set</span> global.postgresql.auth.database=<span class="st" style="color: #20794D;">"my_postgres_database"</span> <span class="dt" style="color: #AD0000;">\</span></span>
+<span id="cb1-6">    <span class="at" style="color: #657422;">--set</span> image.repository=<span class="st" style="color: #20794D;">"postgres"</span> <span class="dt" style="color: #AD0000;">\</span></span>
+<span id="cb1-7">    <span class="at" style="color: #657422;">--set</span> image.tag=<span class="st" style="color: #20794D;">"15.0"</span></span></code></pre></div>
+<p>That’s it. The only <em>real</em> change of note is the <code>image.repository</code> target: it’s pointing to the <a href="https://hub.docker.com/_/postgres">official PostgreSQL image on DockerHub</a>, which has arm64-compatible images. The other items related to username, password, and database are items that need to be filled in anyway (here or in the <code>values.yaml</code> file), and the tag just ensures I’m using the same version that the bitnami image would have used, again to minimize any downstream conflicts.</p>
+<p>And that was it! I used the bitnami <em>chart</em> with the postgres <em>image</em>, and it worked!</p>
+</section>
+<section id="redis" class="level3">
+<h3 class="anchored" data-anchor-id="redis">redis</h3>
+<p>Next up, our in-memory data broker.</p>
+<p>This process was largely the same as with PostgreSQL, with one notable deviation: I also set the flag to put redis in <code>standalone</code> mode, given that my Pi cluster is resource-constrained and couldn’t afford to have the HA version that, I believe, is the default for the bitnami chart.</p>
+<p>Here’s the helm command:</p>
+<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><span class="ex" style="color: null;">helm</span> install redis bitnami/redis <span class="dt" style="color: #AD0000;">\</span></span>
+<span id="cb2-2">    <span class="at" style="color: #657422;">--set</span> global.redis.password=<span class="st" style="color: #20794D;">"my_redis_password"</span> <span class="dt" style="color: #AD0000;">\</span></span>
+<span id="cb2-3">    <span class="at" style="color: #657422;">--set</span> architecture=<span class="st" style="color: #20794D;">"standalone"</span> <span class="dt" style="color: #AD0000;">\</span></span>
+<span id="cb2-4">    <span class="at" style="color: #657422;">--set</span> image.repository=<span class="st" style="color: #20794D;">"redis"</span> <span class="dt" style="color: #AD0000;">\</span></span>
+<span id="cb2-5">    <span class="at" style="color: #657422;">--set</span> image.tag=<span class="st" style="color: #20794D;">"7.0"</span></span></code></pre></div>
+<p>Again, the password is something we need to set up anyway, the architecture is set to <code>standalone</code> to minimize its in-memory footprint, tag is meant to match with the bitnami version, and finally the <code>image.repository</code> points to the <a href="https://hub.docker.com/_/redis">official redis image on DockerHub</a> which, like PostgreSQL, has an arm64-compatible version.</p>
+</section>
+<section id="elasticsearch-opensearch" class="level3">
+<h3 class="anchored" data-anchor-id="elasticsearch-opensearch"><del>elasticsearch</del> OpenSearch</h3>
+<p>I tried to get elasticsearch to work. I really did.</p>
+<p>I started off the same way as with postgres and redis: like the first two, there are <a href="https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch#global-parameters">only a few critical global parameters</a> that need to be set, and they’re the usual suspects–change the image registry to point to the official image on DockerHub, change the image tag to match the bitnami image version, and… that’s really about it.</p>
+<p>The hang-ups, crashes, and reboots started immediately. Turns out, elasticsearch is <em>incredibly resource-intensive</em>. So I set about trying to set absolutely minimal overheads: setting master and data replicas to 1, constraining the java heap size, and disabling ingest… none of which worked.</p>
+<p>Even aside from the resource constraints, there was a second problem. For whatever reason, the bitnami chart for elasticsearch has a <em>second</em> container–the “kernel settings modifier”–that is part of the pod, and which also has an image that, by default, is not compatible with ARM. So in theory, to get elasticsearch to work with the same technique, the following fields would also have to be changed in the helm chart:</p>
+<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1">    <span class="ex" style="color: null;">--set</span> sysctlImage.registry=<span class="st" style="color: #20794D;">"ghcr.io"</span> <span class="dt" style="color: #AD0000;">\</span></span>
+<span id="cb3-2">    <span class="at" style="color: #657422;">--set</span> sysctlImage.repository=<span class="st" style="color: #20794D;">"zcube/bitnami-compat/bitnami-shell"</span> <span class="dt" style="color: #AD0000;">\</span></span>
+<span id="cb3-3">    <span class="at" style="color: #657422;">--set</span> sysctlImage.tag=<span class="st" style="color: #20794D;">"11.0.0-debian-11-r39"</span> <span class="dt" style="color: #AD0000;">\</span></span></code></pre></div>
+<p>This is a bit different from the changes made with postgres and redis. There is no “official” distribution of the “kernel settings modifier” image, as this is exclusive to bitnami. Instead, we needed to go to the <a href="https://github.com/ZCube/bitnami-compat">bitnami-compat project</a> which is attempting to make bitnami-compatible arm64 images for all the major charts, and which could feasibly serve as drop-in replacements for redis and postgres as well (I just didn’t try them because I got them working before discovering bitnami-compat). But it’s perfect for this situation.</p>
+<p>Suffice to say, this completely solved the architectural compatibility issues, but I still could not fix the resourcing problems without fundamentally hobbling elasticsearch to the point of futility.</p>
+<p>Instead, I followed some advice from the Mastodon devs who have, unofficially, been able to get <a href="https://opensearch.org/docs/latest/about/">OpenSearch to work as a drop-in elasticsearch replacement</a> in Mastodon.</p>
+<p>(Side note: OpenSearch is based on Apache Lucene, which was the progenitor project to <a href="https://mahout.apache.org/">Apache Mahout</a>, for which I’m a member of its PMC! Small world. I love open source &lt;3 )</p>
+<p>Turns out, OpenSearch is <em>remarkable</em>, both in its minimal resource usage <em>and</em> with its ease of dropping right in where elasticsearch would go. My only complaint was the chart’s use of a multi-line yaml string in its settings, which–to my limited knowledge and experience, at least–precluded its exclusive command-line use, and forced me instead to modify the <code>values.yaml</code> and pass that directly to helm. Still, there were very few modifications I needed to make–here’s an indicator with line numbers corresponding to <a href="https://github.com/opensearch-project/helm-charts/blob/c6ebc864c92e6d64cb2097269290193b3844a8e7/charts/opensearch/values.yaml">what is <em>currently</em> the latest version of the chart</a> (committed Jan 3, 2023):</p>
+<div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><span class="co" style="color: #5E5E5E;"># Line 8: again, needed to keep things minimal</span></span>
+<span id="cb4-2"><span class="fu" style="color: #4758AB;">singleNode</span><span class="kw" style="color: #003B4F;">:</span><span class="at" style="color: #657422;"> </span><span class="ch" style="color: #20794D;">true</span></span>
+<span id="cb4-3"></span>
+<span id="cb4-4"><span class="co" style="color: #5E5E5E;"># Line 22: just to be obnoxiously consistent</span></span>
+<span id="cb4-5"><span class="fu" style="color: #4758AB;">replicas</span><span class="kw" style="color: #003B4F;">:</span><span class="at" style="color: #657422;"> </span><span class="dv" style="color: #AD0000;">1</span></span>
+<span id="cb4-6"></span>
+<span id="cb4-7"><span class="co" style="color: #5E5E5E;"># config.opensearch.yml | plugins.security</span></span>
+<span id="cb4-8"><span class="co" style="color: #5E5E5E;"># Insert the following line just below Line 61</span></span>
+<span id="cb4-9"><span class="co" style="color: #5E5E5E;"># *** This might be the single most important change! ***</span></span>
+<span id="cb4-10"><span class="fu" style="color: #4758AB;">disabled</span><span class="kw" style="color: #003B4F;">:</span><span class="at" style="color: #657422;"> </span><span class="ch" style="color: #20794D;">true</span></span>
+<span id="cb4-11"></span>
+<span id="cb4-12"><span class="co" style="color: #5E5E5E;"># Added somewhere under persistence, after Line 187</span></span>
+<span id="cb4-13"><span class="fu" style="color: #4758AB;">storageClass</span><span class="kw" style="color: #003B4F;">:</span><span class="at" style="color: #657422;"> &lt;my storage class&gt;</span></span>
+<span id="cb4-14"></span>
+<span id="cb4-15"><span class="co" style="color: #5E5E5E;"># Line 299</span></span>
+<span id="cb4-16"><span class="fu" style="color: #4758AB;">securityConfig.enabled</span><span class="kw" style="color: #003B4F;">:</span><span class="at" style="color: #657422;"> </span><span class="ch" style="color: #20794D;">false</span></span></code></pre></div>
+<p>That’s all I needed. Then by passing the edited <code>values.yaml</code> to <code>helm install</code>, it ran just fine.</p>
+</section>
+<section id="postamble" class="level3">
+<h3 class="anchored" data-anchor-id="postamble">Postamble</h3>
+<p>That’s it for the prerequisites! At this point, you could pretty much spin up a Mastodon instance as configured. However, before getting to how I went about that process, I wanted to touch on one final problem I ran into, which–despite the nit-picky-ness of getting these arm64-compatible dependencies working–is where I <em>actually</em> spent most of my time trying to get Mastodon up and running: obtaining an SSL certificate through Let’s Encrypt.</p>
+<p>Until next time!</p>
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
+  author = {Shannon Quinn},
+  title = {Mastodon, {Part} {III:} {Configuring} and Installing the
+    Prerequisites},
+  date = {2023-02-09},
+  url = {https://magsol.github.io/2023-02-09-configuring-and-installing-prereqs},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2023" class="csl-entry quarto-appendix-citeas">
+Shannon Quinn. 2023. <span>“Mastodon, Part III: Configuring and
+Installing the Prerequisites.”</span> February 9, 2023. <a href="https://magsol.github.io/2023-02-09-configuring-and-installing-prereqs">https://magsol.github.io/2023-02-09-configuring-and-installing-prereqs</a>.
+</div></div></section></div> ]]></description>
+  <category>personal</category>
+  <category>raspberry pi</category>
+  <category>k3s</category>
+  <category>mastodon</category>
+  <category>dependencies</category>
+  <guid>https://magsol.github.io/posts/2023-02-09-configuring-and-installing-prereqs/index.html</guid>
+  <pubDate>Thu, 09 Feb 2023 14:39:00 GMT</pubDate>
+  <media:content url="https://imgs.xkcd.com/comics/tech_loops.png" medium="image" type="image/png"/>
+</item>
 <item>
   <title>Mastodon, Part II: The Mastodon Helm chart</title>
   <dc:creator>Shannon Quinn</dc:creator>
