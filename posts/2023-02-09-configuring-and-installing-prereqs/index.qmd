@@ -1,0 +1,141 @@
+---
+title: "Mastodon, Part III: Configuring and installing the prerequisites"
+subtitle: "Welcome to dependency hell, we have recursion"
+date: "2023-02-09 14:39:00"
+categories: [personal, raspberry pi, k3s, mastodon, dependencies]
+citation:
+    url: https://magsol.github.io/2023-02-09-configuring-and-installing-prereqs
+image: "https://imgs.xkcd.com/comics/tech_loops.png"
+image-alt: "XKCD comic #1579, Tech Loops"
+author: "Shannon Quinn"
+---
+![](https://imgs.xkcd.com/comics/tech_loops.png){.preview-image fig-alt="XKCD comic #1579, Tech Loops."}
+
+_This article is part of a series about installing and configuring a Mastodon instance on a cluster of Raspberry Pi computers running k3s. To go back to previous articles in the series, try any of the links below:_
+
+ 1. [Introduction](../2023-01-20-mastodon-instance-k3s-rpi-introduction/index.qmd)
+ 2. [Part I: My home network topology](../2023-01-23-mastodon-home-network-topology/index.qmd)
+ 3. [Part II: The Mastodon Helm chart](../2023-01-25-mastodon-helm-chart/index.qmd)
+ 4. Part III: Configuring and installing prerequisites _(this post)_
+ 5. Part IV: The waking nightmare that is Let's Encrypt
+ 6. Part V: Actually installing Mastodon
+ 7. Conclusions
+
+### Preamble
+
+As stated previously, the Mastodon image is fully arm64-compatible. However, if and until the dev team chooses to unbundle Mastodon from its dependencies in the Helm chart, we have to worry about multiple applications Mastodon relies on which themselves rely on images that are *not* arm64-compatible.
+
+This isn't exactly [dependency hell](https://en.wikipedia.org/wiki/Dependency_hell), but it did bring to mind a recent blog post by [Vicki Boykis](https://vickiboykis.com/)--who you should absolutely follow if you don't already--about [how layered modern software engineering and programming have become](https://vickiboykis.com/2022/12/05/the-cloudy-layers-of-modern-day-programming/):
+
+> Modern software is hard to develop locally, hard to build the internal logic for, and intrinsically hard to deploy, especially so in the case of machine learning. Just take a look at [the MLOps paper](https://arxiv.org/ftp/arxiv/papers/2205/2205.02302.pdf), which I have nightmares about occasionally.
+> 
+> The problem has gotten so bad that you can usually no longer start from scratch and develop and test [a single piece of software in a single, preferably local environment](https://twitter.com/vboykis/status/1592576567305474049).
+
+As someone in the data science and machine learning space for the past decade+, I can definitely say that this is true. So I hope this post provides some clarity so you can proceed with installing arm64-compatible Mastodon without spending as much time as I did getting it to run.
+
+### The short version
+
+The upshot is that the three major dependencies of Mastodon--redis, postgres, and elasticsearch--are all [bitnami](https://bitnami.com/) images, and **none of bitnami's images are arm64-compatible**.
+
+([there is a mega-thread open](https://github.com/bitnami/charts/issues/7305) discussing bitnami's *eventual* migration to arm64-compatible images, but they've made it very clear that it just isn't a priority for them right now)
+
+In mid-November 2022, [this issue](https://github.com/mastodon/chart/issues/22) was posted. I was still working on getting my own Mastodon instance up and running, so it wasn't until [Dec 1 that I was finally able to respond](https://github.com/mastodon/chart/issues/22#issuecomment-1350081697) with something concrete (though by no means a complete picture--I still couldn't figure out what to do about elasticsearch).
+
+My response should have some familiar notes from the previous post, specifically regarding the modifications that needed to be made to `Chart.yaml`.
+
+Another user in the issue mentioned the ["bitnami-compat" project](https://github.com/mastodon/chart/issues/22#issuecomment-1363930695), which I highly recommend checking out, but which I didn't end up using, for reasons I'll get into later in this post.
+
+The OP on the issue [opened up a Discussion](https://github.com/mastodon/mastodon/discussions/22319), where I answered with the [short version](https://github.com/mastodon/mastodon/discussions/22319#discussioncomment-4410612) of what this post will contain (along with, again, some content from the last post). You can read that if you like, or continue here! Or both!
+
+The key approach I took: rather than swapping out entire charts, I stuck with the bitnami charts referenced in the Mastodon chart, but modified the *images* each of the bitnami charts referred to. In this way, I could minimize the amount of yaml reconfiguration I was doing to keep things at a reasonable amount of crazy.
+
+### postgresql
+
+PostgreSQL was the easiest change, at least if minimizing "number of switches I needed to flip" is our metric of choice here for determining easy versus difficult.
+
+The only real change I needed to make was how I performed the `helm install` process of the bitnami chart for postgres. Here's the command I used:
+
+```{.bash}
+helm install postgres bitnami/postgresql \
+    --set global.postgresql.auth.postgresPassword="my_postgres_password" \
+    --set global.postgresql.auth.username="my_postgres_username" \
+    --set global.postgresql.auth.password="my_postgres_password" \
+    --set global.postgresql.auth.database="my_postgres_database" \
+    --set image.repository="postgres" \
+    --set image.tag="15.0"
+```
+
+That's it. The only _real_ change of note is the `image.repository` target: it's pointing to the [official PostgreSQL image on DockerHub](https://hub.docker.com/_/postgres), which has arm64-compatible images. The other items related to username, password, and database are items that need to be filled in anyway (here or in the `values.yaml` file), and the tag just ensures I'm using the same version that the bitnami image would have used, again to minimize any downstream conflicts.
+
+And that was it! I used the bitnami _chart_ with the postgres _image_, and it worked!
+
+### redis
+
+Next up, our in-memory data broker.
+
+This process was largely the same as with PostgreSQL, with one notable deviation: I also set the flag to put redis in `standalone` mode, given that my Pi cluster is resource-constrained and couldn't afford to have the HA version that, I believe, is the default for the bitnami chart.
+
+Here's the helm command:
+
+```{.bash}
+helm install redis bitnami/redis \
+    --set global.redis.password="my_redis_password" \
+    --set architecture="standalone" \
+    --set image.repository="redis" \
+    --set image.tag="7.0"
+```
+
+Again, the password is something we need to set up anyway, the architecture is set to `standalone` to minimize its in-memory footprint, tag is meant to match with the bitnami version, and finally the `image.repository` points to the [official redis image on DockerHub](https://hub.docker.com/_/redis) which, like PostgreSQL, has an arm64-compatible version.
+
+### ~~elasticsearch~~ OpenSearch
+
+I tried to get elasticsearch to work. I really did.
+
+I started off the same way as with postgres and redis: like the first two, there are [only a few critical global parameters](https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch#global-parameters) that need to be set, and they're the usual suspects--change the image registry to point to the official image on DockerHub, change the image tag to match the bitnami image version, and... that's really about it.
+
+The hang-ups, crashes, and reboots started immediately. Turns out, elasticsearch is _incredibly resource-intensive_. So I set about trying to set absolutely minimal overheads: setting master and data replicas to 1, constraining the java heap size, and disabling ingest... none of which worked.
+
+Even aside from the resource constraints, there was a second problem. For whatever reason, the bitnami chart for elasticsearch has a _second_ container--the "kernel settings modifier"--that is part of the pod, and which also has an image that, by default, is not compatible with ARM. So in theory, to get elasticsearch to work with the same technique, the following fields would also have to be changed in the helm chart:
+
+```{.bash}
+    --set sysctlImage.registry="ghcr.io" \
+    --set sysctlImage.repository="zcube/bitnami-compat/bitnami-shell" \
+    --set sysctlImage.tag="11.0.0-debian-11-r39" \
+```
+
+This is a bit different from the changes made with postgres and redis. There is no "official" distribution of the "kernel settings modifier" image, as this is exclusive to bitnami. Instead, we needed to go to the [bitnami-compat project](https://github.com/ZCube/bitnami-compat) which is attempting to make bitnami-compatible arm64 images for all the major charts, and which could feasibly serve as drop-in replacements for redis and postgres as well (I just didn't try them because I got them working before discovering bitnami-compat). But it's perfect for this situation.
+
+Suffice to say, this completely solved the architectural compatibility issues, but I still could not fix the resourcing problems without fundamentally hobbling elasticsearch to the point of futility.
+
+Instead, I followed some advice from the Mastodon devs who have, unofficially, been able to get [OpenSearch to work as a drop-in elasticsearch replacement](https://opensearch.org/docs/latest/about/) in Mastodon.
+
+(Side note: OpenSearch is based on Apache Lucene, which was the progenitor project to [Apache Mahout](https://mahout.apache.org/), for which I'm a member of its PMC! Small world. I love open source <3 )
+
+Turns out, OpenSearch is _remarkable_, both in its minimal resource usage _and_ with its ease of dropping right in where elasticsearch would go. My only complaint was the chart's use of a multi-line yaml string in its settings, which--to my limited knowledge and experience, at least--precluded its exclusive command-line use, and forced me instead to modify the `values.yaml` and pass that directly to helm. Still, there were very few modifications I needed to make--here's an indicator with line numbers corresponding to [what is _currently_ the latest version of the chart](https://github.com/opensearch-project/helm-charts/blob/c6ebc864c92e6d64cb2097269290193b3844a8e7/charts/opensearch/values.yaml) (committed Jan 3, 2023):
+
+```{.yaml}
+# Line 8: again, needed to keep things minimal
+singleNode: true
+
+# Line 22: just to be obnoxiously consistent
+replicas: 1
+
+# config.opensearch.yml | plugins.security
+# Insert the following line just below Line 61
+# *** This might be the single most important change! ***
+disabled: true
+
+# Added somewhere under persistence, after Line 187
+storageClass: <my storage class>
+
+# Line 299
+securityConfig.enabled: false
+```
+
+That's all I needed. Then by passing the edited `values.yaml` to `helm install`, it ran just fine.
+
+### Postamble
+
+That's it for the prerequisites! At this point, you could pretty much spin up a Mastodon instance as configured. However, before getting to how I went about that process, I wanted to touch on one final problem I ran into, which--despite the nit-picky-ness of getting these arm64-compatible dependencies working--is where I _actually_ spent most of my time trying to get Mastodon up and running: obtaining an SSL certificate through Let's Encrypt.
+
+Until next time!
