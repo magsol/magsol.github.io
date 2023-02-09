@@ -1,0 +1,96 @@
+---
+title: "Breath of Fresh (albeit, indoor) Air"
+date: "2019-08-12 13:53:00"
+categories: [personal, breath of the wild, zelda, running, gaming, nerds, the lady, injury]
+citation:
+    url: https://magsol.github.io/2019-08-12-breath-of-the-wild
+image: "lakehylia.jpg"
+image-alt: "Link from Breath of the Wild overlooking the scenery from the vantage point of Lake Hylia."
+author: "Shannon Quinn"
+---
+![](lakehylia.jpg){.preview-image fig-alt="Link from Breath of the Wild overlooking the scenery from the vantage point of Lake Hylia."}
+
+This is a divergence that is simultaneously strange and entirely predictable.
+
+Allow me to explain.
+
+First and foremost, [I've been training for my first marathon in 4.5 years for the past several months](https://wherearethepancakes.wordpress.com/2019/08/07/marathon-training-mode-enable/). It's largely consisted of [base-building](https://www.runnersworld.com/training/a20807188/how-do-i-build-a-training-base/), but in the last couple of weeks we entered the "official" 16-week marathon training period...
+
+...and my knee started pulling. Oh! And it coincided with the first week of decent summer weather we've had here in Athens since...2018? And if the past two weeks are any indication, this summer is going to be [as bad as that brutal one in 2016](https://wherearethepancakes.wordpress.com/2016/08/23/the-summer-doldrums-arent-all-theyre-cracked-up-to-be/).
+
+![](goroncity.jpg){fig-alt="Link from Breath of the Wild speaking with a Goron in Goron City."}
+
+Anyway!
+
+Since I noticed the pulling in my knee the week before "official" training was to begin, my coach and I agreed--in the name of being super-cautious this early in the training cycle--that I would take a week off from running, focus on cross-training and physical therapy exercises, and let my knee heal up. During this time, I dove into the 2017 hit _Zelda: Breath of the Wild_, the new Zelda release for the Nintendo Switch, and logged--to use the technical term--a shitton of hours.
+
+![](hillside.jpg){fig-alt="Link from Breath of the Wild standing on a hillside covered in flowers."}
+
+Let me back up a little further.
+
+I've never been secretive about my love of video gaming (and board gaming, and regular old sportsball gaming... any kind of gaming, really). But my real passion in video games has largely been constrained to variants of [first-person shooters](https://en.wikipedia.org/wiki/First-person_shooter) and [real-time strategy](https://en.wikipedia.org/wiki/Real-time_strategy). This includes the usual suspects like _Left 4 Dead 2_ and _StarCraft II_, but also slight variations like _Civilization V_ (haven't gotten the hang of _VI_ yet), _Cities: Skylines_, _Homeworld_, and _Sins of a Solar Empire_.
+
+The upshot: _Zelda_ has never really been on my radar.
+
+I mean, **of course** I'm familiar with the Zelda franchise. Back in the days of the [OG GameBoy](https://www.dkoldies.com/game-boy-original-system-nintendo/), I played _Link's Awakening_. A lot of it. I played through it so many times I eventually figured out how to find enough "secret seashells" to get the Master Sword just before completing the 4th of the 8 main dungeons.
+
+![](linksawakening_orig.jpg){fig-alt="Screenshot from Link's Awakening on the original GameBoy unit."}
+
+(if it's possible to get the sword sooner than that, don't bother, I don't want to know)
+
+But for those who know the larger Zelda lore, this installment exists awkwardly both within but also without the Zelda story. I mean--SPOILERS for a 20+ year old game SPOILERS--it was all a dream. Or was it instead a reality that existed within our own, but vanished when the Wind Fish woke up? Who knows?
+
+![](linksawakening_switch.jpg){fig-alt="A pair of screenshots comparing the same location in Link's Awakening on the GameBoy version of the game to the recent Switch port."}
+
+(apparently there was a Nintendo Switch remake of _Link's Awakening_?)
+
+Regardless, while the usual Zelda themes certainly exist in _Link's Awakening_, the specific story points don't. So years later it was a shock to learn that Link actually had a primary antagonist, **Ganon**.
+
+When I first met my future wife, one of the many things about her that charmed me was her love of the _Zelda_ franchise, especially _Ocarina of Time_. I was never super motivated to play the games myself, but something that seems almost uniquely exclusive to Zelda games: they're incredibly fun to watch someone else play! Even better, The Lady and I soon discovered that, not only did we have different playstyles when it came to video games, but they complemented each other in a way that really helped her/us solve the puzzles in these games with ruthless efficiency.
+
+But even after watching her crush Ganon in _Ocarina of Time_, _Twilight Princess_, and Ganon's progenitor in _Skyward Sword_ (which I bought her as a gift on the very first Nintendo console we ever owned together... awwwwwww), I still never felt the itch to play the game myself.
+
+And when I likewise bought _Breath of the Wild_, again for her to play, I once more assumed I'd watch, point things out here and there, and let her Zelda fandom run wild. Plus, I'd seen the reviews of this installment, and knew that while they'd thrown out a lot of "typical" Zelda grind, they also added a bunch of new gaming mechanisms that, on the surface, I held my nose for:
+
+ - Breakable weapons: I'd played games where weapons only lasted for finite amounts of time, and _holy shit_ did this mechanic annoy the crap out of me.
+ - Recipes: I haven't actually played a game with this mechanic, but it's been showing up more frequently in RPGs, a gaming genre I generally have a very, very hard time getting into.
+ - Seasonality: This encompasses not only night/day changes, but also changes in weather patterns in-game, and subsequent changes in clothing / preparation of countermeasures (food, elixirs) in order to survive. I've played a lot of games with the night/day mechanic and have found it "meh" at best, super f*ckin annoying at worst. Combined with the need to constantly swap out clothing to adjust (and potentially lose abilities the previous clothing gave me) was irksome just to think about.
+ - Nonlinear open world: Again, nothing against nonlinear gameplay--I for one love that _Civilization_ has multiple win conditions, and that the _StarCraft II_ missions are built to discourage "turtling" and force you to get creative--but as an avid follower of [Zero Punctuation](https://www.escapistmagazine.com/v2/series/zero-punctuation/) I know how "well" Ubisoft's (for example) "nonlinear" "open world" games have faired, and for the life of me I couldn't see a game on Zelda's scope doing any better.
+
+Boy oh boy, was I _wrong_.
+
+![](lostwoods.jpg){fig-alt="Link from Breath of the Wild standing near a campfire on a tower overlooking the foggy Lost Woods."}
+
+I watched The Lady play a game of her own for quite awhile, and at some point just kinda thought: eh, why not? and started my own game.
+
+I was _hooked_. I can't even explain why; even while writing that list of grievances, I kept thinking of examples _other_ than _Breath of the Wild_ with those mechanics and getting annoyed all over again. And yet, these are so well-done in _Breath of the Wild_ that I don't even notice them. Even moreso, annoyances in previous Zelda iterations--the "forced save points" of _Skyward Sword_, the nails-on-a-chalkboard running-back-and-forth over the _Ocarina_ landscape to finish a simple side quest, the rupee limitations of literally every other _Zelda_ game (until you bought a bigger rupee purse ???), the constant hunt for more arrows, and the lack of any jumping ability--they're all gone!
+
+The best thing I can say about this game is that they did an incredible job of 1) identifying the annoying things of previous Zelda games and cutting them out, and 2) introducing these new mechanics in a way that felt natural and intuitive. That's really the crux of it: the game is _easy to figure out_, even while the actual gameplay is incredibly, brutally, and satisfyingly challenging.
+
+That mastery of basics is why the game scales to such a _massive_ landscape (thank you, travel points!); that's why there's enough room for three distinct and gorgeous dragons that fill you with excitement every time their music comes out of nowhere;
+
+![](dinraal.jpg){fig-alt="Link from Breath of the Wild looking up at the dragon Dinraal in the sky above."}
+
+that's why staying in the nearest stable during a thunderstorm or going deep into the arctic tundra feels so much like curling up in front of a crackling fire on a freezing cold day;
+
+![](snow.jpg){fig-alt="Link from Breath of the Wild standing in a snowstorm with minimal visibility in any direction."}
+
+that's why, even after completing part of a main quest, you'll find yourself returning over and over to the same points on the map--to see an old friend, find a new side quest, or exchange some shiny rocks you could sell anywhere for a better price but you keep coming here because something about it makes you feel at home;
+
+![](zoradomain.jpg){fig-alt="Link from Breath of the Wild standing in the central fountain at Zora's Domain."}
+
+that's why you can take a break in between main quests to try and ride a stag;
+
+![](shrinequest.jpg){fig-alt="Link from Breath of the Wild mounted on a stag, both standing on a shrine pedestal."}
+
+and yes, this is an actual side quest.
+
+Nintendo knocked this one clear out of the park. It's so wonderfully and incredibly immersive: I go from exploring the freezing cold peaks of the Hebra mountains to chasing down a monster aficionado with a nighttime shop along the southeastern coastline with absolutely no recollection of how I transitioned from one to the other.
+
+But by far, the single biggest surprise is **the plot**. It’s nuanced, and mysterious, and even chilling in some cases, and it has me on the edge of my seat wanting to know what happens next. Previously, I’ve always felt the plot in Zelda games was a perpetual weakness: Zelda/Link good, Ganon bad, bludgeon Ganon until bad goes away and credits roll. But this game--at least so far (I’m not done yet)--makes me think there’s something at work beyond Ganon and his usual hijinks. The "good guys" in particular don’t seem perfect; I’m being led to think they made mistakes!
+
+Sadly, classes start this week, so it's unlikely I'll be making fast progress over the next few months. But I do know The Lady was pretty thrilled to unlock one particular character from previous Zelda games who, while technically present in this game, required some external convincing to join the quest:
+
+![](epona.jpg){fig-alt="Link from Breath of the Wild standing in front of Epona, the horse of legend."}
+
+I am loving everything about this game. Go buy it and forget reality! It's a great way to kill time while healing from an injury.
