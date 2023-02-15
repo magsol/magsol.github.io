@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Shannon Quinn">
+
+<title>Stochastic Stenography - The Raspberry Pi cluster</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XHDW9H78Z1"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
+</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Stochastic Stenography - The Raspberry Pi cluster">
+<meta property="og:description" content="I think that's called a bake sale">
+<meta property="og:image" content="https://magsol.github.io/posts/2022-07-13-the-raspberry-pi-cluster/birdhouse.jpg">
+<meta property="og:site-name" content="Stochastic Stenography">
+<meta property="og:locale" content="en_US">
+<meta property="og:image:alt" content="A birdhouse sized for small owls, being retrofitted to house a single Raspberry Pi 3B+ connected to multiple cameras positioned discreetly on the outside of the birdhouse, while still providing room inside for birds to nest.">
+<meta name="twitter:title" content="Stochastic Stenography - The Raspberry Pi cluster">
+<meta name="twitter:description" content="I think that's called a bake sale">
+<meta name="twitter:image" content="https://magsol.github.io/posts/2022-07-13-the-raspberry-pi-cluster/birdhouse.jpg">
+<meta name="twitter:creator" content="@SpectralFilter">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image:alt" content="A birdhouse sized for small owls, being retrofitted to house a single Raspberry Pi 3B+ connected to multiple cameras positioned discreetly on the outside of the birdhouse, while still providing room inside for birds to nest.">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Stochastic Stenography</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About Me</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">The Raspberry Pi cluster</h1>
+            <p class="subtitle lead">I think that’s called a bake sale</p>
+                                <div class="quarto-categories">
+                <div class="quarto-category">personal</div>
+                <div class="quarto-category">raspberry pi</div>
+                <div class="quarto-category">cluster</div>
+                <div class="quarto-category">ir</div>
+                <div class="quarto-category">wildlife</div>
+                <div class="quarto-category">camera</div>
+                <div class="quarto-category">homelab</div>
+                <div class="quarto-category">kubernetes</div>
+                <div class="quarto-category">k3s</div>
+                <div class="quarto-category">nas</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Shannon Quinn </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">Posted on the 13th of July in the year 2022, at 4:30pm. It was Wednesday.</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="birdhouse.jpg" class="preview-image img-fluid figure-img" alt="A birdhouse sized for small owls, being retrofitted to house a single Raspberry Pi 3B+ connected to multiple cameras positioned discreetly on the outside of the birdhouse, while still providing room inside for birds to nest."></p>
+<p></p><figcaption class="figure-caption">This birdhouse is watching you.</figcaption><p></p>
+</figure>
+</div>
+<p>Ha! Thought I’d left for good, didn’t you? Yeah well, I’m back b****es, and I’m here to talk about a little at-home tech project I’ve been working on for the better part of the past year. It comes in multiple parts–so the updates will come in multiple posts!–and it’s still very much a work in progress. But I’ve reached the point where I actually have something interesting to talk about, so I wanted to go ahead and get this party started.</p>
+<p>Over a year ago, as intermittent lockdowns dragged on and overall job satisfaction continued to plummet, I was looking for ways to keep my brain busy outside of work (read: to keep from going insane). I had a couple of <a href="https://www.raspberrypi.org/">Raspberry Pis</a> I had ideas for, but which I just hadn’t gotten around to doing anything with, so I did like any good restless tinkerer with both too much and too little time on their hands would do: I went out and bought <em>five more of them</em>, then assembled them into a mini-cluster.</p>
+<p>I posted about this a few times on my instagram: first when <a href="https://www.instagram.com/p/CRJozGTrCAW/">I’d assembled the Pi cluster</a>, and again when I’d <a href="https://www.instagram.com/p/CRu5Pm_rv9o/">put together a Network Attached Storage (NAS)</a> with 20TB to do my bidding.</p>
+<p>Since then, things got busy, but thanks to a two-week staycation in mid-late May of this year, I’ve made significant strides:</p>
+<ul>
+<li>The NAS is still doing its thing, though now it serves as yet another backup of all my research data. Can’t be too paranoid.</li>
+<li>The Pi cluster underwent some major plastic surgery. Turns out, just stacking a bunch of Pis and leaving them around your office isn’t a great setup when toddler wants to <em>smack the s*** out of them</em>.</li>
+<li>I finally put together and deployed my first attempt at an outdoor wildlife camera. Still a ton of work to do, but initial tests have been wildly successful.</li>
+</ul>
+<p>The latter two are what I’ve been focusing on over the past few months in particular (the last one is the cover image at the top of this post!). For the second one, I took the approach of trying to make everything as self-contained as possible. When you’re setting up a cluster of Raspberry Pis, there’s a shocking amount of cabling involved, despite what their diminuitive form factors might have you believe: they still need some space, and given the aforementioned toddler, I wanted as much of the full apparatus wrapped in a protective covering as possible.</p>
+<p>This was the end result:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="cluster_open.jpg" class="img-fluid figure-img" alt="A homemade tiny server rack built from wood specifically meant to protect the 5-Pi stack from toddler smacks."></p>
+<p></p><figcaption class="figure-caption">Why yes, that is indeed a <a href="https://store.gamersnexus.net/products/modmat-volt-large">GamersNexus anti-static mat</a>.</figcaption><p></p>
+</figure>
+</div>
+<p>The Pi cluster “rack”, the 8-port switch, the power strip, and even a handful of intake/exhaust fans would all be installed inside a homemade “cage”. Only two cables needed to exit the cage: one for the power strip (to go in an outlet), and one for the network (to go in the router). The rest would be protected inside half-inch hobby wood from Home Depot, safely protected by a hinge cover with a handle <em>and a slide lock</em>. For easy viewing, I made a side panel transparent with acrylic (man that was a <em>bitch</em> to cut and adhere), and I even managed to slice out some openings in the front and back to install intake and exhaust fans, just to make absolutely sure the temperatures didn’t get too obscene.</p>
+<p>I learned a <em>lot</em> along the way, not the least of which involved wiring, voltage/current/resistence, woodworking, and design.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="repurposed_ram_cooler.jpg" class="img-fluid figure-img" alt="Two bare wires from a USB cable. I cut these cables so I wire them instead to directly power 5V Raspberry Pi fans."></p>
+<p></p><figcaption class="figure-caption">Learned a lot about wiring. See those fans in the back? This was a cooler originally designed to sit on top of desktop RAM; instead, I’m repurposing them to work as exhaust fans for the cluster.</figcaption><p></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="voltage_converter.jpg" class="img-fluid figure-img" alt="A Farsense voltage converter, specifically for pulling standard 5V USB inputs to 12V outputs."></p>
+<p></p><figcaption class="figure-caption">Had to revisit high school and college electrostatics, since some of these fans drew 12V but I only had 5V outputs on the Raspberry Pis (they’re not meant to carry high voltage!).</figcaption><p></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="stripping_extending_wires.jpg" class="img-fluid figure-img" alt="Slices of cables that I used to extend the length of the actual Raspberry Pi fan cables, so they could reach the Raspberry Pi GPIO pins from their mounts in the side of the server rack."></p>
+<p></p><figcaption class="figure-caption">So yeah, had to do some actual wire splicing and modding to get everything to play nice in the low-voltage environment.</figcaption><p></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="running_closed_side_pullback.jpg" class="img-fluid figure-img" alt="Final configuration of the server rack with running Raspberry Pi cluster, lit from the inside by the former RAM fans, and visible via the side plexiglass panel."></p>
+<p></p><figcaption class="figure-caption">But wow, was it worth it!</figcaption><p></p>
+</figure>
+</div>
+<p>As for the birdhouse, it also comes with a bit of a surprise. I bought one that was big enough to house its own Raspberry Pi, which I built inside a waterproof/shatterproof plastic container to protect it from the outdoor elements. This is what drives the infrared camera on the front and handles detecting wildlife that walk by.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="birdhouse_inside.jpg" class="img-fluid figure-img" alt="A side view inside the birdhouse through an open panel. Inside is the Raspberry Pi 3B+ within its waterproof/shatterproof case, with a hinged piece of wood on top, followed by about a cubic foot of space for birds to nest, along with sawdust as nesting material."></p>
+<p></p><figcaption class="figure-caption">This is the Pi’s home inside the bird house. Still plenty of room for birds to nest above without disturbing or being disturbed by the Pi!</figcaption><p></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="ircam_close.jpg" class="img-fluid figure-img" alt="The mounted Raspberry Pi NoIR v2 camera, just above the entry/exit hole for the birds, so that the camera ribbon can be run along the top and back of the birdhouse and protected with Gorilla tape, out of the way and hopefully uninteresting to any nesting birds."></p>
+<p></p><figcaption class="figure-caption">This is the infrared camera that can see amazingly well at night. Its data/power ribbon is protected both from the elements and by the residents of the birdhouse by <a href="https://www.gorillatough.com/product/black-gorilla-tape/">Gorilla tape</a>, something <a href="https://www.youtube.com/c/markrober">Mark Rober</a> recommended.</figcaption><p></p>
+</figure>
+</div>
+<p>And I’m definitely not done yet. I still have a LOT of additional testing to run on the capabilities of the infrared camera (you can track my progress at the bleeding edge or even provide suggestions <a href="https://github.com/magsol/wildlife-cameras/">here at the GitHub repo I’ve set up for it</a>), and the actual Raspberry Pi cluster still needs to be spun back up after I reformatted the whole thing to start from scratch.</p>
+<p>Ultimately, the goal is to have the Pi cluster act as the processing center, providing all kinds of internal apps for viewing and managing data on the NAS–including photos, videos, and audio, in addition to the wildlife images being captured at night–while the birdhouse is just one component that generates videos for analysis and storage.</p>
+<p>I’ll be posting additional updates here as I make progress. Join me, won’t you? :)</p>
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2022,
+  author = {Shannon Quinn},
+  title = {The {Raspberry} {Pi} Cluster},
+  date = {2022-07-13},
+  url = {https://magsol.github.io/2022-07-13-the-raspberry-pi-cluster},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2022" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
+Shannon Quinn. 2022. <span>“The Raspberry Pi Cluster.”</span> July 13,
+2022. <a href="https://magsol.github.io/2022-07-13-the-raspberry-pi-cluster">https://magsol.github.io/2022-07-13-the-raspberry-pi-cluster</a>.
+</div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://giscus.app/client.js" data-repo="magsol/magsol.github.io" data-repo-id="MDEwOlJlcG9zaXRvcnkyNzYwNTYxNw==" data-category="Announcements" data-category-id="DIC_kwDOAaU6cc4CTutY" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="dark" data-lang="en" crossorigin="anonymous" data-loading="lazy" async="">
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
