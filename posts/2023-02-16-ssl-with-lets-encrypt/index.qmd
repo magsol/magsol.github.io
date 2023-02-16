@@ -1,0 +1,151 @@
+---
+title: "Mastodon, Part IV: SSL with Let's Encrypt"
+subtitle: "DNS is the cause of, and solution to, all our networking problems"
+date: "2023-02-16 10:30:00"
+categories: [personal, raspberry pi, k3s, mastodon, ssl, dns]
+citation:
+    url: https://magsol.github.io/2023-02-16-ssl-with-lets-encrypt
+image: "https_meme.jpeg"
+image-alt: "Sean Bean LOTR meme, stating \"One does not simply use HTTPS when it doesn't work\" (obtained from imgflip)."
+author: "Shannon Quinn"
+---
+![](https_meme.jpeg){.preview-image fig-alt="Sean Bean LOTR meme, stating \"One does not simply use HTTPS when it doesn't work\" (obtained from imgflip)."}
+
+_This article is part of a series about installing and configuring a Mastodon instance on a cluster of Raspberry Pi computers running k3s. To go back to previous articles in the series, try any of the links below:_
+
+ 1. [Introduction](../2023-01-20-mastodon-instance-k3s-rpi-introduction/index.qmd)
+ 2. [Part I: My home network topology](../2023-01-23-mastodon-home-network-topology/index.qmd)
+ 3. [Part II: The Mastodon Helm chart](../2023-01-25-mastodon-helm-chart/index.qmd)
+ 4. [Part III: Configuring and installing prerequisites](../2023-02-09-configuring-and-installing-prereqs/index.qmd)
+ 5. Part IV: The waking nightmare that is Let's Encrypt _(this post)_
+ 6. Part V: Actually installing Mastodon
+ 7. Conclusions
+
+I want to start by saying: I am no expert here. As such, it is not only possible, but is in fact likely, that I was missing something so painfully obvious as to be worthy of derision for the rest of my natural life.
+
+To be fair, that'd be mean, but still very possibly deserved.
+
+When I started the whole Mastodon installation process, I loosely followed the [recipe outlined here at Geek Cookbook](https://geek-cookbook.funkypenguin.co.nz/recipes/kubernetes/mastodon/), which---until this series of blog posts!---was the only resource I could find anywhere on the world wide interwubs on installing Mastodon on kubernetes (thank you again, funkypenguin; [go sponsor him!](https://github.com/sponsors/funkypenguin)).
+
+Of course, I could only follow it to a point; I didn't make use of [flux](https://geek-cookbook.funkypenguin.co.nz/kubernetes/deployment/flux/) (though I know I really, really should; that's a blog series for another time, methinks) so a lot of the constructs weren't precisely relevant to me. As such there was a lot I had to infer. [Ingress was no exception](https://geek-cookbook.funkypenguin.co.nz/kubernetes/ingress/).
+
+### So much tra[e|f]fik
+
+This bit is actually entirely separate from Mastodon; it just _felt_ like it was part of Mastodon, since it was Mastodon that I couldn't reach. When SSL is misconfigured, your experience is strictly browser-dependent: in my case, Chrome^[Yeah yeah yeah I know I need to switch to Brave or Firefox, IN MY SPARE TIME FOLKS.] would throw up myriad warnings and, in regular mode, wouldn't let me navigate to the page at all. In incognito mode, it would allow me to navigate there provided I clicked a link to acknowledge I was doing something "unsafe".
+
+So let's back up a bit. I'm using [traefik](https://traefik.io/) as my ingress controller. Not, I should add, because it's packaged with k3s; I actually disabled that because it's an old version. Rather, I installed traefik via [its official helm chart](https://github.com/traefik/traefik-helm-chart).
+
+Now. In keeping with my philosophy of doing the simplest thing that gets results, I tried for the http-01 option when it came to [Let's Encrypt challenge modes](https://letsencrypt.org/docs/challenge-types/), as it's by far the most straightforward, at least when it comes to configuring the ingress. I had to make only very minor modifications to the traefik helm chart; it ended up looking something like this:
+
+```{.yaml}
+ports:
+  websecure:
+    tls:
+      certResolver: "leresolver"
+      domains:
+      - main: "quinnwitz.house"
+
+certResolvers:
+  leresolver:
+    email: <my email>
+    httpChallenge:
+      entryPoint: "web"
+```
+
+That's pretty much it! I made a few other modifications around debugging and logging, and a small addition around load balancing (to account for metallb), but simplicity won the day.
+
+...and lo, did the problems come thence _unceasingly_.
+
+### GET problems
+
+Here's the part that drove me absolutely insane.
+
+```{.bash .code-overflow-wrap}
+E1129 00:45:08.092782       1 sync.go:190] cert-manager/challenges "msg"="propagation check failed" "error"="failed to perform self check GET request 'http://quinnwitz.house/.well-known/acme-challenge/jVKFmi_ulnESi0pCj-KnVC5mPt0RouNcfUOEKcYe9ro': Get \"http://quinnwitz.house/.well-known/acme-challenge/jVKFmi_ulnESi0pCj-KnVC5mPt0RouNcfUOEKcYe9ro\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)" "dnsName"="quinnwitz.house" "resource_kind"="Challenge" "resource_name"="mastodon-tls-lzwbv-1403372365-523260434" "resource_namespace"="mastodon" "resource_version"="v1" "type"="HTTP-01"
+```
+
+This is what I saw appear over and over on [Let's Debug](https://letsdebug.net/) (thank you for that website, by the way!). No matter what (http-01) configuration I tried, this was what came back: timeouts.
+
+As best I can tell, [this recent comment on GitHub](https://github.com/cert-manager/cert-manager/issues/3238#issuecomment-1384438850) miiight identify the source of the problem and how to fix it:
+
+> So basically, your node cannot access http://1.2.3.4/.well-known/whatever and http://your-page.com/.well-known/whatever, but computers on the internet (such as letsencrypt) can.
+
+though I'm still not certain, because the method for testing this eventuality (`dig` or `curl`ing the URL from the kubernetes nodes themselves) worked fine for me.
+
+After (I kid you not) an entire **week** of this, I gave up. It was time to switch to dns-01.
+
+### It's always DNS
+
+This took more doing. First, I moved my DNS nameservers from Google over to Cloudflare (Google was and continues to be my domain name provider, so initially that's where my nameservers were, too). The reason for this move was because Google charges for DNS API access (which we're going to need in a minute), whereas Cloudflare does not^[At least, not at the rates I'd be using it.].
+
+Second, I created API keys with Cloudflare specifically for modifying DNS entries. The cert-manager documentation has a whole page on dns-01 verification steps [and uses Cloudflare as its examplar](https://cert-manager.io/docs/configuration/acme/dns01/cloudflare/).
+
+FUN LITTLE FACTOID: Using the method outlined in the cert-manager documentation, I still encountered weird errors involving "invalid request headers." _For whatever bloody reason_, when creating the `Secret` that stores the Cloudflare API tokens, I had to use `data` rather than `stringData` otherwise it simply wouldn't work. [Here's the solution](https://github.com/cert-manager/cert-manager/issues/3021#issuecomment-861894010). It also needs to be in the same namespace as Mastodon. Also also, I needed to use `api-key`, `api-token`, and `email` fields, [since these are specific to the permissions LE will need](https://go-acme.github.io/lego/dns/cloudflare/).
+
+Third, I had to make more modifications to the traefik helm chart. These included flipping the `certResolver.leresolver` from `httpChallenge` to `dnsChallenge`, and also included adding environment variables for each of the `data` fields in the cloudflare API secret. Here's what those changes looked like:
+
+```{.yaml}
+certResolvers:
+  leresolver:
+    email: <my email>
+    dnsChallenge:
+      provider: cloudflare
+      resolvers:
+        - 1.1.1.1
+        - 8.8.8.8
+env:
+  - name: CF_API_EMAIL
+    valueFrom:
+      secretKeyRef:
+        name: <my secret>
+        key: email
+  - name: CF_API_KEY
+    valueFrom:
+      secretKeyRef:
+        name: <my secret>
+        key: api-key
+  - name: CF_DNS_API_TOKEN
+    valueFrom:
+      secretKeyRef:
+        name: <my secret>
+        key: api-token
+```
+
+The final step was to create a new `ClusterIssuer`, one that specifically used dns-01 verification. Here's what it looked like:
+
+```{.yaml}
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-prod-dns
+spec:
+  acme:
+    email: <my email>
+    server: https://acme-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      name: <cert key>
+    solvers:
+    - dns01:
+        cloudflare:
+          apiTokenSecretRef:
+            name: <my secret>
+            key: api-token
+```
+
+I wouldn't call this super-complicated, but it definitely wasn't the ease of http-01 configuration. But unlike http-01, this actually worked!
+
+### Other musings
+
+Oddly enough, this was the part that took the longest on the road to getting my own Mastodon instance running. Not the [obfuscated and undocumented network topology hiccups](../2023-01-23-mastodon-home-network-topology/index.qmd), not the [literally incompatible and also required prerequisites](../2023-02-09-configuring-and-installing-prereqs/index.qmd); no, we got to bang our heads against a 9-year old technology that took nearly a week to find a working configuration.
+
+I've had some folks suggest [kcert](https://github.com/nabsul/kcert) as a drop-in replacement for cert-manager. For specific use-cases it certainly seems as though its simplicity could grease the skids of development; personally, I did not have a chance to try it out before landing on a working dns-01 setup, but I wanted to mention it as others have spoken positively about it.
+
+Another promising bit of technology the Mastodon devs pointed me to was [Tailscale](https://tailscale.com/), which recently released their own implementation of [HTTPS certificates](https://tailscale.com/kb/1153/enabling-https/) for nodes on a tailscale network. Traefik has even started working on [integrating tailscale network overlays into its proxy configuration](https://traefik.io/blog/exploring-the-tailscale-traefik-proxy-integration/), so this could be worth looking at instead of LE in the very near future.
+
+::: {.callout-tip}
+## Oh hey!
+
+As of traefik 3.0 beta 1, [the integration is already present!](https://tailscale.com/kb/1234/traefik-certificates/). Here's the [official announcement from Tailscale](https://tailscale.com/blog/traefik-certificate-resolver/).
+:::
+
+Until next time!
