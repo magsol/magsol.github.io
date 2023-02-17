@@ -17,7 +17,163 @@
 <width>144</width>
 </image>
 <generator>quarto-1.2.335</generator>
-<lastBuildDate>Wed, 15 Feb 2023 15:57:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 16 Feb 2023 10:30:00 GMT</lastBuildDate>
+<item>
+  <title>Mastodon, Part IV: SSL with Let’s Encrypt</title>
+  <dc:creator>Shannon Quinn</dc:creator>
+  <link>https://magsol.github.io/posts/2023-02-16-ssl-with-lets-encrypt/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><img src="https://magsol.github.io/posts/2023-02-16-ssl-with-lets-encrypt/https_meme.jpeg" class="preview-image img-fluid" alt="Sean Bean LOTR meme, stating &quot;One does not simply use HTTPS when it doesn't work&quot; (obtained from imgflip)."></p>
+<p><em>This article is part of a series about installing and configuring a Mastodon instance on a cluster of Raspberry Pi computers running k3s. To go back to previous articles in the series, try any of the links below:</em></p>
+<ol type="1">
+<li><a href="../../posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/index.html">Introduction</a></li>
+<li><a href="../../posts/2023-01-23-mastodon-home-network-topology/index.html">Part I: My home network topology</a></li>
+<li><a href="../../posts/2023-01-25-mastodon-helm-chart/index.html">Part II: The Mastodon Helm chart</a></li>
+<li><a href="../../posts/2023-02-09-configuring-and-installing-prereqs/index.html">Part III: Configuring and installing prerequisites</a></li>
+<li>Part IV: The waking nightmare that is Let’s Encrypt <em>(this post)</em></li>
+<li>Part V: Actually installing Mastodon</li>
+<li>Conclusions</li>
+</ol>
+<p>I want to start by saying: I am no expert here. As such, it is not only possible, but is in fact likely, that I was missing something so painfully obvious as to be worthy of derision for the rest of my natural life.</p>
+<p>To be fair, that’d be mean, but still very possibly deserved.</p>
+<p>When I started the whole Mastodon installation process, I loosely followed the <a href="https://geek-cookbook.funkypenguin.co.nz/recipes/kubernetes/mastodon/">recipe outlined here at Geek Cookbook</a>, which—until this series of blog posts!—was the only resource I could find anywhere on the world wide interwubs on installing Mastodon on kubernetes (thank you again, funkypenguin; <a href="https://github.com/sponsors/funkypenguin">go sponsor him!</a>).</p>
+<p>Of course, I could only follow it to a point; I didn’t make use of <a href="https://geek-cookbook.funkypenguin.co.nz/kubernetes/deployment/flux/">flux</a> (though I know I really, really should; that’s a blog series for another time, methinks) so a lot of the constructs weren’t precisely relevant to me. As such there was a lot I had to infer. <a href="https://geek-cookbook.funkypenguin.co.nz/kubernetes/ingress/">Ingress was no exception</a>.</p>
+<section id="so-much-traeffik" class="level3">
+<h3 class="anchored" data-anchor-id="so-much-traeffik">So much tra[e|f]fik</h3>
+<p>This bit is actually entirely separate from Mastodon; it just <em>felt</em> like it was part of Mastodon, since it was Mastodon that I couldn’t reach. When SSL is misconfigured, your experience is strictly browser-dependent: in my case, Chrome<sup>1</sup> would throw up myriad warnings and, in regular mode, wouldn’t let me navigate to the page at all. In incognito mode, it would allow me to navigate there provided I clicked a link to acknowledge I was doing something “unsafe”.</p>
+<p>So let’s back up a bit. I’m using <a href="https://traefik.io/">traefik</a> as my ingress controller. Not, I should add, because it’s packaged with k3s; I actually disabled that because it’s an old version. Rather, I installed traefik via <a href="https://github.com/traefik/traefik-helm-chart">its official helm chart</a>.</p>
+<p>Now. In keeping with my philosophy of doing the simplest thing that gets results, I tried for the http-01 option when it came to <a href="https://letsencrypt.org/docs/challenge-types/">Let’s Encrypt challenge modes</a>, as it’s by far the most straightforward, at least when it comes to configuring the ingress. I had to make only very minor modifications to the traefik helm chart; it ended up looking something like this:</p>
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><span class="fu" style="color: #4758AB;">ports</span><span class="kw" style="color: #003B4F;">:</span></span>
+<span id="cb1-2"><span class="at" style="color: #657422;">  </span><span class="fu" style="color: #4758AB;">websecure</span><span class="kw" style="color: #003B4F;">:</span></span>
+<span id="cb1-3"><span class="at" style="color: #657422;">    </span><span class="fu" style="color: #4758AB;">tls</span><span class="kw" style="color: #003B4F;">:</span></span>
+<span id="cb1-4"><span class="at" style="color: #657422;">      </span><span class="fu" style="color: #4758AB;">certResolver</span><span class="kw" style="color: #003B4F;">:</span><span class="at" style="color: #657422;"> </span><span class="st" style="color: #20794D;">"leresolver"</span></span>
+<span id="cb1-5"><span class="at" style="color: #657422;">      </span><span class="fu" style="color: #4758AB;">domains</span><span class="kw" style="color: #003B4F;">:</span></span>
+<span id="cb1-6"><span class="at" style="color: #657422;">      </span><span class="kw" style="color: #003B4F;">-</span><span class="at" style="color: #657422;"> </span><span class="fu" style="color: #4758AB;">main</span><span class="kw" style="color: #003B4F;">:</span><span class="at" style="color: #657422;"> </span><span class="st" style="color: #20794D;">"quinnwitz.house"</span></span>
+<span id="cb1-7"></span>
+<span id="cb1-8"><span class="fu" style="color: #4758AB;">certResolvers</span><span class="kw" style="color: #003B4F;">:</span></span>
+<span id="cb1-9"><span class="at" style="color: #657422;">  </span><span class="fu" style="color: #4758AB;">leresolver</span><span class="kw" style="color: #003B4F;">:</span></span>
+<span id="cb1-10"><span class="at" style="color: #657422;">    </span><span class="fu" style="color: #4758AB;">email</span><span class="kw" style="color: #003B4F;">:</span><span class="at" style="color: #657422;"> &lt;my email&gt;</span></span>
+<span id="cb1-11"><span class="at" style="color: #657422;">    </span><span class="fu" style="color: #4758AB;">httpChallenge</span><span class="kw" style="color: #003B4F;">:</span></span>
+<span id="cb1-12"><span class="at" style="color: #657422;">      </span><span class="fu" style="color: #4758AB;">entryPoint</span><span class="kw" style="color: #003B4F;">:</span><span class="at" style="color: #657422;"> </span><span class="st" style="color: #20794D;">"web"</span></span></code></pre></div>
+<p>That’s pretty much it! I made a few other modifications around debugging and logging, and a small addition around load balancing (to account for metallb), but simplicity won the day.</p>
+<p>…and lo, did the problems come thence <em>unceasingly</em>.</p>
+</section>
+<section id="get-problems" class="level3">
+<h3 class="anchored" data-anchor-id="get-problems">GET problems</h3>
+<p>Here’s the part that drove me absolutely insane.</p>
+<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode bash code-overflow-wrap code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><span class="ex" style="color: null;">E1129</span> 00:45:08.092782       1 sync.go:190] cert-manager/challenges <span class="st" style="color: #20794D;">"msg"</span>=<span class="st" style="color: #20794D;">"propagation check failed"</span> <span class="st" style="color: #20794D;">"error"</span>=<span class="st" style="color: #20794D;">"failed to perform self check GET request 'http://quinnwitz.house/.well-known/acme-challenge/jVKFmi_ulnESi0pCj-KnVC5mPt0RouNcfUOEKcYe9ro': Get </span><span class="dt" style="color: #AD0000;">\"</span><span class="st" style="color: #20794D;">http://quinnwitz.house/.well-known/acme-challenge/jVKFmi_ulnESi0pCj-KnVC5mPt0RouNcfUOEKcYe9ro</span><span class="dt" style="color: #AD0000;">\"</span><span class="st" style="color: #20794D;">: context deadline exceeded (Client.Timeout exceeded while awaiting headers)"</span> <span class="st" style="color: #20794D;">"dnsName"</span>=<span class="st" style="color: #20794D;">"quinnwitz.house"</span> <span class="st" style="color: #20794D;">"resource_kind"</span>=<span class="st" style="color: #20794D;">"Challenge"</span> <span class="st" style="color: #20794D;">"resource_name"</span>=<span class="st" style="color: #20794D;">"mastodon-tls-lzwbv-1403372365-523260434"</span> <span class="st" style="color: #20794D;">"resource_namespace"</span>=<span class="st" style="color: #20794D;">"mastodon"</span> <span class="st" style="color: #20794D;">"resource_version"</span>=<span class="st" style="color: #20794D;">"v1"</span> <span class="st" style="color: #20794D;">"type"</span>=<span class="st" style="color: #20794D;">"HTTP-01"</span></span></code></pre></div>
+<p>This is what I saw appear over and over on <a href="https://letsdebug.net/">Let’s Debug</a> (thank you for that website, by the way!). No matter what (http-01) configuration I tried, this was what came back: timeouts.</p>
+<p>As best I can tell, <a href="https://github.com/cert-manager/cert-manager/issues/3238#issuecomment-1384438850">this recent comment on GitHub</a> miiight identify the source of the problem and how to fix it:</p>
+<blockquote class="blockquote">
+<p>So basically, your node cannot access http://1.2.3.4/.well-known/whatever and http://your-page.com/.well-known/whatever, but computers on the internet (such as letsencrypt) can.</p>
+</blockquote>
+<p>though I’m still not certain, because the method for testing this eventuality (<code>dig</code> or <code>curl</code>ing the URL from the kubernetes nodes themselves) worked fine for me.</p>
+<p>After (I kid you not) an entire <strong>week</strong> of this, I gave up. It was time to switch to dns-01.</p>
+</section>
+<section id="its-always-dns" class="level3">
+<h3 class="anchored" data-anchor-id="its-always-dns">It’s always DNS</h3>
+<p>This took more doing. First, I moved my DNS nameservers from Google over to Cloudflare (Google was and continues to be my domain name provider, so initially that’s where my nameservers were, too). The reason for this move was because Google charges for DNS API access (which we’re going to need in a minute), whereas Cloudflare does not<sup>2</sup>.</p>
+<p>Second, I created API keys with Cloudflare specifically for modifying DNS entries. The cert-manager documentation has a whole page on dns-01 verification steps <a href="https://cert-manager.io/docs/configuration/acme/dns01/cloudflare/">and uses Cloudflare as its examplar</a>.</p>
+<p>FUN LITTLE FACTOID: Using the method outlined in the cert-manager documentation, I still encountered weird errors involving “invalid request headers.” <em>For whatever bloody reason</em>, when creating the <code>Secret</code> that stores the Cloudflare API tokens, I had to use <code>data</code> rather than <code>stringData</code> otherwise it simply wouldn’t work. <a href="https://github.com/cert-manager/cert-manager/issues/3021#issuecomment-861894010">Here’s the solution</a>. It also needs to be in the same namespace as Mastodon. Also also, I needed to use <code>api-key</code>, <code>api-token</code>, and <code>email</code> fields, <a href="https://go-acme.github.io/lego/dns/cloudflare/">since these are specific to the permissions LE will need</a>.</p>
+<p>Third, I had to make more modifications to the traefik helm chart. These included flipping the <code>certResolver.leresolver</code> from <code>httpChallenge</code> to <code>dnsChallenge</code>, and also included adding environment variables for each of the <code>data</code> fields in the cloudflare API secret. Here’s what those changes looked like:</p>
+<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><span class="fu" style="color: #4758AB;">certResolvers</span><span class="kw" style="color: #003B4F;">:</span></span>
+<span id="cb3-2"><span class="at" style="color: #657422;">  </span><span class="fu" style="color: #4758AB;">leresolver</span><span class="kw" style="color: #003B4F;">:</span></span>
+<span id="cb3-3"><span class="at" style="color: #657422;">    </span><span class="fu" style="color: #4758AB;">email</span><span class="kw" style="color: #003B4F;">:</span><span class="at" style="color: #657422;"> &lt;my email&gt;</span></span>
+<span id="cb3-4"><span class="at" style="color: #657422;">    </span><span class="fu" style="color: #4758AB;">dnsChallenge</span><span class="kw" style="color: #003B4F;">:</span></span>
+<span id="cb3-5"><span class="at" style="color: #657422;">      </span><span class="fu" style="color: #4758AB;">provider</span><span class="kw" style="color: #003B4F;">:</span><span class="at" style="color: #657422;"> cloudflare</span></span>
+<span id="cb3-6"><span class="at" style="color: #657422;">      </span><span class="fu" style="color: #4758AB;">resolvers</span><span class="kw" style="color: #003B4F;">:</span></span>
+<span id="cb3-7"><span class="at" style="color: #657422;">        </span><span class="kw" style="color: #003B4F;">-</span><span class="at" style="color: #657422;"> </span><span class="fl" style="color: #AD0000;">1.1.1.1</span></span>
+<span id="cb3-8"><span class="at" style="color: #657422;">        </span><span class="kw" style="color: #003B4F;">-</span><span class="at" style="color: #657422;"> </span><span class="fl" style="color: #AD0000;">8.8.8.8</span></span>
+<span id="cb3-9"><span class="fu" style="color: #4758AB;">env</span><span class="kw" style="color: #003B4F;">:</span></span>
+<span id="cb3-10"><span class="at" style="color: #657422;">  </span><span class="kw" style="color: #003B4F;">-</span><span class="at" style="color: #657422;"> </span><span class="fu" style="color: #4758AB;">name</span><span class="kw" style="color: #003B4F;">:</span><span class="at" style="color: #657422;"> CF_API_EMAIL</span></span>
+<span id="cb3-11"><span class="at" style="color: #657422;">    </span><span class="fu" style="color: #4758AB;">valueFrom</span><span class="kw" style="color: #003B4F;">:</span></span>
+<span id="cb3-12"><span class="at" style="color: #657422;">      </span><span class="fu" style="color: #4758AB;">secretKeyRef</span><span class="kw" style="color: #003B4F;">:</span></span>
+<span id="cb3-13"><span class="at" style="color: #657422;">        </span><span class="fu" style="color: #4758AB;">name</span><span class="kw" style="color: #003B4F;">:</span><span class="at" style="color: #657422;"> &lt;my secret&gt;</span></span>
+<span id="cb3-14"><span class="at" style="color: #657422;">        </span><span class="fu" style="color: #4758AB;">key</span><span class="kw" style="color: #003B4F;">:</span><span class="at" style="color: #657422;"> email</span></span>
+<span id="cb3-15"><span class="at" style="color: #657422;">  </span><span class="kw" style="color: #003B4F;">-</span><span class="at" style="color: #657422;"> </span><span class="fu" style="color: #4758AB;">name</span><span class="kw" style="color: #003B4F;">:</span><span class="at" style="color: #657422;"> CF_API_KEY</span></span>
+<span id="cb3-16"><span class="at" style="color: #657422;">    </span><span class="fu" style="color: #4758AB;">valueFrom</span><span class="kw" style="color: #003B4F;">:</span></span>
+<span id="cb3-17"><span class="at" style="color: #657422;">      </span><span class="fu" style="color: #4758AB;">secretKeyRef</span><span class="kw" style="color: #003B4F;">:</span></span>
+<span id="cb3-18"><span class="at" style="color: #657422;">        </span><span class="fu" style="color: #4758AB;">name</span><span class="kw" style="color: #003B4F;">:</span><span class="at" style="color: #657422;"> &lt;my secret&gt;</span></span>
+<span id="cb3-19"><span class="at" style="color: #657422;">        </span><span class="fu" style="color: #4758AB;">key</span><span class="kw" style="color: #003B4F;">:</span><span class="at" style="color: #657422;"> api-key</span></span>
+<span id="cb3-20"><span class="at" style="color: #657422;">  </span><span class="kw" style="color: #003B4F;">-</span><span class="at" style="color: #657422;"> </span><span class="fu" style="color: #4758AB;">name</span><span class="kw" style="color: #003B4F;">:</span><span class="at" style="color: #657422;"> CF_DNS_API_TOKEN</span></span>
+<span id="cb3-21"><span class="at" style="color: #657422;">    </span><span class="fu" style="color: #4758AB;">valueFrom</span><span class="kw" style="color: #003B4F;">:</span></span>
+<span id="cb3-22"><span class="at" style="color: #657422;">      </span><span class="fu" style="color: #4758AB;">secretKeyRef</span><span class="kw" style="color: #003B4F;">:</span></span>
+<span id="cb3-23"><span class="at" style="color: #657422;">        </span><span class="fu" style="color: #4758AB;">name</span><span class="kw" style="color: #003B4F;">:</span><span class="at" style="color: #657422;"> &lt;my secret&gt;</span></span>
+<span id="cb3-24"><span class="at" style="color: #657422;">        </span><span class="fu" style="color: #4758AB;">key</span><span class="kw" style="color: #003B4F;">:</span><span class="at" style="color: #657422;"> api-token</span></span></code></pre></div>
+<p>The final step was to create a new <code>ClusterIssuer</code>, one that specifically used dns-01 verification. Here’s what it looked like:</p>
+<div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><span class="fu" style="color: #4758AB;">apiVersion</span><span class="kw" style="color: #003B4F;">:</span><span class="at" style="color: #657422;"> cert-manager.io/v1</span></span>
+<span id="cb4-2"><span class="fu" style="color: #4758AB;">kind</span><span class="kw" style="color: #003B4F;">:</span><span class="at" style="color: #657422;"> ClusterIssuer</span></span>
+<span id="cb4-3"><span class="fu" style="color: #4758AB;">metadata</span><span class="kw" style="color: #003B4F;">:</span></span>
+<span id="cb4-4"><span class="at" style="color: #657422;">  </span><span class="fu" style="color: #4758AB;">name</span><span class="kw" style="color: #003B4F;">:</span><span class="at" style="color: #657422;"> letsencrypt-prod-dns</span></span>
+<span id="cb4-5"><span class="fu" style="color: #4758AB;">spec</span><span class="kw" style="color: #003B4F;">:</span></span>
+<span id="cb4-6"><span class="at" style="color: #657422;">  </span><span class="fu" style="color: #4758AB;">acme</span><span class="kw" style="color: #003B4F;">:</span></span>
+<span id="cb4-7"><span class="at" style="color: #657422;">    </span><span class="fu" style="color: #4758AB;">email</span><span class="kw" style="color: #003B4F;">:</span><span class="at" style="color: #657422;"> &lt;my email&gt;</span></span>
+<span id="cb4-8"><span class="at" style="color: #657422;">    </span><span class="fu" style="color: #4758AB;">server</span><span class="kw" style="color: #003B4F;">:</span><span class="at" style="color: #657422;"> https://acme-v02.api.letsencrypt.org/directory</span></span>
+<span id="cb4-9"><span class="at" style="color: #657422;">    </span><span class="fu" style="color: #4758AB;">privateKeySecretRef</span><span class="kw" style="color: #003B4F;">:</span></span>
+<span id="cb4-10"><span class="at" style="color: #657422;">      </span><span class="fu" style="color: #4758AB;">name</span><span class="kw" style="color: #003B4F;">:</span><span class="at" style="color: #657422;"> &lt;cert key&gt;</span></span>
+<span id="cb4-11"><span class="at" style="color: #657422;">    </span><span class="fu" style="color: #4758AB;">solvers</span><span class="kw" style="color: #003B4F;">:</span></span>
+<span id="cb4-12"><span class="at" style="color: #657422;">    </span><span class="kw" style="color: #003B4F;">-</span><span class="at" style="color: #657422;"> </span><span class="fu" style="color: #4758AB;">dns01</span><span class="kw" style="color: #003B4F;">:</span></span>
+<span id="cb4-13"><span class="at" style="color: #657422;">        </span><span class="fu" style="color: #4758AB;">cloudflare</span><span class="kw" style="color: #003B4F;">:</span></span>
+<span id="cb4-14"><span class="at" style="color: #657422;">          </span><span class="fu" style="color: #4758AB;">apiTokenSecretRef</span><span class="kw" style="color: #003B4F;">:</span></span>
+<span id="cb4-15"><span class="at" style="color: #657422;">            </span><span class="fu" style="color: #4758AB;">name</span><span class="kw" style="color: #003B4F;">:</span><span class="at" style="color: #657422;"> &lt;my secret&gt;</span></span>
+<span id="cb4-16"><span class="at" style="color: #657422;">            </span><span class="fu" style="color: #4758AB;">key</span><span class="kw" style="color: #003B4F;">:</span><span class="at" style="color: #657422;"> api-token</span></span></code></pre></div>
+<p>I wouldn’t call this super-complicated, but it definitely wasn’t the ease of http-01 configuration. But unlike http-01, this actually worked!</p>
+</section>
+<section id="other-musings" class="level3">
+<h3 class="anchored" data-anchor-id="other-musings">Other musings</h3>
+<p>Oddly enough, this was the part that took the longest on the road to getting my own Mastodon instance running. Not the <a href="../../posts/2023-01-23-mastodon-home-network-topology/index.html">obfuscated and undocumented network topology hiccups</a>, not the <a href="../../posts/2023-02-09-configuring-and-installing-prereqs/index.html">literally incompatible and also required prerequisites</a>; no, we got to bang our heads against a 9-year old technology that took nearly a week to find a working configuration.</p>
+<p>I’ve had some folks suggest <a href="https://github.com/nabsul/kcert">kcert</a> as a drop-in replacement for cert-manager. For specific use-cases it certainly seems as though its simplicity could grease the skids of development; personally, I did not have a chance to try it out before landing on a working dns-01 setup, but I wanted to mention it as others have spoken positively about it.</p>
+<p>Another promising bit of technology the Mastodon devs pointed me to was <a href="https://tailscale.com/">Tailscale</a>, which recently released their own implementation of <a href="https://tailscale.com/kb/1153/enabling-https/">HTTPS certificates</a> for nodes on a tailscale network. Traefik has even started working on <a href="https://traefik.io/blog/exploring-the-tailscale-traefik-proxy-integration/">integrating tailscale network overlays into its proxy configuration</a>, so this could be worth looking at instead of LE in the very near future.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Oh hey!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>As of traefik 3.0 beta 1, <a href="https://tailscale.com/kb/1234/traefik-certificates/">the integration is already present!</a>. Here’s the <a href="https://tailscale.com/blog/traefik-certificate-resolver/">official announcement from Tailscale</a>.</p>
+</div>
+</div>
+<p>Until next time!</p>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Yeah yeah yeah I know I need to switch to Brave or Firefox, IN MY SPARE TIME FOLKS.↩︎</p></li>
+<li id="fn2"><p>At least, not at the rates I’d be using it.↩︎</p></li>
+</ol>
+</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
+  author = {Shannon Quinn},
+  title = {Mastodon, {Part} {IV:} {SSL} with {Let’s} {Encrypt}},
+  date = {2023-02-16},
+  url = {https://magsol.github.io/2023-02-16-ssl-with-lets-encrypt},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2023" class="csl-entry quarto-appendix-citeas">
+Shannon Quinn. 2023. <span>“Mastodon, Part IV: SSL with Let’s
+Encrypt.”</span> February 16, 2023. <a href="https://magsol.github.io/2023-02-16-ssl-with-lets-encrypt">https://magsol.github.io/2023-02-16-ssl-with-lets-encrypt</a>.
+</div></div></section></div> ]]></description>
+  <category>personal</category>
+  <category>raspberry pi</category>
+  <category>k3s</category>
+  <category>mastodon</category>
+  <category>ssl</category>
+  <category>dns</category>
+  <guid>https://magsol.github.io/posts/2023-02-16-ssl-with-lets-encrypt/index.html</guid>
+  <pubDate>Thu, 16 Feb 2023 10:30:00 GMT</pubDate>
+  <media:content url="https://magsol.github.io/posts/2023-02-16-ssl-with-lets-encrypt/https_meme.jpeg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>Setting up a wildlife camera</title>
   <dc:creator>Shannon Quinn</dc:creator>
@@ -1791,32 +1947,6 @@ Shannon Quinn. 2018. <span>“New Year, New Blog Layout.”</span> January
   <guid>https://magsol.github.io/posts/2016-02-02-nsf-crii-reviewer-feedback/index.html</guid>
   <pubDate>Tue, 02 Feb 2016 10:18:34 GMT</pubDate>
   <media:content url="https://magsol.github.io/posts/2016-02-02-nsf-crii-reviewer-feedback/write_grants.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>Introductions</title>
-  <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2015-11-07-introductions/index.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>Well, this seems to be working. Kinda.</p>
-<p>I took some inspiration from <a href="http://jakevdp.github.io/">Jake VanderPlas’ Pythonic Perambulations</a> and opted for a similar route: Pelican as the backend blogging machine, github as the host, and (eventually) embedded Jupyter notebooks. Unfortunately, Jake’s addition to the Pelican plugins to <a href="https://github.com/getpelican/pelican-plugins/blob/master/liquid_tags/notebook.py">allow Jupyter notebooks</a> uses CSS that is, shall we say, unfriendly to Pelican themes outside of the Octopress default.</p>
-<p>So that part is still incomplete. As are many of the links and some of the plugins. But ultimately, I’m hoping to use this to supplant my current pair of blogs that jointly detail what my plan for this space is: academia, general data science, and other musings.</p>
-<p>Stay tuned!</p>
-
-
-
- ]]></description>
-  <category>personal</category>
-  <category>pelican</category>
-  <category>python</category>
-  <category>github</category>
-  <category>jupyter</category>
-  <guid>https://magsol.github.io/posts/2015-11-07-introductions/index.html</guid>
-  <pubDate>Sat, 07 Nov 2015 12:14:02 GMT</pubDate>
-  <media:content url="https://magsol.github.io/images/logo.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 </channel>
 </rss>
