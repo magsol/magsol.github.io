@@ -6,10 +6,10 @@ categories: [personal, raspberry pi, k3s, mastodon, ssl, dns]
 citation:
     url: https://magsol.github.io/2023-02-16-ssl-with-lets-encrypt
 image: "https_meme.jpeg"
-image-alt: "Sean Bean LOTR meme, stating \"One does not simply use HTTPS when it doesn't work\" (obtained from imgflip)."
+image-alt: "Sean Bean LOTR meme, stating: 'One does not simply use HTTPS when it doesn't work' (obtained from imgflip)."
 author: "Shannon Quinn"
 ---
-![](https_meme.jpeg){.preview-image fig-alt="Sean Bean LOTR meme, stating \"One does not simply use HTTPS when it doesn't work\" (obtained from imgflip)."}
+![](https_meme.jpeg){.preview-image fig-alt="Sean Bean LOTR meme, stating: 'One does not simply use HTTPS when it doesn't work' (obtained from imgflip)."}
 
 _This article is part of a series about installing and configuring a Mastodon instance on a cluster of Raspberry Pi computers running k3s. To go back to previous articles in the series, try any of the links below:_
 
