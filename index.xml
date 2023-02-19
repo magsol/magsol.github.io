@@ -27,7 +27,7 @@
 
 
 
-<p><img src="https://magsol.github.io/posts/2023-02-16-ssl-with-lets-encrypt/https_meme.jpeg" class="preview-image img-fluid" alt="Sean Bean LOTR meme, stating &quot;One does not simply use HTTPS when it doesn't work&quot; (obtained from imgflip)."></p>
+<p><img src="https://magsol.github.io/posts/2023-02-16-ssl-with-lets-encrypt/https_meme.jpeg" class="preview-image img-fluid" alt="Sean Bean LOTR meme, stating: 'One does not simply use HTTPS when it doesn't work' (obtained from imgflip)."></p>
 <p><em>This article is part of a series about installing and configuring a Mastodon instance on a cluster of Raspberry Pi computers running k3s. To go back to previous articles in the series, try any of the links below:</em></p>
 <ol type="1">
 <li><a href="../../posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/index.html">Introduction</a></li>
