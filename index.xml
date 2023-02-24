@@ -395,6 +395,19 @@ February 15, 2023. <a href="https://magsol.github.io/2023-02-15-calibrating-a-wi
 <h3 class="anchored" data-anchor-id="postamble">Postamble</h3>
 <p>That’s it for the prerequisites! At this point, you could pretty much spin up a Mastodon instance as configured. However, before getting to how I went about that process, I wanted to touch on one final problem I ran into, which–despite the nit-picky-ness of getting these arm64-compatible dependencies working–is where I <em>actually</em> spent most of my time trying to get Mastodon up and running: obtaining an SSL certificate through Let’s Encrypt.</p>
 <p>Until next time!</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Update: Feb 24, 2023
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Very recently, <a href="https://github.com/mastodon/chart/issues/22#issuecomment-1443232440">this post showed up</a> on a closed Mastodon helm chart ticket: it looks like Bitnami is now <strong>fully supporting ARM-compatible images on their DockerHub</strong> (I checked Postgres and it <a href="https://hub.docker.com/r/bitnami/postgresql/tags">does indeed have ARM tags on the builds</a>). I haven’t tried them out as of this update, but in theory it should more or less obviate the need for this entire post! Hooray, progress!</p>
+</div>
+</div>
 
 
 </section>
