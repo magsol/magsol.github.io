@@ -15,11 +15,11 @@ _This article is part of a series about installing and configuring a Mastodon in
 
  1. [Introduction](../2023-01-20-mastodon-instance-k3s-rpi-introduction/index.qmd)
  2. Part I: My home network topology _(this post)_
- 3. Part II: The Mastodon Helm chart
- 4. Part III: Configuring and installing prerequisites
- 5. Part IV: The waking nightmare that is Let's Encrypt
- 6. Part V: Actually installing Mastodon
- 7. Conclusions
+ 3. [Part II: The Mastodon Helm chart](../2023-01-25-mastodon-helm-chart/index.qmd)
+ 4. [Part III: Configuring and installing prerequisites](../2023-02-09-configuring-and-installing-prereqs/index.qmd)
+ 5. [Part IV: The waking nightmare that is Let's Encrypt](../2023-02-16-ssl-with-lets-encrypt/index.qmd)
+ 6. [Part V: Actually installing Mastodon](../2023-02-24-installing-and-configuring-mastodon/index.qmd)
+ 7. [Conclusions](../2023-02-28-mastodon-conclusions/index.qmd)
 
 Admittedly, this post in the series will be less "here's how to spin up your own instance" than "here's why I had so many problems that are specific just to me", so if you have a solid handle on your own home network topology and/or are a DNS savant, feel free to skip this post.
 

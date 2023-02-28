@@ -18,8 +18,8 @@ _This article is part of a series about installing and configuring a Mastodon in
  3. [Part II: The Mastodon Helm chart](../2023-01-25-mastodon-helm-chart/index.qmd)
  4. [Part III: Configuring and installing prerequisites](../2023-02-09-configuring-and-installing-prereqs/index.qmd)
  5. Part IV: The waking nightmare that is Let's Encrypt _(this post)_
- 6. Part V: Actually installing Mastodon
- 7. Conclusions
+ 6. [Part V: Actually installing Mastodon](../2023-02-24-installing-and-configuring-mastodon/index.qmd)
+ 7. [Conclusions](../2023-02-28-mastodon-conclusions/index.qmd)
 
 I want to start by saying: I am no expert here. As such, it is not only possible, but is in fact likely, that I was missing something so painfully obvious as to be worthy of derision for the rest of my natural life.
 

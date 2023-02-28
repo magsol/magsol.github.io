@@ -16,10 +16,10 @@ _This article is part of a series about installing and configuring a Mastodon in
  1. [Introduction](../2023-01-20-mastodon-instance-k3s-rpi-introduction/index.qmd)
  2. [Part I: My home network topology](../2023-01-23-mastodon-home-network-topology/index.qmd)
  3. Part II: The Mastodon Helm chart _(this post)_
- 4. Part III: Configuring and installing prerequisites
- 5. Part IV: The waking nightmare that is Let's Encrypt
- 6. Part V: Actually installing Mastodon
- 7. Conclusions
+ 4. [Part III: Configuring and installing prerequisites](../2023-02-09-configuring-and-installing-prereqs/index.qmd)
+ 5. [Part IV: The waking nightmare that is Let's Encrypt](../2023-02-16-ssl-with-lets-encrypt/index.qmd)
+ 6. [Part V: Actually installing Mastodon](../2023-02-24-installing-and-configuring-mastodon/index.qmd)
+ 7. [Conclusions](../2023-02-28-mastodon-conclusions/index.qmd)
 
 I don't know about you, dear reader, but when I first started this journey into teaching myself kubernetes, I was elated at the prospect of Helm: a "package manager for kubernetes", it said! Thank the cloudless heavens; I was getting so bogged down with managing separate yaml files, I was thrilled at the prospect of someone just setting some reasonable defaults and packaging it all together.
 

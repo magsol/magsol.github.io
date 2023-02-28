@@ -17,9 +17,9 @@ _This article is part of a series about installing and configuring a Mastodon in
  2. [Part I: My home network topology](../2023-01-23-mastodon-home-network-topology/index.qmd)
  3. [Part II: The Mastodon Helm chart](../2023-01-25-mastodon-helm-chart/index.qmd)
  4. Part III: Configuring and installing prerequisites _(this post)_
- 5. Part IV: The waking nightmare that is Let's Encrypt
- 6. Part V: Actually installing Mastodon
- 7. Conclusions
+ 5. [Part IV: The waking nightmare that is Let's Encrypt](../2023-02-16-ssl-with-lets-encrypt/index.qmd)
+ 6. [Part V: Actually installing Mastodon](../2023-02-24-installing-and-configuring-mastodon/index.qmd)
+ 7. [Conclusions](../2023-02-28-mastodon-conclusions/index.qmd)
 
 ### Preamble
 
