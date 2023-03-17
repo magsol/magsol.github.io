@@ -1,0 +1,91 @@
+---
+title: "At home during COVID-19"
+date: "2020-05-20 12:00:00"
+categories: [personal, professional, covid-19, sars-cov-2, work from home, zelda, pandemic, furbabies, zippy the cat, clover the bun]
+citation:
+    url: https://magsol.github.io/2020-05-20-working-from-home
+image: "instachaaz.png"
+image-alt: "A stick figure standing in front of a Wheel of Fortune style wheel, where each possible option is something regrettable, and the person's thought bubble says 'Ooh! Wonder what it's going to be today?'"
+author: "Shannon Quinn"
+---
+![Image source: [instachaaz](https://instachaaz.threadless.com/) (the stuff is awesome)](instachaaz.png){.preview-image fig-alt="A stick figure standing in front of a Wheel of Fortune style wheel, where each possible option is something regrettable, and the person's thought bubble says 'Ooh! Wonder what it's going to be today?'"}
+
+Well, this has certainly been a **unique** past couple of months. I had a lot of things in mind for the spring 2020 semester and beyond, but I can safely say it's all been completely upended now.
+
+I don't want to trivialize COVID-19 to the suburban equivalent of "can't go to the community pool for a few months because of a particularly bad case of the fiery poops;" there are real people whose livelihoods are suffering: financially, professionally, and literally, and I think the world as a whole would be a lot better off if we collectively recognized that and pitched in to help.
+
+The Lady and I have been establishing new habits and routines, while trying to maintain a semblance of normality during the pandemic. There have been a lot of snacks (peanut butter M&Ms, cookie dough ice cream, hint of lime chips, and of course, Lucky Charms cereal), some creativity in workplace setup (moved an extra computer monitor from upstairs, and set up a surge protector behind the dining table--also had to line one end of the table with aluminum foil, because our cat kept jumping up on the table from that side), and digging out some old mainstays.
+
+### Classics Never Go Out of Style
+
+Early on in the lockdown, The Lady and I kicked off a Zelda-thon, starting with _Skyward Sword_ on the Nintendo Wii. There's a strange story there: I'd purchased the game for her way back when we lived in separate apartments in Pittsburgh, because she was the Zelda fan between the two of us. Yeah, I'm a gamer, but she's a _Zelda_ gamer. It was a lot of fun to watch her play the game, and [I occasionally jumped in when she needed to tap out](https://www.youtube.com/watch?v=Cbwq8ev-EXA). But after reaching the penultimate boss, we just... stopped playing.
+
+For _eight years_. We knew this, because when we fired up the game again on the weekend of March 14, we saw the last save file pop up for March 28, 2012. Almost eight years _to the day_.
+
+Since The Lady played most of the game eight years ago, I ended up "driving" this time around. She jumped in whenever she wanted, but we ended up tearing through the game in **10 days**. It was pretty impressive, and it was great to finally see the end of the game that has been referenced SO MUCH in theory videos around _Breath of the Wild_ (which we'll get to!).
+
+Once we knocked out _Skyward Sword_, The Lady took the driver's seat for _Twilight Princess_. I'd never seen the game played start to finish, and had really never seen anything beyond the quests involving collecting light shards (which is, as I discovered, a meager portion of the game's introduction). Suffice to say, this one took a lot longer; most of the month of April, if memory serves.
+
+After that, I took a deep breath and fired up _Breath of the Wild_... in **Master Mode**. Yes, [I've posted about this game here before](https://magsol.github.io/2019-08-12-breath-of-the-wild), and we ended up beating it sometime in November 2019. But the DLC included an evil modification called "Master Mode", which among other terrible things, has the following effects:
+
+ - Every enemy in the game is upgraded by one level (red become blue, blue become brown, brown become silver, silver become [gold](https://cdn.gamer-network.net/2017/usgamer/Breath-of-the-Wild-DLC-Guide-header.jpg/EG11/thumbnail/1920x1080/format/jpg/quality/65/18-12-2018-the-legend-of-zelda-breath-of-the-wild-dlc-everything-we-know.jpg), a brand-new level)
+ - Enemies heal when they've been out of combat for two seconds (not hyperbole; literally two seconds)
+ - Brand-new [floating platforms](https://imgix.bustle.com/mic/knzgpkctoycksfpvki9e3kuc7fozfcugpfqn63lps6nee90vzthnydlbjtvt26lx.jpg?w=1020&h=576&fit=crop&crop=faces&auto=format%2Ccompress&cs=srgb&q=70) with enemies, because fuck you that's why
+
+It is _brutal_, especially in the first quarter of the game. You end up skipping fights by default, sneaking around a lot more, and fighting as though you cannot take a single hit (because in all likelihood, you can't). I haven't finished it yet, but just this past weekend we completed the last of the DLC "Ballad of the Champions," so really the only thing left of the Main Quests is to destroy Calamity Ganon.
+
+Once this is done, The Lady plans to break out the game that really and truly started it all: _Ocarina of Time_, which I've also never seen played start to finish, so that will be fun to watch!
+
+On a completely separate video gaming front, I managed to get a Stargate mod working for _Sins of a Solar Empire_, and even started playing a small 1v1 as the Ancients against the Wraith. It looks incredible!
+
+![For fans of _Stargate: Universe_, you'll recognize this class of Ancient ship.](destiny.jpg){fig-alt="A screenshot from Sins of a Solar Empire."}
+
+![Fans of both _SG-1_ and _Atlantis_ will instantly recognize this "gate ship"!](gateship.jpg){fig-alt="A screenshot from Sins of a Solar Empire."}
+
+![This looks like a scene straight out of the _Atlantis_ finale!](superhive.jpg){fig-alt="A screenshot from Sins of a Solar Empire."}
+
+I can't wait to explore some of the other races--Asgard, Goa'uld, and Ori round out the playable races, while a recent update includes some "minor factions" that are always AI-controlled but can still change the dynamics of play: Tau'ri (that's us!), Free Jaffa, Vanir (rogue Asgard offshoot seen in _Atlantis_), and Michael's Hybrids.
+
+### Variety is the Pribe of Libe
+
+While The Lady and I have been re-visiting the classics to keep us grounded, we've also been branching out.
+
+First, like most, we tried our hand at baking sourdough. And, frankly, it turned out incredible!
+
+![Sourdough bread, like everyone else.](sourdough.jpg){fig-alt="A picture of finished homemade sourdough bread."}
+
+We've since baked a new recipe of chocolate chip cookies (which _mostly_ turned out chewy), and have plans to whip up some butterscotch bars.
+
+We've also been starting up some regular remote get-togethers, from weekly chats with my family to weekly post-run "coffee chats" with some of our running friends. We'll go out for runs by ourselves, come home, get cleaned up, and FaceTime each other while making coffee and getting ready for the day. We're also about to try out remote gaming tomorrow with some friends of ours from Pittsburgh--they, like us, are big board gaming geeks. I'm not sure exactly what we're going to play or how it'll pan out, but I'm excited to try!
+
+The Lady and I took a page from a [recent list of recommended quarantine board games](https://arstechnica.com/gaming/2020/04/the-best-board-games-to-play-with-your-quarantined-housemates/) and purchased _Star Realms_. Think: a super-simple mash-up of _Magic: The Gathering_ and _Dominion_. It's a deck-building game with a common "market" of cards you can purchase, and the goal is to use those cards to bludgeon your opponent to death in the most sci-fi manner possible. Meanwhile, I sunk several days in over at [Hero Forge](https://www.heroforge.com/) designing avatars for her and me. I think they came out pretty well!
+
+![](heroforge.jpg){fig-alt="A picture of finished minis from HeroForge."}
+
+Speaking of remote activities together, we actually did try our hand at a "remote viewing" of a movie, and it worked remarkably well! Two of our runners friends joined us to watch _A League Of Their Own_, both because one of them had never seen it before, and because of [last week's news that the last of the original Rockford Peaches passed away at 101](https://bleacherreport.com/articles/2890923-mary-pratt-last-surviving-rockford-peach-dies-at-age-101). We'd originally hoped to use a video synchronization platform like [Netflix Party](https://www.netflixparty.com/), but Netflix doesn't have _A League Of Their Own_; Amazon Prime does. So we looked into [Kast](https://www.kastapp.co/), but after 30 minutes of tinkering, it was clear the app is still too young and rough around the edges; we were constantly having either sound or video issues. So we did it the old-fashioned way: fired up a Zoom chat, and counted down to hitting "Play" out loud. And it actually worked quite well! We were never more than 20 seconds off each other.
+
+![](aloto.jpg){fig-alt="A meme from A League Of Their Own with Tom Hanks yelling 'There's no crying in baseball!'"}
+
+Our sudden and constant presence all day every may have caught our pets off guard, but they sure seem to be enjoying it. Zippy is scampering around us, jumping on our laps, and trying to jump on our work table one minute, then is passed out on the couch for hours on end the next. Clover, meanwhile, seems to find a napping spot anywhere she goes, but has started expecting treats at all hours of the day (partly our fault for giving her the occasional piece of banana with breakfast... and piece of fruit or veggie for lunch... and for dinner... ). 
+
+![](aminals.jpg){fig-alt="Both our black cat Zippy and white rabbit Clover, sitting on different levels of a pet tree."}
+
+One of the biggest changes on my end (besides the obvious, of course), was buying a new laptop. This has been on my list for several months, as my aging MacBook Pro Mid-2014 has been struggling more and more to keep up with workloads. When the new laptop arrived, it took three entire days to fully transfer and configure it just right; I'm still coming across things here and there that need to be fully fleshed out (e.g., screen saver still isn't the picture collage, and it's not properly password protected, and the desktop backgrounds don't switch out, and other small but noticeable things).
+
+But the thing I wasn't expecting that hit me really hard when it was time to shut down, wipe, and ship out the old laptop was the melancholy.
+
+I'd purchased this old laptop (aptly-named "Apollo") in September 2014 in the throes of writing my dissertation. I remember it distinctly: sitting in the Squirrel Hill Starbucks, ear pods in, listening to some Pandora station while typing away in the Latex document... when suddenly my ear pods _screeeeeched_, my screen froze, and moments later, my ear pods went silent and the screen went dark. I rebooted, and... nothing. According to the Apple Geniuses later that evening, the motherboard has inexplicably fried. It was well out of warranty, so my only option was to purchase a brand-new laptop.
+
+![](apollo.jpg){fig-alt="My old mid-2014 MacBook Pro. RIP."}
+
+That was Apollo. It got me through my PhD dissertation and defense, the move to Athens and the start of my tenure-track position at UGA, and through the first five years of it--well into my promotion and tenure process, my first couple of successful grants, and so, so many papers. It was a veritable workhorse of a laptop that, with a little sprucing up, still has some life in it.
+
+Now, I have a laptop that is literal orders of magnitude more powerful than the previous one, yet it has huge shoes to fill. We'll see if the new laptop--[Dinraal](https://www.zeldadungeon.net/wiki/images/5/52/Dinraal.jpg)--is up to the task.
+
+![](dinraal.jpg){fig-alt="My new mid-2020 MacBook Pro."}
+
+### What's next?
+
+Not sure, honestly. We're taking it one day at a time. We're being kind to each other and ourselves. We're trying to be safe, not just for us, but for everyone else around us. 
+
+Stay safe and happy, my friends.
