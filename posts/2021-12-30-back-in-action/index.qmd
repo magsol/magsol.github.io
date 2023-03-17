@@ -1,0 +1,50 @@
+---
+title: "Back in Action"
+date: "2021-12-30 16:25:00"
+categories: [personal, blogging, python, pelican, dependency hell]
+citation:
+    url: https://magsol.github.io/2021-12-30-back-in-action
+image: "https://c.tenor.com/ZFc20z8DItkAAAAd/facepalm-really.gif"
+image-alt: "Facepalm gif meme from The Office."
+author: "Shannon Quinn"
+---
+![](https://c.tenor.com/ZFc20z8DItkAAAAd/facepalm-really.gif){.preview-image fig-alt="Facepalm gif meme from The Office."}
+
+It's been a day/week/month/year/decade, this 2021.
+
+I apologize for my long silence. Turns out, there are a couple of Pelican plugins that neither play nice with each other, nor with the steady march of upgraded Jupyter components.
+
+Turns out, two plugins I rely on--[liquid-tags](https://github.com/pelican-plugins/liquid-tags) and [pelican-jupyter](https://github.com/danielfrg/pelican-jupyter)--tend to nuke one another when used in parallel. Not surprising, given they both use the exact same underlying registration protocol for adding new liquid tags, so I guess the real mystery is how these two *ever* worked at all!
+
+Nevertheless, I found that I *either* have Jupyter notebooks render in all their code-by-text-by-figures beauty, *or* embed images and videos. Couldn't have both. After doing some searching and getting the distinct feeling that no one else really cared about the situation, I briefly considered switching static blog devices before regaining a shred of sanity and taking a second look: after all, since both plugins were using the same backend, surely I could jury-rig a solution where I smashed the two together and forced them to play nice?
+
+Turns out, that's pretty much what I did, but [with a crucial assist](https://github.com/danielfrg/pelican-jupyter/issues/126#issuecomment-1003171465) from the maintainer of the pelican-jupyter plugin. There's an extra config I needed to suppress some of the more problematic CSS from the Jupyter notebooks (this fixed a very strange template error I was getting when compiling the blog), but I still needed a kludge to get the two plugins to even cooperate.
+
+I figured out that by copying two files from the pelican-jupyter plugin over to the liquid-tags plugin--specifically, `core.py` and `liquid.py` (though `liquid.py` had to be renamed to `notebook.py` after the move)--I could essentially merge the two plugins into one. I did have to make some changes to the `liquid.py`/`notebook.py` imports at the top, so they looked like this:
+
+```{.python}
+from .core import get_html_from_filepath, parse_css
+from .liquid_tags import register  # noqa
+from .mdx_liquid_tags import LiquidTags
+```
+
+so that they referenced the *local* versions of `liquid_tags.py` and `mdx_liquid_tags.py` (as they were essentially identical to the ones provided by the pelican-jupyter plugin).
+
+Beyond that, the relevant portions of my `pelicanconf.py` now looked like this:
+
+```{.python}
+from pelican.plugins import liquid_tags
+PLUGINS = [
+        liquid_tags,                # regular ol' liquid tags
+]
+
+LIQUID_TAGS = ["img", "include_code", "gram", "video", "youtube", "notebook"]
+
+LIQUID_CONFIGS = (("IPYNB_FIX_CSS", "False", ""), 
+                  ("IPYNB_SKIP_CSS", "False", ""), 
+                  ("IPYNB_EXPORT_TEMPLATE", "base", ""),)
+```
+
+It's a bit odd, since I technically do have the pelican-jupyter plugin installed, but I haven't imported it. Instead, I basically smashed it into the liquid-tags plugin, overwriting the "notebook" tag that was already there (it's old, it sucks) and running with it.
+
+So yeah! I'm back up and running. Have LOADS to talk about, so stick around!
