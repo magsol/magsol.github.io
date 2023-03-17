@@ -39,7 +39,7 @@
 <li>Conclusions <em>(this post)</em></li>
 </ol>
 <p>I know what you’re thinking:</p>
-<p></p><div id="tweet-64129"></div><script>tweet={"url":"https:\/\/twitter.com\/dexhorthy\/status\/856639005462417409","author_name":"dex","author_url":"https:\/\/twitter.com\/dexhorthy","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EDeployed my blog on Kubernetes \u003Ca href=\"https:\/\/t.co\/XHXWLrmYO4\"\u003Epic.twitter.com\/XHXWLrmYO4\u003C\/a\u003E\u003C\/p\u003E&mdash; dex (@dexhorthy) \u003Ca href=\"https:\/\/twitter.com\/dexhorthy\/status\/856639005462417409?ref_src=twsrc%5Etfw\"\u003EApril 24, 2017\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-64129").innerHTML = tweet["html"];</script><p></p>
+<p></p><div id="tweet-90702"></div><script>tweet={"url":"https:\/\/twitter.com\/dexhorthy\/status\/856639005462417409","author_name":"dex","author_url":"https:\/\/twitter.com\/dexhorthy","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EDeployed my blog on Kubernetes \u003Ca href=\"https:\/\/t.co\/XHXWLrmYO4\"\u003Epic.twitter.com\/XHXWLrmYO4\u003C\/a\u003E\u003C\/p\u003E&mdash; dex (@dexhorthy) \u003Ca href=\"https:\/\/twitter.com\/dexhorthy\/status\/856639005462417409?ref_src=twsrc%5Etfw\"\u003EApril 24, 2017\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-90702").innerHTML = tweet["html"];</script><p></p>
 <p>And honestly… you’re not wrong.</p>
 <section id="running-mastodon-has-gotten-easier" class="level3">
 <h3 class="anchored" data-anchor-id="running-mastodon-has-gotten-easier">Running Mastodon has gotten easier</h3>
@@ -1116,7 +1116,7 @@ Shannon Quinn. 2022. <span>“Pardon de Dust (2).”</span> December 13,
 <section id="legal-disclaimer" class="level3">
 <h3 class="anchored" data-anchor-id="legal-disclaimer">Legal Disclaimer</h3>
 <p>At least, I’ll keep tinkering until copyright catches up… which, on that note, I should mention: I agree with everything in this twitter thread on the topic. I want to end on this note, because I think this is very important to keep in mind.</p>
-<p></p><div id="tweet-36234"></div><script>tweet={"url":"https:\/\/twitter.com\/BunchesOfBees\/status\/1553079149232734208","author_name":"Christopher","author_url":"https:\/\/twitter.com\/BunchesOfBees","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EA thing that makes me absolutely insane with discussions about &quot;AI&quot; image generation is their creators freely argue literally both sides of an opposing argument depending on what argument you&#39;re trying to have with them\u003C\/p\u003E&mdash; Christopher (@BunchesOfBees) \u003Ca href=\"https:\/\/twitter.com\/BunchesOfBees\/status\/1553079149232734208?ref_src=twsrc%5Etfw\"\u003EJuly 29, 2022\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-36234").innerHTML = tweet["html"];</script><p></p>
+<p></p><div id="tweet-90933"></div><script>tweet={"url":"https:\/\/twitter.com\/BunchesOfBees\/status\/1553079149232734208","author_name":"Christopher","author_url":"https:\/\/twitter.com\/BunchesOfBees","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EA thing that makes me absolutely insane with discussions about &quot;AI&quot; image generation is their creators freely argue literally both sides of an opposing argument depending on what argument you&#39;re trying to have with them\u003C\/p\u003E&mdash; Christopher (@BunchesOfBees) \u003Ca href=\"https:\/\/twitter.com\/BunchesOfBees\/status\/1553079149232734208?ref_src=twsrc%5Etfw\"\u003EJuly 29, 2022\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-90933").innerHTML = tweet["html"];</script><p></p>
 <p>Keep in mind, I am not a lawyer, but based on my read there are two legal interpretations of these models: as an <em>author</em> that learns and creates novel work, or a <em>product</em> that synthesizes derivative works. In the case of the former, any kind of substantive duplication of existing work created by someone else is copyright infringement; and in the case of the latter, it’s using novel, <em>unlicensed</em> work in a paid product, which is also copyright infringement.</p>
 <p>As someone whose background is in exactly this kind of generative “AI” work, I would generally fall under the latter interpretation of these models as a product (what they “learn” is dubious at best; I would never call their reproductions “novel”). As such, I also agree with the tweet’s author that the moment these companies begin monetizing these models is when, at the very least, they’ve committed a moral rights violation. It’s the same exact reason I’m very uncomfortable with the <a href="https://github.com/features/copilot">GitHub CoPilot product</a>: it’s been trained using billions of lines of code that was written, tested, debugged, scrutinized, and labored over by humans <em>who did not consent to nor were reimbursed for having their code used in a paid product</em>.</p>
 <p>That last tweet in the thread is particularly poignant for me, and distills much of the reason for my disillusionment with the tech sector in general. I’m sorry to end on such a sour note, but while I do love the amazing things machine learning is doing, we have to keep at the forefront of our minds that <a href="https://vicki.substack.com/p/neural-nets-are-just-people-all-the">machine learning is, ultimately, a human endeavor</a>, and if it won’t work without humans, we should make sure those humans are <em>taken care of</em>: recognition, compensation, empathy, and so on.</p>
@@ -1335,7 +1335,7 @@ Warning
 </div>
 </div>
 <p>Jerry Seinfeld isn’t on board with Festivus this year.</p>
-<p></p><div id="tweet-45458"></div><script>tweet={"url":"https:\/\/twitter.com\/JerrySeinfeld\/status\/1341820840149733377","author_name":"Jerry Seinfeld","author_url":"https:\/\/twitter.com\/JerrySeinfeld","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EMaybe just this once, just for this Festivus 2020, we take pass on the “Airing of Grievances”..\u003C\/p\u003E&mdash; Jerry Seinfeld (@JerrySeinfeld) \u003Ca href=\"https:\/\/twitter.com\/JerrySeinfeld\/status\/1341820840149733377?ref_src=twsrc%5Etfw\"\u003EDecember 23, 2020\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-45458").innerHTML = tweet["html"];</script><p></p>
+<p></p><div id="tweet-13880"></div><script>tweet={"url":"https:\/\/twitter.com\/JerrySeinfeld\/status\/1341820840149733377","author_name":"Jerry Seinfeld","author_url":"https:\/\/twitter.com\/JerrySeinfeld","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EMaybe just this once, just for this Festivus 2020, we take pass on the “Airing of Grievances”..\u003C\/p\u003E&mdash; Jerry Seinfeld (@JerrySeinfeld) \u003Ca href=\"https:\/\/twitter.com\/JerrySeinfeld\/status\/1341820840149733377?ref_src=twsrc%5Etfw\"\u003EDecember 23, 2020\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-13880").innerHTML = tweet["html"];</script><p></p>
 <p>I get it, I do. And I respect it. But I’m gonna air me some grievances. My therapist has continued to insist that I do what I need and not to feel guilty about it, and right now I need to air some <em>fucking</em> grievances. So strap in folks; here we go.</p>
 <p>Running has been a sick joke for most of this year. I’ve been logging miles with some kind of GPS watch since mid-2011, and 2020 has been the lowest-mileage year by a massive margin. For comparison, long-time readers may remember the boondoggles of 2015-2016 when I had metatarsalgia in my feet. Both those years, I still managed to tip the 1,000-mile scale. This year? <strong>711 miles</strong>. Fuck that shit. Running wasn’t an escape; it was a fucking trap of preferring the evil I knew over the evil I didn’t.</p>
 <p>Of course, halting my running didn’t help much, either. I was still exhausted beyond all measures, and not just physically: mentally, emotionally, and grammatically <em>burned. out.</em> I managed a couple of walks most days, largely amounting to 10,000 steps or thereabouts, so I guess I met the minimum recommended daily physical activity threshold for the most part. But boy did running leave me stuck with the bill this year.</p>
@@ -1361,7 +1361,7 @@ Warning
 <p>Seems reasonable, right? Until you include the surrounding context: this person initially claimed Trump should take credit for “Operation Warp Speed,” followed by a hand-waving rationalization of the <a href="https://www.cnn.com/2020/12/29/politics/vaccine-rollout-behind-schedule/index.html">slow</a> <a href="https://www.washingtonpost.com/opinions/2020/12/29/covid-19-vaccine-distribution-slow-testing/">vaccine</a> <a href="https://www.nbcnews.com/news/us-news/current-rate-it-ll-be-10-years-americans-adequately-vaccinated-n1252486">rollout</a> by blaming supply chain hiccups that come with large-scale product manufacturing. Ignoring, of course, that a vaccine has literally been the single goal of the entire US public health sector since January 2020; how the infrastructure for such a rollout wasn’t in place by the summer is a sin worthy of excommunication. But rather than admit as much, we get the above response.</p>
 <p>It’s <strong>infuriating</strong> that we can’t just let the experts do their fucking jobs; instead, we have to stake out some pointless fucking pseudo-centrist landscape that doesn’t exist, for the purpose of… what? Appealing to the better demons of both sides? That would be reasonable, except for the small problem of one side being a highly imperfect conglomerate of diverse and often conflicting viewpoints, and the other side being a militaristic theocrat’s wet dream. But sure, states’ rights and framers’ intent and all that.</p>
 <p>Oh, that reminds me: I am fucking DONE with <a href="https://en.wikipedia.org/wiki/Originalism">originalism</a> (yes, that goes for the Bible too). There is no 21st-century world in which the intentions of 18th century slaveholders would be remotely interesting, worth considering, or at all relevant. Much like how <a href="https://xkcd.com/1357/">an argument of free speech is effectively a concession</a>, an argument of framers’ intent is likewise an indication that your argument stands on the rhetorical equivalent of a sinkhole; continuing to scream “bUt ThE fRaMeRs!” only reveals your partisan / intellectual / insert motivated reasoning hackery here.</p>
-<p></p><div id="tweet-50977"></div><script>tweet={"url":"https:\/\/twitter.com\/dril\/status\/134787490526658561","author_name":"wint","author_url":"https:\/\/twitter.com\/dril","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003E&quot;im not owned!  im not owned!!&quot;, i continue to insist as i slowly shrink and transform into a corn cob\u003C\/p\u003E&mdash; wint (@dril) \u003Ca href=\"https:\/\/twitter.com\/dril\/status\/134787490526658561?ref_src=twsrc%5Etfw\"\u003ENovember 11, 2011\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-50977").innerHTML = tweet["html"];</script><p></p>
+<p></p><div id="tweet-36756"></div><script>tweet={"url":"https:\/\/twitter.com\/dril\/status\/134787490526658561","author_name":"wint","author_url":"https:\/\/twitter.com\/dril","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003E&quot;im not owned!  im not owned!!&quot;, i continue to insist as i slowly shrink and transform into a corn cob\u003C\/p\u003E&mdash; wint (@dril) \u003Ca href=\"https:\/\/twitter.com\/dril\/status\/134787490526658561?ref_src=twsrc%5Etfw\"\u003ENovember 11, 2011\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-36756").innerHTML = tweet["html"];</script><p></p>
 <p>Oh, one final grievance. With all due respect to Bill Watterson: <a href="https://www.gocomics.com/calvinandhobbes/1993/05/11">excessively positive people</a>. In fact, we’ve even come up with a name for this: toxic positivity. Emphasizing the positive in a given situation, <strong>with the unstated assumption</strong> that said positives entirely cancel out all negatives. It’s been coming up a lot in the context of the pandemic: “well the pandemic has been bad but at least I haven’t had to see my boss as much!”, as if the two things were even remotely on the same playing field. Granted, it’s a specific incarnation of the more general ALWAYS LOOK ON THE BRIGHT SIDE mantra, but it’s important to understand that, as complex human beings, we are capable of holding <em>more than one truth</em> in our heads simultaneously.</p>
 <p>2020 is both the year Z entered our lives, and it can also die in a fucking fire. Both are true.</p>
 
@@ -1740,6 +1740,212 @@ Shannon Quinn. 2019. <span>“StarCraft II Questions.”</span> January 31,
   <media:content url="https://magsol.github.io/posts/2019-01-31-starcraft-ii-questions/do_you_wanna_play_sc2.jpeg" medium="image" type="image/jpeg"/>
 </item>
 <item>
+  <title>An einsum use-case</title>
+  <dc:creator>Shannon Quinn</dc:creator>
+  <link>https://magsol.github.io/posts/2018-06-19-einsum/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><img src="https://magsol.github.io/posts/2018-06-19-einsum/kOqM5.png" class="preview-image img-fluid" alt="A diagram of Einstein summations. Source: https://stackoverflow.com/questions/26089893/understanding-numpys-einsum ."></p>
+<p>Recently I’ve been working with some of my students on a paper for the <a href="https://scipy2018.scipy.org/">SciPy Conference</a> related to our OrNet project. Part of this involved designing our own <a href="https://en.wikipedia.org/wiki/Mixture_model#Gaussian_mixture_model">Gaussian Mixture Model</a> (GMM). In doing so, I somewhat accidentally-on-purpose stumbled upon the beauty of <code>einsum</code>. So I wanted to briefly motivate its use (expanding upon the <a href="https://medium.com/the-quarks/an-einsum-use-case-8dafcb933c66">short use-case I wrote on my research group’s blog</a>) and show the performance results of re-implementing iterative computations using <code>einsum</code>.</p>
+<section id="gaussian-madness" class="level3">
+<h3 class="anchored" data-anchor-id="gaussian-madness">Gaussian Madness</h3>
+<p>One of the critical steps of this algorithm is to evaluate the probability of any given point <img src="https://latex.codecogs.com/png.latex?%5Cvec%7Bx%7D"> under the model that we’ve learned so far (the current values of <img src="https://latex.codecogs.com/png.latex?%5Cvec%7B%5Cmu%7D"> and <img src="https://latex.codecogs.com/png.latex?%5CSigma">. In higher dimensions (as in, higher than 1), this has a pretty tricky formula:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AP(%5Cvec%7Bx%7D%20%7C%20%5Cvec%7B%5Cmu%7D,%20%5CSigma)%20=%20%5Cfrac%7B%5Cexp%7B(-%5Cfrac%7B1%7D%7B2%7D(%5Cvec%7Bx%7D%20-%20%5Cvec%7B%5Cmu%7D)%5ET%20%5CSigma%5E%7B-1%7D%20(%5Cvec%7Bx%7D%20-%20%5Cvec%7B%5Cmu%7D)%20)%7D%7D%20%7B%5Csqrt%7B(2%20%5Cpi)%5E2%20%5Cdet%7B(%5CSigma)%7D%20%7D%7D%0A"></p>
+<p>It’s…messy. The things that make it particularly tough to efficiently evaluate include:</p>
+<ul>
+<li>the matrix multiplication in the numerator</li>
+<li>the inversion of <img src="https://latex.codecogs.com/png.latex?%5CSigma"> in the numerator</li>
+<li>the determinant of <img src="https://latex.codecogs.com/png.latex?%5CSigma"> in the denominator</li>
+<li><strong>the fact that this has to be computed for <em>every</em> <img src="https://latex.codecogs.com/png.latex?%5Cvec%7Bx%7D"> (thousands), under <em>every</em> combination of <img src="https://latex.codecogs.com/png.latex?%5Cmu"> and <img src="https://latex.codecogs.com/png.latex?%5CSigma"> (often a few dozen), at <em>every</em> iteration of the algorithm (often a few dozen)</strong></li>
+</ul>
+<p>But wait! That’s not all!</p>
+<p>Also critical to the GMM are the <em>update</em> steps: re-estimating the current values of the parameters so they (hopefully) better fit your data. This happens <em>a lot</em>!</p>
+<p>In multidimensional wonderlands, the updates of the parameters look something like this:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cvec%7B%5Cmu%7D_%7Bki%7D%20=%20%5Cfrac%7B1%7D%7BN_k%7D%20%5Csum_%7Bn%20=%201%7D%5EN%20r_%7Bkn%7D%20%5Cvec%7Bx%7D_n%0A"></p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5CSigma_%7Bki%7D%20=%20%5Cfrac%7B1%7D%7BN_k%7D%20%5Csum_%7Bn%20=%201%7D%5EN%20r_%7Bkn%7D%20(%5Cvec%7Bx%7D_n%20-%20%5Cvec%7B%5Cmu%7D_%7Bki%7D)(%5Cvec%7Bx%7D_n%20-%20%5Cvec%7B%5Cmu%7D_%7Bki%7D)%5ET%0A"></p>
+<p>The first equation for <img src="https://latex.codecogs.com/png.latex?%5Cvec%7B%5Cmu%7D_%7Bki%7D">–the <img src="https://latex.codecogs.com/png.latex?k%5E%7Bth%7D"> component (one of the 50-100) at the <img src="https://latex.codecogs.com/png.latex?i%5E%7Bth%7D"> iteration (often at least a few dozen)–is a “fairly” easy multiplication of each data point <img src="https://latex.codecogs.com/png.latex?%5Cvec%7Bx%7D_n"> by some number <img src="https://latex.codecogs.com/png.latex?r_%7Bkn%7D">, all summed up and scaled by <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B1%7D%7BN_k%7D">.</p>
+<p>The second equation is a lot harder.</p>
+<p>For every <img src="https://latex.codecogs.com/png.latex?%5Cvec%7B%5Cmu%7D_%7Bki%7D"> we have a corresponding <img src="https://latex.codecogs.com/png.latex?%5CSigma_%7Bki%7D">. Which, remember, is a full matrix. This involves taking the <img src="https://latex.codecogs.com/png.latex?%5Cvec%7B%5Cmu%7D_%7Bki%7D"> we computed in the first equation, and computing outer products with every data point <img src="https://latex.codecogs.com/png.latex?%5Cvec%7Bx%7D_n">.</p>
+<p>“Outer product” is a fancy name for “matrix multiplication”!</p>
+</section>
+<section id="bring-on-the-code" class="level3">
+<h3 class="anchored" data-anchor-id="bring-on-the-code">Bring on the Code</h3>
+<div class="cell" data-execution_count="1">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;">import</span> numpy <span class="im" style="color: #00769E;">as</span> np</span>
+<span id="cb1-2"><span class="im" style="color: #00769E;">import</span> scipy.linalg <span class="im" style="color: #00769E;">as</span> sla</span></code></pre></div>
+</details>
+</div>
+<p>So of course, I initially implemented these two core operations in the way that made the most sense: using <code>numpy</code> functions and Python comprehensions.</p>
+<p><strong>For computing <img src="https://latex.codecogs.com/png.latex?P(%5Cvec%7Bx%7D)"></strong>:</p>
+<div class="cell" data-execution_count="2">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="kw" style="color: #003B4F;">def</span> px1(X, mu, sigma):</span>
+<span id="cb2-2">    det <span class="op" style="color: #5E5E5E;">=</span> sla.det(sigma)</span>
+<span id="cb2-3">    inv <span class="op" style="color: #5E5E5E;">=</span> sla.inv(sigma)</span>
+<span id="cb2-4">    p <span class="op" style="color: #5E5E5E;">=</span> np.array([(x <span class="op" style="color: #5E5E5E;">-</span> mu).dot(inv).dot(x <span class="op" style="color: #5E5E5E;">-</span> mu) <span class="cf" style="color: #003B4F;">for</span> x <span class="kw" style="color: #003B4F;">in</span> X])</span>
+<span id="cb2-5">    n <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">1</span> <span class="op" style="color: #5E5E5E;">/</span> ((((<span class="dv" style="color: #AD0000;">2</span> <span class="op" style="color: #5E5E5E;">*</span> np.pi) <span class="op" style="color: #5E5E5E;">**</span> <span class="dv" style="color: #AD0000;">2</span>) <span class="op" style="color: #5E5E5E;">*</span> det) <span class="op" style="color: #5E5E5E;">**</span> <span class="fl" style="color: #AD0000;">0.5</span>)</span>
+<span id="cb2-6">    px <span class="op" style="color: #5E5E5E;">=</span> np.exp(<span class="op" style="color: #5E5E5E;">-</span><span class="fl" style="color: #AD0000;">0.5</span> <span class="op" style="color: #5E5E5E;">*</span> p) <span class="op" style="color: #5E5E5E;">*</span> n</span>
+<span id="cb2-7">    <span class="cf" style="color: #003B4F;">return</span> px</span></code></pre></div>
+</details>
+</div>
+<p>And <strong>for re-computing <img src="https://latex.codecogs.com/png.latex?%5Cmu"> and <img src="https://latex.codecogs.com/png.latex?%5CSigma"></strong>:</p>
+<div class="cell" data-execution_count="3">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="kw" style="color: #003B4F;">def</span> musig1(X, r):</span>
+<span id="cb3-2">    N <span class="op" style="color: #5E5E5E;">=</span> r.<span class="bu" style="color: null;">sum</span>()</span>
+<span id="cb3-3">    mu_next <span class="op" style="color: #5E5E5E;">=</span> (r[:, np.newaxis] <span class="op" style="color: #5E5E5E;">*</span> X).<span class="bu" style="color: null;">sum</span>(axis <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">0</span>) <span class="op" style="color: #5E5E5E;">/</span> N</span>
+<span id="cb3-4">    </span>
+<span id="cb3-5">    s <span class="op" style="color: #5E5E5E;">=</span> np.zeros(shape <span class="op" style="color: #5E5E5E;">=</span> (X.shape[<span class="dv" style="color: #AD0000;">1</span>], X.shape[<span class="dv" style="color: #AD0000;">1</span>]))</span>
+<span id="cb3-6">    <span class="cf" style="color: #003B4F;">for</span> x, ri <span class="kw" style="color: #003B4F;">in</span> <span class="bu" style="color: null;">zip</span>(X <span class="op" style="color: #5E5E5E;">-</span> mu_next, r):</span>
+<span id="cb3-7">        s <span class="op" style="color: #5E5E5E;">+=</span> (np.outer(x, x) <span class="op" style="color: #5E5E5E;">*</span> ri)</span>
+<span id="cb3-8">    sigma_next <span class="op" style="color: #5E5E5E;">=</span> s <span class="op" style="color: #5E5E5E;">/</span> N</span>
+<span id="cb3-9"></span>
+<span id="cb3-10">    <span class="cf" style="color: #003B4F;">return</span> mu_next, sigma_next</span></code></pre></div>
+</details>
+</div>
+<p>These were computational <em>bears</em>. In <code>px1</code>, the line starting <code>p = ...</code> is a <em>huge</em> computational cost: doing two dot products inside a loop over all the data points <img src="https://latex.codecogs.com/png.latex?%5Cvec%7Bx%7D_n"> is really, really expensive.</p>
+<p>And in <code>musig1</code>, the operation to compute the next value of <img src="https://latex.codecogs.com/png.latex?%5CSigma"> involves computing the outer product of every <img src="https://latex.codecogs.com/png.latex?%5Cvec%7Bx%7D_n"> subtracted by the current value of <img src="https://latex.codecogs.com/png.latex?%5Cvec%7B%5Cmu%7D">.</p>
+<p>Suffice to say, when it came time to actually run the algorithm, it shouldn’t come as a surprise that, with a dataset of roughly 130,000 points in 2 dimensions, each iteration of our algorithm took about <strong>52 seconds</strong>.</p>
+<p>…the <em>vast majority</em> of which was spent computing dot products!</p>
+<p><img src="https://magsol.github.io/posts/2018-06-19-einsum/before.png" class="img-fluid" alt="Python profiling results before any optimizations."></p>
+<p>More than half of a single iteration was devoted to dot products in the <code>px1</code> function above. That’s <em>bad</em>.</p>
+<p>Just for grins, let’s time everything:</p>
+<div class="cell" data-execution_count="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1">X <span class="op" style="color: #5E5E5E;">=</span> np.random.random(size <span class="op" style="color: #5E5E5E;">=</span> (<span class="dv" style="color: #AD0000;">130000</span>, <span class="dv" style="color: #AD0000;">2</span>))  <span class="co" style="color: #5E5E5E;"># To simulate the data I was working with.</span></span>
+<span id="cb4-2">mu <span class="op" style="color: #5E5E5E;">=</span> X.mean(axis <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">0</span>)  <span class="co" style="color: #5E5E5E;"># Compute an actual mean.</span></span>
+<span id="cb4-3">sigma <span class="op" style="color: #5E5E5E;">=</span> np.array([[<span class="dv" style="color: #AD0000;">5</span>, <span class="dv" style="color: #AD0000;">0</span>], [<span class="dv" style="color: #AD0000;">0</span>, <span class="dv" style="color: #AD0000;">5</span>]])</span>
+<span id="cb4-4">r <span class="op" style="color: #5E5E5E;">=</span> np.random.random(<span class="dv" style="color: #AD0000;">130000</span>)</span></code></pre></div>
+</details>
+</div>
+<div class="cell" data-execution_count="5">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><span class="op" style="color: #5E5E5E;">%</span>timeit px1(X, mu, sigma)</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>267 ms ± 3.88 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="6">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><span class="op" style="color: #5E5E5E;">%</span>timeit musig1(X, r)</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>563 ms ± 9.38 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)</code></pre>
+</div>
+</div>
+<p>That’s a full second of computation just for 1 of the Gaussian components (i.e., one pair of <img src="https://latex.codecogs.com/png.latex?%5Cmu"> and <img src="https://latex.codecogs.com/png.latex?%5CSigma">). Crank that number of components up to 50 and, well, there’s your ~50-second runtime.</p>
+<p>I was admittedly at a bit of a loss here, considering I was already using NumPy constructs. But at the same time, these were highly structured linear algebra operations; there had to be something more efficient?</p>
+</section>
+<section id="einsum-to-the-rescue" class="level3">
+<h3 class="anchored" data-anchor-id="einsum-to-the-rescue"><code>einsum</code> to the Rescue</h3>
+<p>DISCLAIMER: I should highlight that I <em>didn’t immediately land on this</em>. It took some Googling around and some sitting and thinking before I figured out how this could be used. Then it took some more trial-and-error to actually get it to work.</p>
+<p>But work, it did. Holy crap.</p>
+<p><code>np.einsum</code> is an implementation of the <a href="http://mathworld.wolfram.com/EinsteinSummation.html">Einstein Summation</a>, which is a super-fancy term for a cool (but admittedly tricky-to-grasp) shorthand notation for dealing with multiplications and summations of vectors, matrices, and tensors.</p>
+<p>I won’t rehash the basic examples I’ve found across the web that helped me understand how this works, but I will give special emphasis to two articles:</p>
+<ol type="1">
+<li><a href="https://obilaniu6266h16.wordpress.com/2016/02/04/einstein-summation-in-numpy/">Einstein Summation in NumPy</a>, and</li>
+<li><a href="http://ajcr.net/Basic-guide-to-einsum/">A basic introduction to NumPy’s einsum</a></li>
+</ol>
+<p>I found #2 particularly accessible, but I’d recommend both.</p>
+<p>It took some doing, but I managed to rewrite both equations using <code>einsum</code>s:</p>
+<div class="cell" data-execution_count="7">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><span class="kw" style="color: #003B4F;">def</span> px2(X, mu, sigma):</span>
+<span id="cb9-2">    det <span class="op" style="color: #5E5E5E;">=</span> sla.det(sigma)</span>
+<span id="cb9-3">    inv <span class="op" style="color: #5E5E5E;">=</span> sla.inv(sigma)</span>
+<span id="cb9-4"></span>
+<span id="cb9-5">    <span class="co" style="color: #5E5E5E;">###</span></span>
+<span id="cb9-6">    p <span class="op" style="color: #5E5E5E;">=</span> np.einsum(<span class="st" style="color: #20794D;">'ni,ji,ni-&gt;n'</span>, X <span class="op" style="color: #5E5E5E;">-</span> mu, inv, X <span class="op" style="color: #5E5E5E;">-</span> mu)</span>
+<span id="cb9-7">    <span class="co" style="color: #5E5E5E;">###</span></span>
+<span id="cb9-8"></span>
+<span id="cb9-9">    n <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">1</span> <span class="op" style="color: #5E5E5E;">/</span> ((((<span class="dv" style="color: #AD0000;">2</span> <span class="op" style="color: #5E5E5E;">*</span> np.pi) <span class="op" style="color: #5E5E5E;">**</span> <span class="dv" style="color: #AD0000;">2</span>) <span class="op" style="color: #5E5E5E;">*</span> det) <span class="op" style="color: #5E5E5E;">**</span> <span class="fl" style="color: #AD0000;">0.5</span>)</span>
+<span id="cb9-10">    px <span class="op" style="color: #5E5E5E;">=</span> np.exp(<span class="op" style="color: #5E5E5E;">-</span><span class="fl" style="color: #AD0000;">0.5</span> <span class="op" style="color: #5E5E5E;">*</span> p) <span class="op" style="color: #5E5E5E;">*</span> n</span>
+<span id="cb9-11">    <span class="cf" style="color: #003B4F;">return</span> px</span></code></pre></div>
+</details>
+</div>
+<div class="cell" data-execution_count="8">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><span class="kw" style="color: #003B4F;">def</span> musig2(X, r):</span>
+<span id="cb10-2">    N <span class="op" style="color: #5E5E5E;">=</span> r.<span class="bu" style="color: null;">sum</span>()</span>
+<span id="cb10-3">    mu_next <span class="op" style="color: #5E5E5E;">=</span> (r[:, np.newaxis] <span class="op" style="color: #5E5E5E;">*</span> X).<span class="bu" style="color: null;">sum</span>(axis <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">0</span>) <span class="op" style="color: #5E5E5E;">/</span> N</span>
+<span id="cb10-4"></span>
+<span id="cb10-5">    <span class="co" style="color: #5E5E5E;">###</span></span>
+<span id="cb10-6">    sigma_next <span class="op" style="color: #5E5E5E;">=</span> np.einsum(<span class="st" style="color: #20794D;">"ni,nj-&gt;ij"</span>, (X <span class="op" style="color: #5E5E5E;">-</span> mu_next) <span class="op" style="color: #5E5E5E;">*</span> r[:, np.newaxis], X <span class="op" style="color: #5E5E5E;">-</span> mu_next) <span class="op" style="color: #5E5E5E;">/</span> N</span>
+<span id="cb10-7">    <span class="co" style="color: #5E5E5E;">###</span></span>
+<span id="cb10-8"></span>
+<span id="cb10-9">    <span class="cf" style="color: #003B4F;">return</span> mu_next, sigma_next</span></code></pre></div>
+</details>
+</div>
+<p>The <code>musig2</code> use actually ended up being a straightforward application of the “each row of <img src="https://latex.codecogs.com/png.latex?A"> multiplied by <img src="https://latex.codecogs.com/png.latex?B">” rule at the end of the #2 link above, with the slight wrinkle of making the <em>first</em> axis, <code>n</code>, the one that is summed over in the result.</p>
+<p>The one in <code>px2</code> was a lot harder, and for a time I wasn’t convinced it could be done. At one point I was able to basically split the operation in two <code>einsums</code> that were more or less identical to the one in <code>musig2</code>; it basically involved a repeated application of “multiply each row of <img src="https://latex.codecogs.com/png.latex?A"> by <img src="https://latex.codecogs.com/png.latex?B">”. But I kept hunting around the web, particularly for examples of multiplying many matrices together, and eventually managed to figure this one out.</p>
+<p>It boiled down to basics of how <code>einsum</code> works: I knew the output had to be a list of numbers <code>n</code> long, and that the first and third inputs were identical (<code>ni</code>). The key was: if everything had 2 axes going in, but only 1 axis was coming out, then all three inputs needed to share one axis that could be summed over.</p>
+</section>
+<section id="with-great-power-blah-blah-blah" class="level3">
+<h3 class="anchored" data-anchor-id="with-great-power-blah-blah-blah">With great power blah blah blah</h3>
+<p>Just for fun, let’s run our examples again:</p>
+<div class="cell" data-execution_count="9">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><span class="op" style="color: #5E5E5E;">%</span>timeit px2(X, mu, sigma)</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>6.4 ms ± 93.1 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="10">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><span class="op" style="color: #5E5E5E;">%</span>timeit musig2(X, r)</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>6.15 ms ± 49.7 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)</code></pre>
+</div>
+</div>
+<p>To sum up:</p>
+<ul>
+<li>Going from a list comprehension of calls to <code>numpy.dot</code> to a single <code>einsum</code> decreased runtime of a single iteration from <strong>300ms</strong> to <strong>7ms</strong>, a speed-up of over 40x.</li>
+<li>Going from a loop of <code>numpy.outer</code> products to a single <code>einsum</code> decreased runtime of a single iteration from <strong>847ms</strong> to <strong>7.5ms</strong>, a speed-up of over 110x.</li>
+</ul>
+<p>I re-ran <code>cProfile</code> to see what my performance gains were, and holy <em>crap</em> Batman.</p>
+<p><img src="https://magsol.github.io/posts/2018-06-19-einsum/after.png" class="img-fluid" alt="Python profiling results after using einsum."></p>
+<p>Not only was my total runtime down from ~52 seconds per iteration to a mere <strong>1.5 seconds per iteration</strong>, but the most time-consuming block of my code was now <code>einsum</code> itself!</p>
+<p>Of course, I wasn’t going to argue with a full <em>order of magnitude</em> reduction in runtime.</p>
+<p>Our SciPy paper is still under review, so feel free to <a href="https://github.com/scipy-conference/scipy_proceedings/pull/396">head over there and check out</a> how we’re putting GMMs to use for bioimaging!</p>
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2018,
+  author = {Shannon Quinn},
+  title = {An Einsum Use-Case},
+  date = {2018-06-19},
+  url = {https://magsol.github.io/2018-06-19-an-einsum-use-case},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2018" class="csl-entry quarto-appendix-citeas">
+Shannon Quinn. 2018. <span>“An Einsum Use-Case.”</span> June 19, 2018.
+<a href="https://magsol.github.io/2018-06-19-an-einsum-use-case">https://magsol.github.io/2018-06-19-an-einsum-use-case</a>.
+</div></div></section></div> ]]></description>
+  <category>professional</category>
+  <category>python</category>
+  <guid>https://magsol.github.io/posts/2018-06-19-einsum/index.html</guid>
+  <pubDate>Tue, 19 Jun 2018 16:58:02 GMT</pubDate>
+  <media:content url="https://magsol.github.io/posts/2018-06-19-einsum/kOqM5.png" medium="image" type="image/png" height="96" width="144"/>
+</item>
+<item>
   <title>Jedi Outcast: Echoes of a bygone gaming era</title>
   <dc:creator>Shannon Quinn</dc:creator>
   <link>https://magsol.github.io/posts/2018-04-26-jedi-outcast-echoes-of-a-bygone-gaming-era/index.html</link>
@@ -1918,51 +2124,6 @@ Era.”</span> April 26, 2018. <a href="https://magsol.github.io/posts/2018-04-2
   <guid>https://magsol.github.io/posts/2018-04-26-jedi-outcast-echoes-of-a-bygone-gaming-era/index.html</guid>
   <pubDate>Thu, 26 Apr 2018 14:30:00 GMT</pubDate>
   <media:content url="https://magsol.github.io/posts/2018-04-26-jedi-outcast-echoes-of-a-bygone-gaming-era/lolrob.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>Resolutions for 2018</title>
-  <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2018-01-19-new-years-resolutions/index.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>A solid three weeks late on the new year’s resolutions, but still a marked improvement over last year.</p>
-<p>(…I didn’t post resolutions last year…)</p>
-<p>I’ve been involved with a small faculty writing group since mid-December, with the expressed goal of helping its participants develop and sustain regular writing habits. Since any new resolution’s long-term success is pretty much exclusively contingent on whether or not a habit is formed, I’m also trying to eliminate some bad habits (since new habits are easier to form if they, in effect, <a href="https://jamesclear.com/three-steps-habit-change">take the place of the bad habits</a>).</p>
-<p>So without further adieu (and with a bit of inspiration from <a href="https://punkrockor.com/2018/01/02/punk-rock-ors-new-years-resolutions/">Dr.&nbsp;Albert</a>), here are my 2018 resolutions:</p>
-<ul>
-<li>Write and/or edit every single day (operationally I’m aiming for at least 30 minutes/day, 5 days/week, and go from there).</li>
-<li>Blog more frequently. Despite starting this cool pelican blog back in 2015 for the <em>expressed</em> purpose of basically doing what <a href="https://jakevdp.github.io/">Jake VanderPlas</a> does on his blog–but with <em>my</em> research–I have yet to really bring that idea to fruition. That changes this year.</li>
-<li>Make some progress on a few fun side projects!</li>
-</ul>
-<p>There are quite a few side projects that have languished over the last several months (changing this blog’s layout was one). I’d love to actually finish one!</p>
-<p><img src="https://magsol.github.io/posts/2018-01-19-new-years-resolutions/snow_bunny.png" class="preview-image img-fluid" alt="Our showshoe hare, aka our white rabbit, Clover, out exploring in the snow dusting we recently got."></p>
-
-
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2018,
-  author = {Shannon Quinn},
-  title = {Resolutions for 2018},
-  date = {2018-01-21},
-  url = {https://magsol.github.io/posts/2018-01-19-new-years-resolutions/},
-  langid = {en}
-}
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2018" class="csl-entry quarto-appendix-citeas">
-Shannon Quinn. 2018. <span>“Resolutions for 2018.”</span> January 21,
-2018. <a href="https://magsol.github.io/posts/2018-01-19-new-years-resolutions/">https://magsol.github.io/posts/2018-01-19-new-years-resolutions/</a>.
-</div></div></section></div> ]]></description>
-  <category>personal</category>
-  <category>professional</category>
-  <category>new year</category>
-  <category>blog</category>
-  <category>writing</category>
-  <category>side projects</category>
-  <category>research</category>
-  <guid>https://magsol.github.io/posts/2018-01-19-new-years-resolutions/index.html</guid>
-  <pubDate>Sun, 21 Jan 2018 14:28:00 GMT</pubDate>
-  <media:content url="https://magsol.github.io/images/logo.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 </channel>
 </rss>
