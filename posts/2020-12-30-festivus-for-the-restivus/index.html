@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Shannon Quinn">
+
+<title>Stochastic Stenography - Festivus for the Restivus</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XHDW9H78Z1"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
+</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Stochastic Stenography - Festivus for the Restivus">
+<meta property="og:description" content="Jerry Seinfeld isn’t on board with Festivus this year.">
+<meta property="og:image" content="https://magsol.github.io/posts/2020-12-30-festivus-for-the-restivus/festivus.png">
+<meta property="og:site-name" content="Stochastic Stenography">
+<meta property="og:locale" content="en_US">
+<meta property="og:image:height" content="1080">
+<meta property="og:image:width" content="1920">
+<meta property="og:image:alt" content="Festivus for the Restivus sign.">
+<meta name="twitter:title" content="Stochastic Stenography - Festivus for the Restivus">
+<meta name="twitter:description" content="Jerry Seinfeld isn’t on board with Festivus this year.">
+<meta name="twitter:image" content="https://magsol.github.io/posts/2020-12-30-festivus-for-the-restivus/festivus.png">
+<meta name="twitter:creator" content="@SpectralFilter">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image-height" content="1080">
+<meta name="twitter:image-width" content="1920">
+<meta name="twitter:image:alt" content="Festivus for the Restivus sign.">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Stochastic Stenography</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About Me</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Festivus for the Restivus</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">personal</div>
+                <div class="quarto-category">festivus</div>
+                <div class="quarto-category">fuck 2020</div>
+                <div class="quarto-category">fuck that shit</div>
+                <div class="quarto-category">airing of grievances</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Shannon Quinn </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">Posted on the 30th of December in the year 2020, at 2:14pm. It was Wednesday.</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p><img src="festivus.png" class="preview-image img-fluid" alt="Festivus for the Restivus sign."></p>
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Content warning: rough language ahead. You’ve been warned.</p>
+</div>
+</div>
+<p>Jerry Seinfeld isn’t on board with Festivus this year.</p>
+<p></p><div id="tweet-45458"></div><script>tweet={"url":"https:\/\/twitter.com\/JerrySeinfeld\/status\/1341820840149733377","author_name":"Jerry Seinfeld","author_url":"https:\/\/twitter.com\/JerrySeinfeld","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EMaybe just this once, just for this Festivus 2020, we take pass on the “Airing of Grievances”..\u003C\/p\u003E&mdash; Jerry Seinfeld (@JerrySeinfeld) \u003Ca href=\"https:\/\/twitter.com\/JerrySeinfeld\/status\/1341820840149733377?ref_src=twsrc%5Etfw\"\u003EDecember 23, 2020\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-45458").innerHTML = tweet["html"];</script><p></p>
+<p>I get it, I do. And I respect it. But I’m gonna air me some grievances. My therapist has continued to insist that I do what I need and not to feel guilty about it, and right now I need to air some <em>fucking</em> grievances. So strap in folks; here we go.</p>
+<p>Running has been a sick joke for most of this year. I’ve been logging miles with some kind of GPS watch since mid-2011, and 2020 has been the lowest-mileage year by a massive margin. For comparison, long-time readers may remember the boondoggles of 2015-2016 when I had metatarsalgia in my feet. Both those years, I still managed to tip the 1,000-mile scale. This year? <strong>711 miles</strong>. Fuck that shit. Running wasn’t an escape; it was a fucking trap of preferring the evil I knew over the evil I didn’t.</p>
+<p>Of course, halting my running didn’t help much, either. I was still exhausted beyond all measures, and not just physically: mentally, emotionally, and grammatically <em>burned. out.</em> I managed a couple of walks most days, largely amounting to 10,000 steps or thereabouts, so I guess I met the minimum recommended daily physical activity threshold for the most part. But boy did running leave me stuck with the bill this year.</p>
+<p>On the note of bills, let’s talk about how much help we’ve gotten in that area, shall we? As in, fucking none? We’d have gotten more tangible pandemic assistance if we’d wholesale replaced our Georgia state and US federal governments with fucking nail salons, as opposed to the leadership vacuums from Kemp, Congress, and the White House. Jesus goddamn tap-dancing Christ. Frank Underwood in <em>House of Cards</em> killed people, but he got things done in the process. These Republicans just… kill people; whether it’s because of willful incompetence or callous indifference I can’t say, but holy shit: literal poop-flinging monkeys could have accomplished more in their steads. You have to put forth actual effort to be <em>this fucking ineffective</em>. You wanted individualistic self-sufficiency? Well, this is what it looks like, fuckers: if you’ve already got money, you’re fine. If not, welp.</p>
+<p>I’ve felt a real kinship these past several months with Jeff Daniels’ Will McAvoy, <a href="https://www.youtube.com/watch?v=wTjMqda19wk">particularly as he picks apart this fantasy of America being the “greatest country in the world.”</a> What the fuck does that even mean? That we lead the world in COVID cases and deaths? That we’re so star-spangled awesome that anyone with an internet connection can be an armchair epidemiologist? That some so-called moderates are so concerned with curating their centrist appearance that they completely lose sight of the fact that not all (or even most) issues have two sides? That an entire political spectrum in this country has managed to openly flirt with becoming the very thing we fought a war against barely a century ago? That we’re so worried about giving anyone slightly more than they “deserve” that we’ll decimate public institutions, neglect infrastructure, and reinforce existing inequities, so that only the people who already had money will succeed? Are we really this collectively fucking stupid?</p>
+<p>Twitter is a fucking nazi cesspool. Facebook is even worse, and Amazon takes the cake for most unethical CEO. Google isn’t innocent, either: I’ve lost any respect I had for my former employer after they fired Timnit Gebru. Then I lost respect for luminaries like Jeff Dean after he doubled-down on some shady post-hoc justification that simultaneously made no sense and also revealed that Google has no collective interest in addressing its structural issues. Then, I lost respect for a number of current Googlers whose work I’ve admired over the years of following them since graduate school when they kept quiet over this whole thing. Meanwhile, Google is being hammered in EU antitrust courts and I frankly couldn’t be happier about it. I hope Facebook gets splintered into dozens of tiny pieces.</p>
+<p>Can I just say again–people who selectively listen to experts or “experts” because they confirm what said people already believed can go jump in this fire.</p>
+<p><img src="diaf.jpg" class="img-fluid" alt="A classic 'die in a fire' meme."></p>
+<p>Sex work is work, and <em>The West Wing</em> really got this one wrong. Donna, in fact, had it right.</p>
+<p><em>Sex and the City</em>, for as much as it may have been ahead of its time in general, is super problematic around trans and nonbinary folks.</p>
+<p>I have to divorce J.K. Rowling the person from the author of the <em>Harry Potter</em> books, because she is doing literally everything possible to shit all over what is left of her legacy. I don’t know what her problem with trans people is, or why she’s so threatened by them, but she can likewise join the aforementioned people who listen only to the “experts” they already agree with.</p>
+<p>Brandon Sanderson doesn’t write books nearly fast enough.</p>
+<p>James S.A. Corey doesn’t write books nearly fast enough.</p>
+<p>Patrick Rothfuss doesn’t write books nearly fast enough.</p>
+<p>Oh yeah, a massive <strong>FUCK YOU</strong> to the folks I’ve been seeing on Instagram who don’t seem to realize COVID is a thing? Who keep gathering with more people than could possibly be in their pods? Who post pictures of themselves at gyms, bars, restaurants, group runs, and family gatherings for the holidays? They truly are the fuckwads from high school and college who would go off and party instead of working on the team project, difference being that when they invariably came back for the presentation, they’ll end up spontaneously combusting and killing both themselves, their teammates, and half their classmates. I’ve been aggressively un-following these dipshits because if they can’t think about anyone other than themselves in the midst of a global pandemic, why would I want to associate with them when the stakes are eventually more mundane? There are a lot of folks who’ve shown me exactly who they are during this pandemic and they’re not anyone I care to know once COVID is done.</p>
+<p>SERIOUSLY. A MODICUM OF LEADERSHIP WOULD HAVE PREVENTED THOUSANDS OF NEEDLESS DEATHS, YOU STAR SPANGLED CESSPOOLS.</p>
+<p>Telecommunications in the United States is a fucking travesty. In any other [western] country there are dozens of companies in close competition with one another. Here, we have what amounts to local monopolies on broadband, and an effective duopoly on cell providers. And this gets passed off as “innovation”? Our telecom industry is 20 years behind the rest of the world!</p>
+<p>The Georgia Board of Regents: Governor Kemp’s cronies, or just that fucking incompetent? They couldn’t be bothered to implement a mask mandate back at the start of the first COVID surge until the entire university system was practically in a state of open rebellion. Rumor has it there’s really only a couple bad apples among them, but–in much the same vein as the United States Senate–the fact that a single moronic board member can bring everything to a screeching halt is a bug, not a feature. Ted Cruz can bring the Senate to its knees simply by virtue of his vapid tripe; he doesn’t also need a legal basis for his subversion of democracy.</p>
+<p>Wear. A. Goddamn. Mask. <em>Fuck.</em></p>
+<p>When did it become a feature of a functioning democracy to allow a <a href="https://twitter.com/rmayemsinger/status/1343978502551310337">decaying Confederate monument from Kentucky</a> to singlehandedly decide the fate of any and all legislation that made its way to the US Senate?</p>
+<p>Perhaps the single biggest driver of my growing cynicism has been not the pathetic ineptitudes of our government leaders or even the disinformation being sown by talking heads making untold millions of dollars, but instead the seemingly smart, incisive, and compassionate individuals I knew before the pandemic (or even before the election of Trump) who have since turned into people I no longer recognize. Of course I realize the “change” was, in fact, there all along–it is only my perception that has changed. But it has been truly disheartening and enraging to see acquaintances, friends, and even family here in Athens and elsewhere in the United States who forward along conspiracy theories, repeat hate-filled talking points, and play the role of armchair epidemiologists in magnifying misleading or outright false information around COVID-19. From claiming that supplements can reduce severity of COVID symptoms, to somehow dismissing US oubreak numbers by equating them with China, and since “China’s numbers are fudged” therefore the US is doing just fine, to demonizing and even threatening the livelihood of health care workers for the crime of doing their jobs, to giving Trump credit for the rollout of the Pfizer and Moderna vaccines, to <strong>continuing to push back against and ignoring the advice of actual medical and public health experts</strong>.</p>
+<p><img src="dumb.png" class="img-fluid" alt="A screenshot of one of the dumbest tweets ever posted: someone arguing the problem with president #45 was too much power in the Presidency, ceded over years and years."></p>
+<p>Seems reasonable, right? Until you include the surrounding context: this person initially claimed Trump should take credit for “Operation Warp Speed,” followed by a hand-waving rationalization of the <a href="https://www.cnn.com/2020/12/29/politics/vaccine-rollout-behind-schedule/index.html">slow</a> <a href="https://www.washingtonpost.com/opinions/2020/12/29/covid-19-vaccine-distribution-slow-testing/">vaccine</a> <a href="https://www.nbcnews.com/news/us-news/current-rate-it-ll-be-10-years-americans-adequately-vaccinated-n1252486">rollout</a> by blaming supply chain hiccups that come with large-scale product manufacturing. Ignoring, of course, that a vaccine has literally been the single goal of the entire US public health sector since January 2020; how the infrastructure for such a rollout wasn’t in place by the summer is a sin worthy of excommunication. But rather than admit as much, we get the above response.</p>
+<p>It’s <strong>infuriating</strong> that we can’t just let the experts do their fucking jobs; instead, we have to stake out some pointless fucking pseudo-centrist landscape that doesn’t exist, for the purpose of… what? Appealing to the better demons of both sides? That would be reasonable, except for the small problem of one side being a highly imperfect conglomerate of diverse and often conflicting viewpoints, and the other side being a militaristic theocrat’s wet dream. But sure, states’ rights and framers’ intent and all that.</p>
+<p>Oh, that reminds me: I am fucking DONE with <a href="https://en.wikipedia.org/wiki/Originalism">originalism</a> (yes, that goes for the Bible too). There is no 21st-century world in which the intentions of 18th century slaveholders would be remotely interesting, worth considering, or at all relevant. Much like how <a href="https://xkcd.com/1357/">an argument of free speech is effectively a concession</a>, an argument of framers’ intent is likewise an indication that your argument stands on the rhetorical equivalent of a sinkhole; continuing to scream “bUt ThE fRaMeRs!” only reveals your partisan / intellectual / insert motivated reasoning hackery here.</p>
+<p></p><div id="tweet-50977"></div><script>tweet={"url":"https:\/\/twitter.com\/dril\/status\/134787490526658561","author_name":"wint","author_url":"https:\/\/twitter.com\/dril","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003E&quot;im not owned!  im not owned!!&quot;, i continue to insist as i slowly shrink and transform into a corn cob\u003C\/p\u003E&mdash; wint (@dril) \u003Ca href=\"https:\/\/twitter.com\/dril\/status\/134787490526658561?ref_src=twsrc%5Etfw\"\u003ENovember 11, 2011\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-50977").innerHTML = tweet["html"];</script><p></p>
+<p>Oh, one final grievance. With all due respect to Bill Watterson: <a href="https://www.gocomics.com/calvinandhobbes/1993/05/11">excessively positive people</a>. In fact, we’ve even come up with a name for this: toxic positivity. Emphasizing the positive in a given situation, <strong>with the unstated assumption</strong> that said positives entirely cancel out all negatives. It’s been coming up a lot in the context of the pandemic: “well the pandemic has been bad but at least I haven’t had to see my boss as much!”, as if the two things were even remotely on the same playing field. Granted, it’s a specific incarnation of the more general ALWAYS LOOK ON THE BRIGHT SIDE mantra, but it’s important to understand that, as complex human beings, we are capable of holding <em>more than one truth</em> in our heads simultaneously.</p>
+<p>2020 is both the year Z entered our lives, and it can also die in a fucking fire. Both are true.</p>
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2020,
+  author = {Shannon Quinn},
+  title = {Festivus for the {Restivus}},
+  date = {2020-12-30},
+  url = {https://magsol.github.io/2020-12-30-festivus-for-the-restivus},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2020" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
+Shannon Quinn. 2020. <span>“Festivus for the Restivus.”</span> December
+30, 2020. <a href="https://magsol.github.io/2020-12-30-festivus-for-the-restivus">https://magsol.github.io/2020-12-30-festivus-for-the-restivus</a>.
+</div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://giscus.app/client.js" data-repo="magsol/magsol.github.io" data-repo-id="MDEwOlJlcG9zaXRvcnkyNzYwNTYxNw==" data-category="Announcements" data-category-id="DIC_kwDOAaU6cc4CTutY" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="dark" data-lang="en" crossorigin="anonymous" data-loading="lazy" async="">
+</script>
+</div> <!-- /content -->
+
+
+
+<script src="https://platform.twitter.com/widgets.js"></script>
+</body></html>

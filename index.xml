@@ -39,7 +39,7 @@
 <li>Conclusions <em>(this post)</em></li>
 </ol>
 <p>I know what you’re thinking:</p>
-<p></p><div id="tweet-98309"></div><script>tweet={"url":"https:\/\/twitter.com\/dexhorthy\/status\/856639005462417409","author_name":"dex","author_url":"https:\/\/twitter.com\/dexhorthy","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EDeployed my blog on Kubernetes \u003Ca href=\"https:\/\/t.co\/XHXWLrmYO4\"\u003Epic.twitter.com\/XHXWLrmYO4\u003C\/a\u003E\u003C\/p\u003E&mdash; dex (@dexhorthy) \u003Ca href=\"https:\/\/twitter.com\/dexhorthy\/status\/856639005462417409?ref_src=twsrc%5Etfw\"\u003EApril 24, 2017\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-98309").innerHTML = tweet["html"];</script><p></p>
+<p></p><div id="tweet-64129"></div><script>tweet={"url":"https:\/\/twitter.com\/dexhorthy\/status\/856639005462417409","author_name":"dex","author_url":"https:\/\/twitter.com\/dexhorthy","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EDeployed my blog on Kubernetes \u003Ca href=\"https:\/\/t.co\/XHXWLrmYO4\"\u003Epic.twitter.com\/XHXWLrmYO4\u003C\/a\u003E\u003C\/p\u003E&mdash; dex (@dexhorthy) \u003Ca href=\"https:\/\/twitter.com\/dexhorthy\/status\/856639005462417409?ref_src=twsrc%5Etfw\"\u003EApril 24, 2017\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-64129").innerHTML = tweet["html"];</script><p></p>
 <p>And honestly… you’re not wrong.</p>
 <section id="running-mastodon-has-gotten-easier" class="level3">
 <h3 class="anchored" data-anchor-id="running-mastodon-has-gotten-easier">Running Mastodon has gotten easier</h3>
@@ -1042,6 +1042,464 @@ Shannon Quinn. 2022. <span>“Pardon de Dust (2).”</span> December 13,
   <media:content url="https://magsol.github.io/posts/2022-12-13-pardon-the-dust/clover.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
+  <title>Fiddling with generative art models</title>
+  <dc:creator>Shannon Quinn</dc:creator>
+  <link>https://magsol.github.io/posts/2022-08-03-fiddling-with-generative-art/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><img src="https://magsol.github.io/posts/2022-08-03-fiddling-with-generative-art/starfield.png" class="preview-image img-fluid" alt="Generated with the text: `4K, wide angle, hyper detailed, starfield, nighttime sky, crescent moons, stars, nebulae, cosmic` by MidjourneyAI."></p>
+<p>Much like a lot of the internet over the past couple months, I’ve been tinkering with some AI art generators, mainly <a href="https://www.midjourney.com/">Midjourney</a> (if only because I’m waitlisted on <a href="https://openai.com/dall-e-2/">DALL-E 2</a>).</p>
+<p>It’s been surprisingly fun, if challenging. This isn’t really my area of research, but I understand the basic underpinnings:</p>
+<p>These models are trained using vast swaths of image-and-text pairings, so the model can develop an association between features in images and the corresponding text that describes them. Obviously this process is <em>very</em> complicated, and also requires not only a great deal of data but also a considerable amount of computing power, so it’s still a very active area of research and is largely out of reach of your every day researcher or individual training their own model. But once the model is trained, users can provide snippets of text, which the model then translates into an image.</p>
+<p>Therein lies the magic. There’s a lot of randomness involved in the image generation process, since even a text input as simple as “cat” could mean a LOT of different things, image-wise. That’s partly a feature: two people who give the exact same text input will likely get slight variations of the same concept, and possibly get wildly divergent results.</p>
+<p>But it also makes for a challenging user experience: there’s a sort of “lingo” that you have to wrap your head around, a “way of talking to the model” that goes beyond simple word-concept mappings, that only comes with extended use of the models. It gets harder the more specific of an idea you have: your conceptual understanding of the idea may not bear any resemblance to the concept the model learned!</p>
+<p>(man this is getting philosophical! let’s see if I can make this a bit more concrete with some examples)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://magsol.github.io/posts/2022-08-03-fiddling-with-generative-art/empty_beach_v1.png" class="img-fluid figure-img" alt="Generated with the text: `empty beach, dark storm in distance, one flower blooms from the sand to the side, high detail, atmosphere, Arnold render, ultra-realistic, dramatic lighting, glow, cinematic lighting, epic, 8k` by MidjourneyAI."></p>
+<p></p><figcaption class="figure-caption">Generated with the text: <code>empty beach, dark storm in distance, one flower blooms from the sand to the side, high detail, atmosphere, Arnold render, ultra-realistic, dramatic lighting, glow, cinematic lighting, epic, 8k</code></figcaption><p></p>
+</figure>
+</div>
+<p>This was actually an image that I generated based off an image <em>someone else had already generated</em> (yeah, we can take public images and run them back through the model with new or additional text).</p>
+<p>From here, I ran a couple more of my own modifications:</p>
+<p><img src="https://magsol.github.io/posts/2022-08-03-fiddling-with-generative-art/empty_beach_v2.png" class="img-fluid" alt="Generated by MidjourneyAI."></p>
+<p><img src="https://magsol.github.io/posts/2022-08-03-fiddling-with-generative-art/empty_beach_v3.png" class="img-fluid" alt="Generated by MidjourneyAI."></p>
+<p>I really liked the second one, though with the third I love the ambiguity in the landscape: is it water, or is it snow? Hard to say in that lighting.</p>
+<p>From here, I started focusing a bit more on landscapes under a starlit sky (like the cover photo). I eventually settled on this one, which I really kinda love (so I made the highest-res version of it that I could):</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://magsol.github.io/posts/2022-08-03-fiddling-with-generative-art/mountains_starfield.png" class="img-fluid figure-img" alt="Generated with the text: `wooded mountainous winter landscape under cosmic night sky with distant glowing small town in a valley, nebulae, crescent moon, planetary rings, cinematic, atmospheric, 8k, dramatic lighting, ultra realistic` by MidjourneyAI."></p>
+<p></p><figcaption class="figure-caption">Generated with the text: <code>wooded mountainous winter landscape under cosmic night sky with distant glowing small town in a valley, nebulae, crescent moon, planetary rings, cinematic, atmospheric, 8k, dramatic lighting, ultra realistic</code></figcaption><p></p>
+</figure>
+</div>
+<p>I will say, it definitely takes some doing to get a feel for how it works–what I had in mind was nowhere near what the model spat out, even though I <em>love</em> what it created. Still, there weren’t really any planetary rings (I was thinking of Gaal’s homeworld in the AppleTV+ <em>Foundation</em> series), and the “glowing small town in a valley” seems to have been diffusely spread over the <em>entire</em> valley, almost like fireflies, rather than distinct. Beautiful, no question, but not exactly what I’d had in mind.</p>
+<p>One final bit I tried before my trial ran out was a completely different direction:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://magsol.github.io/posts/2022-08-03-fiddling-with-generative-art/rpi_madeof_raspberries.png" class="img-fluid figure-img" alt="Generated with the text: `raspberry pi computer made out of raspberries, modern, futuristic` by MidjourneyAI."></p>
+<p></p><figcaption class="figure-caption">Generated with the text: <code>raspberry pi computer made out of raspberries, modern, futuristic</code></figcaption><p></p>
+</figure>
+</div>
+<p>I see a lot of super awesome art being generated from very terse prompts, so I was trying to capture that a little bit here (as opposed to the downright locquacious landscape prompts above).</p>
+<p>Some of the earlier images I created had more to do with my family. This first one was created shortly after my wife left her previous job to pursue her longtime dream of being a full-time fiction writer (it was seriously one of the first things I ever learned about her all those years ago): I was inspired to see if the model could capture something about what that looked like, in my head at least.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://magsol.github.io/posts/2022-08-03-fiddling-with-generative-art/writer.png" class="img-fluid figure-img" alt="Generated with the text: `a writer working at her computer surrounded by a world of her own creation` by MidjourneyAI."></p>
+<p></p><figcaption class="figure-caption">Generated with the text: <code>a writer working at her computer surrounded by a world of her own creation</code></figcaption><p></p>
+</figure>
+</div>
+<p>And I really love this next one, as it evokes less of the specific act of writing and more of how it’s about <em>creating</em>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://magsol.github.io/posts/2022-08-03-fiddling-with-generative-art/creator.png" class="img-fluid figure-img" alt="Generated with the text: `writer standing on the boundary between worlds, the world she lives in and the world she creates` by MidjourneyAI."></p>
+<p></p><figcaption class="figure-caption">Generated with the text: <code>writer standing on the boundary between worlds, the world she lives in and the world she creates</code></figcaption><p></p>
+</figure>
+</div>
+<p>We’ve also been huge fans of Zelda for quite awhile (which <a href="https://magsol.github.io/tag/zelda.html">longtime readers already know</a>), and not too long ago I commissioned a fan account to remake a family photo as if it were in the Zelda universe.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://magsol.github.io/posts/2022-08-03-fiddling-with-generative-art/commission.png" class="img-fluid figure-img" alt="Commissioned artwork of our own family, redrawn to look like we live in the Zelda universe."></p>
+<p></p><figcaption class="figure-caption">Quite the handsome family, doncha think?</figcaption><p></p>
+</figure>
+</div>
+<p>So I played with that idea a bit, and while the results weren’t great–I get the feeling the generator has a harder time dealing with <em>very specific real-world concepts</em>, as opposed to more general categories of things–I did get this pretty cute rendering of what is most definitely a Hyrulean family.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://magsol.github.io/posts/2022-08-03-fiddling-with-generative-art/zelda.png" class="img-fluid figure-img" alt="Generated with the text: `zelda champions from breath of the wild, family, 1985, highres` by MidjourneyAI."></p>
+<p></p><figcaption class="figure-caption">Generated with the text: <code>zelda champions from breath of the wild, family, 1985, highres</code></figcaption><p></p>
+</figure>
+</div>
+<p>It’s fun to tinker with. In all honesty I’ll probably keep playing with it here and there as the mood strikes; if you want to follow along, <a href="https://www.midjourney.com/app/users/730084120558043179/">there’s a public feed of all the pictures I generate here</a> (note: it’s “public” in that you have to create a free account to see it), since there’s no way I’m going to shell out the $ required to make my images private.</p>
+<section id="legal-disclaimer" class="level3">
+<h3 class="anchored" data-anchor-id="legal-disclaimer">Legal Disclaimer</h3>
+<p>At least, I’ll keep tinkering until copyright catches up… which, on that note, I should mention: I agree with everything in this twitter thread on the topic. I want to end on this note, because I think this is very important to keep in mind.</p>
+<p></p><div id="tweet-36234"></div><script>tweet={"url":"https:\/\/twitter.com\/BunchesOfBees\/status\/1553079149232734208","author_name":"Christopher","author_url":"https:\/\/twitter.com\/BunchesOfBees","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EA thing that makes me absolutely insane with discussions about &quot;AI&quot; image generation is their creators freely argue literally both sides of an opposing argument depending on what argument you&#39;re trying to have with them\u003C\/p\u003E&mdash; Christopher (@BunchesOfBees) \u003Ca href=\"https:\/\/twitter.com\/BunchesOfBees\/status\/1553079149232734208?ref_src=twsrc%5Etfw\"\u003EJuly 29, 2022\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-36234").innerHTML = tweet["html"];</script><p></p>
+<p>Keep in mind, I am not a lawyer, but based on my read there are two legal interpretations of these models: as an <em>author</em> that learns and creates novel work, or a <em>product</em> that synthesizes derivative works. In the case of the former, any kind of substantive duplication of existing work created by someone else is copyright infringement; and in the case of the latter, it’s using novel, <em>unlicensed</em> work in a paid product, which is also copyright infringement.</p>
+<p>As someone whose background is in exactly this kind of generative “AI” work, I would generally fall under the latter interpretation of these models as a product (what they “learn” is dubious at best; I would never call their reproductions “novel”). As such, I also agree with the tweet’s author that the moment these companies begin monetizing these models is when, at the very least, they’ve committed a moral rights violation. It’s the same exact reason I’m very uncomfortable with the <a href="https://github.com/features/copilot">GitHub CoPilot product</a>: it’s been trained using billions of lines of code that was written, tested, debugged, scrutinized, and labored over by humans <em>who did not consent to nor were reimbursed for having their code used in a paid product</em>.</p>
+<p>That last tweet in the thread is particularly poignant for me, and distills much of the reason for my disillusionment with the tech sector in general. I’m sorry to end on such a sour note, but while I do love the amazing things machine learning is doing, we have to keep at the forefront of our minds that <a href="https://vicki.substack.com/p/neural-nets-are-just-people-all-the">machine learning is, ultimately, a human endeavor</a>, and if it won’t work without humans, we should make sure those humans are <em>taken care of</em>: recognition, compensation, empathy, and so on.</p>
+<p><em>steps off soap box…for now</em></p>
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2022,
+  author = {Shannon Quinn},
+  title = {Fiddling with Generative Art Models},
+  date = {2022-08-03},
+  url = {https://magsol.github.io/2022-08-03-fiddling-with-generative-art},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2022" class="csl-entry quarto-appendix-citeas">
+Shannon Quinn. 2022. <span>“Fiddling with Generative Art Models.”</span>
+August 3, 2022. <a href="https://magsol.github.io/2022-08-03-fiddling-with-generative-art">https://magsol.github.io/2022-08-03-fiddling-with-generative-art</a>.
+</div></div></section></div> ]]></description>
+  <category>personal</category>
+  <category>professional</category>
+  <category>ai</category>
+  <category>generative modeling</category>
+  <category>deep learning</category>
+  <category>raspberry pi</category>
+  <category>legal disclaimer</category>
+  <category>zelda</category>
+  <category>family</category>
+  <guid>https://magsol.github.io/posts/2022-08-03-fiddling-with-generative-art/index.html</guid>
+  <pubDate>Wed, 03 Aug 2022 11:54:00 GMT</pubDate>
+  <media:content url="https://magsol.github.io/posts/2022-08-03-fiddling-with-generative-art/starfield.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
+<item>
+  <title>What the f*@$ is this s%#&amp; (2022 ed.)</title>
+  <dc:creator>Shannon Quinn</dc:creator>
+  <link>https://magsol.github.io/posts/2022-01-05-what-the-f-is-this-s/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://magsol.github.io/posts/2022-01-05-what-the-f-is-this-s/clover.png" class="preview-image img-fluid figure-img" alt="Our white bunny, Clover, sitting on the couch, looking beautiful."></p>
+<p></p><figcaption class="figure-caption">Clover disapproves of everything and wants you to get your butt in gear.</figcaption><p></p>
+</figure>
+</div>
+<p>I’m not sure where I should even start. How does one sum up a year that felt more like a decade? How does one reflect on a year that eschewed reflection in favor of mere survival?</p>
+<p>I want to be the eternal optimist who always sees the silver lining, who always takes away something positive from a negative experience. But to paraphrase (because I can’t find it) someone far more clever than I on Twitter: it feels a bit like trying to find the bright side of things while actively being run over by a zamboni.</p>
+<p>Well, I suppose one way would be to try and end this post on a positive note. So to that end, I’ll start with the stuff that sucked in 2021.</p>
+<section id="the-bad" class="level3">
+<h3 class="anchored" data-anchor-id="the-bad">The Bad</h3>
+<p>Where do I even start? The pandemic continued to rage–Alpha, Delta, and Omicron right at the cusp of the new year–and elected leaders around the globe shrugged their collective shoulders, as if saying “we tried nothing and it didn’t work, so I guess that’s it.”</p>
+<p>University of Georgia, in lockstep with the Georgia Board of Regents and many other public universities across the country, collectively threw up their hands, hid behind the malevolent cowardice of our elected leaders, and did all of jack and shit to protect any of the hundreds of thousands of dedicated public service workers who have given 140% of themselves to the institution of higher learning since time immemorial. They continued to fart out meaningless platitudes about “rallying together” whenever another surge arrived but refused to take any meaningful or substantive actions recommended by public health experts the world over–like requiring masks or vaccinations–and instead demanded more of already overtaxed, underpaid janitorial staff to do more pointless bullshit like installing platic dividers or cleaning surfaces forty times a day.</p>
+<p>Running has continued to be an elusive outlet for stress. Every run feels hard, and more often than not I’m inclined to not run. Which doesn’t do anything to help my mood, but that vicious negative feedback loop continues nonetheless. I hate it but I’m not sure how to break out of it.</p>
+<p>Other shit that sucked:</p>
+<ul>
+<li>Our bun Clover had a bout of GI stasis in the early part of the year. Thankfully, the folks at the UGA Vet Hospital were amazing in getting her well again. Still, scary as shit.</li>
+<li>the weather (75F on Christmas? fucking really?)</li>
+<li>teaching (and I hate that I hated it, but I’m so, so burned out)</li>
+<li>literally the Georgia Board of Regents</li>
+<li>annual grant reports (best I can describe is we’re running in place)</li>
+<li>burnout in general</li>
+<li>mental health in general</li>
+<li>every day being a series of bad choices made from a list of exclusively bad choices</li>
+</ul>
+</section>
+<section id="the-good" class="level3">
+<h3 class="anchored" data-anchor-id="the-good">The Good</h3>
+<p>Somehow, through the grace of God and possibly every deity in the multiverse, we have not tested positive for COVID (<em>knocks on wood</em>).</p>
+<p></p><div id="youtube-frame" style="position: relative; padding-bottom: 56.25%; /* 16:9 */ height: 0;"><iframe width="100%" height="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/2EbeCEs9_Tw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<p>I took my first flight since Dec 2019 to Washington, D.C., for a workshop hosted at George Washington University on teaching with open source technology. It was a <em>blast</em>. Not only was it an absolute pleasure to spend a few days with some of my professional heroes, folks I’ve known for years through Twitter and who share my same passion for open source technology and innovative instrucitonal methods, but it was great just going to a meeting again!</p>
+<p><img src="https://magsol.github.io/posts/2022-01-05-what-the-f-is-this-s/dc-workshop.jpg" class="preview-image img-fluid" alt="Group photo from the GW workshop event. Importantly: everyone is wearing a mask!"></p>
+<p>Traveling was the strangest thing, both familiar and foreign. Of course I was a nervous wreck going through the airport, but I commend everyone at GWU for taking every precaution, including mandating the use of masks indoors. It was also the first time either one of us single-parented for more than a few hours at a time, and Cathryn did amazingly well! She even managed Z’s weekly bath ON HER OWN.</p>
+<p><img src="https://magsol.github.io/posts/2022-01-05-what-the-f-is-this-s/sunrise.png" class="preview-image img-fluid" alt="Sunrise from the airport in Atlanta, GA."></p>
+<p>I was tenured and promoted. Indeed, I somehow won the cosmic coin flip. I am now an Associate (“ass o’ shit”, in the technical parlance) Professor of Computer Science and Cellular Biology.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://magsol.github.io/posts/2022-01-05-what-the-f-is-this-s/phd-thesis.jpg" class="preview-image img-fluid figure-img" alt="An abstract image generated from my thesis title; arguably, an early diffuser model."></p>
+<p></p><figcaption class="figure-caption">If my doctoral thesis was an image.</figcaption><p></p>
+</figure>
+</div>
+<p>We bought a second car (named “Mipha”), a Honda CRV Hybrid, in the summer. We had assumed we’d need two cars, what with our jobs requiring slightly different hours and wildly different physical locations, it would entail too much logistical square dancing for a single car when daycare pickup / dropoff was added to the mix. Of course, then I taught the fall semester almost entirely remotely because of the Delta surge. Still, it’s been really nice to have a bit more room, and our handful of trips to the mountains with Z would absolutely NOT have been possible with Sam (our Honda Accord Hybrid). Not crazy about the added car insurance, though.</p>
+<p>Over Christmas, we managed a trip to Arizona (which, in hindset, we may not have done given Omicron) for a family reunion on Cathryn’s side to celebrate her grandfather’s 101st birthday. It was also the first time Z had ever met the family on Cathryn’s side, and the first time she got to meet her great-grandfather, born a <em>century</em> earlier. We took rapid tests every day, and got PCR tested before and after, and <em>somehow</em> only 1 person in the entire extended family got COVID. It was also the first time Z traveled by airplane, and she was amazing. It was lovely. Exhausting, but lovely.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://magsol.github.io/posts/2022-01-05-what-the-f-is-this-s/desert.png" class="preview-image img-fluid figure-img" alt="Photo of the outside of our Arizona hotel, where oddly enough it's raining."></p>
+<p></p><figcaption class="figure-caption">Rain. All day. In the desert. Yeah, global warming’s a myth.</figcaption><p></p>
+</figure>
+</div>
+<p>Other stuff that was neat and definitely didn’t suck:</p>
+<ul>
+<li>Our house won our HOA’s First Place for holiday decorations, specifically in the “whimsical” category! I’m thinking our 7-foot inflatable menorah had something to do with it.</li>
+<li>Both Cathryn and I hired running coaches to help us get back into the swing of things. Baby steps!</li>
+<li>I was offered–and accepted–a position with <a href="https://quansight.com">Quansight as Principal Solution Architect</a>. I’ll have a <em>lot</em> more to say about this in a later post.</li>
+<li>Bathroom renovations are scheduled, and office renovations are being planned. All that’s left in the Priority A category is to address the outdoor flooding.</li>
+<li>We managed a handful of mountain trips with Z, and even one with our friend Laura. Z loooves the outdoors, which is awesome.</li>
+<li>I got this blog working again!</li>
+<li><em>Age of Calamity</em>’s two expansion packs are fun as hell.</li>
+<li>Z is just… the singularity of joy in our lives.</li>
+</ul>
+</section>
+<section id="wrap-up" class="level3">
+<h3 class="anchored" data-anchor-id="wrap-up">Wrap Up</h3>
+<p><img src="https://magsol.github.io/posts/2022-01-05-what-the-f-is-this-s/jump.png" class="preview-image img-fluid" alt="Photo of the hopscotch blocks in the park down the street from our house."></p>
+<p>It’s cathartic to get all this out in some form. And, of course, there are innumerable positives (and negatives) that I’m forgetting / suppressing / ignoring. I will say this:</p>
+<p>I’m genuinely excited for 2022. There’s an insane amount of uncertainty and dread and fear, but there are some changes in store for which I’m really and truly stoked. I just have to hope.</p>
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2022,
+  author = {Shannon Quinn},
+  title = {What the f*@\$ Is This s\%\#\&amp; (2022 Ed.)},
+  date = {2022-01-05},
+  url = {https://magsol.github.io/2022-01-05-what-the-f-is-this-s},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2022" class="csl-entry quarto-appendix-citeas">
+Shannon Quinn. 2022. <span>“What the f*@$ Is This s%#&amp; (2022
+Ed.).”</span> January 5, 2022. <a href="https://magsol.github.io/2022-01-05-what-the-f-is-this-s">https://magsol.github.io/2022-01-05-what-the-f-is-this-s</a>.
+</div></div></section></div> ]]></description>
+  <category>personal</category>
+  <category>professional</category>
+  <category>clover the bun</category>
+  <category>z</category>
+  <category>covid-19</category>
+  <category>running</category>
+  <category>professor</category>
+  <category>university</category>
+  <category>quansight</category>
+  <category>travel</category>
+  <category>holidays</category>
+  <category>year in review</category>
+  <guid>https://magsol.github.io/posts/2022-01-05-what-the-f-is-this-s/index.html</guid>
+  <pubDate>Wed, 05 Jan 2022 21:15:00 GMT</pubDate>
+  <media:content url="https://magsol.github.io/posts/2022-01-05-what-the-f-is-this-s/clover.png" medium="image" type="image/png" height="192" width="144"/>
+</item>
+<item>
+  <title>Back in Action</title>
+  <dc:creator>Shannon Quinn</dc:creator>
+  <link>https://magsol.github.io/posts/2021-12-30-back-in-action/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><img src="https://magsol.github.io/posts/2021-12-30-back-in-action/https:/c.tenor.com/ZFc20z8DItkAAAAd/facepalm-really.gif" class="preview-image img-fluid" alt="Facepalm gif meme from The Office."></p>
+<p>It’s been a day/week/month/year/decade, this 2021.</p>
+<p>I apologize for my long silence. Turns out, there are a couple of Pelican plugins that neither play nice with each other, nor with the steady march of upgraded Jupyter components.</p>
+<p>Turns out, two plugins I rely on–<a href="https://github.com/pelican-plugins/liquid-tags">liquid-tags</a> and <a href="https://github.com/danielfrg/pelican-jupyter">pelican-jupyter</a>–tend to nuke one another when used in parallel. Not surprising, given they both use the exact same underlying registration protocol for adding new liquid tags, so I guess the real mystery is how these two <em>ever</em> worked at all!</p>
+<p>Nevertheless, I found that I <em>either</em> have Jupyter notebooks render in all their code-by-text-by-figures beauty, <em>or</em> embed images and videos. Couldn’t have both. After doing some searching and getting the distinct feeling that no one else really cared about the situation, I briefly considered switching static blog devices before regaining a shred of sanity and taking a second look: after all, since both plugins were using the same backend, surely I could jury-rig a solution where I smashed the two together and forced them to play nice?</p>
+<p>Turns out, that’s pretty much what I did, but <a href="https://github.com/danielfrg/pelican-jupyter/issues/126#issuecomment-1003171465">with a crucial assist</a> from the maintainer of the pelican-jupyter plugin. There’s an extra config I needed to suppress some of the more problematic CSS from the Jupyter notebooks (this fixed a very strange template error I was getting when compiling the blog), but I still needed a kludge to get the two plugins to even cooperate.</p>
+<p>I figured out that by copying two files from the pelican-jupyter plugin over to the liquid-tags plugin–specifically, <code>core.py</code> and <code>liquid.py</code> (though <code>liquid.py</code> had to be renamed to <code>notebook.py</code> after the move)–I could essentially merge the two plugins into one. I did have to make some changes to the <code>liquid.py</code>/<code>notebook.py</code> imports at the top, so they looked like this:</p>
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;">from</span> .core <span class="im" style="color: #00769E;">import</span> get_html_from_filepath, parse_css</span>
+<span id="cb1-2"><span class="im" style="color: #00769E;">from</span> .liquid_tags <span class="im" style="color: #00769E;">import</span> register  <span class="co" style="color: #5E5E5E;"># noqa</span></span>
+<span id="cb1-3"><span class="im" style="color: #00769E;">from</span> .mdx_liquid_tags <span class="im" style="color: #00769E;">import</span> LiquidTags</span></code></pre></div>
+<p>so that they referenced the <em>local</em> versions of <code>liquid_tags.py</code> and <code>mdx_liquid_tags.py</code> (as they were essentially identical to the ones provided by the pelican-jupyter plugin).</p>
+<p>Beyond that, the relevant portions of my <code>pelicanconf.py</code> now looked like this:</p>
+<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="im" style="color: #00769E;">from</span> pelican.plugins <span class="im" style="color: #00769E;">import</span> liquid_tags</span>
+<span id="cb2-2">PLUGINS <span class="op" style="color: #5E5E5E;">=</span> [</span>
+<span id="cb2-3">        liquid_tags,                <span class="co" style="color: #5E5E5E;"># regular ol' liquid tags</span></span>
+<span id="cb2-4">]</span>
+<span id="cb2-5"></span>
+<span id="cb2-6">LIQUID_TAGS <span class="op" style="color: #5E5E5E;">=</span> [<span class="st" style="color: #20794D;">"img"</span>, <span class="st" style="color: #20794D;">"include_code"</span>, <span class="st" style="color: #20794D;">"gram"</span>, <span class="st" style="color: #20794D;">"video"</span>, <span class="st" style="color: #20794D;">"youtube"</span>, <span class="st" style="color: #20794D;">"notebook"</span>]</span>
+<span id="cb2-7"></span>
+<span id="cb2-8">LIQUID_CONFIGS <span class="op" style="color: #5E5E5E;">=</span> ((<span class="st" style="color: #20794D;">"IPYNB_FIX_CSS"</span>, <span class="st" style="color: #20794D;">"False"</span>, <span class="st" style="color: #20794D;">""</span>), </span>
+<span id="cb2-9">                  (<span class="st" style="color: #20794D;">"IPYNB_SKIP_CSS"</span>, <span class="st" style="color: #20794D;">"False"</span>, <span class="st" style="color: #20794D;">""</span>), </span>
+<span id="cb2-10">                  (<span class="st" style="color: #20794D;">"IPYNB_EXPORT_TEMPLATE"</span>, <span class="st" style="color: #20794D;">"base"</span>, <span class="st" style="color: #20794D;">""</span>),)</span></code></pre></div>
+<p>It’s a bit odd, since I technically do have the pelican-jupyter plugin installed, but I haven’t imported it. Instead, I basically smashed it into the liquid-tags plugin, overwriting the “notebook” tag that was already there (it’s old, it sucks) and running with it.</p>
+<p>So yeah! I’m back up and running. Have LOADS to talk about, so stick around!</p>
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2021,
+  author = {Shannon Quinn},
+  title = {Back in {Action}},
+  date = {2021-12-30},
+  url = {https://magsol.github.io/2021-12-30-back-in-action},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2021" class="csl-entry quarto-appendix-citeas">
+Shannon Quinn. 2021. <span>“Back in Action.”</span> December 30, 2021.
+<a href="https://magsol.github.io/2021-12-30-back-in-action">https://magsol.github.io/2021-12-30-back-in-action</a>.
+</div></div></section></div> ]]></description>
+  <category>personal</category>
+  <category>blogging</category>
+  <category>python</category>
+  <category>pelican</category>
+  <category>dependency hell</category>
+  <guid>https://magsol.github.io/posts/2021-12-30-back-in-action/index.html</guid>
+  <pubDate>Thu, 30 Dec 2021 16:25:00 GMT</pubDate>
+  <media:content url="https://c.tenor.com/ZFc20z8DItkAAAAd/facepalm-really.gif" medium="image" type="image/gif"/>
+</item>
+<item>
+  <title>Festivus for the Restivus</title>
+  <dc:creator>Shannon Quinn</dc:creator>
+  <link>https://magsol.github.io/posts/2020-12-30-festivus-for-the-restivus/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><img src="https://magsol.github.io/posts/2020-12-30-festivus-for-the-restivus/festivus.png" class="preview-image img-fluid" alt="Festivus for the Restivus sign."></p>
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Content warning: rough language ahead. You’ve been warned.</p>
+</div>
+</div>
+<p>Jerry Seinfeld isn’t on board with Festivus this year.</p>
+<p></p><div id="tweet-45458"></div><script>tweet={"url":"https:\/\/twitter.com\/JerrySeinfeld\/status\/1341820840149733377","author_name":"Jerry Seinfeld","author_url":"https:\/\/twitter.com\/JerrySeinfeld","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EMaybe just this once, just for this Festivus 2020, we take pass on the “Airing of Grievances”..\u003C\/p\u003E&mdash; Jerry Seinfeld (@JerrySeinfeld) \u003Ca href=\"https:\/\/twitter.com\/JerrySeinfeld\/status\/1341820840149733377?ref_src=twsrc%5Etfw\"\u003EDecember 23, 2020\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-45458").innerHTML = tweet["html"];</script><p></p>
+<p>I get it, I do. And I respect it. But I’m gonna air me some grievances. My therapist has continued to insist that I do what I need and not to feel guilty about it, and right now I need to air some <em>fucking</em> grievances. So strap in folks; here we go.</p>
+<p>Running has been a sick joke for most of this year. I’ve been logging miles with some kind of GPS watch since mid-2011, and 2020 has been the lowest-mileage year by a massive margin. For comparison, long-time readers may remember the boondoggles of 2015-2016 when I had metatarsalgia in my feet. Both those years, I still managed to tip the 1,000-mile scale. This year? <strong>711 miles</strong>. Fuck that shit. Running wasn’t an escape; it was a fucking trap of preferring the evil I knew over the evil I didn’t.</p>
+<p>Of course, halting my running didn’t help much, either. I was still exhausted beyond all measures, and not just physically: mentally, emotionally, and grammatically <em>burned. out.</em> I managed a couple of walks most days, largely amounting to 10,000 steps or thereabouts, so I guess I met the minimum recommended daily physical activity threshold for the most part. But boy did running leave me stuck with the bill this year.</p>
+<p>On the note of bills, let’s talk about how much help we’ve gotten in that area, shall we? As in, fucking none? We’d have gotten more tangible pandemic assistance if we’d wholesale replaced our Georgia state and US federal governments with fucking nail salons, as opposed to the leadership vacuums from Kemp, Congress, and the White House. Jesus goddamn tap-dancing Christ. Frank Underwood in <em>House of Cards</em> killed people, but he got things done in the process. These Republicans just… kill people; whether it’s because of willful incompetence or callous indifference I can’t say, but holy shit: literal poop-flinging monkeys could have accomplished more in their steads. You have to put forth actual effort to be <em>this fucking ineffective</em>. You wanted individualistic self-sufficiency? Well, this is what it looks like, fuckers: if you’ve already got money, you’re fine. If not, welp.</p>
+<p>I’ve felt a real kinship these past several months with Jeff Daniels’ Will McAvoy, <a href="https://www.youtube.com/watch?v=wTjMqda19wk">particularly as he picks apart this fantasy of America being the “greatest country in the world.”</a> What the fuck does that even mean? That we lead the world in COVID cases and deaths? That we’re so star-spangled awesome that anyone with an internet connection can be an armchair epidemiologist? That some so-called moderates are so concerned with curating their centrist appearance that they completely lose sight of the fact that not all (or even most) issues have two sides? That an entire political spectrum in this country has managed to openly flirt with becoming the very thing we fought a war against barely a century ago? That we’re so worried about giving anyone slightly more than they “deserve” that we’ll decimate public institutions, neglect infrastructure, and reinforce existing inequities, so that only the people who already had money will succeed? Are we really this collectively fucking stupid?</p>
+<p>Twitter is a fucking nazi cesspool. Facebook is even worse, and Amazon takes the cake for most unethical CEO. Google isn’t innocent, either: I’ve lost any respect I had for my former employer after they fired Timnit Gebru. Then I lost respect for luminaries like Jeff Dean after he doubled-down on some shady post-hoc justification that simultaneously made no sense and also revealed that Google has no collective interest in addressing its structural issues. Then, I lost respect for a number of current Googlers whose work I’ve admired over the years of following them since graduate school when they kept quiet over this whole thing. Meanwhile, Google is being hammered in EU antitrust courts and I frankly couldn’t be happier about it. I hope Facebook gets splintered into dozens of tiny pieces.</p>
+<p>Can I just say again–people who selectively listen to experts or “experts” because they confirm what said people already believed can go jump in this fire.</p>
+<p><img src="https://magsol.github.io/posts/2020-12-30-festivus-for-the-restivus/diaf.jpg" class="img-fluid" alt="A classic 'die in a fire' meme."></p>
+<p>Sex work is work, and <em>The West Wing</em> really got this one wrong. Donna, in fact, had it right.</p>
+<p><em>Sex and the City</em>, for as much as it may have been ahead of its time in general, is super problematic around trans and nonbinary folks.</p>
+<p>I have to divorce J.K. Rowling the person from the author of the <em>Harry Potter</em> books, because she is doing literally everything possible to shit all over what is left of her legacy. I don’t know what her problem with trans people is, or why she’s so threatened by them, but she can likewise join the aforementioned people who listen only to the “experts” they already agree with.</p>
+<p>Brandon Sanderson doesn’t write books nearly fast enough.</p>
+<p>James S.A. Corey doesn’t write books nearly fast enough.</p>
+<p>Patrick Rothfuss doesn’t write books nearly fast enough.</p>
+<p>Oh yeah, a massive <strong>FUCK YOU</strong> to the folks I’ve been seeing on Instagram who don’t seem to realize COVID is a thing? Who keep gathering with more people than could possibly be in their pods? Who post pictures of themselves at gyms, bars, restaurants, group runs, and family gatherings for the holidays? They truly are the fuckwads from high school and college who would go off and party instead of working on the team project, difference being that when they invariably came back for the presentation, they’ll end up spontaneously combusting and killing both themselves, their teammates, and half their classmates. I’ve been aggressively un-following these dipshits because if they can’t think about anyone other than themselves in the midst of a global pandemic, why would I want to associate with them when the stakes are eventually more mundane? There are a lot of folks who’ve shown me exactly who they are during this pandemic and they’re not anyone I care to know once COVID is done.</p>
+<p>SERIOUSLY. A MODICUM OF LEADERSHIP WOULD HAVE PREVENTED THOUSANDS OF NEEDLESS DEATHS, YOU STAR SPANGLED CESSPOOLS.</p>
+<p>Telecommunications in the United States is a fucking travesty. In any other [western] country there are dozens of companies in close competition with one another. Here, we have what amounts to local monopolies on broadband, and an effective duopoly on cell providers. And this gets passed off as “innovation”? Our telecom industry is 20 years behind the rest of the world!</p>
+<p>The Georgia Board of Regents: Governor Kemp’s cronies, or just that fucking incompetent? They couldn’t be bothered to implement a mask mandate back at the start of the first COVID surge until the entire university system was practically in a state of open rebellion. Rumor has it there’s really only a couple bad apples among them, but–in much the same vein as the United States Senate–the fact that a single moronic board member can bring everything to a screeching halt is a bug, not a feature. Ted Cruz can bring the Senate to its knees simply by virtue of his vapid tripe; he doesn’t also need a legal basis for his subversion of democracy.</p>
+<p>Wear. A. Goddamn. Mask. <em>Fuck.</em></p>
+<p>When did it become a feature of a functioning democracy to allow a <a href="https://twitter.com/rmayemsinger/status/1343978502551310337">decaying Confederate monument from Kentucky</a> to singlehandedly decide the fate of any and all legislation that made its way to the US Senate?</p>
+<p>Perhaps the single biggest driver of my growing cynicism has been not the pathetic ineptitudes of our government leaders or even the disinformation being sown by talking heads making untold millions of dollars, but instead the seemingly smart, incisive, and compassionate individuals I knew before the pandemic (or even before the election of Trump) who have since turned into people I no longer recognize. Of course I realize the “change” was, in fact, there all along–it is only my perception that has changed. But it has been truly disheartening and enraging to see acquaintances, friends, and even family here in Athens and elsewhere in the United States who forward along conspiracy theories, repeat hate-filled talking points, and play the role of armchair epidemiologists in magnifying misleading or outright false information around COVID-19. From claiming that supplements can reduce severity of COVID symptoms, to somehow dismissing US oubreak numbers by equating them with China, and since “China’s numbers are fudged” therefore the US is doing just fine, to demonizing and even threatening the livelihood of health care workers for the crime of doing their jobs, to giving Trump credit for the rollout of the Pfizer and Moderna vaccines, to <strong>continuing to push back against and ignoring the advice of actual medical and public health experts</strong>.</p>
+<p><img src="https://magsol.github.io/posts/2020-12-30-festivus-for-the-restivus/dumb.png" class="img-fluid" alt="A screenshot of one of the dumbest tweets ever posted: someone arguing the problem with president #45 was too much power in the Presidency, ceded over years and years."></p>
+<p>Seems reasonable, right? Until you include the surrounding context: this person initially claimed Trump should take credit for “Operation Warp Speed,” followed by a hand-waving rationalization of the <a href="https://www.cnn.com/2020/12/29/politics/vaccine-rollout-behind-schedule/index.html">slow</a> <a href="https://www.washingtonpost.com/opinions/2020/12/29/covid-19-vaccine-distribution-slow-testing/">vaccine</a> <a href="https://www.nbcnews.com/news/us-news/current-rate-it-ll-be-10-years-americans-adequately-vaccinated-n1252486">rollout</a> by blaming supply chain hiccups that come with large-scale product manufacturing. Ignoring, of course, that a vaccine has literally been the single goal of the entire US public health sector since January 2020; how the infrastructure for such a rollout wasn’t in place by the summer is a sin worthy of excommunication. But rather than admit as much, we get the above response.</p>
+<p>It’s <strong>infuriating</strong> that we can’t just let the experts do their fucking jobs; instead, we have to stake out some pointless fucking pseudo-centrist landscape that doesn’t exist, for the purpose of… what? Appealing to the better demons of both sides? That would be reasonable, except for the small problem of one side being a highly imperfect conglomerate of diverse and often conflicting viewpoints, and the other side being a militaristic theocrat’s wet dream. But sure, states’ rights and framers’ intent and all that.</p>
+<p>Oh, that reminds me: I am fucking DONE with <a href="https://en.wikipedia.org/wiki/Originalism">originalism</a> (yes, that goes for the Bible too). There is no 21st-century world in which the intentions of 18th century slaveholders would be remotely interesting, worth considering, or at all relevant. Much like how <a href="https://xkcd.com/1357/">an argument of free speech is effectively a concession</a>, an argument of framers’ intent is likewise an indication that your argument stands on the rhetorical equivalent of a sinkhole; continuing to scream “bUt ThE fRaMeRs!” only reveals your partisan / intellectual / insert motivated reasoning hackery here.</p>
+<p></p><div id="tweet-50977"></div><script>tweet={"url":"https:\/\/twitter.com\/dril\/status\/134787490526658561","author_name":"wint","author_url":"https:\/\/twitter.com\/dril","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003E&quot;im not owned!  im not owned!!&quot;, i continue to insist as i slowly shrink and transform into a corn cob\u003C\/p\u003E&mdash; wint (@dril) \u003Ca href=\"https:\/\/twitter.com\/dril\/status\/134787490526658561?ref_src=twsrc%5Etfw\"\u003ENovember 11, 2011\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-50977").innerHTML = tweet["html"];</script><p></p>
+<p>Oh, one final grievance. With all due respect to Bill Watterson: <a href="https://www.gocomics.com/calvinandhobbes/1993/05/11">excessively positive people</a>. In fact, we’ve even come up with a name for this: toxic positivity. Emphasizing the positive in a given situation, <strong>with the unstated assumption</strong> that said positives entirely cancel out all negatives. It’s been coming up a lot in the context of the pandemic: “well the pandemic has been bad but at least I haven’t had to see my boss as much!”, as if the two things were even remotely on the same playing field. Granted, it’s a specific incarnation of the more general ALWAYS LOOK ON THE BRIGHT SIDE mantra, but it’s important to understand that, as complex human beings, we are capable of holding <em>more than one truth</em> in our heads simultaneously.</p>
+<p>2020 is both the year Z entered our lives, and it can also die in a fucking fire. Both are true.</p>
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2020,
+  author = {Shannon Quinn},
+  title = {Festivus for the {Restivus}},
+  date = {2020-12-30},
+  url = {https://magsol.github.io/2020-12-30-festivus-for-the-restivus},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2020" class="csl-entry quarto-appendix-citeas">
+Shannon Quinn. 2020. <span>“Festivus for the Restivus.”</span> December
+30, 2020. <a href="https://magsol.github.io/2020-12-30-festivus-for-the-restivus">https://magsol.github.io/2020-12-30-festivus-for-the-restivus</a>.
+</div></div></section></div> ]]></description>
+  <category>personal</category>
+  <category>festivus</category>
+  <category>fuck 2020</category>
+  <category>fuck that shit</category>
+  <category>airing of grievances</category>
+  <guid>https://magsol.github.io/posts/2020-12-30-festivus-for-the-restivus/index.html</guid>
+  <pubDate>Wed, 30 Dec 2020 14:14:00 GMT</pubDate>
+  <media:content url="https://magsol.github.io/posts/2020-12-30-festivus-for-the-restivus/festivus.png" medium="image" type="image/png" height="81" width="144"/>
+</item>
+<item>
+  <title>At home during COVID-19</title>
+  <dc:creator>Shannon Quinn</dc:creator>
+  <link>https://magsol.github.io/posts/2020-05-20-working-from-home/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://magsol.github.io/posts/2020-05-20-working-from-home/instachaaz.png" class="preview-image img-fluid figure-img" alt="A stick figure standing in front of a Wheel of Fortune style wheel, where each possible option is something regrettable, and the person's thought bubble says 'Ooh! Wonder what it's going to be today?'"></p>
+<p></p><figcaption class="figure-caption">Image source: <a href="https://instachaaz.threadless.com/">instachaaz</a> (the stuff is awesome)</figcaption><p></p>
+</figure>
+</div>
+<p>Well, this has certainly been a <strong>unique</strong> past couple of months. I had a lot of things in mind for the spring 2020 semester and beyond, but I can safely say it’s all been completely upended now.</p>
+<p>I don’t want to trivialize COVID-19 to the suburban equivalent of “can’t go to the community pool for a few months because of a particularly bad case of the fiery poops;” there are real people whose livelihoods are suffering: financially, professionally, and literally, and I think the world as a whole would be a lot better off if we collectively recognized that and pitched in to help.</p>
+<p>The Lady and I have been establishing new habits and routines, while trying to maintain a semblance of normality during the pandemic. There have been a lot of snacks (peanut butter M&amp;Ms, cookie dough ice cream, hint of lime chips, and of course, Lucky Charms cereal), some creativity in workplace setup (moved an extra computer monitor from upstairs, and set up a surge protector behind the dining table–also had to line one end of the table with aluminum foil, because our cat kept jumping up on the table from that side), and digging out some old mainstays.</p>
+<section id="classics-never-go-out-of-style" class="level3">
+<h3 class="anchored" data-anchor-id="classics-never-go-out-of-style">Classics Never Go Out of Style</h3>
+<p>Early on in the lockdown, The Lady and I kicked off a Zelda-thon, starting with <em>Skyward Sword</em> on the Nintendo Wii. There’s a strange story there: I’d purchased the game for her way back when we lived in separate apartments in Pittsburgh, because she was the Zelda fan between the two of us. Yeah, I’m a gamer, but she’s a <em>Zelda</em> gamer. It was a lot of fun to watch her play the game, and <a href="https://www.youtube.com/watch?v=Cbwq8ev-EXA">I occasionally jumped in when she needed to tap out</a>. But after reaching the penultimate boss, we just… stopped playing.</p>
+<p>For <em>eight years</em>. We knew this, because when we fired up the game again on the weekend of March 14, we saw the last save file pop up for March 28, 2012. Almost eight years <em>to the day</em>.</p>
+<p>Since The Lady played most of the game eight years ago, I ended up “driving” this time around. She jumped in whenever she wanted, but we ended up tearing through the game in <strong>10 days</strong>. It was pretty impressive, and it was great to finally see the end of the game that has been referenced SO MUCH in theory videos around <em>Breath of the Wild</em> (which we’ll get to!).</p>
+<p>Once we knocked out <em>Skyward Sword</em>, The Lady took the driver’s seat for <em>Twilight Princess</em>. I’d never seen the game played start to finish, and had really never seen anything beyond the quests involving collecting light shards (which is, as I discovered, a meager portion of the game’s introduction). Suffice to say, this one took a lot longer; most of the month of April, if memory serves.</p>
+<p>After that, I took a deep breath and fired up <em>Breath of the Wild</em>… in <strong>Master Mode</strong>. Yes, <a href="https://magsol.github.io/2019-08-12-breath-of-the-wild">I’ve posted about this game here before</a>, and we ended up beating it sometime in November 2019. But the DLC included an evil modification called “Master Mode”, which among other terrible things, has the following effects:</p>
+<ul>
+<li>Every enemy in the game is upgraded by one level (red become blue, blue become brown, brown become silver, silver become <a href="https://cdn.gamer-network.net/2017/usgamer/Breath-of-the-Wild-DLC-Guide-header.jpg/EG11/thumbnail/1920x1080/format/jpg/quality/65/18-12-2018-the-legend-of-zelda-breath-of-the-wild-dlc-everything-we-know.jpg">gold</a>, a brand-new level)</li>
+<li>Enemies heal when they’ve been out of combat for two seconds (not hyperbole; literally two seconds)</li>
+<li>Brand-new <a href="https://imgix.bustle.com/mic/knzgpkctoycksfpvki9e3kuc7fozfcugpfqn63lps6nee90vzthnydlbjtvt26lx.jpg?w=1020&amp;h=576&amp;fit=crop&amp;crop=faces&amp;auto=format%2Ccompress&amp;cs=srgb&amp;q=70">floating platforms</a> with enemies, because fuck you that’s why</li>
+</ul>
+<p>It is <em>brutal</em>, especially in the first quarter of the game. You end up skipping fights by default, sneaking around a lot more, and fighting as though you cannot take a single hit (because in all likelihood, you can’t). I haven’t finished it yet, but just this past weekend we completed the last of the DLC “Ballad of the Champions,” so really the only thing left of the Main Quests is to destroy Calamity Ganon.</p>
+<p>Once this is done, The Lady plans to break out the game that really and truly started it all: <em>Ocarina of Time</em>, which I’ve also never seen played start to finish, so that will be fun to watch!</p>
+<p>On a completely separate video gaming front, I managed to get a Stargate mod working for <em>Sins of a Solar Empire</em>, and even started playing a small 1v1 as the Ancients against the Wraith. It looks incredible!</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://magsol.github.io/posts/2020-05-20-working-from-home/destiny.jpg" class="img-fluid figure-img" alt="A screenshot from Sins of a Solar Empire."></p>
+<p></p><figcaption class="figure-caption">For fans of <em>Stargate: Universe</em>, you’ll recognize this class of Ancient ship.</figcaption><p></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://magsol.github.io/posts/2020-05-20-working-from-home/gateship.jpg" class="img-fluid figure-img" alt="A screenshot from Sins of a Solar Empire."></p>
+<p></p><figcaption class="figure-caption">Fans of both <em>SG-1</em> and <em>Atlantis</em> will instantly recognize this “gate ship”!</figcaption><p></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://magsol.github.io/posts/2020-05-20-working-from-home/superhive.jpg" class="img-fluid figure-img" alt="A screenshot from Sins of a Solar Empire."></p>
+<p></p><figcaption class="figure-caption">This looks like a scene straight out of the <em>Atlantis</em> finale!</figcaption><p></p>
+</figure>
+</div>
+<p>I can’t wait to explore some of the other races–Asgard, Goa’uld, and Ori round out the playable races, while a recent update includes some “minor factions” that are always AI-controlled but can still change the dynamics of play: Tau’ri (that’s us!), Free Jaffa, Vanir (rogue Asgard offshoot seen in <em>Atlantis</em>), and Michael’s Hybrids.</p>
+</section>
+<section id="variety-is-the-pribe-of-libe" class="level3">
+<h3 class="anchored" data-anchor-id="variety-is-the-pribe-of-libe">Variety is the Pribe of Libe</h3>
+<p>While The Lady and I have been re-visiting the classics to keep us grounded, we’ve also been branching out.</p>
+<p>First, like most, we tried our hand at baking sourdough. And, frankly, it turned out incredible!</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://magsol.github.io/posts/2020-05-20-working-from-home/sourdough.jpg" class="img-fluid figure-img" alt="A picture of finished homemade sourdough bread."></p>
+<p></p><figcaption class="figure-caption">Sourdough bread, like everyone else.</figcaption><p></p>
+</figure>
+</div>
+<p>We’ve since baked a new recipe of chocolate chip cookies (which <em>mostly</em> turned out chewy), and have plans to whip up some butterscotch bars.</p>
+<p>We’ve also been starting up some regular remote get-togethers, from weekly chats with my family to weekly post-run “coffee chats” with some of our running friends. We’ll go out for runs by ourselves, come home, get cleaned up, and FaceTime each other while making coffee and getting ready for the day. We’re also about to try out remote gaming tomorrow with some friends of ours from Pittsburgh–they, like us, are big board gaming geeks. I’m not sure exactly what we’re going to play or how it’ll pan out, but I’m excited to try!</p>
+<p>The Lady and I took a page from a <a href="https://arstechnica.com/gaming/2020/04/the-best-board-games-to-play-with-your-quarantined-housemates/">recent list of recommended quarantine board games</a> and purchased <em>Star Realms</em>. Think: a super-simple mash-up of <em>Magic: The Gathering</em> and <em>Dominion</em>. It’s a deck-building game with a common “market” of cards you can purchase, and the goal is to use those cards to bludgeon your opponent to death in the most sci-fi manner possible. Meanwhile, I sunk several days in over at <a href="https://www.heroforge.com/">Hero Forge</a> designing avatars for her and me. I think they came out pretty well!</p>
+<p><img src="https://magsol.github.io/posts/2020-05-20-working-from-home/heroforge.jpg" class="img-fluid" alt="A picture of finished minis from HeroForge."></p>
+<p>Speaking of remote activities together, we actually did try our hand at a “remote viewing” of a movie, and it worked remarkably well! Two of our runners friends joined us to watch <em>A League Of Their Own</em>, both because one of them had never seen it before, and because of <a href="https://bleacherreport.com/articles/2890923-mary-pratt-last-surviving-rockford-peach-dies-at-age-101">last week’s news that the last of the original Rockford Peaches passed away at 101</a>. We’d originally hoped to use a video synchronization platform like <a href="https://www.netflixparty.com/">Netflix Party</a>, but Netflix doesn’t have <em>A League Of Their Own</em>; Amazon Prime does. So we looked into <a href="https://www.kastapp.co/">Kast</a>, but after 30 minutes of tinkering, it was clear the app is still too young and rough around the edges; we were constantly having either sound or video issues. So we did it the old-fashioned way: fired up a Zoom chat, and counted down to hitting “Play” out loud. And it actually worked quite well! We were never more than 20 seconds off each other.</p>
+<p><img src="https://magsol.github.io/posts/2020-05-20-working-from-home/aloto.jpg" class="img-fluid" alt="A meme from A League Of Their Own with Tom Hanks yelling 'There's no crying in baseball!'"></p>
+<p>Our sudden and constant presence all day every may have caught our pets off guard, but they sure seem to be enjoying it. Zippy is scampering around us, jumping on our laps, and trying to jump on our work table one minute, then is passed out on the couch for hours on end the next. Clover, meanwhile, seems to find a napping spot anywhere she goes, but has started expecting treats at all hours of the day (partly our fault for giving her the occasional piece of banana with breakfast… and piece of fruit or veggie for lunch… and for dinner… ).</p>
+<p><img src="https://magsol.github.io/posts/2020-05-20-working-from-home/aminals.jpg" class="img-fluid" alt="Both our black cat Zippy and white rabbit Clover, sitting on different levels of a pet tree."></p>
+<p>One of the biggest changes on my end (besides the obvious, of course), was buying a new laptop. This has been on my list for several months, as my aging MacBook Pro Mid-2014 has been struggling more and more to keep up with workloads. When the new laptop arrived, it took three entire days to fully transfer and configure it just right; I’m still coming across things here and there that need to be fully fleshed out (e.g., screen saver still isn’t the picture collage, and it’s not properly password protected, and the desktop backgrounds don’t switch out, and other small but noticeable things).</p>
+<p>But the thing I wasn’t expecting that hit me really hard when it was time to shut down, wipe, and ship out the old laptop was the melancholy.</p>
+<p>I’d purchased this old laptop (aptly-named “Apollo”) in September 2014 in the throes of writing my dissertation. I remember it distinctly: sitting in the Squirrel Hill Starbucks, ear pods in, listening to some Pandora station while typing away in the Latex document… when suddenly my ear pods <em>screeeeeched</em>, my screen froze, and moments later, my ear pods went silent and the screen went dark. I rebooted, and… nothing. According to the Apple Geniuses later that evening, the motherboard has inexplicably fried. It was well out of warranty, so my only option was to purchase a brand-new laptop.</p>
+<p><img src="https://magsol.github.io/posts/2020-05-20-working-from-home/apollo.jpg" class="img-fluid" alt="My old mid-2014 MacBook Pro. RIP."></p>
+<p>That was Apollo. It got me through my PhD dissertation and defense, the move to Athens and the start of my tenure-track position at UGA, and through the first five years of it–well into my promotion and tenure process, my first couple of successful grants, and so, so many papers. It was a veritable workhorse of a laptop that, with a little sprucing up, still has some life in it.</p>
+<p>Now, I have a laptop that is literal orders of magnitude more powerful than the previous one, yet it has huge shoes to fill. We’ll see if the new laptop–<a href="https://www.zeldadungeon.net/wiki/images/5/52/Dinraal.jpg">Dinraal</a>–is up to the task.</p>
+<p><img src="https://magsol.github.io/posts/2020-05-20-working-from-home/dinraal.jpg" class="img-fluid" alt="My new mid-2020 MacBook Pro."></p>
+</section>
+<section id="whats-next" class="level3">
+<h3 class="anchored" data-anchor-id="whats-next">What’s next?</h3>
+<p>Not sure, honestly. We’re taking it one day at a time. We’re being kind to each other and ourselves. We’re trying to be safe, not just for us, but for everyone else around us.</p>
+<p>Stay safe and happy, my friends.</p>
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2020,
+  author = {Shannon Quinn},
+  title = {At Home During {COVID-19}},
+  date = {2020-05-20},
+  url = {https://magsol.github.io/2020-05-20-working-from-home},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2020" class="csl-entry quarto-appendix-citeas">
+Shannon Quinn. 2020. <span>“At Home During COVID-19.”</span> May 20,
+2020. <a href="https://magsol.github.io/2020-05-20-working-from-home">https://magsol.github.io/2020-05-20-working-from-home</a>.
+</div></div></section></div> ]]></description>
+  <category>personal</category>
+  <category>professional</category>
+  <category>covid-19</category>
+  <category>sars-cov-2</category>
+  <category>work from home</category>
+  <category>zelda</category>
+  <category>pandemic</category>
+  <category>furbabies</category>
+  <category>zippy the cat</category>
+  <category>clover the bun</category>
+  <guid>https://magsol.github.io/posts/2020-05-20-working-from-home/index.html</guid>
+  <pubDate>Wed, 20 May 2020 12:00:00 GMT</pubDate>
+  <media:content url="https://magsol.github.io/posts/2020-05-20-working-from-home/instachaaz.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
+<item>
   <title>Breath of Fresh (albeit, indoor) Air</title>
   <dc:creator>Shannon Quinn</dc:creator>
   <link>https://magsol.github.io/posts/2019-08-12-breath-of-the-wild/index.html</link>
@@ -1505,321 +1963,6 @@ Shannon Quinn. 2018. <span>“Resolutions for 2018.”</span> January 21,
   <guid>https://magsol.github.io/posts/2018-01-19-new-years-resolutions/index.html</guid>
   <pubDate>Sun, 21 Jan 2018 14:28:00 GMT</pubDate>
   <media:content url="https://magsol.github.io/images/logo.png" medium="image" type="image/png" height="144" width="144"/>
-</item>
-<item>
-  <title>New year, new blog layout</title>
-  <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2018-01-06-new-year-new-blog/index.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>Happy 2018!</p>
-<p>I’ve been wanting to put a fresh coat of paint on things for awhile around here, especially since the old Flex template didn’t have a really good way of supporting embedded Jupyter notebooks without completely upending the CSS (love the theme otherwise!).</p>
-<p>Taking a page (or really, an entire layout) from <a href="https://jakevdp.github.io/">Jake’s blog</a>, I can now embed Jupyter notebooks without trashing the whole layout of the site. There are some posts I’ve been wanting to make for awhile that will require a considerable amount of code, so I’m excited to be able to dig into them now!</p>
-<p>I’ll be following up soon with a lengthier resolutions post, but for now I just wanted to say “I’m still alive” and roll out the new layout. Happy new year everyone!</p>
-
-
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2018,
-  author = {Shannon Quinn},
-  title = {New Year, New Blog Layout},
-  date = {2018-01-06},
-  url = {https://magsol.github.io/posts/2018-01-06-new-year-new-blog/},
-  langid = {en}
-}
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2018" class="csl-entry quarto-appendix-citeas">
-Shannon Quinn. 2018. <span>“New Year, New Blog Layout.”</span> January
-6, 2018. <a href="https://magsol.github.io/posts/2018-01-06-new-year-new-blog/">https://magsol.github.io/posts/2018-01-06-new-year-new-blog/</a>.
-</div></div></section></div> ]]></description>
-  <category>personal</category>
-  <category>new year</category>
-  <category>blog</category>
-  <guid>https://magsol.github.io/posts/2018-01-06-new-year-new-blog/index.html</guid>
-  <pubDate>Sat, 06 Jan 2018 17:47:00 GMT</pubDate>
-  <media:content url="https://magsol.github.io/images/logo.png" medium="image" type="image/png" height="144" width="144"/>
-</item>
-<item>
-  <title>Summer of Data Science 2017</title>
-  <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2017-05-31-summer-of-data-science/index.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<p><img src="https://magsol.github.io/posts/2017-05-31-summer-of-data-science/carpelibrum.png" class="img-fluid"></p>
-<p>A few days ago, while I was still in Portland, OR enjoying the last few days of <a href="https://us.pycon.org/2017/">PyCon 2017</a>, Renee (<a href="https://twitter.com/BecomingDataSci"><span class="citation" data-cites="BecomingDataSci">@BecomingDataSci</span></a>) mentioned on Twitter that she might bring back the “Summer of Data Science” she kicked off last year.</p>
-<p>In short: use the summer as an opportunity to learn and/or accomplish something data science-related in a goal-oriented, data-driven way.</p>
-<p>As a tenure-track professor still yet to endure the 3rd-year review, pretty much everything data science related revolves around furthering my eventual tenure dossier. But the summers are still considerably more flexible for me to accomplish some of these goals than the fall or spring (I love teaching, but it’s all-consuming). I also have more than just myself–networks of collaborators and research assistants who can help me with these goals.</p>
-<p>So without further adieu, I’d like to put forth my own Summer of Data Science, 2017 Edition:</p>
-<section id="teaching-1360e-improvements-and-43606360-preparation" class="level3">
-<h3 class="anchored" data-anchor-id="teaching-1360e-improvements-and-43606360-preparation">Teaching: 1360E improvements and 4360/6360 preparation</h3>
-<p>I’m teaching an online course this summer, starting June 5 and continuing through the end of July: <a href="https://eds-uga.github.io/csci1360e-su17/">CSCI 1360E Foundations of Informatics and Analytics</a>.</p>
-<p>Or, more colloquially, I just call it “introduction to data science.”</p>
-<p>It’s one of the five courses I proposed in my first year (a story for another time, believe me…) and taught for the first time last summer, and in-person last fall. I’m teaching it again this summer and hoping to make some of the standard improvements, such as sprucing up slides and fixing autograder bugs from previous incarnations.</p>
-<p>More pressing is CSCI 4360/6360 Data Science II, which has yet to have its own website. This course has <em>never</em> been taught, but is slated for Fall 2017.</p>
-<p>Did I mention there are already over 40 students registered, undergraduate and graduate combined?</p>
-<p>This is supposed to be the “corner cases” of data science: lesser-used and/or more powerful analysis methods that aren’t necessarily the first tools or techniques you reach for in a given situation. This will include, but certainly not be limited to, concepts like randomized algorithms, semi-supervised learning, and backpropagation; techniques like out-of-core processing, distributed computing, and functional programming; tools like <a href="https://julialang.org/">Julia</a>, <a href="http://numba.pydata.org/">numba</a>, and <a href="http://dask.pydata.org/en/latest/">dask</a>.</p>
-<p>Before you ask: No.&nbsp;I’m <em>not</em> covering Spark.</p>
-<p>At any rate, the conceptual framework is in place, but practically none of the architectural logistics have been established. So this will take up virtually all of my time for the remainder of the summer, once the following item is completed…</p>
-</section>
-<section id="research-nsf-career-proposal" class="level3">
-<h3 class="anchored" data-anchor-id="research-nsf-career-proposal">Research: NSF CAREER proposal</h3>
-<p>The advantage of this goal is it has a hard end date: <strong>July 19</strong>.</p>
-<p>The disadvantage is that the <a href="https://www.nsf.gov/pubs/2017/nsf17537/nsf17537.htm">NSF CAREER</a> is the pinnacle of NSF early-career investigator awards. Its importance cannot be overstated; its <em>je ne sais quoi</em> is on display in the faces of new investigators when you mention it around them.</p>
-<p>I’ve connected with my university’s grant proposal officers, and am participating in a peer review process that involves two rounds of review: first with fellow CAREER submitees (as in, we exchange each other’s current drafts!), and second with the university grant officers.</p>
-<p>An investigator can only make three submission attempts for the CAREER. The CAREER is only open for submissions once per year. If chosen, the investigator must still be un-tenured at time of award. These conditions place brutal limits on how long you can wait to start making submissions, and I already skipped submitting my first two years. Still, I have no illusions about the uphill battle I have, so my goal this first time around is simply to <strong>acquire feedback</strong>: from my peers, from my grants officers, and from the NSF reviewers.</p>
-</section>
-<section id="personal-courseras-optimization-course" class="level3">
-<h3 class="anchored" data-anchor-id="personal-courseras-optimization-course">Personal: Coursera’s optimization course</h3>
-<p>I signed up to take Coursera’s <a href="https://www.coursera.org/learn/discrete-optimization/home/welcome">Discrete Optimization course</a> out of the University of Melbourne, taught by none other than <a href="https://pascalvanhentenryck.engin.umich.edu/">Professor Pascal Van Hentenryck</a> at Michigan and <a href="http://www.coffr.in/">Dr.&nbsp;Carleton Coffrin</a>, currently at Los Alamos.</p>
-<p>Optimization is pretty much the backbone of modern machine learning, and yet I have almost no formal training in it–beyond incidentally covering it in various machine learning and statistics courses as part of some broader topic in which it’s used. Oddly, the most rigorous instruction I received as a graduate student in optimization was a <a href="https://sites.google.com/site/cellandsystemsmodeling/">Cell &amp; Systems Modeling course</a> where we used various optimization techniques to find parameter values for population models.</p>
-<p>Especially in conjunction with what I hope to teach in CSCI 4360 in the fall, this would be invaluable both professionally as well as personally.</p>
-
-
-</section>
-
- ]]></description>
-  <category>professional</category>
-  <category>personal</category>
-  <category>data science</category>
-  <category>python</category>
-  <category>computer vision</category>
-  <category>imaging</category>
-  <category>machine learning</category>
-  <category>deep learning</category>
-  <category>nvidia</category>
-  <category>gpu</category>
-  <category>teaching</category>
-  <category>education</category>
-  <category>bioimaging</category>
-  <guid>https://magsol.github.io/posts/2017-05-31-summer-of-data-science/index.html</guid>
-  <pubDate>Wed, 31 May 2017 23:03:42 GMT</pubDate>
-  <media:content url="https://magsol.github.io/posts/2017-05-31-summer-of-data-science/carpelibrum.png" medium="image" type="image/png" height="120" width="144"/>
-</item>
-<item>
-  <title>So, you want to conduct research with me?</title>
-  <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2017-03-16-so-you-want-to-conduct-research-with-me/index.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<p><img src="https://magsol.github.io/posts/2017-03-16-so-you-want-to-conduct-research-with-me/joker_play_a_game.jpg" class="img-fluid"></p>
-<p><em>Deviation #1</em>: This is wholly separate from the <a href="http://shouldigetaphd.com/">“should I get a Ph.D.”</a> question. For that I would recommend one of numerous guides that ask all the right questions.</p>
-<p><em>Deviation #2</em>: This is also wholly separate from how to <em>succeed</em> in a Ph.D.&nbsp;program, though there is some overlap. In general, there are some key items to consider and habits to build as you work your way through a Ph.D., and for those questions I highly recommend <a href="http://karpathy.github.io/2016/09/07/phd/">Andrej Karpathy’s excellent survival guide to a Ph.D.</a>, some of which may be mirrored here.</p>
-<p>No, the specific question I’m addressing here is <strong>how to succeed in graduate research as one of my students.</strong> In order of somewhat-importance:</p>
-<section id="familiarize-yourself-with-my-research-interests." class="level3">
-<h3 class="anchored" data-anchor-id="familiarize-yourself-with-my-research-interests.">1: Familiarize yourself with my research interests.</h3>
-<p>This may seem like a no-brainer, but you’d be surprised how many emails I get from individuals expressing profound interest in working with me, only to see they have <strong>i)</strong> no experience whatsoever in any of my interests (which isn’t necessarily a deal-breaker!), and <strong>ii)</strong> don’t appear to know what I work on (which <em>is</em> a deal-breaker). If you work with me, you’re going to do something at the intersection of bioimaging + distributed computing + biosurveillance; something that involves computer vision and machine learning in a public health setting.</p>
-<p>Check out my <a href="http://scholar.google.com/citations?user=4EjRiycAAAAJ">Google Scholar</a> record, my group’s <a href="https://github.com/quinngroup">GitHub repositories</a>, and my <a href="https://quinngroup.github.io/">lab website</a> to get at least a basic idea of the sort of work I do, and to jog your thinking along the lines of what you might be able to contribute.</p>
-</section>
-<section id="take-into-consideration-the-following-expectations." class="level3">
-<h3 class="anchored" data-anchor-id="take-into-consideration-the-following-expectations.">2: Take into consideration the following expectations.</h3>
-<p>Work hard, play hard, and be able to talk about both:</p>
-<ul>
-<li>I expect my students to develop into excellent scientific communicators. In practice, this means I want you to be able to talk about your work to experts in the same field, experts in different fields, and even non-scientists. I want you to get comfortable giving talks and writing papers. If English isn’t your first language, that’s ok! Just be aware this expectation may take more time than you think.</li>
-<li>I expect my students to participate in <a href="https://en.wikipedia.org/wiki/Open_science">Open Science</a>. In practice, this means I want you to publish all the code you write in <a href="https://github.com/quinngroup">public repositories</a>, mirror all your papers on <a href="https://arxiv.org/">arXiv</a>, participate in and contribute to open source projects, and maybe even contribute to a blog. Research is only interesting when you can pick through the code, explore the data, and regenerate the results. Know or learn how to use <a href="http://jupyter.org/">scientific notebooks</a>, <a href="https://git-scm.com/">version control</a>, wikis, and even <a href="https://www.docker.com/">containers</a>!</li>
-<li>I expect my students to demonstrate a <a href="https://twitter.com/sama/status/792823320441786368">promising slope of accomplishment</a>. Put simply, <a href="https://josh.works/blog/2015/6/25/a-little-bit-of-slope-makes-up-for-a-lot-of-y-intercept">I recruit for potential (slope), not experience (y-intercept)</a>. You don’t have to know everything about machine learning, statistics, and linear algebra, <em>and</em> be an expert programming in Python just to be able to work with me. However, I do expect that you will be able to pick up these skills very quickly.</li>
-<li>I expect my students to take ownership of their projects, pushing the envelope of what is known and beyond what even I would suggest.</li>
-</ul>
-<p>Speaking of which…</p>
-</section>
-<section id="prepare-yourself-to-be-a-self-sufficient-researcher." class="level3">
-<h3 class="anchored" data-anchor-id="prepare-yourself-to-be-a-self-sufficient-researcher.">3: Prepare yourself to be a self-sufficient researcher.</h3>
-<p>This <strong>does NOT mean</strong> I expect you to do everything! The whole point of being a student is that you have a mentor, a supervisor who is (in theory) more experienced than you, from whom you can learn. It is indeed my job to guide you and teach you what I know, and I will most certainly do that.</p>
-<p>This <strong>DOES mean</strong> that, by the end of your time here, I want you to be the expert on your project! You should take the project and run with it, rather than wait for me to tell you what to do next. Build your intuition about the problem through “moving fast and breaking things,” to use the tech startup parlance. Ask forgiveness rather than permission. Insert witticism here that basically says KEEP TRYING THINGS.</p>
-<p>Even as you start your project, you may come across roadblocks that I don’t have an answer for. That’s how research works: we’re pushing the limits of our collective knowledge! I may have some intuition from previous problems, and I’ll certainly share that, but asking me “What do I do next?” is going to frustrate both of us very, very quickly.</p>
-<p>Here’s another example: <a href="http://simplystatistics.org/2017/03/16/evo-ds-class/">the levels of data science classes</a>. You don’t have to be anywhere above Level 2 when you arrive (maybe you’re still working your way through Level 1!), but I expect you to work <strong>through Level 7 by the time you leave.</strong></p>
-</section>
-<section id="if-youve-made-it-this-far-and-are-still-interested" class="level3">
-<h3 class="anchored" data-anchor-id="if-youve-made-it-this-far-and-are-still-interested">If you’ve made it this far, and are still interested…</h3>
-<p>…then I encourage you to reach out to me and express your interest! I have just a few final pieces of advice:</p>
-<p>First, <a href="https://twitter.com/DavidBindel/status/1054859324143616000">read this brief Twitter thread</a> and <a href="https://twitter.com/mickeykats/status/1074874785795112960">this brief Twitter thread as well</a>.</p>
-<p>Next, <strong>do NOT</strong> send me</p>
-<ol type="1">
-<li>a form email with a 10-page summary of your accomplishments (as I said, I don’t hire for y-intercept, I hire for slope)</li>
-<li>an email with misspellings or grammatical errors (recall that I emphasize good scientific communication skills)</li>
-<li>a message that starts with “Dear Ms Quinn” (first, I’m a doctor; second, I’m a guy)</li>
-</ol>
-<p>I won’t respond.</p>
-<p>Finally, <a href="https://magsol.github.io/pages/contact.html">write an email</a> that’s 3-5 sentences at most, <strong>with a specific mention of the work you find interesting and want to pursue further</strong>. For extra credit, mention some kind of improvement or extension to the work that you came up with on your own. This tells me a lot of things all at once, most important of which is that you’re serious about wanting to work with me.</p>
-<p>Because if you can handle graduate school…</p>
-<p><img src="https://magsol.github.io/posts/2017-03-16-so-you-want-to-conduct-research-with-me/grad-school.jpg" class="img-fluid"></p>
-<p>…I really do believe you can handle anything.</p>
-
-
-</section>
-
- ]]></description>
-  <category>professional</category>
-  <category>phd</category>
-  <category>graduate school</category>
-  <category>research</category>
-  <category>mentoring</category>
-  <category>computer science</category>
-  <category>graduate student</category>
-  <guid>https://magsol.github.io/posts/2017-03-16-so-you-want-to-conduct-research-with-me/index.html</guid>
-  <pubDate>Thu, 16 Mar 2017 15:59:21 GMT</pubDate>
-  <media:content url="https://magsol.github.io/posts/2017-03-16-so-you-want-to-conduct-research-with-me/joker_play_a_game.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>Game-ify Your Raspberry Pi</title>
-  <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2017-01-06-gameify-your-raspberry-pi/index.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<p><img src="https://magsol.github.io/posts/2017-01-06-gameify-your-raspberry-pi/raspberrypi3.jpg" class="img-fluid"></p>
-<p>My project over the 2016 holiday season was to take the Raspberry Pi 3 I’ve had sitting around the house idling for the previous nine months and turn it into a <a href="https://retropie.org.uk/">RetroPie-ified gaming emulator</a>.</p>
-<p>RetroPie is a phenomenal bit of software that combines the work of several projects into a single package that was primarily designed to be deployed on Raspberry Pis, but which can also be set up on a regular ol’ PC. If you’re using a Raspberry Pi, it’s built on top of the <a href="https://www.raspberrypi.org/downloads/raspbian/">Raspbian OS</a>, so all the commands familiar to you will still be available.</p>
-<p>I have to say up front: the folks with RetroPie have done an <em>amazing</em> job. The documentation was excellent, and while I’ll walk through the installation and configuration here, with only one notable exception everything went exactly as prescribed.</p>
-<section id="retropie" class="level3">
-<h3 class="anchored" data-anchor-id="retropie">RetroPie</h3>
-<p>Assuming you have all the <a href="https://retropie.org.uk/documentation/building-your-own-retropie-machine/">needed hardware</a>, installing the RetroPie OS on your Pi is <a href="https://github.com/RetroPie/RetroPie-Setup/wiki/First-Installation">pretty straightforward</a>.</p>
-<ul>
-<li>Use some sort of imaging software to write the RetroPie image to an SD card (I used <a href="http://www.tweaking4all.com/hardware/raspberry-pi/macosx-apple-pi-baker/">ApplePi Baker</a> without any problems, but you could also just use the <code>dd</code> command in the Terminal, which directly moves bytes from one place to another).</li>
-<li>Insert the SD card into your Pi.</li>
-<li>Boot! I had a few false-starts that were the result of the SD card not being fully inserted, so nothing came up.</li>
-</ul>
-<p>If all goes well, you should see the wonderful Raspbian logo.</p>
-<p><img src="https://magsol.github.io/posts/2017-01-06-gameify-your-raspberry-pi/raspberry-pi-logo.png" class="img-fluid"></p>
-</section>
-<section id="configuring-retropie" class="level3">
-<h3 class="anchored" data-anchor-id="configuring-retropie">Configuring RetroPie</h3>
-<p>The first thing you’ll need to do when RetroPie boots is to configure whatever controller you’re going to use. I went out and purchased some standard-issue <a href="http://gaming.logitech.com/en-us/product/f310-gamepad">Logitech USB gamepads</a> and they seem to be functioning very well. You can also use your keyboard if you want for this, but it pretty much has to be something that can be connected via USB directly to the Pi.</p>
-<p>A few pointers in this step:</p>
-<ul>
-<li>To skip a particular button configuration, just <strong>press and hold any button for a second</strong>.</li>
-<li>If you make a mistake in configuring a button, you have to get all the way to the bottom before you can scroll back up and fix it.</li>
-<li>It took me 5-6 tries to get this completely right. Just go back and do it again if you mess something up.</li>
-</ul>
-</section>
-<section id="emulationstation" class="level3">
-<h3 class="anchored" data-anchor-id="emulationstation">EmulationStation</h3>
-<p>Once you successfully configure a gamepad, you’ll be taken to the main landing page: EmulationStation.</p>
-<p><img src="https://magsol.github.io/posts/2017-01-06-gameify-your-raspberry-pi/emulationstation.png" class="img-fluid"></p>
-<p><em>Where are teh gamez0rz?!1</em>, you might be saying. Well, since ROMs are a legal gray area, you’re kinda on your own there. BUT! We have something else we need to do first anyway: set up a network configuration.</p>
-</section>
-<section id="network-configuration" class="level3">
-<h3 class="anchored" data-anchor-id="network-configuration">Network Configuration</h3>
-<p>If you have a Raspberry Pi 2 or earlier, your network choices are limited to an ethernet connection. With the advent of Raspberry Pi 3s, suddenly wifi is an option! Turns out, I have a 3, and it is this wifi that caused me a couple hours’ grief until I figured out what was going on.</p>
-<p>Go to the wifi configuration in EmulationStation. You’ll be taken to a network selection screen–protip, the Pi 3 <strong>cannot</strong> connect to 5GHz networks–where you can select your wifi network.</p>
-<p>You’ll then need to type in the wifi password. Provided you get it right, that should be it! You’re all set to go!</p>
-<p>If you find yourself entering your password again…and again…and again…and again…and can’t figure out why it’s failing, read on.</p>
-</section>
-<section id="keyboard-layout" class="level3">
-<h3 class="anchored" data-anchor-id="keyboard-layout">Keyboard Layout</h3>
-<p>For whatever reason, my keyboard was misconfigured–the layout was set to English (U.K.), resulting in some special characters being remapped. However, since the Raspbian password interface echoes stars <code>*</code> back, I had no idea I was typing a completely wrong password until I fired up a command prompt.</p>
-<p>Luckily, once you diagnose this issue, it’s fairly easy to fix. Raspbian has a <a href="https://www.raspberrypi.org/forums/viewtopic.php?f=28&amp;t=80127">utility built-in for changing your keyboard layout</a>. You just have to navigate in EmulationStation to the option that gives you a command prompt.</p>
-<p>In my case, once I had a working network connection, I just used SSH to perform any other operations on the Pi (e.g.&nbsp;uploading new games). The default username/password for RetroPie is <code>pi/raspberry</code>, which I suggest you change either from the EmulationStation main menu, or after your first SSH login.</p>
-</section>
-<section id="moonlight-on-raspberry-pi" class="level3">
-<h3 class="anchored" data-anchor-id="moonlight-on-raspberry-pi">Moonlight on Raspberry Pi</h3>
-<p>You should have a working RetroPie at this point, so that’s cool!</p>
-<p>However, as awesome as the Pis are, they’re not exactly brimming with horsepower. As such, if you try running N64 or PS2 emulators, you may find as I did that anything requiring 3D shaders gets <em>very</em> jittery, to the point of unplayable. RetroPie has <a href="https://github.com/RetroPie/RetroPie-Setup/wiki">detailed configuration options for every emulator</a> to help you get the absolute most out of your Pi, but there are some things a tiny CPU with an embedded stock GPU just can’t do, and one of those is render 3D shaders the way they were meant to be.</p>
-<p>So what? Give up? <em>Nay!</em></p>
-<p><img src="https://magsol.github.io/posts/2017-01-06-gameify-your-raspberry-pi/moonlight.jpg" class="img-fluid"></p>
-<p><a href="https://github.com/irtimmer/moonlight-embedded/wiki">Moonlight Embedded</a> is the open source version of NVIDIA’s GameStream as used by the NVIDIA Shield. Basically, it’s a way of streaming the output of an NVIDIA GPU to another input, like a TV.</p>
-<p>In this case, we’re basically turning our Pi into a glorified Chromecast–it’ll take the output from a dedicated GPU and stream it directly to the TV it’s connected to. Yes, this means you’re not actually playing games <em>on</em> the Raspberry Pi–you’re playing them on whatever computer has the GPU in it (oh and it has to be an NVIDIA GPU, GTX 650 or higher)–but all Moonlight requires is Raspbian, which is what RetroPie is built on!</p>
-<p>I found <a href="https://blog.jhot.me/guide-install-moonlight-on-raspbian-retropie-9d1318b8ddf8#.etf7g4bo6">this installation guide</a> perfect (make sure you download the latest versions of everything!), with the lone exception that, just before downloading and installing Moonlight itself, I also needed to install one more library:</p>
-<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1">    <span class="fu" style="color: #4758AB;">sudo</span> apt-get install libenet-dev</span></code></pre></div>
-<p>Include that with the other libraries installed just before Moonlight, and everything else should just work. The rest of the instructions take you through configuring the gamepads so they correctly send their input back to the GPU (so, y’know, you don’t have to sit at your computer while staring at your TV).</p>
-</section>
-<section id="happy-fun-times" class="level3">
-<h3 class="anchored" data-anchor-id="happy-fun-times">Happy Fun Times!</h3>
-<p>Yes, lots of happy fun times. But also <a href="http://docs.happyfuntimes.net/docs/introduction.html">HappyFunTimes</a>!</p>
-<p>If you’re really into the party games, installing this gaming server may be the best thing ever. It’s a brilliant setup: gamepads are HTML5 canvases that run on smartphones, essentially mimicking controllers so everyone with a smartphone can play. The games range from stupidly simple to shockingly sophisticated. I may post configuration for that later, but I figure: if you’re building the Ultimate Gaming Pi, why not include that, too?</p>
-<p>And with that, I give you the results at our house:</p>
-<p><img src="https://magsol.github.io/posts/2017-01-06-gameify-your-raspberry-pi/zelda.jpeg" class="img-fluid"></p>
-
-
-</section>
-
- ]]></description>
-  <category>personal</category>
-  <category>raspberry pi</category>
-  <category>gaming</category>
-  <category>video games</category>
-  <category>nvidia</category>
-  <category>steam</category>
-  <guid>https://magsol.github.io/posts/2017-01-06-gameify-your-raspberry-pi/index.html</guid>
-  <pubDate>Fri, 06 Jan 2017 18:47:37 GMT</pubDate>
-  <media:content url="https://magsol.github.io/posts/2017-01-06-gameify-your-raspberry-pi/raspberrypi3.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>Open Science in Big Data (OSBD) Workshop</title>
-  <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2016-09-26-osbd2016-workshop/index.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<p><img src="https://magsol.github.io/posts/2016-09-26-osbd2016-workshop/washingtondc.png" class="img-fluid"></p>
-<p>Back in May of this year, some of the other computer science professors and I put together a proposal for a workshop. The workshop would be in conjunction with the December 2016 <a href="http://cci.drexel.edu/bigdata/bigdata2016/">IEEE BigData Conference</a>, and would focus specifically on the intersection of big data and open science.</p>
-<p>In June, we got the good news: it was accepted!</p>
-<section id="what-is-open-science" class="level3">
-<h3 class="anchored" data-anchor-id="what-is-open-science"><em>What is “Open Science”?</em></h3>
-<p>I’ve been interested in <a href="https://en.wikipedia.org/wiki/Open_science">open science</a> since I started graduate school. I’d been using Apache projects since college, learning how to set up and configure my own LAMP stack (yes, I’ll admit I dabbled in PHP for a few years, but I’m clean now!), but had never really contributed to an open source project until the 2010 Google Summer of Code. During that time, I worked on adding spectral clustering the <a href="http://mahout.apache.org">Apache Mahout</a> library.</p>
-<p>While open source is great and wonderful, this is just one component of Open Science. It’s another reason I’m incredibly excited about the “container revolution”: Docker and its ilk. This concept makes entire pipelines perfectly reproducible, to the point where it’s now possible for entire scientific projects to be replicated with a single command: from running the analysis, to building the figures, to assembling the final PDF file (which, by the way, can be uploaded to <a href="http://arxiv.org">arXiv</a> for everyone to read!)</p>
-<p>These other aspects–open sourcing data, reproducibility scripts, and entire pipelines–are veritable educational and research gold mines, but are arguably much more difficult than simply dumping some code on GitHub. <strong>These difficulties are only exacerbated in the realm of “big data”.</strong></p>
-</section>
-<section id="what-are-the-goals-of-the-workshop" class="level3">
-<h3 class="anchored" data-anchor-id="what-are-the-goals-of-the-workshop"><em>What are the goals of the workshop?</em></h3>
-<p>The goals of the workshop are threefold.</p>
-<p><strong>First</strong>: we aim to <em>identify some of the biggest challenges</em> in democratizing big data analytics. Open Science is a critical component of both educational pedagogy and scientific research. With the increasing relevance of big data analytics, making these tools and resources available to the next generation of scientists and big data practitioners is crucial. Unfortunately, this is also extremely challenging.</p>
-<p><strong>Second</strong>: we aim to bring together big data practitioners from multiple backgrounds to <em>discuss and establish the current state of affairs</em> with respect to reproducibility in big data analytics and machine learning. Priorities change and constraints differ between researchers and developers in academia versus industry versus government; nonetheless, open science and big data are important to practitioners in each of these areas.</p>
-<p><strong>Third</strong>: we aim to <em>examine and propose possible routes forward</em> to advance the continued integration of open science in big data analytics, putting tools, techniques, data, and documentation in the hands of researchers, students, and other big data practitioners. We will identify emerging trends in terms of open science best practices, and how these can be incorporated into current big data endeavors.</p>
-</section>
-<section id="what-kinds-of-proceedings-is-the-workshop-accepting" class="level3">
-<h3 class="anchored" data-anchor-id="what-kinds-of-proceedings-is-the-workshop-accepting"><em>What kinds of proceedings is the workshop accepting?</em></h3>
-<p>We hope to have two tracks: a full research paper session, and a student (short) paper session.</p>
-<p>Papers submitted to the OSBD workshop should, at the very minimum, have a significant Open Science component. This can take several forms, including but not limited to any combination of the following:</p>
-<ul>
-<li>Uses free and open source packages</li>
-<li>Openly available online, e.g.&nbsp;GitHub</li>
-<li>Scripts are available to reproduce figures</li>
-<li>Data are openly available e.g.&nbsp;dat, datahub.io</li>
-<li>etc.</li>
-</ul>
-<p>We are welcoming of original research into big data analytics, so long as there is an open science component.</p>
-<p>Furthermore, in the spirit of Open Science and reproducibility, we strongly encourage our presenters to incorporate live code demos, data walkthroughs, or some other hands-on activity into their talks.</p>
-</section>
-<section id="when-is-the-submission-deadline" class="level3">
-<h3 class="anchored" data-anchor-id="when-is-the-submission-deadline"><em>When is the submission deadline?</em></h3>
-<p>The deadline for workshop paper submissions is <strong>Sunday, October 25, 2016</strong>. This provides a 2-week buffer zone between the notification deadline of the main IEEE BigData conference, in case you want to repackage your conference submission for the workshop.</p>
-</section>
-<section id="where-can-one-find-more-information-about-osbd" class="level3">
-<h3 class="anchored" data-anchor-id="where-can-one-find-more-information-about-osbd"><em>Where can one find more information about OSBD?</em></h3>
-<p>We have a website: <strong><a href="https://osbd.github.io/" target="_blank">https://osbd.github.io/</a></strong></p>
-<p>The website contains information about the topics around the workshop, the invited speakers who will be attending (keynote and panelists), the important dates around the workshop, and the instructions for formatting and submitting your paper to the workshop.</p>
-<p>We are very excited about this workshop, and encourage you to submit! We look forward to seeing you in December!</p>
-<p><img src="https://magsol.github.io/posts/2016-09-26-osbd2016-workshop/openscience.png" class="img-fluid"></p>
-<ul>
-<li><a href="http://cs.uga.edu/~squinn">Shannon Quinn</a>, Co-chair</li>
-<li><a href="http://cs.uga.edu/~jam/">John Miller</a>, Co-chair</li>
-<li><a href="http://cs.uga.edu/~suchi/">Suchi Bhandarkar</a>, Co-chair</li>
-<li><a href="http://cs.uga.edu/~yihong/">Yi Hong</a>, Co-chair</li>
-</ul>
-
-
-</section>
-
- ]]></description>
-  <category>professional</category>
-  <category>workshop</category>
-  <category>big data</category>
-  <category>ieee</category>
-  <category>open science</category>
-  <guid>https://magsol.github.io/posts/2016-09-26-osbd2016-workshop/index.html</guid>
-  <pubDate>Mon, 26 Sep 2016 09:10:19 GMT</pubDate>
-  <media:content url="https://magsol.github.io/posts/2016-09-26-osbd2016-workshop/washingtondc.png" medium="image" type="image/png" height="47" width="144"/>
 </item>
 </channel>
 </rss>
