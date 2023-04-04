@@ -1,7 +1,7 @@
 ---
 title: "Three years later"
 subtitle: "The Savannah Women's Half Marathon"
-date: "2023-04-04 09:52:00"
+date: "2023-04-04 16:10:00"
 categories: [personal, running, covid, pandemic, getaway, travel]
 citation:
     url: https://magsol.github.io/2023-04-04-three-years-later
