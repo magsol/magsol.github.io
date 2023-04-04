@@ -1,0 +1,22 @@
+---
+title: "Three years later"
+subtitle: "The Savannah Women's Half Marathon"
+date: "2023-04-04 09:52:00"
+categories: [personal, running, covid, pandemic, getaway, travel]
+citation:
+    url: https://magsol.github.io/2023-04-04-three-years-later
+image: "forsyth_park.jpg"
+image-alt: "Head-on view of the middle of Forsyth Park in Savannah, GA, including the fountain in the middle and trees along both sides of the main walkway."
+author: "Shannon Quinn"
+---
+![](forsyth_park.jpg){.preview-image fig-alt="Head-on view of the middle of Forsyth Park in Savannah, GA, including the fountain in the middle and trees along both sides of the main walkway."}
+
+Oh by the way, I have a second blog.
+
+Like this one, it fell into disuse over the past few years. And like this one, I've been trying to revive it recently. I'd always intended for that blog and this one to be completely non-overlapping in their respective content, but life, as they say, finds a way.
+
+(Me. I'm talking about me, here. Of course the blog isn't alive, jeez.)
+
+At any rate, you most likely won't see me advertise that blog here ever again, but just this once, I wanted to point to a post I made detailing my half marathon this past weekend in Savannah, GA, and the three-year history that particular event has.
+
+[Here's the link](https://wherearethepancakes.wordpress.com/2023/04/03/three-years-later/). Enjoy.
