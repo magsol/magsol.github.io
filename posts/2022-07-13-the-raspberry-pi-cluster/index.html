@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.3.340">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -18,7 +18,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -73,13 +73,13 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 
 <link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="Stochastic Stenography - The Raspberry Pi cluster">
-<meta property="og:description" content="I think that's called a bake sale">
+<meta property="og:description" content="I think that’s called a bake sale">
 <meta property="og:image" content="https://magsol.github.io/posts/2022-07-13-the-raspberry-pi-cluster/birdhouse.jpg">
 <meta property="og:site-name" content="Stochastic Stenography">
 <meta property="og:locale" content="en_US">
 <meta property="og:image:alt" content="A birdhouse sized for small owls, being retrofitted to house a single Raspberry Pi 3B+ connected to multiple cameras positioned discreetly on the outside of the birdhouse, while still providing room inside for birds to nest.">
 <meta name="twitter:title" content="Stochastic Stenography - The Raspberry Pi cluster">
-<meta name="twitter:description" content="I think that's called a bake sale">
+<meta name="twitter:description" content="I think that’s called a bake sale">
 <meta name="twitter:image" content="https://magsol.github.io/posts/2022-07-13-the-raspberry-pi-cluster/birdhouse.jpg">
 <meta name="twitter:creator" content="@SpectralFilter">
 <meta name="twitter:card" content="summary">
@@ -97,17 +97,19 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
     <span class="navbar-title">Stochastic Stenography</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About Me</span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -167,7 +169,7 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="birdhouse.jpg" class="preview-image img-fluid figure-img" alt="A birdhouse sized for small owls, being retrofitted to house a single Raspberry Pi 3B+ connected to multiple cameras positioned discreetly on the outside of the birdhouse, while still providing room inside for birds to nest."></p>
-<p></p><figcaption class="figure-caption">This birdhouse is watching you.</figcaption><p></p>
+<figcaption class="figure-caption">This birdhouse is watching you.</figcaption>
 </figure>
 </div>
 <p>Ha! Thought I’d left for good, didn’t you? Yeah well, I’m back b****es, and I’m here to talk about a little at-home tech project I’ve been working on for the better part of the past year. It comes in multiple parts–so the updates will come in multiple posts!–and it’s still very much a work in progress. But I’ve reached the point where I actually have something interesting to talk about, so I wanted to go ahead and get this party started.</p>
@@ -184,7 +186,7 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="cluster_open.jpg" class="img-fluid figure-img" alt="A homemade tiny server rack built from wood specifically meant to protect the 5-Pi stack from toddler smacks."></p>
-<p></p><figcaption class="figure-caption">Why yes, that is indeed a <a href="https://store.gamersnexus.net/products/modmat-volt-large">GamersNexus anti-static mat</a>.</figcaption><p></p>
+<figcaption class="figure-caption">Why yes, that is indeed a <a href="https://store.gamersnexus.net/products/modmat-volt-large">GamersNexus anti-static mat</a>.</figcaption>
 </figure>
 </div>
 <p>The Pi cluster “rack”, the 8-port switch, the power strip, and even a handful of intake/exhaust fans would all be installed inside a homemade “cage”. Only two cables needed to exit the cage: one for the power strip (to go in an outlet), and one for the network (to go in the router). The rest would be protected inside half-inch hobby wood from Home Depot, safely protected by a hinge cover with a handle <em>and a slide lock</em>. For easy viewing, I made a side panel transparent with acrylic (man that was a <em>bitch</em> to cut and adhere), and I even managed to slice out some openings in the front and back to install intake and exhaust fans, just to make absolutely sure the temperatures didn’t get too obscene.</p>
@@ -192,38 +194,38 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="repurposed_ram_cooler.jpg" class="img-fluid figure-img" alt="Two bare wires from a USB cable. I cut these cables so I wire them instead to directly power 5V Raspberry Pi fans."></p>
-<p></p><figcaption class="figure-caption">Learned a lot about wiring. See those fans in the back? This was a cooler originally designed to sit on top of desktop RAM; instead, I’m repurposing them to work as exhaust fans for the cluster.</figcaption><p></p>
+<figcaption class="figure-caption">Learned a lot about wiring. See those fans in the back? This was a cooler originally designed to sit on top of desktop RAM; instead, I’m repurposing them to work as exhaust fans for the cluster.</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="voltage_converter.jpg" class="img-fluid figure-img" alt="A Farsense voltage converter, specifically for pulling standard 5V USB inputs to 12V outputs."></p>
-<p></p><figcaption class="figure-caption">Had to revisit high school and college electrostatics, since some of these fans drew 12V but I only had 5V outputs on the Raspberry Pis (they’re not meant to carry high voltage!).</figcaption><p></p>
+<figcaption class="figure-caption">Had to revisit high school and college electrostatics, since some of these fans drew 12V but I only had 5V outputs on the Raspberry Pis (they’re not meant to carry high voltage!).</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="stripping_extending_wires.jpg" class="img-fluid figure-img" alt="Slices of cables that I used to extend the length of the actual Raspberry Pi fan cables, so they could reach the Raspberry Pi GPIO pins from their mounts in the side of the server rack."></p>
-<p></p><figcaption class="figure-caption">So yeah, had to do some actual wire splicing and modding to get everything to play nice in the low-voltage environment.</figcaption><p></p>
+<figcaption class="figure-caption">So yeah, had to do some actual wire splicing and modding to get everything to play nice in the low-voltage environment.</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="running_closed_side_pullback.jpg" class="img-fluid figure-img" alt="Final configuration of the server rack with running Raspberry Pi cluster, lit from the inside by the former RAM fans, and visible via the side plexiglass panel."></p>
-<p></p><figcaption class="figure-caption">But wow, was it worth it!</figcaption><p></p>
+<figcaption class="figure-caption">But wow, was it worth it!</figcaption>
 </figure>
 </div>
 <p>As for the birdhouse, it also comes with a bit of a surprise. I bought one that was big enough to house its own Raspberry Pi, which I built inside a waterproof/shatterproof plastic container to protect it from the outdoor elements. This is what drives the infrared camera on the front and handles detecting wildlife that walk by.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="birdhouse_inside.jpg" class="img-fluid figure-img" alt="A side view inside the birdhouse through an open panel. Inside is the Raspberry Pi 3B+ within its waterproof/shatterproof case, with a hinged piece of wood on top, followed by about a cubic foot of space for birds to nest, along with sawdust as nesting material."></p>
-<p></p><figcaption class="figure-caption">This is the Pi’s home inside the bird house. Still plenty of room for birds to nest above without disturbing or being disturbed by the Pi!</figcaption><p></p>
+<figcaption class="figure-caption">This is the Pi’s home inside the bird house. Still plenty of room for birds to nest above without disturbing or being disturbed by the Pi!</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="ircam_close.jpg" class="img-fluid figure-img" alt="The mounted Raspberry Pi NoIR v2 camera, just above the entry/exit hole for the birds, so that the camera ribbon can be run along the top and back of the birdhouse and protected with Gorilla tape, out of the way and hopefully uninteresting to any nesting birds."></p>
-<p></p><figcaption class="figure-caption">This is the infrared camera that can see amazingly well at night. Its data/power ribbon is protected both from the elements and by the residents of the birdhouse by <a href="https://www.gorillatough.com/product/black-gorilla-tape/">Gorilla tape</a>, something <a href="https://www.youtube.com/c/markrober">Mark Rober</a> recommended.</figcaption><p></p>
+<figcaption class="figure-caption">This is the infrared camera that can see amazingly well at night. Its data/power ribbon is protected both from the elements and by the residents of the birdhouse by <a href="https://www.gorillatough.com/product/black-gorilla-tape/">Gorilla tape</a>, something <a href="https://www.youtube.com/c/markrober">Mark Rober</a> recommended.</figcaption>
 </figure>
 </div>
 <p>And I’m definitely not done yet. I still have a LOT of additional testing to run on the capabilities of the infrared camera (you can track my progress at the bleeding edge or even provide suggestions <a href="https://github.com/magsol/wildlife-cameras/">here at the GitHub repo I’ve set up for it</a>), and the actual Raspberry Pi cluster still needs to be spun back up after I reformatted the whole thing to start from scratch.</p>
@@ -233,14 +235,14 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2022,
-  author = {Shannon Quinn},
+  author = {Quinn, Shannon},
   title = {The {Raspberry} {Pi} Cluster},
   date = {2022-07-13},
   url = {https://magsol.github.io/2022-07-13-the-raspberry-pi-cluster},
   langid = {en}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2022" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
-Shannon Quinn. 2022. <span>“The Raspberry Pi Cluster.”</span> July 13,
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2022" class="csl-entry quarto-appendix-citeas" role="listitem">
+Quinn, Shannon. 2022. <span>“The Raspberry Pi Cluster.”</span> July 13,
 2022. <a href="https://magsol.github.io/2022-07-13-the-raspberry-pi-cluster">https://magsol.github.io/2022-07-13-the-raspberry-pi-cluster</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -270,9 +272,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -337,6 +353,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
