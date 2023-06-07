@@ -1,0 +1,92 @@
+---
+title: "This post is about burnout"
+subtitle: "Metaphor is a tool best left to those trained to use it"
+date: "2023-06-06 22:05:00"
+categories: [personal, professional, burnout, movies, books]
+citation:
+    url: https://magsol.github.io/2023-06-05-this-post-is-about-burnout
+image: "burnout.png"
+image-alt: "Midjourney-generated image of an art easel with a picture of a raging fire, anthropomorphized with a giant smile on its face. Meant to convey a ham-fisted 'this is fine' metaphor."
+author: "Shannon Quinn"
+---
+![](burnout.png){.preview-image fig-alt="Midjourney-generated image of an art easel with a picture of a raging fire, anthropomorphized with a giant smile on its face. Meant to convey a ham-fisted 'this is fine' metaphor."}
+
+...but before I get to that, I want to talk about a movie I saw recently and a book I read recently.
+
+::: {.callout-caution}
+The following section contains some minor character spoilers from the 2023 film _Spider-Man: Across the Spider-Verse_. No major plot reveals.
+:::
+
+My wife and I were recently able to see an evening showing of [_Across the Spider-Verse_](https://en.wikipedia.org/wiki/Spider-Man%3A_Across_the_Spider-Verse). It was phenomenal; we loved it. As someone who stuck with the MCU movies a little longer than most of my friends, I've been feeling "meh" toward superhero flicks for about a year now. We haven't seen the newest _Black Panther_, _Ant-Man_, nor _Guardians_ movies, nor have we felt an overriding urge to watch them even when they hit streaming (though I've heard the _Guardians_ movie is pretty solid, so that may be the exception. Maybe).
+
+The _Spider-Verse_ movies, even though solidly in the superhero genre, have been universally incredible. Possibly helped by the fact that there's only two of them, with the third due out in March 2024. The animation is beautiful, the writing is top-notch, the humor is subtle and perfectly timed, and the characters are _fantastic_. I loved how this movie dove more into Gwen's own background, and I was particularly pulled in by [Spider-Man 2099](https://en.wikipedia.org/wiki/Spider-Man_2099).
+
+He's a relectant hero (like all the Spiders), doing what he thinks is right, ultimately trying to prevent what happened to him (which was terrible, even by the generic Spider-Trauma Barometer™️) from happening to anyone else.
+
+Except... he fought too hard for too long. Even surrounded by others, he isolated himself. He made hard decisions, and bit by bit the consequences of those decisions ate him up. He stared into the abyss, and the abyss eventually took up residence. He lost sight of _why_ he started his work in the first place---when you have to repeat "We're the good guys!" twice in a row, practically shouting it at your subordinates, one has to ask who it is you're trying to convince---and became the very thing he ostensibly started out fighting against.
+
+::: {.callout-caution}
+The following section contains some minor character spoilers from the 2023 novel _The Frugal Wizard’s Handbook For Surviving Medieval England_. No major plot reveals.
+:::
+
+I also just devoured the latest Brandon Sanderson book, _The Frugal Wizard’s Handbook For Surviving Medieval England_, which was officially called "Secret Project #2" for most of the past 12 months since his big 2022 Kickstarter. It's not part of any of Sanderson's other established universes, so it's a wonderful standalone novel about a near-future dimension-hopping guy who loses his memories upon arriving in an unknown dimension set in Medieval England. He has to figure out who he is and why he's in that dimension, as others---both natives of the dimension, and people from his own---are trying to kill him.
+
+I loved the story because, while it had many familiar beats storytelling beats around a journey of self-discovery, its final conceit and ultimate reveal about the character had a surprising amount of depth.
+
+Ultimately, it was a story of a character who'd had a lot of bad breaks in his life, coupled with a few poor decisions, which culminated in internalizing the belief that _he was not deserving_. When he inevitably failed, he believed he deserved it. His well-meaning "friends" gave him the usual "you need to try harder, good things come to those who try." Which of course is strictly true, but leaves out important context: when you've had a string of failures, either from bad decisions OR simple bad luck---or most realistically, some ugly combination of both---you start internalizing those failures _as the default mode_.
+
+> You lose a little---and that makes you wonder if you deserve to lose. So you lose some more. And it all compounds. You're behind, no matter how you scramble to stop it. You're too far gone.
+
+The memory loss ends up being a godsend, because by the end---when the main character has regained his memories---he can compare himself to someone who, just days before, took action he believed was right _without the mental baggage of failure as the default_, and for that very reason ended up winning more often than he lost.
+
+But the critial discovery, to me at least, was that belief in oneself does not exist in vacuum. You don't necessarily believe in yourself because you woke up one morning and made the decision. You also look (through the lens of your own experience) at your wins and losses in the past, and use that assessment to decide _whether or not you're worth believing in_. And that self-assessment can be brutal; it can end up digging a hole that is nigh impossible to get out of, perpetuating failure.
+
+### Where there's smoke...
+
+In January 2015, I started a tenure-track position at the University of Georgia. In August 2021, I was officially promoted to Associate Professor, with tenure. And by early 2022, I was convinced that I needed to leave academia entirely, a sentiment that has not changed since then.
+
+Why leave? For those reasons and all the parts of that thinking that led here, I'll have a post later. Maybe. I've been working on a version of it for nearly two years now, but I'm not yet sure if it will see the light of day. It may just be for me.
+
+For now, the reason is simple: I'm completely and utterly, spiritually and physically and emotionally, so-far-beyond-the-abyss, **burned out**.
+
+Of course, the reasons why the burnout got so bad are legion, and I will concede that many of those reasons are my own fault:
+
+ - I have a hard time asking for help
+ - I enjoy what I do to the extent of saying "yes" to things that sound exciting (everything sounds exciting!) without considering how it will get done
+ - I've always been somewhat of a people-pleaser, and so setting hard boundaries is difficult and exhausting, and it's easier (in the short-term) to give people what they want
+
+This has led to a situation where I've begun to expect failure as a rule. Not with scientific experiments or with code development---that's wholly different (at least in my brain), and that's not what I'm talking about here; if anything, my lab's science has been one of the bright spots in all this---but rather, interacting with people: I expect that I'll disappoint them somehow, which becomes a self-fulfilling prophecy because it's happened _so often_ in the last few years.
+
+And it happened because I was so severely burned out that I could barely function. I mentioned this in my [new year's post](../2023-01-14-year-that-almost-was/index.qmd), though not really the full extent of it. Honestly, I'm not sure what its full extent is. If I take a really close look at the contours, I may have been burned out since early 2019, shortly after receiving my NSF CAREER award notice. I've been hobbling along ever since.
+
+This burnout led to anger and resentment, and a feeling of having to single-handedly hold things together: that I was the only one competent enough to do what needed to be done. Inevitably, balls were dropped---because this is not a sustainable approach to literally anything---and the failures mounted, leading to feelings of nihilism and anhedonia.
+
+This went on for years. I stared into the abyss for far too long, and when I had a chance to step back, I did not like the person I was becoming. We're so far beyond schedule tweaks, productivity hacks, and "write for 30 minutes each day"; we're well into "I need an entire semester, possibly an entire academic year, off, just to begin the healing process in earnest."
+
+And yes, that's ostensibly what sabbaticals are there for. But in a final might-be-hilarious-in-10-years power move, I've been denied to even submit a _request_ for a sabbatical because "there's no one else to teach the class you've been assigned for the fall, and there are already 40+ students registered."
+
+Somewhere around this time in 2022, while I was working for Quansight, I was given the opportunity to do a 3-day online training in PyTorch for a client. In classic "me" fashion, I enthusiastically volunteered. But when the day came, I was so stressed out by the idea of teaching---a primary source of my burnout---that I broke out in _full-body hives_. That has happened to me only once before, though in that case we traced it to what was most likely improperly cooked shellfish.
+
+### Embrace the process
+
+_Recognizing_ burnout is important. _Counteracting_ burnout is important. Both of these steps are difficult to ascertain and implement. This blog post about [burnout among core Python package maintainers](https://pyfound.blogspot.com/2023/05/the-python-language-summit-2023-burnout.html) addresses some of that. But there's a third burnout thread I have to constantly remind myself of:
+
+Burnout decimates your physical and mental capabilities, and they don't return overnight. It's such a kick in the teeth when just recognizing burnout is so challenging, and moreso to stem the tide, but just because these have been done does not mean life immediately snaps back to normal.
+
+I've spent the last couple years wondering why running seems so much harder than it used to be, while running so much slower than I used to. I spent the day after the SciPy 2023 paper submission deadline (just this past Friday evening) kicking myself for not getting the paper done and feeling like a failure because of it. Years ago, debugging Python and PyTorch errors was straightforward, and prototyping machine learning models was relatively easy for me; while writing this paper, every error message was a multi-hour-long block on my progress. Working through them was like wading through molassess, and at the time I couldn't understand why.
+
+It's because burnout doesn't vanish overnight. It impedes your faculties, like sand in joints, simultaneously slowing things down and increasing the resistence. The knee-jerk reaction is to push harder, which flares the burnout and ultimately undoes forward progress. Which feeds into the failure mindset, and thus perpetuates the cycle.
+
+### Not just surviving, but thriving
+
+I've been in survival mode for years now, just trying to get through each day and not really seeing more than a week or two ahead. It's a good way to stay alive, but a terrible way to live. I've gone through long stretches where I have no motivation to create, or to learn, or to grow; instead, all my energy is focused exclusively on getting from one day to the next.
+
+I don't want to simply survive, I want to _thrive_. I want to build, I want to learn, I want to grow. And as has become very clear over the past few years: _that won't happen for me if I stay in academia_. I haven't been able to make it work, and I've been at this for almost 9 years now. I've said it jokingly for years, but it's also the hard truth: academia is a pie-eating contest where the prize is more pie.
+
+**So, I'm leaving**. It suffices to say that by prioritizing healing from my burnout, and by extension prioritizing my family and friends and personal interests and hobbies, it is clear beyond any doubt that there is simply no viable universe in which these priorities can be met while remaining in academia. Of course, I'm existentially terrified---who leaves a tenured position for industry?!---but I'm also excited by the mere possibility of thriving.
+
+Burnout recovery is going to take awhile; after all, I spent years getting to this point. But I've also spent the better part of the last few months starting the recovery process, and there's already been noticeable improvement. I have sustainable routines in place that are clearly doing me good, but I can't make some of the biggest changes while I'm still in academia.
+
+I've recognized my burnout, and I'm taking every step I can to make the changes I need to thrive. But I have to keep reminding myself that things won't improve overnight, even when I'm doing everything right. It'll take some time for the pea soup in my brain to clear out, and it's been an agonizingly slow process of rebuiding my physical body (not helped by potential long COVID symptoms, but that's a post for another day).
+
+But I at least want the _chance_ to thrive. So I'm taking it. Wish me luck.
