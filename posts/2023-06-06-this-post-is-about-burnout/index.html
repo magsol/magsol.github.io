@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.361">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Shannon Quinn">
+
+<title>Stochastic Stenography - This post is about burnout</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XHDW9H78Z1"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
+</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Stochastic Stenography - This post is about burnout">
+<meta property="og:description" content="Metaphor is a tool best left to those trained to use it">
+<meta property="og:image" content="https://magsol.github.io/posts/2023-06-06-this-post-is-about-burnout/burnout.png">
+<meta property="og:site-name" content="Stochastic Stenography">
+<meta property="og:locale" content="en_US">
+<meta property="og:image:height" content="1024">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:alt" content="Midjourney-generated image of an art easel with a picture of a raging fire, anthropomorphized with a giant smile on its face. Meant to convey a ham-fisted 'this is fine' metaphor.">
+<meta name="twitter:title" content="Stochastic Stenography - This post is about burnout">
+<meta name="twitter:description" content="Metaphor is a tool best left to those trained to use it">
+<meta name="twitter:image" content="https://magsol.github.io/posts/2023-06-06-this-post-is-about-burnout/burnout.png">
+<meta name="twitter:creator" content="@SpectralFilter">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image-height" content="1024">
+<meta name="twitter:image-width" content="1024">
+<meta name="twitter:image:alt" content="Midjourney-generated image of an art easel with a picture of a raging fire, anthropomorphized with a giant smile on its face. Meant to convey a ham-fisted 'this is fine' metaphor.">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Stochastic Stenography</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html" rel="" target="">
+ <span class="menu-text">About Me</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">This post is about burnout</h1>
+            <p class="subtitle lead">Metaphor is a tool best left to those trained to use it</p>
+                                <div class="quarto-categories">
+                <div class="quarto-category">personal</div>
+                <div class="quarto-category">professional</div>
+                <div class="quarto-category">burnout</div>
+                <div class="quarto-category">movies</div>
+                <div class="quarto-category">books</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Shannon Quinn </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">Posted on the 6th of June in the year 2023, at 10:05pm. It was Tuesday.</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p><img src="burnout.png" class="preview-image img-fluid" alt="Midjourney-generated image of an art easel with a picture of a raging fire, anthropomorphized with a giant smile on its face. Meant to convey a ham-fisted 'this is fine' metaphor."></p>
+<p>…but before I get to that, I want to talk about a movie I saw recently and a book I read recently.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The following section contains some minor character spoilers from the 2023 film <em>Spider-Man: Across the Spider-Verse</em>. No major plot reveals.</p>
+</div>
+</div>
+<p>My wife and I were recently able to see an evening showing of <a href="https://en.wikipedia.org/wiki/Spider-Man%3A_Across_the_Spider-Verse"><em>Across the Spider-Verse</em></a>. It was phenomenal; we loved it. As someone who stuck with the MCU movies a little longer than most of my friends, I’ve been feeling “meh” toward superhero flicks for about a year now. We haven’t seen the newest <em>Black Panther</em>, <em>Ant-Man</em>, nor <em>Guardians</em> movies, nor have we felt an overriding urge to watch them even when they hit streaming (though I’ve heard the <em>Guardians</em> movie is pretty solid, so that may be the exception. Maybe).</p>
+<p>The <em>Spider-Verse</em> movies, even though solidly in the superhero genre, have been universally incredible. Possibly helped by the fact that there’s only two of them, with the third due out in March 2024. The animation is beautiful, the writing is top-notch, the humor is subtle and perfectly timed, and the characters are <em>fantastic</em>. I loved how this movie dove more into Gwen’s own background, and I was particularly pulled in by <a href="https://en.wikipedia.org/wiki/Spider-Man_2099">Spider-Man 2099</a>.</p>
+<p>He’s a relectant hero (like all the Spiders), doing what he thinks is right, ultimately trying to prevent what happened to him (which was terrible, even by the generic Spider-Trauma Barometer™️) from happening to anyone else.</p>
+<p>Except… he fought too hard for too long. Even surrounded by others, he isolated himself. He made hard decisions, and bit by bit the consequences of those decisions ate him up. He stared into the abyss, and the abyss eventually took up residence. He lost sight of <em>why</em> he started his work in the first place—when you have to repeat “We’re the good guys!” twice in a row, practically shouting it at your subordinates, one has to ask who it is you’re trying to convince—and became the very thing he ostensibly started out fighting against.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The following section contains some minor character spoilers from the 2023 novel <em>The Frugal Wizard’s Handbook For Surviving Medieval England</em>. No major plot reveals.</p>
+</div>
+</div>
+<p>I also just devoured the latest Brandon Sanderson book, <em>The Frugal Wizard’s Handbook For Surviving Medieval England</em>, which was officially called “Secret Project #2” for most of the past 12 months since his big 2022 Kickstarter. It’s not part of any of Sanderson’s other established universes, so it’s a wonderful standalone novel about a near-future dimension-hopping guy who loses his memories upon arriving in an unknown dimension set in Medieval England. He has to figure out who he is and why he’s in that dimension, as others—both natives of the dimension, and people from his own—are trying to kill him.</p>
+<p>I loved the story because, while it had many familiar beats storytelling beats around a journey of self-discovery, its final conceit and ultimate reveal about the character had a surprising amount of depth.</p>
+<p>Ultimately, it was a story of a character who’d had a lot of bad breaks in his life, coupled with a few poor decisions, which culminated in internalizing the belief that <em>he was not deserving</em>. When he inevitably failed, he believed he deserved it. His well-meaning “friends” gave him the usual “you need to try harder, good things come to those who try.” Which of course is strictly true, but leaves out important context: when you’ve had a string of failures, either from bad decisions OR simple bad luck—or most realistically, some ugly combination of both—you start internalizing those failures <em>as the default mode</em>.</p>
+<blockquote class="blockquote">
+<p>You lose a little—and that makes you wonder if you deserve to lose. So you lose some more. And it all compounds. You’re behind, no matter how you scramble to stop it. You’re too far gone.</p>
+</blockquote>
+<p>The memory loss ends up being a godsend, because by the end—when the main character has regained his memories—he can compare himself to someone who, just days before, took action he believed was right <em>without the mental baggage of failure as the default</em>, and for that very reason ended up winning more often than he lost.</p>
+<p>But the critial discovery, to me at least, was that belief in oneself does not exist in vacuum. You don’t necessarily believe in yourself because you woke up one morning and made the decision. You also look (through the lens of your own experience) at your wins and losses in the past, and use that assessment to decide <em>whether or not you’re worth believing in</em>. And that self-assessment can be brutal; it can end up digging a hole that is nigh impossible to get out of, perpetuating failure.</p>
+<section id="where-theres-smoke" class="level3">
+<h3 class="anchored" data-anchor-id="where-theres-smoke">Where there’s smoke…</h3>
+<p>In January 2015, I started a tenure-track position at the University of Georgia. In August 2021, I was officially promoted to Associate Professor, with tenure. And by early 2022, I was convinced that I needed to leave academia entirely, a sentiment that has not changed since then.</p>
+<p>Why leave? For those reasons and all the parts of that thinking that led here, I’ll have a post later. Maybe. I’ve been working on a version of it for nearly two years now, but I’m not yet sure if it will see the light of day. It may just be for me.</p>
+<p>For now, the reason is simple: I’m completely and utterly, spiritually and physically and emotionally, so-far-beyond-the-abyss, <strong>burned out</strong>.</p>
+<p>Of course, the reasons why the burnout got so bad are legion, and I will concede that many of those reasons are my own fault:</p>
+<ul>
+<li>I have a hard time asking for help</li>
+<li>I enjoy what I do to the extent of saying “yes” to things that sound exciting (everything sounds exciting!) without considering how it will get done</li>
+<li>I’ve always been somewhat of a people-pleaser, and so setting hard boundaries is difficult and exhausting, and it’s easier (in the short-term) to give people what they want</li>
+</ul>
+<p>This has led to a situation where I’ve begun to expect failure as a rule. Not with scientific experiments or with code development—that’s wholly different (at least in my brain), and that’s not what I’m talking about here; if anything, my lab’s science has been one of the bright spots in all this—but rather, interacting with people: I expect that I’ll disappoint them somehow, which becomes a self-fulfilling prophecy because it’s happened <em>so often</em> in the last few years.</p>
+<p>And it happened because I was so severely burned out that I could barely function. I mentioned this in my <a href="../../posts/2023-01-14-year-that-almost-was/index.html">new year’s post</a>, though not really the full extent of it. Honestly, I’m not sure what its full extent is. If I take a really close look at the contours, I may have been burned out since early 2019, shortly after receiving my NSF CAREER award notice. I’ve been hobbling along ever since.</p>
+<p>This burnout led to anger and resentment, and a feeling of having to single-handedly hold things together: that I was the only one competent enough to do what needed to be done. Inevitably, balls were dropped—because this is not a sustainable approach to literally anything—and the failures mounted, leading to feelings of nihilism and anhedonia.</p>
+<p>This went on for years. I stared into the abyss for far too long, and when I had a chance to step back, I did not like the person I was becoming. We’re so far beyond schedule tweaks, productivity hacks, and “write for 30 minutes each day”; we’re well into “I need an entire semester, possibly an entire academic year, off, just to begin the healing process in earnest.”</p>
+<p>And yes, that’s ostensibly what sabbaticals are there for. But in a final might-be-hilarious-in-10-years power move, I’ve been denied to even submit a <em>request</em> for a sabbatical because “there’s no one else to teach the class you’ve been assigned for the fall, and there are already 40+ students registered.”</p>
+<p>Somewhere around this time in 2022, while I was working for Quansight, I was given the opportunity to do a 3-day online training in PyTorch for a client. In classic “me” fashion, I enthusiastically volunteered. But when the day came, I was so stressed out by the idea of teaching—a primary source of my burnout—that I broke out in <em>full-body hives</em>. That has happened to me only once before, though in that case we traced it to what was most likely improperly cooked shellfish.</p>
+</section>
+<section id="embrace-the-process" class="level3">
+<h3 class="anchored" data-anchor-id="embrace-the-process">Embrace the process</h3>
+<p><em>Recognizing</em> burnout is important. <em>Counteracting</em> burnout is important. Both of these steps are difficult to ascertain and implement. This blog post about <a href="https://pyfound.blogspot.com/2023/05/the-python-language-summit-2023-burnout.html">burnout among core Python package maintainers</a> addresses some of that. But there’s a third burnout thread I have to constantly remind myself of:</p>
+<p>Burnout decimates your physical and mental capabilities, and they don’t return overnight. It’s such a kick in the teeth when just recognizing burnout is so challenging, and moreso to stem the tide, but just because these have been done does not mean life immediately snaps back to normal.</p>
+<p>I’ve spent the last couple years wondering why running seems so much harder than it used to be, while running so much slower than I used to. I spent the day after the SciPy 2023 paper submission deadline (just this past Friday evening) kicking myself for not getting the paper done and feeling like a failure because of it. Years ago, debugging Python and PyTorch errors was straightforward, and prototyping machine learning models was relatively easy for me; while writing this paper, every error message was a multi-hour-long block on my progress. Working through them was like wading through molassess, and at the time I couldn’t understand why.</p>
+<p>It’s because burnout doesn’t vanish overnight. It impedes your faculties, like sand in joints, simultaneously slowing things down and increasing the resistence. The knee-jerk reaction is to push harder, which flares the burnout and ultimately undoes forward progress. Which feeds into the failure mindset, and thus perpetuates the cycle.</p>
+</section>
+<section id="not-just-surviving-but-thriving" class="level3">
+<h3 class="anchored" data-anchor-id="not-just-surviving-but-thriving">Not just surviving, but thriving</h3>
+<p>I’ve been in survival mode for years now, just trying to get through each day and not really seeing more than a week or two ahead. It’s a good way to stay alive, but a terrible way to live. I’ve gone through long stretches where I have no motivation to create, or to learn, or to grow; instead, all my energy is focused exclusively on getting from one day to the next.</p>
+<p>I don’t want to simply survive, I want to <em>thrive</em>. I want to build, I want to learn, I want to grow. And as has become very clear over the past few years: <em>that won’t happen for me if I stay in academia</em>. I haven’t been able to make it work, and I’ve been at this for almost 9 years now. I’ve said it jokingly for years, but it’s also the hard truth: academia is a pie-eating contest where the prize is more pie.</p>
+<p><strong>So, I’m leaving</strong>. It suffices to say that by prioritizing healing from my burnout, and by extension prioritizing my family and friends and personal interests and hobbies, it is clear beyond any doubt that there is simply no viable universe in which these priorities can be met while remaining in academia. Of course, I’m existentially terrified—who leaves a tenured position for industry?!—but I’m also excited by the mere possibility of thriving.</p>
+<p>Burnout recovery is going to take awhile; after all, I spent years getting to this point. But I’ve also spent the better part of the last few months starting the recovery process, and there’s already been noticeable improvement. I have sustainable routines in place that are clearly doing me good, but I can’t make some of the biggest changes while I’m still in academia.</p>
+<p>I’ve recognized my burnout, and I’m taking every step I can to make the changes I need to thrive. But I have to keep reminding myself that things won’t improve overnight, even when I’m doing everything right. It’ll take some time for the pea soup in my brain to clear out, and it’s been an agonizingly slow process of rebuiding my physical body (not helped by potential long COVID symptoms, but that’s a post for another day).</p>
+<p>But I at least want the <em>chance</em> to thrive. So I’m taking it. Wish me luck.</p>
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
+  author = {Quinn, Shannon},
+  title = {This Post Is about Burnout},
+  date = {2023-06-06},
+  url = {https://magsol.github.io/2023-06-05-this-post-is-about-burnout},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2023" class="csl-entry quarto-appendix-citeas" role="listitem">
+Quinn, Shannon. 2023. <span>“This Post Is about Burnout.”</span> June 6,
+2023. <a href="https://magsol.github.io/2023-06-05-this-post-is-about-burnout">https://magsol.github.io/2023-06-05-this-post-is-about-burnout</a>.
+</div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://giscus.app/client.js" data-repo="magsol/magsol.github.io" data-repo-id="MDEwOlJlcG9zaXRvcnkyNzYwNTYxNw==" data-category="Announcements" data-category-id="DIC_kwDOAaU6cc4CTutY" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="dark" data-lang="en" crossorigin="anonymous" data-loading="lazy" async="">
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
