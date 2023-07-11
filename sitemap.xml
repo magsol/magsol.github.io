@@ -1,139 +1,143 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://magsol.github.io/index.html</loc>
-    <lastmod>2023-06-08T15:49:00.579Z</lastmod>
-  </url>
-  <url>
     <loc>https://magsol.github.io/about.html</loc>
-    <lastmod>2023-06-08T15:49:01.251Z</lastmod>
-  </url>
-  <url>
-    <loc>https://magsol.github.io/posts/2022-12-13-pardon-the-dust/index.html</loc>
-    <lastmod>2023-06-08T15:49:01.691Z</lastmod>
-  </url>
-  <url>
-    <loc>https://magsol.github.io/posts/2023-01-25-mastodon-helm-chart/index.html</loc>
-    <lastmod>2023-06-08T15:49:02.443Z</lastmod>
-  </url>
-  <url>
-    <loc>https://magsol.github.io/posts/2023-01-14-year-that-almost-was/index.html</loc>
-    <lastmod>2023-06-08T15:49:03.219Z</lastmod>
+    <lastmod>2023-07-11T01:56:53.647Z</lastmod>
   </url>
   <url>
     <loc>https://magsol.github.io/posts/2019-08-12-breath-of-the-wild/index.html</loc>
-    <lastmod>2023-06-08T15:49:03.891Z</lastmod>
-  </url>
-  <url>
-    <loc>https://magsol.github.io/posts/2023-06-06-this-post-is-about-burnout/index.html</loc>
-    <lastmod>2023-06-08T15:49:04.663Z</lastmod>
-  </url>
-  <url>
-    <loc>https://magsol.github.io/posts/2018-01-06-new-year-new-blog/index.html</loc>
-    <lastmod>2023-06-08T15:49:05.079Z</lastmod>
-  </url>
-  <url>
-    <loc>https://magsol.github.io/posts/2023-04-04-three-years-later/index.html</loc>
-    <lastmod>2023-06-08T15:49:05.515Z</lastmod>
-  </url>
-  <url>
-    <loc>https://magsol.github.io/posts/2016-02-02-nsf-crii-reviewer-feedback/index.html</loc>
-    <lastmod>2023-06-08T15:49:06.023Z</lastmod>
-  </url>
-  <url>
-    <loc>https://magsol.github.io/posts/2019-06-03-quinnwitz-in-ireland/index.html</loc>
-    <lastmod>2023-06-08T15:49:06.519Z</lastmod>
-  </url>
-  <url>
-    <loc>https://magsol.github.io/posts/2023-02-28-mastodon-conclusions/index.html</loc>
-    <lastmod>2023-06-08T15:49:07.311Z</lastmod>
-  </url>
-  <url>
-    <loc>https://magsol.github.io/posts/2016-09-26-osbd2016-workshop/index.html</loc>
-    <lastmod>2023-06-08T15:49:07.755Z</lastmod>
-  </url>
-  <url>
-    <loc>https://magsol.github.io/posts/2018-06-19-einsum/index.html</loc>
-    <lastmod>2023-06-08T15:49:08.511Z</lastmod>
-  </url>
-  <url>
-    <loc>https://magsol.github.io/posts/2018-04-26-jedi-outcast-echoes-of-a-bygone-gaming-era/index.html</loc>
-    <lastmod>2023-06-08T15:49:09.663Z</lastmod>
-  </url>
-  <url>
-    <loc>https://magsol.github.io/posts/2019-01-31-starcraft-ii-questions/index.html</loc>
-    <lastmod>2023-06-08T15:49:10.499Z</lastmod>
-  </url>
-  <url>
-    <loc>https://magsol.github.io/posts/2021-12-30-back-in-action/index.html</loc>
-    <lastmod>2023-06-08T15:49:10.983Z</lastmod>
-  </url>
-  <url>
-    <loc>https://magsol.github.io/posts/2022-08-03-fiddling-with-generative-art/index.html</loc>
-    <lastmod>2023-06-08T15:49:11.827Z</lastmod>
-  </url>
-  <url>
-    <loc>https://magsol.github.io/posts/2016-05-16-autopost-running-twitter-summary-strava/index.html</loc>
-    <lastmod>2023-06-08T15:49:12.451Z</lastmod>
-  </url>
-  <url>
-    <loc>https://magsol.github.io/posts/2022-01-05-what-the-f-is-this-s/index.html</loc>
-    <lastmod>2023-06-08T15:49:13.183Z</lastmod>
+    <lastmod>2023-07-11T01:56:52.867Z</lastmod>
   </url>
   <url>
     <loc>https://magsol.github.io/posts/2023-05-09-thoughts-ahead-of-totk/index.html</loc>
-    <lastmod>2023-06-08T15:49:13.791Z</lastmod>
+    <lastmod>2023-07-11T01:56:51.267Z</lastmod>
   </url>
   <url>
-    <loc>https://magsol.github.io/posts/2023-02-16-ssl-with-lets-encrypt/index.html</loc>
-    <lastmod>2023-06-08T15:49:14.719Z</lastmod>
+    <loc>https://magsol.github.io/posts/2023-02-28-mastodon-conclusions/index.html</loc>
+    <lastmod>2023-07-11T01:56:50.135Z</lastmod>
   </url>
   <url>
-    <loc>https://magsol.github.io/posts/2015-11-07-introductions/index.html</loc>
-    <lastmod>2023-06-08T15:49:15.027Z</lastmod>
+    <loc>https://magsol.github.io/posts/2019-06-03-quinnwitz-in-ireland/index.html</loc>
+    <lastmod>2023-07-11T01:56:49.002Z</lastmod>
   </url>
   <url>
-    <loc>https://magsol.github.io/posts/2023-01-23-mastodon-home-network-topology/index.html</loc>
-    <lastmod>2023-06-08T15:49:15.675Z</lastmod>
+    <loc>https://magsol.github.io/posts/2022-01-05-what-the-f-is-this-s/index.html</loc>
+    <lastmod>2023-07-11T01:56:48.078Z</lastmod>
   </url>
   <url>
-    <loc>https://magsol.github.io/posts/2023-02-24-installing-and-configuring-mastodon/index.html</loc>
-    <lastmod>2023-06-08T15:49:16.227Z</lastmod>
-  </url>
-  <url>
-    <loc>https://magsol.github.io/posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/index.html</loc>
-    <lastmod>2023-06-08T15:49:16.775Z</lastmod>
-  </url>
-  <url>
-    <loc>https://magsol.github.io/posts/2020-12-30-festivus-for-the-restivus/index.html</loc>
-    <lastmod>2023-06-08T15:49:17.923Z</lastmod>
+    <loc>https://magsol.github.io/posts/2023-06-06-this-post-is-about-burnout/index.html</loc>
+    <lastmod>2023-07-11T01:56:46.518Z</lastmod>
   </url>
   <url>
     <loc>https://magsol.github.io/posts/2023-02-09-configuring-and-installing-prereqs/index.html</loc>
-    <lastmod>2023-06-08T15:49:19.227Z</lastmod>
-  </url>
-  <url>
-    <loc>https://magsol.github.io/posts/2023-02-15-calibrating-a-wildlife-camera/index.html</loc>
-    <lastmod>2023-06-08T15:49:20.027Z</lastmod>
-  </url>
-  <url>
-    <loc>https://magsol.github.io/posts/2017-03-16-so-you-want-to-conduct-research-with-me/index.html</loc>
-    <lastmod>2023-06-08T15:49:20.511Z</lastmod>
-  </url>
-  <url>
-    <loc>https://magsol.github.io/posts/2018-01-19-new-years-resolutions/index.html</loc>
-    <lastmod>2023-06-08T15:49:20.975Z</lastmod>
+    <lastmod>2023-07-11T01:56:44.482Z</lastmod>
   </url>
   <url>
     <loc>https://magsol.github.io/posts/2020-05-20-working-from-home/index.html</loc>
-    <lastmod>2023-06-08T15:49:21.747Z</lastmod>
+    <lastmod>2023-07-11T01:56:41.990Z</lastmod>
+  </url>
+  <url>
+    <loc>https://magsol.github.io/posts/2023-02-24-installing-and-configuring-mastodon/index.html</loc>
+    <lastmod>2023-07-11T01:56:40.562Z</lastmod>
+  </url>
+  <url>
+    <loc>https://magsol.github.io/posts/2018-06-19-einsum/index.html</loc>
+    <lastmod>2023-07-11T01:56:39.514Z</lastmod>
+  </url>
+  <url>
+    <loc>https://magsol.github.io/posts/2017-03-16-so-you-want-to-conduct-research-with-me/index.html</loc>
+    <lastmod>2023-07-11T01:56:38.354Z</lastmod>
+  </url>
+  <url>
+    <loc>https://magsol.github.io/posts/2016-05-16-autopost-running-twitter-summary-strava/index.html</loc>
+    <lastmod>2023-07-11T01:56:37.354Z</lastmod>
+  </url>
+  <url>
+    <loc>https://magsol.github.io/posts/2018-04-26-jedi-outcast-echoes-of-a-bygone-gaming-era/index.html</loc>
+    <lastmod>2023-07-11T01:56:35.982Z</lastmod>
+  </url>
+  <url>
+    <loc>https://magsol.github.io/posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/index.html</loc>
+    <lastmod>2023-07-11T01:56:34.342Z</lastmod>
+  </url>
+  <url>
+    <loc>https://magsol.github.io/posts/2018-01-19-new-years-resolutions/index.html</loc>
+    <lastmod>2023-07-11T01:56:33.146Z</lastmod>
+  </url>
+  <url>
+    <loc>https://magsol.github.io/posts/2019-01-31-starcraft-ii-questions/index.html</loc>
+    <lastmod>2023-07-11T01:56:31.778Z</lastmod>
+  </url>
+  <url>
+    <loc>https://magsol.github.io/index.html</loc>
+    <lastmod>2023-07-11T01:56:30.542Z</lastmod>
+  </url>
+  <url>
+    <loc>https://magsol.github.io/posts/2023-02-15-calibrating-a-wildlife-camera/index.html</loc>
+    <lastmod>2023-07-11T01:56:32.682Z</lastmod>
+  </url>
+  <url>
+    <loc>https://magsol.github.io/posts/2023-02-16-ssl-with-lets-encrypt/index.html</loc>
+    <lastmod>2023-07-11T01:56:33.830Z</lastmod>
+  </url>
+  <url>
+    <loc>https://magsol.github.io/posts/2021-12-30-back-in-action/index.html</loc>
+    <lastmod>2023-07-11T01:56:34.818Z</lastmod>
+  </url>
+  <url>
+    <loc>https://magsol.github.io/posts/2023-01-25-mastodon-helm-chart/index.html</loc>
+    <lastmod>2023-07-11T01:56:36.734Z</lastmod>
+  </url>
+  <url>
+    <loc>https://magsol.github.io/posts/2016-02-02-nsf-crii-reviewer-feedback/index.html</loc>
+    <lastmod>2023-07-11T01:56:37.858Z</lastmod>
+  </url>
+  <url>
+    <loc>https://magsol.github.io/posts/2023-04-04-three-years-later/index.html</loc>
+    <lastmod>2023-07-11T01:56:38.774Z</lastmod>
   </url>
   <url>
     <loc>https://magsol.github.io/posts/2017-05-31-summer-of-data-science/index.html</loc>
-    <lastmod>2023-06-08T15:49:22.183Z</lastmod>
+    <lastmod>2023-07-11T01:56:39.950Z</lastmod>
+  </url>
+  <url>
+    <loc>https://magsol.github.io/posts/2023-01-23-mastodon-home-network-topology/index.html</loc>
+    <lastmod>2023-07-11T01:56:41.214Z</lastmod>
+  </url>
+  <url>
+    <loc>https://magsol.github.io/posts/2023-07-10-upgrading-the-pi-cluster/index.html</loc>
+    <lastmod>2023-07-11T01:56:42.678Z</lastmod>
+  </url>
+  <url>
+    <loc>https://magsol.github.io/posts/2016-09-26-osbd2016-workshop/index.html</loc>
+    <lastmod>2023-07-11T01:56:43.730Z</lastmod>
+  </url>
+  <url>
+    <loc>https://magsol.github.io/posts/2020-12-30-festivus-for-the-restivus/index.html</loc>
+    <lastmod>2023-07-11T01:56:45.698Z</lastmod>
+  </url>
+  <url>
+    <loc>https://magsol.github.io/posts/2023-01-14-year-that-almost-was/index.html</loc>
+    <lastmod>2023-07-11T01:56:47.334Z</lastmod>
+  </url>
+  <url>
+    <loc>https://magsol.github.io/posts/2022-12-13-pardon-the-dust/index.html</loc>
+    <lastmod>2023-07-11T01:56:48.506Z</lastmod>
+  </url>
+  <url>
+    <loc>https://magsol.github.io/posts/2015-11-07-introductions/index.html</loc>
+    <lastmod>2023-07-11T01:56:49.330Z</lastmod>
   </url>
   <url>
     <loc>https://magsol.github.io/posts/2017-01-06-gameify-your-raspberry-pi/index.html</loc>
-    <lastmod>2023-06-08T15:49:22.727Z</lastmod>
+    <lastmod>2023-07-11T01:56:50.663Z</lastmod>
+  </url>
+  <url>
+    <loc>https://magsol.github.io/posts/2022-08-03-fiddling-with-generative-art/index.html</loc>
+    <lastmod>2023-07-11T01:56:52.167Z</lastmod>
+  </url>
+  <url>
+    <loc>https://magsol.github.io/posts/2018-01-06-new-year-new-blog/index.html</loc>
+    <lastmod>2023-07-11T01:56:53.323Z</lastmod>
   </url>
 </urlset>

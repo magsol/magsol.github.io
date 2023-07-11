@@ -8,7 +8,7 @@
 
 <meta name="author" content="Shannon Quinn">
 
-<title>Stochastic Stenography - This post is about burnout</title>
+<title>Stochastic Stenography - Upgrading the Raspberry Pi Cluster</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -73,22 +73,18 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Stochastic Stenography - This post is about burnout">
-<meta property="og:description" content="Metaphor is a tool best left to those trained to use it">
-<meta property="og:image" content="https://magsol.github.io/posts/2023-06-06-this-post-is-about-burnout/burnout.png">
+<meta property="og:title" content="Stochastic Stenography - Upgrading the Raspberry Pi Cluster">
+<meta property="og:description" content="Nothing bad has ever happened in the history of planned upgrades.">
+<meta property="og:image" content="https://magsol.github.io/posts/2023-07-10-upgrading-the-pi-cluster/setup.jpg">
 <meta property="og:site-name" content="Stochastic Stenography">
 <meta property="og:locale" content="en_US">
-<meta property="og:image:height" content="1024">
-<meta property="og:image:width" content="1024">
-<meta property="og:image:alt" content="Midjourney-generated image of an art easel with a picture of a raging fire, anthropomorphized with a giant smile on its face. Meant to convey a ham-fisted 'this is fine' metaphor.">
-<meta name="twitter:title" content="Stochastic Stenography - This post is about burnout">
-<meta name="twitter:description" content="Metaphor is a tool best left to those trained to use it">
-<meta name="twitter:image" content="https://magsol.github.io/posts/2023-06-06-this-post-is-about-burnout/burnout.png">
+<meta property="og:image:alt" content="My home office desk, with the GamersNexus rubber mat, along with all the hardware materials for the cluster upgrade, including: a stack of PoE HAT boxes, a Netgear 8-port PoE switch, a small power brick from Anker with two 2-port USB-to-outlet adapters, and my laptop.">
+<meta name="twitter:title" content="Stochastic Stenography - Upgrading the Raspberry Pi Cluster">
+<meta name="twitter:description" content="Nothing bad has ever happened in the history of planned upgrades.">
+<meta name="twitter:image" content="https://magsol.github.io/posts/2023-07-10-upgrading-the-pi-cluster/setup.jpg">
 <meta name="twitter:creator" content="@SpectralFilter">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image-height" content="1024">
-<meta name="twitter:image-width" content="1024">
-<meta name="twitter:image:alt" content="Midjourney-generated image of an art easel with a picture of a raging fire, anthropomorphized with a giant smile on its face. Meant to convey a ham-fisted 'this is fine' metaphor.">
+<meta name="twitter:image:alt" content="My home office desk, with the GamersNexus rubber mat, along with all the hardware materials for the cluster upgrade, including: a stack of PoE HAT boxes, a Netgear 8-port PoE switch, a small power brick from Anker with two 2-port USB-to-outlet adapters, and my laptop.">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -123,14 +119,15 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">This post is about burnout</h1>
-            <p class="subtitle lead">Metaphor is a tool best left to those trained to use it</p>
+      <h1 class="title">Upgrading the Raspberry Pi Cluster</h1>
+            <p class="subtitle lead">Nothing bad has ever happened in the history of planned upgrades.</p>
                                 <div class="quarto-categories">
                 <div class="quarto-category">personal</div>
-                <div class="quarto-category">professional</div>
-                <div class="quarto-category">burnout</div>
-                <div class="quarto-category">movies</div>
-                <div class="quarto-category">books</div>
+                <div class="quarto-category">raspberry pi</div>
+                <div class="quarto-category">kubernetes</div>
+                <div class="quarto-category">k3s</div>
+                <div class="quarto-category">mastodon</div>
+                <div class="quarto-category">hardware</div>
               </div>
                   </div>
   </div>
@@ -148,7 +145,7 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">Posted on the 6th of June in the year 2023, at 10:05pm. It was Tuesday.</p>
+        <p class="date">Posted on the 10th of July in the year 2023, at 9:52pm. It was Monday.</p>
       </div>
     </div>
     
@@ -166,93 +163,141 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 
 
 
-<p><img src="burnout.png" class="preview-image img-fluid" alt="Midjourney-generated image of an art easel with a picture of a raging fire, anthropomorphized with a giant smile on its face. Meant to convey a ham-fisted 'this is fine' metaphor."></p>
-<p>…but before I get to that, I want to talk about a movie I saw recently and a book I read recently.</p>
-<div class="callout callout-style-default callout-caution callout-titled">
+<p><img src="setup.jpg" class="preview-image img-fluid" alt="My home office desk, with the GamersNexus rubber mat, along with all the hardware materials for the cluster upgrade, including: a stack of PoE HAT boxes, a Netgear 8-port PoE switch, a small power brick from Anker with two 2-port USB-to-outlet adapters, and my laptop."></p>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Caution
+An ode to time zones
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The following section contains some minor character spoilers from the 2023 film <em>Spider-Man: Across the Spider-Verse</em>. No major plot reveals.</p>
+<p>As I write this up, I’m sitting in my SciPy hotel room. It’s a nice way to relax and unwind after a <em>long</em> day of travel and tutorials, but I also apologize for any timezone weirdness or general grammar or syntax errors.</p>
 </div>
 </div>
-<p>My wife and I were recently able to see an evening showing of <a href="https://en.wikipedia.org/wiki/Spider-Man%3A_Across_the_Spider-Verse"><em>Across the Spider-Verse</em></a>. It was phenomenal; we loved it. As someone who stuck with the MCU movies a little longer than most of my friends, I’ve been feeling “meh” toward superhero flicks for about a year now. We haven’t seen the newest <em>Black Panther</em>, <em>Ant-Man</em>, nor <em>Guardians</em> movies, nor have we felt an overriding urge to watch them even when they hit streaming (though I’ve heard the <em>Guardians</em> movie is pretty solid, so that may be the exception. Maybe).</p>
-<p>The <em>Spider-Verse</em> movies, even though solidly in the superhero genre, have been universally incredible. Possibly helped by the fact that there’s only two of them, with the third due out in March 2024. The animation is beautiful, the writing is top-notch, the humor is subtle and perfectly timed, and the characters are <em>fantastic</em>. I loved how this movie dove more into Gwen’s own background, and I was particularly pulled in by <a href="https://en.wikipedia.org/wiki/Spider-Man_2099">Spider-Man 2099</a>.</p>
-<p>He’s a relectant hero (like all the Spiders), doing what he thinks is right, ultimately trying to prevent what happened to him (which was terrible, even by the generic Spider-Trauma Barometer™️) from happening to anyone else.</p>
-<p>Except… he fought too hard for too long. Even surrounded by others, he isolated himself. He made hard decisions, and bit by bit the consequences of those decisions ate him up. He stared into the abyss, and the abyss eventually took up residence. He lost sight of <em>why</em> he started his work in the first place—when you have to repeat “We’re the good guys!” twice in a row, practically shouting it at your subordinates, one has to ask who it is you’re trying to convince—and became the very thing he ostensibly started out fighting against.</p>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Caution
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The following section contains some minor character spoilers from the 2023 novel <em>The Frugal Wizard’s Handbook For Surviving Medieval England</em>. No major plot reveals.</p>
-</div>
-</div>
-<p>I also just devoured the latest Brandon Sanderson book, <em>The Frugal Wizard’s Handbook For Surviving Medieval England</em>, which was officially called “Secret Project #2” for most of the past 12 months since his big 2022 Kickstarter. It’s not part of any of Sanderson’s other established universes, so it’s a wonderful standalone novel about a near-future dimension-hopping guy who loses his memories upon arriving in an unknown dimension set in Medieval England. He has to figure out who he is and why he’s in that dimension, as others—both natives of the dimension, and people from his own—are trying to kill him.</p>
-<p>I loved the story because, while it had many familiar beats storytelling beats around a journey of self-discovery, its final conceit and ultimate reveal about the character had a surprising amount of depth.</p>
-<p>Ultimately, it was a story of a character who’d had a lot of bad breaks in his life, coupled with a few poor decisions, which culminated in internalizing the belief that <em>he was not deserving</em>. When he inevitably failed, he believed he deserved it. His well-meaning “friends” gave him the usual “you need to try harder, good things come to those who try.” Which of course is strictly true, but leaves out important context: when you’ve had a string of failures, either from bad decisions OR simple bad luck—or most realistically, some ugly combination of both—you start internalizing those failures <em>as the default mode</em>.</p>
-<blockquote class="blockquote">
-<p>You lose a little—and that makes you wonder if you deserve to lose. So you lose some more. And it all compounds. You’re behind, no matter how you scramble to stop it. You’re too far gone.</p>
-</blockquote>
-<p>The memory loss ends up being a godsend, because by the end—when the main character has regained his memories—he can compare himself to someone who, just days before, took action he believed was right <em>without the mental baggage of failure as the default</em>, and for that very reason ended up winning more often than he lost.</p>
-<p>But the critial discovery, to me at least, was that belief in oneself does not exist in vacuum. You don’t necessarily believe in yourself because you woke up one morning and made the decision. You also look (through the lens of your own experience) at your wins and losses in the past, and use that assessment to decide <em>whether or not you’re worth believing in</em>. And that self-assessment can be brutal; it can end up digging a hole that is nigh impossible to get out of, perpetuating failure.</p>
-<section id="where-theres-smoke" class="level3">
-<h3 class="anchored" data-anchor-id="where-theres-smoke">Where there’s smoke…</h3>
-<p>In January 2015, I started a tenure-track position at the University of Georgia. In August 2021, I was officially promoted to Associate Professor, with tenure. And by early 2022, I was convinced that I needed to leave academia entirely, a sentiment that has not changed since then.</p>
-<p>Why leave? For those reasons and all the parts of that thinking that led here, I’ll have a post later. Maybe. I’ve been working on a version of it for nearly two years now, but I’m not yet sure if it will see the light of day. It may just be for me.</p>
-<p>For now, the reason is simple: I’m completely and utterly, spiritually and physically and emotionally, so-far-beyond-the-abyss, <strong>burned out</strong>.</p>
-<p>Of course, the reasons why the burnout got so bad are legion, and I will concede that many of those reasons are my own fault:</p>
+<p>In the seven months since <a href="../../posts/2023-02-28-mastodon-conclusions/index.html">standing up my own Mastodon instance</a>, the Mastodon team has made quite a few releases. Up until last week, I was running <a href="https://github.com/mastodon/mastodon/tree/v4.0.2">4.0.2</a>, which had originally been released back in November 2022 when I started this crazy journey.</p>
+<p>I’d also been wanting to perform a hardware upgrade of the Pi cluster. The server rack I built back in mid-2022, while effective at protecting the cluster from toddlers, was a mess of cables on the inside: turns out, five stacked Raspberry Pi boards have a lot of associated cabling!</p>
+<p>My plan for hardware updates included:</p>
 <ul>
-<li>I have a hard time asking for help</li>
-<li>I enjoy what I do to the extent of saying “yes” to things that sound exciting (everything sounds exciting!) without considering how it will get done</li>
-<li>I’ve always been somewhat of a people-pleaser, and so setting hard boundaries is difficult and exhausting, and it’s easier (in the short-term) to give people what they want</li>
+<li>installing <a href="https://www.raspberrypi.com/products/poe-plus-hat/">power-over-ethernet (PoE) hardware-attached-on-top (HAT)s</a> on each Raspberry Pi, so I could supply both power and networking through the ethernet cable</li>
+<li>rewiring the 3x Raspberry Pi case fans to be USB-powered, rather than depending on connections to the GPIO boards of each Pi</li>
+<li>downsizing the power brick inside the server case</li>
 </ul>
-<p>This has led to a situation where I’ve begun to expect failure as a rule. Not with scientific experiments or with code development—that’s wholly different (at least in my brain), and that’s not what I’m talking about here; if anything, my lab’s science has been one of the bright spots in all this—but rather, interacting with people: I expect that I’ll disappoint them somehow, which becomes a self-fulfilling prophecy because it’s happened <em>so often</em> in the last few years.</p>
-<p>And it happened because I was so severely burned out that I could barely function. I mentioned this in my <a href="../../posts/2023-01-14-year-that-almost-was/index.html">new year’s post</a>, though not really the full extent of it. Honestly, I’m not sure what its full extent is. If I take a really close look at the contours, I may have been burned out since early 2019, shortly after receiving my NSF CAREER award notice. I’ve been hobbling along ever since.</p>
-<p>This burnout led to anger and resentment, and a feeling of having to single-handedly hold things together: that I was the only one competent enough to do what needed to be done. Inevitably, balls were dropped—because this is not a sustainable approach to literally anything—and the failures mounted, leading to feelings of nihilism and anhedonia.</p>
-<p>This went on for years. I stared into the abyss for far too long, and when I had a chance to step back, I did not like the person I was becoming. We’re so far beyond schedule tweaks, productivity hacks, and “write for 30 minutes each day”; we’re well into “I need an entire semester, possibly an entire academic year, off, just to begin the healing process in earnest.”</p>
-<p>And yes, that’s ostensibly what sabbaticals are there for. But in a final might-be-hilarious-in-10-years power move, I’ve been denied to even submit a <em>request</em> for a sabbatical because “there’s no one else to teach the class you’ve been assigned for the fall, and there are already 40+ students registered.”</p>
-<p>Somewhere around this time in 2022, while I was working for Quansight, I was given the opportunity to do a 3-day online training in PyTorch for a client. In classic “me” fashion, I enthusiastically volunteered. But when the day came, I was so stressed out by the idea of teaching—a primary source of my burnout—that I broke out in <em>full-body hives</em>. That has happened to me only once before, though in that case we traced it to what was most likely improperly cooked shellfish.</p>
+<p>This all took quite a bit of work. And, oddly enough, the software was the <em>easy</em> part.</p>
+<section id="upgrading-mastodon" class="level3">
+<h3 class="anchored" data-anchor-id="upgrading-mastodon">Upgrading Mastodon</h3>
+<p>This was “merely” a matter of running an upgrade using the latest Helm chart from Mastodon’s repository. There was a minor wrinkle: the chart had been <em>substantially</em> updated from the one I used to install Mastodon back in December 2022. It <a href="https://github.com/mastodon/chart">has its own repository now</a>!</p>
+<p>I had to carefully go through the chart I used to originally install Mastodon, and the new chart, to make sure I was correctly transferring old configuration values to the new chart. I really only made two mistakes in this process:</p>
+<ol type="1">
+<li>I forgot to fill in the mailer configuration</li>
+<li>When specifying the tag, I first put “4.1.3”, instead of “v4.1.3” 🤦‍♂️</li>
+</ol>
+<p>Fortunately, both were easy fixes. What was a bit trickier was the re-emergence of a <a href="https://github.com/mastodon/chart/issues/73">well-known race condition</a> in the database migration process. It took three separate re-starts of the upgrade process, but it eventually ran to successful completion, and my instance is now running 4.1.3!</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Of course, <a href="https://github.com/mastodon/mastodon/releases/tag/v4.1.4">4.1.4</a> was just released 3 days ago as of this writing. Of course.</p>
+</div>
+</div>
 </section>
-<section id="embrace-the-process" class="level3">
-<h3 class="anchored" data-anchor-id="embrace-the-process">Embrace the process</h3>
-<p><em>Recognizing</em> burnout is important. <em>Counteracting</em> burnout is important. Both of these steps are difficult to ascertain and implement. This blog post about <a href="https://pyfound.blogspot.com/2023/05/the-python-language-summit-2023-burnout.html">burnout among core Python package maintainers</a> addresses some of that. But there’s a third burnout thread I have to constantly remind myself of:</p>
-<p>Burnout decimates your physical and mental capabilities, and they don’t return overnight. It’s such a kick in the teeth when just recognizing burnout is so challenging, and moreso to stem the tide, but just because these have been done does not mean life immediately snaps back to normal.</p>
-<p>I’ve spent the last couple years wondering why running seems so much harder than it used to be, while running so much slower than I used to. I spent the day after the SciPy 2023 paper submission deadline (just this past Friday evening) kicking myself for not getting the paper done and feeling like a failure because of it. Years ago, debugging Python and PyTorch errors was straightforward, and prototyping machine learning models was relatively easy for me; while writing this paper, every error message was a multi-hour-long block on my progress. Working through them was like wading through molassess, and at the time I couldn’t understand why.</p>
-<p>It’s because burnout doesn’t vanish overnight. It impedes your faculties, like sand in joints, simultaneously slowing things down and increasing the resistence. The knee-jerk reaction is to push harder, which flares the burnout and ultimately undoes forward progress. Which feeds into the failure mindset, and thus perpetuates the cycle.</p>
+<section id="hardware-upgrades" class="level3">
+<h3 class="anchored" data-anchor-id="hardware-upgrades">Hardware Upgrades</h3>
+<p>If the software upgrades took a day, the hardware upgrades took a week.</p>
+<p>I mentioned I wanted to install PoE HATs on each Raspberry Pi so they could draw both their power and network connectivity from a single ethernet connection.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="poe_hat.jpg" class="img-fluid figure-img" alt="A stack of 6 PoE HAT boxes, waiting to be unboxed and installed, one per Raspberry Pi."></p>
+<figcaption class="figure-caption">How many HATs does one person need?</figcaption>
+</figure>
+</div>
+<p>What I didn’t mention is: there’s more to it than that. To power devices using PoE, you also need networking hardware that is PoE-compatible. This meant replacing my standard 6-port unmanaged switch with a PoE-compatible switch.</p>
+<p>It also meant upgrading from 6 ports to 8, since I also wanted to add a 6th Pi to the cluster—which, when you include the necessary port for connecting the switch to the <em>rest</em> of the network, means a minimum of 7 ports.</p>
+<p><img src="poe_switch.jpg" class="img-fluid" alt="A Netgear 8-port unmanaged PoE+ switch. Officially, its product number is GS308P."></p>
+<p>To start, I had to shut down and disassemble the Raspberry Pi cluster (which you can see in <a href="../../posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/index.html">this post back in January</a>). Here was the result, along with the 6th Pi I wanted to add:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="rpis.jpg" class="img-fluid figure-img" alt="Six Raspberry Pi boards, all on the desk."></p>
+<figcaption class="figure-caption">So much pi(e).</figcaption>
+</figure>
+</div>
+<p>With the Pi cluster itself out of the homemade rack, you can see the interior with all the rest of the cabling:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="rack_interior.jpg" class="img-fluid figure-img" alt="Interior shot of my homemade server rack, which is really just a wooden crate with some cut-outs for intake/exhaust fans and a clear plexiglass side for viewing. Inside the Raspberry Pi cluster has been removed, leaving the original 6-port switch, power brick, ethernet cables, power cables, and fan cables. So many cables."></p>
+<figcaption class="figure-caption">Cables cables everywhere but not an ounce of space.</figcaption>
+</figure>
+</div>
+<p>Yeah. It was pretty crowded, even without the little stack of 5 Raspberry Pi boards. Clearing some of that out via PoE sounded really, really good.</p>
+<p>The first step was to install the PoE HAT on each Raspberry Pi. Here’s a before shot:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="single_pi.jpg" class="img-fluid figure-img" alt="A single Raspberry Pi 4B board, unmodified."></p>
+<figcaption class="figure-caption">A standard Raspberry Pi 4B.</figcaption>
+</figure>
+</div>
+<p>And here’s what it looks like when I’ve installed a PoE HAT on it:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pi_hat.jpg" class="img-fluid figure-img" alt="A single Raspberry Pi 4B board, now with a PoE HAT on it."></p>
+<figcaption class="figure-caption">A standard Raspberry Pi 4B, now with a PoE HAT on it.</figcaption>
+</figure>
+</div>
+<p>As an aside: this adds a surprising amount of weight to the Pi! By itself it wasn’t all that noticeable, but once I’d re-stacked the Pi cluster, I was more than a little shocked by how much heavier it was! Something to keep in mind.</p>
+<p>The server rack I built has three Pi case fans as intake, and previously these were powered by literally hooking them into the 5V GPIO pins of three of the Pi boards. Now that all the Pi boards had HATs on, their GPIO pins were entirely inaccessible. Which was fine, because I’d wanted to convert the intake fans to USB power anyway—I’d done this already for the two exhaust fans, which I had cannibalized from an old desktop RAM cooler.</p>
+<p>Fun fact: these old RAM cooler fans were the same size as the Pi case fans, but for some reason were 12V fans (and USB is, by default, 5V), so I needed to leverage <a href="https://en.wikipedia.org/wiki/Ohm%27s_law">Ohm’s Law</a> and buy a converter that upped the resistence in order to increase the voltage.</p>
+<p>Fortunately, this was not the case for the Pi case fans: they needed 5V, and 5V is what any standard USB plug provides. All that was needed was some minor rewiring so the fan leads connected to the corresponding wires inside a USB cable. The end result looked something like this:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="rewired_fan.jpg" class="img-fluid figure-img" alt="A standard 5V Raspberry Pi case fan with its two cables connected to the corresponding power/ground wires inside a USB cable that has been cut open."></p>
+<figcaption class="figure-caption">Some minor surgery later and we have a USB powered fan!</figcaption>
+</figure>
+</div>
+<p>I could now plug all five rack fans (three intake, two exhaust) directly into a new and smaller power brick, courtesy of some USB-to-outlet adapters to help further compress the size.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="power_brick.jpg" class="img-fluid figure-img" alt="A small Anker power brick with three standard outlets on the front, two of which have USB-to-outlet adapters plugged in, and each adapter has two USB ports. With two additional USB ports in the back, there are six USB outlets on the brick to power the five USB fans, and one standard outlet to power the PoE 8-port switch."></p>
+<figcaption class="figure-caption">There are two more USB outlets in the back of the brick.</figcaption>
+</figure>
+</div>
+<p>All that was left at this point was to reassemble the Pi cluster. As I said, I was surprised by the sturdiness of six Pi boards with PoE HATs:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="full_cluster.jpg" class="img-fluid figure-img" alt="The reassembled Pi cluster, with six Raspberry Pi boards stacked up, each with a PoE HAT."></p>
+<figcaption class="figure-caption">Behold this fully armed and operational Pi cluster.</figcaption>
+</figure>
+</div>
+<p>It took several days’ worth of spare time to get everything together, but I’m proud to say that when I plugged the power brick into the wall, <em>every</em> single light and fan turned on all at once.</p>
+<p>It was beautiful.</p>
+<p>And mere minutes after, our Mastodon instance was back up and running, too! No commands or instructions needed on my part. Which is, frankly, impressive: as complex as kubernetes is, and as difficult as it can be to stand up applications in it, it’s remarkably robust once you’ve got it up and running.</p>
 </section>
-<section id="not-just-surviving-but-thriving" class="level3">
-<h3 class="anchored" data-anchor-id="not-just-surviving-but-thriving">Not just surviving, but thriving</h3>
-<p>I’ve been in survival mode for years now, just trying to get through each day and not really seeing more than a week or two ahead. It’s a good way to stay alive, but a terrible way to live. I’ve gone through long stretches where I have no motivation to create, or to learn, or to grow; instead, all my energy is focused exclusively on getting from one day to the next.</p>
-<p>I don’t want to simply survive, I want to <em>thrive</em>. I want to build, I want to learn, I want to grow. And as has become very clear over the past few years: <em>that won’t happen for me if I stay in academia</em>. I haven’t been able to make it work, and I’ve been at this for almost 9 years now. I’ve said it jokingly for years, but it’s also the hard truth: academia is a pie-eating contest where the prize is more pie.</p>
-<p><strong>So, I’m leaving</strong>. It suffices to say that by prioritizing healing from my burnout, and by extension prioritizing my family and friends and personal interests and hobbies, it is clear beyond any doubt that there is simply no viable universe in which these priorities can be met while remaining in academia. Of course, I’m existentially terrified—who leaves a tenured position for industry?!—but I’m also excited by the mere possibility of thriving.</p>
-<p>Burnout recovery is going to take awhile; after all, I spent years getting to this point. But I’ve also spent the better part of the last few months starting the recovery process, and there’s already been noticeable improvement. I have sustainable routines in place that are clearly doing me good, but I can’t make some of the biggest changes while I’m still in academia.</p>
-<p>I’ve recognized my burnout, and I’m taking every step I can to make the changes I need to thrive. But I have to keep reminding myself that things won’t improve overnight, even when I’m doing everything right. It’ll take some time for the pea soup in my brain to clear out, and it’s been an agonizingly slow process of rebuiding my physical body (not helped by potential long COVID symptoms, but that’s a post for another day).</p>
-<p>But I at least want the <em>chance</em> to thrive. So I’m taking it. Wish me luck.</p>
+<section id="next-steps" class="level3">
+<h3 class="anchored" data-anchor-id="next-steps">Next Steps</h3>
+<p>I’ll probably just enjoy this for a bit 😀</p>
+<p>But later, I’ll upgrade Mastodon again. On the hardware end, I don’t really have any additional ideas for the moment! Longer term, though, I have plans to move the Pi cluster into an <em>actual</em> homelab server rack (along with our home NAS, a full-sized home server, and all the networking equipment we have currently lying on the floor).</p>
+<p>But that’s for another time 👋</p>
 
 
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
   author = {Quinn, Shannon},
-  title = {This Post Is about Burnout},
-  date = {2023-06-06},
-  url = {https://magsol.github.io/2023-06-05-this-post-is-about-burnout},
+  title = {Upgrading the {Raspberry} {Pi} {Cluster}},
+  date = {2023-07-10},
+  url = {https://magsol.github.io/2023-07-10-upgrading-the-pi-cluster},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2023" class="csl-entry quarto-appendix-citeas" role="listitem">
-Quinn, Shannon. 2023. <span>“This Post Is about Burnout.”</span> June 6,
-2023. <a href="https://magsol.github.io/2023-06-05-this-post-is-about-burnout">https://magsol.github.io/2023-06-05-this-post-is-about-burnout</a>.
+Quinn, Shannon. 2023. <span>“Upgrading the Raspberry Pi Cluster.”</span>
+July 10, 2023. <a href="https://magsol.github.io/2023-07-10-upgrading-the-pi-cluster">https://magsol.github.io/2023-07-10-upgrading-the-pi-cluster</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
