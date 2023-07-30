@@ -1,0 +1,47 @@
+---
+title: "The Hero Of Everything"
+subtitle: "Apparently it's not enough to merely save the world"
+date: "2023-07-30 14:25:00"
+categories: [personal, video games, zelda, tears of the kingdom]
+citation:
+    url: https://magsol.github.io/2023-07-30-hero-of-everything
+image: "link_cece_hat.jpg"
+image-alt: "An in-game picture of Link from _Tears of the Kingdom_ with pink hair and dark lipstick, and wearing the Cece hat. Picture from this Polygon article: https://www.polygon.com/legend-zelda-tears-kingdom/23725926/tears-of-the-kingdom-totk-best-hat-outfit-cece-mushroom-hat-how-to-get-slay ."
+author: "Shannon Quinn"
+---
+![](link_cece_hat.jpg){.preview-image fig-alt="An in-game picture of Link from _Tears of the Kingdom_ with pink hair and dark lipstick, and wearing the Cece hat. Picture from this Polygon article: https://www.polygon.com/legend-zelda-tears-kingdom/23725926/tears-of-the-kingdom-totk-best-hat-outfit-cece-mushroom-hat-how-to-get-slay ."}
+
+This is the first of two _Tears of the Kingdom_ related blog posts I'll be making. Don't worry---there won't be any story spoilers in either one. But [my wife did just beat the game this past week](https://quinnwitz.house/@magsol/110792987901449157) (my game isn't anywhere near the end), so I did want to put down some spoiler-free thoughts on the topic, as well as more detail surrounding [recent discoveries on hybrid-powered flight](https://quinnwitz.house/@magsol/110776842879244818) I've been posting about on Mastodon.
+
+In the meantime, I just wanted to put in writing something my wife and I hit on very quickly after starting _Tears of the Kingdom_: the many hats Link wears. Sure, he has a Big Bad he needs to put down---the whole "Hero of hyrule/time/twilight/the skies/winds/dreams/etc" thing---but this is about the _side quests_. In games prior to, oh I don't know, 2017, these always included a few non-warrior talents: escorting people places, fetching an item, taking care of animals, and so on.
+
+But _Tears of the Kingdom_ (and to an only slightly lesser extent, _Breath of the Wild_) took this to a whole new level. Just focusing on the main story quest is starting to feel like [only doing the bare minimum](https://www.youtube.com/watch?v=_ChQK8j6so8).
+
+Without further adieu, I give you (this list is most likely incomplete, so please feel free to contribute!):
+
+**The List of Roles Link Is "Hired" (Willingly...?) Into Aside From, You Know, Actual Hero-ing in _Tears of the Kingdom_.**
+
+ - Farmer
+ - Gardener
+ - Construction worker
+ - Lumberjack
+ - Babysitter
+ - Cook
+ - (Electrical / Mechanical) Engineer
+ - Elementary School Teacher
+ - Chauffeur
+ - Journalist
+ - Photographer
+ - Research Assistant
+ - Cartographer
+ - Test driver
+ - Undercover secret agent
+ - Uncle
+ - Historian
+ - Election Official / Campaign Worker
+ - Equestrian
+ - Spelunker
+ - Blacksmith
+ - Miner
+ - General
+ - Privateer
