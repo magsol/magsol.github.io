@@ -17,7 +17,70 @@
 <width>144</width>
 </image>
 <generator>quarto-1.3.433</generator>
-<lastBuildDate>Mon, 10 Jul 2023 21:52:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 30 Jul 2023 14:25:00 GMT</lastBuildDate>
+<item>
+  <title>The Hero Of Everything</title>
+  <dc:creator>Shannon Quinn</dc:creator>
+  <link>https://magsol.github.io/posts/2023-07-30-hero-of-everything/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><img src="https://magsol.github.io/posts/2023-07-30-hero-of-everything/link_cece_hat.jpg" class="preview-image img-fluid" alt="An in-game picture of Link from _Tears of the Kingdom_ with pink hair and dark lipstick, and wearing the Cece hat. Picture from this Polygon article: https://www.polygon.com/legend-zelda-tears-kingdom/23725926/tears-of-the-kingdom-totk-best-hat-outfit-cece-mushroom-hat-how-to-get-slay ."></p>
+<p>This is the first of two <em>Tears of the Kingdom</em> related blog posts I’ll be making. Don’t worry—there won’t be any story spoilers in either one. But <a href="https://quinnwitz.house/@magsol/110792987901449157">my wife did just beat the game this past week</a> (my game isn’t anywhere near the end), so I did want to put down some spoiler-free thoughts on the topic, as well as more detail surrounding <a href="https://quinnwitz.house/@magsol/110776842879244818">recent discoveries on hybrid-powered flight</a> I’ve been posting about on Mastodon.</p>
+<p>In the meantime, I just wanted to put in writing something my wife and I hit on very quickly after starting <em>Tears of the Kingdom</em>: the many hats Link wears. Sure, he has a Big Bad he needs to put down—the whole “Hero of hyrule/time/twilight/the skies/winds/dreams/etc” thing—but this is about the <em>side quests</em>. In games prior to, oh I don’t know, 2017, these always included a few non-warrior talents: escorting people places, fetching an item, taking care of animals, and so on.</p>
+<p>But <em>Tears of the Kingdom</em> (and to an only slightly lesser extent, <em>Breath of the Wild</em>) took this to a whole new level. Just focusing on the main story quest is starting to feel like <a href="https://www.youtube.com/watch?v=_ChQK8j6so8">only doing the bare minimum</a>.</p>
+<p>Without further adieu, I give you (this list is most likely incomplete, so please feel free to contribute!):</p>
+<p><strong>The List of Roles Link Is “Hired” (Willingly…?) Into Aside From, You Know, Actual Hero-ing in <em>Tears of the Kingdom</em>.</strong></p>
+<ul>
+<li>Farmer</li>
+<li>Gardener</li>
+<li>Construction worker</li>
+<li>Lumberjack</li>
+<li>Babysitter</li>
+<li>Cook</li>
+<li>(Electrical / Mechanical) Engineer</li>
+<li>Elementary School Teacher</li>
+<li>Chauffeur</li>
+<li>Journalist</li>
+<li>Photographer</li>
+<li>Research Assistant</li>
+<li>Cartographer</li>
+<li>Test driver</li>
+<li>Undercover secret agent</li>
+<li>Uncle</li>
+<li>Historian</li>
+<li>Election Official / Campaign Worker</li>
+<li>Equestrian</li>
+<li>Spelunker</li>
+<li>Blacksmith</li>
+<li>Miner</li>
+<li>General</li>
+<li>Privateer</li>
+</ul>
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
+  author = {Quinn, Shannon},
+  title = {The {Hero} {Of} {Everything}},
+  date = {2023-07-30},
+  url = {https://magsol.github.io/2023-07-30-hero-of-everything},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2023" class="csl-entry quarto-appendix-citeas">
+Quinn, Shannon. 2023. <span>“The Hero Of Everything.”</span> July 30,
+2023. <a href="https://magsol.github.io/2023-07-30-hero-of-everything">https://magsol.github.io/2023-07-30-hero-of-everything</a>.
+</div></div></section></div> ]]></description>
+  <category>personal</category>
+  <category>video games</category>
+  <category>zelda</category>
+  <category>tears of the kingdom</category>
+  <guid>https://magsol.github.io/posts/2023-07-30-hero-of-everything/index.html</guid>
+  <pubDate>Sun, 30 Jul 2023 14:25:00 GMT</pubDate>
+  <media:content url="https://magsol.github.io/posts/2023-07-30-hero-of-everything/link_cece_hat.jpg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>Upgrading the Raspberry Pi Cluster</title>
   <dc:creator>Shannon Quinn</dc:creator>
@@ -426,7 +489,7 @@ Quinn, Shannon. 2023. <span>“Three Years Later.”</span> April 4, 2023.
 <li>Conclusions <em>(this post)</em></li>
 </ol>
 <p>I know what you’re thinking:</p>
-<p></p><div id="tweet-87230"></div><script>tweet={"url":"https:\/\/twitter.com\/dexhorthy\/status\/856639005462417409","author_name":"dex","author_url":"https:\/\/twitter.com\/dexhorthy","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EDeployed my blog on Kubernetes \u003Ca href=\"https:\/\/t.co\/XHXWLrmYO4\"\u003Epic.twitter.com\/XHXWLrmYO4\u003C\/a\u003E\u003C\/p\u003E&mdash; dex (@dexhorthy) \u003Ca href=\"https:\/\/twitter.com\/dexhorthy\/status\/856639005462417409?ref_src=twsrc%5Etfw\"\u003EApril 24, 2017\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-87230").innerHTML = tweet["html"];</script><p></p>
+<p></p><div id="tweet-38411"></div><script>tweet={"url":"https:\/\/twitter.com\/dexhorthy\/status\/856639005462417409","author_name":"dex","author_url":"https:\/\/twitter.com\/dexhorthy","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EDeployed my blog on Kubernetes \u003Ca href=\"https:\/\/t.co\/XHXWLrmYO4\"\u003Epic.twitter.com\/XHXWLrmYO4\u003C\/a\u003E\u003C\/p\u003E&mdash; dex (@dexhorthy) \u003Ca href=\"https:\/\/twitter.com\/dexhorthy\/status\/856639005462417409?ref_src=twsrc%5Etfw\"\u003EApril 24, 2017\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-38411").innerHTML = tweet["html"];</script><p></p>
 <p>And honestly… you’re not wrong.</p>
 <section id="running-mastodon-has-gotten-easier" class="level3">
 <h3 class="anchored" data-anchor-id="running-mastodon-has-gotten-easier">Running Mastodon has gotten easier</h3>
@@ -2353,7 +2416,7 @@ Quinn, Shannon. 2022. <span>“Pardon de Dust (2).”</span> December 13,
 <section id="legal-disclaimer" class="level3">
 <h3 class="anchored" data-anchor-id="legal-disclaimer">Legal Disclaimer</h3>
 <p>At least, I’ll keep tinkering until copyright catches up… which, on that note, I should mention: I agree with everything in this twitter thread on the topic. I want to end on this note, because I think this is very important to keep in mind.</p>
-<p></p><div id="tweet-55031"></div><script>tweet={"url":"https:\/\/twitter.com\/BunchesOfBees\/status\/1553079149232734208","author_name":"Christopher","author_url":"https:\/\/twitter.com\/BunchesOfBees","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EA thing that makes me absolutely insane with discussions about &quot;AI&quot; image generation is their creators freely argue literally both sides of an opposing argument depending on what argument you&#39;re trying to have with them\u003C\/p\u003E&mdash; Christopher (@BunchesOfBees) \u003Ca href=\"https:\/\/twitter.com\/BunchesOfBees\/status\/1553079149232734208?ref_src=twsrc%5Etfw\"\u003EJuly 29, 2022\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-55031").innerHTML = tweet["html"];</script><p></p>
+<p></p><div id="tweet-80445"></div><script>tweet={"url":"https:\/\/twitter.com\/BunchesOfBees\/status\/1553079149232734208","author_name":"Christopher","author_url":"https:\/\/twitter.com\/BunchesOfBees","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EA thing that makes me absolutely insane with discussions about &quot;AI&quot; image generation is their creators freely argue literally both sides of an opposing argument depending on what argument you&#39;re trying to have with them\u003C\/p\u003E&mdash; Christopher (@BunchesOfBees) \u003Ca href=\"https:\/\/twitter.com\/BunchesOfBees\/status\/1553079149232734208?ref_src=twsrc%5Etfw\"\u003EJuly 29, 2022\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-80445").innerHTML = tweet["html"];</script><p></p>
 <p>Keep in mind, I am not a lawyer, but based on my read there are two legal interpretations of these models: as an <em>author</em> that learns and creates novel work, or a <em>product</em> that synthesizes derivative works. In the case of the former, any kind of substantive duplication of existing work created by someone else is copyright infringement; and in the case of the latter, it’s using novel, <em>unlicensed</em> work in a paid product, which is also copyright infringement.</p>
 <p>As someone whose background is in exactly this kind of generative “AI” work, I would generally fall under the latter interpretation of these models as a product (what they “learn” is dubious at best; I would never call their reproductions “novel”). As such, I also agree with the tweet’s author that the moment these companies begin monetizing these models is when, at the very least, they’ve committed a moral rights violation. It’s the same exact reason I’m very uncomfortable with the <a href="https://github.com/features/copilot">GitHub CoPilot product</a>: it’s been trained using billions of lines of code that was written, tested, debugged, scrutinized, and labored over by humans <em>who did not consent to nor were reimbursed for having their code used in a paid product</em>.</p>
 <p>That last tweet in the thread is particularly poignant for me, and distills much of the reason for my disillusionment with the tech sector in general. I’m sorry to end on such a sour note, but while I do love the amazing things machine learning is doing, we have to keep at the forefront of our minds that <a href="https://vicki.substack.com/p/neural-nets-are-just-people-all-the">machine learning is, ultimately, a human endeavor</a>, and if it won’t work without humans, we should make sure those humans are <em>taken care of</em>: recognition, compensation, empathy, and so on.</p>
@@ -2628,7 +2691,7 @@ Warning
 </div>
 </div>
 <p>Jerry Seinfeld isn’t on board with Festivus this year.</p>
-<p></p><div id="tweet-35353"></div><script>tweet={"url":"https:\/\/twitter.com\/JerrySeinfeld\/status\/1341820840149733377","author_name":"Jerry Seinfeld","author_url":"https:\/\/twitter.com\/JerrySeinfeld","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EMaybe just this once, just for this Festivus 2020, we take pass on the “Airing of Grievances”..\u003C\/p\u003E&mdash; Jerry Seinfeld (@JerrySeinfeld) \u003Ca href=\"https:\/\/twitter.com\/JerrySeinfeld\/status\/1341820840149733377?ref_src=twsrc%5Etfw\"\u003EDecember 23, 2020\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-35353").innerHTML = tweet["html"];</script><p></p>
+<p></p><div id="tweet-40572"></div><script>tweet={"url":"https:\/\/twitter.com\/JerrySeinfeld\/status\/1341820840149733377","author_name":"Jerry Seinfeld","author_url":"https:\/\/twitter.com\/JerrySeinfeld","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EMaybe just this once, just for this Festivus 2020, we take pass on the “Airing of Grievances”..\u003C\/p\u003E&mdash; Jerry Seinfeld (@JerrySeinfeld) \u003Ca href=\"https:\/\/twitter.com\/JerrySeinfeld\/status\/1341820840149733377?ref_src=twsrc%5Etfw\"\u003EDecember 23, 2020\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-40572").innerHTML = tweet["html"];</script><p></p>
 <p>I get it, I do. And I respect it. But I’m gonna air me some grievances. My therapist has continued to insist that I do what I need and not to feel guilty about it, and right now I need to air some <em>fucking</em> grievances. So strap in folks; here we go.</p>
 <p>Running has been a sick joke for most of this year. I’ve been logging miles with some kind of GPS watch since mid-2011, and 2020 has been the lowest-mileage year by a massive margin. For comparison, long-time readers may remember the boondoggles of 2015-2016 when I had metatarsalgia in my feet. Both those years, I still managed to tip the 1,000-mile scale. This year? <strong>711 miles</strong>. Fuck that shit. Running wasn’t an escape; it was a fucking trap of preferring the evil I knew over the evil I didn’t.</p>
 <p>Of course, halting my running didn’t help much, either. I was still exhausted beyond all measures, and not just physically: mentally, emotionally, and grammatically <em>burned. out.</em> I managed a couple of walks most days, largely amounting to 10,000 steps or thereabouts, so I guess I met the minimum recommended daily physical activity threshold for the most part. But boy did running leave me stuck with the bill this year.</p>
@@ -2654,7 +2717,7 @@ Warning
 <p>Seems reasonable, right? Until you include the surrounding context: this person initially claimed Trump should take credit for “Operation Warp Speed,” followed by a hand-waving rationalization of the <a href="https://www.cnn.com/2020/12/29/politics/vaccine-rollout-behind-schedule/index.html">slow</a> <a href="https://www.washingtonpost.com/opinions/2020/12/29/covid-19-vaccine-distribution-slow-testing/">vaccine</a> <a href="https://www.nbcnews.com/news/us-news/current-rate-it-ll-be-10-years-americans-adequately-vaccinated-n1252486">rollout</a> by blaming supply chain hiccups that come with large-scale product manufacturing. Ignoring, of course, that a vaccine has literally been the single goal of the entire US public health sector since January 2020; how the infrastructure for such a rollout wasn’t in place by the summer is a sin worthy of excommunication. But rather than admit as much, we get the above response.</p>
 <p>It’s <strong>infuriating</strong> that we can’t just let the experts do their fucking jobs; instead, we have to stake out some pointless fucking pseudo-centrist landscape that doesn’t exist, for the purpose of… what? Appealing to the better demons of both sides? That would be reasonable, except for the small problem of one side being a highly imperfect conglomerate of diverse and often conflicting viewpoints, and the other side being a militaristic theocrat’s wet dream. But sure, states’ rights and framers’ intent and all that.</p>
 <p>Oh, that reminds me: I am fucking DONE with <a href="https://en.wikipedia.org/wiki/Originalism">originalism</a> (yes, that goes for the Bible too). There is no 21st-century world in which the intentions of 18th century slaveholders would be remotely interesting, worth considering, or at all relevant. Much like how <a href="https://xkcd.com/1357/">an argument of free speech is effectively a concession</a>, an argument of framers’ intent is likewise an indication that your argument stands on the rhetorical equivalent of a sinkhole; continuing to scream “bUt ThE fRaMeRs!” only reveals your partisan / intellectual / insert motivated reasoning hackery here.</p>
-<p></p><div id="tweet-37361"></div><script>tweet={"url":"https:\/\/twitter.com\/dril\/status\/134787490526658561","author_name":"Husband To All","author_url":"https:\/\/twitter.com\/dril","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003E&quot;im not owned!  im not owned!!&quot;, i continue to insist as i slowly shrink and transform into a corn cob\u003C\/p\u003E&mdash; Husband To All (@dril) \u003Ca href=\"https:\/\/twitter.com\/dril\/status\/134787490526658561?ref_src=twsrc%5Etfw\"\u003ENovember 11, 2011\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-37361").innerHTML = tweet["html"];</script><p></p>
+<p></p><div id="tweet-44492"></div><script>tweet={"url":"https:\/\/twitter.com\/dril\/status\/134787490526658561","author_name":"robocop man","author_url":"https:\/\/twitter.com\/dril","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003E&quot;im not owned!  im not owned!!&quot;, i continue to insist as i slowly shrink and transform into a corn cob\u003C\/p\u003E&mdash; robocop man (@dril) \u003Ca href=\"https:\/\/twitter.com\/dril\/status\/134787490526658561?ref_src=twsrc%5Etfw\"\u003ENovember 11, 2011\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-44492").innerHTML = tweet["html"];</script><p></p>
 <p>Oh, one final grievance. With all due respect to Bill Watterson: <a href="https://www.gocomics.com/calvinandhobbes/1993/05/11">excessively positive people</a>. In fact, we’ve even come up with a name for this: toxic positivity. Emphasizing the positive in a given situation, <strong>with the unstated assumption</strong> that said positives entirely cancel out all negatives. It’s been coming up a lot in the context of the pandemic: “well the pandemic has been bad but at least I haven’t had to see my boss as much!”, as if the two things were even remotely on the same playing field. Granted, it’s a specific incarnation of the more general ALWAYS LOOK ON THE BRIGHT SIDE mantra, but it’s important to understand that, as complex human beings, we are capable of holding <em>more than one truth</em> in our heads simultaneously.</p>
 <p>2020 is both the year Z entered our lives, and it can also die in a fucking fire. Both are true.</p>
 
@@ -2791,88 +2854,6 @@ Quinn, Shannon. 2020. <span>“At Home During COVID-19.”</span> May 20,
   <guid>https://magsol.github.io/posts/2020-05-20-working-from-home/index.html</guid>
   <pubDate>Wed, 20 May 2020 12:00:00 GMT</pubDate>
   <media:content url="https://magsol.github.io/posts/2020-05-20-working-from-home/instachaaz.png" medium="image" type="image/png" height="144" width="144"/>
-</item>
-<item>
-  <title>Breath of Fresh (albeit, indoor) Air</title>
-  <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2019-08-12-breath-of-the-wild/index.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<p><img src="https://magsol.github.io/posts/2019-08-12-breath-of-the-wild/lakehylia.jpg" class="preview-image img-fluid" alt="Link from Breath of the Wild overlooking the scenery from the vantage point of Lake Hylia."></p>
-<p>This is a divergence that is simultaneously strange and entirely predictable.</p>
-<p>Allow me to explain.</p>
-<p>First and foremost, <a href="https://wherearethepancakes.wordpress.com/2019/08/07/marathon-training-mode-enable/">I’ve been training for my first marathon in 4.5 years for the past several months</a>. It’s largely consisted of <a href="https://www.runnersworld.com/training/a20807188/how-do-i-build-a-training-base/">base-building</a>, but in the last couple of weeks we entered the “official” 16-week marathon training period…</p>
-<p>…and my knee started pulling. Oh! And it coincided with the first week of decent summer weather we’ve had here in Athens since…2018? And if the past two weeks are any indication, this summer is going to be <a href="https://wherearethepancakes.wordpress.com/2016/08/23/the-summer-doldrums-arent-all-theyre-cracked-up-to-be/">as bad as that brutal one in 2016</a>.</p>
-<p><img src="https://magsol.github.io/posts/2019-08-12-breath-of-the-wild/goroncity.jpg" class="img-fluid" alt="Link from Breath of the Wild speaking with a Goron in Goron City."></p>
-<p>Anyway!</p>
-<p>Since I noticed the pulling in my knee the week before “official” training was to begin, my coach and I agreed–in the name of being super-cautious this early in the training cycle–that I would take a week off from running, focus on cross-training and physical therapy exercises, and let my knee heal up. During this time, I dove into the 2017 hit <em>Zelda: Breath of the Wild</em>, the new Zelda release for the Nintendo Switch, and logged–to use the technical term–a shitton of hours.</p>
-<p><img src="https://magsol.github.io/posts/2019-08-12-breath-of-the-wild/hillside.jpg" class="img-fluid" alt="Link from Breath of the Wild standing on a hillside covered in flowers."></p>
-<p>Let me back up a little further.</p>
-<p>I’ve never been secretive about my love of video gaming (and board gaming, and regular old sportsball gaming… any kind of gaming, really). But my real passion in video games has largely been constrained to variants of <a href="https://en.wikipedia.org/wiki/First-person_shooter">first-person shooters</a> and <a href="https://en.wikipedia.org/wiki/Real-time_strategy">real-time strategy</a>. This includes the usual suspects like <em>Left 4 Dead 2</em> and <em>StarCraft II</em>, but also slight variations like <em>Civilization V</em> (haven’t gotten the hang of <em>VI</em> yet), <em>Cities: Skylines</em>, <em>Homeworld</em>, and <em>Sins of a Solar Empire</em>.</p>
-<p>The upshot: <em>Zelda</em> has never really been on my radar.</p>
-<p>I mean, <strong>of course</strong> I’m familiar with the Zelda franchise. Back in the days of the <a href="https://www.dkoldies.com/game-boy-original-system-nintendo/">OG GameBoy</a>, I played <em>Link’s Awakening</em>. A lot of it. I played through it so many times I eventually figured out how to find enough “secret seashells” to get the Master Sword just before completing the 4th of the 8 main dungeons.</p>
-<p><img src="https://magsol.github.io/posts/2019-08-12-breath-of-the-wild/linksawakening_orig.jpg" class="img-fluid" alt="Screenshot from Link's Awakening on the original GameBoy unit."></p>
-<p>(if it’s possible to get the sword sooner than that, don’t bother, I don’t want to know)</p>
-<p>But for those who know the larger Zelda lore, this installment exists awkwardly both within but also without the Zelda story. I mean–SPOILERS for a 20+ year old game SPOILERS–it was all a dream. Or was it instead a reality that existed within our own, but vanished when the Wind Fish woke up? Who knows?</p>
-<p><img src="https://magsol.github.io/posts/2019-08-12-breath-of-the-wild/linksawakening_switch.jpg" class="img-fluid" alt="A pair of screenshots comparing the same location in Link's Awakening on the GameBoy version of the game to the recent Switch port."></p>
-<p>(apparently there was a Nintendo Switch remake of <em>Link’s Awakening</em>?)</p>
-<p>Regardless, while the usual Zelda themes certainly exist in <em>Link’s Awakening</em>, the specific story points don’t. So years later it was a shock to learn that Link actually had a primary antagonist, <strong>Ganon</strong>.</p>
-<p>When I first met my future wife, one of the many things about her that charmed me was her love of the <em>Zelda</em> franchise, especially <em>Ocarina of Time</em>. I was never super motivated to play the games myself, but something that seems almost uniquely exclusive to Zelda games: they’re incredibly fun to watch someone else play! Even better, The Lady and I soon discovered that, not only did we have different playstyles when it came to video games, but they complemented each other in a way that really helped her/us solve the puzzles in these games with ruthless efficiency.</p>
-<p>But even after watching her crush Ganon in <em>Ocarina of Time</em>, <em>Twilight Princess</em>, and Ganon’s progenitor in <em>Skyward Sword</em> (which I bought her as a gift on the very first Nintendo console we ever owned together… awwwwwww), I still never felt the itch to play the game myself.</p>
-<p>And when I likewise bought <em>Breath of the Wild</em>, again for her to play, I once more assumed I’d watch, point things out here and there, and let her Zelda fandom run wild. Plus, I’d seen the reviews of this installment, and knew that while they’d thrown out a lot of “typical” Zelda grind, they also added a bunch of new gaming mechanisms that, on the surface, I held my nose for:</p>
-<ul>
-<li>Breakable weapons: I’d played games where weapons only lasted for finite amounts of time, and <em>holy shit</em> did this mechanic annoy the crap out of me.</li>
-<li>Recipes: I haven’t actually played a game with this mechanic, but it’s been showing up more frequently in RPGs, a gaming genre I generally have a very, very hard time getting into.</li>
-<li>Seasonality: This encompasses not only night/day changes, but also changes in weather patterns in-game, and subsequent changes in clothing / preparation of countermeasures (food, elixirs) in order to survive. I’ve played a lot of games with the night/day mechanic and have found it “meh” at best, super f*ckin annoying at worst. Combined with the need to constantly swap out clothing to adjust (and potentially lose abilities the previous clothing gave me) was irksome just to think about.</li>
-<li>Nonlinear open world: Again, nothing against nonlinear gameplay–I for one love that <em>Civilization</em> has multiple win conditions, and that the <em>StarCraft II</em> missions are built to discourage “turtling” and force you to get creative–but as an avid follower of <a href="https://www.escapistmagazine.com/v2/series/zero-punctuation/">Zero Punctuation</a> I know how “well” Ubisoft’s (for example) “nonlinear” “open world” games have faired, and for the life of me I couldn’t see a game on Zelda’s scope doing any better.</li>
-</ul>
-<p>Boy oh boy, was I <em>wrong</em>.</p>
-<p><img src="https://magsol.github.io/posts/2019-08-12-breath-of-the-wild/lostwoods.jpg" class="img-fluid" alt="Link from Breath of the Wild standing near a campfire on a tower overlooking the foggy Lost Woods."></p>
-<p>I watched The Lady play a game of her own for quite awhile, and at some point just kinda thought: eh, why not? and started my own game.</p>
-<p>I was <em>hooked</em>. I can’t even explain why; even while writing that list of grievances, I kept thinking of examples <em>other</em> than <em>Breath of the Wild</em> with those mechanics and getting annoyed all over again. And yet, these are so well-done in <em>Breath of the Wild</em> that I don’t even notice them. Even moreso, annoyances in previous Zelda iterations–the “forced save points” of <em>Skyward Sword</em>, the nails-on-a-chalkboard running-back-and-forth over the <em>Ocarina</em> landscape to finish a simple side quest, the rupee limitations of literally every other <em>Zelda</em> game (until you bought a bigger rupee purse ???), the constant hunt for more arrows, and the lack of any jumping ability–they’re all gone!</p>
-<p>The best thing I can say about this game is that they did an incredible job of 1) identifying the annoying things of previous Zelda games and cutting them out, and 2) introducing these new mechanics in a way that felt natural and intuitive. That’s really the crux of it: the game is <em>easy to figure out</em>, even while the actual gameplay is incredibly, brutally, and satisfyingly challenging.</p>
-<p>That mastery of basics is why the game scales to such a <em>massive</em> landscape (thank you, travel points!); that’s why there’s enough room for three distinct and gorgeous dragons that fill you with excitement every time their music comes out of nowhere;</p>
-<p><img src="https://magsol.github.io/posts/2019-08-12-breath-of-the-wild/dinraal.jpg" class="img-fluid" alt="Link from Breath of the Wild looking up at the dragon Dinraal in the sky above."></p>
-<p>that’s why staying in the nearest stable during a thunderstorm or going deep into the arctic tundra feels so much like curling up in front of a crackling fire on a freezing cold day;</p>
-<p><img src="https://magsol.github.io/posts/2019-08-12-breath-of-the-wild/snow.jpg" class="img-fluid" alt="Link from Breath of the Wild standing in a snowstorm with minimal visibility in any direction."></p>
-<p>that’s why, even after completing part of a main quest, you’ll find yourself returning over and over to the same points on the map–to see an old friend, find a new side quest, or exchange some shiny rocks you could sell anywhere for a better price but you keep coming here because something about it makes you feel at home;</p>
-<p><img src="https://magsol.github.io/posts/2019-08-12-breath-of-the-wild/zoradomain.jpg" class="img-fluid" alt="Link from Breath of the Wild standing in the central fountain at Zora's Domain."></p>
-<p>that’s why you can take a break in between main quests to try and ride a stag;</p>
-<p><img src="https://magsol.github.io/posts/2019-08-12-breath-of-the-wild/shrinequest.jpg" class="img-fluid" alt="Link from Breath of the Wild mounted on a stag, both standing on a shrine pedestal."></p>
-<p>and yes, this is an actual side quest.</p>
-<p>Nintendo knocked this one clear out of the park. It’s so wonderfully and incredibly immersive: I go from exploring the freezing cold peaks of the Hebra mountains to chasing down a monster aficionado with a nighttime shop along the southeastern coastline with absolutely no recollection of how I transitioned from one to the other.</p>
-<p>But by far, the single biggest surprise is <strong>the plot</strong>. It’s nuanced, and mysterious, and even chilling in some cases, and it has me on the edge of my seat wanting to know what happens next. Previously, I’ve always felt the plot in Zelda games was a perpetual weakness: Zelda/Link good, Ganon bad, bludgeon Ganon until bad goes away and credits roll. But this game–at least so far (I’m not done yet)–makes me think there’s something at work beyond Ganon and his usual hijinks. The “good guys” in particular don’t seem perfect; I’m being led to think they made mistakes!</p>
-<p>Sadly, classes start this week, so it’s unlikely I’ll be making fast progress over the next few months. But I do know The Lady was pretty thrilled to unlock one particular character from previous Zelda games who, while technically present in this game, required some external convincing to join the quest:</p>
-<p><img src="https://magsol.github.io/posts/2019-08-12-breath-of-the-wild/epona.jpg" class="img-fluid" alt="Link from Breath of the Wild standing in front of Epona, the horse of legend."></p>
-<p>I am loving everything about this game. Go buy it and forget reality! It’s a great way to kill time while healing from an injury.</p>
-
-
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2019,
-  author = {Quinn, Shannon},
-  title = {Breath of {Fresh} (Albeit, Indoor) {Air}},
-  date = {2019-08-12},
-  url = {https://magsol.github.io/2019-08-12-breath-of-the-wild},
-  langid = {en}
-}
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2019" class="csl-entry quarto-appendix-citeas">
-Quinn, Shannon. 2019. <span>“Breath of Fresh (Albeit, Indoor)
-Air.”</span> August 12, 2019. <a href="https://magsol.github.io/2019-08-12-breath-of-the-wild">https://magsol.github.io/2019-08-12-breath-of-the-wild</a>.
-</div></div></section></div> ]]></description>
-  <category>personal</category>
-  <category>breath of the wild</category>
-  <category>zelda</category>
-  <category>running</category>
-  <category>gaming</category>
-  <category>nerds</category>
-  <category>the lady</category>
-  <category>injury</category>
-  <guid>https://magsol.github.io/posts/2019-08-12-breath-of-the-wild/index.html</guid>
-  <pubDate>Mon, 12 Aug 2019 13:53:00 GMT</pubDate>
-  <media:content url="https://magsol.github.io/posts/2019-08-12-breath-of-the-wild/lakehylia.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>
