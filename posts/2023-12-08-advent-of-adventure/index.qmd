@@ -53,7 +53,7 @@ I've thrown a little bit of my [OPENLY AVAILABLE] data at it. To use the academi
 
 Nevertheless, it's also given me the opportunity to play around again with image generators (I stopped paying Midjourney a long time ago). In particular, I've been keen to see if ChatGPT's integration with DALL-E has allowed for better _iteration_ on images---carrying over context from previous image prompts to iterate on and improve subsequent images.
 
-With Midjourney, iteration often entailed copy/pasting the previous prompt and making subtle changes that I thought would give me what I was looking for. Here, I was hopeful that, given the conversantional interface with ChatGPT, I could now just tweak the things I wanted to change through a conversation and multiple image iterations.
+With Midjourney, iteration often entailed copy/pasting the previous prompt and making subtle changes that I thought would give me what I was looking for. Here, I was hopeful that, given the conversational interface with ChatGPT, I could now just tweak the things I wanted to change by "having a chat."
 
 Yet again, I was disappointed. But I did come up with some interesting mash-ups. Inspired by a [recent keynote speech](ai_symposium_keynote.jpg) at our Institute of AI Symposium, I wanted to see what favorite universes of mine I could combine.
 
@@ -77,7 +77,7 @@ This continues when I tried putting the Heralds in the Marvel Avengers universe.
 
 ![The 10 Heralds as the Avengers.](heralds_avengers.jpg)
 
-Again, I count 11 individuals, with no fewer than three Iron Man-like powered suits. You can't _all_ be Iron Man!
+Again, I count 11 individuals, with no fewer than three wearing Iron Man-like powered suits. You can't _all_ be Iron Man!
 
 ![The 10 Heralds as the Avengers, again.](heralds_avengers2.jpg)
 
