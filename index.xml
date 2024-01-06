@@ -17,7 +17,106 @@
 <width>144</width>
 </image>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Fri, 08 Dec 2023 15:01:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 05 Jan 2024 19:45:00 GMT</lastBuildDate>
+<item>
+  <title>2023: A year of extremes</title>
+  <dc:creator>Shannon Quinn</dc:creator>
+  <link>https://magsol.github.io/posts/2024-01-05-a-year-of-extremes/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><img src="https://magsol.github.io/posts/2024-01-05-a-year-of-extremes/landscape.jpg" class="preview-image img-fluid" alt="A picture of a forested landscape at sunset, the sun coming through the bare tree branches."></p>
+<p>Where 2022 tried its hardest to kill me, 2023 merely put that killer instinct in neutral. A vast improvement to be sure, but it requires substantial context to fully appreciate.</p>
+<p>Ok, maybe that’s not fair to 2023. It had some highs. It also had some lows. All told, 2023 was one of the most bimodal years in my recent memory, perhaps second only to 2020.</p>
+<section id="the-good" class="level3">
+<h3 class="anchored" data-anchor-id="the-good">The Good</h3>
+<ul>
+<li>Running (and health + fitness in general) was <em>huge</em> for both me and my wife in 2023. We both set annual running mileage records<sup>1</sup> that outpaced the last couple years by massive margins.</li>
+<li>Burnout recovery was tangible. The difference is night and day. Even though I still have a long way to go, I can get through most typical weeks—even the occasional atypically strenuous week—without needing to aggressively power down.</li>
+<li>Related to the previous point, I set and held some boundaries, especially around work.</li>
+<li>I snagged myself a pretty sweet gig with <a href="https://predxbio.com/">PredxBio</a> as their Principal AI/ML Scientist, starting January 2024. It’s technically a sabbatical (I’ll post about this later in more detail), but I’m really excited for the change.</li>
+<li>I’ve picked up a few at-home side projects that I’m really enjoying. This culminated in a <code>#DecemberAdventure</code> over on Mastodon that saw a lot of tinkering around building out a homelab. It’s still in the proof-of-concept stages but I’m really having fun with it!</li>
+<li>My wife and I downloaded, played through, and beat <em>Tears of the Kingdom</em>. It was pretty much <a href="https://www.youtube.com/watch?v=_wxU3z9VxOY">the opposite of this, but just as beautiful</a>.</li>
+</ul>
+<p>I cannot underscore enough how groundbreaking it was for us to find a stride<sup>2</sup> with our running and general activity levels.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://magsol.github.io/posts/2024-01-05-a-year-of-extremes/running_yearoveryear.png" class="img-fluid figure-img" alt="A screenshot from a Garmin Connect progress report, showing huge running mileage increases in 2023 relative to 2022 and 2021."></p>
+<figcaption class="figure-caption">A Garmin Connect annual mileage summary. The second column is number of runs, third column is total annual mileage, and the last column is average milege per run.</figcaption>
+</figure>
+</div>
+<p>My own health improved dramatically over the course of the year (especially after being kicked while down by getting COVID on the evening of December 31, 2022): not only did my labs empirically show this improvement at my end-of-year physical, but my two half marathons this year were separated by 6 months (April and October) and by <em>20 minutes</em> (<a href="https://track.rtrt.me/e/DMP-SAVWHALF-2023#/tracker/RW4KTAP2">2:31</a> in April, <a href="https://results.raceroster.com/v2/en-US/results/cbqshhkjvt39snge/detail/egpe264973f6ynms">2:12</a> in October). Both still technically rank among my slowest half marathon finishing times, but the trend is so, so encouraging.</p>
+<p>My burnout has also improved dramatically. Where I could barely make it through a work week in 2022, this past year—through careful planning, tracking of my activity and burnout levels, and changing course as needed—I could maintain relatively normal levels of work intensity, while still protecting time for things I needed and wanted (workouts, hobbies, socializing, sleeping).</p>
+<p>Part of this burnout management culminated in seeking out an opportunity with PredxBio, a Pittsburgh-based startup in spatial biology. I started with them just this past Tuesday, and I’m thrilled to see where this change of pace takes me.</p>
+</section>
+<section id="the-bad" class="level3">
+<h3 class="anchored" data-anchor-id="the-bad">The Bad</h3>
+<ul>
+<li>Despite my burnout recovery, I still had some weeks that fried me so badly I needed to clear my schedule to power down. Not often, but more than zero.</li>
+<li>I can’t recall a time when I’ve muted, unfollowed, or blocked more people than after October 7. The sudden influx of middle east geopolitical “expertise” was unreal.</li>
+<li>My frustration levels with professionals and their uncritical embrace of hype around AI are high. I’ll be the first to admit: AI does cool stuff, but putting everything else aside to build AI into our workflows without acknowledging its real, myriad weaknesses is really disheartening.</li>
+</ul>
+<p>I submitted a large grant application in late September, and three days later submitted a smaller seed grant application. This was one example of a week where I pushed myself too hard and needed an acute and immediate recovery period. Another example was mid-November: I was in charge of organizing and MCing a panel on “AI in Higher Education” at my department’s annual “Research Day”, and it just happened to coincide with several instructional milestones that same week. In both cases, I needed to clear my schedule for a couple days. I’m fortunate to be able to do that, but I was also completely non-functional those days.</p>
+<p>Speaking of the seed grant: I heard back only weeks ago that our application was denied. Certainly not an unlikely outcome, but what really frustrated me was the following:</p>
+<blockquote class="blockquote">
+<p>Due to the volume of proposals, reviewers were not asked to prepare written critiques.</p>
+</blockquote>
+<p>This is one of my biggest critiques of the academic system on a whole<sup>3</sup>: feedback either isn’t given, or it’s given too late to use, or—at its most destructive—it’s actively misleading.</p>
+</section>
+<section id="the-ugly" class="level3">
+<h3 class="anchored" data-anchor-id="the-ugly">The Ugly</h3>
+<ul>
+<li>We started the year with COVID. I got the “long” version.</li>
+<li>While burnout recovery has improved my overall bandwidth, it’s made room for long-simmering and unresolved resentment, frustration, and anger around a variety of things. This needlessly consumed a lot of spare cycles and left me run down.</li>
+<li>Everything happening in the middle east since early October.</li>
+<li>Nihilism crept in this year. <a href="https://infosec.town/notes/9nx5yvs2am7mdbcs">This toot</a> helped point it out to me, but charting a path out is proving difficult.</li>
+</ul>
+<p>After almost three years of avoiding COVID, my wife and I caught it just before leaving a holiday family reunion in Arizona (though didn’t show symptoms until days after returning home). Our infections were both relatively “minor”—the medical term, though I had a fever hovering just below 102F and she had the worst congestion of her life—but even after I tested negative (it took me almost two weeks to fully clear it), I developed new and lingering respiratory symptoms I’d never had previously. These symptoms lasted for months, nearly into the summer, and included exercise-induced asthma: I would start every run feeling like I was drowning. For the first 20 minutes of a run, my lungs wouldn’t open; I’d feel like I had an elephant sitting on my chest. Eventually my lungs would open, but I’d often be exhausted by that point, making my return to running <a href="https://wherearethepancakes.wordpress.com/2023/10/05/return-of-the-100-mile-month/">very slow and very frustrating</a>. Even now, a year later, I still deal with occasional symptoms, though they have thankfully substantially decreased in intensity and frequency.</p>
+<p>I’ve also noticed that my brain has spent a lot more time (and energy) spinning on people who and events that have left me angry or otherwise upset. This has always been a weakness of mine and a regular point of discussion and focused work with my therapists over the years, but in 2023 it got a lot worse.</p>
+<p>Resentment was a big problem, especially since I’ve no way of knowing whether the resentment came from something real or because <a href="https://theness.com/neurologicablog/conspiracy-thinking-and-pattern-recognition/">my brain connected disparate events in a way that was completely fictitious</a>.</p>
+<p>Combined with real-world events, an impending US Presidential elections with massive implications, and ongoing ambivalence or outright antipathy toward any kind of COVID countermeasures (<a href="https://covid.cdc.gov/covid-data-tracker/#maps_new-admissions-rate-county">despite the current wave that is second only to the massive Omicron wave of late 2021</a>), real nihilism crept in. What kind of world am I raising our daughter in? What kind of world am I handing off to her? What can I possibly do to change any of this? <a href="https://amyjko.medium.com/things-i-hope-for-in-2024-8688c4fbd959">Reading Amy Ko’s hopes for 2024</a> helped, as did the numerous reminders to “think global, act local”.</p>
+</section>
+<section id="plans-for-2024" class="level3">
+<h3 class="anchored" data-anchor-id="plans-for-2024">Plans for 2024</h3>
+<p>I gave up on resolutions years ago, but I still set goals and make plans for achieving those goals. I also try to prioritize and set my goals up for success.</p>
+<p><strong>My biggest priority this year, I think, is to tackle the lingering resentment and default-to-anger</strong>. It drained me so needlessly last year, and there’s never going to be any shortage of things and people to be outraged about / at. I’ve seen a lot of memes with pithy reframings, and while I think those are valuable, they don’t quite hit the mark for me; “consider if a person is worth your anger” still feels too antagonistic, too “me-vs-them.”</p>
+<p>Instead—and in line with what we teach our daughter!—I want to allow myself space to feel and observe these reactions, and then to inspect and interrogate them. This not only refocuses on me outside of a combative context, but also forges new neural pathways to make this process second-nature.</p>
+<p>My other plans, in no particular order: - 1000+ miles running (will probably write about this on my running blog soon-ish) - Reorganize my upstairs office, complete with a home server rack to consolidate hardware - Donate donate donate! (there is SO MUCH STUFF around the house we just don’t use) - Set and hold boundaries, especially around work, but also around family and friends</p>
+<p>There are other smaller items in there too—I’ve learned a lot more about kubernetes networking and foresee an overhaul of my cluster configuration in the near future; I’m also toying with some yard improvement ideas to try and improve the drainage; and I cannot underscore how much I want to clear out the garage, since it’s about 1/3 full of stuff we literally never touch and most likely never will again—but those are on more of a “as time and energy allow” basis.</p>
+<p>I wish everyone a wonderful 2024.</p>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Post-COVID lockdown mileage records. My insane all-time annual record set in 2014 still stands. For now.↩︎</p></li>
+<li id="fn2"><p>What can I say? The past few years have been a <em>marathon</em>.↩︎</p></li>
+<li id="fn3"><p>I have an entire draft written about my issues with academia at the institutional, state, and local levels, but I don’t know when, or even if, I’ll post it; if you want to talk about it though, I’m happy to.↩︎</p></li>
+</ol>
+</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2024,
+  author = {Quinn, Shannon},
+  title = {2023: {A} Year of Extremes},
+  date = {2024-01-05},
+  url = {https://magsol.github.io/2024-01-05-a-year-of-extremes},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2024" class="csl-entry quarto-appendix-citeas">
+Quinn, Shannon. 2024. <span>“2023: A Year of Extremes.”</span> January
+5, 2024. <a href="https://magsol.github.io/2024-01-05-a-year-of-extremes">https://magsol.github.io/2024-01-05-a-year-of-extremes</a>.
+</div></div></section></div> ]]></description>
+  <category>personal</category>
+  <category>professional</category>
+  <category>news</category>
+  <category>new year</category>
+  <guid>https://magsol.github.io/posts/2024-01-05-a-year-of-extremes/index.html</guid>
+  <pubDate>Fri, 05 Jan 2024 19:45:00 GMT</pubDate>
+  <media:content url="https://magsol.github.io/posts/2024-01-05-a-year-of-extremes/landscape.jpg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>Advent of Adventure</title>
   <dc:creator>Shannon Quinn</dc:creator>
@@ -758,7 +857,7 @@ Quinn, Shannon. 2023. <span>“Three Years Later.”</span> April 4, 2023.
 <li>Conclusions <em>(this post)</em></li>
 </ol>
 <p>I know what you’re thinking:</p>
-<p></p><div id="tweet-44404"></div><script>tweet={"url":"https:\/\/twitter.com\/dexhorthy\/status\/856639005462417409","author_name":"dex","author_url":"https:\/\/twitter.com\/dexhorthy","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EDeployed my blog on Kubernetes \u003Ca href=\"https:\/\/t.co\/XHXWLrmYO4\"\u003Epic.twitter.com\/XHXWLrmYO4\u003C\/a\u003E\u003C\/p\u003E&mdash; dex (@dexhorthy) \u003Ca href=\"https:\/\/twitter.com\/dexhorthy\/status\/856639005462417409?ref_src=twsrc%5Etfw\"\u003EApril 24, 2017\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-44404").innerHTML = tweet["html"];</script><p></p>
+<p></p><div id="tweet-12029"></div><script>tweet={"url":"https:\/\/twitter.com\/dexhorthy\/status\/856639005462417409","author_name":"dex","author_url":"https:\/\/twitter.com\/dexhorthy","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EDeployed my blog on Kubernetes \u003Ca href=\"https:\/\/t.co\/XHXWLrmYO4\"\u003Epic.twitter.com\/XHXWLrmYO4\u003C\/a\u003E\u003C\/p\u003E&mdash; dex (@dexhorthy) \u003Ca href=\"https:\/\/twitter.com\/dexhorthy\/status\/856639005462417409?ref_src=twsrc%5Etfw\"\u003EApril 24, 2017\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-12029").innerHTML = tweet["html"];</script><p></p>
 <p>And honestly… you’re not wrong.</p>
 <section id="running-mastodon-has-gotten-easier" class="level3">
 <h3 class="anchored" data-anchor-id="running-mastodon-has-gotten-easier">Running Mastodon has gotten easier</h3>
@@ -2685,7 +2784,7 @@ Quinn, Shannon. 2022. <span>“Pardon de Dust (2).”</span> December 13,
 <section id="legal-disclaimer" class="level3">
 <h3 class="anchored" data-anchor-id="legal-disclaimer">Legal Disclaimer</h3>
 <p>At least, I’ll keep tinkering until copyright catches up… which, on that note, I should mention: I agree with everything in this twitter thread on the topic. I want to end on this note, because I think this is very important to keep in mind.</p>
-<p></p><div id="tweet-73364"></div><script>tweet={"url":"https:\/\/twitter.com\/BunchesOfBees\/status\/1553079149232734208","author_name":"Christopher","author_url":"https:\/\/twitter.com\/BunchesOfBees","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EA thing that makes me absolutely insane with discussions about &quot;AI&quot; image generation is their creators freely argue literally both sides of an opposing argument depending on what argument you&#39;re trying to have with them\u003C\/p\u003E&mdash; Christopher (@BunchesOfBees) \u003Ca href=\"https:\/\/twitter.com\/BunchesOfBees\/status\/1553079149232734208?ref_src=twsrc%5Etfw\"\u003EJuly 29, 2022\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-73364").innerHTML = tweet["html"];</script><p></p>
+<p></p><div id="tweet-11343"></div><script>tweet={"url":"https:\/\/twitter.com\/BunchesOfBees\/status\/1553079149232734208","author_name":"Christopher","author_url":"https:\/\/twitter.com\/BunchesOfBees","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EA thing that makes me absolutely insane with discussions about &quot;AI&quot; image generation is their creators freely argue literally both sides of an opposing argument depending on what argument you&#39;re trying to have with them\u003C\/p\u003E&mdash; Christopher (@BunchesOfBees) \u003Ca href=\"https:\/\/twitter.com\/BunchesOfBees\/status\/1553079149232734208?ref_src=twsrc%5Etfw\"\u003EJuly 29, 2022\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-11343").innerHTML = tweet["html"];</script><p></p>
 <p>Keep in mind, I am not a lawyer, but based on my read there are two legal interpretations of these models: as an <em>author</em> that learns and creates novel work, or a <em>product</em> that synthesizes derivative works. In the case of the former, any kind of substantive duplication of existing work created by someone else is copyright infringement; and in the case of the latter, it’s using novel, <em>unlicensed</em> work in a paid product, which is also copyright infringement.</p>
 <p>As someone whose background is in exactly this kind of generative “AI” work, I would generally fall under the latter interpretation of these models as a product (what they “learn” is dubious at best; I would never call their reproductions “novel”). As such, I also agree with the tweet’s author that the moment these companies begin monetizing these models is when, at the very least, they’ve committed a moral rights violation. It’s the same exact reason I’m very uncomfortable with the <a href="https://github.com/features/copilot">GitHub CoPilot product</a>: it’s been trained using billions of lines of code that was written, tested, debugged, scrutinized, and labored over by humans <em>who did not consent to nor were reimbursed for having their code used in a paid product</em>.</p>
 <p>That last tweet in the thread is particularly poignant for me, and distills much of the reason for my disillusionment with the tech sector in general. I’m sorry to end on such a sour note, but while I do love the amazing things machine learning is doing, we have to keep at the forefront of our minds that <a href="https://vicki.substack.com/p/neural-nets-are-just-people-all-the">machine learning is, ultimately, a human endeavor</a>, and if it won’t work without humans, we should make sure those humans are <em>taken care of</em>: recognition, compensation, empathy, and so on.</p>
@@ -2823,118 +2922,6 @@ Ed.).”</span> January 5, 2022. <a href="https://magsol.github.io/2022-01-05-wh
   <guid>https://magsol.github.io/posts/2022-01-05-what-the-f-is-this-s/index.html</guid>
   <pubDate>Wed, 05 Jan 2022 21:15:00 GMT</pubDate>
   <media:content url="https://magsol.github.io/posts/2022-01-05-what-the-f-is-this-s/clover.png" medium="image" type="image/png" height="192" width="144"/>
-</item>
-<item>
-  <title>Back in Action</title>
-  <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2021-12-30-back-in-action/index.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<p><img src="https://magsol.github.io/posts/2021-12-30-back-in-action/https:/c.tenor.com/ZFc20z8DItkAAAAd/facepalm-really.gif" class="preview-image img-fluid" alt="Facepalm gif meme from The Office."></p>
-<p>It’s been a day/week/month/year/decade, this 2021.</p>
-<p>I apologize for my long silence. Turns out, there are a couple of Pelican plugins that neither play nice with each other, nor with the steady march of upgraded Jupyter components.</p>
-<p>Turns out, two plugins I rely on–<a href="https://github.com/pelican-plugins/liquid-tags">liquid-tags</a> and <a href="https://github.com/danielfrg/pelican-jupyter">pelican-jupyter</a>–tend to nuke one another when used in parallel. Not surprising, given they both use the exact same underlying registration protocol for adding new liquid tags, so I guess the real mystery is how these two <em>ever</em> worked at all!</p>
-<p>Nevertheless, I found that I <em>either</em> have Jupyter notebooks render in all their code-by-text-by-figures beauty, <em>or</em> embed images and videos. Couldn’t have both. After doing some searching and getting the distinct feeling that no one else really cared about the situation, I briefly considered switching static blog devices before regaining a shred of sanity and taking a second look: after all, since both plugins were using the same backend, surely I could jury-rig a solution where I smashed the two together and forced them to play nice?</p>
-<p>Turns out, that’s pretty much what I did, but <a href="https://github.com/danielfrg/pelican-jupyter/issues/126#issuecomment-1003171465">with a crucial assist</a> from the maintainer of the pelican-jupyter plugin. There’s an extra config I needed to suppress some of the more problematic CSS from the Jupyter notebooks (this fixed a very strange template error I was getting when compiling the blog), but I still needed a kludge to get the two plugins to even cooperate.</p>
-<p>I figured out that by copying two files from the pelican-jupyter plugin over to the liquid-tags plugin–specifically, <code>core.py</code> and <code>liquid.py</code> (though <code>liquid.py</code> had to be renamed to <code>notebook.py</code> after the move)–I could essentially merge the two plugins into one. I did have to make some changes to the <code>liquid.py</code>/<code>notebook.py</code> imports at the top, so they looked like this:</p>
-<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> .core <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> get_html_from_filepath, parse_css</span>
-<span id="cb1-2"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> .liquid_tags <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> register  <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># noqa</span></span>
-<span id="cb1-3"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> .mdx_liquid_tags <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> LiquidTags</span></code></pre></div>
-<p>so that they referenced the <em>local</em> versions of <code>liquid_tags.py</code> and <code>mdx_liquid_tags.py</code> (as they were essentially identical to the ones provided by the pelican-jupyter plugin).</p>
-<p>Beyond that, the relevant portions of my <code>pelicanconf.py</code> now looked like this:</p>
-<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> pelican.plugins <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> liquid_tags</span>
-<span id="cb2-2">PLUGINS <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> [</span>
-<span id="cb2-3">        liquid_tags,                <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># regular ol' liquid tags</span></span>
-<span id="cb2-4">]</span>
-<span id="cb2-5"></span>
-<span id="cb2-6">LIQUID_TAGS <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"img"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"include_code"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"gram"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"video"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"youtube"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"notebook"</span>]</span>
-<span id="cb2-7"></span>
-<span id="cb2-8">LIQUID_CONFIGS <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> ((<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"IPYNB_FIX_CSS"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"False"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">""</span>), </span>
-<span id="cb2-9">                  (<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"IPYNB_SKIP_CSS"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"False"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">""</span>), </span>
-<span id="cb2-10">                  (<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"IPYNB_EXPORT_TEMPLATE"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"base"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">""</span>),)</span></code></pre></div>
-<p>It’s a bit odd, since I technically do have the pelican-jupyter plugin installed, but I haven’t imported it. Instead, I basically smashed it into the liquid-tags plugin, overwriting the “notebook” tag that was already there (it’s old, it sucks) and running with it.</p>
-<p>So yeah! I’m back up and running. Have LOADS to talk about, so stick around!</p>
-
-
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2021,
-  author = {Quinn, Shannon},
-  title = {Back in {Action}},
-  date = {2021-12-30},
-  url = {https://magsol.github.io/2021-12-30-back-in-action},
-  langid = {en}
-}
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2021" class="csl-entry quarto-appendix-citeas">
-Quinn, Shannon. 2021. <span>“Back in Action.”</span> December 30, 2021.
-<a href="https://magsol.github.io/2021-12-30-back-in-action">https://magsol.github.io/2021-12-30-back-in-action</a>.
-</div></div></section></div> ]]></description>
-  <category>personal</category>
-  <category>blogging</category>
-  <category>python</category>
-  <category>pelican</category>
-  <category>dependency hell</category>
-  <guid>https://magsol.github.io/posts/2021-12-30-back-in-action/index.html</guid>
-  <pubDate>Thu, 30 Dec 2021 16:25:00 GMT</pubDate>
-  <media:content url="https://c.tenor.com/ZFc20z8DItkAAAAd/facepalm-really.gif" medium="image" type="image/gif"/>
 </item>
 </channel>
 </rss>
