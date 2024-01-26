@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -48,7 +48,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -57,6 +63,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -105,24 +112,55 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <link rel="stylesheet" href="styles.css">
-<link rel="alternate" type="application/rss+xml" title="Stochastic Stenography" href="index.xml"><meta property="og:title" content="Stochastic Stenography - Data, donuts, and detours">
-<meta property="og:image" content="https://magsol.github.io/posts/2024-01-05-a-year-of-extremes/landscape.jpg">
-<meta property="og:site-name" content="Stochastic Stenography">
+<link rel="alternate" type="application/rss+xml" title="Stochastic Stenography" href="index.xml" data-external="1"><meta property="og:title" content="Stochastic Stenography - Data, donuts, and detours">
+<meta property="og:image" content="https://magsol.github.io/images/logo.png">
+<meta property="og:site_name" content="Stochastic Stenography">
 <meta property="og:locale" content="en_US">
+<meta property="og:image:height" content="1024">
+<meta property="og:image:width" content="1024">
 <meta name="twitter:title" content="Stochastic Stenography - Data, donuts, and detours">
-<meta name="twitter:image" content="https://magsol.github.io/posts/2024-01-05-a-year-of-extremes/landscape.jpg">
+<meta name="twitter:image" content="https://magsol.github.io/images/logo.png">
 <meta name="twitter:creator" content="@SpectralFilter">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image-height" content="1024">
+<meta name="twitter:image-width" content="1024">
 </head>
 
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Stochastic Stenography</span>
     </a>
@@ -134,13 +172,13 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
- <span class="menu-text">About Me</span></a>
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About Me</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -153,7 +191,7 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
   </div>
     
   
-  <div class="quarto-title-meta">
+  <div class="quarto-title-meta column-page-left">
 
       
     
@@ -166,7 +204,7 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-unnumbered"><div class="category" data-category="academia">academia</div><div class="category" data-category="advent of code">advent of code</div><div class="category" data-category="ai">ai</div><div class="category" data-category="airing of grievances">airing of grievances</div><div class="category" data-category="big data">big data</div><div class="category" data-category="bioimaging">bioimaging</div><div class="category" data-category="blog">blog</div><div class="category" data-category="blogging">blogging</div><div class="category" data-category="books">books</div><div class="category" data-category="breath of the wild">breath of the wild</div><div class="category" data-category="burnout">burnout</div><div class="category" data-category="camera">camera</div><div class="category" data-category="clover the bun">clover the bun</div><div class="category" data-category="communities">communities</div><div class="category" data-category="computer science">computer science</div><div class="category" data-category="computer vision">computer vision</div><div class="category" data-category="covid">covid</div><div class="category" data-category="covid-19">covid-19</div><div class="category" data-category="dall-e">dall-e</div><div class="category" data-category="data science">data science</div><div class="category" data-category="december adventure">december adventure</div><div class="category" data-category="deep learning">deep learning</div><div class="category" data-category="dependencies">dependencies</div><div class="category" data-category="dependency hell">dependency hell</div><div class="category" data-category="dns">dns</div><div class="category" data-category="education">education</div><div class="category" data-category="family">family</div><div class="category" data-category="feedback">feedback</div><div class="category" data-category="festivus">festivus</div><div class="category" data-category="food">food</div><div class="category" data-category="fps">fps</div><div class="category" data-category="fuck 2020">fuck 2020</div><div class="category" data-category="fuck that shit">fuck that shit</div><div class="category" data-category="furbabies">furbabies</div><div class="category" data-category="gaming">gaming</div><div class="category" data-category="generative modeling">generative modeling</div><div class="category" data-category="getaway">getaway</div><div class="category" data-category="github">github</div><div class="category" data-category="gpu">gpu</div><div class="category" data-category="graduate school">graduate school</div><div class="category" data-category="graduate student">graduate student</div><div class="category" data-category="grants">grants</div><div class="category" data-category="hardware">hardware</div><div class="category" data-category="health">health</div><div class="category" data-category="helm">helm</div><div class="category" data-category="holidays">holidays</div><div class="category" data-category="ieee">ieee</div><div class="category" data-category="imaging">imaging</div><div class="category" data-category="injury">injury</div><div class="category" data-category="ir">ir</div><div class="category" data-category="ireland">ireland</div><div class="category" data-category="jupyter">jupyter</div><div class="category" data-category="k3s">k3s</div><div class="category" data-category="kubernetes">kubernetes</div><div class="category" data-category="legal disclaimer">legal disclaimer</div><div class="category" data-category="machine learning">machine learning</div><div class="category" data-category="mastodon">mastodon</div><div class="category" data-category="mentoring">mentoring</div><div class="category" data-category="movies">movies</div><div class="category" data-category="nerds">nerds</div><div class="category" data-category="networking">networking</div><div class="category" data-category="new year">new year</div><div class="category" data-category="news">news</div><div class="category" data-category="nvidia">nvidia</div><div class="category" data-category="oauth">oauth</div><div class="category" data-category="open science">open science</div><div class="category" data-category="pandemic">pandemic</div><div class="category" data-category="pelican">pelican</div><div class="category" data-category="personal">personal</div><div class="category" data-category="phd">phd</div><div class="category" data-category="professional">professional</div><div class="category" data-category="professor">professor</div><div class="category" data-category="pybot">pybot</div><div class="category" data-category="python">python</div><div class="category" data-category="quansight">quansight</div><div class="category" data-category="rae">rae</div><div class="category" data-category="raspberry pi">raspberry pi</div><div class="category" data-category="rejection">rejection</div><div class="category" data-category="research">research</div><div class="category" data-category="retropie">retropie</div><div class="category" data-category="running">running</div><div class="category" data-category="sars-cov-2">sars-cov-2</div><div class="category" data-category="side projects">side projects</div><div class="category" data-category="ssl">ssl</div><div class="category" data-category="star wars">star wars</div><div class="category" data-category="steam">steam</div><div class="category" data-category="strava">strava</div><div class="category" data-category="teaching">teaching</div><div class="category" data-category="tears of the kingdom">tears of the kingdom</div><div class="category" data-category="the lady">the lady</div><div class="category" data-category="totk">totk</div><div class="category" data-category="travel">travel</div><div class="category" data-category="tweepy">tweepy</div><div class="category" data-category="twitter">twitter</div><div class="category" data-category="university">university</div><div class="category" data-category="video games">video games</div><div class="category" data-category="video processing">video processing</div><div class="category" data-category="weightlifting">weightlifting</div><div class="category" data-category="wildlife">wildlife</div><div class="category" data-category="work from home">work from home</div><div class="category" data-category="workshop">workshop</div><div class="category" data-category="writing">writing</div><div class="category" data-category="year in review">year in review</div><div class="category" data-category="z">z</div><div class="category" data-category="zelda">zelda</div><div class="category" data-category="zippy the cat">zippy the cat</div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-unnumbered"><div class="category" data-category="academia">academia</div><div class="category" data-category="advent of code">advent of code</div><div class="category" data-category="ai">ai</div><div class="category" data-category="airing of grievances">airing of grievances</div><div class="category" data-category="big data">big data</div><div class="category" data-category="bioimaging">bioimaging</div><div class="category" data-category="blog">blog</div><div class="category" data-category="blogging">blogging</div><div class="category" data-category="books">books</div><div class="category" data-category="breath of the wild">breath of the wild</div><div class="category" data-category="burnout">burnout</div><div class="category" data-category="camera">camera</div><div class="category" data-category="clover the bun">clover the bun</div><div class="category" data-category="communities">communities</div><div class="category" data-category="computer science">computer science</div><div class="category" data-category="computer vision">computer vision</div><div class="category" data-category="covid">covid</div><div class="category" data-category="covid-19">covid-19</div><div class="category" data-category="dall-e">dall-e</div><div class="category" data-category="data science">data science</div><div class="category" data-category="december adventure">december adventure</div><div class="category" data-category="deep learning">deep learning</div><div class="category" data-category="dependencies">dependencies</div><div class="category" data-category="dependency hell">dependency hell</div><div class="category" data-category="dns">dns</div><div class="category" data-category="education">education</div><div class="category" data-category="family">family</div><div class="category" data-category="feedback">feedback</div><div class="category" data-category="festivus">festivus</div><div class="category" data-category="food">food</div><div class="category" data-category="fps">fps</div><div class="category" data-category="fuck 2020">fuck 2020</div><div class="category" data-category="fuck that shit">fuck that shit</div><div class="category" data-category="furbabies">furbabies</div><div class="category" data-category="gaming">gaming</div><div class="category" data-category="generative modeling">generative modeling</div><div class="category" data-category="getaway">getaway</div><div class="category" data-category="github">github</div><div class="category" data-category="gpu">gpu</div><div class="category" data-category="graduate school">graduate school</div><div class="category" data-category="graduate student">graduate student</div><div class="category" data-category="grants">grants</div><div class="category" data-category="hardware">hardware</div><div class="category" data-category="health">health</div><div class="category" data-category="helm">helm</div><div class="category" data-category="holidays">holidays</div><div class="category" data-category="ieee">ieee</div><div class="category" data-category="imaging">imaging</div><div class="category" data-category="injury">injury</div><div class="category" data-category="ir">ir</div><div class="category" data-category="ireland">ireland</div><div class="category" data-category="jupyter">jupyter</div><div class="category" data-category="k3s">k3s</div><div class="category" data-category="kubernetes">kubernetes</div><div class="category" data-category="legal disclaimer">legal disclaimer</div><div class="category" data-category="machine learning">machine learning</div><div class="category" data-category="makar">makar</div><div class="category" data-category="mastodon">mastodon</div><div class="category" data-category="mentoring">mentoring</div><div class="category" data-category="movies">movies</div><div class="category" data-category="nerds">nerds</div><div class="category" data-category="networking">networking</div><div class="category" data-category="new year">new year</div><div class="category" data-category="news">news</div><div class="category" data-category="nvidia">nvidia</div><div class="category" data-category="oauth">oauth</div><div class="category" data-category="open science">open science</div><div class="category" data-category="pandemic">pandemic</div><div class="category" data-category="pelican">pelican</div><div class="category" data-category="personal">personal</div><div class="category" data-category="phd">phd</div><div class="category" data-category="professional">professional</div><div class="category" data-category="professor">professor</div><div class="category" data-category="pybot">pybot</div><div class="category" data-category="python">python</div><div class="category" data-category="quansight">quansight</div><div class="category" data-category="rae">rae</div><div class="category" data-category="raspberry pi">raspberry pi</div><div class="category" data-category="rejection">rejection</div><div class="category" data-category="research">research</div><div class="category" data-category="retropie">retropie</div><div class="category" data-category="running">running</div><div class="category" data-category="sars-cov-2">sars-cov-2</div><div class="category" data-category="side projects">side projects</div><div class="category" data-category="ssl">ssl</div><div class="category" data-category="star wars">star wars</div><div class="category" data-category="steam">steam</div><div class="category" data-category="strava">strava</div><div class="category" data-category="teaching">teaching</div><div class="category" data-category="tears of the kingdom">tears of the kingdom</div><div class="category" data-category="the lady">the lady</div><div class="category" data-category="totk">totk</div><div class="category" data-category="travel">travel</div><div class="category" data-category="tweepy">tweepy</div><div class="category" data-category="twitter">twitter</div><div class="category" data-category="university">university</div><div class="category" data-category="video games">video games</div><div class="category" data-category="video processing">video processing</div><div class="category" data-category="weightlifting">weightlifting</div><div class="category" data-category="wildlife">wildlife</div><div class="category" data-category="work from home">work from home</div><div class="category" data-category="workshop">workshop</div><div class="category" data-category="writing">writing</div><div class="category" data-category="year in review">year in review</div><div class="category" data-category="z">z</div><div class="category" data-category="zelda">zelda</div><div class="category" data-category="zippy the cat">zippy the cat</div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -177,21 +215,64 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 
 
 
+
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="personal,professional,news,new year" data-listing-date-sort="1704483900000" data-listing-file-modified-sort="1704508671312" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9">
+<div class="quarto-post image-right" data-index="0" data-categories="personal,professional,news,makar" data-listing-date-sort="1706209740000" data-listing-file-modified-sort="1706227994400" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="15" data-listing-word-count-sort="2999">
 <div class="thumbnail">
-<p><a href="./posts/2024-01-05-a-year-of-extremes/index.html"> <img src="./posts/2024-01-05-a-year-of-extremes/landscape.jpg" class="thumbnail-image" alt="A picture of a forested landscape at sunset, the sun coming through the bare tree branches."> </a></p>
+<p><a href="./posts/2024-01-25-the-legend-of-makar/index.html" class="no-external"></a></p><a href="./posts/2024-01-25-the-legend-of-makar/index.html" class="no-external">
+<p><img src="./posts/2024-01-25-the-legend-of-makar/makar.jpg" class="thumbnail-image" alt="A picture of the Ubuntu landing screen for logged in users, on an ultrawide screen monitor set on a small desk."></p>
+</a><p><a href="./posts/2024-01-25-the-legend-of-makar/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2024-01-05-a-year-of-extremes/index.html">
 <h3 class="no-anchor listing-title">
-2023: A year of extremes
+<a href="./posts/2024-01-25-the-legend-of-makar/index.html" class="no-external">The Legend of Makar</a>
 </h3>
 <div class="listing-subtitle">
-Unmixed Gaussians but very mixed emotions
+<a href="./posts/2024-01-25-the-legend-of-makar/index.html" class="no-external">The mostly long and some short of building your own desktop</a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('personal'); return false;">
+personal
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('professional'); return false;">
+professional
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+news
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('makar'); return false;">
+makar
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2024-01-25-the-legend-of-makar/index.html" class="no-external">I built my first desktop from components when I was 15, a sophomore in high school. With the exception of my college workstation (laptops hadnt’t <em>quite</em> reached ubiquity…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2024-01-25-the-legend-of-makar/index.html" class="no-external">
+<div class="listing-date">
+January 25, 2024
+</div>
+<div class="listing-author">
+Shannon Quinn
 </div>
 </a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="personal,professional,news,new year" data-listing-date-sort="1704483900000" data-listing-file-modified-sort="1706227994144" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1611">
+<div class="thumbnail">
+<p><a href="./posts/2024-01-05-a-year-of-extremes/index.html" class="no-external"></a></p><a href="./posts/2024-01-05-a-year-of-extremes/index.html" class="no-external">
+<p><img src="./posts/2024-01-05-a-year-of-extremes/landscape.jpg" class="thumbnail-image" alt="A picture of a forested landscape at sunset, the sun coming through the bare tree branches."></p>
+</a><p><a href="./posts/2024-01-05-a-year-of-extremes/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2024-01-05-a-year-of-extremes/index.html" class="no-external">2023: A year of extremes</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2024-01-05-a-year-of-extremes/index.html" class="no-external">Unmixed Gaussians but very mixed emotions</a>
+</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('personal'); return false;">
 personal
@@ -206,14 +287,12 @@ news
 new year
 </div>
 </div>
-<a href="./posts/2024-01-05-a-year-of-extremes/index.html">
 <div class="listing-description">
-W…
+<a href="./posts/2024-01-05-a-year-of-extremes/index.html" class="no-external">Where 2022 tried its hardest to kill me, 2023 merely put that killer instinct in neutral. A vast improvement to be sure, but it requires substantial context to fully…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2024-01-05-a-year-of-extremes/index.html">
+<a href="./posts/2024-01-05-a-year-of-extremes/index.html" class="no-external">
 <div class="listing-date">
 January 5, 2024
 </div>
@@ -223,19 +302,19 @@ Shannon Quinn
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="personal,professional,advent of code,december adventure,rae,retropie,dall-e" data-listing-date-sort="1702047660000" data-listing-file-modified-sort="1704508671308" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9">
+<div class="quarto-post image-right" data-index="2" data-categories="personal,professional,advent of code,december adventure,rae,retropie,dall-e" data-listing-date-sort="1702047660000" data-listing-file-modified-sort="1706227994136" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1722">
 <div class="thumbnail">
-<p><a href="./posts/2023-12-08-advent-of-adventure/index.html"> <img src="./posts/2023-12-08-advent-of-adventure/heralds_mordor_full.jpg" class="thumbnail-image" alt="A gritty image from behind a small group of heroes, facing down a massive robotic army, in a shattered land that looks a lot like Mordor (generated by DALL-E)."> </a></p>
+<p><a href="./posts/2023-12-08-advent-of-adventure/index.html" class="no-external"></a></p><a href="./posts/2023-12-08-advent-of-adventure/index.html" class="no-external">
+<p><img src="./posts/2023-12-08-advent-of-adventure/heralds_mordor_full.jpg" class="thumbnail-image" alt="A gritty image from behind a small group of heroes, facing down a massive robotic army, in a shattered land that looks a lot like Mordor (generated by DALL-E)."></p>
+</a><p><a href="./posts/2023-12-08-advent-of-adventure/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2023-12-08-advent-of-adventure/index.html">
 <h3 class="no-anchor listing-title">
-Advent of Adventure
+<a href="./posts/2023-12-08-advent-of-adventure/index.html" class="no-external">Advent of Adventure</a>
 </h3>
 <div class="listing-subtitle">
-The Venn diagram of life, job, and hobbies is three nonoverlapping circles
+<a href="./posts/2023-12-08-advent-of-adventure/index.html" class="no-external">The Venn diagram of life, job, and hobbies is three nonoverlapping circles</a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('personal'); return false;">
 personal
@@ -259,14 +338,12 @@ retropie
 dall-e
 </div>
 </div>
-<a href="./posts/2023-12-08-advent-of-adventure/index.html">
 <div class="listing-description">
-This past Monday evening, from a tiny cabin in Dahlonega, GA, I turned to my wife and said: “What a week, huh?”
+<a href="./posts/2023-12-08-advent-of-adventure/index.html" class="no-external">This past Monday evening, from a tiny cabin in Dahlonega, GA, I turned to my wife and said: “What a week, huh?”</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023-12-08-advent-of-adventure/index.html">
+<a href="./posts/2023-12-08-advent-of-adventure/index.html" class="no-external">
 <div class="listing-date">
 December 8, 2023
 </div>
@@ -276,19 +353,19 @@ Shannon Quinn
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="personal,covid,running,weightlifting,food,health" data-listing-date-sort="1699536060000" data-listing-file-modified-sort="1704508671280" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7">
+<div class="quarto-post image-right" data-index="3" data-categories="personal,covid,running,weightlifting,food,health" data-listing-date-sort="1699536060000" data-listing-file-modified-sort="1706227994108" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1304">
 <div class="thumbnail">
-<p><a href="./posts/2023-11-09-rebuilding/index.html"> <img src="./posts/2023-11-09-rebuilding/athhalf_2023_finish.png" class="thumbnail-image" alt="A photo of me crossing the finish line at Ath Half 2023 this past October, holding up my arms in exhausted triumph."> </a></p>
+<p><a href="./posts/2023-11-09-rebuilding/index.html" class="no-external"></a></p><a href="./posts/2023-11-09-rebuilding/index.html" class="no-external">
+<p><img src="./posts/2023-11-09-rebuilding/athhalf_2023_finish.png" class="thumbnail-image" alt="A photo of me crossing the finish line at Ath Half 2023 this past October, holding up my arms in exhausted triumph."></p>
+</a><p><a href="./posts/2023-11-09-rebuilding/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2023-11-09-rebuilding/index.html">
 <h3 class="no-anchor listing-title">
-Rebuilding
+<a href="./posts/2023-11-09-rebuilding/index.html" class="no-external">Rebuilding</a>
 </h3>
 <div class="listing-subtitle">
-Nowhere to go but up
+<a href="./posts/2023-11-09-rebuilding/index.html" class="no-external">Nowhere to go but up</a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('personal'); return false;">
 personal
@@ -309,14 +386,12 @@ food
 health
 </div>
 </div>
-<a href="./posts/2023-11-09-rebuilding/index.html">
 <div class="listing-description">
-Content warning: discussions of body image, eating habits, diet culture, and long COVID. Also, language.
+<a href="./posts/2023-11-09-rebuilding/index.html" class="no-external">Content warning: discussions of body image, eating habits, diet culture, and long COVID. Also, language.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023-11-09-rebuilding/index.html">
+<a href="./posts/2023-11-09-rebuilding/index.html" class="no-external">
 <div class="listing-date">
 November 9, 2023
 </div>
@@ -326,19 +401,19 @@ Shannon Quinn
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="personal,video games,zelda,tears of the kingdom" data-listing-date-sort="1690727100000" data-listing-file-modified-sort="1704508671276" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="4" data-categories="personal,video games,zelda,tears of the kingdom" data-listing-date-sort="1690727100000" data-listing-file-modified-sort="1706227994104" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="320">
 <div class="thumbnail">
-<p><a href="./posts/2023-07-30-hero-of-everything/index.html"> <img src="./posts/2023-07-30-hero-of-everything/link_cece_hat.jpg" class="thumbnail-image" alt="An in-game picture of Link from _Tears of the Kingdom_ with pink hair and dark lipstick, and wearing the Cece hat. Picture from this Polygon article: https://www.polygon.com/legend-zelda-tears-kingdom/23725926/tears-of-the-kingdom-totk-best-hat-outfit-cece-mushroom-hat-how-to-get-slay ."> </a></p>
+<p><a href="./posts/2023-07-30-hero-of-everything/index.html" class="no-external"></a></p><a href="./posts/2023-07-30-hero-of-everything/index.html" class="no-external">
+<p><img src="./posts/2023-07-30-hero-of-everything/link_cece_hat.jpg" class="thumbnail-image" alt="An in-game picture of Link from _Tears of the Kingdom_ with pink hair and dark lipstick, and wearing the Cece hat. Picture from this Polygon article: https://www.polygon.com/legend-zelda-tears-kingdom/23725926/tears-of-the-kingdom-totk-best-hat-outfit-cece-mushroom-hat-how-to-get-slay ."></p>
+</a><p><a href="./posts/2023-07-30-hero-of-everything/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2023-07-30-hero-of-everything/index.html">
 <h3 class="no-anchor listing-title">
-The Hero Of Everything
+<a href="./posts/2023-07-30-hero-of-everything/index.html" class="no-external">The Hero Of Everything</a>
 </h3>
 <div class="listing-subtitle">
-Apparently it’s not enough to merely save the world
+<a href="./posts/2023-07-30-hero-of-everything/index.html" class="no-external">Apparently it’s not enough to merely save the world</a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('personal'); return false;">
 personal
@@ -353,14 +428,12 @@ zelda
 tears of the kingdom
 </div>
 </div>
-<a href="./posts/2023-07-30-hero-of-everything/index.html">
 <div class="listing-description">
-This is the first of two <em>Tears of the Kingdom</em> related blog posts I’ll be making. Don’t worry—there won’t be any story spoilers in either one. But my wife did…
+<a href="./posts/2023-07-30-hero-of-everything/index.html" class="no-external">This is the first of two <em>Tears of the Kingdom</em> related blog posts I’ll be making. Don’t worry—there won’t be any story spoilers in either one. But my wife did just beat the…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023-07-30-hero-of-everything/index.html">
+<a href="./posts/2023-07-30-hero-of-everything/index.html" class="no-external">
 <div class="listing-date">
 July 30, 2023
 </div>
@@ -370,19 +443,19 @@ Shannon Quinn
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="personal,raspberry pi,kubernetes,k3s,mastodon,hardware" data-listing-date-sort="1689025920000" data-listing-file-modified-sort="1704508671228" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7">
+<div class="quarto-post image-right" data-index="5" data-categories="personal,raspberry pi,kubernetes,k3s,mastodon,hardware" data-listing-date-sort="1689025920000" data-listing-file-modified-sort="1706227994060" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1352">
 <div class="thumbnail">
-<p><a href="./posts/2023-07-10-upgrading-the-pi-cluster/index.html"> <img src="./posts/2023-07-10-upgrading-the-pi-cluster/setup.jpg" class="thumbnail-image" alt="My home office desk, with the GamersNexus rubber mat, along with all the hardware materials for the cluster upgrade, including: a stack of PoE HAT boxes, a Netgear 8-port PoE switch, a small power brick from Anker with two 2-port USB-to-outlet adapters, and my laptop."> </a></p>
+<p><a href="./posts/2023-07-10-upgrading-the-pi-cluster/index.html" class="no-external"></a></p><a href="./posts/2023-07-10-upgrading-the-pi-cluster/index.html" class="no-external">
+<p><img src="./posts/2023-07-10-upgrading-the-pi-cluster/setup.jpg" class="thumbnail-image" alt="My home office desk, with the GamersNexus rubber mat, along with all the hardware materials for the cluster upgrade, including: a stack of PoE HAT boxes, a Netgear 8-port PoE switch, a small power brick from Anker with two 2-port USB-to-outlet adapters, and my laptop."></p>
+</a><p><a href="./posts/2023-07-10-upgrading-the-pi-cluster/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2023-07-10-upgrading-the-pi-cluster/index.html">
 <h3 class="no-anchor listing-title">
-Upgrading the Raspberry Pi Cluster
+<a href="./posts/2023-07-10-upgrading-the-pi-cluster/index.html" class="no-external">Upgrading the Raspberry Pi Cluster</a>
 </h3>
 <div class="listing-subtitle">
-Nothing bad has ever happened in the history of planned upgrades.
+<a href="./posts/2023-07-10-upgrading-the-pi-cluster/index.html" class="no-external">Nothing bad has ever happened in the history of planned upgrades.</a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('personal'); return false;">
 personal
@@ -403,14 +476,12 @@ mastodon
 hardware
 </div>
 </div>
-<a href="./posts/2023-07-10-upgrading-the-pi-cluster/index.html">
 <div class="listing-description">
-As I write this up, I’m sitting in my SciPy hotel room. It’s a nice way to relax and unwind after a <em>long</em> day of travel and tutorials, but I also…
+<a href="./posts/2023-07-10-upgrading-the-pi-cluster/index.html" class="no-external">As I write this up, I’m sitting in my SciPy hotel room. It’s a nice way to relax and unwind after a <em>long</em> day of travel and tutorials, but I also apologize for any timezone…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023-07-10-upgrading-the-pi-cluster/index.html">
+<a href="./posts/2023-07-10-upgrading-the-pi-cluster/index.html" class="no-external">
 <div class="listing-date">
 July 10, 2023
 </div>
@@ -420,19 +491,19 @@ Shannon Quinn
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="personal,professional,burnout,movies,books" data-listing-date-sort="1686089100000" data-listing-file-modified-sort="1704508671224" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11">
+<div class="quarto-post image-right" data-index="6" data-categories="personal,professional,burnout,movies,books" data-listing-date-sort="1686089100000" data-listing-file-modified-sort="1706227994056" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2039">
 <div class="thumbnail">
-<p><a href="./posts/2023-06-06-this-post-is-about-burnout/index.html"> <img src="./posts/2023-06-06-this-post-is-about-burnout/burnout.png" class="thumbnail-image" alt="Midjourney-generated image of an art easel with a picture of a raging fire, anthropomorphized with a giant smile on its face. Meant to convey a ham-fisted &amp;#039;this is fine' metaphor."> </a></p>
+<p><a href="./posts/2023-06-06-this-post-is-about-burnout/index.html" class="no-external"></a></p><a href="./posts/2023-06-06-this-post-is-about-burnout/index.html" class="no-external">
+<p><img src="./posts/2023-06-06-this-post-is-about-burnout/burnout.png" class="thumbnail-image" alt="Midjourney-generated image of an art easel with a picture of a raging fire, anthropomorphized with a giant smile on its face. Meant to convey a ham-fisted &amp;#039;this is fine' metaphor."></p>
+</a><p><a href="./posts/2023-06-06-this-post-is-about-burnout/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2023-06-06-this-post-is-about-burnout/index.html">
 <h3 class="no-anchor listing-title">
-This post is about burnout
+<a href="./posts/2023-06-06-this-post-is-about-burnout/index.html" class="no-external">This post is about burnout</a>
 </h3>
 <div class="listing-subtitle">
-Metaphor is a tool best left to those trained to use it
+<a href="./posts/2023-06-06-this-post-is-about-burnout/index.html" class="no-external">Metaphor is a tool best left to those trained to use it</a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('personal'); return false;">
 personal
@@ -450,14 +521,12 @@ movies
 books
 </div>
 </div>
-<a href="./posts/2023-06-06-this-post-is-about-burnout/index.html">
 <div class="listing-description">
-…but before I get to that, I want to talk about a movie I saw recently and a book I read recently.
+<a href="./posts/2023-06-06-this-post-is-about-burnout/index.html" class="no-external">…but before I get to that, I want to talk about a movie I saw recently and a book I read recently.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023-06-06-this-post-is-about-burnout/index.html">
+<a href="./posts/2023-06-06-this-post-is-about-burnout/index.html" class="no-external">
 <div class="listing-date">
 June 6, 2023
 </div>
@@ -467,19 +536,19 @@ Shannon Quinn
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-categories="personal,gaming,zelda,totk,tears of the kingdom" data-listing-date-sort="1683649500000" data-listing-file-modified-sort="1704508671212" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
+<div class="quarto-post image-right" data-index="7" data-categories="personal,gaming,zelda,totk,tears of the kingdom" data-listing-date-sort="1683649500000" data-listing-file-modified-sort="1706227994040" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1115">
 <div class="thumbnail">
-<p><a href="./posts/2023-05-09-thoughts-ahead-of-totk/index.html"> <img src="./posts/2023-05-09-thoughts-ahead-of-totk/totk_poster.jpg" class="thumbnail-image" alt="Official Nintendo poster for The Legend of Zelda: Tears of the Kingdom."> </a></p>
+<p><a href="./posts/2023-05-09-thoughts-ahead-of-totk/index.html" class="no-external"></a></p><a href="./posts/2023-05-09-thoughts-ahead-of-totk/index.html" class="no-external">
+<p><img src="./posts/2023-05-09-thoughts-ahead-of-totk/totk_poster.jpg" class="thumbnail-image" alt="Official Nintendo poster for The Legend of Zelda: Tears of the Kingdom."></p>
+</a><p><a href="./posts/2023-05-09-thoughts-ahead-of-totk/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2023-05-09-thoughts-ahead-of-totk/index.html">
 <h3 class="no-anchor listing-title">
-My thoughts ahead of <em>Tears of the Kingdom</em>
+<a href="./posts/2023-05-09-thoughts-ahead-of-totk/index.html" class="no-external">My thoughts ahead of <em>Tears of the Kingdom</em></a>
 </h3>
 <div class="listing-subtitle">
-Not to be mistaken for cheap facsimilies of ‘truth’ or ‘facts’
+<a href="./posts/2023-05-09-thoughts-ahead-of-totk/index.html" class="no-external">Not to be mistaken for cheap facsimilies of ‘truth’ or ‘facts’</a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('personal'); return false;">
 personal
@@ -497,14 +566,12 @@ totk
 tears of the kingdom
 </div>
 </div>
-<a href="./posts/2023-05-09-thoughts-ahead-of-totk/index.html">
 <div class="listing-description">
-For those who aren’t following the increasingly unhinged ravings of my countdown bot on Mastodon, <em>The Legend of Zelda: Tears of the Kingdom</em> is coming out on Friday, May 12.
+<a href="./posts/2023-05-09-thoughts-ahead-of-totk/index.html" class="no-external">For those who aren’t following the increasingly unhinged ravings of my countdown bot on Mastodon, <em>The Legend of Zelda: Tears of the Kingdom</em> is coming out on Friday, May 12.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023-05-09-thoughts-ahead-of-totk/index.html">
+<a href="./posts/2023-05-09-thoughts-ahead-of-totk/index.html" class="no-external">
 <div class="listing-date">
 May 9, 2023
 </div>
@@ -514,19 +581,19 @@ Shannon Quinn
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="7" data-categories="personal,running,covid,pandemic,getaway,travel" data-listing-date-sort="1680624600000" data-listing-file-modified-sort="1704508671212" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="8" data-categories="personal,running,covid,pandemic,getaway,travel" data-listing-date-sort="1680624600000" data-listing-file-modified-sort="1706227994040" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="142">
 <div class="thumbnail">
-<p><a href="./posts/2023-04-04-three-years-later/index.html"> <img src="./posts/2023-04-04-three-years-later/forsyth_park.jpg" class="thumbnail-image" alt="Head-on view of the middle of Forsyth Park in Savannah, GA, including the fountain in the middle and trees along both sides of the main walkway."> </a></p>
+<p><a href="./posts/2023-04-04-three-years-later/index.html" class="no-external"></a></p><a href="./posts/2023-04-04-three-years-later/index.html" class="no-external">
+<p><img src="./posts/2023-04-04-three-years-later/forsyth_park.jpg" class="thumbnail-image" alt="Head-on view of the middle of Forsyth Park in Savannah, GA, including the fountain in the middle and trees along both sides of the main walkway."></p>
+</a><p><a href="./posts/2023-04-04-three-years-later/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2023-04-04-three-years-later/index.html">
 <h3 class="no-anchor listing-title">
-Three years later
+<a href="./posts/2023-04-04-three-years-later/index.html" class="no-external">Three years later</a>
 </h3>
 <div class="listing-subtitle">
-The Savannah Women’s Half Marathon
+<a href="./posts/2023-04-04-three-years-later/index.html" class="no-external">The Savannah Women’s Half Marathon</a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('personal'); return false;">
 personal
@@ -547,14 +614,12 @@ getaway
 travel
 </div>
 </div>
-<a href="./posts/2023-04-04-three-years-later/index.html">
 <div class="listing-description">
-Oh by the way, I have a second blog.
+<a href="./posts/2023-04-04-three-years-later/index.html" class="no-external">Oh by the way, I have a second blog.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023-04-04-three-years-later/index.html">
+<a href="./posts/2023-04-04-three-years-later/index.html" class="no-external">
 <div class="listing-date">
 April 4, 2023
 </div>
@@ -564,19 +629,19 @@ Shannon Quinn
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-categories="personal,raspberry pi,k3s,mastodon" data-listing-date-sort="1677577920000" data-listing-file-modified-sort="1704508671196" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
+<div class="quarto-post image-right" data-index="9" data-categories="personal,raspberry pi,k3s,mastodon" data-listing-date-sort="1677577920000" data-listing-file-modified-sort="1706227994028" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="713">
 <div class="thumbnail">
-<p><a href="./posts/2023-02-28-mastodon-conclusions/index.html"> <img src="./posts/2023-02-28-mastodon-conclusions/numenor.png" class="thumbnail-image" alt="Aerial view of an ancient but advanced civilization, an island-nation (generated by Midjourney)."> </a></p>
+<p><a href="./posts/2023-02-28-mastodon-conclusions/index.html" class="no-external"></a></p><a href="./posts/2023-02-28-mastodon-conclusions/index.html" class="no-external">
+<p><img src="./posts/2023-02-28-mastodon-conclusions/numenor.png" class="thumbnail-image" alt="Aerial view of an ancient but advanced civilization, an island-nation (generated by Midjourney)."></p>
+</a><p><a href="./posts/2023-02-28-mastodon-conclusions/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2023-02-28-mastodon-conclusions/index.html">
 <h3 class="no-anchor listing-title">
-Mastodon: Conclusions, musings, ramblings, ravings
+<a href="./posts/2023-02-28-mastodon-conclusions/index.html" class="no-external">Mastodon: Conclusions, musings, ramblings, ravings</a>
 </h3>
 <div class="listing-subtitle">
-The beauty!pain!beauty of open source
+<a href="./posts/2023-02-28-mastodon-conclusions/index.html" class="no-external">The beauty!pain!beauty of open source</a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('personal'); return false;">
 personal
@@ -591,14 +656,12 @@ k3s
 mastodon
 </div>
 </div>
-<a href="./posts/2023-02-28-mastodon-conclusions/index.html">
 <div class="listing-description">
-<em>This article is part of a series…</em>
+<a href="./posts/2023-02-28-mastodon-conclusions/index.html" class="no-external"><em>This article is part of a series about installing and configuring a Mastodon instance on a cluster of Raspberry Pi computers running k3s. To go back to previous articles in…</em></a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023-02-28-mastodon-conclusions/index.html">
+<a href="./posts/2023-02-28-mastodon-conclusions/index.html" class="no-external">
 <div class="listing-date">
 February 28, 2023
 </div>
@@ -608,19 +671,19 @@ Shannon Quinn
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="9" data-categories="personal,raspberry pi,k3s,mastodon" data-listing-date-sort="1677258060000" data-listing-file-modified-sort="1704508671192" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="10" data-categories="personal,raspberry pi,k3s,mastodon" data-listing-date-sort="1677258060000" data-listing-file-modified-sort="1706227994024" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="574">
 <div class="thumbnail">
-<p><a href="./posts/2023-02-24-installing-and-configuring-mastodon/index.html"> <img src="./posts/2023-02-24-installing-and-configuring-mastodon/mastodon_crew.png" class="thumbnail-image" alt="Close-up of two Mastodon-like sailors on the deck of a ship at sea (generated by Midjourney)."> </a></p>
+<p><a href="./posts/2023-02-24-installing-and-configuring-mastodon/index.html" class="no-external"></a></p><a href="./posts/2023-02-24-installing-and-configuring-mastodon/index.html" class="no-external">
+<p><img src="./posts/2023-02-24-installing-and-configuring-mastodon/mastodon_crew.png" class="thumbnail-image" alt="Close-up of two Mastodon-like sailors on the deck of a ship at sea (generated by Midjourney)."></p>
+</a><p><a href="./posts/2023-02-24-installing-and-configuring-mastodon/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2023-02-24-installing-and-configuring-mastodon/index.html">
 <h3 class="no-anchor listing-title">
-Mastodon, Part V: Installing and configuring Mastodon
+<a href="./posts/2023-02-24-installing-and-configuring-mastodon/index.html" class="no-external">Mastodon, Part V: Installing and configuring Mastodon</a>
 </h3>
 <div class="listing-subtitle">
-Sorry, I blacked out, what are we doing again?
+<a href="./posts/2023-02-24-installing-and-configuring-mastodon/index.html" class="no-external">Sorry, I blacked out, what are we doing again?</a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('personal'); return false;">
 personal
@@ -635,14 +698,12 @@ k3s
 mastodon
 </div>
 </div>
-<a href="./posts/2023-02-24-installing-and-configuring-mastodon/index.html">
 <div class="listing-description">
-<em>This article is part of a series…</em>
+<a href="./posts/2023-02-24-installing-and-configuring-mastodon/index.html" class="no-external"><em>This article is part of a series about installing and configuring a Mastodon instance on a cluster of Raspberry Pi computers running k3s. To go back to previous articles in…</em></a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023-02-24-installing-and-configuring-mastodon/index.html">
+<a href="./posts/2023-02-24-installing-and-configuring-mastodon/index.html" class="no-external">
 <div class="listing-date">
 February 24, 2023
 </div>
@@ -652,19 +713,19 @@ Shannon Quinn
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="10" data-categories="personal,raspberry pi,k3s,mastodon,ssl,dns" data-listing-date-sort="1676543400000" data-listing-file-modified-sort="1704508671192" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7">
+<div class="quarto-post image-right" data-index="11" data-categories="personal,raspberry pi,k3s,mastodon,ssl,dns" data-listing-date-sort="1676543400000" data-listing-file-modified-sort="1706227994024" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1373">
 <div class="thumbnail">
-<p><a href="./posts/2023-02-16-ssl-with-lets-encrypt/index.html"> <img src="./posts/2023-02-16-ssl-with-lets-encrypt/https_meme.jpeg" class="thumbnail-image" alt="Sean Bean LOTR meme, stating: &amp;#039;One does not simply use HTTPS when it doesn't work' (obtained from imgflip)."> </a></p>
+<p><a href="./posts/2023-02-16-ssl-with-lets-encrypt/index.html" class="no-external"></a></p><a href="./posts/2023-02-16-ssl-with-lets-encrypt/index.html" class="no-external">
+<p><img src="./posts/2023-02-16-ssl-with-lets-encrypt/https_meme.jpeg" class="thumbnail-image" alt="Sean Bean LOTR meme, stating: &amp;#039;One does not simply use HTTPS when it doesn't work' (obtained from imgflip)."></p>
+</a><p><a href="./posts/2023-02-16-ssl-with-lets-encrypt/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2023-02-16-ssl-with-lets-encrypt/index.html">
 <h3 class="no-anchor listing-title">
-Mastodon, Part IV: SSL with Let’s Encrypt
+<a href="./posts/2023-02-16-ssl-with-lets-encrypt/index.html" class="no-external">Mastodon, Part IV: SSL with Let’s Encrypt</a>
 </h3>
 <div class="listing-subtitle">
-DNS is the cause of, and solution to, all our networking problems
+<a href="./posts/2023-02-16-ssl-with-lets-encrypt/index.html" class="no-external">DNS is the cause of, and solution to, all our networking problems</a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('personal'); return false;">
 personal
@@ -685,14 +746,12 @@ ssl
 dns
 </div>
 </div>
-<a href="./posts/2023-02-16-ssl-with-lets-encrypt/index.html">
 <div class="listing-description">
-<em>This article is part of a series…</em>
+<a href="./posts/2023-02-16-ssl-with-lets-encrypt/index.html" class="no-external"><em>This article is part of a series about installing and configuring a Mastodon instance on a cluster of Raspberry Pi computers running k3s. To go back to previous articles in…</em></a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023-02-16-ssl-with-lets-encrypt/index.html">
+<a href="./posts/2023-02-16-ssl-with-lets-encrypt/index.html" class="no-external">
 <div class="listing-date">
 February 16, 2023
 </div>
@@ -702,19 +761,19 @@ Shannon Quinn
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="11" data-categories="personal,raspberry pi,wildlife,ir,camera,video processing" data-listing-date-sort="1676476620000" data-listing-file-modified-sort="1704508671184" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11">
+<div class="quarto-post image-right" data-index="12" data-categories="personal,raspberry pi,wildlife,ir,camera,video processing" data-listing-date-sort="1676476620000" data-listing-file-modified-sort="1706227994016" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2106">
 <div class="thumbnail">
-<p><a href="./posts/2023-02-15-calibrating-a-wildlife-camera/index.html"> <img src="./posts/2023-02-15-calibrating-a-wildlife-camera/wildlifegen.png" class="thumbnail-image" alt="Midjourney-generated image of a rabbit in a nightvision style, as if pictured by an infrared camera at night (generated by Midjourney)."> </a></p>
+<p><a href="./posts/2023-02-15-calibrating-a-wildlife-camera/index.html" class="no-external"></a></p><a href="./posts/2023-02-15-calibrating-a-wildlife-camera/index.html" class="no-external">
+<p><img src="./posts/2023-02-15-calibrating-a-wildlife-camera/wildlifegen.png" class="thumbnail-image" alt="Midjourney-generated image of a rabbit in a nightvision style, as if pictured by an infrared camera at night (generated by Midjourney)."></p>
+</a><p><a href="./posts/2023-02-15-calibrating-a-wildlife-camera/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2023-02-15-calibrating-a-wildlife-camera/index.html">
 <h3 class="no-anchor listing-title">
-Setting up a wildlife camera
+<a href="./posts/2023-02-15-calibrating-a-wildlife-camera/index.html" class="no-external">Setting up a wildlife camera</a>
 </h3>
 <div class="listing-subtitle">
-It’s almost like the corporate solutions are on to something
+<a href="./posts/2023-02-15-calibrating-a-wildlife-camera/index.html" class="no-external">It’s almost like the corporate solutions are on to something</a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('personal'); return false;">
 personal
@@ -735,14 +794,12 @@ camera
 video processing
 </div>
 </div>
-<a href="./posts/2023-02-15-calibrating-a-wildlife-camera/index.html">
 <div class="listing-description">
-For <em>years</em>, I’ve been wanting to set up an outdoor wildlife camera. Somewhere in the PyImageSearch forums<sup>1</sup> there’s a post from 2017-me remarking on how excited I am to have finally gotten my hands on an Nvidia 1080 Ti and…
+<a href="./posts/2023-02-15-calibrating-a-wildlife-camera/index.html" class="no-external">For <em>years</em>, I’ve been wanting to set up an outdoor wildlife camera. Somewhere in the PyImageSearch forums<sup>1</sup> there’s a post from 2017-me remarking on how excited I am to have…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023-02-15-calibrating-a-wildlife-camera/index.html">
+<a href="./posts/2023-02-15-calibrating-a-wildlife-camera/index.html" class="no-external">
 <div class="listing-date">
 February 15, 2023
 </div>
@@ -752,19 +809,19 @@ Shannon Quinn
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="12" data-categories="personal,raspberry pi,k3s,mastodon,dependencies" data-listing-date-sort="1675953540000" data-listing-file-modified-sort="1704508671184" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8">
+<div class="quarto-post image-right" data-index="13" data-categories="personal,raspberry pi,k3s,mastodon,dependencies" data-listing-date-sort="1675953540000" data-listing-file-modified-sort="1706227994016" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1515">
 <div class="thumbnail">
-<p><a href="./posts/2023-02-09-configuring-and-installing-prereqs/index.html"> <img src="https://imgs.xkcd.com/comics/tech_loops.png" class="thumbnail-image" alt="XKCD comic #1579, Tech Loops"> </a></p>
+<p><a href="./posts/2023-02-09-configuring-and-installing-prereqs/index.html" class="no-external"></a></p><a href="./posts/2023-02-09-configuring-and-installing-prereqs/index.html" class="no-external">
+<p><img src="https://imgs.xkcd.com/comics/tech_loops.png" class="thumbnail-image" alt="XKCD comic #1579, Tech Loops"></p>
+</a><p><a href="./posts/2023-02-09-configuring-and-installing-prereqs/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2023-02-09-configuring-and-installing-prereqs/index.html">
 <h3 class="no-anchor listing-title">
-Mastodon, Part III: Configuring and installing the prerequisites
+<a href="./posts/2023-02-09-configuring-and-installing-prereqs/index.html" class="no-external">Mastodon, Part III: Configuring and installing the prerequisites</a>
 </h3>
 <div class="listing-subtitle">
-Welcome to dependency hell, we have recursion
+<a href="./posts/2023-02-09-configuring-and-installing-prereqs/index.html" class="no-external">Welcome to dependency hell, we have recursion</a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('personal'); return false;">
 personal
@@ -782,14 +839,12 @@ mastodon
 dependencies
 </div>
 </div>
-<a href="./posts/2023-02-09-configuring-and-installing-prereqs/index.html">
 <div class="listing-description">
-<em>This article is part of a series…</em>
+<a href="./posts/2023-02-09-configuring-and-installing-prereqs/index.html" class="no-external"><em>This article is part of a series about installing and configuring a Mastodon instance on a cluster of Raspberry Pi computers running k3s. To go back to previous articles in…</em></a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023-02-09-configuring-and-installing-prereqs/index.html">
+<a href="./posts/2023-02-09-configuring-and-installing-prereqs/index.html" class="no-external">
 <div class="listing-date">
 February 9, 2023
 </div>
@@ -799,19 +854,19 @@ Shannon Quinn
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="13" data-categories="personal,raspberry pi,k3s,mastodon,helm" data-listing-date-sort="1674664020000" data-listing-file-modified-sort="1704508671184" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9">
+<div class="quarto-post image-right" data-index="14" data-categories="personal,raspberry pi,k3s,mastodon,helm" data-listing-date-sort="1674664020000" data-listing-file-modified-sort="1706227994016" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1605">
 <div class="thumbnail">
-<p><a href="./posts/2023-01-25-mastodon-helm-chart/index.html"> <img src="./posts/2023-01-25-mastodon-helm-chart/helmsperson.png" class="thumbnail-image" alt="Dramatic image of a galleon sailing on stormy seas (generated by Midjourney)."> </a></p>
+<p><a href="./posts/2023-01-25-mastodon-helm-chart/index.html" class="no-external"></a></p><a href="./posts/2023-01-25-mastodon-helm-chart/index.html" class="no-external">
+<p><img src="./posts/2023-01-25-mastodon-helm-chart/helmsperson.png" class="thumbnail-image" alt="Dramatic image of a galleon sailing on stormy seas (generated by Midjourney)."></p>
+</a><p><a href="./posts/2023-01-25-mastodon-helm-chart/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2023-01-25-mastodon-helm-chart/index.html">
 <h3 class="no-anchor listing-title">
-Mastodon, Part II: The Mastodon Helm chart
+<a href="./posts/2023-01-25-mastodon-helm-chart/index.html" class="no-external">Mastodon, Part II: The Mastodon Helm chart</a>
 </h3>
 <div class="listing-subtitle">
-A package manager for people who enjoy pain I guess
+<a href="./posts/2023-01-25-mastodon-helm-chart/index.html" class="no-external">A package manager for people who enjoy pain I guess</a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('personal'); return false;">
 personal
@@ -829,14 +884,12 @@ mastodon
 helm
 </div>
 </div>
-<a href="./posts/2023-01-25-mastodon-helm-chart/index.html">
 <div class="listing-description">
-<em>This article is part of a series…</em>
+<a href="./posts/2023-01-25-mastodon-helm-chart/index.html" class="no-external"><em>This article is part of a series about installing and configuring a Mastodon instance on a cluster of Raspberry Pi computers running k3s. To go back to previous articles in…</em></a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023-01-25-mastodon-helm-chart/index.html">
+<a href="./posts/2023-01-25-mastodon-helm-chart/index.html" class="no-external">
 <div class="listing-date">
 January 25, 2023
 </div>
@@ -846,19 +899,19 @@ Shannon Quinn
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="14" data-categories="personal,raspberry pi,k3s,mastodon,networking" data-listing-date-sort="1674488640000" data-listing-file-modified-sort="1704508671156" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
+<div class="quarto-post image-right" data-index="15" data-categories="personal,raspberry pi,k3s,mastodon,networking" data-listing-date-sort="1674488640000" data-listing-file-modified-sort="1706227993988" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1177">
 <div class="thumbnail">
-<p><a href="./posts/2023-01-23-mastodon-home-network-topology/index.html"> <img src="./posts/2023-01-23-mastodon-home-network-topology/networking_made_easy.png" class="thumbnail-image" alt="Horrific jumble of networking wires and equipment stylized like Cthulu (generated by Midjourney)."> </a></p>
+<p><a href="./posts/2023-01-23-mastodon-home-network-topology/index.html" class="no-external"></a></p><a href="./posts/2023-01-23-mastodon-home-network-topology/index.html" class="no-external">
+<p><img src="./posts/2023-01-23-mastodon-home-network-topology/networking_made_easy.png" class="thumbnail-image" alt="Horrific jumble of networking wires and equipment stylized like Cthulu (generated by Midjourney)."></p>
+</a><p><a href="./posts/2023-01-23-mastodon-home-network-topology/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2023-01-23-mastodon-home-network-topology/index.html">
 <h3 class="no-anchor listing-title">
-Mastodon, Part I: My home network topology
+<a href="./posts/2023-01-23-mastodon-home-network-topology/index.html" class="no-external">Mastodon, Part I: My home network topology</a>
 </h3>
 <div class="listing-subtitle">
-DNS. It’s always DNS. Except when it’s not.
+<a href="./posts/2023-01-23-mastodon-home-network-topology/index.html" class="no-external">DNS. It’s always DNS. Except when it’s not.</a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('personal'); return false;">
 personal
@@ -876,14 +929,12 @@ mastodon
 networking
 </div>
 </div>
-<a href="./posts/2023-01-23-mastodon-home-network-topology/index.html">
 <div class="listing-description">
-<em>This article is part of a series…</em>
+<a href="./posts/2023-01-23-mastodon-home-network-topology/index.html" class="no-external"><em>This article is part of a series about installing and configuring a Mastodon instance on a cluster of Raspberry Pi computers running k3s. To go back to previous articles in…</em></a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023-01-23-mastodon-home-network-topology/index.html">
+<a href="./posts/2023-01-23-mastodon-home-network-topology/index.html" class="no-external">
 <div class="listing-date">
 January 23, 2023
 </div>
@@ -893,19 +944,19 @@ Shannon Quinn
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="15" data-categories="personal,raspberry pi,k3s,mastodon" data-listing-date-sort="1674231300000" data-listing-file-modified-sort="1704508671140" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="16" data-categories="personal,raspberry pi,k3s,mastodon" data-listing-date-sort="1674231300000" data-listing-file-modified-sort="1706227993972" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="434">
 <div class="thumbnail">
-<p><a href="./posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/index.html"> <img src="./posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/elephant.png" class="thumbnail-image" alt="Rear view of a sitting elephant gazing at mountains in the distance (generated by Midjourney)."> </a></p>
+<p><a href="./posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/index.html" class="no-external"></a></p><a href="./posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/index.html" class="no-external">
+<p><img src="./posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/elephant.png" class="thumbnail-image" alt="Rear view of a sitting elephant gazing at mountains in the distance (generated by Midjourney)."></p>
+</a><p><a href="./posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/index.html">
 <h3 class="no-anchor listing-title">
-Running your own Mastodon instance on a Raspberry Pi k3s cluster
+<a href="./posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/index.html" class="no-external">Running your own Mastodon instance on a Raspberry Pi k3s cluster</a>
 </h3>
 <div class="listing-subtitle">
-Now you too can unwittingly become an unpaid sysadmin!
+<a href="./posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/index.html" class="no-external">Now you too can unwittingly become an unpaid sysadmin!</a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('personal'); return false;">
 personal
@@ -920,14 +971,12 @@ k3s
 mastodon
 </div>
 </div>
-<a href="./posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/index.html">
 <div class="listing-description">
-As I mentioned in my previous post, I spent the last month of last year spinning up my own Mastodon instance (which you can check out!) I’ve had a Raspberry Pi cluster of 5x Pi 4B modules sitting…<sup></sup>
+<a href="./posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/index.html" class="no-external">As I mentioned in my previous post, I spent the last month of last year spinning up my own Mastodon instance (which you can check out!) I’ve had a Raspberry Pi cluster of 5x…<sup></sup></a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/index.html">
+<a href="./posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/index.html" class="no-external">
 <div class="listing-date">
 January 20, 2023
 </div>
@@ -937,19 +986,19 @@ Shannon Quinn
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="16" data-categories="personal,professional,news" data-listing-date-sort="1673970120000" data-listing-file-modified-sort="1704508671136" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10">
+<div class="quarto-post image-right" data-index="17" data-categories="personal,professional,news" data-listing-date-sort="1673970120000" data-listing-file-modified-sort="1706227993968" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1867">
 <div class="thumbnail">
-<p><a href="./posts/2023-01-14-year-that-almost-was/index.html"> <img src="./posts/2023-01-14-year-that-almost-was/broken_sword.png" class="thumbnail-image" alt="Close-up of a broken sword lying amidst ruins (generated by Midjourney)."> </a></p>
+<p><a href="./posts/2023-01-14-year-that-almost-was/index.html" class="no-external"></a></p><a href="./posts/2023-01-14-year-that-almost-was/index.html" class="no-external">
+<p><img src="./posts/2023-01-14-year-that-almost-was/broken_sword.png" class="thumbnail-image" alt="Close-up of a broken sword lying amidst ruins (generated by Midjourney)."></p>
+</a><p><a href="./posts/2023-01-14-year-that-almost-was/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2023-01-14-year-that-almost-was/index.html">
 <h3 class="no-anchor listing-title">
-2022: A year in review
+<a href="./posts/2023-01-14-year-that-almost-was/index.html" class="no-external">2022: A year in review</a>
 </h3>
 <div class="listing-subtitle">
-Last year doesn’t deserve a rhyming couplet
+<a href="./posts/2023-01-14-year-that-almost-was/index.html" class="no-external">Last year doesn’t deserve a rhyming couplet</a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('personal'); return false;">
 personal
@@ -961,14 +1010,12 @@ professional
 news
 </div>
 </div>
-<a href="./posts/2023-01-14-year-that-almost-was/index.html">
 <div class="listing-description">
-There’s going to be <em>language</em> in this post. Consider skipping if you prefer your blog posts merely warmed and with cream; this one is straight out of the pourover.
+<a href="./posts/2023-01-14-year-that-almost-was/index.html" class="no-external">There’s going to be <em>language</em> in this post. Consider skipping if you prefer your blog posts merely warmed and with cream; this one is straight out of the pourover.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023-01-14-year-that-almost-was/index.html">
+<a href="./posts/2023-01-14-year-that-almost-was/index.html" class="no-external">
 <div class="listing-date">
 January 17, 2023
 </div>
@@ -978,19 +1025,19 @@ Shannon Quinn
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="17" data-categories="personal,professional,news" data-listing-date-sort="1670946480000" data-listing-file-modified-sort="1704508671132" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="18" data-categories="personal,professional,news" data-listing-date-sort="1670946480000" data-listing-file-modified-sort="1706227993964" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="141">
 <div class="thumbnail">
-<p><a href="./posts/2022-12-13-pardon-the-dust/index.html"> <img src="./posts/2022-12-13-pardon-the-dust/clover.jpg" class="thumbnail-image" alt="Our bunny Clover."> </a></p>
+<p><a href="./posts/2022-12-13-pardon-the-dust/index.html" class="no-external"></a></p><a href="./posts/2022-12-13-pardon-the-dust/index.html" class="no-external">
+<p><img src="./posts/2022-12-13-pardon-the-dust/clover.jpg" class="thumbnail-image" alt="Our bunny Clover."></p>
+</a><p><a href="./posts/2022-12-13-pardon-the-dust/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2022-12-13-pardon-the-dust/index.html">
 <h3 class="no-anchor listing-title">
-Pardon de dust (2)
+<a href="./posts/2022-12-13-pardon-the-dust/index.html" class="no-external">Pardon de dust (2)</a>
 </h3>
 <div class="listing-subtitle">
-Migrating blog backends is hard
+<a href="./posts/2022-12-13-pardon-the-dust/index.html" class="no-external">Migrating blog backends is hard</a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('personal'); return false;">
 personal
@@ -1002,14 +1049,12 @@ professional
 news
 </div>
 </div>
-<a href="./posts/2022-12-13-pardon-the-dust/index.html">
 <div class="listing-description">
-Why hello there. You may have noticed that things look a little bit different around here.
+<a href="./posts/2022-12-13-pardon-the-dust/index.html" class="no-external">Why hello there. You may have noticed that things look a little bit different around here.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2022-12-13-pardon-the-dust/index.html">
+<a href="./posts/2022-12-13-pardon-the-dust/index.html" class="no-external">
 <div class="listing-date">
 December 13, 2022
 </div>
@@ -1019,19 +1064,19 @@ Shannon Quinn
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="18" data-categories="personal,professional,ai,generative modeling,deep learning,raspberry pi,legal disclaimer,zelda,family" data-listing-date-sort="1659527640000" data-listing-file-modified-sort="1704508671120" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8">
+<div class="quarto-post image-right" data-index="19" data-categories="personal,professional,ai,generative modeling,deep learning,raspberry pi,legal disclaimer,zelda,family" data-listing-date-sort="1659527640000" data-listing-file-modified-sort="1706227993952" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1434">
 <div class="thumbnail">
-<p><a href="./posts/2022-08-03-fiddling-with-generative-art/index.html"> <img src="./posts/2022-08-03-fiddling-with-generative-art/starfield.png" class="thumbnail-image" alt="Generated with the text: `4K, wide angle, hyper detailed, starfield, nighttime sky, crescent moons, stars, nebulae, cosmic` by MidjourneyAI."> </a></p>
+<p><a href="./posts/2022-08-03-fiddling-with-generative-art/index.html" class="no-external"></a></p><a href="./posts/2022-08-03-fiddling-with-generative-art/index.html" class="no-external">
+<p><img src="./posts/2022-08-03-fiddling-with-generative-art/starfield.png" class="thumbnail-image" alt="Generated with the text: `4K, wide angle, hyper detailed, starfield, nighttime sky, crescent moons, stars, nebulae, cosmic` by MidjourneyAI."></p>
+</a><p><a href="./posts/2022-08-03-fiddling-with-generative-art/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2022-08-03-fiddling-with-generative-art/index.html">
 <h3 class="no-anchor listing-title">
-Fiddling with generative art models
+<a href="./posts/2022-08-03-fiddling-with-generative-art/index.html" class="no-external">Fiddling with generative art models</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2022-08-03-fiddling-with-generative-art/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('personal'); return false;">
 personal
@@ -1061,14 +1106,12 @@ zelda
 family
 </div>
 </div>
-<a href="./posts/2022-08-03-fiddling-with-generative-art/index.html">
 <div class="listing-description">
-Much like a lot of the internet over the past couple months, I’ve been tinkering with some AI art generators, mainly Midjourney (if only because I’m waitlisted on DALL-E 2).
+<a href="./posts/2022-08-03-fiddling-with-generative-art/index.html" class="no-external">Much like a lot of the internet over the past couple months, I’ve been tinkering with some AI art generators, mainly Midjourney (if only because I’m waitlisted on DALL-E 2).</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2022-08-03-fiddling-with-generative-art/index.html">
+<a href="./posts/2022-08-03-fiddling-with-generative-art/index.html" class="no-external">
 <div class="listing-date">
 August 3, 2022
 </div>
@@ -1078,19 +1121,19 @@ Shannon Quinn
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="19" data-categories="personal,professional,clover the bun,z,covid-19,running,professor,university,quansight,travel,holidays,year in review" data-listing-date-sort="1641417300000" data-listing-file-modified-sort="1704508670972" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
+<div class="quarto-post image-right" data-index="20" data-categories="personal,professional,clover the bun,z,covid-19,running,professor,university,quansight,travel,holidays,year in review" data-listing-date-sort="1641417300000" data-listing-file-modified-sort="1706227993808" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1198">
 <div class="thumbnail">
-<p><a href="./posts/2022-01-05-what-the-f-is-this-s/index.html"> <img src="./posts/2022-01-05-what-the-f-is-this-s/clover.png" class="thumbnail-image" alt="Our white bunny, Clover, sitting on the couch, looking beautiful."> </a></p>
+<p><a href="./posts/2022-01-05-what-the-f-is-this-s/index.html" class="no-external"></a></p><a href="./posts/2022-01-05-what-the-f-is-this-s/index.html" class="no-external">
+<p><img src="./posts/2022-01-05-what-the-f-is-this-s/clover.png" class="thumbnail-image" alt="Our white bunny, Clover, sitting on the couch, looking beautiful."></p>
+</a><p><a href="./posts/2022-01-05-what-the-f-is-this-s/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2022-01-05-what-the-f-is-this-s/index.html">
 <h3 class="no-anchor listing-title">
-What the f*@$ is this s%#&amp; (2022 ed.)
+<a href="./posts/2022-01-05-what-the-f-is-this-s/index.html" class="no-external">What the f*@$ is this s%#&amp; (2022 ed.)</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2022-01-05-what-the-f-is-this-s/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('personal'); return false;">
 personal
@@ -1129,14 +1172,12 @@ holidays
 year in review
 </div>
 </div>
-<a href="./posts/2022-01-05-what-the-f-is-this-s/index.html">
 <div class="listing-description">
-I’m…
+<a href="./posts/2022-01-05-what-the-f-is-this-s/index.html" class="no-external">I’m not sure where I should even start. How does one sum up a year that felt more like a decade? How does one reflect on a year that eschewed reflection in favor of mere…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2022-01-05-what-the-f-is-this-s/index.html">
+<a href="./posts/2022-01-05-what-the-f-is-this-s/index.html" class="no-external">
 <div class="listing-date">
 January 5, 2022
 </div>
@@ -1146,19 +1187,19 @@ Shannon Quinn
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="20" data-categories="personal,blogging,python,pelican,dependency hell" data-listing-date-sort="1640881500000" data-listing-file-modified-sort="1704508670860" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="21" data-categories="personal,blogging,python,pelican,dependency hell" data-listing-date-sort="1640881500000" data-listing-file-modified-sort="1706227993692" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="486">
 <div class="thumbnail">
-<p><a href="./posts/2021-12-30-back-in-action/index.html"> <img src="https://c.tenor.com/ZFc20z8DItkAAAAd/facepalm-really.gif" class="thumbnail-image" alt="Facepalm gif meme from The Office."> </a></p>
+<p><a href="./posts/2021-12-30-back-in-action/index.html" class="no-external"></a></p><a href="./posts/2021-12-30-back-in-action/index.html" class="no-external">
+<p><img src="https://c.tenor.com/ZFc20z8DItkAAAAd/facepalm-really.gif" class="thumbnail-image" alt="Facepalm gif meme from The Office."></p>
+</a><p><a href="./posts/2021-12-30-back-in-action/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2021-12-30-back-in-action/index.html">
 <h3 class="no-anchor listing-title">
-Back in Action
+<a href="./posts/2021-12-30-back-in-action/index.html" class="no-external">Back in Action</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2021-12-30-back-in-action/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('personal'); return false;">
 personal
@@ -1176,14 +1217,12 @@ pelican
 dependency hell
 </div>
 </div>
-<a href="./posts/2021-12-30-back-in-action/index.html">
 <div class="listing-description">
-It’s been a day/week/month/year/decade, this 2021.
+<a href="./posts/2021-12-30-back-in-action/index.html" class="no-external">It’s been a day/week/month/year/decade, this 2021.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2021-12-30-back-in-action/index.html">
+<a href="./posts/2021-12-30-back-in-action/index.html" class="no-external">
 <div class="listing-date">
 December 30, 2021
 </div>
@@ -1193,19 +1232,19 @@ Shannon Quinn
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="21" data-categories="personal,festivus,fuck 2020,fuck that shit,airing of grievances" data-listing-date-sort="1609337640000" data-listing-file-modified-sort="1704508670860" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10">
+<div class="quarto-post image-right" data-index="22" data-categories="personal,festivus,fuck 2020,fuck that shit,airing of grievances" data-listing-date-sort="1609337640000" data-listing-file-modified-sort="1706227993692" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1878">
 <div class="thumbnail">
-<p><a href="./posts/2020-12-30-festivus-for-the-restivus/index.html"> <img src="./posts/2020-12-30-festivus-for-the-restivus/festivus.png" class="thumbnail-image" alt="Festivus for the Restivus sign."> </a></p>
+<p><a href="./posts/2020-12-30-festivus-for-the-restivus/index.html" class="no-external"></a></p><a href="./posts/2020-12-30-festivus-for-the-restivus/index.html" class="no-external">
+<p><img src="./posts/2020-12-30-festivus-for-the-restivus/festivus.png" class="thumbnail-image" alt="Festivus for the Restivus sign."></p>
+</a><p><a href="./posts/2020-12-30-festivus-for-the-restivus/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2020-12-30-festivus-for-the-restivus/index.html">
 <h3 class="no-anchor listing-title">
-Festivus for the Restivus
+<a href="./posts/2020-12-30-festivus-for-the-restivus/index.html" class="no-external">Festivus for the Restivus</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2020-12-30-festivus-for-the-restivus/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('personal'); return false;">
 personal
@@ -1223,14 +1262,12 @@ fuck that shit
 airing of grievances
 </div>
 </div>
-<a href="./posts/2020-12-30-festivus-for-the-restivus/index.html">
 <div class="listing-description">
-Content warning: rough language ahead. You’ve been warned.
+<a href="./posts/2020-12-30-festivus-for-the-restivus/index.html" class="no-external">Content warning: rough language ahead. You’ve been warned.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2020-12-30-festivus-for-the-restivus/index.html">
+<a href="./posts/2020-12-30-festivus-for-the-restivus/index.html" class="no-external">
 <div class="listing-date">
 December 30, 2020
 </div>
@@ -1240,19 +1277,19 @@ Shannon Quinn
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="22" data-categories="personal,professional,covid-19,sars-cov-2,work from home,zelda,pandemic,furbabies,zippy the cat,clover the bun" data-listing-date-sort="1589976000000" data-listing-file-modified-sort="1704508670852" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9">
+<div class="quarto-post image-right" data-index="23" data-categories="personal,professional,covid-19,sars-cov-2,work from home,zelda,pandemic,furbabies,zippy the cat,clover the bun" data-listing-date-sort="1589976000000" data-listing-file-modified-sort="1706227993688" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1788">
 <div class="thumbnail">
-<p><a href="./posts/2020-05-20-working-from-home/index.html"> <img src="./posts/2020-05-20-working-from-home/instachaaz.png" class="thumbnail-image" alt="A stick figure standing in front of a Wheel of Fortune style wheel, where each possible option is something regrettable, and the person&amp;#039;s thought bubble says 'Ooh! Wonder what it's going to be today?'"> </a></p>
+<p><a href="./posts/2020-05-20-working-from-home/index.html" class="no-external"></a></p><a href="./posts/2020-05-20-working-from-home/index.html" class="no-external">
+<p><img src="./posts/2020-05-20-working-from-home/instachaaz.png" class="thumbnail-image" alt="A stick figure standing in front of a Wheel of Fortune style wheel, where each possible option is something regrettable, and the person&amp;#039;s thought bubble says 'Ooh! Wonder what it's going to be today?'"></p>
+</a><p><a href="./posts/2020-05-20-working-from-home/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2020-05-20-working-from-home/index.html">
 <h3 class="no-anchor listing-title">
-At home during COVID-19
+<a href="./posts/2020-05-20-working-from-home/index.html" class="no-external">At home during COVID-19</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2020-05-20-working-from-home/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('personal'); return false;">
 personal
@@ -1285,14 +1322,12 @@ zippy the cat
 clover the bun
 </div>
 </div>
-<a href="./posts/2020-05-20-working-from-home/index.html">
 <div class="listing-description">
-Well, this has certainly been a <strong>unique</strong> past couple…
+<a href="./posts/2020-05-20-working-from-home/index.html" class="no-external">Well, this has certainly been a <strong>unique</strong> past couple of months. I had a lot of things in mind for the spring 2020 semester and beyond, but I can safely say it’s all been…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2020-05-20-working-from-home/index.html">
+<a href="./posts/2020-05-20-working-from-home/index.html" class="no-external">
 <div class="listing-date">
 May 20, 2020
 </div>
@@ -1302,19 +1337,19 @@ Shannon Quinn
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="23" data-categories="personal,breath of the wild,zelda,running,gaming,nerds,the lady,injury" data-listing-date-sort="1565617980000" data-listing-file-modified-sort="1704508670832" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9">
+<div class="quarto-post image-right" data-index="24" data-categories="personal,breath of the wild,zelda,running,gaming,nerds,the lady,injury" data-listing-date-sort="1565617980000" data-listing-file-modified-sort="1706227993668" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1614">
 <div class="thumbnail">
-<p><a href="./posts/2019-08-12-breath-of-the-wild/index.html"> <img src="./posts/2019-08-12-breath-of-the-wild/lakehylia.jpg" class="thumbnail-image" alt="Link from Breath of the Wild overlooking the scenery from the vantage point of Lake Hylia."> </a></p>
+<p><a href="./posts/2019-08-12-breath-of-the-wild/index.html" class="no-external"></a></p><a href="./posts/2019-08-12-breath-of-the-wild/index.html" class="no-external">
+<p><img src="./posts/2019-08-12-breath-of-the-wild/lakehylia.jpg" class="thumbnail-image" alt="Link from Breath of the Wild overlooking the scenery from the vantage point of Lake Hylia."></p>
+</a><p><a href="./posts/2019-08-12-breath-of-the-wild/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2019-08-12-breath-of-the-wild/index.html">
 <h3 class="no-anchor listing-title">
-Breath of Fresh (albeit, indoor) Air
+<a href="./posts/2019-08-12-breath-of-the-wild/index.html" class="no-external">Breath of Fresh (albeit, indoor) Air</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2019-08-12-breath-of-the-wild/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('personal'); return false;">
 personal
@@ -1341,14 +1376,12 @@ the lady
 injury
 </div>
 </div>
-<a href="./posts/2019-08-12-breath-of-the-wild/index.html">
 <div class="listing-description">
-This is a divergence that is simultaneously strange and entirely predictable.
+<a href="./posts/2019-08-12-breath-of-the-wild/index.html" class="no-external">This is a divergence that is simultaneously strange and entirely predictable.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2019-08-12-breath-of-the-wild/index.html">
+<a href="./posts/2019-08-12-breath-of-the-wild/index.html" class="no-external">
 <div class="listing-date">
 August 12, 2019
 </div>
@@ -1358,19 +1391,19 @@ Shannon Quinn
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="24" data-categories="personal,travel,ireland" data-listing-date-sort="1559589840000" data-listing-file-modified-sort="1704508670828" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="25" data-categories="personal,travel,ireland" data-listing-date-sort="1559589840000" data-listing-file-modified-sort="1706227993660" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="450">
 <div class="thumbnail">
-<p><a href="./posts/2019-06-03-quinnwitz-in-ireland/index.html"> <img src="./posts/2019-06-03-quinnwitz-in-ireland/gapofdunloe.jpg" class="thumbnail-image" alt="The Gap of Dunloe in Killarney, Ireland."> </a></p>
+<p><a href="./posts/2019-06-03-quinnwitz-in-ireland/index.html" class="no-external"></a></p><a href="./posts/2019-06-03-quinnwitz-in-ireland/index.html" class="no-external">
+<p><img data-src="./posts/2019-06-03-quinnwitz-in-ireland/gapofdunloe.jpg" class="thumbnail-image" alt="The Gap of Dunloe in Killarney, Ireland."></p>
+</a><p><a href="./posts/2019-06-03-quinnwitz-in-ireland/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2019-06-03-quinnwitz-in-ireland/index.html">
 <h3 class="no-anchor listing-title">
-Quinnwitz in Ireland
+<a href="./posts/2019-06-03-quinnwitz-in-ireland/index.html" class="no-external">Quinnwitz in Ireland</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2019-06-03-quinnwitz-in-ireland/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('personal'); return false;">
 personal
@@ -1382,14 +1415,12 @@ travel
 ireland
 </div>
 </div>
-<a href="./posts/2019-06-03-quinnwitz-in-ireland/index.html">
 <div class="listing-description">
-The Lady and I just returned from a 12-day trip to Ireland (with a stop at the very start in Kent, England, to visit some dear friends and their 6-month old twins!).
+<a href="./posts/2019-06-03-quinnwitz-in-ireland/index.html" class="no-external">The Lady and I just returned from a 12-day trip to Ireland (with a stop at the very start in Kent, England, to visit some dear friends and their 6-month old twins!).</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2019-06-03-quinnwitz-in-ireland/index.html">
+<a href="./posts/2019-06-03-quinnwitz-in-ireland/index.html" class="no-external">
 <div class="listing-date">
 June 3, 2019
 </div>
@@ -1399,19 +1430,19 @@ Shannon Quinn
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="25" data-categories="personal,gaming,video games" data-listing-date-sort="1548948360000" data-listing-file-modified-sort="1704508670824" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10">
+<div class="quarto-post image-right" data-index="26" data-categories="personal,gaming,video games" data-listing-date-sort="1548948360000" data-listing-file-modified-sort="1706227993656" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1813">
 <div class="thumbnail">
-<p><a href="./posts/2019-01-31-starcraft-ii-questions/index.html"> <img data-src="./posts/2019-01-31-starcraft-ii-questions/do_you_wanna_play_sc2.jpeg" class="thumbnail-image" alt="A meme image of the Frozen song, with the words instead indicating &amp;#039;Do you want to play Starcraft?'"> </a></p>
+<p><a href="./posts/2019-01-31-starcraft-ii-questions/index.html" class="no-external"></a></p><a href="./posts/2019-01-31-starcraft-ii-questions/index.html" class="no-external">
+<p><img data-src="./posts/2019-01-31-starcraft-ii-questions/do_you_wanna_play_sc2.jpeg" class="thumbnail-image" alt="A meme image of the Frozen song, with the words instead indicating &amp;#039;Do you want to play Starcraft?'"></p>
+</a><p><a href="./posts/2019-01-31-starcraft-ii-questions/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2019-01-31-starcraft-ii-questions/index.html">
 <h3 class="no-anchor listing-title">
-StarCraft II Questions
+<a href="./posts/2019-01-31-starcraft-ii-questions/index.html" class="no-external">StarCraft II Questions</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2019-01-31-starcraft-ii-questions/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('personal'); return false;">
 personal
@@ -1423,14 +1454,12 @@ gaming
 video games
 </div>
 </div>
-<a href="./posts/2019-01-31-starcraft-ii-questions/index.html">
 <div class="listing-description">
-I’ve been sick…<em></em><em></em><em></em>
+<a href="./posts/2019-01-31-starcraft-ii-questions/index.html" class="no-external">I’ve been sick the past couple of days. In between drinking way too much tea, passing out cold, and actually getting the occasional bit of work done, I’ve been (re-)playing…<em></em><em></em><em></em></a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2019-01-31-starcraft-ii-questions/index.html">
+<a href="./posts/2019-01-31-starcraft-ii-questions/index.html" class="no-external">
 <div class="listing-date">
 January 31, 2019
 </div>
@@ -1440,19 +1469,19 @@ Shannon Quinn
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="26" data-categories="professional,python" data-listing-date-sort="1529427482000" data-listing-file-modified-sort="1704508670820" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7">
+<div class="quarto-post image-right" data-index="27" data-categories="professional,python" data-listing-date-sort="1529427482000" data-listing-file-modified-sort="1706227993656" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1381">
 <div class="thumbnail">
-<p><a href="./posts/2018-06-19-einsum/index.html"> <img data-src="./posts/2018-06-19-einsum/kOqM5.png" class="thumbnail-image" alt="A diagram of Einstein summations. Source: https://stackoverflow.com/questions/26089893/understanding-numpys-einsum ."> </a></p>
+<p><a href="./posts/2018-06-19-einsum/index.html" class="no-external"></a></p><a href="./posts/2018-06-19-einsum/index.html" class="no-external">
+<p><img data-src="./posts/2018-06-19-einsum/kOqM5.png" class="thumbnail-image" alt="A diagram of Einstein summations. Source: https://stackoverflow.com/questions/26089893/understanding-numpys-einsum ."></p>
+</a><p><a href="./posts/2018-06-19-einsum/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2018-06-19-einsum/index.html">
 <h3 class="no-anchor listing-title">
-An einsum use-case
+<a href="./posts/2018-06-19-einsum/index.html" class="no-external">An einsum use-case</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2018-06-19-einsum/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('professional'); return false;">
 professional
@@ -1461,14 +1490,12 @@ professional
 python
 </div>
 </div>
-<a href="./posts/2018-06-19-einsum/index.html">
 <div class="listing-description">
-Recently I’ve been working with some of my students on a paper for the SciPy Conference related to our OrNet project. Part of this involved designing our own Gaus…<code></code><code></code>
+<a href="./posts/2018-06-19-einsum/index.html" class="no-external">Recently I’ve been working with some of my students on a paper for the SciPy Conference related to our OrNet project. Part of this involved designing our own Gaussian…<code></code><code></code></a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2018-06-19-einsum/index.html">
+<a href="./posts/2018-06-19-einsum/index.html" class="no-external">
 <div class="listing-date">
 June 19, 2018
 </div>
@@ -1478,19 +1505,19 @@ Shannon Quinn
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="27" data-categories="personal,gaming,star wars,fps,communities" data-listing-date-sort="1524753000000" data-listing-file-modified-sort="1704508670808" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="20">
+<div class="quarto-post image-right" data-index="28" data-categories="personal,gaming,star wars,fps,communities" data-listing-date-sort="1524753000000" data-listing-file-modified-sort="1706227993644" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="20" data-listing-word-count-sort="3914">
 <div class="thumbnail">
-<p><a href="./posts/2018-04-26-jedi-outcast-echoes-of-a-bygone-gaming-era/index.html"> <img data-src="./posts/2018-04-26-jedi-outcast-echoes-of-a-bygone-gaming-era/lolrob.jpg" class="thumbnail-image" alt="Looking downscope of a sniper rifle in Jedi Outcast 2 zoomed in hilariously right on a friend&amp;#039;s avatar's face."> </a></p>
+<p><a href="./posts/2018-04-26-jedi-outcast-echoes-of-a-bygone-gaming-era/index.html" class="no-external"></a></p><a href="./posts/2018-04-26-jedi-outcast-echoes-of-a-bygone-gaming-era/index.html" class="no-external">
+<p><img data-src="./posts/2018-04-26-jedi-outcast-echoes-of-a-bygone-gaming-era/lolrob.jpg" class="thumbnail-image" alt="Looking downscope of a sniper rifle in Jedi Outcast 2 zoomed in hilariously right on a friend&amp;#039;s avatar's face."></p>
+</a><p><a href="./posts/2018-04-26-jedi-outcast-echoes-of-a-bygone-gaming-era/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2018-04-26-jedi-outcast-echoes-of-a-bygone-gaming-era/index.html">
 <h3 class="no-anchor listing-title">
-Jedi Outcast: Echoes of a bygone gaming era
+<a href="./posts/2018-04-26-jedi-outcast-echoes-of-a-bygone-gaming-era/index.html" class="no-external">Jedi Outcast: Echoes of a bygone gaming era</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2018-04-26-jedi-outcast-echoes-of-a-bygone-gaming-era/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('personal'); return false;">
 personal
@@ -1508,14 +1535,12 @@ fps
 communities
 </div>
 </div>
-<a href="./posts/2018-04-26-jedi-outcast-echoes-of-a-bygone-gaming-era/index.html">
 <div class="listing-description">
-I should start by issuing fair warning: this is a post I’ve been meaning to write in some form or another for the better part of the last <em>15 years</em>.
+<a href="./posts/2018-04-26-jedi-outcast-echoes-of-a-bygone-gaming-era/index.html" class="no-external">I should start by issuing fair warning: this is a post I’ve been meaning to write in some form or another for the better part of the last <em>15 years</em>.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2018-04-26-jedi-outcast-echoes-of-a-bygone-gaming-era/index.html">
+<a href="./posts/2018-04-26-jedi-outcast-echoes-of-a-bygone-gaming-era/index.html" class="no-external">
 <div class="listing-date">
 April 26, 2018
 </div>
@@ -1525,19 +1550,19 @@ Shannon Quinn
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="28" data-categories="personal,professional,new year,blog,writing,side projects,research" data-listing-date-sort="1516544880000" data-listing-file-modified-sort="1704508670796" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="29" data-categories="personal,professional,new year,blog,writing,side projects,research" data-listing-date-sort="1516544880000" data-listing-file-modified-sort="1706227993632" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="214">
 <div class="thumbnail">
-<p><a href="./posts/2018-01-19-new-years-resolutions/index.html"> <img data-src="./images/logo.png" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2018-01-19-new-years-resolutions/index.html" class="no-external"></a></p><a href="./posts/2018-01-19-new-years-resolutions/index.html" class="no-external">
+<p><img data-src="./images/logo.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/2018-01-19-new-years-resolutions/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2018-01-19-new-years-resolutions/index.html">
 <h3 class="no-anchor listing-title">
-Resolutions for 2018
+<a href="./posts/2018-01-19-new-years-resolutions/index.html" class="no-external">Resolutions for 2018</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2018-01-19-new-years-resolutions/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('personal'); return false;">
 personal
@@ -1561,14 +1586,12 @@ side projects
 research
 </div>
 </div>
-<a href="./posts/2018-01-19-new-years-resolutions/index.html">
 <div class="listing-description">
-A solid three weeks late on the new year’s resolutions, but still a marked improvement over last year.
+<a href="./posts/2018-01-19-new-years-resolutions/index.html" class="no-external">A solid three weeks late on the new year’s resolutions, but still a marked improvement over last year.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2018-01-19-new-years-resolutions/index.html">
+<a href="./posts/2018-01-19-new-years-resolutions/index.html" class="no-external">
 <div class="listing-date">
 January 21, 2018
 </div>
@@ -1578,19 +1601,19 @@ Shannon Quinn
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="29" data-categories="personal,new year,blog" data-listing-date-sort="1515260820000" data-listing-file-modified-sort="1704508670796" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="30" data-categories="personal,new year,blog" data-listing-date-sort="1515260820000" data-listing-file-modified-sort="1706227993632" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="120">
 <div class="thumbnail">
-<p><a href="./posts/2018-01-06-new-year-new-blog/index.html"> <img data-src="./images/logo.png" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2018-01-06-new-year-new-blog/index.html" class="no-external"></a></p><a href="./posts/2018-01-06-new-year-new-blog/index.html" class="no-external">
+<p><img data-src="./images/logo.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/2018-01-06-new-year-new-blog/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2018-01-06-new-year-new-blog/index.html">
 <h3 class="no-anchor listing-title">
-New year, new blog layout
+<a href="./posts/2018-01-06-new-year-new-blog/index.html" class="no-external">New year, new blog layout</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2018-01-06-new-year-new-blog/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('personal'); return false;">
 personal
@@ -1602,14 +1625,12 @@ new year
 blog
 </div>
 </div>
-<a href="./posts/2018-01-06-new-year-new-blog/index.html">
 <div class="listing-description">
-Happy 2018!
+<a href="./posts/2018-01-06-new-year-new-blog/index.html" class="no-external">Happy 2018!</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2018-01-06-new-year-new-blog/index.html">
+<a href="./posts/2018-01-06-new-year-new-blog/index.html" class="no-external">
 <div class="listing-date">
 January 6, 2018
 </div>
@@ -1619,19 +1640,19 @@ Shannon Quinn
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="30" data-categories="professional,personal,data science,python,computer vision,imaging,machine learning,deep learning,nvidia,gpu,teaching,education,bioimaging" data-listing-date-sort="1496271822000" data-listing-file-modified-sort="1704508670796" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
+<div class="quarto-post image-right" data-index="31" data-categories="professional,personal,data science,python,computer vision,imaging,machine learning,deep learning,nvidia,gpu,teaching,education,bioimaging" data-listing-date-sort="1496271822000" data-listing-file-modified-sort="1706227993632" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="704">
 <div class="thumbnail">
-<p><a href="./posts/2017-05-31-summer-of-data-science/index.html"> <img data-src="./posts/2017-05-31-summer-of-data-science/carpelibrum.png" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2017-05-31-summer-of-data-science/index.html" class="no-external"></a></p><a href="./posts/2017-05-31-summer-of-data-science/index.html" class="no-external">
+<p><img data-src="./posts/2017-05-31-summer-of-data-science/carpelibrum.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/2017-05-31-summer-of-data-science/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2017-05-31-summer-of-data-science/index.html">
 <h3 class="no-anchor listing-title">
-Summer of Data Science 2017
+<a href="./posts/2017-05-31-summer-of-data-science/index.html" class="no-external">Summer of Data Science 2017</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2017-05-31-summer-of-data-science/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('professional'); return false;">
 professional
@@ -1673,14 +1694,12 @@ education
 bioimaging
 </div>
 </div>
-<a href="./posts/2017-05-31-summer-of-data-science/index.html">
 <div class="listing-description">
-A few days ago, while I was still in Portland, OR enjoying the last few days of PyCon 2017, Renee (<span class="citation" data-cites="BecomingDataSci">@BecomingDataSci</span>) mentioned on Twitter that she might…
+<a href="./posts/2017-05-31-summer-of-data-science/index.html" class="no-external">A few days ago, while I was still in Portland, OR enjoying the last few days of PyCon 2017, Renee (<span class="citation" data-cites="BecomingDataSci">@BecomingDataSci</span>) mentioned on Twitter that she might bring back the…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2017-05-31-summer-of-data-science/index.html">
+<a href="./posts/2017-05-31-summer-of-data-science/index.html" class="no-external">
 <div class="listing-date">
 May 31, 2017
 </div>
@@ -1690,19 +1709,19 @@ Shannon Quinn
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="31" data-categories="professional,phd,graduate school,research,mentoring,computer science,graduate student" data-listing-date-sort="1489679961000" data-listing-file-modified-sort="1704508670796" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="32" data-categories="professional,phd,graduate school,research,mentoring,computer science,graduate student" data-listing-date-sort="1489679961000" data-listing-file-modified-sort="1706227993628" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="933">
 <div class="thumbnail">
-<p><a href="./posts/2017-03-16-so-you-want-to-conduct-research-with-me/index.html"> <img data-src="./posts/2017-03-16-so-you-want-to-conduct-research-with-me/joker_play_a_game.jpg" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2017-03-16-so-you-want-to-conduct-research-with-me/index.html" class="no-external"></a></p><a href="./posts/2017-03-16-so-you-want-to-conduct-research-with-me/index.html" class="no-external">
+<p><img data-src="./posts/2017-03-16-so-you-want-to-conduct-research-with-me/joker_play_a_game.jpg" class="thumbnail-image"></p>
+</a><p><a href="./posts/2017-03-16-so-you-want-to-conduct-research-with-me/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2017-03-16-so-you-want-to-conduct-research-with-me/index.html">
 <h3 class="no-anchor listing-title">
-So, you want to conduct research with me?
+<a href="./posts/2017-03-16-so-you-want-to-conduct-research-with-me/index.html" class="no-external">So, you want to conduct research with me?</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2017-03-16-so-you-want-to-conduct-research-with-me/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('professional'); return false;">
 professional
@@ -1726,14 +1745,12 @@ computer science
 graduate student
 </div>
 </div>
-<a href="./posts/2017-03-16-so-you-want-to-conduct-research-with-me/index.html">
 <div class="listing-description">
-<em>Deviation #1</em>: This is wholly separate from the “should I get a Ph.D.” question. For that I would recommend one of numerous guides that ask all the right questions.
+<a href="./posts/2017-03-16-so-you-want-to-conduct-research-with-me/index.html" class="no-external"><em>Deviation #1</em>: This is wholly separate from the “should I get a Ph.D.” question. For that I would recommend one of numerous guides that ask all the right questions.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2017-03-16-so-you-want-to-conduct-research-with-me/index.html">
+<a href="./posts/2017-03-16-so-you-want-to-conduct-research-with-me/index.html" class="no-external">
 <div class="listing-date">
 March 16, 2017
 </div>
@@ -1743,19 +1760,19 @@ Shannon Quinn
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="32" data-categories="personal,raspberry pi,gaming,video games,nvidia,steam" data-listing-date-sort="1483728457000" data-listing-file-modified-sort="1704508670792" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
+<div class="quarto-post image-right" data-index="33" data-categories="personal,raspberry pi,gaming,video games,nvidia,steam" data-listing-date-sort="1483728457000" data-listing-file-modified-sort="1706227993628" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1088">
 <div class="thumbnail">
-<p><a href="./posts/2017-01-06-gameify-your-raspberry-pi/index.html"> <img data-src="./posts/2017-01-06-gameify-your-raspberry-pi/raspberrypi3.jpg" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2017-01-06-gameify-your-raspberry-pi/index.html" class="no-external"></a></p><a href="./posts/2017-01-06-gameify-your-raspberry-pi/index.html" class="no-external">
+<p><img data-src="./posts/2017-01-06-gameify-your-raspberry-pi/raspberrypi3.jpg" class="thumbnail-image"></p>
+</a><p><a href="./posts/2017-01-06-gameify-your-raspberry-pi/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2017-01-06-gameify-your-raspberry-pi/index.html">
 <h3 class="no-anchor listing-title">
-Game-ify Your Raspberry Pi
+<a href="./posts/2017-01-06-gameify-your-raspberry-pi/index.html" class="no-external">Game-ify Your Raspberry Pi</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2017-01-06-gameify-your-raspberry-pi/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('personal'); return false;">
 personal
@@ -1776,14 +1793,12 @@ nvidia
 steam
 </div>
 </div>
-<a href="./posts/2017-01-06-gameify-your-raspberry-pi/index.html">
 <div class="listing-description">
-My project over the 2016 holiday season was to take the Raspberry Pi 3 I’ve had sitting around the house idling for the previous nine months and turn it into a RetroPie-ified…
+<a href="./posts/2017-01-06-gameify-your-raspberry-pi/index.html" class="no-external">My project over the 2016 holiday season was to take the Raspberry Pi 3 I’ve had sitting around the house idling for the previous nine months and turn it into a RetroPie-ified…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2017-01-06-gameify-your-raspberry-pi/index.html">
+<a href="./posts/2017-01-06-gameify-your-raspberry-pi/index.html" class="no-external">
 <div class="listing-date">
 January 6, 2017
 </div>
@@ -1793,19 +1808,19 @@ Shannon Quinn
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="33" data-categories="professional,workshop,big data,ieee,open science" data-listing-date-sort="1474881019000" data-listing-file-modified-sort="1704508670792" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
+<div class="quarto-post image-right" data-index="34" data-categories="professional,workshop,big data,ieee,open science" data-listing-date-sort="1474881019000" data-listing-file-modified-sort="1706227993624" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="707">
 <div class="thumbnail">
-<p><a href="./posts/2016-09-26-osbd2016-workshop/index.html"> <img data-src="./posts/2016-09-26-osbd2016-workshop/washingtondc.png" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2016-09-26-osbd2016-workshop/index.html" class="no-external"></a></p><a href="./posts/2016-09-26-osbd2016-workshop/index.html" class="no-external">
+<p><img data-src="./posts/2016-09-26-osbd2016-workshop/washingtondc.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/2016-09-26-osbd2016-workshop/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2016-09-26-osbd2016-workshop/index.html">
 <h3 class="no-anchor listing-title">
-Open Science in Big Data (OSBD) Workshop
+<a href="./posts/2016-09-26-osbd2016-workshop/index.html" class="no-external">Open Science in Big Data (OSBD) Workshop</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2016-09-26-osbd2016-workshop/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('professional'); return false;">
 professional
@@ -1823,14 +1838,12 @@ ieee
 open science
 </div>
 </div>
-<a href="./posts/2016-09-26-osbd2016-workshop/index.html">
 <div class="listing-description">
-Ba…
+<a href="./posts/2016-09-26-osbd2016-workshop/index.html" class="no-external">Back in May of this year, some of the other computer science professors and I put together a proposal for a workshop. The workshop would be in conjunction with the December…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2016-09-26-osbd2016-workshop/index.html">
+<a href="./posts/2016-09-26-osbd2016-workshop/index.html" class="no-external">
 <div class="listing-date">
 September 26, 2016
 </div>
@@ -1840,19 +1853,19 @@ Shannon Quinn
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="34" data-categories="personal,python,strava,running,oauth,tweepy,twitter,pybot" data-listing-date-sort="1463411399000" data-listing-file-modified-sort="1704508670792" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12">
+<div class="quarto-post image-right" data-index="35" data-categories="personal,python,strava,running,oauth,tweepy,twitter,pybot" data-listing-date-sort="1463411399000" data-listing-file-modified-sort="1706227993624" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2272">
 <div class="thumbnail">
-<p><a href="./posts/2016-05-16-autopost-running-twitter-summary-strava/index.html"> <img data-src="./posts/2016-05-16-autopost-running-twitter-summary-strava/stravatwitter.png" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2016-05-16-autopost-running-twitter-summary-strava/index.html" class="no-external"></a></p><a href="./posts/2016-05-16-autopost-running-twitter-summary-strava/index.html" class="no-external">
+<p><img data-src="./posts/2016-05-16-autopost-running-twitter-summary-strava/stravatwitter.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/2016-05-16-autopost-running-twitter-summary-strava/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2016-05-16-autopost-running-twitter-summary-strava/index.html">
 <h3 class="no-anchor listing-title">
-A twitterbot for posting weekly running stats
+<a href="./posts/2016-05-16-autopost-running-twitter-summary-strava/index.html" class="no-external">A twitterbot for posting weekly running stats</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2016-05-16-autopost-running-twitter-summary-strava/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('personal'); return false;">
 personal
@@ -1879,14 +1892,12 @@ twitter
 pybot
 </div>
 </div>
-<a href="./posts/2016-05-16-autopost-running-twitter-summary-strava/index.html">
 <div class="listing-description">
-We runners (we’re a crazy bunch), for…
+<a href="./posts/2016-05-16-autopost-running-twitter-summary-strava/index.html" class="no-external">We runners (we’re a crazy bunch), for the most part, like our stats. How many miles do you log each week? Each month? How are your average race paces trending? Are your long…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2016-05-16-autopost-running-twitter-summary-strava/index.html">
+<a href="./posts/2016-05-16-autopost-running-twitter-summary-strava/index.html" class="no-external">
 <div class="listing-date">
 May 16, 2016
 </div>
@@ -1896,19 +1907,19 @@ Shannon Quinn
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="35" data-categories="professional,academia,grants,feedback,rejection" data-listing-date-sort="1454408314000" data-listing-file-modified-sort="1704508670792" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
+<div class="quarto-post image-right" data-index="36" data-categories="professional,academia,grants,feedback,rejection" data-listing-date-sort="1454408314000" data-listing-file-modified-sort="1706227993624" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1118">
 <div class="thumbnail">
-<p><a href="./posts/2016-02-02-nsf-crii-reviewer-feedback/index.html"> <img data-src="./posts/2016-02-02-nsf-crii-reviewer-feedback/write_grants.jpg" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2016-02-02-nsf-crii-reviewer-feedback/index.html" class="no-external"></a></p><a href="./posts/2016-02-02-nsf-crii-reviewer-feedback/index.html" class="no-external">
+<p><img data-src="./posts/2016-02-02-nsf-crii-reviewer-feedback/write_grants.jpg" class="thumbnail-image"></p>
+</a><p><a href="./posts/2016-02-02-nsf-crii-reviewer-feedback/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2016-02-02-nsf-crii-reviewer-feedback/index.html">
 <h3 class="no-anchor listing-title">
-Reviewing a reviewed grant’s reviews
+<a href="./posts/2016-02-02-nsf-crii-reviewer-feedback/index.html" class="no-external">Reviewing a reviewed grant’s reviews</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2016-02-02-nsf-crii-reviewer-feedback/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('professional'); return false;">
 professional
@@ -1926,14 +1937,12 @@ feedback
 rejection
 </div>
 </div>
-<a href="./posts/2016-02-02-nsf-crii-reviewer-feedback/index.html">
 <div class="listing-description">
-Rejection in any context sucks. As a new faculty trying to prove himself (to himself, but most importantly, to his tenure committee), I particularly hate rejections in the…
+<a href="./posts/2016-02-02-nsf-crii-reviewer-feedback/index.html" class="no-external">Rejection in any context sucks. As a new faculty trying to prove himself (to himself, but most importantly, to his tenure committee), I particularly hate rejections in the…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2016-02-02-nsf-crii-reviewer-feedback/index.html">
+<a href="./posts/2016-02-02-nsf-crii-reviewer-feedback/index.html" class="no-external">
 <div class="listing-date">
 February 2, 2016
 </div>
@@ -1943,19 +1952,19 @@ Shannon Quinn
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="36" data-categories="personal,pelican,python,github,jupyter" data-listing-date-sort="1446898442000" data-listing-file-modified-sort="1704508670792" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="37" data-categories="personal,pelican,python,github,jupyter" data-listing-date-sort="1446898442000" data-listing-file-modified-sort="1706227993624" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="111">
 <div class="thumbnail">
-<p><a href="./posts/2015-11-07-introductions/index.html"> <img data-src="./images/logo.png" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2015-11-07-introductions/index.html" class="no-external"></a></p><a href="./posts/2015-11-07-introductions/index.html" class="no-external">
+<p><img data-src="./images/logo.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/2015-11-07-introductions/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2015-11-07-introductions/index.html">
 <h3 class="no-anchor listing-title">
-Introductions
+<a href="./posts/2015-11-07-introductions/index.html" class="no-external">Introductions</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2015-11-07-introductions/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('personal'); return false;">
 personal
@@ -1973,14 +1982,12 @@ github
 jupyter
 </div>
 </div>
-<a href="./posts/2015-11-07-introductions/index.html">
 <div class="listing-description">
-Well, this seems to be working. Kinda.
+<a href="./posts/2015-11-07-introductions/index.html" class="no-external">Well, this seems to be working. Kinda.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2015-11-07-introductions/index.html">
+<a href="./posts/2015-11-07-introductions/index.html" class="no-external">
 <div class="listing-date">
 November 7, 2015
 </div>
@@ -2077,10 +2084,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -2090,8 +2096,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -2104,6 +2119,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -2147,6 +2281,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -2172,6 +2307,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -2232,6 +2393,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

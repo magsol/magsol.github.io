@@ -6,23 +6,610 @@
       version="2.0">
 <channel>
 <title>Stochastic Stenography</title>
-<link>https://magsol.github.io/index.html</link>
+<link>https://magsol.github.io/</link>
 <atom:link href="https://magsol.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description>Data, donuts, and detours</description>
 <image>
 <url>https://magsol.github.io/images/logo.png</url>
 <title>Stochastic Stenography</title>
-<link>https://magsol.github.io/index.html</link>
+<link>https://magsol.github.io/</link>
 <height>144</height>
 <width>144</width>
 </image>
-<generator>quarto-1.3.450</generator>
-<lastBuildDate>Fri, 05 Jan 2024 19:45:00 GMT</lastBuildDate>
+<generator>quarto-1.4.549</generator>
+<lastBuildDate>Thu, 25 Jan 2024 19:09:00 GMT</lastBuildDate>
+<item>
+  <title>The Legend of Makar</title>
+  <dc:creator>Shannon Quinn</dc:creator>
+  <link>https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p><a href="makar.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/makar.jpg" class="preview-image img-fluid" alt="A picture of the Ubuntu landing screen for logged in users, on an ultrawide screen monitor set on a small desk."></a></p>
+<p>I built my first desktop from components when I was 15, a sophomore in high school. With the exception of my college workstation (laptops hadnt’t <em>quite</em> reached ubiquity yet), I’ve assembled every desktop I have ever owned since then.</p>
+<p>It’s a skill and a pasttime I deeply enjoy, but one which I don’t have the opportunity to explore very often. Even though “every desktop since age 15” sounds impressive, in real numbers it amounts to just a handful:</p>
+<ul>
+<li>age 15: my family’s home computer</li>
+<li>age 19: a server for my dorm room</li>
+<li>age 22: my graduate desktop</li>
+<li>age 25: the lab’s new workstation during a rotation (not mine, per se)</li>
+<li>age 29: my “first real job” home desktop</li>
+<li>now: the one in this blog post!</li>
+</ul>
+<p>There were certainly upgrades throughout that timeline—I swapped hard drives and memory in and out of that dorm server many times; my first “real job” desktop saw at least one GPU upgrade; my graduate desktop was a true exercise in frustration as I spent the first <em>two years</em> diagnosing an <a href="https://magsol.wordpress.com/2010/06/28/one-final-technical-appeal/">intermittent and nigh-irreproducible freezing</a>—but it’s actually rare I get brag to folks that I’m “assembling my new computer from parts.”</p>
+<p>So I figured: for this round, I’d go all out with full documentation in the form of a blog post 😁</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Long post ahead
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let the record show: the reader was warned of the length of the post that follows.</p>
+</div>
+</div>
+<section id="hardware" class="level3">
+<h3 class="anchored" data-anchor-id="hardware">Hardware</h3>
+<p>The first step in any desktop build: the hardware! I’ve been scoping out the major components off and on for over a year now, using resources like <a href="https://www.youtube.com/@GamersNexus">GamersNexus reviews</a> and <a href="https://www.tomshardware.com/">Tom’s Hardware</a> to get a feel for what CPUs / motherboards I should look into.</p>
+<p>As an example: I’d spent 11 of the past 12 months with the latest Intel processor locked in, but changed my mind at the [relative] last second when all the head-to-head CPU benchmarks showed the latest AMD Ryzen 9 processors going toe-to-toe with Intel on multithreaded applications (i.e., my work’s bread and butter). That, coupled with AMD’s <em>shocking</em> advantage in power draw and smaller advantage on price made it an immediate no-brainer to switch.</p>
+<p>For the curious, here’s the full list of hardware I ended up going with:</p>
+<ul>
+<li>CPU: <a href="https://www.newegg.com/amd-ryzen-9-7950x-ryzen-9-7000-series/p/N82E16819113771?Item=N82E16819113771">AMD Ryzen 9 7950X</a></li>
+<li>Cooler: <a href="https://www.newegg.com/deepcool-ak400-zero-dark-plus/p/N82E16835856230?Item=N82E16835856230">DeepCool AK400 Zero Dark Plus 120mm</a></li>
+<li>Motherboard: <a href="https://www.newegg.com/msi-mag-x670e-tomahawk-wifi/p/N82E16813144595?Item=N82E16813144595">MSI MAG X670E Tomahawk AM5 ATX</a></li>
+<li>Memory: <a href="https://www.newegg.com/g-skill-96gb/p/N82E16820374465?Item=N82E16820374465">G.SKILL Trident Z5 48GB 288-pin PC RAM DDR5 6800 PC5 54400</a> (4x)</li>
+<li>GPU: <a href="https://www.bestbuy.com/site/gigabyte-nvidia-geforce-rtx-4090-gaming-oc-24gb-gddr6x-pci-express-4-0-graphics-card-black/6521518.p">NVIDIA RTX 4090</a></li>
+<li>PSU: <a href="https://www.amazon.com/dp/B0B433ZCRP?psc=1&amp;ref=ppx_yo2ov_dt_b_product_details">MEG Ai1300P PCIE 5 1300W</a></li>
+<li>Storage: <a href="https://www.newegg.com/samsung-4gb-990-pro/p/N82E16820147878?Item=N82E16820147878">Samsung SSD 990 PRO 2TB M.2 2280</a> (2x)</li>
+<li>Case: <a href="https://www.newegg.com/black-fractal-design-torrent-atx-mid-tower/p/N82E16811352143?Item=N82E16811352143">Fractal Design Torrent Black E-ATX Mid Tower</a></li>
+<li>Monitor: <a href="https://www.amazon.com/gp/product/B088HH6LW5/ref=ppx_yo_dt_b_asin_title_o05_s00?ie=UTF8&amp;psc=1">Samsung 49-inch Odyssey G9</a></li>
+</ul>
+<p>To address the elephant in the room: no, this build was not cheap, at <em>all</em>. This is all top-of-the-line hardware, meant to 1) last a very long time, and 2) facilitate my kind of intensive number-crunching machine learning work. But I also put it together after having secured an agreement that my sabbatical employer<sup>1</sup> would kick in a small amount, too.</p>
+<p>There are all kinds of additional considerations I went through—you’re probably asking, why only M.2 drives? believe me, that was a whole thing, but oddly kinda boiled down to “supply chain problems, lol”—so I’m happy to get into it offline.</p>
+<p>But for now, let’s jump into assembly!</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="clear_desk.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2" title="My workspace for assembly. Thanks, Gamers Nexus!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/clear_desk.jpg" class="img-fluid figure-img" alt="A clear desk space with a Gamers Nexus antistatic mat."></a></p>
+<figcaption>My workspace for assembly. Thanks, Gamers Nexus!</figcaption>
+</figure>
+</div>
+</section>
+<section id="unboxing-and-assembly" class="level3">
+<h3 class="anchored" data-anchor-id="unboxing-and-assembly">Unboxing and Assembly</h3>
+<p>Once I had all the components (this was also a Whole Thing<sup>TM</sup>), it took me about 3 days to put everything together. That’s actually a record—the longest it had taken me to assemble a desktop had previous been <em>3 hours</em>. I don’t really know what to chalk that discrepancy up to. Maybe rustiness (it’s been almost a decade since my last full build)? Reverence (I love doing this so much, I want to soak it up)? Nerves (first time building an AMD machine since the dorm room server)?</p>
+<p>General fatigue?<sup>2</sup></p>
+<p>Anyway.</p>
+<p>I started with the case. It came highly recommended through Gamers Nexus, especially for custom cooling. I’ve always dreamed of a fully water-cooled rig, but as the time to finalize the build crept closer, I decided to stick with a traditional air-cooled setup. This case was great in that it lets me do either but defaults to an excellent air-cooled configuration.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[[1, 1], [1, 1]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="case/box_case.jpg" class="lightbox" data-gallery="case" data-glightbox="description: .lightbox-desc-3" title="Unboxing the case."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/case/box_case.jpg" class="img-fluid figure-img" alt="Unboxing the case."></a></p>
+<figcaption>Unboxing the case.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="case/case1.jpg" class="lightbox" data-gallery="case" data-glightbox="description: .lightbox-desc-4" title="I love the plexiglass covers: easy to remove, but also great for seeing inside."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/case/case1.jpg" class="img-fluid figure-img" alt="I love the plexiglass covers: easy to remove, but also great for seeing inside."></a></p>
+<figcaption>I love the plexiglass covers: easy to remove, but also great for seeing inside.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="case/case2.jpg" class="lightbox" data-gallery="case" data-glightbox="description: .lightbox-desc-5" title="Lots of airflow vents."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/case/case2.jpg" class="img-fluid figure-img" alt="Lots of airflow vents."></a></p>
+<figcaption>Lots of airflow vents.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="case/case3.jpg" class="lightbox" data-gallery="case" data-glightbox="description: .lightbox-desc-6" title="Lots and lots of fans."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/case/case3.jpg" class="img-fluid figure-img" alt="Lots and lots of fans."></a></p>
+<figcaption>Lots and lots of fans.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>Next were all the internal components. Since the case is really just a vehicle for the motherboard, which is really just a vehicle for <em>everything else</em>, I wanted to work my way from the inside out. Especially given the downright titanic proportions of the 4090, I wanted to assemble the motherboard as much as possible before slotting it into the case and losing a lot of physical wiggle room and visibility.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[[100], [50, 50]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="before_the_storm.jpg" class="lightbox" data-gallery="unboxing" data-glightbox="description: .lightbox-desc-7" title="All the internal components, unboxed from shipping but still in their retail boxes."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/before_the_storm.jpg" class="img-fluid figure-img" alt="All the internal components, unboxed from shipping but still in their retail boxes."></a></p>
+<figcaption>All the internal components, unboxed from shipping but still in their retail boxes.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="boxes.jpg" class="lightbox" data-gallery="unboxing" data-glightbox="description: .lightbox-desc-8" title="Everything arrived! Well, everything else arrived."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/boxes.jpg" class="img-fluid figure-img" alt="Everything arrived! Well, everything else arrived."></a></p>
+<figcaption>Everything arrived! Well, everything <em>else</em> arrived.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="boxes_internal_components.jpg" class="lightbox" data-gallery="unboxing" data-glightbox="description: .lightbox-desc-9" title="Just the internal components that go on the motherboard… minus the GPU."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/boxes_internal_components.jpg" class="img-fluid figure-img" alt="Just the internal components that go on the motherboard… minus the GPU."></a></p>
+<figcaption>Just the internal components that go on the motherboard… minus the GPU.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>The CPU and associated cooler were first. These were, thankfully, pretty straightforward. The only difference here from my prior experience with Intel was that AMD doesn’t seem to ship its CPUs with stock coolers; hence, I needed to get a custom one. Otherwise, everything slotted in exactly as I remembered.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[[100], [100], [50, 50], [50, 50], [50, 50]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="cpu/motherboard_unpack.jpg" class="lightbox" data-gallery="cpu" data-glightbox="description: .lightbox-desc-10" title="The motherboard is inside that antistatic wrap on the right. Zapping that with a small static discharge would be, ah, rather unfortunate!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/cpu/motherboard_unpack.jpg" class="img-fluid figure-img" alt="The motherboard is inside that antistatic wrap on the right. Zapping that with a small static discharge would be, ah, rather unfortunate!"></a></p>
+<figcaption>The motherboard is inside that antistatic wrap on the right. Zapping that with a small static discharge would be, ah, rather unfortunate!</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="cpu/motherboard.jpg" class="lightbox" data-gallery="cpu" data-glightbox="description: .lightbox-desc-11" title="The motherboard, in all its glory."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/cpu/motherboard.jpg" class="img-fluid figure-img" alt="The motherboard, in all its glory."></a></p>
+<figcaption>The motherboard, in all its glory.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="cpu/cpu_unbox.jpg" class="lightbox" data-gallery="cpu" data-glightbox="description: .lightbox-desc-12" title="The “brain” of the computer. I guess."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/cpu/cpu_unbox.jpg" class="img-fluid figure-img" alt="The “brain” of the computer. I guess."></a></p>
+<figcaption>The “brain” of the computer. I guess.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="cpu/cpu_box.jpg" class="lightbox" data-gallery="cpu" data-glightbox="description: .lightbox-desc-13" title="The CPU box is actually quite large, but that’s because 90% of it is this “pedestal foam.” I know it’s to keep things from getting jostled, but it just looks like a throne."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/cpu/cpu_box.jpg" class="img-fluid figure-img" alt="The CPU box is actually quite large, but that’s because 90% of it is this “pedestal foam.” I know it’s to keep things from getting jostled, but it just looks like a throne."></a></p>
+<figcaption>The CPU box is actually quite large, but that’s because 90% of it is this “pedestal foam.” I know it’s to keep things from getting jostled, but it just looks like a throne.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="cpu/motherboard_cpu_slot.jpg" class="lightbox" data-gallery="cpu" data-glightbox="description: .lightbox-desc-14" title="The slot on the motherboard where the CPU goes, with a plastic safety cover on it. You do NOT want to damage the pins underneath it!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/cpu/motherboard_cpu_slot.jpg" class="img-fluid figure-img" alt="The slot on the motherboard where the CPU goes, with a plastic safety cover on it. You do NOT want to damage the pins underneath it!"></a></p>
+<figcaption>The slot on the motherboard where the CPU goes, with a plastic safety cover on it. You do NOT want to damage the pins underneath it!</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="cpu/motherboard_cpu_install.jpg" class="lightbox" data-gallery="cpu" data-glightbox="description: .lightbox-desc-15" title="After removing the plastic cover and quadruple-checking the CPU alignment, it fit perfectly!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/cpu/motherboard_cpu_install.jpg" class="img-fluid figure-img" alt="After removing the plastic cover and quadruple-checking the CPU alignment, it fit perfectly!"></a></p>
+<figcaption>After removing the plastic cover and quadruple-checking the CPU alignment, it fit perfectly!</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="cpu/cpu_cooler.jpg" class="lightbox" data-gallery="cpu" data-glightbox="description: .lightbox-desc-16" title="The custom cooler I bought. Just slots right on top of the CPU."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/cpu/cpu_cooler.jpg" class="img-fluid figure-img" alt="The custom cooler I bought. Just slots right on top of the CPU."></a></p>
+<figcaption>The custom cooler I bought. Just slots right on top of the CPU.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="cpu/cpu_cooler_installed.jpg" class="lightbox" data-gallery="cpu" data-glightbox="description: .lightbox-desc-17" title="Everything fit! Yay!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/cpu/cpu_cooler_installed.jpg" class="img-fluid figure-img" alt="Everything fit! Yay!"></a></p>
+<figcaption>Everything fit! Yay!</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>Next up: memory (or RAM). I was originally going with just a single 2-pack of 48GB DIMMs for a total of 96GB, but my sabbatical employer insisted I max out the memory so I can work with 100+GB single images they have from clients.</p>
+<p>That entailed a bit more research on my part on AMD-compatible motherboards to learn what their RAM limits were. I found one with 192GB as its upper limit: hence that motherboard, and hence why I have so much RAM!</p>
+<p>I think I enjoy installing RAM the most: there are no moving parts, other than the clips on the motherboard itself that very helpfully “click” when you have properly seated the memory. It’s very satisfying.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[[100], [50, 50]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="ram/motherboard_memory.jpg" class="lightbox" data-gallery="ram" data-glightbox="description: .lightbox-desc-18" title="The four RAM chips in the plastic on the right go in the four motherboard slots in front of the CPU on the left."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/ram/motherboard_memory.jpg" class="img-fluid figure-img" alt="The four RAM chips in the plastic on the right go in the four motherboard slots in front of the CPU on the left."></a></p>
+<figcaption>The four RAM chips in the plastic on the right go in the four motherboard slots in front of the CPU on the left.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="ram/motherboard_dimms.jpg" class="lightbox" data-gallery="ram" data-glightbox="description: .lightbox-desc-19" title="If you ever have fewer DIMMs than motherboard slots, look for a schematic like this that tells you which slots you should install RAM in first."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/ram/motherboard_dimms.jpg" class="img-fluid figure-img" alt="If you ever have fewer DIMMs than motherboard slots, look for a schematic like this that tells you which slots you should install RAM in first."></a></p>
+<figcaption>If you ever have fewer DIMMs than motherboard slots, look for a schematic like this that tells you which slots you should install RAM in first.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="ram/motherboard_memory_installed.jpg" class="lightbox" data-gallery="ram" data-glightbox="description: .lightbox-desc-20" title="Everything fit! Yay!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/ram/motherboard_memory_installed.jpg" class="img-fluid figure-img" alt="Everything fit! Yay!"></a></p>
+<figcaption>Everything fit! Yay!</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>At this point, I <em>should have</em> installed the storage devices. But for reasons lost to the passage of time, I didn’t. Instead, I installed the motherboard into the case.</p>
+<p>Part of my rationale, I think, was that I knew I couldn’t install the GPU until the motherboard was seated in the case; the GPU was just too big to be installed without the support of the case itself. I also knew some of the M.2 slots were <em>under</em> the GPU; this created some uncertainty about whether the GPU would actually sit correctly if an M.2 device was installed directly under it. My priority here was the GPU—it was so large, it could only fit in one of two slots, and of those two only one was honestly preferable—and to seat the GPU, I needed to install the motherboard into the case.</p>
+<p>All in all, motherboard installation is pretty easy: just put the motherboard in the case and carefully screw it down. If the screw holes in the motherboard don’t align with the struts in the case, then something has gone horribly wrong and you should stop.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[[1, 1]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="mobo/motherboard_installed1.jpg" class="lightbox" data-gallery="mobo" data-glightbox="description: .lightbox-desc-21" title="Everything fit! Yay!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/mobo/motherboard_installed1.jpg" class="img-fluid figure-img" alt="Everything fit! Yay!"></a></p>
+<figcaption>Everything fit! Yay!</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="mobo/motherboard_installed2.jpg" class="lightbox" data-gallery="mobo" data-glightbox="description: .lightbox-desc-22" title="Everything still fits! Yay!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/mobo/motherboard_installed2.jpg" class="img-fluid figure-img" alt="Everything still fits! Yay!"></a></p>
+<figcaption>Everything still fits! Yay!</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>For one final diversion before the monstrosity that is the GPU, I installed the PSU, aka the power supply. Given that wholly <em>half</em> the power supply’s capacity is going to the GPU, I knew I needed something relatively beefy, hence the 1300W monster PSU. But I also knew I wouldn’t have very many other components that needed direct power.</p>
+<p>So a <em>modular</em> PSU was key: one with lots of outlets for potential devices, but whose cords could be disconnected and removed when not needed so as not to clog up the inside of the case with unplugged power cables.</p>
+<p>Another reason I love this case is because, at a time when most cases now put the PSU somewhere in the bottom, this case puts the PSU at the <em>top</em>, and even “slightly outside” the case itself! There’s a panel that pops off where the PSU sits, and the cables are then snaked through an opening to the rest of the case for added compartmentalization. It’s quite nice.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[[50, 50], [33, 33, 33]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="psu/psu.jpg" class="lightbox" data-gallery="psu" data-glightbox="description: .lightbox-desc-23" title="That’s the PSU."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/psu/psu.jpg" class="img-fluid figure-img" alt="That’s the PSU."></a></p>
+<figcaption>That’s the PSU.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="psu/case_slot_for_psu.jpg" class="lightbox" data-gallery="psu" data-glightbox="description: .lightbox-desc-24" title="Once you pop the top cover off the case, you can see the divot where the PSU fits."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/psu/case_slot_for_psu.jpg" class="img-fluid figure-img" alt="Once you pop the top cover off the case, you can see the divot where the PSU fits."></a></p>
+<figcaption>Once you pop the top cover off the case, you can see the divot where the PSU fits.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="psu/case_with_psu.jpg" class="lightbox" data-gallery="psu" data-glightbox="description: .lightbox-desc-25" title="Fits like a glove!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/psu/case_with_psu.jpg" class="img-fluid figure-img" alt="Fits like a glove!"></a></p>
+<figcaption>Fits like a glove!</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="psu/psu_cables1.jpg" class="lightbox" data-gallery="psu" data-glightbox="description: .lightbox-desc-26" title="Literal bags’ worth of cables, depending on my hardware."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/psu/psu_cables1.jpg" class="img-fluid figure-img" alt="Literal bags’ worth of cables, depending on my hardware."></a></p>
+<figcaption>Literal bags’ worth of cables, depending on my hardware.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="psu/psu_cables2.jpg" class="lightbox" data-gallery="psu" data-glightbox="description: .lightbox-desc-27" title="Here are cables that will provide core power to the motherboard."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/psu/psu_cables2.jpg" class="img-fluid figure-img" alt="Here are cables that will provide core power to the motherboard."></a></p>
+<figcaption>Here are cables that will provide core power to the motherboard.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>Alright. Couldn’t ignore the <a href="https://www.artstation.com/artwork/m85BXZ">Demon King in the Depths</a> any longer. Time to install the GPU.</p>
+<p>I knew this thing would be huge going in, but I was still shocked, and I say this as a still-owner of a venerable 1080 Ti. This thing spans the volume of nearly 3x 1080s. It’s absolutely insane. And yet, still <em>technically</em> only takes the space of 2 PCI devices.</p>
+<p>Suffice to say, I made absolutely certain before purchasing that all the measurements fit what I had to work with. For a component that was almost half the entire monetary AND eletrical budgets of this build, this was the one I wanted to get right the first time.</p>
+<p>Actual installation was a snap, as it has been ever since the advent of separate GPUs. But it seriously felt like plugging an Apollo command module into a 120V home garage outlet.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[[100], [33, 33, 33], [33, 33, 33]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="gpu/gpu_box_case.jpg" class="lightbox" data-gallery="gpu" data-glightbox="description: .lightbox-desc-28" title="Here we go."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/gpu/gpu_box_case.jpg" class="img-fluid figure-img" alt="Here we go."></a></p>
+<figcaption>Here we go.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="gpu/gpu_unboxed1.jpg" class="lightbox" data-gallery="gpu" data-glightbox="description: .lightbox-desc-29" title="Unboxing the beast."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/gpu/gpu_unboxed1.jpg" class="img-fluid figure-img" alt="Unboxing the beast."></a></p>
+<figcaption>Unboxing the beast.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="gpu/gpu_unboxed2.jpg" class="lightbox" data-gallery="gpu" data-glightbox="description: .lightbox-desc-30" title="I could barely hold this with one hand."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/gpu/gpu_unboxed2.jpg" class="img-fluid figure-img" alt="I could barely hold this with one hand."></a></p>
+<figcaption>I could barely hold this with one hand.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="gpu/gpu_unboxed3.jpg" class="lightbox" data-gallery="gpu" data-glightbox="description: .lightbox-desc-31" title="My already-oversized DumbRunner coffee mug for scale."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/gpu/gpu_unboxed3.jpg" class="img-fluid figure-img" alt="My already-oversized DumbRunner coffee mug for scale."></a></p>
+<figcaption>My already-oversized <a href="https://dumbrunner.threadless.com/designs/1-dad-in-age-group/accessories/mug/standard">DumbRunner coffee mug</a> for scale.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="gpu/gpu_installed.jpg" class="lightbox" data-gallery="gpu" data-glightbox="description: .lightbox-desc-32" title="In the immortal words of my dad’s dad: “It FITS. JUST. FINE.”"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/gpu/gpu_installed.jpg" class="img-fluid figure-img" alt="In the immortal words of my dad’s dad: “It FITS. JUST. FINE.”"></a></p>
+<figcaption>In the immortal words of my dad’s dad: “It FITS. JUST. FINE.”</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="gpu/gpu_old_psu_cables.jpg" class="lightbox" data-gallery="gpu" data-glightbox="description: .lightbox-desc-33" title="If you have an older-style PSU, you’ll need no fewer than FOUR ATX CABLES to power this monster (technically three, but four is recommended)."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/gpu/gpu_old_psu_cables.jpg" class="img-fluid figure-img" alt="If you have an older-style PSU, you’ll need no fewer than FOUR ATX CABLES to power this monster (technically three, but four is recommended)."></a></p>
+<figcaption>If you have an older-style PSU, you’ll need no fewer than FOUR ATX CABLES to power this monster (technically three, but four is recommended).</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="gpu/gpu_new_psu_cables.jpg" class="lightbox" data-gallery="gpu" data-glightbox="description: .lightbox-desc-34" title="If instead you have a newer PSU, you’ll have access to a single cable that supplies variable wattage, averaging 600W."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/gpu/gpu_new_psu_cables.jpg" class="img-fluid figure-img" alt="If instead you have a newer PSU, you’ll have access to a single cable that supplies variable wattage, averaging 600W."></a></p>
+<figcaption>If instead you have a newer PSU, you’ll have access to a single cable that supplies variable wattage, averaging 600W.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>Whew.</p>
+<p>The penultimate hardware step was the two M.2 SSDs. These are the latest in long-term flash storage (NVMe drives) that plug <em>directly</em> into the motherboard for absolutely insane transfer speeds. They’re ideal for—you guessed it—data-intensive computing.</p>
+<p>But their positioning wasn’t ideal: two of the motherboard’s four slots were directly under the GPU, and I wasn’t certain the GPU would fit properly if I installed an M.2 under it.</p>
+<p>The short version is: the GPU actually fit just fine, but the M.2s themselves didn’t play nice with the arrangement of the motherboard’s southbridge. Fortunately I found a configuration that worked, but this part took a ton of swearing and <em>over an hour</em> of trial-and-error before I finally got everything seated.</p>
+<p>The next hard drive will be a standard 2.5” SSD, mmk thx bai.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[[1, 1, 1]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="nvme/nvme_boxes.jpg" class="lightbox" data-gallery="nvme" data-glightbox="description: .lightbox-desc-35" title="Storage unboxing."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/nvme/nvme_boxes.jpg" class="img-fluid figure-img" alt="Storage unboxing."></a></p>
+<figcaption>Storage unboxing.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="nvme/nvme_unboxed1.jpg" class="lightbox" data-gallery="nvme" data-glightbox="description: .lightbox-desc-36" title="These things are TEENY."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/nvme/nvme_unboxed1.jpg" class="img-fluid figure-img" alt="These things are TEENY."></a></p>
+<figcaption>These things are TEENY.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="nvme/nvme_installed2.jpg" class="lightbox" data-gallery="nvme" data-glightbox="description: .lightbox-desc-37" title="Slotted into two motherboard slots (GPU not shown)."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/nvme/nvme_installed2.jpg" class="img-fluid figure-img" alt="Slotted into two motherboard slots (GPU not shown)."></a></p>
+<figcaption>Slotted into two motherboard slots (GPU not shown).</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>The last bit of the hardware was to wire everything up! In particular: the motherboard, CPU cooler, case fans, and GPU all needed to be connected directly to the PSU for power.</p>
+<p>This is always, in my opinion, the most tedious part of any build. Snaking wires throughout the inside of the case always results in snarls and makes any future work (fixing problems, upgrading hardware) tricky at best. Many cases in the last decade have “cable management” pathways built-in to help with this, but it still comes down to the human to make it happen. And it’s annoying at best.</p>
+<p>In this case, I did… ok. Well enough.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[[1, 1]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="wires/internal_wiring.jpg" class="lightbox" data-gallery="wiring" data-glightbox="description: .lightbox-desc-38" title="These pathways are along the “bottom” of the motherboard, so most of the wiring can be kept hidden and out of the way of the main components."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/wires/internal_wiring.jpg" class="img-fluid figure-img" alt="These pathways are along the “bottom” of the motherboard, so most of the wiring can be kept hidden and out of the way of the main components."></a></p>
+<figcaption>These pathways are along the “bottom” of the motherboard, so most of the wiring can be kept hidden and out of the way of the main components.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="wires/internal_installed.jpg" class="lightbox" data-gallery="wiring" data-glightbox="description: .lightbox-desc-39" title="Everything (except the GPU) is plugged into the PSU."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/wires/internal_installed.jpg" class="img-fluid figure-img" alt="Everything (except the GPU) is plugged into the PSU."></a></p>
+<figcaption>Everything (except the GPU) is plugged into the PSU.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>Ok! Everything is installed! What happens next?!</p>
+</section>
+<section id="boot-up-and-software" class="level3">
+<h3 class="anchored" data-anchor-id="boot-up-and-software">Boot-up and Software</h3>
+<p>We’ve got our build! And she’s gorgeous 😍</p>
+<p>Now, the moment of truth: booting up and installing an operating system. Or, in this case, two: I wanted to install Ubuntu (22.04 at time of post) on one of the M.2s, and Windows (11) on the other.</p>
+<p>I started with Ubuntu.</p>
+<p>I don’t know about other linux distributions—I’ve been on the Ubuntu train ever since Red Hat went corporate, and frankly haven’t had a reason to look back or sideways—but Ubuntu has always been relatively straightforward when it comes to install:</p>
+<ol type="1">
+<li>Create a boot disk (usually a USB disk).</li>
+<li>Boot off the disk</li>
+<li>Profit!</li>
+</ol>
+<p>Step 2 is always the tricky part, especially on a new build: I never know which function key brings up the boot order 🥴 (spoiler alert: it’s F11)</p>
+<p>Once I hit the right sequence of keys, the rest of the process was pretty much point and click. Boom! I had Ubuntu installed!</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[[50, 50], [100]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="ubuntu/turn_on.jpg" class="lightbox" data-gallery="ubuntu" data-glightbox="description: .lightbox-desc-40" title="The first power-up! So much suspense!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/ubuntu/turn_on.jpg" class="img-fluid figure-img" alt="The first power-up! So much suspense!"></a></p>
+<figcaption>The first power-up! So much suspense!</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="ubuntu/turned_on.jpg" class="lightbox" data-gallery="ubuntu" data-glightbox="description: .lightbox-desc-41" title="SHE LIVES. You can tell by the lights."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/ubuntu/turned_on.jpg" class="img-fluid figure-img" alt="SHE LIVES. You can tell by the lights."></a></p>
+<figcaption>SHE LIVES. You can tell by the lights.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="ubuntu/ubuntu_install.jpg" class="lightbox" data-gallery="ubuntu" data-glightbox="description: .lightbox-desc-42" title="The Ubuntu installer screen! Things are working!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/ubuntu/ubuntu_install.jpg" class="img-fluid figure-img" alt="The Ubuntu installer screen! Things are working!"></a></p>
+<figcaption>The Ubuntu installer screen! Things are working!</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>Next up: Windows.</p>
+<p>Getting Windows 11 installed, relative to Ubuntu, was a <em>giant pain</em>. In the intervening years, Mircrosoft seems to have gone the route of “install now, license later”—which, honestly, I appreciate—and has provided multiple pathways for creating an installer.</p>
+<p>Unfortunately, only one of those pathways seems to <em>actually work</em>. I initially went the ISO route, since that’s pretty much equivalent to how I installed Ubuntu.</p>
+<p>But that didn’t work. And, weirdly, the internet doesn’t seem to know why. The best hint I found came from <a href="https://answers.microsoft.com/en-us/windows/forum/all/no-device-drivers-were-found-tried-everything-w11/a53aa16b-5d4c-4f8a-abc6-e5106152a220">this forum post</a>, which seems to suggest that AMD-specific drivers <em>aren’t included</em> in the ISO installer, thereby making install via ISO on an AMD system… well, impossible.</p>
+<p>There were no details on this “include AMD drivers during the install” procedure, and by this point I’d run out of patience (I’d tried multiple sub-pathways, even and including installing Windows <em>10</em> instead; all the same result).</p>
+<p>So I went with the one procedure the internet seemed to agree would always work: “get a friend with a Windows PC and run the media installer that only works on Windows.” Yes this is an actual piece of advice on an actual Microsoft forum. Since the media installer option <em>only</em> runs on Windows, you’re in this weird Twilight Zone of needing a Windows computer in order to install Windows on a computer.</p>
+<p>Mmk.</p>
+<p>This worked, finally. Of course, that was just the warm-up; the install process itself is “<a href="https://exple.tive.org/blarg/2023/12/07/polished-glass/">a disaster from stem to stern</a>.” Thankfully, following that guide helped to minimize the worst of the creeping Windows enshittification. A few important points:</p>
+<ul>
+<li>Definitely <a href="https://answers.microsoft.com/en-us/insider/forum/all/set-up-windows-11-without-internet-oobebypassnro/4fc44554-b416-4ecb-8961-6f79fd55ae0f">create a local account</a>. It requires <em>pulling out your ethernet cable</em> and running a shell command, but it’s reasonably straightforward.</li>
+<li>For my US readers: you may also want to select “Global English” rather than “US English” in the language selection step, as this apparently eliminates some awfulness in the start-up screen.</li>
+<li>The guide mentions widgets in the traditional “Start” button location. That was the case for me too, but I don’t think I actually flipped any “Personalization” switches before realizing the Start menu was back where it should be. Not sure what I did, but at least initially that was definitely the case for me, so watch out.</li>
+</ul>
+<p>At this point, we picked up a Windows license and a couple Office licenses from a friend of the family for some steep discounts (that was awfully nice), so I could unlock the power of this <a href="https://i.makeagif.com/media/10-03-2016/hfPN-9.gif">fully armed and operational</a> Windows 11.</p>
+</section>
+<section id="whats-next" class="level3">
+<h3 class="anchored" data-anchor-id="whats-next">What’s next?</h3>
+<p>That’s about it—a complete build from components, up to installing two operating systems. So what’s next?</p>
+<p>Well, the first thing was to give it a name! I struggled with this for a bit. On one hand, I’d only just finished <em>Tears of the Kingdom</em> in late December (yeah, I intentionally sandbagged, savoring the final stages). But on the other hand, most of the devices in my house already have <em>Zelda</em>-themed names.</p>
+<p>(Devices that have a <em>Zelda</em>-themed name: 1 of 2 laptops, 2 of 2 smartphones, 1 of 2 iPads, 7 of 8 Raspberry Pis, 1 NAS, and now 1 desktop. WOW, y’all.)</p>
+<p>But! In a conversation over Mastodon, I was reminded that this isn’t really a bad thing.</p>
+<p></p><div style="position: relative; padding-bottom: 56.25%; height: 0;"> <iframe src="https://fosstodon.org/@jni/111730083884821265/embed" class="mastodon-embed" style="max-width: 100%; border: 0;" width="100%" height="400" allowfullscreen="allowfullscreen"></iframe><script src="https://mastodon.social/embed.js" async="async"></script></div> <p></p>
+<p>So I took the first name that came to mind that seemed incredibly appropriate: <a href="https://zelda.fandom.com/wiki/Makar">Makar, the ancient Sage of Wind</a>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://static.wikia.nocookie.net/zelda_gamepedia_en/images/b/b0/TWW_Makar_Artwork.png" class="lightbox" data-gallery="quarto-lightbox-gallery-43" data-glightbox="description: .lightbox-desc-43" title="Makar, in his element."><img src="https://static.wikia.nocookie.net/zelda_gamepedia_en/images/b/b0/TWW_Makar_Artwork.png" class="img-fluid figure-img" alt="Makar, in his element."></a></p>
+<figcaption>Makar, in his element.</figcaption>
+</figure>
+</div>
+<p>From there, it’s been a matter of configuring two full-blown operating systems. Ubuntu is pretty much the workhorse: that’s where I’ll make heavy use of the GPU. I’ve already installed all the CUDA dependencies and a Python environment with the basic setup, and thanks to the M.2 drives I have plenty of speedy storage for large datasets. On the Windows side, this is indeed for gaming, but also for office productivity (especially if I don’t have my laptop handy). Most of these basics are in place, but it’ll be an ongoing process.</p>
+<p>In the meantime, I have some n@zis to mow down in <em>Wolfenstein</em> and some segmentation models to run on spatial omics data. Until next time!</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="full_install.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-44" data-glightbox="description: .lightbox-desc-44" title="Beautiful. Absolutely stunning."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/full_install.jpg" class="img-fluid figure-img" alt="Beautiful. Absolutely stunning."></a></p>
+<figcaption>Beautiful. Absolutely stunning.</figcaption>
+</figure>
+</div>
+
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>I swear, there’s a post coming about this. Sometime.↩︎</p></li>
+<li id="fn2"><p>I built this in my second week of sabbatical. The first week was a veritable <em>fire hose</em> from which I was struggling to surface. That, plus the general post-holiday malaise, plus university stuff still demanding my attention… yeah this is probably the best answer.↩︎</p></li>
+</ol>
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2024,
+  author = {Quinn, Shannon},
+  title = {The {Legend} of {Makar}},
+  date = {2024-01-25},
+  url = {https://magsol.github.io/2024-01-25-the-legend-of-makar},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2024" class="csl-entry quarto-appendix-citeas">
+Quinn, Shannon. 2024. <span>“The Legend of Makar.”</span> January 25,
+2024. <a href="https://magsol.github.io/2024-01-25-the-legend-of-makar">https://magsol.github.io/2024-01-25-the-legend-of-makar</a>.
+</div></div></section></div> ]]></description>
+  <category>personal</category>
+  <category>professional</category>
+  <category>news</category>
+  <category>makar</category>
+  <guid>https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/</guid>
+  <pubDate>Thu, 25 Jan 2024 19:09:00 GMT</pubDate>
+  <media:content url="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/makar.jpg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>2023: A year of extremes</title>
   <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2024-01-05-a-year-of-extremes/index.html</link>
+  <link>https://magsol.github.io/posts/2024-01-05-a-year-of-extremes/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -44,7 +631,7 @@
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2024-01-05-a-year-of-extremes/running_yearoveryear.png" class="img-fluid figure-img" alt="A screenshot from a Garmin Connect progress report, showing huge running mileage increases in 2023 relative to 2022 and 2021."></p>
-<figcaption class="figure-caption">A Garmin Connect annual mileage summary. The second column is number of runs, third column is total annual mileage, and the last column is average milege per run.</figcaption>
+<figcaption>A Garmin Connect annual mileage summary. The second column is number of runs, third column is total annual mileage, and the last column is average milege per run.</figcaption>
 </figure>
 </div>
 <p>My own health improved dramatically over the course of the year (especially after being kicked while down by getting COVID on the evening of December 31, 2022): not only did my labs empirically show this improvement at my end-of-year physical, but my two half marathons this year were separated by 6 months (April and October) and by <em>20 minutes</em> (<a href="https://track.rtrt.me/e/DMP-SAVWHALF-2023#/tracker/RW4KTAP2">2:31</a> in April, <a href="https://results.raceroster.com/v2/en-US/results/cbqshhkjvt39snge/detail/egpe264973f6ynms">2:12</a> in October). Both still technically rank among my slowest half marathon finishing times, but the trend is so, so encouraging.</p>
@@ -104,7 +691,7 @@
 <li id="fn2"><p>What can I say? The past few years have been a <em>marathon</em>.↩︎</p></li>
 <li id="fn3"><p>I have an entire draft written about my issues with academia at the institutional, state, and local levels, but I don’t know when, or even if, I’ll post it; if you want to talk about it though, I’m happy to.↩︎</p></li>
 </ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2024,
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2024,
   author = {Quinn, Shannon},
   title = {2023: {A} Year of Extremes},
   date = {2024-01-05},
@@ -119,15 +706,16 @@ Quinn, Shannon. 2024. <span>“2023: A Year of Extremes.”</span> January
   <category>professional</category>
   <category>news</category>
   <category>new year</category>
-  <guid>https://magsol.github.io/posts/2024-01-05-a-year-of-extremes/index.html</guid>
+  <guid>https://magsol.github.io/posts/2024-01-05-a-year-of-extremes/</guid>
   <pubDate>Fri, 05 Jan 2024 19:45:00 GMT</pubDate>
   <media:content url="https://magsol.github.io/posts/2024-01-05-a-year-of-extremes/landscape.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Advent of Adventure</title>
   <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2023-12-08-advent-of-adventure/index.html</link>
+  <link>https://magsol.github.io/posts/2023-12-08-advent-of-adventure/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -138,7 +726,7 @@ Quinn, Shannon. 2024. <span>“2023: A Year of Extremes.”</span> January
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2023-12-08-advent-of-adventure/milky_way.jpg" class="img-fluid figure-img" alt="A nighttime shot of the stars, including a faintly-visible Milky Way."></p>
-<figcaption class="figure-caption">It’s tough to see, not the least of which because of iPhone 15’s aggressive low-light compensation, but the Milky Way is visible from the left-middle almost to the branches of the tree.</figcaption>
+<figcaption>It’s tough to see, not the least of which because of iPhone 15’s aggressive low-light compensation, but the Milky Way is visible from the left-middle almost to the branches of the tree.</figcaption>
 </figure>
 </div>
 <p>I’ve felt guilty—for many reasons; there’s never a shortage, but in this case because I’d originally wanted to participate in this year’s <a href="https://adventofcode.com/">Advent of Code</a>. I was introduced to it two years ago, too late to finish it completely, but at the time I enjoyed it. Last year I was too burned out to get more than a few days in, so I was feeling particularly motivated this year.</p>
@@ -153,7 +741,7 @@ Quinn, Shannon. 2024. <span>“2023: A Year of Extremes.”</span> January
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2023-12-08-advent-of-adventure/retropie_open.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">An open view of the Pi inside the SNES enclosure, complete with a fan.</figcaption>
+<figcaption>An open view of the Pi inside the SNES enclosure, complete with a fan.</figcaption>
 </figure>
 </div>
 <p>A few other minor changes from last time: now I had a <a href="https://www.canakit.com/raspberry-pi4-retro-gaming-case.html">cool mini-SNES enclosure</a> for the Pi, which came with room for a single fan to help keep things cool. I was pretty sure the fan was overkill, but I figured, what the heck. I also actually wired the Pi to ethernet, rather than relying on wifi like last time. It took a little bit of adjusting, but it was a change I’d wanted to make to our home network backbone anyway.</p>
@@ -161,7 +749,7 @@ Quinn, Shannon. 2024. <span>“2023: A Year of Extremes.”</span> January
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2023-12-08-advent-of-adventure/retropie.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">The SNES enclosure, with power and ethernet cables plugged in.</figcaption>
+<figcaption>The SNES enclosure, with power and ethernet cables plugged in.</figcaption>
 </figure>
 </div>
 <p>I did still run into some issues with getting the <a href="https://retropie.org.uk/docs/Nintendo-Switch-Controllers/">Nintendo Switch Pro controller</a> working. Specifically, the Bluetooth: <a href="https://retropie.org.uk/forum/topic/34226/cannot-pair-nintendo-switch-pro-controller/7">this issue in the discussion forum</a> mirrored my problems exactly. I could turn on diagnostics for the Pi and see that it was detecting every single button press and stick movement, but for some reason those changes weren’t being propagated to the <a href="https://retropie.org.uk/docs/Controller-Configuration/">emulator software</a>.</p>
@@ -179,13 +767,13 @@ Quinn, Shannon. 2024. <span>“2023: A Year of Extremes.”</span> January
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2023-12-08-advent-of-adventure/heralds_medieval.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">The 10 Heralds, depicted in a medieval oil painting style.</figcaption>
+<figcaption>The 10 Heralds, depicted in a medieval oil painting style.</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2023-12-08-advent-of-adventure/heralds_medieval2.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">A second attempt at the same image.</figcaption>
+<figcaption>A second attempt at the same image.</figcaption>
 </figure>
 </div>
 <p>In both cases, you may notice… there are more than 10 individuals. I couldn’t find a way to <em>guarantee</em> the number I was asking for, as you’ll see.</p>
@@ -193,7 +781,7 @@ Quinn, Shannon. 2024. <span>“2023: A Year of Extremes.”</span> January
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2023-12-08-advent-of-adventure/heralds_lego.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">The 10 Heralds as LEGO heroes.</figcaption>
+<figcaption>The 10 Heralds as LEGO heroes.</figcaption>
 </figure>
 </div>
 <p>Again, it <em>seems</em> as though there are 11 people? And what’s with the bird motif, suddenly? I said nothing about birds.</p>
@@ -201,14 +789,14 @@ Quinn, Shannon. 2024. <span>“2023: A Year of Extremes.”</span> January
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2023-12-08-advent-of-adventure/heralds_avengers.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">The 10 Heralds as the Avengers.</figcaption>
+<figcaption>The 10 Heralds as the Avengers.</figcaption>
 </figure>
 </div>
 <p>Again, I count 11 individuals, with no fewer than three wearing Iron Man-like powered suits. You can’t <em>all</em> be Iron Man!</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2023-12-08-advent-of-adventure/heralds_avengers2.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">The 10 Heralds as the Avengers, again.</figcaption>
+<figcaption>The 10 Heralds as the Avengers, again.</figcaption>
 </figure>
 </div>
 <p>Once more, the weird bird motif shows up, despite no mention of birds in the prompt (or any part of the ChatGPT discussion thread). There also only seem to be 9? And Captain America’s shield is just… floating there. I do love that Iron Spider suit, though; I wonder which Herald that is.</p>
@@ -216,7 +804,7 @@ Quinn, Shannon. 2024. <span>“2023: A Year of Extremes.”</span> January
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2023-12-08-advent-of-adventure/heralds_mordor.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">The 10 Heralds fighting demonic robots on a shattered landscape in a gritty world.</figcaption>
+<figcaption>The 10 Heralds fighting demonic robots on a shattered landscape in a gritty world.</figcaption>
 </figure>
 </div>
 <p>As far as I can tell, there are only 5 Heralds, but otherwise this picture is pretty cool. I love how Mordor-esque the landscape is, and even though the robot army bears no resemblance to anything in <em>Tears of the Kingdom</em>, it’s still pretty neat.</p>
@@ -224,7 +812,7 @@ Quinn, Shannon. 2024. <span>“2023: A Year of Extremes.”</span> January
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2023-12-08-advent-of-adventure/heralds_vs_guardians.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">The 10 Heralds fighting demonic spider-like robots on a shattered landscape in a gritty world.</figcaption>
+<figcaption>The 10 Heralds fighting demonic spider-like robots on a shattered landscape in a gritty world.</figcaption>
 </figure>
 </div>
 <p>Still only 9 Heralds as far as I can tell, and again the humanoid robots aren’t recognizable, BUT I <em>love</em> the giant arachnid enemies. I can definitely see that as an <em>Expanse</em>-ification of the classic <em>Breath of the Wild</em> <a href="https://zelda.fandom.com/wiki/Guardian">Guardians</a>.</p>
@@ -232,25 +820,25 @@ Quinn, Shannon. 2024. <span>“2023: A Year of Extremes.”</span> January
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2023-12-08-advent-of-adventure/jez_as_pres.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">A United States Presidential headshot of Jezrien, the leader of the Heralds.</figcaption>
+<figcaption>A United States Presidential headshot of Jezrien, the leader of the Heralds.</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2023-12-08-advent-of-adventure/kaladin_botw.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">A picture of Kaladin, one of the Knights Radiant, in the art style of Breath of the Wild.</figcaption>
+<figcaption>A picture of Kaladin, one of the Knights Radiant, in the art style of Breath of the Wild.</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2023-12-08-advent-of-adventure/roci_as_zonai.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">A depiction of the Rocinante, the Martian gunship from The Expanse, if it were engineered as a Zonai construct from Tears of the Kingdom.</figcaption>
+<figcaption>A depiction of the Rocinante, the Martian gunship from The Expanse, if it were engineered as a Zonai construct from Tears of the Kingdom.</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2023-12-08-advent-of-adventure/roci_in_hateno.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Another depiction of the Rocinante, this time showing it having landed in Hateno Village, in the art style of Breath of the Wild.</figcaption>
+<figcaption>Another depiction of the Rocinante, this time showing it having landed in Hateno Village, in the art style of Breath of the Wild.</figcaption>
 </figure>
 </div>
 <p>Each one of these deviates significantly from what I would have expected, which is not a problem per se. I would say that they do seem to have a tendency to gravitate toward certain modes, and it’s <em>really hard</em> to pull the image generators off those modes.</p>
@@ -267,7 +855,7 @@ Quinn, Shannon. 2024. <span>“2023: A Year of Extremes.”</span> January
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2023-12-08-advent-of-adventure/rae.jpg" class="img-fluid figure-img" alt="Two rae robots, with name tags on their tops: one says 'koume', the other says 'kotake'."></p>
-<figcaption class="figure-caption">Zelda fans, unite.</figcaption>
+<figcaption>Zelda fans, unite.</figcaption>
 </figure>
 </div>
 </section>
@@ -279,14 +867,14 @@ Quinn, Shannon. 2024. <span>“2023: A Year of Extremes.”</span> January
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2023-12-08-advent-of-adventure/coffee_shop_fireplace.jpg" class="img-fluid figure-img" alt="First-person perspective of the interior of a warm and cozy coffee shop, with a fireplace at one end. There's a coffee table in the middle, a decorated Christmas tree on the right, and other decorations are hung on the mantle. A painting of a reindeer is on the wall above the fireplace."></p>
-<figcaption class="figure-caption">More of this, please.</figcaption>
+<figcaption>More of this, please.</figcaption>
 </figure>
 </div>
 
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
   author = {Quinn, Shannon},
   title = {Advent of {Adventure}},
   date = {2023-12-08},
@@ -304,15 +892,16 @@ Quinn, Shannon. 2023. <span>“Advent of Adventure.”</span> December 8,
   <category>rae</category>
   <category>retropie</category>
   <category>dall-e</category>
-  <guid>https://magsol.github.io/posts/2023-12-08-advent-of-adventure/index.html</guid>
+  <guid>https://magsol.github.io/posts/2023-12-08-advent-of-adventure/</guid>
   <pubDate>Fri, 08 Dec 2023 15:01:00 GMT</pubDate>
   <media:content url="https://magsol.github.io/posts/2023-12-08-advent-of-adventure/heralds_mordor_full.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Rebuilding</title>
   <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2023-11-09-rebuilding/index.html</link>
+  <link>https://magsol.github.io/posts/2023-11-09-rebuilding/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -346,7 +935,7 @@ Warning
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2023-11-09-rebuilding/strava_fitness.png" class="img-fluid figure-img" alt="A line plot showing Strava's proprietary fitness indicator over the last calendary year. It increases sharply in March and April and remains there through the rest of the  year."></p>
-<figcaption class="figure-caption">Strava’s fitness proxy. Note the sustained levels for the past 6 months.</figcaption>
+<figcaption>Strava’s fitness proxy. Note the sustained levels for the past 6 months.</figcaption>
 </figure>
 </div>
 <p>It’s taken a long time, but:</p>
@@ -363,7 +952,7 @@ Warning
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2023-11-09-rebuilding/me_gym.jpg" class="img-fluid figure-img" alt="A picture of me in the middle of a weightlifting session, looking sweaty and tired and strong and self-conscious."></p>
-<figcaption class="figure-caption">Mid lift session photo.</figcaption>
+<figcaption>Mid lift session photo.</figcaption>
 </figure>
 </div>
 <p>Normally, I <em>hate</em> photos like this. Further, I don’t particularly like how I look. But I wanted to take this picture because, in the moment, I felt <em>strong</em> and <em>powerful</em>, sentiments I hadn’t felt toward myself in quite some time. It was one of the first times in years where I felt like I actually belonged in the weight room. I’ve only just started feeling like I belong with the other local runners, too.</p>
@@ -372,7 +961,7 @@ Warning
 
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
   author = {Quinn, Shannon},
   title = {Rebuilding},
   date = {2023-11-09},
@@ -388,15 +977,16 @@ Quinn, Shannon. 2023. <span>“Rebuilding.”</span> November 9, 2023. <a href="
   <category>weightlifting</category>
   <category>food</category>
   <category>health</category>
-  <guid>https://magsol.github.io/posts/2023-11-09-rebuilding/index.html</guid>
+  <guid>https://magsol.github.io/posts/2023-11-09-rebuilding/</guid>
   <pubDate>Thu, 09 Nov 2023 13:21:00 GMT</pubDate>
   <media:content url="https://magsol.github.io/posts/2023-11-09-rebuilding/athhalf_2023_finish.png" medium="image" type="image/png" height="216" width="144"/>
 </item>
 <item>
   <title>The Hero Of Everything</title>
   <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2023-07-30-hero-of-everything/index.html</link>
+  <link>https://magsol.github.io/posts/2023-07-30-hero-of-everything/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -436,7 +1026,7 @@ Quinn, Shannon. 2023. <span>“Rebuilding.”</span> November 9, 2023. <a href="
 
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
   author = {Quinn, Shannon},
   title = {The {Hero} {Of} {Everything}},
   date = {2023-07-30},
@@ -451,15 +1041,16 @@ Quinn, Shannon. 2023. <span>“The Hero Of Everything.”</span> July 30,
   <category>video games</category>
   <category>zelda</category>
   <category>tears of the kingdom</category>
-  <guid>https://magsol.github.io/posts/2023-07-30-hero-of-everything/index.html</guid>
+  <guid>https://magsol.github.io/posts/2023-07-30-hero-of-everything/</guid>
   <pubDate>Sun, 30 Jul 2023 14:25:00 GMT</pubDate>
   <media:content url="https://magsol.github.io/posts/2023-07-30-hero-of-everything/link_cece_hat.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Upgrading the Raspberry Pi Cluster</title>
   <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2023-07-10-upgrading-the-pi-cluster/index.html</link>
+  <link>https://magsol.github.io/posts/2023-07-10-upgrading-the-pi-cluster/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -517,7 +1108,7 @@ Note
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2023-07-10-upgrading-the-pi-cluster/poe_hat.jpg" class="img-fluid figure-img" alt="A stack of 6 PoE HAT boxes, waiting to be unboxed and installed, one per Raspberry Pi."></p>
-<figcaption class="figure-caption">How many HATs does one person need?</figcaption>
+<figcaption>How many HATs does one person need?</figcaption>
 </figure>
 </div>
 <p>What I didn’t mention is: there’s more to it than that. To power devices using PoE, you also need networking hardware that is PoE-compatible. This meant replacing my standard 6-port unmanaged switch with a PoE-compatible switch.</p>
@@ -527,14 +1118,14 @@ Note
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2023-07-10-upgrading-the-pi-cluster/rpis.jpg" class="img-fluid figure-img" alt="Six Raspberry Pi boards, all on the desk."></p>
-<figcaption class="figure-caption">So much pi(e).</figcaption>
+<figcaption>So much pi(e).</figcaption>
 </figure>
 </div>
 <p>With the Pi cluster itself out of the homemade rack, you can see the interior with all the rest of the cabling:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2023-07-10-upgrading-the-pi-cluster/rack_interior.jpg" class="img-fluid figure-img" alt="Interior shot of my homemade server rack, which is really just a wooden crate with some cut-outs for intake/exhaust fans and a clear plexiglass side for viewing. Inside the Raspberry Pi cluster has been removed, leaving the original 6-port switch, power brick, ethernet cables, power cables, and fan cables. So many cables."></p>
-<figcaption class="figure-caption">Cables cables everywhere but not an ounce of space.</figcaption>
+<figcaption>Cables cables everywhere but not an ounce of space.</figcaption>
 </figure>
 </div>
 <p>Yeah. It was pretty crowded, even without the little stack of 5 Raspberry Pi boards. Clearing some of that out via PoE sounded really, really good.</p>
@@ -542,14 +1133,14 @@ Note
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2023-07-10-upgrading-the-pi-cluster/single_pi.jpg" class="img-fluid figure-img" alt="A single Raspberry Pi 4B board, unmodified."></p>
-<figcaption class="figure-caption">A standard Raspberry Pi 4B.</figcaption>
+<figcaption>A standard Raspberry Pi 4B.</figcaption>
 </figure>
 </div>
 <p>And here’s what it looks like when I’ve installed a PoE HAT on it:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2023-07-10-upgrading-the-pi-cluster/pi_hat.jpg" class="img-fluid figure-img" alt="A single Raspberry Pi 4B board, now with a PoE HAT on it."></p>
-<figcaption class="figure-caption">A standard Raspberry Pi 4B, now with a PoE HAT on it.</figcaption>
+<figcaption>A standard Raspberry Pi 4B, now with a PoE HAT on it.</figcaption>
 </figure>
 </div>
 <p>As an aside: this adds a surprising amount of weight to the Pi! By itself it wasn’t all that noticeable, but once I’d re-stacked the Pi cluster, I was more than a little shocked by how much heavier it was! Something to keep in mind.</p>
@@ -559,21 +1150,21 @@ Note
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2023-07-10-upgrading-the-pi-cluster/rewired_fan.jpg" class="img-fluid figure-img" alt="A standard 5V Raspberry Pi case fan with its two cables connected to the corresponding power/ground wires inside a USB cable that has been cut open."></p>
-<figcaption class="figure-caption">Some minor surgery later and we have a USB powered fan!</figcaption>
+<figcaption>Some minor surgery later and we have a USB powered fan!</figcaption>
 </figure>
 </div>
 <p>I could now plug all five rack fans (three intake, two exhaust) directly into a new and smaller power brick, courtesy of some USB-to-outlet adapters to help further compress the size.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2023-07-10-upgrading-the-pi-cluster/power_brick.jpg" class="img-fluid figure-img" alt="A small Anker power brick with three standard outlets on the front, two of which have USB-to-outlet adapters plugged in, and each adapter has two USB ports. With two additional USB ports in the back, there are six USB outlets on the brick to power the five USB fans, and one standard outlet to power the PoE 8-port switch."></p>
-<figcaption class="figure-caption">There are two more USB outlets in the back of the brick.</figcaption>
+<figcaption>There are two more USB outlets in the back of the brick.</figcaption>
 </figure>
 </div>
 <p>All that was left at this point was to reassemble the Pi cluster. As I said, I was surprised by the sturdiness of six Pi boards with PoE HATs:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2023-07-10-upgrading-the-pi-cluster/full_cluster.jpg" class="img-fluid figure-img" alt="The reassembled Pi cluster, with six Raspberry Pi boards stacked up, each with a PoE HAT."></p>
-<figcaption class="figure-caption">Behold this fully armed and operational Pi cluster.</figcaption>
+<figcaption>Behold this fully armed and operational Pi cluster.</figcaption>
 </figure>
 </div>
 <p>It took several days’ worth of spare time to get everything together, but I’m proud to say that when I plugged the power brick into the wall, <em>every</em> single light and fan turned on all at once.</p>
@@ -589,7 +1180,7 @@ Note
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
   author = {Quinn, Shannon},
   title = {Upgrading the {Raspberry} {Pi} {Cluster}},
   date = {2023-07-10},
@@ -606,15 +1197,16 @@ July 10, 2023. <a href="https://magsol.github.io/2023-07-10-upgrading-the-pi-clu
   <category>k3s</category>
   <category>mastodon</category>
   <category>hardware</category>
-  <guid>https://magsol.github.io/posts/2023-07-10-upgrading-the-pi-cluster/index.html</guid>
+  <guid>https://magsol.github.io/posts/2023-07-10-upgrading-the-pi-cluster/</guid>
   <pubDate>Mon, 10 Jul 2023 21:52:00 GMT</pubDate>
   <media:content url="https://magsol.github.io/posts/2023-07-10-upgrading-the-pi-cluster/setup.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>This post is about burnout</title>
   <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2023-06-06-this-post-is-about-burnout/index.html</link>
+  <link>https://magsol.github.io/posts/2023-06-06-this-post-is-about-burnout/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -696,7 +1288,7 @@ Caution
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
   author = {Quinn, Shannon},
   title = {This Post Is about Burnout},
   date = {2023-06-06},
@@ -712,15 +1304,16 @@ Quinn, Shannon. 2023. <span>“This Post Is about Burnout.”</span> June 6,
   <category>burnout</category>
   <category>movies</category>
   <category>books</category>
-  <guid>https://magsol.github.io/posts/2023-06-06-this-post-is-about-burnout/index.html</guid>
+  <guid>https://magsol.github.io/posts/2023-06-06-this-post-is-about-burnout/</guid>
   <pubDate>Tue, 06 Jun 2023 22:05:00 GMT</pubDate>
   <media:content url="https://magsol.github.io/posts/2023-06-06-this-post-is-about-burnout/burnout.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
   <title>My thoughts ahead of Tears of the Kingdom</title>
   <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2023-05-09-thoughts-ahead-of-totk/index.html</link>
+  <link>https://magsol.github.io/posts/2023-05-09-thoughts-ahead-of-totk/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -737,7 +1330,7 @@ Quinn, Shannon. 2023. <span>“This Post Is about Burnout.”</span> June 6,
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2023-05-09-thoughts-ahead-of-totk/link_injured.jpg" class="img-fluid figure-img" alt="Screen capture from the latest trailer where Ganondorf's malice is damaging the Master Sword and injuring Link."></p>
-<figcaption class="figure-caption">This should literally not be possible.</figcaption>
+<figcaption>This should literally not be possible.</figcaption>
 </figure>
 </div>
 <p>It’s horrifying on multiple fronts. We know it happens sometime near the very beginning of the game (setting the stage for the whole thing), and we also know—one small tidbit of Zelda lore—that it <em>should not be in any way possible for the Master Sword to be damaged by evil. It just shouldn’t.</em> So the fact that it <em>is</em>, is truly terrifying on its own.</p>
@@ -751,7 +1344,7 @@ Quinn, Shannon. 2023. <span>“This Post Is about Burnout.”</span> June 6,
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2023-05-09-thoughts-ahead-of-totk/quake4_makron.png" class="img-fluid figure-img" alt="First-person screenshot of the first Makron fight from Quake 4."></p>
-<figcaption class="figure-caption">The Makron, from the player’s perspective.</figcaption>
+<figcaption>The Makron, from the player’s perspective.</figcaption>
 </figure>
 </div>
 </section>
@@ -764,7 +1357,7 @@ Quinn, Shannon. 2023. <span>“This Post Is about Burnout.”</span> June 6,
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2023-05-09-thoughts-ahead-of-totk/jedioutcast_kylevdesann.png" class="img-fluid figure-img" alt="Kyle versus Desann digital art, both characters locking lightsabers. Credit to [DeviantArt user wienernose](https://www.deviantart.com/wienernose/art/Kyle-Katarn-vs-Desann-758186366)."></p>
-<figcaption class="figure-caption">An artist’s depiction of the fight at the end of the game, where you actually stand a chance of winning.</figcaption>
+<figcaption>An artist’s depiction of the fight at the end of the game, where you actually stand a chance of winning.</figcaption>
 </figure>
 </div>
 </section>
@@ -783,7 +1376,7 @@ Quinn, Shannon. 2023. <span>“This Post Is about Burnout.”</span> June 6,
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
   author = {Quinn, Shannon},
   title = {My Thoughts Ahead of {\_Tears} of the {Kingdom\_}},
   date = {2023-05-09},
@@ -799,15 +1392,16 @@ Kingdom_.”</span> May 9, 2023. <a href="https://magsol.github.io/2023-05-09-th
   <category>zelda</category>
   <category>totk</category>
   <category>tears of the kingdom</category>
-  <guid>https://magsol.github.io/posts/2023-05-09-thoughts-ahead-of-totk/index.html</guid>
+  <guid>https://magsol.github.io/posts/2023-05-09-thoughts-ahead-of-totk/</guid>
   <pubDate>Tue, 09 May 2023 16:25:00 GMT</pubDate>
   <media:content url="https://magsol.github.io/posts/2023-05-09-thoughts-ahead-of-totk/totk_poster.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Three years later</title>
   <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2023-04-04-three-years-later/index.html</link>
+  <link>https://magsol.github.io/posts/2023-04-04-three-years-later/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -821,7 +1415,7 @@ Kingdom_.”</span> May 9, 2023. <a href="https://magsol.github.io/2023-05-09-th
 
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
   author = {Quinn, Shannon},
   title = {Three Years Later},
   date = {2023-04-04},
@@ -838,15 +1432,16 @@ Quinn, Shannon. 2023. <span>“Three Years Later.”</span> April 4, 2023.
   <category>pandemic</category>
   <category>getaway</category>
   <category>travel</category>
-  <guid>https://magsol.github.io/posts/2023-04-04-three-years-later/index.html</guid>
+  <guid>https://magsol.github.io/posts/2023-04-04-three-years-later/</guid>
   <pubDate>Tue, 04 Apr 2023 16:10:00 GMT</pubDate>
   <media:content url="https://magsol.github.io/posts/2023-04-04-three-years-later/forsyth_park.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Mastodon: Conclusions, musings, ramblings, ravings</title>
   <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2023-02-28-mastodon-conclusions/index.html</link>
+  <link>https://magsol.github.io/posts/2023-02-28-mastodon-conclusions/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -863,7 +1458,7 @@ Quinn, Shannon. 2023. <span>“Three Years Later.”</span> April 4, 2023.
 <li>Conclusions <em>(this post)</em></li>
 </ol>
 <p>I know what you’re thinking:</p>
-<p></p><div id="tweet-36347"></div><script>tweet={"url":"https:\/\/twitter.com\/dexhorthy\/status\/856639005462417409","author_name":"dex","author_url":"https:\/\/twitter.com\/dexhorthy","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EDeployed my blog on Kubernetes \u003Ca href=\"https:\/\/t.co\/XHXWLrmYO4\"\u003Epic.twitter.com\/XHXWLrmYO4\u003C\/a\u003E\u003C\/p\u003E&mdash; dex (@dexhorthy) \u003Ca href=\"https:\/\/twitter.com\/dexhorthy\/status\/856639005462417409?ref_src=twsrc%5Etfw\"\u003EApril 24, 2017\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-36347").innerHTML = tweet["html"];</script><p></p>
+<p></p><div id="tweet-78290"></div><script>tweet={"url":"https:\/\/twitter.com\/dexhorthy\/status\/856639005462417409","author_name":"dex","author_url":"https:\/\/twitter.com\/dexhorthy","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EDeployed my blog on Kubernetes \u003Ca href=\"https:\/\/t.co\/XHXWLrmYO4\"\u003Epic.twitter.com\/XHXWLrmYO4\u003C\/a\u003E\u003C\/p\u003E&mdash; dex (@dexhorthy) \u003Ca href=\"https:\/\/twitter.com\/dexhorthy\/status\/856639005462417409?ref_src=twsrc%5Etfw\"\u003EApril 24, 2017\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-78290").innerHTML = tweet["html"];</script><p></p>
 <p>And honestly… you’re not wrong.</p>
 <section id="running-mastodon-has-gotten-easier" class="level3">
 <h3 class="anchored" data-anchor-id="running-mastodon-has-gotten-easier">Running Mastodon has gotten easier</h3>
@@ -892,7 +1487,7 @@ Quinn, Shannon. 2023. <span>“Three Years Later.”</span> April 4, 2023.
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
   author = {Quinn, Shannon},
   title = {Mastodon: {Conclusions,} Musings, Ramblings, Ravings},
   date = {2023-02-28},
@@ -907,15 +1502,16 @@ Ravings.”</span> February 28, 2023. <a href="https://magsol.github.io/2023-02-
   <category>raspberry pi</category>
   <category>k3s</category>
   <category>mastodon</category>
-  <guid>https://magsol.github.io/posts/2023-02-28-mastodon-conclusions/index.html</guid>
+  <guid>https://magsol.github.io/posts/2023-02-28-mastodon-conclusions/</guid>
   <pubDate>Tue, 28 Feb 2023 09:52:00 GMT</pubDate>
   <media:content url="https://magsol.github.io/posts/2023-02-28-mastodon-conclusions/numenor.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
   <title>Mastodon, Part V: Installing and configuring Mastodon</title>
   <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2023-02-24-installing-and-configuring-mastodon/index.html</link>
+  <link>https://magsol.github.io/posts/2023-02-24-installing-and-configuring-mastodon/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -970,7 +1566,7 @@ font-style: inherit;">-f</span> path/to/custom/values.yaml</span></code></pre></
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
   author = {Quinn, Shannon},
   title = {Mastodon, {Part} {V:} {Installing} and Configuring
     {Mastodon}},
@@ -986,15 +1582,16 @@ Configuring Mastodon.”</span> February 24, 2023. <a href="https://magsol.githu
   <category>raspberry pi</category>
   <category>k3s</category>
   <category>mastodon</category>
-  <guid>https://magsol.github.io/posts/2023-02-24-installing-and-configuring-mastodon/index.html</guid>
+  <guid>https://magsol.github.io/posts/2023-02-24-installing-and-configuring-mastodon/</guid>
   <pubDate>Fri, 24 Feb 2023 17:01:00 GMT</pubDate>
   <media:content url="https://magsol.github.io/posts/2023-02-24-installing-and-configuring-mastodon/mastodon_crew.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
   <title>Mastodon, Part IV: SSL with Let’s Encrypt</title>
   <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2023-02-16-ssl-with-lets-encrypt/index.html</link>
+  <link>https://magsol.github.io/posts/2023-02-16-ssl-with-lets-encrypt/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -1533,7 +2130,7 @@ Oh hey!
 <li id="fn1"><p>Yeah yeah yeah I know I need to switch to Brave or Firefox, IN MY SPARE TIME FOLKS.↩︎</p></li>
 <li id="fn2"><p>At least, not at the rates I’d be using it.↩︎</p></li>
 </ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
   author = {Quinn, Shannon},
   title = {Mastodon, {Part} {IV:} {SSL} with {Let’s} {Encrypt}},
   date = {2023-02-16},
@@ -1550,15 +2147,16 @@ Encrypt.”</span> February 16, 2023. <a href="https://magsol.github.io/2023-02-
   <category>mastodon</category>
   <category>ssl</category>
   <category>dns</category>
-  <guid>https://magsol.github.io/posts/2023-02-16-ssl-with-lets-encrypt/index.html</guid>
+  <guid>https://magsol.github.io/posts/2023-02-16-ssl-with-lets-encrypt/</guid>
   <pubDate>Thu, 16 Feb 2023 10:30:00 GMT</pubDate>
   <media:content url="https://magsol.github.io/posts/2023-02-16-ssl-with-lets-encrypt/https_meme.jpeg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Setting up a wildlife camera</title>
   <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2023-02-15-calibrating-a-wildlife-camera/index.html</link>
+  <link>https://magsol.github.io/posts/2023-02-15-calibrating-a-wildlife-camera/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -1652,7 +2250,7 @@ Encrypt.”</span> February 16, 2023. <a href="https://magsol.github.io/2023-02-
 <li id="fn3"><p>We assume. We didn’t have the camera in place to confirm, but we did hear numerous anecdotes from folks also suggesting the deer were weirdly ravenous and less fearful of humans that year.↩︎</p></li>
 <li id="fn4"><p>Hopefully obvious understatement.↩︎</p></li>
 </ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
   author = {Quinn, Shannon},
   title = {Setting up a Wildlife Camera},
   date = {2023-02-15},
@@ -1669,20 +2267,21 @@ February 15, 2023. <a href="https://magsol.github.io/2023-02-15-calibrating-a-wi
   <category>ir</category>
   <category>camera</category>
   <category>video processing</category>
-  <guid>https://magsol.github.io/posts/2023-02-15-calibrating-a-wildlife-camera/index.html</guid>
+  <guid>https://magsol.github.io/posts/2023-02-15-calibrating-a-wildlife-camera/</guid>
   <pubDate>Wed, 15 Feb 2023 15:57:00 GMT</pubDate>
   <media:content url="https://magsol.github.io/posts/2023-02-15-calibrating-a-wildlife-camera/wildlifegen.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
   <title>Mastodon, Part III: Configuring and installing the prerequisites</title>
   <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2023-02-09-configuring-and-installing-prereqs/index.html</link>
+  <link>https://magsol.github.io/posts/2023-02-09-configuring-and-installing-prereqs/</link>
   <description><![CDATA[ 
 
 
 
 
-<p><img src="https://magsol.github.io/posts/2023-02-09-configuring-and-installing-prereqs/https:/imgs.xkcd.com/comics/tech_loops.png" class="preview-image img-fluid" alt="XKCD comic #1579, Tech Loops."></p>
+
+<p><img src="https://imgs.xkcd.com/comics/tech_loops.png" class="preview-image img-fluid" alt="XKCD comic #1579, Tech Loops."></p>
 <p><em>This article is part of a series about installing and configuring a Mastodon instance on a cluster of Raspberry Pi computers running k3s. To go back to previous articles in the series, try any of the links below:</em></p>
 <ol type="1">
 <li><a href="../../posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/index.html">Introduction</a></li>
@@ -1926,7 +2525,7 @@ Update: Feb 24, 2023
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
   author = {Quinn, Shannon},
   title = {Mastodon, {Part} {III:} {Configuring} and Installing the
     Prerequisites},
@@ -1943,15 +2542,16 @@ Installing the Prerequisites.”</span> February 9, 2023. <a href="https://magso
   <category>k3s</category>
   <category>mastodon</category>
   <category>dependencies</category>
-  <guid>https://magsol.github.io/posts/2023-02-09-configuring-and-installing-prereqs/index.html</guid>
+  <guid>https://magsol.github.io/posts/2023-02-09-configuring-and-installing-prereqs/</guid>
   <pubDate>Thu, 09 Feb 2023 14:39:00 GMT</pubDate>
   <media:content url="https://imgs.xkcd.com/comics/tech_loops.png" medium="image" type="image/png"/>
 </item>
 <item>
   <title>Mastodon, Part II: The Mastodon Helm chart</title>
   <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2023-01-25-mastodon-helm-chart/index.html</link>
+  <link>https://magsol.github.io/posts/2023-01-25-mastodon-helm-chart/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -1971,7 +2571,7 @@ Installing the Prerequisites.”</span> February 9, 2023. <a href="https://magso
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2023-01-25-mastodon-helm-chart/take-this-helmchart.jpg" class="img-fluid figure-img" alt="Spongebob meme base, with text reading 'Take this helm chart they said, everything will work they said.'"></p>
-<figcaption class="figure-caption">Such a cruel realization.</figcaption>
+<figcaption>Such a cruel realization.</figcaption>
 </figure>
 </div>
 <section id="introducing-the-mastodon-chart" class="level3">
@@ -2378,7 +2978,7 @@ font-style: inherit;"> &lt;same value as password&gt;</span></span></code></pre>
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
   author = {Quinn, Shannon},
   title = {Mastodon, {Part} {II:} {The} {Mastodon} {Helm} Chart},
   date = {2023-01-25},
@@ -2394,15 +2994,16 @@ Chart.”</span> January 25, 2023. <a href="https://magsol.github.io/2023-01-25-
   <category>k3s</category>
   <category>mastodon</category>
   <category>helm</category>
-  <guid>https://magsol.github.io/posts/2023-01-25-mastodon-helm-chart/index.html</guid>
+  <guid>https://magsol.github.io/posts/2023-01-25-mastodon-helm-chart/</guid>
   <pubDate>Wed, 25 Jan 2023 16:27:00 GMT</pubDate>
   <media:content url="https://magsol.github.io/posts/2023-01-25-mastodon-helm-chart/helmsperson.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
   <title>Mastodon, Part I: My home network topology</title>
   <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2023-01-23-mastodon-home-network-topology/index.html</link>
+  <link>https://magsol.github.io/posts/2023-01-23-mastodon-home-network-topology/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -2434,7 +3035,7 @@ Chart.”</span> January 25, 2023. <a href="https://magsol.github.io/2023-01-25-
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2023-01-23-mastodon-home-network-topology/original.jpg" class="img-fluid figure-img" alt="My home network setup pre-Mastodon, where the main eero connects directly to the AT&amp;T modem and acts as the chief router and DHCP server of the household."></p>
-<figcaption class="figure-caption">Why yes, I did configure MoCA for my home mesh, thanks for asking.</figcaption>
+<figcaption>Why yes, I did configure MoCA for my home mesh, thanks for asking.</figcaption>
 </figure>
 </div>
 <p>This setup worked, except… see that Raspberry Pi cluster in the bottom left? That’s where I installed k3s for tinkering, but “tinkering” is pretty much all anything amounted to, because eeros have an odd limitation when it comes to port forwarding: <strong>they don’t allow IP-based service forwarding</strong>, or at least, service forwarding that is based <strong>solely</strong> on IP addresses; they also require MAC addresses. When dealing with ephemeral services created by kubernetes clusters on floating IP ranges, there aren’t associated MAC addresses with these services, which makes it impossible to use software-based load balancers like <a href="https://metallb.universe.tf/">metallb</a>, and therefore impossible to deploy multiple services that use similar configurations–like, say, multiple websites: Mastodon and something else.</p>
@@ -2443,7 +3044,7 @@ Chart.”</span> January 25, 2023. <a href="https://magsol.github.io/2023-01-25-
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2023-01-23-mastodon-home-network-topology/first_bridge_attempt.jpg" class="img-fluid figure-img" alt="My initial attempt at a home network setup that re-integrated my old router which could perform IP-based port forwarding. It took the place of the main eero by connecting to the ISP modem, and what had been the main eero was now just another access point, connected only to the now-unretired router."></p>
-<figcaption class="figure-caption">My first attempt at putting the eeros in bridge mode and un-retiring my old router.</figcaption>
+<figcaption>My first attempt at putting the eeros in bridge mode and un-retiring my old router.</figcaption>
 </figure>
 </div>
 <p>Suffice to say, this didn’t work. I mean, it <em>kind of</em> worked: the Raspberry Pi cluster was getting the right traffic forwarded to it. But seemingly random devices on the network would, suddenly and for no reason I could discern, disconnect and refuse to reconnect unless the <em>entire network</em> was rebooted.</p>
@@ -2456,7 +3057,7 @@ Chart.”</span> January 25, 2023. <a href="https://magsol.github.io/2023-01-25-
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2023-01-23-mastodon-home-network-topology/newest_topology.jpg" class="img-fluid figure-img" alt="My final attempt at a home network setup that re-integrated my old router which could perform IP-based port forwarding. This took into account that at least one eero still needed to be able to see all the incoming traffic, so I made sure there was one situated in between the now-unretired router and the rest of the home network. This seemed to resolve the issues and has been my stable configuration for several months now."></p>
-<figcaption class="figure-caption">My final attempt at a network reconfiguration, this time putting one eero ahead of the rest of the home network.</figcaption>
+<figcaption>My final attempt at a network reconfiguration, this time putting one eero ahead of the rest of the home network.</figcaption>
 </figure>
 </div>
 <p>This configuration, while still strange to me, officially works–or at least, it’s worked for the past few months with no issues.</p>
@@ -2469,7 +3070,7 @@ Chart.”</span> January 25, 2023. <a href="https://magsol.github.io/2023-01-25-
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
   author = {Quinn, Shannon},
   title = {Mastodon, {Part} {I:} {My} Home Network Topology},
   date = {2023-01-23},
@@ -2485,15 +3086,16 @@ Topology.”</span> January 23, 2023. <a href="https://magsol.github.io/posts/20
   <category>k3s</category>
   <category>mastodon</category>
   <category>networking</category>
-  <guid>https://magsol.github.io/posts/2023-01-23-mastodon-home-network-topology/index.html</guid>
+  <guid>https://magsol.github.io/posts/2023-01-23-mastodon-home-network-topology/</guid>
   <pubDate>Mon, 23 Jan 2023 15:44:00 GMT</pubDate>
   <media:content url="https://magsol.github.io/posts/2023-01-23-mastodon-home-network-topology/networking_made_easy.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
   <title>Running your own Mastodon instance on a Raspberry Pi k3s cluster</title>
   <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/index.html</link>
+  <link>https://magsol.github.io/posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -2512,7 +3114,7 @@ Topology.”</span> January 23, 2023. <a href="https://magsol.github.io/posts/20
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/pi_cluster.jpg" class="img-fluid figure-img" alt="A very suspicious looking server rack for the five Raspberry Pi computers."></p>
-<figcaption class="figure-caption">Don’t worry, they’re well protected.</figcaption>
+<figcaption>Don’t worry, they’re well protected.</figcaption>
 </figure>
 </div>
 <p>Don’t get me wrong–I do want to go over how I installed and configured k3s on my Raspberry Pi cluster. It’s remarkable how quickly this area of things moves, and the guides I was working off for this were all 2-3 years old, and <em>remarkably</em> outdated. So a more recent tutorial on that basic component would definitely have its niche, I think.</p>
@@ -2529,7 +3131,7 @@ Topology.”</span> January 23, 2023. <a href="https://magsol.github.io/posts/20
 <li id="fn1"><p>Yes, I did indeed purchase them two years ago. Would’ve been nigh impossible to get them at any time in between 😬↩︎</p></li>
 <li id="fn2"><p>As of February 24, 2023, this is no longer true! <a href="https://blog.bitnami.com/2023/02/bitnami-arm-containers-available-at.html">Here’s the announcement from Bitnami</a> of ARM-compatible images↩︎</p></li>
 </ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
   author = {Quinn, Shannon},
   title = {Running Your Own {Mastodon} Instance on a {Raspberry} {Pi}
     K3s Cluster},
@@ -2545,15 +3147,16 @@ Raspberry Pi K3s Cluster.”</span> January 20, 2023. <a href="https://magsol.gi
   <category>raspberry pi</category>
   <category>k3s</category>
   <category>mastodon</category>
-  <guid>https://magsol.github.io/posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/index.html</guid>
+  <guid>https://magsol.github.io/posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/</guid>
   <pubDate>Fri, 20 Jan 2023 16:15:00 GMT</pubDate>
   <media:content url="https://magsol.github.io/posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/elephant.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
   <title>2022: A year in review</title>
   <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2023-01-14-year-that-almost-was/index.html</link>
+  <link>https://magsol.github.io/posts/2023-01-14-year-that-almost-was/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -2592,7 +3195,7 @@ Warning
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2023-01-14-year-that-almost-was/this_is_fine.png" class="img-fluid figure-img" alt="A small child looking on with mild concern as a tiny being is on fire, sitting in a cooking dish, and also seems mildly perturbed by the situation. Meant to evoke similarities with the this-is-fine meme."></p>
-<figcaption class="figure-caption">Midjourney did a pretty bang-up job when I asked for a tweaked version of “this is fine”.</figcaption>
+<figcaption>Midjourney did a pretty bang-up job when I asked for a tweaked version of “this is fine”.</figcaption>
 </figure>
 </div>
 <p>To address the (one of many, I suspect) elephant in the room: wasn’t I on sabbatical from my academic role? Yes, dear reader, I was. And it was still requiring at least a handful of hours from me, on a good week. Some sabbatical.</p>
@@ -2618,14 +3221,14 @@ Warning
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2023-01-14-year-that-almost-was/fitness_estimate.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Yeah, my fitness hasn’t been great the past 6 months, but it’s held relatively steady. Given 2022, that’s an accomplishment by itself.</figcaption>
+<figcaption>Yeah, my fitness hasn’t been great the past 6 months, but it’s held relatively steady. Given 2022, that’s an accomplishment by itself.</figcaption>
 </figure>
 </div>
 <p>Speaking of running, my total mileage improved year-over-year. I also ran my first half marathon since before COVID<sup>7</sup>. It was the slowest half I’ve ever run (by a lot), but I finished. I also ran a handful of other races last year, which helped remind me that racing is a lot of fun–which helped remind me that <em>running is a lot of fun</em>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2023-01-14-year-that-almost-was/annual_mileage.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Year-over-year total mileage run. More mileage with fewer runs indicate longer runs.</figcaption>
+<figcaption>Year-over-year total mileage run. More mileage with fewer runs indicate longer runs.</figcaption>
 </figure>
 </div>
 <p>I spun up an entire Mastodon instance, <a href="https://quinnwitz.house/">Casa Quinnwitz</a>, on my homelab Raspberry Pi cluster (shout-out to the Mastodon dev team, which is full of super kind and patient folks). It’s pretty much my new socialz home, since Twitter has been rendered all-but-unusable with Tweetbot and all the other third-party clients going belly-up. I kind of love the vibe there; feels very longer-form-proto-Twitter with a pre-<a href="https://en.wikipedia.org/wiki/Eternal_September">Eternal September</a> thing going.</p>
@@ -2661,7 +3264,7 @@ Warning
 <li id="fn8"><p>Now I’m just fucking with you. Also I love footnotes, so expect to see a lot of them on every blog post.↩︎</p></li>
 <li id="fn9"><p>Though I did get invited to one on <a href="https://www.reddit.com/r/ChatGPT/comments/10am8to/do_we_have_a_winner/">ChatGPT</a>, and <em>wow</em> the temptation to say “yes” and then just burn the whole place down is <em>overpowering</em>… I’ll have to think about it.↩︎</p></li>
 </ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
   author = {Quinn, Shannon},
   title = {2022: {A} Year in Review},
   date = {2023-01-17},
@@ -2675,15 +3278,16 @@ Quinn, Shannon. 2023. <span>“2022: A Year in Review.”</span> January 17,
   <category>personal</category>
   <category>professional</category>
   <category>news</category>
-  <guid>https://magsol.github.io/posts/2023-01-14-year-that-almost-was/index.html</guid>
+  <guid>https://magsol.github.io/posts/2023-01-14-year-that-almost-was/</guid>
   <pubDate>Tue, 17 Jan 2023 15:42:00 GMT</pubDate>
   <media:content url="https://magsol.github.io/posts/2023-01-14-year-that-almost-was/broken_sword.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
   <title>Pardon de dust (2)</title>
   <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2022-12-13-pardon-the-dust/index.html</link>
+  <link>https://magsol.github.io/posts/2022-12-13-pardon-the-dust/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -2697,7 +3301,7 @@ Quinn, Shannon. 2023. <span>“2022: A Year in Review.”</span> January 17,
 
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2022,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2022,
   author = {Quinn, Shannon},
   title = {Pardon de Dust (2)},
   date = {2022-12-13},
@@ -2711,15 +3315,16 @@ Quinn, Shannon. 2022. <span>“Pardon de Dust (2).”</span> December 13,
   <category>personal</category>
   <category>professional</category>
   <category>news</category>
-  <guid>https://magsol.github.io/posts/2022-12-13-pardon-the-dust/index.html</guid>
+  <guid>https://magsol.github.io/posts/2022-12-13-pardon-the-dust/</guid>
   <pubDate>Tue, 13 Dec 2022 15:48:00 GMT</pubDate>
   <media:content url="https://magsol.github.io/posts/2022-12-13-pardon-the-dust/clover.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Fiddling with generative art models</title>
   <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2022-08-03-fiddling-with-generative-art/index.html</link>
+  <link>https://magsol.github.io/posts/2022-08-03-fiddling-with-generative-art/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -2734,7 +3339,7 @@ Quinn, Shannon. 2022. <span>“Pardon de Dust (2).”</span> December 13,
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2022-08-03-fiddling-with-generative-art/empty_beach_v1.png" class="img-fluid figure-img" alt="Generated with the text: `empty beach, dark storm in distance, one flower blooms from the sand to the side, high detail, atmosphere, Arnold render, ultra-realistic, dramatic lighting, glow, cinematic lighting, epic, 8k` by MidjourneyAI."></p>
-<figcaption class="figure-caption">Generated with the text: <code>empty beach, dark storm in distance, one flower blooms from the sand to the side, high detail, atmosphere, Arnold render, ultra-realistic, dramatic lighting, glow, cinematic lighting, epic, 8k</code></figcaption>
+<figcaption>Generated with the text: <code>empty beach, dark storm in distance, one flower blooms from the sand to the side, high detail, atmosphere, Arnold render, ultra-realistic, dramatic lighting, glow, cinematic lighting, epic, 8k</code></figcaption>
 </figure>
 </div>
 <p>This was actually an image that I generated based off an image <em>someone else had already generated</em> (yeah, we can take public images and run them back through the model with new or additional text).</p>
@@ -2746,7 +3351,7 @@ Quinn, Shannon. 2022. <span>“Pardon de Dust (2).”</span> December 13,
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2022-08-03-fiddling-with-generative-art/mountains_starfield.png" class="img-fluid figure-img" alt="Generated with the text: `wooded mountainous winter landscape under cosmic night sky with distant glowing small town in a valley, nebulae, crescent moon, planetary rings, cinematic, atmospheric, 8k, dramatic lighting, ultra realistic` by MidjourneyAI."></p>
-<figcaption class="figure-caption">Generated with the text: <code>wooded mountainous winter landscape under cosmic night sky with distant glowing small town in a valley, nebulae, crescent moon, planetary rings, cinematic, atmospheric, 8k, dramatic lighting, ultra realistic</code></figcaption>
+<figcaption>Generated with the text: <code>wooded mountainous winter landscape under cosmic night sky with distant glowing small town in a valley, nebulae, crescent moon, planetary rings, cinematic, atmospheric, 8k, dramatic lighting, ultra realistic</code></figcaption>
 </figure>
 </div>
 <p>I will say, it definitely takes some doing to get a feel for how it works–what I had in mind was nowhere near what the model spat out, even though I <em>love</em> what it created. Still, there weren’t really any planetary rings (I was thinking of Gaal’s homeworld in the AppleTV+ <em>Foundation</em> series), and the “glowing small town in a valley” seems to have been diffusely spread over the <em>entire</em> valley, almost like fireflies, rather than distinct. Beautiful, no question, but not exactly what I’d had in mind.</p>
@@ -2754,7 +3359,7 @@ Quinn, Shannon. 2022. <span>“Pardon de Dust (2).”</span> December 13,
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2022-08-03-fiddling-with-generative-art/rpi_madeof_raspberries.png" class="img-fluid figure-img" alt="Generated with the text: `raspberry pi computer made out of raspberries, modern, futuristic` by MidjourneyAI."></p>
-<figcaption class="figure-caption">Generated with the text: <code>raspberry pi computer made out of raspberries, modern, futuristic</code></figcaption>
+<figcaption>Generated with the text: <code>raspberry pi computer made out of raspberries, modern, futuristic</code></figcaption>
 </figure>
 </div>
 <p>I see a lot of super awesome art being generated from very terse prompts, so I was trying to capture that a little bit here (as opposed to the downright locquacious landscape prompts above).</p>
@@ -2762,35 +3367,35 @@ Quinn, Shannon. 2022. <span>“Pardon de Dust (2).”</span> December 13,
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2022-08-03-fiddling-with-generative-art/writer.png" class="img-fluid figure-img" alt="Generated with the text: `a writer working at her computer surrounded by a world of her own creation` by MidjourneyAI."></p>
-<figcaption class="figure-caption">Generated with the text: <code>a writer working at her computer surrounded by a world of her own creation</code></figcaption>
+<figcaption>Generated with the text: <code>a writer working at her computer surrounded by a world of her own creation</code></figcaption>
 </figure>
 </div>
 <p>And I really love this next one, as it evokes less of the specific act of writing and more of how it’s about <em>creating</em>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2022-08-03-fiddling-with-generative-art/creator.png" class="img-fluid figure-img" alt="Generated with the text: `writer standing on the boundary between worlds, the world she lives in and the world she creates` by MidjourneyAI."></p>
-<figcaption class="figure-caption">Generated with the text: <code>writer standing on the boundary between worlds, the world she lives in and the world she creates</code></figcaption>
+<figcaption>Generated with the text: <code>writer standing on the boundary between worlds, the world she lives in and the world she creates</code></figcaption>
 </figure>
 </div>
 <p>We’ve also been huge fans of Zelda for quite awhile (which <a href="https://magsol.github.io/tag/zelda.html">longtime readers already know</a>), and not too long ago I commissioned a fan account to remake a family photo as if it were in the Zelda universe.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2022-08-03-fiddling-with-generative-art/commission.png" class="img-fluid figure-img" alt="Commissioned artwork of our own family, redrawn to look like we live in the Zelda universe."></p>
-<figcaption class="figure-caption">Quite the handsome family, doncha think?</figcaption>
+<figcaption>Quite the handsome family, doncha think?</figcaption>
 </figure>
 </div>
 <p>So I played with that idea a bit, and while the results weren’t great–I get the feeling the generator has a harder time dealing with <em>very specific real-world concepts</em>, as opposed to more general categories of things–I did get this pretty cute rendering of what is most definitely a Hyrulean family.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://magsol.github.io/posts/2022-08-03-fiddling-with-generative-art/zelda.png" class="img-fluid figure-img" alt="Generated with the text: `zelda champions from breath of the wild, family, 1985, highres` by MidjourneyAI."></p>
-<figcaption class="figure-caption">Generated with the text: <code>zelda champions from breath of the wild, family, 1985, highres</code></figcaption>
+<figcaption>Generated with the text: <code>zelda champions from breath of the wild, family, 1985, highres</code></figcaption>
 </figure>
 </div>
 <p>It’s fun to tinker with. In all honesty I’ll probably keep playing with it here and there as the mood strikes; if you want to follow along, <a href="https://www.midjourney.com/app/users/730084120558043179/">there’s a public feed of all the pictures I generate here</a> (note: it’s “public” in that you have to create a free account to see it), since there’s no way I’m going to shell out the $ required to make my images private.</p>
 <section id="legal-disclaimer" class="level3">
 <h3 class="anchored" data-anchor-id="legal-disclaimer">Legal Disclaimer</h3>
 <p>At least, I’ll keep tinkering until copyright catches up… which, on that note, I should mention: I agree with everything in this twitter thread on the topic. I want to end on this note, because I think this is very important to keep in mind.</p>
-<p></p><div id="tweet-53525"></div><script>tweet={"url":"https:\/\/twitter.com\/BunchesOfBees\/status\/1553079149232734208","author_name":"Christopher","author_url":"https:\/\/twitter.com\/BunchesOfBees","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EA thing that makes me absolutely insane with discussions about &quot;AI&quot; image generation is their creators freely argue literally both sides of an opposing argument depending on what argument you&#39;re trying to have with them\u003C\/p\u003E&mdash; Christopher (@BunchesOfBees) \u003Ca href=\"https:\/\/twitter.com\/BunchesOfBees\/status\/1553079149232734208?ref_src=twsrc%5Etfw\"\u003EJuly 29, 2022\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-53525").innerHTML = tweet["html"];</script><p></p>
+<p></p><div id="tweet-53251"></div><script>tweet={"url":"https:\/\/twitter.com\/BunchesOfBees\/status\/1553079149232734208","author_name":"Christopher","author_url":"https:\/\/twitter.com\/BunchesOfBees","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EA thing that makes me absolutely insane with discussions about &quot;AI&quot; image generation is their creators freely argue literally both sides of an opposing argument depending on what argument you&#39;re trying to have with them\u003C\/p\u003E&mdash; Christopher (@BunchesOfBees) \u003Ca href=\"https:\/\/twitter.com\/BunchesOfBees\/status\/1553079149232734208?ref_src=twsrc%5Etfw\"\u003EJuly 29, 2022\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-53251").innerHTML = tweet["html"];</script><p></p>
 <p>Keep in mind, I am not a lawyer, but based on my read there are two legal interpretations of these models: as an <em>author</em> that learns and creates novel work, or a <em>product</em> that synthesizes derivative works. In the case of the former, any kind of substantive duplication of existing work created by someone else is copyright infringement; and in the case of the latter, it’s using novel, <em>unlicensed</em> work in a paid product, which is also copyright infringement.</p>
 <p>As someone whose background is in exactly this kind of generative “AI” work, I would generally fall under the latter interpretation of these models as a product (what they “learn” is dubious at best; I would never call their reproductions “novel”). As such, I also agree with the tweet’s author that the moment these companies begin monetizing these models is when, at the very least, they’ve committed a moral rights violation. It’s the same exact reason I’m very uncomfortable with the <a href="https://github.com/features/copilot">GitHub CoPilot product</a>: it’s been trained using billions of lines of code that was written, tested, debugged, scrutinized, and labored over by humans <em>who did not consent to nor were reimbursed for having their code used in a paid product</em>.</p>
 <p>That last tweet in the thread is particularly poignant for me, and distills much of the reason for my disillusionment with the tech sector in general. I’m sorry to end on such a sour note, but while I do love the amazing things machine learning is doing, we have to keep at the forefront of our minds that <a href="https://vicki.substack.com/p/neural-nets-are-just-people-all-the">machine learning is, ultimately, a human endeavor</a>, and if it won’t work without humans, we should make sure those humans are <em>taken care of</em>: recognition, compensation, empathy, and so on.</p>
@@ -2799,7 +3404,7 @@ Quinn, Shannon. 2022. <span>“Pardon de Dust (2).”</span> December 13,
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2022,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2022,
   author = {Quinn, Shannon},
   title = {Fiddling with Generative Art Models},
   date = {2022-08-03},
@@ -2819,115 +3424,9 @@ Models.”</span> August 3, 2022. <a href="https://magsol.github.io/2022-08-03-f
   <category>legal disclaimer</category>
   <category>zelda</category>
   <category>family</category>
-  <guid>https://magsol.github.io/posts/2022-08-03-fiddling-with-generative-art/index.html</guid>
+  <guid>https://magsol.github.io/posts/2022-08-03-fiddling-with-generative-art/</guid>
   <pubDate>Wed, 03 Aug 2022 11:54:00 GMT</pubDate>
   <media:content url="https://magsol.github.io/posts/2022-08-03-fiddling-with-generative-art/starfield.png" medium="image" type="image/png" height="144" width="144"/>
-</item>
-<item>
-  <title>What the f*@$ is this s%#&amp; (2022 ed.)</title>
-  <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2022-01-05-what-the-f-is-this-s/index.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://magsol.github.io/posts/2022-01-05-what-the-f-is-this-s/clover.png" class="preview-image img-fluid figure-img" alt="Our white bunny, Clover, sitting on the couch, looking beautiful."></p>
-<figcaption class="figure-caption">Clover disapproves of everything and wants you to get your butt in gear.</figcaption>
-</figure>
-</div>
-<p>I’m not sure where I should even start. How does one sum up a year that felt more like a decade? How does one reflect on a year that eschewed reflection in favor of mere survival?</p>
-<p>I want to be the eternal optimist who always sees the silver lining, who always takes away something positive from a negative experience. But to paraphrase (because I can’t find it) someone far more clever than I on Twitter: it feels a bit like trying to find the bright side of things while actively being run over by a zamboni.</p>
-<p>Well, I suppose one way would be to try and end this post on a positive note. So to that end, I’ll start with the stuff that sucked in 2021.</p>
-<section id="the-bad" class="level3">
-<h3 class="anchored" data-anchor-id="the-bad">The Bad</h3>
-<p>Where do I even start? The pandemic continued to rage–Alpha, Delta, and Omicron right at the cusp of the new year–and elected leaders around the globe shrugged their collective shoulders, as if saying “we tried nothing and it didn’t work, so I guess that’s it.”</p>
-<p>University of Georgia, in lockstep with the Georgia Board of Regents and many other public universities across the country, collectively threw up their hands, hid behind the malevolent cowardice of our elected leaders, and did all of jack and shit to protect any of the hundreds of thousands of dedicated public service workers who have given 140% of themselves to the institution of higher learning since time immemorial. They continued to fart out meaningless platitudes about “rallying together” whenever another surge arrived but refused to take any meaningful or substantive actions recommended by public health experts the world over–like requiring masks or vaccinations–and instead demanded more of already overtaxed, underpaid janitorial staff to do more pointless bullshit like installing platic dividers or cleaning surfaces forty times a day.</p>
-<p>Running has continued to be an elusive outlet for stress. Every run feels hard, and more often than not I’m inclined to not run. Which doesn’t do anything to help my mood, but that vicious negative feedback loop continues nonetheless. I hate it but I’m not sure how to break out of it.</p>
-<p>Other shit that sucked:</p>
-<ul>
-<li>Our bun Clover had a bout of GI stasis in the early part of the year. Thankfully, the folks at the UGA Vet Hospital were amazing in getting her well again. Still, scary as shit.</li>
-<li>the weather (75F on Christmas? fucking really?)</li>
-<li>teaching (and I hate that I hated it, but I’m so, so burned out)</li>
-<li>literally the Georgia Board of Regents</li>
-<li>annual grant reports (best I can describe is we’re running in place)</li>
-<li>burnout in general</li>
-<li>mental health in general</li>
-<li>every day being a series of bad choices made from a list of exclusively bad choices</li>
-</ul>
-</section>
-<section id="the-good" class="level3">
-<h3 class="anchored" data-anchor-id="the-good">The Good</h3>
-<p>Somehow, through the grace of God and possibly every deity in the multiverse, we have not tested positive for COVID (<em>knocks on wood</em>).</p>
-<p></p><div id="youtube-frame" style="position: relative; padding-bottom: 56.25%; /* 16:9 */ height: 0;"><iframe width="100%" height="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/2EbeCEs9_Tw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
-<p>I took my first flight since Dec 2019 to Washington, D.C., for a workshop hosted at George Washington University on teaching with open source technology. It was a <em>blast</em>. Not only was it an absolute pleasure to spend a few days with some of my professional heroes, folks I’ve known for years through Twitter and who share my same passion for open source technology and innovative instrucitonal methods, but it was great just going to a meeting again!</p>
-<p><img src="https://magsol.github.io/posts/2022-01-05-what-the-f-is-this-s/dc-workshop.jpg" class="preview-image img-fluid" alt="Group photo from the GW workshop event. Importantly: everyone is wearing a mask!"></p>
-<p>Traveling was the strangest thing, both familiar and foreign. Of course I was a nervous wreck going through the airport, but I commend everyone at GWU for taking every precaution, including mandating the use of masks indoors. It was also the first time either one of us single-parented for more than a few hours at a time, and Cathryn did amazingly well! She even managed Z’s weekly bath ON HER OWN.</p>
-<p><img src="https://magsol.github.io/posts/2022-01-05-what-the-f-is-this-s/sunrise.png" class="preview-image img-fluid" alt="Sunrise from the airport in Atlanta, GA."></p>
-<p>I was tenured and promoted. Indeed, I somehow won the cosmic coin flip. I am now an Associate (“ass o’ shit”, in the technical parlance) Professor of Computer Science and Cellular Biology.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://magsol.github.io/posts/2022-01-05-what-the-f-is-this-s/phd-thesis.jpg" class="preview-image img-fluid figure-img" alt="An abstract image generated from my thesis title; arguably, an early diffuser model."></p>
-<figcaption class="figure-caption">If my doctoral thesis was an image.</figcaption>
-</figure>
-</div>
-<p>We bought a second car (named “Mipha”), a Honda CRV Hybrid, in the summer. We had assumed we’d need two cars, what with our jobs requiring slightly different hours and wildly different physical locations, it would entail too much logistical square dancing for a single car when daycare pickup / dropoff was added to the mix. Of course, then I taught the fall semester almost entirely remotely because of the Delta surge. Still, it’s been really nice to have a bit more room, and our handful of trips to the mountains with Z would absolutely NOT have been possible with Sam (our Honda Accord Hybrid). Not crazy about the added car insurance, though.</p>
-<p>Over Christmas, we managed a trip to Arizona (which, in hindset, we may not have done given Omicron) for a family reunion on Cathryn’s side to celebrate her grandfather’s 101st birthday. It was also the first time Z had ever met the family on Cathryn’s side, and the first time she got to meet her great-grandfather, born a <em>century</em> earlier. We took rapid tests every day, and got PCR tested before and after, and <em>somehow</em> only 1 person in the entire extended family got COVID. It was also the first time Z traveled by airplane, and she was amazing. It was lovely. Exhausting, but lovely.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://magsol.github.io/posts/2022-01-05-what-the-f-is-this-s/desert.png" class="preview-image img-fluid figure-img" alt="Photo of the outside of our Arizona hotel, where oddly enough it's raining."></p>
-<figcaption class="figure-caption">Rain. All day. In the desert. Yeah, global warming’s a myth.</figcaption>
-</figure>
-</div>
-<p>Other stuff that was neat and definitely didn’t suck:</p>
-<ul>
-<li>Our house won our HOA’s First Place for holiday decorations, specifically in the “whimsical” category! I’m thinking our 7-foot inflatable menorah had something to do with it.</li>
-<li>Both Cathryn and I hired running coaches to help us get back into the swing of things. Baby steps!</li>
-<li>I was offered–and accepted–a position with <a href="https://quansight.com">Quansight as Principal Solution Architect</a>. I’ll have a <em>lot</em> more to say about this in a later post.</li>
-<li>Bathroom renovations are scheduled, and office renovations are being planned. All that’s left in the Priority A category is to address the outdoor flooding.</li>
-<li>We managed a handful of mountain trips with Z, and even one with our friend Laura. Z loooves the outdoors, which is awesome.</li>
-<li>I got this blog working again!</li>
-<li><em>Age of Calamity</em>’s two expansion packs are fun as hell.</li>
-<li>Z is just… the singularity of joy in our lives.</li>
-</ul>
-</section>
-<section id="wrap-up" class="level3">
-<h3 class="anchored" data-anchor-id="wrap-up">Wrap Up</h3>
-<p><img src="https://magsol.github.io/posts/2022-01-05-what-the-f-is-this-s/jump.png" class="preview-image img-fluid" alt="Photo of the hopscotch blocks in the park down the street from our house."></p>
-<p>It’s cathartic to get all this out in some form. And, of course, there are innumerable positives (and negatives) that I’m forgetting / suppressing / ignoring. I will say this:</p>
-<p>I’m genuinely excited for 2022. There’s an insane amount of uncertainty and dread and fear, but there are some changes in store for which I’m really and truly stoked. I just have to hope.</p>
-
-
-</section>
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2022,
-  author = {Quinn, Shannon},
-  title = {What the f*@\$ Is This s\%\#\&amp; (2022 Ed.)},
-  date = {2022-01-05},
-  url = {https://magsol.github.io/2022-01-05-what-the-f-is-this-s},
-  langid = {en}
-}
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2022" class="csl-entry quarto-appendix-citeas">
-Quinn, Shannon. 2022. <span>“What the f*@$ Is This s%#&amp; (2022
-Ed.).”</span> January 5, 2022. <a href="https://magsol.github.io/2022-01-05-what-the-f-is-this-s">https://magsol.github.io/2022-01-05-what-the-f-is-this-s</a>.
-</div></div></section></div> ]]></description>
-  <category>personal</category>
-  <category>professional</category>
-  <category>clover the bun</category>
-  <category>z</category>
-  <category>covid-19</category>
-  <category>running</category>
-  <category>professor</category>
-  <category>university</category>
-  <category>quansight</category>
-  <category>travel</category>
-  <category>holidays</category>
-  <category>year in review</category>
-  <guid>https://magsol.github.io/posts/2022-01-05-what-the-f-is-this-s/index.html</guid>
-  <pubDate>Wed, 05 Jan 2022 21:15:00 GMT</pubDate>
-  <media:content url="https://magsol.github.io/posts/2022-01-05-what-the-f-is-this-s/clover.png" medium="image" type="image/png" height="192" width="144"/>
 </item>
 </channel>
 </rss>

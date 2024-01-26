@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -47,7 +47,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -56,6 +62,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -76,7 +83,7 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <meta property="og:title" content="Stochastic Stenography - Upgrading the Raspberry Pi Cluster">
 <meta property="og:description" content="Nothing bad has ever happened in the history of planned upgrades.">
 <meta property="og:image" content="https://magsol.github.io/posts/2023-07-10-upgrading-the-pi-cluster/setup.jpg">
-<meta property="og:site-name" content="Stochastic Stenography">
+<meta property="og:site_name" content="Stochastic Stenography">
 <meta property="og:locale" content="en_US">
 <meta property="og:image:alt" content="My home office desk, with the GamersNexus rubber mat, along with all the hardware materials for the cluster upgrade, including: a stack of PoE HAT boxes, a Netgear 8-port PoE switch, a small power brick from Anker with two 2-port USB-to-outlet adapters, and my laptop.">
 <meta name="twitter:title" content="Stochastic Stenography - Upgrading the Raspberry Pi Cluster">
@@ -90,10 +97,10 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Stochastic Stenography</span>
     </a>
@@ -105,13 +112,13 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
- <span class="menu-text">About Me</span></a>
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About Me</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -159,6 +166,7 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
     
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
+
 
 
 
@@ -216,7 +224,7 @@ Note
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="poe_hat.jpg" class="img-fluid figure-img" alt="A stack of 6 PoE HAT boxes, waiting to be unboxed and installed, one per Raspberry Pi."></p>
-<figcaption class="figure-caption">How many HATs does one person need?</figcaption>
+<figcaption>How many HATs does one person need?</figcaption>
 </figure>
 </div>
 <p>What I didn’t mention is: there’s more to it than that. To power devices using PoE, you also need networking hardware that is PoE-compatible. This meant replacing my standard 6-port unmanaged switch with a PoE-compatible switch.</p>
@@ -226,14 +234,14 @@ Note
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="rpis.jpg" class="img-fluid figure-img" alt="Six Raspberry Pi boards, all on the desk."></p>
-<figcaption class="figure-caption">So much pi(e).</figcaption>
+<figcaption>So much pi(e).</figcaption>
 </figure>
 </div>
 <p>With the Pi cluster itself out of the homemade rack, you can see the interior with all the rest of the cabling:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="rack_interior.jpg" class="img-fluid figure-img" alt="Interior shot of my homemade server rack, which is really just a wooden crate with some cut-outs for intake/exhaust fans and a clear plexiglass side for viewing. Inside the Raspberry Pi cluster has been removed, leaving the original 6-port switch, power brick, ethernet cables, power cables, and fan cables. So many cables."></p>
-<figcaption class="figure-caption">Cables cables everywhere but not an ounce of space.</figcaption>
+<figcaption>Cables cables everywhere but not an ounce of space.</figcaption>
 </figure>
 </div>
 <p>Yeah. It was pretty crowded, even without the little stack of 5 Raspberry Pi boards. Clearing some of that out via PoE sounded really, really good.</p>
@@ -241,14 +249,14 @@ Note
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="single_pi.jpg" class="img-fluid figure-img" alt="A single Raspberry Pi 4B board, unmodified."></p>
-<figcaption class="figure-caption">A standard Raspberry Pi 4B.</figcaption>
+<figcaption>A standard Raspberry Pi 4B.</figcaption>
 </figure>
 </div>
 <p>And here’s what it looks like when I’ve installed a PoE HAT on it:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="pi_hat.jpg" class="img-fluid figure-img" alt="A single Raspberry Pi 4B board, now with a PoE HAT on it."></p>
-<figcaption class="figure-caption">A standard Raspberry Pi 4B, now with a PoE HAT on it.</figcaption>
+<figcaption>A standard Raspberry Pi 4B, now with a PoE HAT on it.</figcaption>
 </figure>
 </div>
 <p>As an aside: this adds a surprising amount of weight to the Pi! By itself it wasn’t all that noticeable, but once I’d re-stacked the Pi cluster, I was more than a little shocked by how much heavier it was! Something to keep in mind.</p>
@@ -258,21 +266,21 @@ Note
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="rewired_fan.jpg" class="img-fluid figure-img" alt="A standard 5V Raspberry Pi case fan with its two cables connected to the corresponding power/ground wires inside a USB cable that has been cut open."></p>
-<figcaption class="figure-caption">Some minor surgery later and we have a USB powered fan!</figcaption>
+<figcaption>Some minor surgery later and we have a USB powered fan!</figcaption>
 </figure>
 </div>
 <p>I could now plug all five rack fans (three intake, two exhaust) directly into a new and smaller power brick, courtesy of some USB-to-outlet adapters to help further compress the size.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="power_brick.jpg" class="img-fluid figure-img" alt="A small Anker power brick with three standard outlets on the front, two of which have USB-to-outlet adapters plugged in, and each adapter has two USB ports. With two additional USB ports in the back, there are six USB outlets on the brick to power the five USB fans, and one standard outlet to power the PoE 8-port switch."></p>
-<figcaption class="figure-caption">There are two more USB outlets in the back of the brick.</figcaption>
+<figcaption>There are two more USB outlets in the back of the brick.</figcaption>
 </figure>
 </div>
 <p>All that was left at this point was to reassemble the Pi cluster. As I said, I was surprised by the sturdiness of six Pi boards with PoE HATs:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="full_cluster.jpg" class="img-fluid figure-img" alt="The reassembled Pi cluster, with six Raspberry Pi boards stacked up, each with a PoE HAT."></p>
-<figcaption class="figure-caption">Behold this fully armed and operational Pi cluster.</figcaption>
+<figcaption>Behold this fully armed and operational Pi cluster.</figcaption>
 </figure>
 </div>
 <p>It took several days’ worth of spare time to get everything together, but I’m proud to say that when I plugged the power brick into the wall, <em>every</em> single light and fan turned on all at once.</p>
@@ -288,7 +296,7 @@ Note
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
   author = {Quinn, Shannon},
   title = {Upgrading the {Raspberry} {Pi} {Cluster}},
   date = {2023-07-10},
@@ -378,10 +386,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -391,8 +398,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -405,6 +421,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -448,6 +583,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -473,6 +609,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -534,7 +696,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <script src="https://giscus.app/client.js" data-repo="magsol/magsol.github.io" data-repo-id="MDEwOlJlcG9zaXRvcnkyNzYwNTYxNw==" data-category="Announcements" data-category-id="DIC_kwDOAaU6cc4CTutY" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="dark" data-lang="en" crossorigin="anonymous" data-loading="lazy" async="">
 </script>
+<input type="hidden" id="giscus-base-theme" value="dark">
+<input type="hidden" id="giscus-alt-theme" value="dark">
 </div> <!-- /content -->
+
 
 
 

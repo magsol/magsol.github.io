@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.549">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Shannon Quinn">
+
+<title>Stochastic Stenography - The Legend of Makar</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XHDW9H78Z1"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
+</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Stochastic Stenography - The Legend of Makar">
+<meta property="og:description" content="The mostly long and some short of building your own desktop">
+<meta property="og:image" content="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/makar.jpg">
+<meta property="og:site_name" content="Stochastic Stenography">
+<meta property="og:locale" content="en_US">
+<meta property="og:image:alt" content="A picture of the Ubuntu landing screen for logged in users, on an ultrawide screen monitor set on a small desk.">
+<meta name="twitter:title" content="Stochastic Stenography - The Legend of Makar">
+<meta name="twitter:description" content="The mostly long and some short of building your own desktop">
+<meta name="twitter:image" content="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/makar.jpg">
+<meta name="twitter:creator" content="@SpectralFilter">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image:alt" content="A picture of the Ubuntu landing screen for logged in users, on an ultrawide screen monitor set on a small desk.">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Stochastic Stenography</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About Me</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">The Legend of Makar</h1>
+            <p class="subtitle lead">The mostly long and some short of building your own desktop</p>
+                                <div class="quarto-categories">
+                <div class="quarto-category">personal</div>
+                <div class="quarto-category">professional</div>
+                <div class="quarto-category">news</div>
+                <div class="quarto-category">makar</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Shannon Quinn </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">Posted on the 25th of January in the year 2024, at 7:09pm. It was Thursday.</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<p><a href="makar.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="makar.jpg" class="preview-image img-fluid" alt="A picture of the Ubuntu landing screen for logged in users, on an ultrawide screen monitor set on a small desk."></a></p>
+<p>I built my first desktop from components when I was 15, a sophomore in high school. With the exception of my college workstation (laptops hadnt’t <em>quite</em> reached ubiquity yet), I’ve assembled every desktop I have ever owned since then.</p>
+<p>It’s a skill and a pasttime I deeply enjoy, but one which I don’t have the opportunity to explore very often. Even though “every desktop since age 15” sounds impressive, in real numbers it amounts to just a handful:</p>
+<ul>
+<li>age 15: my family’s home computer</li>
+<li>age 19: a server for my dorm room</li>
+<li>age 22: my graduate desktop</li>
+<li>age 25: the lab’s new workstation during a rotation (not mine, per se)</li>
+<li>age 29: my “first real job” home desktop</li>
+<li>now: the one in this blog post!</li>
+</ul>
+<p>There were certainly upgrades throughout that timeline—I swapped hard drives and memory in and out of that dorm server many times; my first “real job” desktop saw at least one GPU upgrade; my graduate desktop was a true exercise in frustration as I spent the first <em>two years</em> diagnosing an <a href="https://magsol.wordpress.com/2010/06/28/one-final-technical-appeal/">intermittent and nigh-irreproducible freezing</a>—but it’s actually rare I get brag to folks that I’m “assembling my new computer from parts.”</p>
+<p>So I figured: for this round, I’d go all out with full documentation in the form of a blog post 😁</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Long post ahead
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let the record show: the reader was warned of the length of the post that follows.</p>
+</div>
+</div>
+<section id="hardware" class="level3">
+<h3 class="anchored" data-anchor-id="hardware">Hardware</h3>
+<p>The first step in any desktop build: the hardware! I’ve been scoping out the major components off and on for over a year now, using resources like <a href="https://www.youtube.com/@GamersNexus">GamersNexus reviews</a> and <a href="https://www.tomshardware.com/">Tom’s Hardware</a> to get a feel for what CPUs / motherboards I should look into.</p>
+<p>As an example: I’d spent 11 of the past 12 months with the latest Intel processor locked in, but changed my mind at the [relative] last second when all the head-to-head CPU benchmarks showed the latest AMD Ryzen 9 processors going toe-to-toe with Intel on multithreaded applications (i.e., my work’s bread and butter). That, coupled with AMD’s <em>shocking</em> advantage in power draw and smaller advantage on price made it an immediate no-brainer to switch.</p>
+<p>For the curious, here’s the full list of hardware I ended up going with:</p>
+<ul>
+<li>CPU: <a href="https://www.newegg.com/amd-ryzen-9-7950x-ryzen-9-7000-series/p/N82E16819113771?Item=N82E16819113771">AMD Ryzen 9 7950X</a></li>
+<li>Cooler: <a href="https://www.newegg.com/deepcool-ak400-zero-dark-plus/p/N82E16835856230?Item=N82E16835856230">DeepCool AK400 Zero Dark Plus 120mm</a></li>
+<li>Motherboard: <a href="https://www.newegg.com/msi-mag-x670e-tomahawk-wifi/p/N82E16813144595?Item=N82E16813144595">MSI MAG X670E Tomahawk AM5 ATX</a></li>
+<li>Memory: <a href="https://www.newegg.com/g-skill-96gb/p/N82E16820374465?Item=N82E16820374465">G.SKILL Trident Z5 48GB 288-pin PC RAM DDR5 6800 PC5 54400</a> (4x)</li>
+<li>GPU: <a href="https://www.bestbuy.com/site/gigabyte-nvidia-geforce-rtx-4090-gaming-oc-24gb-gddr6x-pci-express-4-0-graphics-card-black/6521518.p">NVIDIA RTX 4090</a></li>
+<li>PSU: <a href="https://www.amazon.com/dp/B0B433ZCRP?psc=1&amp;ref=ppx_yo2ov_dt_b_product_details">MEG Ai1300P PCIE 5 1300W</a></li>
+<li>Storage: <a href="https://www.newegg.com/samsung-4gb-990-pro/p/N82E16820147878?Item=N82E16820147878">Samsung SSD 990 PRO 2TB M.2 2280</a> (2x)</li>
+<li>Case: <a href="https://www.newegg.com/black-fractal-design-torrent-atx-mid-tower/p/N82E16811352143?Item=N82E16811352143">Fractal Design Torrent Black E-ATX Mid Tower</a></li>
+<li>Monitor: <a href="https://www.amazon.com/gp/product/B088HH6LW5/ref=ppx_yo_dt_b_asin_title_o05_s00?ie=UTF8&amp;psc=1">Samsung 49-inch Odyssey G9</a></li>
+</ul>
+<p>To address the elephant in the room: no, this build was not cheap, at <em>all</em>. This is all top-of-the-line hardware, meant to 1) last a very long time, and 2) facilitate my kind of intensive number-crunching machine learning work. But I also put it together after having secured an agreement that my sabbatical employer<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> would kick in a small amount, too.</p>
+<p>There are all kinds of additional considerations I went through—you’re probably asking, why only M.2 drives? believe me, that was a whole thing, but oddly kinda boiled down to “supply chain problems, lol”—so I’m happy to get into it offline.</p>
+<p>But for now, let’s jump into assembly!</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="clear_desk.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2" title="My workspace for assembly. Thanks, Gamers Nexus!"><img src="clear_desk.jpg" class="img-fluid figure-img" alt="A clear desk space with a Gamers Nexus antistatic mat."></a></p>
+<figcaption>My workspace for assembly. Thanks, Gamers Nexus!</figcaption>
+</figure>
+</div>
+</section>
+<section id="unboxing-and-assembly" class="level3">
+<h3 class="anchored" data-anchor-id="unboxing-and-assembly">Unboxing and Assembly</h3>
+<p>Once I had all the components (this was also a Whole Thing<sup>TM</sup>), it took me about 3 days to put everything together. That’s actually a record—the longest it had taken me to assemble a desktop had previous been <em>3 hours</em>. I don’t really know what to chalk that discrepancy up to. Maybe rustiness (it’s been almost a decade since my last full build)? Reverence (I love doing this so much, I want to soak it up)? Nerves (first time building an AMD machine since the dorm room server)?</p>
+<p>General fatigue?<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>Anyway.</p>
+<p>I started with the case. It came highly recommended through Gamers Nexus, especially for custom cooling. I’ve always dreamed of a fully water-cooled rig, but as the time to finalize the build crept closer, I decided to stick with a traditional air-cooled setup. This case was great in that it lets me do either but defaults to an excellent air-cooled configuration.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[[1, 1], [1, 1]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="case/box_case.jpg" class="lightbox" data-gallery="case" data-glightbox="description: .lightbox-desc-3" title="Unboxing the case."><img src="case/box_case.jpg" class="img-fluid figure-img" alt="Unboxing the case."></a></p>
+<figcaption>Unboxing the case.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="case/case1.jpg" class="lightbox" data-gallery="case" data-glightbox="description: .lightbox-desc-4" title="I love the plexiglass covers: easy to remove, but also great for seeing inside."><img src="case/case1.jpg" class="img-fluid figure-img" alt="I love the plexiglass covers: easy to remove, but also great for seeing inside."></a></p>
+<figcaption>I love the plexiglass covers: easy to remove, but also great for seeing inside.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="case/case2.jpg" class="lightbox" data-gallery="case" data-glightbox="description: .lightbox-desc-5" title="Lots of airflow vents."><img src="case/case2.jpg" class="img-fluid figure-img" alt="Lots of airflow vents."></a></p>
+<figcaption>Lots of airflow vents.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="case/case3.jpg" class="lightbox" data-gallery="case" data-glightbox="description: .lightbox-desc-6" title="Lots and lots of fans."><img src="case/case3.jpg" class="img-fluid figure-img" alt="Lots and lots of fans."></a></p>
+<figcaption>Lots and lots of fans.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>Next were all the internal components. Since the case is really just a vehicle for the motherboard, which is really just a vehicle for <em>everything else</em>, I wanted to work my way from the inside out. Especially given the downright titanic proportions of the 4090, I wanted to assemble the motherboard as much as possible before slotting it into the case and losing a lot of physical wiggle room and visibility.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[[100], [50, 50]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="before_the_storm.jpg" class="lightbox" data-gallery="unboxing" data-glightbox="description: .lightbox-desc-7" title="All the internal components, unboxed from shipping but still in their retail boxes."><img src="before_the_storm.jpg" class="img-fluid figure-img" alt="All the internal components, unboxed from shipping but still in their retail boxes."></a></p>
+<figcaption>All the internal components, unboxed from shipping but still in their retail boxes.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="boxes.jpg" class="lightbox" data-gallery="unboxing" data-glightbox="description: .lightbox-desc-8" title="Everything arrived! Well, everything else arrived."><img src="boxes.jpg" class="img-fluid figure-img" alt="Everything arrived! Well, everything else arrived."></a></p>
+<figcaption>Everything arrived! Well, everything <em>else</em> arrived.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="boxes_internal_components.jpg" class="lightbox" data-gallery="unboxing" data-glightbox="description: .lightbox-desc-9" title="Just the internal components that go on the motherboard… minus the GPU."><img src="boxes_internal_components.jpg" class="img-fluid figure-img" alt="Just the internal components that go on the motherboard… minus the GPU."></a></p>
+<figcaption>Just the internal components that go on the motherboard… minus the GPU.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>The CPU and associated cooler were first. These were, thankfully, pretty straightforward. The only difference here from my prior experience with Intel was that AMD doesn’t seem to ship its CPUs with stock coolers; hence, I needed to get a custom one. Otherwise, everything slotted in exactly as I remembered.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[[100], [100], [50, 50], [50, 50], [50, 50]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="cpu/motherboard_unpack.jpg" class="lightbox" data-gallery="cpu" data-glightbox="description: .lightbox-desc-10" title="The motherboard is inside that antistatic wrap on the right. Zapping that with a small static discharge would be, ah, rather unfortunate!"><img src="cpu/motherboard_unpack.jpg" class="img-fluid figure-img" alt="The motherboard is inside that antistatic wrap on the right. Zapping that with a small static discharge would be, ah, rather unfortunate!"></a></p>
+<figcaption>The motherboard is inside that antistatic wrap on the right. Zapping that with a small static discharge would be, ah, rather unfortunate!</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="cpu/motherboard.jpg" class="lightbox" data-gallery="cpu" data-glightbox="description: .lightbox-desc-11" title="The motherboard, in all its glory."><img src="cpu/motherboard.jpg" class="img-fluid figure-img" alt="The motherboard, in all its glory."></a></p>
+<figcaption>The motherboard, in all its glory.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="cpu/cpu_unbox.jpg" class="lightbox" data-gallery="cpu" data-glightbox="description: .lightbox-desc-12" title="The “brain” of the computer. I guess."><img src="cpu/cpu_unbox.jpg" class="img-fluid figure-img" alt="The “brain” of the computer. I guess."></a></p>
+<figcaption>The “brain” of the computer. I guess.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="cpu/cpu_box.jpg" class="lightbox" data-gallery="cpu" data-glightbox="description: .lightbox-desc-13" title="The CPU box is actually quite large, but that’s because 90% of it is this “pedestal foam.” I know it’s to keep things from getting jostled, but it just looks like a throne."><img src="cpu/cpu_box.jpg" class="img-fluid figure-img" alt="The CPU box is actually quite large, but that’s because 90% of it is this “pedestal foam.” I know it’s to keep things from getting jostled, but it just looks like a throne."></a></p>
+<figcaption>The CPU box is actually quite large, but that’s because 90% of it is this “pedestal foam.” I know it’s to keep things from getting jostled, but it just looks like a throne.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="cpu/motherboard_cpu_slot.jpg" class="lightbox" data-gallery="cpu" data-glightbox="description: .lightbox-desc-14" title="The slot on the motherboard where the CPU goes, with a plastic safety cover on it. You do NOT want to damage the pins underneath it!"><img src="cpu/motherboard_cpu_slot.jpg" class="img-fluid figure-img" alt="The slot on the motherboard where the CPU goes, with a plastic safety cover on it. You do NOT want to damage the pins underneath it!"></a></p>
+<figcaption>The slot on the motherboard where the CPU goes, with a plastic safety cover on it. You do NOT want to damage the pins underneath it!</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="cpu/motherboard_cpu_install.jpg" class="lightbox" data-gallery="cpu" data-glightbox="description: .lightbox-desc-15" title="After removing the plastic cover and quadruple-checking the CPU alignment, it fit perfectly!"><img src="cpu/motherboard_cpu_install.jpg" class="img-fluid figure-img" alt="After removing the plastic cover and quadruple-checking the CPU alignment, it fit perfectly!"></a></p>
+<figcaption>After removing the plastic cover and quadruple-checking the CPU alignment, it fit perfectly!</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="cpu/cpu_cooler.jpg" class="lightbox" data-gallery="cpu" data-glightbox="description: .lightbox-desc-16" title="The custom cooler I bought. Just slots right on top of the CPU."><img src="cpu/cpu_cooler.jpg" class="img-fluid figure-img" alt="The custom cooler I bought. Just slots right on top of the CPU."></a></p>
+<figcaption>The custom cooler I bought. Just slots right on top of the CPU.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="cpu/cpu_cooler_installed.jpg" class="lightbox" data-gallery="cpu" data-glightbox="description: .lightbox-desc-17" title="Everything fit! Yay!"><img src="cpu/cpu_cooler_installed.jpg" class="img-fluid figure-img" alt="Everything fit! Yay!"></a></p>
+<figcaption>Everything fit! Yay!</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>Next up: memory (or RAM). I was originally going with just a single 2-pack of 48GB DIMMs for a total of 96GB, but my sabbatical employer insisted I max out the memory so I can work with 100+GB single images they have from clients.</p>
+<p>That entailed a bit more research on my part on AMD-compatible motherboards to learn what their RAM limits were. I found one with 192GB as its upper limit: hence that motherboard, and hence why I have so much RAM!</p>
+<p>I think I enjoy installing RAM the most: there are no moving parts, other than the clips on the motherboard itself that very helpfully “click” when you have properly seated the memory. It’s very satisfying.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[[100], [50, 50]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="ram/motherboard_memory.jpg" class="lightbox" data-gallery="ram" data-glightbox="description: .lightbox-desc-18" title="The four RAM chips in the plastic on the right go in the four motherboard slots in front of the CPU on the left."><img src="ram/motherboard_memory.jpg" class="img-fluid figure-img" alt="The four RAM chips in the plastic on the right go in the four motherboard slots in front of the CPU on the left."></a></p>
+<figcaption>The four RAM chips in the plastic on the right go in the four motherboard slots in front of the CPU on the left.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="ram/motherboard_dimms.jpg" class="lightbox" data-gallery="ram" data-glightbox="description: .lightbox-desc-19" title="If you ever have fewer DIMMs than motherboard slots, look for a schematic like this that tells you which slots you should install RAM in first."><img src="ram/motherboard_dimms.jpg" class="img-fluid figure-img" alt="If you ever have fewer DIMMs than motherboard slots, look for a schematic like this that tells you which slots you should install RAM in first."></a></p>
+<figcaption>If you ever have fewer DIMMs than motherboard slots, look for a schematic like this that tells you which slots you should install RAM in first.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="ram/motherboard_memory_installed.jpg" class="lightbox" data-gallery="ram" data-glightbox="description: .lightbox-desc-20" title="Everything fit! Yay!"><img src="ram/motherboard_memory_installed.jpg" class="img-fluid figure-img" alt="Everything fit! Yay!"></a></p>
+<figcaption>Everything fit! Yay!</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>At this point, I <em>should have</em> installed the storage devices. But for reasons lost to the passage of time, I didn’t. Instead, I installed the motherboard into the case.</p>
+<p>Part of my rationale, I think, was that I knew I couldn’t install the GPU until the motherboard was seated in the case; the GPU was just too big to be installed without the support of the case itself. I also knew some of the M.2 slots were <em>under</em> the GPU; this created some uncertainty about whether the GPU would actually sit correctly if an M.2 device was installed directly under it. My priority here was the GPU—it was so large, it could only fit in one of two slots, and of those two only one was honestly preferable—and to seat the GPU, I needed to install the motherboard into the case.</p>
+<p>All in all, motherboard installation is pretty easy: just put the motherboard in the case and carefully screw it down. If the screw holes in the motherboard don’t align with the struts in the case, then something has gone horribly wrong and you should stop.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[[1, 1]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="mobo/motherboard_installed1.jpg" class="lightbox" data-gallery="mobo" data-glightbox="description: .lightbox-desc-21" title="Everything fit! Yay!"><img src="mobo/motherboard_installed1.jpg" class="img-fluid figure-img" alt="Everything fit! Yay!"></a></p>
+<figcaption>Everything fit! Yay!</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="mobo/motherboard_installed2.jpg" class="lightbox" data-gallery="mobo" data-glightbox="description: .lightbox-desc-22" title="Everything still fits! Yay!"><img src="mobo/motherboard_installed2.jpg" class="img-fluid figure-img" alt="Everything still fits! Yay!"></a></p>
+<figcaption>Everything still fits! Yay!</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>For one final diversion before the monstrosity that is the GPU, I installed the PSU, aka the power supply. Given that wholly <em>half</em> the power supply’s capacity is going to the GPU, I knew I needed something relatively beefy, hence the 1300W monster PSU. But I also knew I wouldn’t have very many other components that needed direct power.</p>
+<p>So a <em>modular</em> PSU was key: one with lots of outlets for potential devices, but whose cords could be disconnected and removed when not needed so as not to clog up the inside of the case with unplugged power cables.</p>
+<p>Another reason I love this case is because, at a time when most cases now put the PSU somewhere in the bottom, this case puts the PSU at the <em>top</em>, and even “slightly outside” the case itself! There’s a panel that pops off where the PSU sits, and the cables are then snaked through an opening to the rest of the case for added compartmentalization. It’s quite nice.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[[50, 50], [33, 33, 33]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="psu/psu.jpg" class="lightbox" data-gallery="psu" data-glightbox="description: .lightbox-desc-23" title="That’s the PSU."><img src="psu/psu.jpg" class="img-fluid figure-img" alt="That’s the PSU."></a></p>
+<figcaption>That’s the PSU.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="psu/case_slot_for_psu.jpg" class="lightbox" data-gallery="psu" data-glightbox="description: .lightbox-desc-24" title="Once you pop the top cover off the case, you can see the divot where the PSU fits."><img src="psu/case_slot_for_psu.jpg" class="img-fluid figure-img" alt="Once you pop the top cover off the case, you can see the divot where the PSU fits."></a></p>
+<figcaption>Once you pop the top cover off the case, you can see the divot where the PSU fits.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="psu/case_with_psu.jpg" class="lightbox" data-gallery="psu" data-glightbox="description: .lightbox-desc-25" title="Fits like a glove!"><img src="psu/case_with_psu.jpg" class="img-fluid figure-img" alt="Fits like a glove!"></a></p>
+<figcaption>Fits like a glove!</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="psu/psu_cables1.jpg" class="lightbox" data-gallery="psu" data-glightbox="description: .lightbox-desc-26" title="Literal bags’ worth of cables, depending on my hardware."><img src="psu/psu_cables1.jpg" class="img-fluid figure-img" alt="Literal bags’ worth of cables, depending on my hardware."></a></p>
+<figcaption>Literal bags’ worth of cables, depending on my hardware.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="psu/psu_cables2.jpg" class="lightbox" data-gallery="psu" data-glightbox="description: .lightbox-desc-27" title="Here are cables that will provide core power to the motherboard."><img src="psu/psu_cables2.jpg" class="img-fluid figure-img" alt="Here are cables that will provide core power to the motherboard."></a></p>
+<figcaption>Here are cables that will provide core power to the motherboard.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>Alright. Couldn’t ignore the <a href="https://www.artstation.com/artwork/m85BXZ">Demon King in the Depths</a> any longer. Time to install the GPU.</p>
+<p>I knew this thing would be huge going in, but I was still shocked, and I say this as a still-owner of a venerable 1080 Ti. This thing spans the volume of nearly 3x 1080s. It’s absolutely insane. And yet, still <em>technically</em> only takes the space of 2 PCI devices.</p>
+<p>Suffice to say, I made absolutely certain before purchasing that all the measurements fit what I had to work with. For a component that was almost half the entire monetary AND eletrical budgets of this build, this was the one I wanted to get right the first time.</p>
+<p>Actual installation was a snap, as it has been ever since the advent of separate GPUs. But it seriously felt like plugging an Apollo command module into a 120V home garage outlet.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[[100], [33, 33, 33], [33, 33, 33]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="gpu/gpu_box_case.jpg" class="lightbox" data-gallery="gpu" data-glightbox="description: .lightbox-desc-28" title="Here we go."><img src="gpu/gpu_box_case.jpg" class="img-fluid figure-img" alt="Here we go."></a></p>
+<figcaption>Here we go.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="gpu/gpu_unboxed1.jpg" class="lightbox" data-gallery="gpu" data-glightbox="description: .lightbox-desc-29" title="Unboxing the beast."><img src="gpu/gpu_unboxed1.jpg" class="img-fluid figure-img" alt="Unboxing the beast."></a></p>
+<figcaption>Unboxing the beast.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="gpu/gpu_unboxed2.jpg" class="lightbox" data-gallery="gpu" data-glightbox="description: .lightbox-desc-30" title="I could barely hold this with one hand."><img src="gpu/gpu_unboxed2.jpg" class="img-fluid figure-img" alt="I could barely hold this with one hand."></a></p>
+<figcaption>I could barely hold this with one hand.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="gpu/gpu_unboxed3.jpg" class="lightbox" data-gallery="gpu" data-glightbox="description: .lightbox-desc-31" title="My already-oversized DumbRunner coffee mug for scale."><img src="gpu/gpu_unboxed3.jpg" class="img-fluid figure-img" alt="My already-oversized DumbRunner coffee mug for scale."></a></p>
+<figcaption>My already-oversized <a href="https://dumbrunner.threadless.com/designs/1-dad-in-age-group/accessories/mug/standard">DumbRunner coffee mug</a> for scale.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="gpu/gpu_installed.jpg" class="lightbox" data-gallery="gpu" data-glightbox="description: .lightbox-desc-32" title="In the immortal words of my dad’s dad: “It FITS. JUST. FINE.”"><img src="gpu/gpu_installed.jpg" class="img-fluid figure-img" alt="In the immortal words of my dad’s dad: “It FITS. JUST. FINE.”"></a></p>
+<figcaption>In the immortal words of my dad’s dad: “It FITS. JUST. FINE.”</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="gpu/gpu_old_psu_cables.jpg" class="lightbox" data-gallery="gpu" data-glightbox="description: .lightbox-desc-33" title="If you have an older-style PSU, you’ll need no fewer than FOUR ATX CABLES to power this monster (technically three, but four is recommended)."><img src="gpu/gpu_old_psu_cables.jpg" class="img-fluid figure-img" alt="If you have an older-style PSU, you’ll need no fewer than FOUR ATX CABLES to power this monster (technically three, but four is recommended)."></a></p>
+<figcaption>If you have an older-style PSU, you’ll need no fewer than FOUR ATX CABLES to power this monster (technically three, but four is recommended).</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="gpu/gpu_new_psu_cables.jpg" class="lightbox" data-gallery="gpu" data-glightbox="description: .lightbox-desc-34" title="If instead you have a newer PSU, you’ll have access to a single cable that supplies variable wattage, averaging 600W."><img src="gpu/gpu_new_psu_cables.jpg" class="img-fluid figure-img" alt="If instead you have a newer PSU, you’ll have access to a single cable that supplies variable wattage, averaging 600W."></a></p>
+<figcaption>If instead you have a newer PSU, you’ll have access to a single cable that supplies variable wattage, averaging 600W.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>Whew.</p>
+<p>The penultimate hardware step was the two M.2 SSDs. These are the latest in long-term flash storage (NVMe drives) that plug <em>directly</em> into the motherboard for absolutely insane transfer speeds. They’re ideal for—you guessed it—data-intensive computing.</p>
+<p>But their positioning wasn’t ideal: two of the motherboard’s four slots were directly under the GPU, and I wasn’t certain the GPU would fit properly if I installed an M.2 under it.</p>
+<p>The short version is: the GPU actually fit just fine, but the M.2s themselves didn’t play nice with the arrangement of the motherboard’s southbridge. Fortunately I found a configuration that worked, but this part took a ton of swearing and <em>over an hour</em> of trial-and-error before I finally got everything seated.</p>
+<p>The next hard drive will be a standard 2.5” SSD, mmk thx bai.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[[1, 1, 1]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="nvme/nvme_boxes.jpg" class="lightbox" data-gallery="nvme" data-glightbox="description: .lightbox-desc-35" title="Storage unboxing."><img src="nvme/nvme_boxes.jpg" class="img-fluid figure-img" alt="Storage unboxing."></a></p>
+<figcaption>Storage unboxing.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="nvme/nvme_unboxed1.jpg" class="lightbox" data-gallery="nvme" data-glightbox="description: .lightbox-desc-36" title="These things are TEENY."><img src="nvme/nvme_unboxed1.jpg" class="img-fluid figure-img" alt="These things are TEENY."></a></p>
+<figcaption>These things are TEENY.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="nvme/nvme_installed2.jpg" class="lightbox" data-gallery="nvme" data-glightbox="description: .lightbox-desc-37" title="Slotted into two motherboard slots (GPU not shown)."><img src="nvme/nvme_installed2.jpg" class="img-fluid figure-img" alt="Slotted into two motherboard slots (GPU not shown)."></a></p>
+<figcaption>Slotted into two motherboard slots (GPU not shown).</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>The last bit of the hardware was to wire everything up! In particular: the motherboard, CPU cooler, case fans, and GPU all needed to be connected directly to the PSU for power.</p>
+<p>This is always, in my opinion, the most tedious part of any build. Snaking wires throughout the inside of the case always results in snarls and makes any future work (fixing problems, upgrading hardware) tricky at best. Many cases in the last decade have “cable management” pathways built-in to help with this, but it still comes down to the human to make it happen. And it’s annoying at best.</p>
+<p>In this case, I did… ok. Well enough.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[[1, 1]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="wires/internal_wiring.jpg" class="lightbox" data-gallery="wiring" data-glightbox="description: .lightbox-desc-38" title="These pathways are along the “bottom” of the motherboard, so most of the wiring can be kept hidden and out of the way of the main components."><img src="wires/internal_wiring.jpg" class="img-fluid figure-img" alt="These pathways are along the “bottom” of the motherboard, so most of the wiring can be kept hidden and out of the way of the main components."></a></p>
+<figcaption>These pathways are along the “bottom” of the motherboard, so most of the wiring can be kept hidden and out of the way of the main components.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="wires/internal_installed.jpg" class="lightbox" data-gallery="wiring" data-glightbox="description: .lightbox-desc-39" title="Everything (except the GPU) is plugged into the PSU."><img src="wires/internal_installed.jpg" class="img-fluid figure-img" alt="Everything (except the GPU) is plugged into the PSU."></a></p>
+<figcaption>Everything (except the GPU) is plugged into the PSU.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>Ok! Everything is installed! What happens next?!</p>
+</section>
+<section id="boot-up-and-software" class="level3">
+<h3 class="anchored" data-anchor-id="boot-up-and-software">Boot-up and Software</h3>
+<p>We’ve got our build! And she’s gorgeous 😍</p>
+<p>Now, the moment of truth: booting up and installing an operating system. Or, in this case, two: I wanted to install Ubuntu (22.04 at time of post) on one of the M.2s, and Windows (11) on the other.</p>
+<p>I started with Ubuntu.</p>
+<p>I don’t know about other linux distributions—I’ve been on the Ubuntu train ever since Red Hat went corporate, and frankly haven’t had a reason to look back or sideways—but Ubuntu has always been relatively straightforward when it comes to install:</p>
+<ol type="1">
+<li>Create a boot disk (usually a USB disk).</li>
+<li>Boot off the disk</li>
+<li>Profit!</li>
+</ol>
+<p>Step 2 is always the tricky part, especially on a new build: I never know which function key brings up the boot order 🥴 (spoiler alert: it’s F11)</p>
+<p>Once I hit the right sequence of keys, the rest of the process was pretty much point and click. Boom! I had Ubuntu installed!</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[[50, 50], [100]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="ubuntu/turn_on.jpg" class="lightbox" data-gallery="ubuntu" data-glightbox="description: .lightbox-desc-40" title="The first power-up! So much suspense!"><img src="ubuntu/turn_on.jpg" class="img-fluid figure-img" alt="The first power-up! So much suspense!"></a></p>
+<figcaption>The first power-up! So much suspense!</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="ubuntu/turned_on.jpg" class="lightbox" data-gallery="ubuntu" data-glightbox="description: .lightbox-desc-41" title="SHE LIVES. You can tell by the lights."><img src="ubuntu/turned_on.jpg" class="img-fluid figure-img" alt="SHE LIVES. You can tell by the lights."></a></p>
+<figcaption>SHE LIVES. You can tell by the lights.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="ubuntu/ubuntu_install.jpg" class="lightbox" data-gallery="ubuntu" data-glightbox="description: .lightbox-desc-42" title="The Ubuntu installer screen! Things are working!"><img src="ubuntu/ubuntu_install.jpg" class="img-fluid figure-img" alt="The Ubuntu installer screen! Things are working!"></a></p>
+<figcaption>The Ubuntu installer screen! Things are working!</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>Next up: Windows.</p>
+<p>Getting Windows 11 installed, relative to Ubuntu, was a <em>giant pain</em>. In the intervening years, Mircrosoft seems to have gone the route of “install now, license later”—which, honestly, I appreciate—and has provided multiple pathways for creating an installer.</p>
+<p>Unfortunately, only one of those pathways seems to <em>actually work</em>. I initially went the ISO route, since that’s pretty much equivalent to how I installed Ubuntu.</p>
+<p>But that didn’t work. And, weirdly, the internet doesn’t seem to know why. The best hint I found came from <a href="https://answers.microsoft.com/en-us/windows/forum/all/no-device-drivers-were-found-tried-everything-w11/a53aa16b-5d4c-4f8a-abc6-e5106152a220">this forum post</a>, which seems to suggest that AMD-specific drivers <em>aren’t included</em> in the ISO installer, thereby making install via ISO on an AMD system… well, impossible.</p>
+<p>There were no details on this “include AMD drivers during the install” procedure, and by this point I’d run out of patience (I’d tried multiple sub-pathways, even and including installing Windows <em>10</em> instead; all the same result).</p>
+<p>So I went with the one procedure the internet seemed to agree would always work: “get a friend with a Windows PC and run the media installer that only works on Windows.” Yes this is an actual piece of advice on an actual Microsoft forum. Since the media installer option <em>only</em> runs on Windows, you’re in this weird Twilight Zone of needing a Windows computer in order to install Windows on a computer.</p>
+<p>Mmk.</p>
+<p>This worked, finally. Of course, that was just the warm-up; the install process itself is “<a href="https://exple.tive.org/blarg/2023/12/07/polished-glass/">a disaster from stem to stern</a>.” Thankfully, following that guide helped to minimize the worst of the creeping Windows enshittification. A few important points:</p>
+<ul>
+<li>Definitely <a href="https://answers.microsoft.com/en-us/insider/forum/all/set-up-windows-11-without-internet-oobebypassnro/4fc44554-b416-4ecb-8961-6f79fd55ae0f">create a local account</a>. It requires <em>pulling out your ethernet cable</em> and running a shell command, but it’s reasonably straightforward.</li>
+<li>For my US readers: you may also want to select “Global English” rather than “US English” in the language selection step, as this apparently eliminates some awfulness in the start-up screen.</li>
+<li>The guide mentions widgets in the traditional “Start” button location. That was the case for me too, but I don’t think I actually flipped any “Personalization” switches before realizing the Start menu was back where it should be. Not sure what I did, but at least initially that was definitely the case for me, so watch out.</li>
+</ul>
+<p>At this point, we picked up a Windows license and a couple Office licenses from a friend of the family for some steep discounts (that was awfully nice), so I could unlock the power of this <a href="https://i.makeagif.com/media/10-03-2016/hfPN-9.gif">fully armed and operational</a> Windows 11.</p>
+</section>
+<section id="whats-next" class="level3">
+<h3 class="anchored" data-anchor-id="whats-next">What’s next?</h3>
+<p>That’s about it—a complete build from components, up to installing two operating systems. So what’s next?</p>
+<p>Well, the first thing was to give it a name! I struggled with this for a bit. On one hand, I’d only just finished <em>Tears of the Kingdom</em> in late December (yeah, I intentionally sandbagged, savoring the final stages). But on the other hand, most of the devices in my house already have <em>Zelda</em>-themed names.</p>
+<p>(Devices that have a <em>Zelda</em>-themed name: 1 of 2 laptops, 2 of 2 smartphones, 1 of 2 iPads, 7 of 8 Raspberry Pis, 1 NAS, and now 1 desktop. WOW, y’all.)</p>
+<p>But! In a conversation over Mastodon, I was reminded that this isn’t really a bad thing.</p>
+<p></p><div style="position: relative; padding-bottom: 56.25%; height: 0;"> <iframe src="https://fosstodon.org/@jni/111730083884821265/embed" class="mastodon-embed" style="max-width: 100%; border: 0;" width="100%" height="400" allowfullscreen="allowfullscreen"></iframe><script src="https://mastodon.social/embed.js" async="async"></script></div> <p></p>
+<p>So I took the first name that came to mind that seemed incredibly appropriate: <a href="https://zelda.fandom.com/wiki/Makar">Makar, the ancient Sage of Wind</a>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://static.wikia.nocookie.net/zelda_gamepedia_en/images/b/b0/TWW_Makar_Artwork.png" class="lightbox" data-gallery="quarto-lightbox-gallery-43" data-glightbox="description: .lightbox-desc-43" title="Makar, in his element."><img src="https://static.wikia.nocookie.net/zelda_gamepedia_en/images/b/b0/TWW_Makar_Artwork.png" class="img-fluid figure-img" alt="Makar, in his element."></a></p>
+<figcaption>Makar, in his element.</figcaption>
+</figure>
+</div>
+<p>From there, it’s been a matter of configuring two full-blown operating systems. Ubuntu is pretty much the workhorse: that’s where I’ll make heavy use of the GPU. I’ve already installed all the CUDA dependencies and a Python environment with the basic setup, and thanks to the M.2 drives I have plenty of speedy storage for large datasets. On the Windows side, this is indeed for gaming, but also for office productivity (especially if I don’t have my laptop handy). Most of these basics are in place, but it’ll be an ongoing process.</p>
+<p>In the meantime, I have some n@zis to mow down in <em>Wolfenstein</em> and some segmentation models to run on spatial omics data. Until next time!</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="full_install.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-44" data-glightbox="description: .lightbox-desc-44" title="Beautiful. Absolutely stunning."><img src="full_install.jpg" class="img-fluid figure-img" alt="Beautiful. Absolutely stunning."></a></p>
+<figcaption>Beautiful. Absolutely stunning.</figcaption>
+</figure>
+</div>
+
+
+<div class="hidden" aria-hidden="true">
+<span class="glightbox-desc lightbox-desc-2">My workspace for assembly. Thanks, Gamers Nexus!</span>
+<span class="glightbox-desc lightbox-desc-3">Unboxing the case.</span>
+<span class="glightbox-desc lightbox-desc-4">I love the plexiglass covers: easy to remove, but also great for seeing inside.</span>
+<span class="glightbox-desc lightbox-desc-5">Lots of airflow vents.</span>
+<span class="glightbox-desc lightbox-desc-6">Lots and lots of fans.</span>
+<span class="glightbox-desc lightbox-desc-7">All the internal components, unboxed from shipping but still in their retail boxes.</span>
+<span class="glightbox-desc lightbox-desc-8">Everything arrived! Well, everything <em>else</em> arrived.</span>
+<span class="glightbox-desc lightbox-desc-9">Just the internal components that go on the motherboard… minus the GPU.</span>
+<span class="glightbox-desc lightbox-desc-10">The motherboard is inside that antistatic wrap on the right. Zapping that with a small static discharge would be, ah, rather unfortunate!</span>
+<span class="glightbox-desc lightbox-desc-11">The motherboard, in all its glory.</span>
+<span class="glightbox-desc lightbox-desc-12">The “brain” of the computer. I guess.</span>
+<span class="glightbox-desc lightbox-desc-13">The CPU box is actually quite large, but that’s because 90% of it is this “pedestal foam.” I know it’s to keep things from getting jostled, but it just looks like a throne.</span>
+<span class="glightbox-desc lightbox-desc-14">The slot on the motherboard where the CPU goes, with a plastic safety cover on it. You do NOT want to damage the pins underneath it!</span>
+<span class="glightbox-desc lightbox-desc-15">After removing the plastic cover and quadruple-checking the CPU alignment, it fit perfectly!</span>
+<span class="glightbox-desc lightbox-desc-16">The custom cooler I bought. Just slots right on top of the CPU.</span>
+<span class="glightbox-desc lightbox-desc-17">Everything fit! Yay!</span>
+<span class="glightbox-desc lightbox-desc-18">The four RAM chips in the plastic on the right go in the four motherboard slots in front of the CPU on the left.</span>
+<span class="glightbox-desc lightbox-desc-19">If you ever have fewer DIMMs than motherboard slots, look for a schematic like this that tells you which slots you should install RAM in first.</span>
+<span class="glightbox-desc lightbox-desc-20">Everything fit! Yay!</span>
+<span class="glightbox-desc lightbox-desc-21">Everything fit! Yay!</span>
+<span class="glightbox-desc lightbox-desc-22">Everything still fits! Yay!</span>
+<span class="glightbox-desc lightbox-desc-23">That’s the PSU.</span>
+<span class="glightbox-desc lightbox-desc-24">Once you pop the top cover off the case, you can see the divot where the PSU fits.</span>
+<span class="glightbox-desc lightbox-desc-25">Fits like a glove!</span>
+<span class="glightbox-desc lightbox-desc-26">Literal bags’ worth of cables, depending on my hardware.</span>
+<span class="glightbox-desc lightbox-desc-27">Here are cables that will provide core power to the motherboard.</span>
+<span class="glightbox-desc lightbox-desc-28">Here we go.</span>
+<span class="glightbox-desc lightbox-desc-29">Unboxing the beast.</span>
+<span class="glightbox-desc lightbox-desc-30">I could barely hold this with one hand.</span>
+<span class="glightbox-desc lightbox-desc-31">My already-oversized <a href="https://dumbrunner.threadless.com/designs/1-dad-in-age-group/accessories/mug/standard">DumbRunner coffee mug</a> for scale.</span>
+<span class="glightbox-desc lightbox-desc-32">In the immortal words of my dad’s dad: “It FITS. JUST. FINE.”</span>
+<span class="glightbox-desc lightbox-desc-33">If you have an older-style PSU, you’ll need no fewer than FOUR ATX CABLES to power this monster (technically three, but four is recommended).</span>
+<span class="glightbox-desc lightbox-desc-34">If instead you have a newer PSU, you’ll have access to a single cable that supplies variable wattage, averaging 600W.</span>
+<span class="glightbox-desc lightbox-desc-35">Storage unboxing.</span>
+<span class="glightbox-desc lightbox-desc-36">These things are TEENY.</span>
+<span class="glightbox-desc lightbox-desc-37">Slotted into two motherboard slots (GPU not shown).</span>
+<span class="glightbox-desc lightbox-desc-38">These pathways are along the “bottom” of the motherboard, so most of the wiring can be kept hidden and out of the way of the main components.</span>
+<span class="glightbox-desc lightbox-desc-39">Everything (except the GPU) is plugged into the PSU.</span>
+<span class="glightbox-desc lightbox-desc-40">The first power-up! So much suspense!</span>
+<span class="glightbox-desc lightbox-desc-41">SHE LIVES. You can tell by the lights.</span>
+<span class="glightbox-desc lightbox-desc-42">The Ubuntu installer screen! Things are working!</span>
+<span class="glightbox-desc lightbox-desc-43">Makar, in his element.</span>
+<span class="glightbox-desc lightbox-desc-44">Beautiful. Absolutely stunning.</span>
+</div>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>I swear, there’s a post coming about this. Sometime.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>I built this in my second week of sabbatical. The first week was a veritable <em>fire hose</em> from which I was struggling to surface. That, plus the general post-holiday malaise, plus university stuff still demanding my attention… yeah this is probably the best answer.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2024,
+  author = {Quinn, Shannon},
+  title = {The {Legend} of {Makar}},
+  date = {2024-01-25},
+  url = {https://magsol.github.io/2024-01-25-the-legend-of-makar},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2024" class="csl-entry quarto-appendix-citeas" role="listitem">
+Quinn, Shannon. 2024. <span>“The Legend of Makar.”</span> January 25,
+2024. <a href="https://magsol.github.io/2024-01-25-the-legend-of-makar">https://magsol.github.io/2024-01-25-the-legend-of-makar</a>.
+</div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://giscus.app/client.js" data-repo="magsol/magsol.github.io" data-repo-id="MDEwOlJlcG9zaXRvcnkyNzYwNTYxNw==" data-category="Announcements" data-category-id="DIC_kwDOAaU6cc4CTutY" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="dark" data-lang="en" crossorigin="anonymous" data-loading="lazy" async="">
+</script>
+<input type="hidden" id="giscus-base-theme" value="dark">
+<input type="hidden" id="giscus-alt-theme" value="dark">
+</div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":false,"openEffect":"zoom","descPosition":"bottom","selector":".lightbox"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
+
+
+
+
+</body></html>

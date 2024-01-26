@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -47,7 +47,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -56,6 +62,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -74,15 +81,15 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 
 <link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="Stochastic Stenography - Fiddling with generative art models">
-<meta property="og:description" content="">
+<meta property="og:description" content="Data, donuts, and detours">
 <meta property="og:image" content="https://magsol.github.io/posts/2022-08-03-fiddling-with-generative-art/starfield.png">
-<meta property="og:site-name" content="Stochastic Stenography">
+<meta property="og:site_name" content="Stochastic Stenography">
 <meta property="og:locale" content="en_US">
 <meta property="og:image:height" content="1664">
 <meta property="og:image:width" content="1664">
 <meta property="og:image:alt" content="Generated with the text: `4K, wide angle, hyper detailed, starfield, nighttime sky, crescent moons, stars, nebulae, cosmic` by MidjourneyAI.">
 <meta name="twitter:title" content="Stochastic Stenography - Fiddling with generative art models">
-<meta name="twitter:description" content="">
+<meta name="twitter:description" content="Data, donuts, and detours">
 <meta name="twitter:image" content="https://magsol.github.io/posts/2022-08-03-fiddling-with-generative-art/starfield.png">
 <meta name="twitter:creator" content="@SpectralFilter">
 <meta name="twitter:card" content="summary">
@@ -94,10 +101,10 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Stochastic Stenography</span>
     </a>
@@ -109,13 +116,13 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
- <span class="menu-text">About Me</span></a>
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About Me</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -169,6 +176,7 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 
 
 
+
 <p><img src="starfield.png" class="preview-image img-fluid" alt="Generated with the text: `4K, wide angle, hyper detailed, starfield, nighttime sky, crescent moons, stars, nebulae, cosmic` by MidjourneyAI."></p>
 <p>Much like a lot of the internet over the past couple months, I’ve been tinkering with some AI art generators, mainly <a href="https://www.midjourney.com/">Midjourney</a> (if only because I’m waitlisted on <a href="https://openai.com/dall-e-2/">DALL-E 2</a>).</p>
 <p>It’s been surprisingly fun, if challenging. This isn’t really my area of research, but I understand the basic underpinnings:</p>
@@ -179,7 +187,7 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="empty_beach_v1.png" class="img-fluid figure-img" alt="Generated with the text: `empty beach, dark storm in distance, one flower blooms from the sand to the side, high detail, atmosphere, Arnold render, ultra-realistic, dramatic lighting, glow, cinematic lighting, epic, 8k` by MidjourneyAI."></p>
-<figcaption class="figure-caption">Generated with the text: <code>empty beach, dark storm in distance, one flower blooms from the sand to the side, high detail, atmosphere, Arnold render, ultra-realistic, dramatic lighting, glow, cinematic lighting, epic, 8k</code></figcaption>
+<figcaption>Generated with the text: <code>empty beach, dark storm in distance, one flower blooms from the sand to the side, high detail, atmosphere, Arnold render, ultra-realistic, dramatic lighting, glow, cinematic lighting, epic, 8k</code></figcaption>
 </figure>
 </div>
 <p>This was actually an image that I generated based off an image <em>someone else had already generated</em> (yeah, we can take public images and run them back through the model with new or additional text).</p>
@@ -191,7 +199,7 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="mountains_starfield.png" class="img-fluid figure-img" alt="Generated with the text: `wooded mountainous winter landscape under cosmic night sky with distant glowing small town in a valley, nebulae, crescent moon, planetary rings, cinematic, atmospheric, 8k, dramatic lighting, ultra realistic` by MidjourneyAI."></p>
-<figcaption class="figure-caption">Generated with the text: <code>wooded mountainous winter landscape under cosmic night sky with distant glowing small town in a valley, nebulae, crescent moon, planetary rings, cinematic, atmospheric, 8k, dramatic lighting, ultra realistic</code></figcaption>
+<figcaption>Generated with the text: <code>wooded mountainous winter landscape under cosmic night sky with distant glowing small town in a valley, nebulae, crescent moon, planetary rings, cinematic, atmospheric, 8k, dramatic lighting, ultra realistic</code></figcaption>
 </figure>
 </div>
 <p>I will say, it definitely takes some doing to get a feel for how it works–what I had in mind was nowhere near what the model spat out, even though I <em>love</em> what it created. Still, there weren’t really any planetary rings (I was thinking of Gaal’s homeworld in the AppleTV+ <em>Foundation</em> series), and the “glowing small town in a valley” seems to have been diffusely spread over the <em>entire</em> valley, almost like fireflies, rather than distinct. Beautiful, no question, but not exactly what I’d had in mind.</p>
@@ -199,7 +207,7 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="rpi_madeof_raspberries.png" class="img-fluid figure-img" alt="Generated with the text: `raspberry pi computer made out of raspberries, modern, futuristic` by MidjourneyAI."></p>
-<figcaption class="figure-caption">Generated with the text: <code>raspberry pi computer made out of raspberries, modern, futuristic</code></figcaption>
+<figcaption>Generated with the text: <code>raspberry pi computer made out of raspberries, modern, futuristic</code></figcaption>
 </figure>
 </div>
 <p>I see a lot of super awesome art being generated from very terse prompts, so I was trying to capture that a little bit here (as opposed to the downright locquacious landscape prompts above).</p>
@@ -207,35 +215,35 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="writer.png" class="img-fluid figure-img" alt="Generated with the text: `a writer working at her computer surrounded by a world of her own creation` by MidjourneyAI."></p>
-<figcaption class="figure-caption">Generated with the text: <code>a writer working at her computer surrounded by a world of her own creation</code></figcaption>
+<figcaption>Generated with the text: <code>a writer working at her computer surrounded by a world of her own creation</code></figcaption>
 </figure>
 </div>
 <p>And I really love this next one, as it evokes less of the specific act of writing and more of how it’s about <em>creating</em>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="creator.png" class="img-fluid figure-img" alt="Generated with the text: `writer standing on the boundary between worlds, the world she lives in and the world she creates` by MidjourneyAI."></p>
-<figcaption class="figure-caption">Generated with the text: <code>writer standing on the boundary between worlds, the world she lives in and the world she creates</code></figcaption>
+<figcaption>Generated with the text: <code>writer standing on the boundary between worlds, the world she lives in and the world she creates</code></figcaption>
 </figure>
 </div>
 <p>We’ve also been huge fans of Zelda for quite awhile (which <a href="https://magsol.github.io/tag/zelda.html">longtime readers already know</a>), and not too long ago I commissioned a fan account to remake a family photo as if it were in the Zelda universe.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="commission.png" class="img-fluid figure-img" alt="Commissioned artwork of our own family, redrawn to look like we live in the Zelda universe."></p>
-<figcaption class="figure-caption">Quite the handsome family, doncha think?</figcaption>
+<figcaption>Quite the handsome family, doncha think?</figcaption>
 </figure>
 </div>
 <p>So I played with that idea a bit, and while the results weren’t great–I get the feeling the generator has a harder time dealing with <em>very specific real-world concepts</em>, as opposed to more general categories of things–I did get this pretty cute rendering of what is most definitely a Hyrulean family.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="zelda.png" class="img-fluid figure-img" alt="Generated with the text: `zelda champions from breath of the wild, family, 1985, highres` by MidjourneyAI."></p>
-<figcaption class="figure-caption">Generated with the text: <code>zelda champions from breath of the wild, family, 1985, highres</code></figcaption>
+<figcaption>Generated with the text: <code>zelda champions from breath of the wild, family, 1985, highres</code></figcaption>
 </figure>
 </div>
 <p>It’s fun to tinker with. In all honesty I’ll probably keep playing with it here and there as the mood strikes; if you want to follow along, <a href="https://www.midjourney.com/app/users/730084120558043179/">there’s a public feed of all the pictures I generate here</a> (note: it’s “public” in that you have to create a free account to see it), since there’s no way I’m going to shell out the $ required to make my images private.</p>
 <section id="legal-disclaimer" class="level3">
 <h3 class="anchored" data-anchor-id="legal-disclaimer">Legal Disclaimer</h3>
 <p>At least, I’ll keep tinkering until copyright catches up… which, on that note, I should mention: I agree with everything in this twitter thread on the topic. I want to end on this note, because I think this is very important to keep in mind.</p>
-<p></p><div id="tweet-53525"></div><script>tweet={"url":"https:\/\/twitter.com\/BunchesOfBees\/status\/1553079149232734208","author_name":"Christopher","author_url":"https:\/\/twitter.com\/BunchesOfBees","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EA thing that makes me absolutely insane with discussions about &quot;AI&quot; image generation is their creators freely argue literally both sides of an opposing argument depending on what argument you&#39;re trying to have with them\u003C\/p\u003E&mdash; Christopher (@BunchesOfBees) \u003Ca href=\"https:\/\/twitter.com\/BunchesOfBees\/status\/1553079149232734208?ref_src=twsrc%5Etfw\"\u003EJuly 29, 2022\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-53525").innerHTML = tweet["html"];</script><p></p>
+<p></p><div id="tweet-53251"></div><script>tweet={"url":"https:\/\/twitter.com\/BunchesOfBees\/status\/1553079149232734208","author_name":"Christopher","author_url":"https:\/\/twitter.com\/BunchesOfBees","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EA thing that makes me absolutely insane with discussions about &quot;AI&quot; image generation is their creators freely argue literally both sides of an opposing argument depending on what argument you&#39;re trying to have with them\u003C\/p\u003E&mdash; Christopher (@BunchesOfBees) \u003Ca href=\"https:\/\/twitter.com\/BunchesOfBees\/status\/1553079149232734208?ref_src=twsrc%5Etfw\"\u003EJuly 29, 2022\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-53251").innerHTML = tweet["html"];</script><p></p>
 <p>Keep in mind, I am not a lawyer, but based on my read there are two legal interpretations of these models: as an <em>author</em> that learns and creates novel work, or a <em>product</em> that synthesizes derivative works. In the case of the former, any kind of substantive duplication of existing work created by someone else is copyright infringement; and in the case of the latter, it’s using novel, <em>unlicensed</em> work in a paid product, which is also copyright infringement.</p>
 <p>As someone whose background is in exactly this kind of generative “AI” work, I would generally fall under the latter interpretation of these models as a product (what they “learn” is dubious at best; I would never call their reproductions “novel”). As such, I also agree with the tweet’s author that the moment these companies begin monetizing these models is when, at the very least, they’ve committed a moral rights violation. It’s the same exact reason I’m very uncomfortable with the <a href="https://github.com/features/copilot">GitHub CoPilot product</a>: it’s been trained using billions of lines of code that was written, tested, debugged, scrutinized, and labored over by humans <em>who did not consent to nor were reimbursed for having their code used in a paid product</em>.</p>
 <p>That last tweet in the thread is particularly poignant for me, and distills much of the reason for my disillusionment with the tech sector in general. I’m sorry to end on such a sour note, but while I do love the amazing things machine learning is doing, we have to keep at the forefront of our minds that <a href="https://vicki.substack.com/p/neural-nets-are-just-people-all-the">machine learning is, ultimately, a human endeavor</a>, and if it won’t work without humans, we should make sure those humans are <em>taken care of</em>: recognition, compensation, empathy, and so on.</p>
@@ -244,7 +252,7 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2022,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2022,
   author = {Quinn, Shannon},
   title = {Fiddling with Generative Art Models},
   date = {2022-08-03},
@@ -334,10 +342,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -347,8 +354,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -361,6 +377,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -404,6 +539,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -429,6 +565,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -490,7 +652,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <script src="https://giscus.app/client.js" data-repo="magsol/magsol.github.io" data-repo-id="MDEwOlJlcG9zaXRvcnkyNzYwNTYxNw==" data-category="Announcements" data-category-id="DIC_kwDOAaU6cc4CTutY" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="dark" data-lang="en" crossorigin="anonymous" data-loading="lazy" async="">
 </script>
+<input type="hidden" id="giscus-base-theme" value="dark">
+<input type="hidden" id="giscus-alt-theme" value="dark">
 </div> <!-- /content -->
+
 
 
 
