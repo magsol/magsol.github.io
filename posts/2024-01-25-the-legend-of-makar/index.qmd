@@ -1,0 +1,300 @@
+---
+title: "The Legend of Makar"
+subtitle: "The mostly long and some short of building your own desktop"
+date: "2024-01-25 19:09:00"
+categories: [personal, professional, news, makar]
+citation:
+    url: https://magsol.github.io/2024-01-25-the-legend-of-makar
+image: "makar.jpg"
+image-alt: "A picture of the Ubuntu landing screen for logged in users, on an ultrawide screen monitor set on a small desk."
+lightbox: true
+author: "Shannon Quinn"
+---
+![](makar.jpg){.preview-image fig-alt="A picture of the Ubuntu landing screen for logged in users, on an ultrawide screen monitor set on a small desk."}
+
+I built my first desktop from components when I was 15, a sophomore in high school. With the exception of my college workstation (laptops hadnt't _quite_ reached ubiquity yet), I've assembled every desktop I have ever owned since then.
+
+It's a skill and a pasttime I deeply enjoy, but one which I don't have the opportunity to explore very often. Even though "every desktop since age 15" sounds impressive, in real numbers it amounts to just a handful:
+
+ - age 15: my family's home computer
+ - age 19: a server for my dorm room
+ - age 22: my graduate desktop
+ - age 25: the lab's new workstation during a rotation (not mine, per se)
+ - age 29: my "first real job" home desktop
+ - now: the one in this blog post!
+
+There were certainly upgrades throughout that timeline---I swapped hard drives and memory in and out of that dorm server many times; my first "real job" desktop saw at least one GPU upgrade; my graduate desktop was a true exercise in frustration as I spent the first _two years_ diagnosing an [intermittent and nigh-irreproducible freezing](https://magsol.wordpress.com/2010/06/28/one-final-technical-appeal/)---but it's actually rare I get brag to folks that I'm "assembling my new computer from parts."
+
+So I figured: for this round, I'd go all out with full documentation in the form of a blog post 😁
+
+::: {.callout-note}
+## Long post ahead
+
+Let the record show: the reader was warned of the length of the post that follows.
+:::
+
+### Hardware
+
+The first step in any desktop build: the hardware! I've been scoping out the major components off and on for over a year now, using resources like [GamersNexus reviews](https://www.youtube.com/@GamersNexus) and [Tom's Hardware](https://www.tomshardware.com/) to get a feel for what CPUs / motherboards I should look into.
+
+As an example: I'd spent 11 of the past 12 months with the latest Intel processor locked in, but changed my mind at the [relative] last second when all the head-to-head CPU benchmarks showed the latest AMD Ryzen 9 processors going toe-to-toe with Intel on multithreaded applications (i.e., my work's bread and butter). That, coupled with AMD's _shocking_ advantage in power draw and smaller advantage on price made it an immediate no-brainer to switch.
+
+For the curious, here's the full list of hardware I ended up going with:
+
+ - CPU: [AMD Ryzen 9 7950X](https://www.newegg.com/amd-ryzen-9-7950x-ryzen-9-7000-series/p/N82E16819113771?Item=N82E16819113771)
+ - Cooler: [DeepCool AK400 Zero Dark Plus 120mm](https://www.newegg.com/deepcool-ak400-zero-dark-plus/p/N82E16835856230?Item=N82E16835856230)
+ - Motherboard: [MSI MAG X670E Tomahawk AM5 ATX](https://www.newegg.com/msi-mag-x670e-tomahawk-wifi/p/N82E16813144595?Item=N82E16813144595)
+ - Memory: [G.SKILL Trident Z5 48GB 288-pin PC RAM DDR5 6800 PC5 54400](https://www.newegg.com/g-skill-96gb/p/N82E16820374465?Item=N82E16820374465) (4x)
+ - GPU: [NVIDIA RTX 4090](https://www.bestbuy.com/site/gigabyte-nvidia-geforce-rtx-4090-gaming-oc-24gb-gddr6x-pci-express-4-0-graphics-card-black/6521518.p)
+ - PSU: [MEG Ai1300P PCIE 5 1300W](https://www.amazon.com/dp/B0B433ZCRP?psc=1&ref=ppx_yo2ov_dt_b_product_details)
+ - Storage: [Samsung SSD 990 PRO 2TB M.2 2280](https://www.newegg.com/samsung-4gb-990-pro/p/N82E16820147878?Item=N82E16820147878) (2x)
+ - Case: [Fractal Design Torrent Black E-ATX Mid Tower](https://www.newegg.com/black-fractal-design-torrent-atx-mid-tower/p/N82E16811352143?Item=N82E16811352143)
+ - Monitor: [Samsung 49-inch Odyssey G9](https://www.amazon.com/gp/product/B088HH6LW5/ref=ppx_yo_dt_b_asin_title_o05_s00?ie=UTF8&psc=1)
+
+To address the elephant in the room: no, this build was not cheap, at _all_. This is all top-of-the-line hardware, meant to 1) last a very long time, and 2) facilitate my kind of intensive number-crunching machine learning work. But I also put it together after having secured an agreement that my sabbatical employer^[I swear, there's a post coming about this. Sometime.] would kick in a small amount, too.
+
+There are all kinds of additional considerations I went through---you're probably asking, why only M.2 drives? believe me, that was a whole thing, but oddly kinda boiled down to "supply chain problems, lol"---so I'm happy to get into it offline.
+
+But for now, let's jump into assembly!
+
+![My workspace for assembly. Thanks, Gamers Nexus!](clear_desk.jpg){fig-alt="A clear desk space with a Gamers Nexus antistatic mat."}
+
+### Unboxing and Assembly
+
+Once I had all the components (this was also a Whole Thing^TM^), it took me about 3 days to put everything together. That's actually a record---the longest it had taken me to assemble a desktop had previous been _3 hours_. I don't really know what to chalk that discrepancy up to. Maybe rustiness (it's been almost a decade since my last full build)? Reverence (I love doing this so much, I want to soak it up)? Nerves (first time building an AMD machine since the dorm room server)?
+
+General fatigue?^[I built this in my second week of sabbatical. The first week was a veritable _fire hose_ from which I was struggling to surface. That, plus the general post-holiday malaise, plus university stuff still demanding my attention... yeah this is probably the best answer.]
+
+Anyway.
+
+I started with the case. It came highly recommended through Gamers Nexus, especially for custom cooling. I've always dreamed of a fully water-cooled rig, but as the time to finalize the build crept closer, I decided to stick with a traditional air-cooled setup. This case was great in that it lets me do either but defaults to an excellent air-cooled configuration.
+
+::: {layout="[[1, 1], [1, 1]]"}
+
+![Unboxing the case.](case/box_case.jpg){group="case"}
+
+![I love the plexiglass covers: easy to remove, but also great for seeing inside.](case/case1.jpg){group="case"}
+
+![Lots of airflow vents.](case/case2.jpg){group="case"}
+
+![Lots and lots of fans.](case/case3.jpg){group="case"}
+
+:::
+
+Next were all the internal components. Since the case is really just a vehicle for the motherboard, which is really just a vehicle for _everything else_, I wanted to work my way from the inside out. Especially given the downright titanic proportions of the 4090, I wanted to assemble the motherboard as much as possible before slotting it into the case and losing a lot of physical wiggle room and visibility.
+
+::: {layout="[[100], [50, 50]]"}
+
+![All the internal components, unboxed from shipping but still in their retail boxes.](before_the_storm.jpg){group="unboxing"}
+
+![Everything arrived! Well, everything _else_ arrived.](boxes.jpg){group="unboxing"}
+
+![Just the internal components that go on the motherboard... minus the GPU.](boxes_internal_components.jpg){group="unboxing"}
+
+:::
+
+The CPU and associated cooler were first. These were, thankfully, pretty straightforward. The only difference here from my prior experience with Intel was that AMD doesn't seem to ship its CPUs with stock coolers; hence, I needed to get a custom one. Otherwise, everything slotted in exactly as I remembered.
+
+::: {layout="[[100], [100], [50, 50], [50, 50], [50, 50]]"}
+
+![The motherboard is inside that antistatic wrap on the right. Zapping that with a small static discharge would be, ah, rather unfortunate!](cpu/motherboard_unpack.jpg){group="cpu"}
+
+![The motherboard, in all its glory.](cpu/motherboard.jpg){group="cpu"}
+
+![The "brain" of the computer. I guess.](cpu/cpu_unbox.jpg){group="cpu"}
+
+![The CPU box is actually quite large, but that's because 90% of it is this "pedestal foam." I know it's to keep things from getting jostled, but it just looks like a throne.](cpu/cpu_box.jpg){group="cpu"}
+
+![The slot on the motherboard where the CPU goes, with a plastic safety cover on it. You do NOT want to damage the pins underneath it!](cpu/motherboard_cpu_slot.jpg){group="cpu"}
+
+![After removing the plastic cover and quadruple-checking the CPU alignment, it fit perfectly!](cpu/motherboard_cpu_install.jpg){group="cpu"}
+
+![The custom cooler I bought. Just slots right on top of the CPU.](cpu/cpu_cooler.jpg){group="cpu"}
+
+![Everything fit! Yay!](cpu/cpu_cooler_installed.jpg){group="cpu"}
+
+:::
+
+Next up: memory (or RAM). I was originally going with just a single 2-pack of 48GB DIMMs for a total of 96GB, but my sabbatical employer insisted I max out the memory so I can work with 100+GB single images they have from clients.
+
+That entailed a bit more research on my part on AMD-compatible motherboards to learn what their RAM limits were. I found one with 192GB as its upper limit: hence that motherboard, and hence why I have so much RAM!
+
+I think I enjoy installing RAM the most: there are no moving parts, other than the clips on the motherboard itself that very helpfully "click" when you have properly seated the memory. It's very satisfying.
+
+::: {layout="[[100], [50, 50]]"}
+
+![The four RAM chips in the plastic on the right go in the four motherboard slots in front of the CPU on the left.](ram/motherboard_memory.jpg){group="ram"}
+
+![If you ever have fewer DIMMs than motherboard slots, look for a schematic like this that tells you which slots you should install RAM in first.](ram/motherboard_dimms.jpg){group="ram"}
+
+![Everything fit! Yay!](ram/motherboard_memory_installed.jpg){group="ram"}
+
+:::
+
+At this point, I _should have_ installed the storage devices. But for reasons lost to the passage of time, I didn't. Instead, I installed the motherboard into the case.
+
+Part of my rationale, I think, was that I knew I couldn't install the GPU until the motherboard was seated in the case; the GPU was just too big to be installed without the support of the case itself. I also knew some of the M.2 slots were _under_ the GPU; this created some uncertainty about whether the GPU would actually sit correctly if an M.2 device was installed directly under it. My priority here was the GPU---it was so large, it could only fit in one of two slots, and of those two only one was honestly preferable---and to seat the GPU, I needed to install the motherboard into the case.
+
+All in all, motherboard installation is pretty easy: just put the motherboard in the case and carefully screw it down. If the screw holes in the motherboard don't align with the struts in the case, then something has gone horribly wrong and you should stop.
+
+::: {layout="[[1, 1]]"}
+
+![Everything fit! Yay!](mobo/motherboard_installed1.jpg){group="mobo"}
+
+![Everything still fits! Yay!](mobo/motherboard_installed2.jpg){group="mobo"}
+
+:::
+
+For one final diversion before the monstrosity that is the GPU, I installed the PSU, aka the power supply. Given that wholly _half_ the power supply's capacity is going to the GPU, I knew I needed something relatively beefy, hence the 1300W monster PSU. But I also knew I wouldn't have very many other components that needed direct power.
+
+So a _modular_ PSU was key: one with lots of outlets for potential devices, but whose cords could be disconnected and removed when not needed so as not to clog up the inside of the case with unplugged power cables.
+
+Another reason I love this case is because, at a time when most cases now put the PSU somewhere in the bottom, this case puts the PSU at the _top_, and even "slightly outside" the case itself! There's a panel that pops off where the PSU sits, and the cables are then snaked through an opening to the rest of the case for added compartmentalization. It's quite nice.
+
+::: {layout="[[50, 50], [33, 33, 33]]"}
+
+![That's the PSU.](psu/psu.jpg){group="psu"}
+
+![Once you pop the top cover off the case, you can see the divot where the PSU fits.](psu/case_slot_for_psu.jpg){group="psu"}
+
+![Fits like a glove!](psu/case_with_psu.jpg){group="psu"}
+
+![Literal bags' worth of cables, depending on my hardware.](psu/psu_cables1.jpg){group="psu"}
+
+![Here are cables that will provide core power to the motherboard.](psu/psu_cables2.jpg){group="psu"}
+
+:::
+
+Alright. Couldn't ignore the [Demon King in the Depths](https://www.artstation.com/artwork/m85BXZ) any longer. Time to install the GPU.
+
+I knew this thing would be huge going in, but I was still shocked, and I say this as a still-owner of a venerable 1080 Ti. This thing spans the volume of nearly 3x 1080s. It's absolutely insane. And yet, still _technically_ only takes the space of 2 PCI devices.
+
+Suffice to say, I made absolutely certain before purchasing that all the measurements fit what I had to work with. For a component that was almost half the entire monetary AND eletrical budgets of this build, this was the one I wanted to get right the first time.
+
+Actual installation was a snap, as it has been ever since the advent of separate GPUs. But it seriously felt like plugging an Apollo command module into a 120V home garage outlet.
+
+::: {layout="[[100], [33, 33, 33], [33, 33, 33]]"}
+
+![Here we go.](gpu/gpu_box_case.jpg){group="gpu"}
+
+![Unboxing the beast.](gpu/gpu_unboxed1.jpg){group="gpu"}
+
+![I could barely hold this with one hand.](gpu/gpu_unboxed2.jpg){group="gpu"}
+
+![My already-oversized [DumbRunner coffee mug](https://dumbrunner.threadless.com/designs/1-dad-in-age-group/accessories/mug/standard) for scale.](gpu/gpu_unboxed3.jpg){group="gpu"}
+
+![In the immortal words of my dad's dad: "It FITS. JUST. FINE."](gpu/gpu_installed.jpg){group="gpu"}
+
+![If you have an older-style PSU, you'll need no fewer than FOUR ATX CABLES to power this monster (technically three, but four is recommended).](gpu/gpu_old_psu_cables.jpg){group="gpu"}
+
+![If instead you have a newer PSU, you'll have access to a single cable that supplies variable wattage, averaging 600W.](gpu/gpu_new_psu_cables.jpg){group="gpu"}
+
+:::
+
+Whew.
+
+The penultimate hardware step was the two M.2 SSDs. These are the latest in long-term flash storage (NVMe drives) that plug _directly_ into the motherboard for absolutely insane transfer speeds. They're ideal for---you guessed it---data-intensive computing.
+
+But their positioning wasn't ideal: two of the motherboard's four slots were directly under the GPU, and I wasn't certain the GPU would fit properly if I installed an M.2 under it.
+
+The short version is: the GPU actually fit just fine, but the M.2s themselves didn't play nice with the arrangement of the motherboard's southbridge. Fortunately I found a configuration that worked, but this part took a ton of swearing and _over an hour_ of trial-and-error before I finally got everything seated.
+
+The next hard drive will be a standard 2.5" SSD, mmk thx bai.
+
+::: {layout="[[1, 1, 1]]"}
+
+![Storage unboxing.](nvme/nvme_boxes.jpg){group="nvme"}
+
+![These things are TEENY.](nvme/nvme_unboxed1.jpg){group="nvme"}
+
+![Slotted into two motherboard slots (GPU not shown).](nvme/nvme_installed2.jpg){group="nvme"}
+
+:::
+
+The last bit of the hardware was to wire everything up! In particular: the motherboard, CPU cooler, case fans, and GPU all needed to be connected directly to the PSU for power.
+
+This is always, in my opinion, the most tedious part of any build. Snaking wires throughout the inside of the case always results in snarls and makes any future work (fixing problems, upgrading hardware) tricky at best. Many cases in the last decade have "cable management" pathways built-in to help with this, but it still comes down to the human to make it happen. And it's annoying at best.
+
+In this case, I did... ok. Well enough.
+
+::: {layout="[[1, 1]]"}
+
+![These pathways are along the "bottom" of the motherboard, so most of the wiring can be kept hidden and out of the way of the main components.](wires/internal_wiring.jpg){group="wiring"}
+
+![Everything (except the GPU) is plugged into the PSU.](wires/internal_installed.jpg){group="wiring"}
+
+:::
+
+Ok! Everything is installed! What happens next?!
+
+### Boot-up and Software
+
+We've got our build! And she's gorgeous 😍
+
+Now, the moment of truth: booting up and installing an operating system. Or, in this case, two: I wanted to install Ubuntu (22.04 at time of post) on one of the M.2s, and Windows (11) on the other.
+
+I started with Ubuntu.
+
+I don't know about other linux distributions---I've been on the Ubuntu train ever since Red Hat went corporate, and frankly haven't had a reason to look back or sideways---but Ubuntu has always been relatively straightforward when it comes to install:
+
+ 1. Create a boot disk (usually a USB disk).
+ 2. Boot off the disk
+ 3. Profit!
+
+Step 2 is always the tricky part, especially on a new build: I never know which function key brings up the boot order 🥴 (spoiler alert: it's F11)
+
+Once I hit the right sequence of keys, the rest of the process was pretty much point and click. Boom! I had Ubuntu installed!
+
+::: {layout="[[50, 50], [100]]"}
+
+![The first power-up! So much suspense!](ubuntu/turn_on.jpg){group="ubuntu"}
+
+![SHE LIVES. You can tell by the lights.](ubuntu/turned_on.jpg){group="ubuntu"}
+
+![The Ubuntu installer screen! Things are working!](ubuntu/ubuntu_install.jpg){group="ubuntu"}
+
+:::
+
+Next up: Windows.
+
+Getting Windows 11 installed, relative to Ubuntu, was a _giant pain_. In the intervening years, Mircrosoft seems to have gone the route of "install now, license later"---which, honestly, I appreciate---and has provided multiple pathways for creating an installer.
+
+Unfortunately, only one of those pathways seems to _actually work_. I initially went the ISO route, since that's pretty much equivalent to how I installed Ubuntu.
+
+But that didn't work. And, weirdly, the internet doesn't seem to know why. The best hint I found came from [this forum post](https://answers.microsoft.com/en-us/windows/forum/all/no-device-drivers-were-found-tried-everything-w11/a53aa16b-5d4c-4f8a-abc6-e5106152a220), which seems to suggest that AMD-specific drivers _aren't included_ in the ISO installer, thereby making install via ISO on an AMD system... well, impossible.
+
+There were no details on this "include AMD drivers during the install" procedure, and by this point I'd run out of patience (I'd tried multiple sub-pathways, even and including installing Windows _10_ instead; all the same result).
+
+So I went with the one procedure the internet seemed to agree would always work: "get a friend with a Windows PC and run the media installer that only works on Windows." Yes this is an actual piece of advice on an actual Microsoft forum. Since the media installer option _only_ runs on Windows, you're in this weird Twilight Zone of needing a Windows computer in order to install Windows on a computer.
+
+Mmk.
+
+This worked, finally. Of course, that was just the warm-up; the install process itself is "[a disaster from stem to stern](https://exple.tive.org/blarg/2023/12/07/polished-glass/)." Thankfully, following that guide helped to minimize the worst of the creeping Windows enshittification. A few important points:
+
+ - Definitely [create a local account](https://answers.microsoft.com/en-us/insider/forum/all/set-up-windows-11-without-internet-oobebypassnro/4fc44554-b416-4ecb-8961-6f79fd55ae0f). It requires _pulling out your ethernet cable_ and running a shell command, but it's reasonably straightforward.
+ - For my US readers: you may also want to select "Global English" rather than "US English" in the language selection step, as this apparently eliminates some awfulness in the start-up screen.
+ - The guide mentions widgets in the traditional "Start" button location. That was the case for me too, but I don't think I actually flipped any "Personalization" switches before realizing the Start menu was back where it should be. Not sure what I did, but at least initially that was definitely the case for me, so watch out.
+
+At this point, we picked up a Windows license and a couple Office licenses from a friend of the family for some steep discounts (that was awfully nice), so I could unlock the power of this [fully armed and operational](https://i.makeagif.com/media/10-03-2016/hfPN-9.gif) Windows 11.
+
+### What's next?
+
+That's about it---a complete build from components, up to installing two operating systems. So what's next?
+
+Well, the first thing was to give it a name! I struggled with this for a bit. On one hand, I'd only just finished _Tears of the Kingdom_ in late December (yeah, I intentionally sandbagged, savoring the final stages). But on the other hand, most of the devices in my house already have _Zelda_-themed names.
+
+(Devices that have a _Zelda_-themed name: 1 of 2 laptops, 2 of 2 smartphones, 1 of 2 iPads, 7 of 8 Raspberry Pis, 1 NAS, and now 1 desktop. WOW, y'all.)
+
+But! In a conversation over Mastodon, I was reminded that this isn't really a bad thing.
+
+{{< mastodon https://fosstodon.org/@jni/111730083884821265>}}
+
+So I took the first name that came to mind that seemed incredibly appropriate: [Makar, the ancient Sage of Wind](https://zelda.fandom.com/wiki/Makar).
+
+![Makar, in his element.](https://static.wikia.nocookie.net/zelda_gamepedia_en/images/b/b0/TWW_Makar_Artwork.png)
+
+From there, it's been a matter of configuring two full-blown operating systems. Ubuntu is pretty much the workhorse: that's where I'll make heavy use of the GPU. I've already installed all the CUDA dependencies and a Python environment with the basic setup, and thanks to the M.2 drives I have plenty of speedy storage for large datasets. On the Windows side, this is indeed for gaming, but also for office productivity (especially if I don't have my laptop handy). Most of these basics are in place, but it'll be an ongoing process.
+
+In the meantime, I have some n@zis to mow down in _Wolfenstein_ and some segmentation models to run on spatial omics data. Until next time!
+
+![Beautiful. Absolutely stunning.](full_install.jpg)
