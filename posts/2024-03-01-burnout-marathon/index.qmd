@@ -1,0 +1,48 @@
+---
+title: "Burnout Marathon"
+subtitle: "The least fun race you'll ever run"
+date: "2024-03-01 16:12:00"
+categories: [personal, burnout]
+citation:
+    url: https://magsol.github.io/2024-03-01-burnout-marathon
+image: "clouds.jpg"
+image-alt: "Landscape photo of stringy cirrus clouds near sunset."
+author: "Shannon Quinn"
+---
+![](clouds.jpg){.preview-image fig-alt="Landscape photo of stringy cirrus clouds near sunset."}
+
+::: {.callout-warning}
+This post contains references to recent events at the University of Georgia involving the deaths of two undergraduate students.
+:::
+
+February was a bruiser of a month: somehow both the shortest of the year by any objective measure, and also the most intense of the past year at least.
+
+For several days this past week I've felt that "hollow muscle" sensation that goes beyond mere fatigue. It's that feeling where you've been hopped up on cortisol for days (or longer) at a time and then you finally, blessedly, are able to relax; it feels a lot like a multi-day hangover or even withdrawal. My hands shake, my legs feel wobbly, and on a whole I feel as though I could take a nap at any time.
+
+I'm sure it's happened to me in the intervening years, but the last time I vividly remember it was right at the start of 2014, as I was entering the final year of my PhD, and I had just started on fluoxetine. It helped me to finally start to sleep through the night on multiple consecutive nights, but I was waking each morning with this same feeling: heavy and tired, sure, but also all my muscles shook, as though coming down from a high. It lasted for at least a week but went away as my sleep and exercise routines evened out.
+
+This past week was one of the worst in recent memory. Somehow, the tragedies of two UGA students dying---one of them [murdered on trails we've run millions of times](https://www.npr.org/2024/02/23/1233354257/university-of-georgia-death-student), the other ([who died by suicide](https://www.ajc.com/news/crime/uga-student-wyatt-banks-remembered-as-a-friend-to-all-who-loved-to-travel-cook/FUHEEYMEVRA53PSTCXJRGNUUUU/)) a graduate of my high school---were only a part of what made the past week so difficult.
+
+For all the progress I've made in learning to cope with and even reverse burnout, I still have no idea how to handle acute situations, especially when it's multiple in just a few days' time and the feeling of being hit from all directions is overwhelming. My therapist assured me that, since I didn't physically or emotionally hurt anyone else or even myself in the immediate aftermath, that alone puts me way ahead of the curve. That helps to hear, but it really doesn't _feel_ like it.
+
+I've had a love-hate relationship with my Garmin Fenix watch ever since purchasing it back in 2015. It has a feature that estimates your current fitness "state", including categories like "Productive", "Maintaining", "Peaking", or "Recovery." It measures all of this mostly using heart rate data, which by itself is suspect from a watch; as good as watch-based optical heart rate monitors have gotten, they're still a "good estimate" at best by comparison to chest straps or pulse monitors at doctor's offices.
+
+But for the past _10 days_ it's had me in "Maintaining" or even "Unproductive" for the longest period I can remember, despite making an active push to increase my weekly running mileage. And the reasoning Garmin provided for the classification was pretty damning: it said my activity level was good, but that my fitness was nonetheless still decreasing, a sign that I needed **more recovery time**.
+
+![When even Garmin is consistently telling you to calm your shit, maybe it's time to chill.](unproductive.jpg){fig-alt="A screenshot of Garmin's 4-week fitness state summary, which shows the Feb 19-29 period as in either a Maintaining or an Unproductive state, relative to the other 2.5 weeks before it that show mixtures of Productive and Maintaining."}
+
+I took Monday off from work. I am so, so grateful to have that flexibility to take time when I need it, but wow I needed it. I don't really remember specifics from the weekend until about Monday evening; that's how brain-dead I was.
+
+I don't have any pearls of wisdom for getting through acutely stressful situations; I wish I did. An outlet for both the physical and the emotional/mental energy certainly helps (obviously, outlets that do NOT involve hurting other people). In my case:
+
+ - A pretty intense 30-minute throwing session in my backyard with my pitchback at about 8:30pm. The fact that I escaped without taking a single baseball to the face while the half of the yard I was standing in was in pitch darkness is one minor miracle. That my shoulder wasn't sore the next day is another.
+ - My wife and I ran together _twice_ this week for the first time since Z was born over three years ago.
+ - I've thrown myself into my work this week: I had several very productive work sessions with my colleagues at PredxBio as we continue to build out some new spatial biology models; I wrote some draft SciPy abstracts (we might submit _three_!); and I approached a potential contractor for one of my grants. 
+ - I managed to create a self-sufficient home media server, allowing me to cancel our AppleTV+ subscription a mere 24 hours before it was set to renew for its increased price.
+ - After ignoring the "Focus" mode feature on iOS basically since it appeared, I spent 15 minutes [creating a new mode](https://quinnwitz.house/@magsol/111983809170453826) that all but completely disables my phone every night at 8pm. It's been nothing short of wonderful.
+
+So I guess, at least for me: intense physical labor with focused mental applications (winging a baseball and then being forced to field a return; or a high-intensity work schedule that draws on my experience) seems to be my ideal way of coming down from peak activation. I've reached out to some friends who have also provided some important feedback---feedback which was obvious in retrospect, but which I was too activated in the moment for it to even occur to me (my therapist had some fascinating insights here about human psychology and our tendency to cling to rules or procedures that make no sense in the moment, but we cling to them anyway because we just want one thing to work the way we expect it to). That back-and-forth with trusted friends also helped to clarify and crystallize my thoughts.
+
+Basically, no quick fix. Certainly no "anti-trigger" on the same intensity and timescale but opposite directionality. Maybe people who can do that exist; I'm certainly not one. But I did learn the hours of the nearby indoor batting cage, and my birthday is coming up, so hopefully I'll be able to report on that soon. That's something positive to come out of all this. Small; very small. But positive.
+
+May the memories of the two students be a blessing.
