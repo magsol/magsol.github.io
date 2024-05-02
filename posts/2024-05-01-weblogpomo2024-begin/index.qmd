@@ -1,0 +1,20 @@
+---
+title: "#WeblogPoMo2024: BEGIN!"
+subtitle: "Daily blogging is a high bar to clear"
+date: "2024-05-01 20:24:00"
+categories: [personal, writing, weblogpomo]
+citation:
+    url: https://magsol.github.io/2024-05-01-weblogpomo2024-begin
+image: "welcome_shannon.jpg"
+image-alt: "A flatscreen TV showing the words 'Welcome, Shannon' with a flowery background."
+author: "Shannon Quinn"
+---
+![](welcome_shannon.jpg){.preview-image fig-alt="A flatscreen TV showing the words 'Welcome, Shannon' with a flowery background."}
+
+It's been two months (to the day!) since I last posted here. Not a _long_ stretch, relatively speaking, but a respectable one. It's been a busy couple of months to be sure, but if I'm honest I just haven't been making time to write anything down. Not for lack of things to write---I feel like I'm always composing blog posts in my head---but working+parenting+running+sleeping typically seems to be a potent enough combination to push out all but the highest priority items that don't fall in any of those buckets.
+
+Enter `#WeblogPoMo2024`, something I'd never heard of before seeing [Henry post about it on Mastodon](https://social.lol/@hl/112366042124108733).
+
+Seems challenging while also reasonable: no 2000+ daily word count goal, no minimum running mileage to hit. Just a blog post. I may not finish it (I'd really like to finish an Advent of Code one of these years), but it'd be a nice goal to shoot for. I know from the multitude of early faculty writing workshops I've attended that, at least for me, the single most consistent motivator to write is to **write with other people**. The group accountability just _works_ for me. So maybe it'll work here, too!
+
+Join me, won't you? Or just bug me until I hit "post".
