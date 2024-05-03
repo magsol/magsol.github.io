@@ -8,7 +8,7 @@
 
 <meta name="author" content="Shannon Quinn">
 
-<title>Stochastic Stenography - Fiddling with generative art models</title>
+<title>Stochastic Stenography - #WeblogPoMo2024, Day 3: mutter</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -80,22 +80,16 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Stochastic Stenography - Fiddling with generative art models">
-<meta property="og:description" content="Data, donuts, and detours">
-<meta property="og:image" content="https://magsol.github.io/posts/2022-08-03-fiddling-with-generative-art/starfield.png">
+<meta property="og:title" content="Stochastic Stenography - #WeblogPoMo2024, Day 3: mutter">
+<meta property="og:description" content="Who knew a hitching command line could be so irritating?">
+<meta property="og:image" content="https://magsol.github.io/posts/2024-05-03-weblogpomo2024-day-3-mutter/images/logo.png">
 <meta property="og:site_name" content="Stochastic Stenography">
 <meta property="og:locale" content="en_US">
-<meta property="og:image:height" content="1664">
-<meta property="og:image:width" content="1664">
-<meta property="og:image:alt" content="Generated with the text: `4K, wide angle, hyper detailed, starfield, nighttime sky, crescent moons, stars, nebulae, cosmic` by MidjourneyAI.">
-<meta name="twitter:title" content="Stochastic Stenography - Fiddling with generative art models">
-<meta name="twitter:description" content="Data, donuts, and detours">
-<meta name="twitter:image" content="https://magsol.github.io/posts/2022-08-03-fiddling-with-generative-art/starfield.png">
+<meta name="twitter:title" content="Stochastic Stenography - #WeblogPoMo2024, Day 3: mutter">
+<meta name="twitter:description" content="Who knew a hitching command line could be so irritating?">
+<meta name="twitter:image" content="https://magsol.github.io/posts/2024-05-03-weblogpomo2024-day-3-mutter/images/logo.png">
 <meta name="twitter:creator" content="@SpectralFilter">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image-height" content="1664">
-<meta name="twitter:image-width" content="1664">
-<meta name="twitter:image:alt" content="Generated with the text: `4K, wide angle, hyper detailed, starfield, nighttime sky, crescent moons, stars, nebulae, cosmic` by MidjourneyAI.">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -130,17 +124,13 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Fiddling with generative art models</h1>
+      <h1 class="title">#WeblogPoMo2024, Day 3: mutter</h1>
+            <p class="subtitle lead">Who knew a hitching command line could be so irritating?</p>
                                 <div class="quarto-categories">
                 <div class="quarto-category">personal</div>
-                <div class="quarto-category">professional</div>
-                <div class="quarto-category">ai</div>
-                <div class="quarto-category">generative modeling</div>
-                <div class="quarto-category">deep learning</div>
-                <div class="quarto-category">raspberry pi</div>
-                <div class="quarto-category">legal disclaimer</div>
-                <div class="quarto-category">zelda</div>
-                <div class="quarto-category">family</div>
+                <div class="quarto-category">writing</div>
+                <div class="quarto-category">weblogpomo</div>
+                <div class="quarto-category">open source</div>
               </div>
                   </div>
   </div>
@@ -158,7 +148,7 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">Posted on the 3rd of August in the year 2022, at 11:54am. It was Wednesday.</p>
+        <p class="date">Posted on the 3rd of May in the year 2024, at 8:24pm. It was Friday.</p>
       </div>
     </div>
     
@@ -177,91 +167,26 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 
 
 
-<p><img src="starfield.png" class="preview-image img-fluid" alt="Generated with the text: `4K, wide angle, hyper detailed, starfield, nighttime sky, crescent moons, stars, nebulae, cosmic` by MidjourneyAI."></p>
-<p>Much like a lot of the internet over the past couple months, I’ve been tinkering with some AI art generators, mainly <a href="https://www.midjourney.com/">Midjourney</a> (if only because I’m waitlisted on <a href="https://openai.com/dall-e-2/">DALL-E 2</a>).</p>
-<p>It’s been surprisingly fun, if challenging. This isn’t really my area of research, but I understand the basic underpinnings:</p>
-<p>These models are trained using vast swaths of image-and-text pairings, so the model can develop an association between features in images and the corresponding text that describes them. Obviously this process is <em>very</em> complicated, and also requires not only a great deal of data but also a considerable amount of computing power, so it’s still a very active area of research and is largely out of reach of your every day researcher or individual training their own model. But once the model is trained, users can provide snippets of text, which the model then translates into an image.</p>
-<p>Therein lies the magic. There’s a lot of randomness involved in the image generation process, since even a text input as simple as “cat” could mean a LOT of different things, image-wise. That’s partly a feature: two people who give the exact same text input will likely get slight variations of the same concept, and possibly get wildly divergent results.</p>
-<p>But it also makes for a challenging user experience: there’s a sort of “lingo” that you have to wrap your head around, a “way of talking to the model” that goes beyond simple word-concept mappings, that only comes with extended use of the models. It gets harder the more specific of an idea you have: your conceptual understanding of the idea may not bear any resemblance to the concept the model learned!</p>
-<p>(man this is getting philosophical! let’s see if I can make this a bit more concrete with some examples)</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="empty_beach_v1.png" class="img-fluid figure-img" alt="Generated with the text: `empty beach, dark storm in distance, one flower blooms from the sand to the side, high detail, atmosphere, Arnold render, ultra-realistic, dramatic lighting, glow, cinematic lighting, epic, 8k` by MidjourneyAI."></p>
-<figcaption>Generated with the text: <code>empty beach, dark storm in distance, one flower blooms from the sand to the side, high detail, atmosphere, Arnold render, ultra-realistic, dramatic lighting, glow, cinematic lighting, epic, 8k</code></figcaption>
-</figure>
-</div>
-<p>This was actually an image that I generated based off an image <em>someone else had already generated</em> (yeah, we can take public images and run them back through the model with new or additional text).</p>
-<p>From here, I ran a couple more of my own modifications:</p>
-<p><img src="empty_beach_v2.png" class="img-fluid" alt="Generated by MidjourneyAI."></p>
-<p><img src="empty_beach_v3.png" class="img-fluid" alt="Generated by MidjourneyAI."></p>
-<p>I really liked the second one, though with the third I love the ambiguity in the landscape: is it water, or is it snow? Hard to say in that lighting.</p>
-<p>From here, I started focusing a bit more on landscapes under a starlit sky (like the cover photo). I eventually settled on this one, which I really kinda love (so I made the highest-res version of it that I could):</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="mountains_starfield.png" class="img-fluid figure-img" alt="Generated with the text: `wooded mountainous winter landscape under cosmic night sky with distant glowing small town in a valley, nebulae, crescent moon, planetary rings, cinematic, atmospheric, 8k, dramatic lighting, ultra realistic` by MidjourneyAI."></p>
-<figcaption>Generated with the text: <code>wooded mountainous winter landscape under cosmic night sky with distant glowing small town in a valley, nebulae, crescent moon, planetary rings, cinematic, atmospheric, 8k, dramatic lighting, ultra realistic</code></figcaption>
-</figure>
-</div>
-<p>I will say, it definitely takes some doing to get a feel for how it works–what I had in mind was nowhere near what the model spat out, even though I <em>love</em> what it created. Still, there weren’t really any planetary rings (I was thinking of Gaal’s homeworld in the AppleTV+ <em>Foundation</em> series), and the “glowing small town in a valley” seems to have been diffusely spread over the <em>entire</em> valley, almost like fireflies, rather than distinct. Beautiful, no question, but not exactly what I’d had in mind.</p>
-<p>One final bit I tried before my trial ran out was a completely different direction:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="rpi_madeof_raspberries.png" class="img-fluid figure-img" alt="Generated with the text: `raspberry pi computer made out of raspberries, modern, futuristic` by MidjourneyAI."></p>
-<figcaption>Generated with the text: <code>raspberry pi computer made out of raspberries, modern, futuristic</code></figcaption>
-</figure>
-</div>
-<p>I see a lot of super awesome art being generated from very terse prompts, so I was trying to capture that a little bit here (as opposed to the downright locquacious landscape prompts above).</p>
-<p>Some of the earlier images I created had more to do with my family. This first one was created shortly after my wife left her previous job to pursue her longtime dream of being a full-time fiction writer (it was seriously one of the first things I ever learned about her all those years ago): I was inspired to see if the model could capture something about what that looked like, in my head at least.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="writer.png" class="img-fluid figure-img" alt="Generated with the text: `a writer working at her computer surrounded by a world of her own creation` by MidjourneyAI."></p>
-<figcaption>Generated with the text: <code>a writer working at her computer surrounded by a world of her own creation</code></figcaption>
-</figure>
-</div>
-<p>And I really love this next one, as it evokes less of the specific act of writing and more of how it’s about <em>creating</em>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="creator.png" class="img-fluid figure-img" alt="Generated with the text: `writer standing on the boundary between worlds, the world she lives in and the world she creates` by MidjourneyAI."></p>
-<figcaption>Generated with the text: <code>writer standing on the boundary between worlds, the world she lives in and the world she creates</code></figcaption>
-</figure>
-</div>
-<p>We’ve also been huge fans of Zelda for quite awhile (which <a href="https://magsol.github.io/tag/zelda.html">longtime readers already know</a>), and not too long ago I commissioned a fan account to remake a family photo as if it were in the Zelda universe.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="commission.png" class="img-fluid figure-img" alt="Commissioned artwork of our own family, redrawn to look like we live in the Zelda universe."></p>
-<figcaption>Quite the handsome family, doncha think?</figcaption>
-</figure>
-</div>
-<p>So I played with that idea a bit, and while the results weren’t great–I get the feeling the generator has a harder time dealing with <em>very specific real-world concepts</em>, as opposed to more general categories of things–I did get this pretty cute rendering of what is most definitely a Hyrulean family.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="zelda.png" class="img-fluid figure-img" alt="Generated with the text: `zelda champions from breath of the wild, family, 1985, highres` by MidjourneyAI."></p>
-<figcaption>Generated with the text: <code>zelda champions from breath of the wild, family, 1985, highres</code></figcaption>
-</figure>
-</div>
-<p>It’s fun to tinker with. In all honesty I’ll probably keep playing with it here and there as the mood strikes; if you want to follow along, <a href="https://www.midjourney.com/app/users/730084120558043179/">there’s a public feed of all the pictures I generate here</a> (note: it’s “public” in that you have to create a free account to see it), since there’s no way I’m going to shell out the $ required to make my images private.</p>
-<section id="legal-disclaimer" class="level3">
-<h3 class="anchored" data-anchor-id="legal-disclaimer">Legal Disclaimer</h3>
-<p>At least, I’ll keep tinkering until copyright catches up… which, on that note, I should mention: I agree with everything in this twitter thread on the topic. I want to end on this note, because I think this is very important to keep in mind.</p>
-<p></p><div id="tweet-32610"></div><script>tweet={"url":"https:\/\/twitter.com\/BunchesOfBees\/status\/1553079149232734208","author_name":"Christopher","author_url":"https:\/\/twitter.com\/BunchesOfBees","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EA thing that makes me absolutely insane with discussions about &quot;AI&quot; image generation is their creators freely argue literally both sides of an opposing argument depending on what argument you&#39;re trying to have with them\u003C\/p\u003E&mdash; Christopher (@BunchesOfBees) \u003Ca href=\"https:\/\/twitter.com\/BunchesOfBees\/status\/1553079149232734208?ref_src=twsrc%5Etfw\"\u003EJuly 29, 2022\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-32610").innerHTML = tweet["html"];</script><p></p>
-<p>Keep in mind, I am not a lawyer, but based on my read there are two legal interpretations of these models: as an <em>author</em> that learns and creates novel work, or a <em>product</em> that synthesizes derivative works. In the case of the former, any kind of substantive duplication of existing work created by someone else is copyright infringement; and in the case of the latter, it’s using novel, <em>unlicensed</em> work in a paid product, which is also copyright infringement.</p>
-<p>As someone whose background is in exactly this kind of generative “AI” work, I would generally fall under the latter interpretation of these models as a product (what they “learn” is dubious at best; I would never call their reproductions “novel”). As such, I also agree with the tweet’s author that the moment these companies begin monetizing these models is when, at the very least, they’ve committed a moral rights violation. It’s the same exact reason I’m very uncomfortable with the <a href="https://github.com/features/copilot">GitHub CoPilot product</a>: it’s been trained using billions of lines of code that was written, tested, debugged, scrutinized, and labored over by humans <em>who did not consent to nor were reimbursed for having their code used in a paid product</em>.</p>
-<p>That last tweet in the thread is particularly poignant for me, and distills much of the reason for my disillusionment with the tech sector in general. I’m sorry to end on such a sour note, but while I do love the amazing things machine learning is doing, we have to keep at the forefront of our minds that <a href="https://vicki.substack.com/p/neural-nets-are-just-people-all-the">machine learning is, ultimately, a human endeavor</a>, and if it won’t work without humans, we should make sure those humans are <em>taken care of</em>: recognition, compensation, empathy, and so on.</p>
-<p><em>steps off soap box…for now</em></p>
+<p>Today, as I was getting back up to speed on work (just in time for the weekend, lol) following travel in the first half of the week, I noticed…something.</p>
+<p>Occasionally, my command line would—for lack of a better term—“hitch”.</p>
+<p>It became more noticeable as I would type faster; eventually I took to typing gibberish, and it became clear that there definitely was a hitch.</p>
+<p>A few minutes of searching (read: tweaking the search parameters, and filtering out “AI”-generated fluff), I found exactly what I was looking for: what is apparently <a href="https://askubuntu.com/a/1509474">a known issue with Ubuntu 22.04.4</a>. The fix, aside from upgrading wholesale to 24.04 (not quite ready yet), was a new <code>mutter</code> install.</p>
+<p>I installed it and rebooted, and the hitch is gone. Thank you, internet!</p>
+<hr>
+<p>Yeah, I missed <code>#WeblogPoMo2024</code> yesterday, so I’m already behind. I’ll continue to do the best I can!</p>
 
 
-</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2022,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2024,
   author = {Quinn, Shannon},
-  title = {Fiddling with Generative Art Models},
-  date = {2022-08-03},
-  url = {https://magsol.github.io/2022-08-03-fiddling-with-generative-art},
+  title = {\#WeblogPoMo2024, {Day} 3: Mutter},
+  date = {2024-05-03},
+  url = {https://magsol.github.io/2024-05-03-weblogpomo2024-day-3-mutter},
   langid = {en}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2022" class="csl-entry quarto-appendix-citeas" role="listitem">
-Quinn, Shannon. 2022. <span>“Fiddling with Generative Art
-Models.”</span> August 3, 2022. <a href="https://magsol.github.io/2022-08-03-fiddling-with-generative-art">https://magsol.github.io/2022-08-03-fiddling-with-generative-art</a>.
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2024" class="csl-entry quarto-appendix-citeas" role="listitem">
+Quinn, Shannon. 2024. <span>“#WeblogPoMo2024, Day 3: Mutter.”</span> May
+3, 2024. <a href="https://magsol.github.io/2024-05-03-weblogpomo2024-day-3-mutter">https://magsol.github.io/2024-05-03-weblogpomo2024-day-3-mutter</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -681,5 +606,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<script src="https://platform.twitter.com/widgets.js"></script>
 </body></html>
