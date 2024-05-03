@@ -1,0 +1,23 @@
+---
+title: "#WeblogPoMo2024, Day 3: mutter"
+subtitle: "Who knew a hitching command line could be so irritating?"
+date: "2024-05-03 20:24:00"
+categories: [personal, writing, weblogpomo, open source]
+citation:
+    url: https://magsol.github.io/2024-05-03-weblogpomo2024-day-3-mutter
+author: "Shannon Quinn"
+---
+
+Today, as I was getting back up to speed on work (just in time for the weekend, lol) following travel in the first half of the week, I noticed...something.
+
+Occasionally, my command line would---for lack of a better term---"hitch".
+
+It became more noticeable as I would type faster; eventually I took to typing gibberish, and it became clear that there definitely was a hitch.
+
+A few minutes of searching (read: tweaking the search parameters, and filtering out "AI"-generated fluff), I found exactly what I was looking for: what is apparently [a known issue with Ubuntu 22.04.4](https://askubuntu.com/a/1509474). The fix, aside from upgrading wholesale to 24.04 (not quite ready yet), was a new `mutter` install.
+
+I installed it and rebooted, and the hitch is gone. Thank you, internet!
+
+---
+
+Yeah, I missed `#WeblogPoMo2024` yesterday, so I'm already behind. I'll continue to do the best I can!
