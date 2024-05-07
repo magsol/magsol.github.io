@@ -17,7 +17,45 @@
 <width>144</width>
 </image>
 <generator>quarto-1.4.554</generator>
-<lastBuildDate>Fri, 03 May 2024 20:24:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 07 May 2024 16:25:00 GMT</lastBuildDate>
+<item>
+  <title>#WeblogPoMo2024, Day 7: The importance of personal projects</title>
+  <dc:creator>Shannon Quinn</dc:creator>
+  <link>https://magsol.github.io/posts/2024-05-07-weblogpomo2024-day-7-the-importance-of-personal-projects/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>I don’t think I’m alone in having a menagerie of personal projects. The constituents of said menagerie morph (some slowly, some quickly) as time passes, but it’s never empty. It hasn’t been empty since… high school? Earlier?</p>
+<p>Yes, it’s sometimes disheartening to see how little progress I make on so many different fronts. Though, by simply writing out that sentence, I get just an inkling of how ridiculous it sounds.</p>
+<p>But these projects, simply, keep me sane. I love creating things; I love building things; I love trying something out in the real world that is often outside the narrow purview of what my immediate employer is looking for. I like trying things for things’ sakes, though sometimes there is also a practical reason.</p>
+<p>Lately I’ve been trying to get a new outdoor wildlife camera setup working. It’s a bit more technically complicated than <a href="https://magsol.github.io/posts/2023-02-15-calibrating-a-wildlife-camera/index.html">the one I posted about last year</a> so it’s taking me a bit longer to get things working. But I’m really enjoying doing it.</p>
+<p>Personal projects are, after all, <a href="https://angelostavrow.blog/a-love-letter-to-personal-projects">all about delight</a>.</p>
+<hr>
+<p>Like most things, I think when it comes to <code>#WeblogPomo2024</code>, it’ll be a cadence of “when I can” as opposed to “EVERY F#$&amp;ING DAY OR DIAF”. After all, <a href="https://www.tumblr.com/rsingwriting/187070321479/i-saw-a-post-talking-about-how-terry-pratchett">if I’m writing a nontrivial fraction of the number of words Sir Terry Pratchett wrote on a daily basis during his illustrious career</a>, I’d say I’m doing pretty well.</p>
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2024,
+  author = {Quinn, Shannon},
+  title = {\#WeblogPoMo2024, {Day} 7: {The} Importance of Personal
+    Projects},
+  date = {2024-05-07},
+  url = {https://magsol.github.io/2024-05-07-weblogpomo2024-day-7-the-importance-of-personal-projects},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2024" class="csl-entry quarto-appendix-citeas">
+Quinn, Shannon. 2024. <span>“#WeblogPoMo2024, Day 7: The Importance of
+Personal Projects.”</span> May 7, 2024. <a href="https://magsol.github.io/2024-05-07-weblogpomo2024-day-7-the-importance-of-personal-projects">https://magsol.github.io/2024-05-07-weblogpomo2024-day-7-the-importance-of-personal-projects</a>.
+</div></div></section></div> ]]></description>
+  <category>personal</category>
+  <category>writing</category>
+  <category>weblogpomo</category>
+  <guid>https://magsol.github.io/posts/2024-05-07-weblogpomo2024-day-7-the-importance-of-personal-projects/</guid>
+  <pubDate>Tue, 07 May 2024 16:25:00 GMT</pubDate>
+</item>
 <item>
   <title>#WeblogPoMo2024, Day 3: mutter</title>
   <dc:creator>Shannon Quinn</dc:creator>
@@ -1600,7 +1638,7 @@ Quinn, Shannon. 2023. <span>“Three Years Later.”</span> April 4, 2023.
 <li>Conclusions <em>(this post)</em></li>
 </ol>
 <p>I know what you’re thinking:</p>
-<p></p><div id="tweet-63699"></div><script>tweet={"url":"https:\/\/twitter.com\/dexhorthy\/status\/856639005462417409","author_name":"dex","author_url":"https:\/\/twitter.com\/dexhorthy","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EDeployed my blog on Kubernetes \u003Ca href=\"https:\/\/t.co\/XHXWLrmYO4\"\u003Epic.twitter.com\/XHXWLrmYO4\u003C\/a\u003E\u003C\/p\u003E&mdash; dex (@dexhorthy) \u003Ca href=\"https:\/\/twitter.com\/dexhorthy\/status\/856639005462417409?ref_src=twsrc%5Etfw\"\u003EApril 24, 2017\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-63699").innerHTML = tweet["html"];</script><p></p>
+<p></p><div id="tweet-37127"></div><script>tweet={"url":"https:\/\/twitter.com\/dexhorthy\/status\/856639005462417409","author_name":"dex","author_url":"https:\/\/twitter.com\/dexhorthy","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EDeployed my blog on Kubernetes \u003Ca href=\"https:\/\/t.co\/XHXWLrmYO4\"\u003Epic.twitter.com\/XHXWLrmYO4\u003C\/a\u003E\u003C\/p\u003E&mdash; dex (@dexhorthy) \u003Ca href=\"https:\/\/twitter.com\/dexhorthy\/status\/856639005462417409?ref_src=twsrc%5Etfw\"\u003EApril 24, 2017\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-37127").innerHTML = tweet["html"];</script><p></p>
 <p>And honestly… you’re not wrong.</p>
 <section id="running-mastodon-has-gotten-easier" class="level3">
 <h3 class="anchored" data-anchor-id="running-mastodon-has-gotten-easier">Running Mastodon has gotten easier</h3>
@@ -3231,67 +3269,6 @@ Topology.”</span> January 23, 2023. <a href="https://magsol.github.io/posts/20
   <guid>https://magsol.github.io/posts/2023-01-23-mastodon-home-network-topology/</guid>
   <pubDate>Mon, 23 Jan 2023 15:44:00 GMT</pubDate>
   <media:content url="https://magsol.github.io/posts/2023-01-23-mastodon-home-network-topology/networking_made_easy.png" medium="image" type="image/png" height="144" width="144"/>
-</item>
-<item>
-  <title>Running your own Mastodon instance on a Raspberry Pi k3s cluster</title>
-  <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p><img src="https://magsol.github.io/posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/elephant.png" class="img-fluid" alt="Rear view of a sitting elephant gazing at mountains in the distance (generated by Midjourney)."></p>
-<ol type="1">
-<li>Introduction <em>(this post)</em></li>
-<li><a href="../../posts/2023-01-23-mastodon-home-network-topology/index.html">Part I: My home network topology</a></li>
-<li><a href="../../posts/2023-01-25-mastodon-helm-chart/index.html">Part II: The Mastodon Helm chart</a></li>
-<li><a href="../../posts/2023-02-09-configuring-and-installing-prereqs/index.html">Part III: Configuring and installing prerequisites</a></li>
-<li><a href="../../posts/2023-02-16-ssl-with-lets-encrypt/index.html">Part IV: The waking nightmare that is Let’s Encrypt</a></li>
-<li><a href="../../posts/2023-02-24-installing-and-configuring-mastodon/index.html">Part V: Actually installing Mastodon</a></li>
-<li><a href="../../posts/2023-02-28-mastodon-conclusions/index.html">Conclusions</a></li>
-</ol>
-<p>As I mentioned in my previous post, I spent the last month of last year spinning up my own Mastodon instance (<a href="https://quinnwitz.house/">which you can check out</a>!) I’ve had a Raspberry Pi cluster of 5x Pi 4B modules sitting around for the better part of the last two years<sup>1</sup>. I’ve occasionally toyed with installing <a href="https://k3s.io/">k3s</a> and experimenting with various bits and pieces of kubernetes, but never actually deployed something I found useful.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://magsol.github.io/posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/pi_cluster.jpg" class="img-fluid figure-img" alt="A very suspicious looking server rack for the five Raspberry Pi computers."></p>
-<figcaption>Don’t worry, they’re well protected.</figcaption>
-</figure>
-</div>
-<p>Don’t get me wrong–I do want to go over how I installed and configured k3s on my Raspberry Pi cluster. It’s remarkable how quickly this area of things moves, and the guides I was working off for this were all 2-3 years old, and <em>remarkably</em> outdated. So a more recent tutorial on that basic component would definitely have its niche, I think.</p>
-<p>But first, I want to kick off a series of posts detailing how I got a Mastodon instance running! It took a surprising amount of wrangling, so I wanted to share my experience before I forget the tiny details.</p>
-<p>Why would you be interested in this series? Aside from the usual rough-and-tumble of installing anything on kubernetes via <a href="https://helm.sh/">helm</a>, the two parts that took the greatest amount of time and effort were 1) getting the Mastodon <em>dependencies</em> to work, and 2) wrestling <a href="https://letsencrypt.org/">Let’s Encrypt</a> into submission. That first point is interesting because while Mastodon itself works just fine on ARM, the default images included in the Mastodon helm chart for the dependencies do <em>NOT</em>, and so it won’t work out-of-the-box on a Raspberry Pi cluster<sup>2</sup>. And the second point was just plain rage-inducing, and I’d love for folks to not have to experience that.</p>
-<p>I’ll fill in the links as I write the posts, so that you can bookmark this page if you’d like, though I’ll make sure to include the links on the other posts as well as I write them. In the meantime, don’t hesitate to drop any pointers / corrections / questions!</p>
-
-
-
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>Yes, I did indeed purchase them two years ago. Would’ve been nigh impossible to get them at any time in between 😬↩︎</p></li>
-<li id="fn2"><p>As of February 24, 2023, this is no longer true! <a href="https://blog.bitnami.com/2023/02/bitnami-arm-containers-available-at.html">Here’s the announcement from Bitnami</a> of ARM-compatible images↩︎</p></li>
-</ol>
-</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
-  author = {Quinn, Shannon},
-  title = {Running Your Own {Mastodon} Instance on a {Raspberry} {Pi}
-    K3s Cluster},
-  date = {2023-01-20},
-  url = {https://magsol.github.io/posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/},
-  langid = {en}
-}
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2023" class="csl-entry quarto-appendix-citeas">
-Quinn, Shannon. 2023. <span>“Running Your Own Mastodon Instance on a
-Raspberry Pi K3s Cluster.”</span> January 20, 2023. <a href="https://magsol.github.io/posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/">https://magsol.github.io/posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/</a>.
-</div></div></section></div> ]]></description>
-  <category>personal</category>
-  <category>raspberry pi</category>
-  <category>k3s</category>
-  <category>mastodon</category>
-  <guid>https://magsol.github.io/posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/</guid>
-  <pubDate>Fri, 20 Jan 2023 16:15:00 GMT</pubDate>
-  <media:content url="https://magsol.github.io/posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/elephant.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 </channel>
 </rss>
