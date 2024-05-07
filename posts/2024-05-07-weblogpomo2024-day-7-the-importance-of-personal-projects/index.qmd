@@ -1,0 +1,23 @@
+---
+title: "#WeblogPoMo2024, Day 7: The importance of personal projects"
+subtitle: "Pay no attention to the wasteland of unfinished endeavors"
+date: "2024-05-07 16:25:00"
+categories: [personal, writing, weblogpomo]
+citation:
+    url: https://magsol.github.io/2024-05-07-weblogpomo2024-day-7-the-importance-of-personal-projects
+author: "Shannon Quinn"
+---
+
+I don't think I'm alone in having a menagerie of personal projects. The constituents of said menagerie morph (some slowly, some quickly) as time passes, but it's never empty. It hasn't been empty since... high school? Earlier?
+
+Yes, it's sometimes disheartening to see how little progress I make on so many different fronts. Though, by simply writing out that sentence, I get just an inkling of how ridiculous it sounds.
+
+But these projects, simply, keep me sane. I love creating things; I love building things; I love trying something out in the real world that is often outside the narrow purview of what my immediate employer is looking for. I like trying things for things' sakes, though sometimes there is also a practical reason.
+
+Lately I've been trying to get a new outdoor wildlife camera setup working. It's a bit more technically complicated than [the one I posted about last year](https://magsol.github.io/posts/2023-02-15-calibrating-a-wildlife-camera/index.html) so it's taking me a bit longer to get things working. But I'm really enjoying doing it.
+
+Personal projects are, after all, [all about delight](https://angelostavrow.blog/a-love-letter-to-personal-projects).
+
+---
+
+Like most things, I think when it comes to `#WeblogPomo2024`, it'll be a cadence of "when I can" as opposed to "EVERY F#$&ING DAY OR DIAF". After all, [if I'm writing a nontrivial fraction of the number of words Sir Terry Pratchett wrote on a daily basis during his illustrious career](https://www.tumblr.com/rsingwriting/187070321479/i-saw-a-post-talking-about-how-terry-pratchett), I'd say I'm doing pretty well.
