@@ -1,0 +1,19 @@
+---
+title: "#WeblogPoMo2024, Day 10: Homelab extravaganza"
+subtitle: "Run ALL the apps!"
+date: "2024-05-10 16:32:00"
+categories: [personal, writing, weblogpomo, homelab]
+citation:
+    url: https://magsol.github.io/2024-05-10-weblogpomo2024-day-10-homelab-extravaganza
+author: "Shannon Quinn"
+---
+
+For today's `#WeblogPomo2024`, I wanted to delve a little more into my current Homelab setup, which I've only alluded to previously. The [series of blog posts I wrote over a year ago detailing my journey setting up a home Mastodon instance](https://magsol.github.io/posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/) was kind of the spark that started this whole homelab kick. I've since retrofitted an old desktop (after [replacing it](https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/)) as an Unraid server, and have a whole collection of applications already humming along.
+
+My latest efforts have involved getting self-hosted [Nextcloud](https://nextcloud.com/)] up and running... which is highly non-trivial. I've wanted off Dropbox for quite awhile now (I don't use anywhere *near* the 2TB allocated in the base paid plan, but I definitely use a lot more than the 2GB allowed in the free tier... oh yeah and numerous privacy issues), but getting Nextcloud running has been a whole thing unto itself. It highlighted an entire hierarchy of reconfigurations and upgrades I needed to undertake across the broader homelab to make Nextcloud possible.
+
+It's also brought to the forefront the biggest philosophical question I've had: **do I allow external access to Nextcloud, or restrict it to local requests only?** Nextcloud is arguably designed for the former, but allows for the latter *with some non-standard configuration changes*. Obviously I'd like to keep external access to any homelab resources to an absolute minimum---if Mastodon is the only thing that's externally accessible, I'm fine with that. But a filesharing service with an entire ecosystem of applications is not exactly meant to be confined to a small home network. Hence, my waffling.
+
+For now, I'm going down the path of: keep it internal, but look at ways of allowing selective external access, along the lines of the Tailscales and Twingates of the world, both of which are compatible with Unraid. We'll see.
+
+Stay tuned!
