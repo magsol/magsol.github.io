@@ -1,0 +1,35 @@
+---
+title: "#WeblogPoMo2024, Day 13: Return to Hiigara"
+subtitle: "May the burden remain"
+date: "2024-05-13 21:59:00"
+categories: [personal, writing, weblogpomo, gaming]
+citation:
+    url: https://magsol.github.io/2024-05-13-weblogpomo2024-day-13-return-to-hiigara
+author: "Shannon Quinn"
+---
+
+Today, [_Homeworld 3_ went live](https://www.youtube.com/watch?v=6ojRQyBqtOg). I've actually been playing the game since Friday, May 10, when backers of its original kickstarter got early access.
+
+I've been a fan of _Homeworld_ ever since the first game came out in 1999 to little fanfare, despite garnering a much-coveted "Game of the Year" award for being among the first (or the actual first?) truly 3D real-time strategy games. Of course, that wasn't its only credit: its beautiful and devastating story of an entire people who suddenly found themselves without a home, its haunting soundtrack ("Adagio for Strings" has always hit me differently, thanks to that game), and graphics that were remarkable for its time.
+
+While I may be among the few who enjoyed the maligned expansion _Cataclysm_ (2000), I very very VERY much loved its sequel, _Homeworld 2_ (2003). Fast forward to the early stages of the pandemic lockdown in 2020 to the release of _Homeworld: Remastered_, which was among the best "remasters" of classic games (_Homeworlds_ 1 and 2!) I have ever played. This came out around the same time as the _Homeworld 3_ kickstarter announcement, which I eagerly backed.
+
+Of course, at the time, the projected release date was Q4 2022. El oh el. Still, it's clear from both official reviews and my own experience playing the finished game that the developers used the extra time to really lock down the polish.
+
+As with every previous _Homeworld_ game, it's gorgeous. Jaw-droppingly beautiful. The soundtrack is, yet again, haunting, complete with modern "Adagio" renditions you can hear if you listen closely. And the story is gripping, always somehow managing to harness the vastness of space and imbue it with malign intent, and the only people you can rely on are your comrades-in-mothership.
+
+I won't spoil anything, but I will post a few screenshots. These aren't mine---I took a few from a screenshots channel in the _Homeworld_ Discord---as I haven't finished the game and know for a fact that some depict missions I have not yet encountered.
+
+It's a wonderful game. Highly recommend.
+
+![Devs made good on promises to include actual megaliths.](battle.PNG)
+
+![It's beautiful. Also, this mission is brutal.](crash.JPG)
+
+![Resource collectors harvesting materials inside a giant megalith.](harvest.PNG)
+
+![I have not reached this mission yet, but WOW does it look beautiful.](ice.JPG)
+
+And what gaming session would be complete without a little _Tears of the Kingdom_?
+
+![Sidon, my best friend.](sidon.jpg)
