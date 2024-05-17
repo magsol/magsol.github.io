@@ -1,0 +1,41 @@
+---
+title: "#WeblogPoMo2024, Day 16: Python Profiling Rocks"
+subtitle: "Lack of profiling is the root of all evil"
+date: "2024-05-16 21:59:00"
+categories: [professional, writing, weblogpomo, programming, python]
+citation:
+    url: https://magsol.github.io/2024-05-16-weblogpomo2024-day-16-python-profiling-rocks
+author: "Shannon Quinn"
+---
+
+Today I was digging through some code written by somebody else and trying to establish benchmarks against some new data we had just received. In doing so, I noticed the application was spending a _lot_ of time at one particular stage. Upon inquiry, my coworkers said something to the effect of "oh yeah, that part always takes a long time to run."
+
+In looking through the code in question, some ideas began to form in my head, but I was missing data. So I turned to an old Python friend: `cProfile`!
+
+`cProfile` is a built-in package---as in, part of the default Python distribution---that performs code profiling and is dead-simple to use. Given that I was interested only in a small slice of the overall program, I did have to dig a bit to understand how to essentially "wrap" a certain part of the program in profiling, so that was new for me.
+
+It basically amounted to:
+
+```python
+import cProfile, pstats
+
+profiler = cProfile.Profile()
+profiler.enable()
+###
+# All the code you want to profile goes here!
+###
+profiler.disable()
+stats = pstats.Stats(profiler)
+stats.dump_stats("outputdir/outputfile.stats")
+```
+
+That dumps out the profile information (in a binary format, sorry) to a file. From there, you can spin up something like IPython to read the binary and print out the stats:
+
+```python
+s = pstats.Stats("outputdir/outputfile.stats")
+s.sort_stats("tottime").print_stats()
+```
+
+And then you have all the runtime stats of the code enclosed by your profiler! It even helped me identify a strange $O(n^2)$ search loop; easy to miss, because it was a 1-liner, but was responsible for _over 50%_ of the observed runtime! I probably would never have found it on my own.
+
+For more information, [check out the docs on the built-in Python profilers](https://docs.python.org/3/library/profile.html)!
