@@ -17,7 +17,65 @@
 <width>144</width>
 </image>
 <generator>quarto-1.4.554</generator>
-<lastBuildDate>Thu, 16 May 2024 21:59:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 23 May 2024 18:21:00 GMT</lastBuildDate>
+<item>
+  <title>#WeblogPoMo2024, Day 23: Nearing the Finish</title>
+  <dc:creator>Shannon Quinn</dc:creator>
+  <link>https://magsol.github.io/posts/2024-05-23-weblogpomo2024-day-23-nearing-the-finish/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>We’re at day 23 of <code>#WeblogPoMo2024</code>, and this is post number 7 for me—one every three-ish days, give or take. And in today’s post, I’m here to say: I’m not sure how many more posts there will be. I’m in and out of travel for most of the remaining month, and while there will be plenty of downtime (and, assuming, WiFi access), I’m not expecting joy-writing to be high on the priority list.</p>
+<p>Simply put: between jet lag, phoning home, and a really nasty bee sting I picked up that’s taking its sweet time healing—not to mention said travel—I don’t really see much time for this.</p>
+<p>I could be wrong! There might be another post, or two, or even THREE (gasp). Anything is possible! But given the stress of travel, I want to temper the expectations of my most important of readers: me.</p>
+<p>So in possible lieu of any further <code>#WeblogPoMo2024</code> posts, please enjoy these <em>Homeworld 3</em> screenshots that were actually taken by yours truly.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://magsol.github.io/posts/2024-05-23-weblogpomo2024-day-23-nearing-the-finish/motherships.jpg" class="img-fluid figure-img"></p>
+<figcaption>Two Hiigaran motherships.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://magsol.github.io/posts/2024-05-23-weblogpomo2024-day-23-nearing-the-finish/warsage.jpg" class="img-fluid figure-img"></p>
+<figcaption>This was a hard mission.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://magsol.github.io/posts/2024-05-23-weblogpomo2024-day-23-nearing-the-finish/noctuua27.jpg" class="img-fluid figure-img"></p>
+<figcaption>The atmosphere on this one was unreal.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://magsol.github.io/posts/2024-05-23-weblogpomo2024-day-23-nearing-the-finish/noctuua-fleet.jpg" class="img-fluid figure-img"></p>
+<figcaption>Gonna be tough for the enemy to break this line.</figcaption>
+</figure>
+</div>
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2024,
+  author = {Quinn, Shannon},
+  title = {\#WeblogPoMo2024, {Day} 23: {Nearing} the {Finish}},
+  date = {2024-05-23},
+  url = {https://magsol.github.io/2024-05-23-weblogpomo2024-day-23-nearing-the-finish},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2024" class="csl-entry quarto-appendix-citeas">
+Quinn, Shannon. 2024. <span>“#WeblogPoMo2024, Day 23: Nearing the
+Finish.”</span> May 23, 2024. <a href="https://magsol.github.io/2024-05-23-weblogpomo2024-day-23-nearing-the-finish">https://magsol.github.io/2024-05-23-weblogpomo2024-day-23-nearing-the-finish</a>.
+</div></div></section></div> ]]></description>
+  <category>personal</category>
+  <category>writing</category>
+  <category>weblogpomo</category>
+  <guid>https://magsol.github.io/posts/2024-05-23-weblogpomo2024-day-23-nearing-the-finish/</guid>
+  <pubDate>Thu, 23 May 2024 18:21:00 GMT</pubDate>
+</item>
 <item>
   <title>#WeblogPoMo2024, Day 16: Python Profiling Rocks</title>
   <dc:creator>Shannon Quinn</dc:creator>
@@ -1814,7 +1872,7 @@ Quinn, Shannon. 2023. <span>“Three Years Later.”</span> April 4, 2023.
 <li>Conclusions <em>(this post)</em></li>
 </ol>
 <p>I know what you’re thinking:</p>
-<p></p><div id="tweet-50335"></div><script>tweet={"url":"https:\/\/twitter.com\/dexhorthy\/status\/856639005462417409","author_name":"dex","author_url":"https:\/\/twitter.com\/dexhorthy","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EDeployed my blog on Kubernetes \u003Ca href=\"https:\/\/t.co\/XHXWLrmYO4\"\u003Epic.twitter.com\/XHXWLrmYO4\u003C\/a\u003E\u003C\/p\u003E&mdash; dex (@dexhorthy) \u003Ca href=\"https:\/\/twitter.com\/dexhorthy\/status\/856639005462417409?ref_src=twsrc%5Etfw\"\u003EApril 24, 2017\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-50335").innerHTML = tweet["html"];</script><p></p>
+<p></p><div id="tweet-62629"></div><script>tweet={"url":"https:\/\/twitter.com\/dexhorthy\/status\/856639005462417409","author_name":"dex","author_url":"https:\/\/twitter.com\/dexhorthy","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EDeployed my blog on Kubernetes \u003Ca href=\"https:\/\/t.co\/XHXWLrmYO4\"\u003Epic.twitter.com\/XHXWLrmYO4\u003C\/a\u003E\u003C\/p\u003E&mdash; dex (@dexhorthy) \u003Ca href=\"https:\/\/twitter.com\/dexhorthy\/status\/856639005462417409?ref_src=twsrc%5Etfw\"\u003EApril 24, 2017\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-62629").innerHTML = tweet["html"];</script><p></p>
 <p>And honestly… you’re not wrong.</p>
 <section id="running-mastodon-has-gotten-easier" class="level3">
 <h3 class="anchored" data-anchor-id="running-mastodon-has-gotten-easier">Running Mastodon has gotten easier</h3>
@@ -2506,126 +2564,6 @@ Encrypt.”</span> February 16, 2023. <a href="https://magsol.github.io/2023-02-
   <guid>https://magsol.github.io/posts/2023-02-16-ssl-with-lets-encrypt/</guid>
   <pubDate>Thu, 16 Feb 2023 10:30:00 GMT</pubDate>
   <media:content url="https://magsol.github.io/posts/2023-02-16-ssl-with-lets-encrypt/https_meme.jpeg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>Setting up a wildlife camera</title>
-  <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2023-02-15-calibrating-a-wildlife-camera/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p><img src="https://magsol.github.io/posts/2023-02-15-calibrating-a-wildlife-camera/wildlifegen.png" class="preview-image img-fluid" alt="Midjourney-generated image of a rabbit in a nightvision style, as if pictured by an infrared camera at night (generated by Midjourney)."></p>
-<p>For <em>years</em>, I’ve been wanting to set up an outdoor wildlife camera. Somewhere in the <a href="https://pyimagesearch.com/pyimagesearch-gurus/">PyImageSearch forums</a><sup>1</sup> there’s a post from 2017-me remarking on how excited I am to have finally gotten my hands on an Nvidia 1080 Ti and, therefore, sufficient horsepower to chew up streaming video from outdoors.</p>
-<p>In case some readers are unaware: <a href="https://www.visitathensga.com/">Athens</a> is a quintessential college town where, even if starting from the middle of downtown, you’re only ever at most 15 minutes from literal cow pastures. As such, encounters with wildlife are frequent and to be expected if you’re spending any decent amount of time here.</p>
-<section id="its-always-the-year-of-the-rabbit" class="level3">
-<h3 class="anchored" data-anchor-id="its-always-the-year-of-the-rabbit">It’s always the year of the rabbit</h3>
-<p>There was a stretch of time, also back around 2017 I think, where our bunny Clover would occasionally<sup>2</sup> wake us up in the middle of the night by thumping. Again, for those who may not know, <a href="https://www.rabbitcaretips.com/why-do-rabbits-thump-their-feet/">rabbits will thump if they sense danger</a> as a way of warning those around them. Clover in particular is also known to thump when she’s having fun, but these few times when we woke up and checked, she was doing her best statue imitation in between thumps, strongly suggesting she really was scared of… something.</p>
-<p>We never figured out what, exactly. Best guess: her super-sensitive rabbit ears + eyes picked up something prowling outside in the dark that our duller human senses just couldn’t perceive. Which also gave me a specific application for night cameras beyond simple curiosity: to try and figure out what, if anything, was making Clover nervous (I even had an idea to include some kind of seismometer so I could sync up the offline video analysis with Clover’s thumps, but it’s been years since she last woke us up with thumping so I figure I missed the moment).</p>
-</section>
-<section id="i-normally-like-deer" class="level3">
-<h3 class="anchored" data-anchor-id="i-normally-like-deer">I normally like deer</h3>
-<p>But I was still curious about the nearby wildlife. This only intensified in the summer of 2021: unusually ravenous deer<sup>3</sup> ate all the lilies in our front yard before they even bloomed. An idea formed to sync a night camera up with a programmable drone that could, after identifying the deer in the yard, harass them away from the lilies. Oddly, summer 2022 was a return to normal: only one flower was eaten early on in the season; the other few dozen went through their full lifecycle, never getting eaten.</p>
-<p>But even so, I still wanted to see what was cruising around our neighborhood.</p>
-</section>
-<section id="bring-on-the-over-engineered-solution" class="level3">
-<h3 class="anchored" data-anchor-id="bring-on-the-over-engineered-solution">Bring on the over-engineered solution</h3>
-<p>Yes, dear reader–years have passed in this retelling with little to no progress on the wildlife front. I will readily admit this project suffered what most personal projects do. I will say this, though: in my defense, 2018 through 2021 was the back half of my tenure-track appointment. Couple that with welcoming my daughter, and the onset of a global pandemic… yeah. A liiiiittle bit of burnout<sup>4</sup>, plus a LOT of higher-priority items to worry about than a wildlife camera for the sake of curiosity.</p>
-<p>But by summer 2022, I finally had something physically taking shape–<a href="../../posts/2022-07-13-the-raspberry-pi-cluster/index.html">head over to my July 2022 blog post to check it out, complete with photos</a>! I even mounted the birdhouse outside, calibrated the camera’s field of view, and wired it all up… but then left it for several more months.</p>
-<p>Now I’m <em>finally</em> getting some hard, empirical data on how it’s all working. And man, it’s going to be a challenge to have this work well.</p>
-</section>
-<section id="technical-challenges" class="level3">
-<h3 class="anchored" data-anchor-id="technical-challenges">Technical challenges</h3>
-<p>Legion.</p>
-<p>By far the biggest challenge I’m dealing with is <strong>how resource-constrained the Raspberry Pi 3B+ is</strong>. I’m working with 1GB of RAM, though the effective memory available at any given moment is maaaybe 75% of that; as such, <strong>66%</strong> is the safe margin I operate with. Another limitation is the SD card size (effectively the hard drive of the Pi): at least when I purchased it, the limit was 32GB. That’s now no longer the case, but I haven’t gotten around to reformatting it, so it’s still a 32GB limit for now.</p>
-<p>This effectively means that capturing lots of video for testing purposes is difficult. Even reasonable resolutions like 1280x720 at 30fps will exhaust the little Pi’s memory after a mere <strong>4 minutes</strong> of video capture, assuming all the buffering was happening in RAM.</p>
-<p>I looked into streaming the video directly as it’s captured; that was, after all, the idea I had behind purchasing the 1080 Ti back in 2017. However, the 3B+ wifi operates only on the 2.4GHz band, which… is unfortunately shared by our baby monitor. Thus, whenever the Pi is transferring data over the air, the baby monitor becomes completely unusable.</p>
-<p>So the upshot here is</p>
-<ol type="1">
-<li>I need to dramatically downsample the incoming video feed, and</li>
-<li>any real-time processing I want to do (including downsampling) has to be done on the Pi itself</li>
-</ol>
-<p>I have been looking into things like <a href="https://en.wikipedia.org/wiki/Power_over_Ethernet">power-over-ethernet</a> to try and solve #2 (though it would require running an ethernet cable outside, which has its own challenges), and I’ve been running some experiments on the most effective downsampling methods for #1. I’ve also been strongly considering simply upgrading the Pi to a 4B when they become available again, as they can operate on the 5GHz wifi band, and can go up to 8GB of memory. Together, these two immediate fixes would dramatically simplify the situation. But Pi 4s most likely won’t be readily available again until Q2 this year (a few months from now, at least).</p>
-</section>
-<section id="logistical-challenges" class="level3">
-<h3 class="anchored" data-anchor-id="logistical-challenges">Logistical challenges</h3>
-<p>There are a ton of unknowns when it comes to what <em>kind</em> of data I can expect. Already the few experiments I’ve run have shown a wide variability in the video I capture in the context of trying to decide on-the-fly what to keep and what to discard.</p>
-<p>The <a href="https://github.com/raspberrypi/picamera2">Picamera2 library</a> also recently entered “beta” (from “alpha”). While that’s most certainly a positive development, it still means the library is undergoing substantial changes, and so not only may functionality change very suddenly, but–as I’ve already been encountering–existing functionality is often poorly documented, if at all. It took me some time to piece together how to configure both high-res and low-res video streams to capture the <em>full</em> field of view of the camera (relative to the camera’s native resolution), rather than cropping out a section, as is what would happen with most of the configurations in the <a href="https://github.com/raspberrypi/picamera2/tree/main/examples"><code>examples</code> folder</a>.</p>
-<p>Oh, yeah: I also have a full-time job, and a toddler. So those are definitely logistics to be considered.</p>
-</section>
-<section id="experiments" class="level3">
-<h3 class="anchored" data-anchor-id="experiments">Experiments</h3>
-<p>I have run a few experiments to get a feel for what to expect. The <a href="https://github.com/magsol/wildlife-cameras/blob/0881bf2043a0c5e97177105894508e3dfebacee6/src/noir.py">latest commit</a> (as of writing this post) shows what the experiments more or less look like. Here are the highlights:</p>
-<ul>
-<li>A dual-stream video recording configuration, where the high-res is set to 1640x1232 and the low-res is 410x308.</li>
-<li>The camera runs for a fixed period of time (in the script, it’s 8 hours).</li>
-<li>During that time, a continuous loop does the following:
-<ol type="1">
-<li>Grab a frame from the low-res stream.</li>
-<li>Convert this frame from <a href="https://en.wikipedia.org/wiki/YUV">YUV</a> to grayscale (Picamera2 requires low-res feeds to be in YUV; fortunately, this step doesn’t seem too arduous).</li>
-<li>Compare this frame to the <em>previous</em> frame by way of calculating <a href="https://en.wikipedia.org/wiki/Mean_squared_error">mean squared error</a> (MSE). This provides some measure of how much has changed from one sequential frame to the next.</li>
-<li>If MSE exceeds some threshold, start recording a video with the high-res stream. Continue recording so long as MSE exceeds that threshold.</li>
-<li>If MSE drops below that threshold <em>and stays there for a certain length of time</em>, stop the high-res stream.</li>
-<li>Hang onto all MSE measurements.</li>
-</ol></li>
-</ul>
-<p>That’s the basic gist. It’s functional, if blunt. Fortunately, I’ve already collected some interesting data. For instance, here’s an MSE plot from one 8-hour experiment I ran. Important to note: these MSE measurements are <em>only</em> from the events that <em>exceeded</em> the MSE threshold (I’m running separate experiments to try and determine what a baseline MSE looks like).</p>
-<p><img src="https://magsol.github.io/posts/2023-02-15-calibrating-a-wildlife-camera/detected_motion_mse.png" class="img-fluid" alt="Matplotlib line plot showing multiple variable-length plots of MSE along the y-axis versus time on the x-axis."></p>
-<p>One’s first reaction to this plot might be “Huh, there’s a wide variability in the things that can trigger MSE to exceed the threshold!”. And that would most certainly be correct. But even more complicating is the fact <em>ALL of these events are of the same thing</em>: a car driving by on the street. Not only is it not really something I’m interested in–it’s a wildlife camera, after all–but clearly MSE is ill-suited as a method for identifying the <em>kind</em> of event behind it.</p>
-<p>I ran a second experiment over 10 minutes to investigate what MSE baselines might look like (and I’m currently running a longer one; results TBD), but basically you have something that looks like this:</p>
-<p><img src="https://magsol.github.io/posts/2023-02-15-calibrating-a-wildlife-camera/10min_test.png" class="img-fluid" alt="Matplotlib line plot showing a single plot of MSE along the y-axis versus time on the x-axis."></p>
-<p>My take-away from this plot is: given the 30fps capture rate (or very close to it; at least, depending on how much real-time processing I try to cram in), very little changes from one frame to the next. Empirically, it’s a little more than a single pixel. However, there’s a lot this plot <em>doesn’t</em> tell me, such as:</p>
-<ul>
-<li>What are the effects of weather, such as wind or rain, on the baseline MSE? (not a clue)</li>
-<li>How does absolute MSE change with respect to resolution, fps, or other camera settings? (in theory, MSE should scale with resolution; fps could at least be simulated by systematically downsampling, though upsampling would be more difficult)</li>
-<li>What are the effects of night vs day on MSE? (again, in theory this shouldn’t be a huge deal, as I only plan to operate the camera at night)</li>
-<li>How can MSE identify two separate events vs something like a person who stands still long enough to make it <em>seem</em> like two separate events? (it probably can’t)</li>
-</ul>
-<p>Anyway, I’m running a 24-hour test right now that will hopefully provide at least a little more intuition into the role of MSE vs the real world, if not any outright answers to the above questions.</p>
-<p>Finally, I did want to get some feel for the overall performance of the code itself. I wanted to try and understand what I was working with in terms of options for real-time processing. So I ran a profiler on the same 10-minute experiment I ran above, and this is what came back:</p>
-<p><img src="https://magsol.github.io/posts/2023-02-15-calibrating-a-wildlife-camera/profiling.png" class="img-fluid" alt="Output of the top `cumtime` hits from running cProfile on the 10-minute MSE experiment. Main take-away is that Picamera2 internals are by far the biggest time sink, by at least an order of magnitude."></p>
-<p>This was comforting to see, as I had been worried the real-time conversion of YUV to grayscale may have been a bigger performance hit; turns out, it’s over two orders of magnitude less problematic than Picamera2 internals, and an order of magnitude less so than the <code>numpy.mean</code> function call for calculating MSE (and this is something I might be able to optimize a bit with some clever leveraging of in-memory data structures).</p>
-<p>I was even able to look at the timestamping of the MSE calculations themselves to see that, by far, I was very close to the 30fps sampling rate of the camera itself, meaning I definitely have some head room for additional real-time operations. Granted, this concern has always been secondary to memory constraints, but still: it’s good to know where the hard limits are, and where we have some room to operate.</p>
-</section>
-<section id="ongoing" class="level3">
-<h3 class="anchored" data-anchor-id="ongoing">Ongoing</h3>
-<p>It’s clear that, if there are animals prowling around at night, they don’t elicit much of a reaction from MSE, meaning I’m going to need smarter methods of teasing them out. One thought I had was considering both MSE magnitude <em>and</em> duration, but for that I’d need a much more thorough understanding of the role of the baseline MSE (hence the 24-hour experiment). Another thought I had was combining this with a <em>window</em> of frames, rather than just instantaneous MSE over a pair of frames. Finally, I also wanted to look into some basic (non-DL) object detection in OpenCV, since considering first-order image features like edges and corners might be more sensitive to small animals walking around while also keeping added computationl and memory demands at a minimum.</p>
-<p>Stay tuned!</p>
-
-
-</section>
-
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>RIP.↩︎</p></li>
-<li id="fn2"><p>Every few months, so not very often. The impressive bit here is that a 4.5lb <em>rabbit</em> could wake up two snoring humans through multiple walls and a closed door.↩︎</p></li>
-<li id="fn3"><p>We assume. We didn’t have the camera in place to confirm, but we did hear numerous anecdotes from folks also suggesting the deer were weirdly ravenous and less fearful of humans that year.↩︎</p></li>
-<li id="fn4"><p>Hopefully obvious understatement.↩︎</p></li>
-</ol>
-</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
-  author = {Quinn, Shannon},
-  title = {Setting up a Wildlife Camera},
-  date = {2023-02-15},
-  url = {https://magsol.github.io/2023-02-15-calibrating-a-wildlife-camera},
-  langid = {en}
-}
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2023" class="csl-entry quarto-appendix-citeas">
-Quinn, Shannon. 2023. <span>“Setting up a Wildlife Camera.”</span>
-February 15, 2023. <a href="https://magsol.github.io/2023-02-15-calibrating-a-wildlife-camera">https://magsol.github.io/2023-02-15-calibrating-a-wildlife-camera</a>.
-</div></div></section></div> ]]></description>
-  <category>personal</category>
-  <category>raspberry pi</category>
-  <category>wildlife</category>
-  <category>ir</category>
-  <category>camera</category>
-  <category>video processing</category>
-  <guid>https://magsol.github.io/posts/2023-02-15-calibrating-a-wildlife-camera/</guid>
-  <pubDate>Wed, 15 Feb 2023 15:57:00 GMT</pubDate>
-  <media:content url="https://magsol.github.io/posts/2023-02-15-calibrating-a-wildlife-camera/wildlifegen.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 </channel>
 </rss>
