@@ -10,6 +10,7 @@ about:
       href: https://github.com/magsol
     - icon: mastodon
       href: https://quinnwitz.house/@magsol
+      rel: me
     - icon: linkedin
       href: https://www.linkedin.com/in/shannonpquinn
     - icon: wordpress
