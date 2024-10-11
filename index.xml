@@ -16,7 +16,7 @@
 <height>144</height>
 <width>144</width>
 </image>
-<generator>quarto-1.4.555</generator>
+<generator>quarto-1.5.57</generator>
 <lastBuildDate>Thu, 13 Jun 2024 22:03:00 GMT</lastBuildDate>
 <item>
   <title>Desolation</title>
@@ -552,7 +552,7 @@ Long post ahead
 <p>But for now, let’s jump into assembly!</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="clear_desk.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2" title="My workspace for assembly. Thanks, Gamers Nexus!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/clear_desk.jpg" class="img-fluid figure-img" alt="A clear desk space with a Gamers Nexus antistatic mat."></a></p>
+<p><a href="clear_desk.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="My workspace for assembly. Thanks, Gamers Nexus!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/clear_desk.jpg" class="img-fluid figure-img" alt="A clear desk space with a Gamers Nexus antistatic mat."></a></p>
 <figcaption>My workspace for assembly. Thanks, Gamers Nexus!</figcaption>
 </figure>
 </div>
@@ -571,7 +571,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="case/box_case.jpg" class="lightbox" data-gallery="case" data-glightbox="description: .lightbox-desc-3" title="Unboxing the case."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/case/box_case.jpg" class="img-fluid figure-img" alt="Unboxing the case."></a></p>
+<p><a href="case/box_case.jpg" class="lightbox" data-gallery="case" title="Unboxing the case."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/case/box_case.jpg" class="img-fluid figure-img" alt="Unboxing the case."></a></p>
 <figcaption>Unboxing the case.</figcaption>
 </figure>
 </div>
@@ -579,7 +579,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="case/case1.jpg" class="lightbox" data-gallery="case" data-glightbox="description: .lightbox-desc-4" title="I love the plexiglass covers: easy to remove, but also great for seeing inside."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/case/case1.jpg" class="img-fluid figure-img" alt="I love the plexiglass covers: easy to remove, but also great for seeing inside."></a></p>
+<p><a href="case/case1.jpg" class="lightbox" data-gallery="case" title="I love the plexiglass covers: easy to remove, but also great for seeing inside."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/case/case1.jpg" class="img-fluid figure-img" alt="I love the plexiglass covers: easy to remove, but also great for seeing inside."></a></p>
 <figcaption>I love the plexiglass covers: easy to remove, but also great for seeing inside.</figcaption>
 </figure>
 </div>
@@ -589,7 +589,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="case/case2.jpg" class="lightbox" data-gallery="case" data-glightbox="description: .lightbox-desc-5" title="Lots of airflow vents."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/case/case2.jpg" class="img-fluid figure-img" alt="Lots of airflow vents."></a></p>
+<p><a href="case/case2.jpg" class="lightbox" data-gallery="case" title="Lots of airflow vents."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/case/case2.jpg" class="img-fluid figure-img" alt="Lots of airflow vents."></a></p>
 <figcaption>Lots of airflow vents.</figcaption>
 </figure>
 </div>
@@ -597,7 +597,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="case/case3.jpg" class="lightbox" data-gallery="case" data-glightbox="description: .lightbox-desc-6" title="Lots and lots of fans."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/case/case3.jpg" class="img-fluid figure-img" alt="Lots and lots of fans."></a></p>
+<p><a href="case/case3.jpg" class="lightbox" data-gallery="case" title="Lots and lots of fans."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/case/case3.jpg" class="img-fluid figure-img" alt="Lots and lots of fans."></a></p>
 <figcaption>Lots and lots of fans.</figcaption>
 </figure>
 </div>
@@ -613,7 +613,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="before_the_storm.jpg" class="lightbox" data-gallery="unboxing" data-glightbox="description: .lightbox-desc-7" title="All the internal components, unboxed from shipping but still in their retail boxes."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/before_the_storm.jpg" class="img-fluid figure-img" alt="All the internal components, unboxed from shipping but still in their retail boxes."></a></p>
+<p><a href="before_the_storm.jpg" class="lightbox" data-gallery="unboxing" title="All the internal components, unboxed from shipping but still in their retail boxes."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/before_the_storm.jpg" class="img-fluid figure-img" alt="All the internal components, unboxed from shipping but still in their retail boxes."></a></p>
 <figcaption>All the internal components, unboxed from shipping but still in their retail boxes.</figcaption>
 </figure>
 </div>
@@ -623,7 +623,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="boxes.jpg" class="lightbox" data-gallery="unboxing" data-glightbox="description: .lightbox-desc-8" title="Everything arrived! Well, everything else arrived."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/boxes.jpg" class="img-fluid figure-img" alt="Everything arrived! Well, everything else arrived."></a></p>
+<p><a href="boxes.jpg" class="lightbox" data-gallery="unboxing" title="Everything arrived! Well, everything else arrived."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/boxes.jpg" class="img-fluid figure-img" alt="Everything arrived! Well, everything else arrived."></a></p>
 <figcaption>Everything arrived! Well, everything <em>else</em> arrived.</figcaption>
 </figure>
 </div>
@@ -631,7 +631,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="boxes_internal_components.jpg" class="lightbox" data-gallery="unboxing" data-glightbox="description: .lightbox-desc-9" title="Just the internal components that go on the motherboard… minus the GPU."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/boxes_internal_components.jpg" class="img-fluid figure-img" alt="Just the internal components that go on the motherboard… minus the GPU."></a></p>
+<p><a href="boxes_internal_components.jpg" class="lightbox" data-gallery="unboxing" title="Just the internal components that go on the motherboard… minus the GPU."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/boxes_internal_components.jpg" class="img-fluid figure-img" alt="Just the internal components that go on the motherboard… minus the GPU."></a></p>
 <figcaption>Just the internal components that go on the motherboard… minus the GPU.</figcaption>
 </figure>
 </div>
@@ -647,7 +647,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="cpu/motherboard_unpack.jpg" class="lightbox" data-gallery="cpu" data-glightbox="description: .lightbox-desc-10" title="The motherboard is inside that antistatic wrap on the right. Zapping that with a small static discharge would be, ah, rather unfortunate!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/cpu/motherboard_unpack.jpg" class="img-fluid figure-img" alt="The motherboard is inside that antistatic wrap on the right. Zapping that with a small static discharge would be, ah, rather unfortunate!"></a></p>
+<p><a href="cpu/motherboard_unpack.jpg" class="lightbox" data-gallery="cpu" title="The motherboard is inside that antistatic wrap on the right. Zapping that with a small static discharge would be, ah, rather unfortunate!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/cpu/motherboard_unpack.jpg" class="img-fluid figure-img" alt="The motherboard is inside that antistatic wrap on the right. Zapping that with a small static discharge would be, ah, rather unfortunate!"></a></p>
 <figcaption>The motherboard is inside that antistatic wrap on the right. Zapping that with a small static discharge would be, ah, rather unfortunate!</figcaption>
 </figure>
 </div>
@@ -657,7 +657,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="cpu/motherboard.jpg" class="lightbox" data-gallery="cpu" data-glightbox="description: .lightbox-desc-11" title="The motherboard, in all its glory."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/cpu/motherboard.jpg" class="img-fluid figure-img" alt="The motherboard, in all its glory."></a></p>
+<p><a href="cpu/motherboard.jpg" class="lightbox" data-gallery="cpu" title="The motherboard, in all its glory."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/cpu/motherboard.jpg" class="img-fluid figure-img" alt="The motherboard, in all its glory."></a></p>
 <figcaption>The motherboard, in all its glory.</figcaption>
 </figure>
 </div>
@@ -667,7 +667,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="cpu/cpu_unbox.jpg" class="lightbox" data-gallery="cpu" data-glightbox="description: .lightbox-desc-12" title="The “brain” of the computer. I guess."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/cpu/cpu_unbox.jpg" class="img-fluid figure-img" alt="The “brain” of the computer. I guess."></a></p>
+<p><a href="cpu/cpu_unbox.jpg" class="lightbox" data-gallery="cpu" title="The “brain” of the computer. I guess."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/cpu/cpu_unbox.jpg" class="img-fluid figure-img" alt="The “brain” of the computer. I guess."></a></p>
 <figcaption>The “brain” of the computer. I guess.</figcaption>
 </figure>
 </div>
@@ -675,7 +675,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="cpu/cpu_box.jpg" class="lightbox" data-gallery="cpu" data-glightbox="description: .lightbox-desc-13" title="The CPU box is actually quite large, but that’s because 90% of it is this “pedestal foam.” I know it’s to keep things from getting jostled, but it just looks like a throne."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/cpu/cpu_box.jpg" class="img-fluid figure-img" alt="The CPU box is actually quite large, but that’s because 90% of it is this “pedestal foam.” I know it’s to keep things from getting jostled, but it just looks like a throne."></a></p>
+<p><a href="cpu/cpu_box.jpg" class="lightbox" data-gallery="cpu" title="The CPU box is actually quite large, but that’s because 90% of it is this “pedestal foam.” I know it’s to keep things from getting jostled, but it just looks like a throne."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/cpu/cpu_box.jpg" class="img-fluid figure-img" alt="The CPU box is actually quite large, but that’s because 90% of it is this “pedestal foam.” I know it’s to keep things from getting jostled, but it just looks like a throne."></a></p>
 <figcaption>The CPU box is actually quite large, but that’s because 90% of it is this “pedestal foam.” I know it’s to keep things from getting jostled, but it just looks like a throne.</figcaption>
 </figure>
 </div>
@@ -685,7 +685,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="cpu/motherboard_cpu_slot.jpg" class="lightbox" data-gallery="cpu" data-glightbox="description: .lightbox-desc-14" title="The slot on the motherboard where the CPU goes, with a plastic safety cover on it. You do NOT want to damage the pins underneath it!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/cpu/motherboard_cpu_slot.jpg" class="img-fluid figure-img" alt="The slot on the motherboard where the CPU goes, with a plastic safety cover on it. You do NOT want to damage the pins underneath it!"></a></p>
+<p><a href="cpu/motherboard_cpu_slot.jpg" class="lightbox" data-gallery="cpu" title="The slot on the motherboard where the CPU goes, with a plastic safety cover on it. You do NOT want to damage the pins underneath it!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/cpu/motherboard_cpu_slot.jpg" class="img-fluid figure-img" alt="The slot on the motherboard where the CPU goes, with a plastic safety cover on it. You do NOT want to damage the pins underneath it!"></a></p>
 <figcaption>The slot on the motherboard where the CPU goes, with a plastic safety cover on it. You do NOT want to damage the pins underneath it!</figcaption>
 </figure>
 </div>
@@ -693,7 +693,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="cpu/motherboard_cpu_install.jpg" class="lightbox" data-gallery="cpu" data-glightbox="description: .lightbox-desc-15" title="After removing the plastic cover and quadruple-checking the CPU alignment, it fit perfectly!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/cpu/motherboard_cpu_install.jpg" class="img-fluid figure-img" alt="After removing the plastic cover and quadruple-checking the CPU alignment, it fit perfectly!"></a></p>
+<p><a href="cpu/motherboard_cpu_install.jpg" class="lightbox" data-gallery="cpu" title="After removing the plastic cover and quadruple-checking the CPU alignment, it fit perfectly!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/cpu/motherboard_cpu_install.jpg" class="img-fluid figure-img" alt="After removing the plastic cover and quadruple-checking the CPU alignment, it fit perfectly!"></a></p>
 <figcaption>After removing the plastic cover and quadruple-checking the CPU alignment, it fit perfectly!</figcaption>
 </figure>
 </div>
@@ -703,7 +703,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="cpu/cpu_cooler.jpg" class="lightbox" data-gallery="cpu" data-glightbox="description: .lightbox-desc-16" title="The custom cooler I bought. Just slots right on top of the CPU."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/cpu/cpu_cooler.jpg" class="img-fluid figure-img" alt="The custom cooler I bought. Just slots right on top of the CPU."></a></p>
+<p><a href="cpu/cpu_cooler.jpg" class="lightbox" data-gallery="cpu" title="The custom cooler I bought. Just slots right on top of the CPU."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/cpu/cpu_cooler.jpg" class="img-fluid figure-img" alt="The custom cooler I bought. Just slots right on top of the CPU."></a></p>
 <figcaption>The custom cooler I bought. Just slots right on top of the CPU.</figcaption>
 </figure>
 </div>
@@ -711,7 +711,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="cpu/cpu_cooler_installed.jpg" class="lightbox" data-gallery="cpu" data-glightbox="description: .lightbox-desc-17" title="Everything fit! Yay!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/cpu/cpu_cooler_installed.jpg" class="img-fluid figure-img" alt="Everything fit! Yay!"></a></p>
+<p><a href="cpu/cpu_cooler_installed.jpg" class="lightbox" data-gallery="cpu" title="Everything fit! Yay!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/cpu/cpu_cooler_installed.jpg" class="img-fluid figure-img" alt="Everything fit! Yay!"></a></p>
 <figcaption>Everything fit! Yay!</figcaption>
 </figure>
 </div>
@@ -729,7 +729,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="ram/motherboard_memory.jpg" class="lightbox" data-gallery="ram" data-glightbox="description: .lightbox-desc-18" title="The four RAM chips in the plastic on the right go in the four motherboard slots in front of the CPU on the left."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/ram/motherboard_memory.jpg" class="img-fluid figure-img" alt="The four RAM chips in the plastic on the right go in the four motherboard slots in front of the CPU on the left."></a></p>
+<p><a href="ram/motherboard_memory.jpg" class="lightbox" data-gallery="ram" title="The four RAM chips in the plastic on the right go in the four motherboard slots in front of the CPU on the left."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/ram/motherboard_memory.jpg" class="img-fluid figure-img" alt="The four RAM chips in the plastic on the right go in the four motherboard slots in front of the CPU on the left."></a></p>
 <figcaption>The four RAM chips in the plastic on the right go in the four motherboard slots in front of the CPU on the left.</figcaption>
 </figure>
 </div>
@@ -739,7 +739,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="ram/motherboard_dimms.jpg" class="lightbox" data-gallery="ram" data-glightbox="description: .lightbox-desc-19" title="If you ever have fewer DIMMs than motherboard slots, look for a schematic like this that tells you which slots you should install RAM in first."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/ram/motherboard_dimms.jpg" class="img-fluid figure-img" alt="If you ever have fewer DIMMs than motherboard slots, look for a schematic like this that tells you which slots you should install RAM in first."></a></p>
+<p><a href="ram/motherboard_dimms.jpg" class="lightbox" data-gallery="ram" title="If you ever have fewer DIMMs than motherboard slots, look for a schematic like this that tells you which slots you should install RAM in first."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/ram/motherboard_dimms.jpg" class="img-fluid figure-img" alt="If you ever have fewer DIMMs than motherboard slots, look for a schematic like this that tells you which slots you should install RAM in first."></a></p>
 <figcaption>If you ever have fewer DIMMs than motherboard slots, look for a schematic like this that tells you which slots you should install RAM in first.</figcaption>
 </figure>
 </div>
@@ -747,7 +747,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="ram/motherboard_memory_installed.jpg" class="lightbox" data-gallery="ram" data-glightbox="description: .lightbox-desc-20" title="Everything fit! Yay!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/ram/motherboard_memory_installed.jpg" class="img-fluid figure-img" alt="Everything fit! Yay!"></a></p>
+<p><a href="ram/motherboard_memory_installed.jpg" class="lightbox" data-gallery="ram" title="Everything fit! Yay!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/ram/motherboard_memory_installed.jpg" class="img-fluid figure-img" alt="Everything fit! Yay!"></a></p>
 <figcaption>Everything fit! Yay!</figcaption>
 </figure>
 </div>
@@ -765,7 +765,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="mobo/motherboard_installed1.jpg" class="lightbox" data-gallery="mobo" data-glightbox="description: .lightbox-desc-21" title="Everything fit! Yay!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/mobo/motherboard_installed1.jpg" class="img-fluid figure-img" alt="Everything fit! Yay!"></a></p>
+<p><a href="mobo/motherboard_installed1.jpg" class="lightbox" data-gallery="mobo" title="Everything fit! Yay!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/mobo/motherboard_installed1.jpg" class="img-fluid figure-img" alt="Everything fit! Yay!"></a></p>
 <figcaption>Everything fit! Yay!</figcaption>
 </figure>
 </div>
@@ -773,7 +773,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="mobo/motherboard_installed2.jpg" class="lightbox" data-gallery="mobo" data-glightbox="description: .lightbox-desc-22" title="Everything still fits! Yay!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/mobo/motherboard_installed2.jpg" class="img-fluid figure-img" alt="Everything still fits! Yay!"></a></p>
+<p><a href="mobo/motherboard_installed2.jpg" class="lightbox" data-gallery="mobo" title="Everything still fits! Yay!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/mobo/motherboard_installed2.jpg" class="img-fluid figure-img" alt="Everything still fits! Yay!"></a></p>
 <figcaption>Everything still fits! Yay!</figcaption>
 </figure>
 </div>
@@ -791,7 +791,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="psu/psu.jpg" class="lightbox" data-gallery="psu" data-glightbox="description: .lightbox-desc-23" title="That’s the PSU."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/psu/psu.jpg" class="img-fluid figure-img" alt="That’s the PSU."></a></p>
+<p><a href="psu/psu.jpg" class="lightbox" data-gallery="psu" title="That’s the PSU."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/psu/psu.jpg" class="img-fluid figure-img" alt="That’s the PSU."></a></p>
 <figcaption>That’s the PSU.</figcaption>
 </figure>
 </div>
@@ -799,7 +799,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="psu/case_slot_for_psu.jpg" class="lightbox" data-gallery="psu" data-glightbox="description: .lightbox-desc-24" title="Once you pop the top cover off the case, you can see the divot where the PSU fits."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/psu/case_slot_for_psu.jpg" class="img-fluid figure-img" alt="Once you pop the top cover off the case, you can see the divot where the PSU fits."></a></p>
+<p><a href="psu/case_slot_for_psu.jpg" class="lightbox" data-gallery="psu" title="Once you pop the top cover off the case, you can see the divot where the PSU fits."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/psu/case_slot_for_psu.jpg" class="img-fluid figure-img" alt="Once you pop the top cover off the case, you can see the divot where the PSU fits."></a></p>
 <figcaption>Once you pop the top cover off the case, you can see the divot where the PSU fits.</figcaption>
 </figure>
 </div>
@@ -809,7 +809,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="psu/case_with_psu.jpg" class="lightbox" data-gallery="psu" data-glightbox="description: .lightbox-desc-25" title="Fits like a glove!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/psu/case_with_psu.jpg" class="img-fluid figure-img" alt="Fits like a glove!"></a></p>
+<p><a href="psu/case_with_psu.jpg" class="lightbox" data-gallery="psu" title="Fits like a glove!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/psu/case_with_psu.jpg" class="img-fluid figure-img" alt="Fits like a glove!"></a></p>
 <figcaption>Fits like a glove!</figcaption>
 </figure>
 </div>
@@ -817,7 +817,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="psu/psu_cables1.jpg" class="lightbox" data-gallery="psu" data-glightbox="description: .lightbox-desc-26" title="Literal bags’ worth of cables, depending on my hardware."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/psu/psu_cables1.jpg" class="img-fluid figure-img" alt="Literal bags’ worth of cables, depending on my hardware."></a></p>
+<p><a href="psu/psu_cables1.jpg" class="lightbox" data-gallery="psu" title="Literal bags’ worth of cables, depending on my hardware."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/psu/psu_cables1.jpg" class="img-fluid figure-img" alt="Literal bags’ worth of cables, depending on my hardware."></a></p>
 <figcaption>Literal bags’ worth of cables, depending on my hardware.</figcaption>
 </figure>
 </div>
@@ -825,7 +825,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="psu/psu_cables2.jpg" class="lightbox" data-gallery="psu" data-glightbox="description: .lightbox-desc-27" title="Here are cables that will provide core power to the motherboard."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/psu/psu_cables2.jpg" class="img-fluid figure-img" alt="Here are cables that will provide core power to the motherboard."></a></p>
+<p><a href="psu/psu_cables2.jpg" class="lightbox" data-gallery="psu" title="Here are cables that will provide core power to the motherboard."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/psu/psu_cables2.jpg" class="img-fluid figure-img" alt="Here are cables that will provide core power to the motherboard."></a></p>
 <figcaption>Here are cables that will provide core power to the motherboard.</figcaption>
 </figure>
 </div>
@@ -844,7 +844,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="gpu/gpu_box_case.jpg" class="lightbox" data-gallery="gpu" data-glightbox="description: .lightbox-desc-28" title="Here we go."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/gpu/gpu_box_case.jpg" class="img-fluid figure-img" alt="Here we go."></a></p>
+<p><a href="gpu/gpu_box_case.jpg" class="lightbox" data-gallery="gpu" title="Here we go."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/gpu/gpu_box_case.jpg" class="img-fluid figure-img" alt="Here we go."></a></p>
 <figcaption>Here we go.</figcaption>
 </figure>
 </div>
@@ -854,7 +854,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="gpu/gpu_unboxed1.jpg" class="lightbox" data-gallery="gpu" data-glightbox="description: .lightbox-desc-29" title="Unboxing the beast."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/gpu/gpu_unboxed1.jpg" class="img-fluid figure-img" alt="Unboxing the beast."></a></p>
+<p><a href="gpu/gpu_unboxed1.jpg" class="lightbox" data-gallery="gpu" title="Unboxing the beast."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/gpu/gpu_unboxed1.jpg" class="img-fluid figure-img" alt="Unboxing the beast."></a></p>
 <figcaption>Unboxing the beast.</figcaption>
 </figure>
 </div>
@@ -862,7 +862,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="gpu/gpu_unboxed2.jpg" class="lightbox" data-gallery="gpu" data-glightbox="description: .lightbox-desc-30" title="I could barely hold this with one hand."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/gpu/gpu_unboxed2.jpg" class="img-fluid figure-img" alt="I could barely hold this with one hand."></a></p>
+<p><a href="gpu/gpu_unboxed2.jpg" class="lightbox" data-gallery="gpu" title="I could barely hold this with one hand."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/gpu/gpu_unboxed2.jpg" class="img-fluid figure-img" alt="I could barely hold this with one hand."></a></p>
 <figcaption>I could barely hold this with one hand.</figcaption>
 </figure>
 </div>
@@ -870,7 +870,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="gpu/gpu_unboxed3.jpg" class="lightbox" data-gallery="gpu" data-glightbox="description: .lightbox-desc-31" title="My already-oversized DumbRunner coffee mug for scale."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/gpu/gpu_unboxed3.jpg" class="img-fluid figure-img" alt="My already-oversized DumbRunner coffee mug for scale."></a></p>
+<p><a href="gpu/gpu_unboxed3.jpg" class="lightbox" data-gallery="gpu" title="My already-oversized DumbRunner coffee mug for scale."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/gpu/gpu_unboxed3.jpg" class="img-fluid figure-img" alt="My already-oversized DumbRunner coffee mug for scale."></a></p>
 <figcaption>My already-oversized <a href="https://dumbrunner.threadless.com/designs/1-dad-in-age-group/accessories/mug/standard">DumbRunner coffee mug</a> for scale.</figcaption>
 </figure>
 </div>
@@ -880,7 +880,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="gpu/gpu_installed.jpg" class="lightbox" data-gallery="gpu" data-glightbox="description: .lightbox-desc-32" title="In the immortal words of my dad’s dad: “It FITS. JUST. FINE.”"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/gpu/gpu_installed.jpg" class="img-fluid figure-img" alt="In the immortal words of my dad’s dad: “It FITS. JUST. FINE.”"></a></p>
+<p><a href="gpu/gpu_installed.jpg" class="lightbox" data-gallery="gpu" title="In the immortal words of my dad’s dad: “It FITS. JUST. FINE.”"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/gpu/gpu_installed.jpg" class="img-fluid figure-img" alt="In the immortal words of my dad’s dad: “It FITS. JUST. FINE.”"></a></p>
 <figcaption>In the immortal words of my dad’s dad: “It FITS. JUST. FINE.”</figcaption>
 </figure>
 </div>
@@ -888,7 +888,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="gpu/gpu_old_psu_cables.jpg" class="lightbox" data-gallery="gpu" data-glightbox="description: .lightbox-desc-33" title="If you have an older-style PSU, you’ll need no fewer than FOUR ATX CABLES to power this monster (technically three, but four is recommended)."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/gpu/gpu_old_psu_cables.jpg" class="img-fluid figure-img" alt="If you have an older-style PSU, you’ll need no fewer than FOUR ATX CABLES to power this monster (technically three, but four is recommended)."></a></p>
+<p><a href="gpu/gpu_old_psu_cables.jpg" class="lightbox" data-gallery="gpu" title="If you have an older-style PSU, you’ll need no fewer than FOUR ATX CABLES to power this monster (technically three, but four is recommended)."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/gpu/gpu_old_psu_cables.jpg" class="img-fluid figure-img" alt="If you have an older-style PSU, you’ll need no fewer than FOUR ATX CABLES to power this monster (technically three, but four is recommended)."></a></p>
 <figcaption>If you have an older-style PSU, you’ll need no fewer than FOUR ATX CABLES to power this monster (technically three, but four is recommended).</figcaption>
 </figure>
 </div>
@@ -896,7 +896,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="gpu/gpu_new_psu_cables.jpg" class="lightbox" data-gallery="gpu" data-glightbox="description: .lightbox-desc-34" title="If instead you have a newer PSU, you’ll have access to a single cable that supplies variable wattage, averaging 600W."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/gpu/gpu_new_psu_cables.jpg" class="img-fluid figure-img" alt="If instead you have a newer PSU, you’ll have access to a single cable that supplies variable wattage, averaging 600W."></a></p>
+<p><a href="gpu/gpu_new_psu_cables.jpg" class="lightbox" data-gallery="gpu" title="If instead you have a newer PSU, you’ll have access to a single cable that supplies variable wattage, averaging 600W."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/gpu/gpu_new_psu_cables.jpg" class="img-fluid figure-img" alt="If instead you have a newer PSU, you’ll have access to a single cable that supplies variable wattage, averaging 600W."></a></p>
 <figcaption>If instead you have a newer PSU, you’ll have access to a single cable that supplies variable wattage, averaging 600W.</figcaption>
 </figure>
 </div>
@@ -916,7 +916,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="nvme/nvme_boxes.jpg" class="lightbox" data-gallery="nvme" data-glightbox="description: .lightbox-desc-35" title="Storage unboxing."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/nvme/nvme_boxes.jpg" class="img-fluid figure-img" alt="Storage unboxing."></a></p>
+<p><a href="nvme/nvme_boxes.jpg" class="lightbox" data-gallery="nvme" title="Storage unboxing."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/nvme/nvme_boxes.jpg" class="img-fluid figure-img" alt="Storage unboxing."></a></p>
 <figcaption>Storage unboxing.</figcaption>
 </figure>
 </div>
@@ -924,7 +924,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="nvme/nvme_unboxed1.jpg" class="lightbox" data-gallery="nvme" data-glightbox="description: .lightbox-desc-36" title="These things are TEENY."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/nvme/nvme_unboxed1.jpg" class="img-fluid figure-img" alt="These things are TEENY."></a></p>
+<p><a href="nvme/nvme_unboxed1.jpg" class="lightbox" data-gallery="nvme" title="These things are TEENY."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/nvme/nvme_unboxed1.jpg" class="img-fluid figure-img" alt="These things are TEENY."></a></p>
 <figcaption>These things are TEENY.</figcaption>
 </figure>
 </div>
@@ -932,7 +932,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="nvme/nvme_installed2.jpg" class="lightbox" data-gallery="nvme" data-glightbox="description: .lightbox-desc-37" title="Slotted into two motherboard slots (GPU not shown)."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/nvme/nvme_installed2.jpg" class="img-fluid figure-img" alt="Slotted into two motherboard slots (GPU not shown)."></a></p>
+<p><a href="nvme/nvme_installed2.jpg" class="lightbox" data-gallery="nvme" title="Slotted into two motherboard slots (GPU not shown)."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/nvme/nvme_installed2.jpg" class="img-fluid figure-img" alt="Slotted into two motherboard slots (GPU not shown)."></a></p>
 <figcaption>Slotted into two motherboard slots (GPU not shown).</figcaption>
 </figure>
 </div>
@@ -950,7 +950,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="wires/internal_wiring.jpg" class="lightbox" data-gallery="wiring" data-glightbox="description: .lightbox-desc-38" title="These pathways are along the “bottom” of the motherboard, so most of the wiring can be kept hidden and out of the way of the main components."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/wires/internal_wiring.jpg" class="img-fluid figure-img" alt="These pathways are along the “bottom” of the motherboard, so most of the wiring can be kept hidden and out of the way of the main components."></a></p>
+<p><a href="wires/internal_wiring.jpg" class="lightbox" data-gallery="wiring" title="These pathways are along the “bottom” of the motherboard, so most of the wiring can be kept hidden and out of the way of the main components."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/wires/internal_wiring.jpg" class="img-fluid figure-img" alt="These pathways are along the “bottom” of the motherboard, so most of the wiring can be kept hidden and out of the way of the main components."></a></p>
 <figcaption>These pathways are along the “bottom” of the motherboard, so most of the wiring can be kept hidden and out of the way of the main components.</figcaption>
 </figure>
 </div>
@@ -958,7 +958,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="wires/internal_installed.jpg" class="lightbox" data-gallery="wiring" data-glightbox="description: .lightbox-desc-39" title="Everything (except the GPU) is plugged into the PSU."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/wires/internal_installed.jpg" class="img-fluid figure-img" alt="Everything (except the GPU) is plugged into the PSU."></a></p>
+<p><a href="wires/internal_installed.jpg" class="lightbox" data-gallery="wiring" title="Everything (except the GPU) is plugged into the PSU."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/wires/internal_installed.jpg" class="img-fluid figure-img" alt="Everything (except the GPU) is plugged into the PSU."></a></p>
 <figcaption>Everything (except the GPU) is plugged into the PSU.</figcaption>
 </figure>
 </div>
@@ -988,7 +988,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="ubuntu/turn_on.jpg" class="lightbox" data-gallery="ubuntu" data-glightbox="description: .lightbox-desc-40" title="The first power-up! So much suspense!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/ubuntu/turn_on.jpg" class="img-fluid figure-img" alt="The first power-up! So much suspense!"></a></p>
+<p><a href="ubuntu/turn_on.jpg" class="lightbox" data-gallery="ubuntu" title="The first power-up! So much suspense!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/ubuntu/turn_on.jpg" class="img-fluid figure-img" alt="The first power-up! So much suspense!"></a></p>
 <figcaption>The first power-up! So much suspense!</figcaption>
 </figure>
 </div>
@@ -996,7 +996,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="ubuntu/turned_on.jpg" class="lightbox" data-gallery="ubuntu" data-glightbox="description: .lightbox-desc-41" title="SHE LIVES. You can tell by the lights."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/ubuntu/turned_on.jpg" class="img-fluid figure-img" alt="SHE LIVES. You can tell by the lights."></a></p>
+<p><a href="ubuntu/turned_on.jpg" class="lightbox" data-gallery="ubuntu" title="SHE LIVES. You can tell by the lights."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/ubuntu/turned_on.jpg" class="img-fluid figure-img" alt="SHE LIVES. You can tell by the lights."></a></p>
 <figcaption>SHE LIVES. You can tell by the lights.</figcaption>
 </figure>
 </div>
@@ -1006,7 +1006,7 @@ Long post ahead
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="ubuntu/ubuntu_install.jpg" class="lightbox" data-gallery="ubuntu" data-glightbox="description: .lightbox-desc-42" title="The Ubuntu installer screen! Things are working!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/ubuntu/ubuntu_install.jpg" class="img-fluid figure-img" alt="The Ubuntu installer screen! Things are working!"></a></p>
+<p><a href="ubuntu/ubuntu_install.jpg" class="lightbox" data-gallery="ubuntu" title="The Ubuntu installer screen! Things are working!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/ubuntu/ubuntu_install.jpg" class="img-fluid figure-img" alt="The Ubuntu installer screen! Things are working!"></a></p>
 <figcaption>The Ubuntu installer screen! Things are working!</figcaption>
 </figure>
 </div>
@@ -1038,7 +1038,7 @@ Long post ahead
 <p>So I took the first name that came to mind that seemed incredibly appropriate: <a href="https://zelda.fandom.com/wiki/Makar">Makar, the ancient Sage of Wind</a>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://static.wikia.nocookie.net/zelda_gamepedia_en/images/b/b0/TWW_Makar_Artwork.png" class="lightbox" data-gallery="quarto-lightbox-gallery-43" data-glightbox="description: .lightbox-desc-43" title="Makar, in his element."><img src="https://static.wikia.nocookie.net/zelda_gamepedia_en/images/b/b0/TWW_Makar_Artwork.png" class="img-fluid figure-img" alt="Makar, in his element."></a></p>
+<p><a href="https://static.wikia.nocookie.net/zelda_gamepedia_en/images/b/b0/TWW_Makar_Artwork.png" class="lightbox" data-gallery="quarto-lightbox-gallery-43" title="Makar, in his element."><img src="https://static.wikia.nocookie.net/zelda_gamepedia_en/images/b/b0/TWW_Makar_Artwork.png" class="img-fluid figure-img" alt="Makar, in his element."></a></p>
 <figcaption>Makar, in his element.</figcaption>
 </figure>
 </div>
@@ -1046,11 +1046,10 @@ Long post ahead
 <p>In the meantime, I have some n@zis to mow down in <em>Wolfenstein</em> and some segmentation models to run on spatial omics data. Until next time!</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="full_install.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-44" data-glightbox="description: .lightbox-desc-44" title="Beautiful. Absolutely stunning."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/full_install.jpg" class="img-fluid figure-img" alt="Beautiful. Absolutely stunning."></a></p>
+<p><a href="full_install.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-44" title="Beautiful. Absolutely stunning."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/full_install.jpg" class="img-fluid figure-img" alt="Beautiful. Absolutely stunning."></a></p>
 <figcaption>Beautiful. Absolutely stunning.</figcaption>
 </figure>
 </div>
-
 
 
 </section>
@@ -1935,7 +1934,7 @@ Quinn, Shannon. 2023. <span>“Three Years Later.”</span> April 4, 2023.
 <li>Conclusions <em>(this post)</em></li>
 </ol>
 <p>I know what you’re thinking:</p>
-<p></p><div id="tweet-94586"></div><script>tweet={"url":"https:\/\/twitter.com\/dexhorthy\/status\/856639005462417409","author_name":"dex","author_url":"https:\/\/twitter.com\/dexhorthy","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EDeployed my blog on Kubernetes \u003Ca href=\"https:\/\/t.co\/XHXWLrmYO4\"\u003Epic.twitter.com\/XHXWLrmYO4\u003C\/a\u003E\u003C\/p\u003E&mdash; dex (@dexhorthy) \u003Ca href=\"https:\/\/twitter.com\/dexhorthy\/status\/856639005462417409?ref_src=twsrc%5Etfw\"\u003EApril 24, 2017\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-94586").innerHTML = tweet["html"];</script><p></p>
+<p></p><div id="tweet-57777"></div><script>tweet={"url":"https:\/\/twitter.com\/dexhorthy\/status\/856639005462417409","author_name":"dex","author_url":"https:\/\/twitter.com\/dexhorthy","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EDeployed my blog on Kubernetes \u003Ca href=\"https:\/\/t.co\/XHXWLrmYO4\"\u003Epic.twitter.com\/XHXWLrmYO4\u003C\/a\u003E\u003C\/p\u003E&mdash; dex (@dexhorthy) \u003Ca href=\"https:\/\/twitter.com\/dexhorthy\/status\/856639005462417409?ref_src=twsrc%5Etfw\"\u003EApril 24, 2017\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-57777").innerHTML = tweet["html"];</script><p></p>
 <p>And honestly… you’re not wrong.</p>
 <section id="running-mastodon-has-gotten-easier" class="level3">
 <h3 class="anchored" data-anchor-id="running-mastodon-has-gotten-easier">Running Mastodon has gotten easier</h3>
