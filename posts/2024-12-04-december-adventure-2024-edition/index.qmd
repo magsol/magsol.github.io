@@ -15,7 +15,7 @@ Geez but I have a backlog of posts to write. Yeah, I'm back. Been a bit! I'm sor
 
 For those who don't know, [December Adventure](https://eli.li/december-adventure) is something cooked up as a more DIY alternative to [Advent of Code](https://adventofcode.com/). The spirit is the same---basically, work a little bit each day of December---except instead of following a coding and problem solving script, the goal is entirely up to you. [I took a stab at this last year and was marginally successful](https://magsol.github.io/posts/2023-12-08-advent-of-adventure/), so I figured I'd take another stab at it this year.
 
-Clearly, I'm off to a mediocre start, given that it's December 3 and I'm only just posting about it now. But I'm hoping by kicking this snowball down the hill, it gives me some momentum. Or maybe I'm just off in fantasy land.
+Clearly, I'm off to a mediocre start, given that it's December 4 and I'm only just posting about it now. But I'm hoping by kicking this snowball down the hill, it gives me some momentum. Or maybe I'm just off in fantasy land.
 
 Fortunately, I have a project in mind: creating a LAN-wide reverse proxy for my homelab!
 
