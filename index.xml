@@ -16,8 +16,78 @@
 <height>144</height>
 <width>144</width>
 </image>
-<generator>quarto-1.5.57</generator>
-<lastBuildDate>Thu, 13 Jun 2024 22:03:00 GMT</lastBuildDate>
+<generator>quarto-1.6.39</generator>
+<lastBuildDate>Wed, 04 Dec 2024 10:42:00 GMT</lastBuildDate>
+<item>
+  <title>December Adventure, 2024 edition</title>
+  <dc:creator>Shannon Quinn</dc:creator>
+  <link>https://magsol.github.io/posts/2024-12-04-december-adventure-2024-edition/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p><img src="https://magsol.github.io/posts/2024-12-04-december-adventure-2024-edition/decadv.png" class="preview-image img-fluid" alt="AI-generated image of a snow-covered pine forest with a pathway of footprints leading into the distance, suggesting an adventure ahead."></p>
+<p>Geez but I have a backlog of posts to write. Yeah, I’m back. Been a bit! I’m sorry for the radio silence over here these past nearly-six months; it’s been anything but dull, that’s for sure. While there is plenty of catching-up to do, for now that’ll have to wait: instead, I want to discuss this year’s December Adventure!</p>
+<p>For those who don’t know, <a href="https://eli.li/december-adventure">December Adventure</a> is something cooked up as a more DIY alternative to <a href="https://adventofcode.com/">Advent of Code</a>. The spirit is the same—basically, work a little bit each day of December—except instead of following a coding and problem solving script, the goal is entirely up to you. <a href="https://magsol.github.io/posts/2023-12-08-advent-of-adventure/">I took a stab at this last year and was marginally successful</a>, so I figured I’d take another stab at it this year.</p>
+<p>Clearly, I’m off to a mediocre start, given that it’s December 3 and I’m only just posting about it now. But I’m hoping by kicking this snowball down the hill, it gives me some momentum. Or maybe I’m just off in fantasy land.</p>
+<p>Fortunately, I have a project in mind: creating a LAN-wide reverse proxy for my homelab!</p>
+<section id="motivation" class="level3">
+<h3 class="anchored" data-anchor-id="motivation">Motivation</h3>
+<p>In the past couple years, I’ve really taken to the DIY homelab mentality. In addition to setting up and running <a href="https://quinnwitz.house/">my own Mastodon instance</a> for the past two years, I also set up an Unraid box after converting my old home desktop I built in 2015 (which was still perfectly functional!) to a decently powerful server. With endless news cycles about the death of privacy online, I wanted some corner of the internet to be fully under my own control.</p>
+<p>However, between the external-facing Mastodon and a growing number of internal services (JellyFin, <a href="https://github.com/magsol/wildlife-cameras/">wildlife cameras</a>, photo albums, and an eventual <a href="https://nextcloud.com/">NextCloud</a> instance), it’d be really nice—if not outright essential, in the case of NextCloud—to not have to remember IP addresses and ports, and instead just type something like <code>https://jellyfin.local.our-home.domain</code>.</p>
+<p>I already have a Traefik reverse proxy running on my 6-node Raspberry Pi k3s cluster, but all it does at the moment is serve up requests for the Mastodon instance (which it is also running). <strong>My goal this December Adventure is to reconfigure this reverse proxy to serve all my internal services</strong>.</p>
+<p><a href="https://community.traefik.io/t/how-to-use-traefik-on-k3s-as-reverse-proxy-for-multiple-lan-services/25149">I even created a thread about this over at the Traefik forums, but it has yet to receive any kind of response</a>. So if you know anything about reverse proxies, feel free to drop a line there!</p>
+<p>I’d also started collaborating with a fellow Mastodon user in the Discord over the summer, but he’s since dropped off and I haven’t been able to follow up. <a href="https://github.com/bplein/post-talos-setup">I posted a few issues on his config</a> so we could compare notes, but I’ve yet to hear anything from him, so it seems like I’m on my own.</p>
+<p>Everything I’ve heard and seen so far seems to fall into one of two camps: 1. Here’s how to create a reverse proxy on Docker Compose! 2. Here’s how to create a reverse proxy for services that all run on your kubernetes cluster!</p>
+<p>What I’m trying to do differs in that I want the reverse proxy to run on my kubernetes (k3s) cluster, but to <em>have it connect to services that may or may not run on the same cluster, and may in fact be running on physically separate machines</em> (the traefik community post has these details).</p>
+<p>This would not only make my life easier as the number of internal LAN services grows, but would allow me to get NextCloud up and running (as it <em>requires</em> its own DNS entry).</p>
+</section>
+<section id="sub-goals" class="level3">
+<h3 class="anchored" data-anchor-id="sub-goals">Sub-goals</h3>
+<p>In addition to the main objective of reconfiguring my Traefik instance as a reverse proxy for multiple internal services, there are a few other things I’d like to do.</p>
+<ul>
+<li><strong>Set up a wildcard DNS certificate for internal services</strong>. This will let me add SSL to everything! I already have Cloudflare as my DNS and certificate provider, so this shouldn’t be too much of a hassle.</li>
+<li><strong>Install internal NextCloud</strong>. I’ll probably run this on my Unraid server since NextCloud seems to be a pretty beefy application (i.e., beyond what little Raspberry Pis might be able to handle). I don’t want it to be externally accessible, but it still needs a domain name, hence the dependency on the reverse proxy.</li>
+<li><strong>Move kubernetes cluster configuration to a repo</strong>. This is a bit of a meta-goal, as it involves some additional subtasks. But the gist is that my kubernetes configuration is currently a glorified shell script, and that absolutely needs to change. I’ve toyed in the past with putting everything into Ansible, but I think to start I just need to separate out the helm charts for each application and put them under version control so they can be more easily updated and maintained. I already have an internal <a href="https://forgejo.org/">forgejo</a> repository running so I could even just use that, though once again the reverse proxy will dramatically simplify its use.</li>
+</ul>
+</section>
+<section id="other" class="level3">
+<h3 class="anchored" data-anchor-id="other">Other</h3>
+<p>Oh, and I’d also really like to try and build a <em>Magic: The Gathering</em> deck around this card.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://magsol.github.io/posts/2024-12-04-december-adventure-2024-edition/snowflake.png" class="img-fluid figure-img"></p>
+<figcaption>A really neat unofficial Magic card created by the folks at GamersNexus after their “CEO”, Snowflake: a beautiful orange tabby. And yes, that is nail polish on my thumb; hashtag dad life.</figcaption>
+</figure>
+</div>
+<p>If you’re interested in computer hardware you should absolutely follow GamersNexus on YouTube. But they’re also just good, decent people. They’re based in North Carolina and recently did a big fundraiser following Hurricane Helene for three of the local charities (including an animal rescue). One of their newest products is a box of gaming dice, and this particular model came with a custom-made Magic (-like) card (because Steve loves D&amp;D and Magic) of his cat Snowflake (the art was done by his mom! so cool!), and now I’m obsessed with building a Cat deck around this card.</p>
+<p>I found <a href="https://tappedout.net/mtg-decks/15-11-24-cats/">this promising white-green Cat deck</a> that I might use to start out, but if anyone knows of any other TappedOut / <a href="https://www.mtggoldfish.com/">MtgGoldfish</a> builds along these lines, please send them my way!</p>
+<p>Happy December Adventuring!</p>
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2024,
+  author = {Quinn, Shannon},
+  title = {December {Adventure,} 2024 Edition},
+  date = {2024-12-04},
+  url = {https://magsol.github.io/2024-12-04-december-adventure-2024-edition},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2024" class="csl-entry quarto-appendix-citeas">
+Quinn, Shannon. 2024. <span>“December Adventure, 2024 Edition.”</span>
+December 4, 2024. <a href="https://magsol.github.io/2024-12-04-december-adventure-2024-edition">https://magsol.github.io/2024-12-04-december-adventure-2024-edition</a>.
+</div></div></section></div> ]]></description>
+  <category>personal</category>
+  <category>december adventure</category>
+  <category>magic the gathering</category>
+  <category>homelab</category>
+  <guid>https://magsol.github.io/posts/2024-12-04-december-adventure-2024-edition/</guid>
+  <pubDate>Wed, 04 Dec 2024 10:42:00 GMT</pubDate>
+  <media:content url="https://magsol.github.io/posts/2024-12-04-december-adventure-2024-edition/decadv.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
 <item>
   <title>Desolation</title>
   <dc:creator>Shannon Quinn</dc:creator>
@@ -1934,7 +2004,7 @@ Quinn, Shannon. 2023. <span>“Three Years Later.”</span> April 4, 2023.
 <li>Conclusions <em>(this post)</em></li>
 </ol>
 <p>I know what you’re thinking:</p>
-<p></p><div id="tweet-57777"></div><script>tweet={"url":"https:\/\/twitter.com\/dexhorthy\/status\/856639005462417409","author_name":"dex","author_url":"https:\/\/twitter.com\/dexhorthy","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EDeployed my blog on Kubernetes \u003Ca href=\"https:\/\/t.co\/XHXWLrmYO4\"\u003Epic.twitter.com\/XHXWLrmYO4\u003C\/a\u003E\u003C\/p\u003E&mdash; dex (@dexhorthy) \u003Ca href=\"https:\/\/twitter.com\/dexhorthy\/status\/856639005462417409?ref_src=twsrc%5Etfw\"\u003EApril 24, 2017\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-57777").innerHTML = tweet["html"];</script><p></p>
+<p></p><div id="tweet-16897"></div><script>tweet={"url":"https:\/\/twitter.com\/dexhorthy\/status\/856639005462417409","author_name":"dex","author_url":"https:\/\/twitter.com\/dexhorthy","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EDeployed my blog on Kubernetes \u003Ca href=\"https:\/\/t.co\/XHXWLrmYO4\"\u003Epic.twitter.com\/XHXWLrmYO4\u003C\/a\u003E\u003C\/p\u003E&mdash; dex (@dexhorthy) \u003Ca href=\"https:\/\/twitter.com\/dexhorthy\/status\/856639005462417409?ref_src=twsrc%5Etfw\"\u003EApril 24, 2017\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-16897").innerHTML = tweet["html"];</script><p></p>
 <p>And honestly… you’re not wrong.</p>
 <section id="running-mastodon-has-gotten-easier" class="level3">
 <h3 class="anchored" data-anchor-id="running-mastodon-has-gotten-easier">Running Mastodon has gotten easier</h3>
@@ -1981,86 +2051,6 @@ Ravings.”</span> February 28, 2023. <a href="https://magsol.github.io/2023-02-
   <guid>https://magsol.github.io/posts/2023-02-28-mastodon-conclusions/</guid>
   <pubDate>Tue, 28 Feb 2023 09:52:00 GMT</pubDate>
   <media:content url="https://magsol.github.io/posts/2023-02-28-mastodon-conclusions/numenor.png" medium="image" type="image/png" height="144" width="144"/>
-</item>
-<item>
-  <title>Mastodon, Part V: Installing and configuring Mastodon</title>
-  <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2023-02-24-installing-and-configuring-mastodon/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p><img src="https://magsol.github.io/posts/2023-02-24-installing-and-configuring-mastodon/mastodon_crew.png" class="preview-image img-fluid" alt="Close-up of two Mastodon-like sailors on the deck of a ship at sea (generated by Midjourney)."></p>
-<p><em>This article is part of a series about installing and configuring a Mastodon instance on a cluster of Raspberry Pi computers running k3s. To go back to previous articles in the series, try any of the links below:</em></p>
-<ol type="1">
-<li><a href="../../posts/2023-01-20-mastodon-instance-k3s-rpi-introduction/index.html">Introduction</a></li>
-<li><a href="../../posts/2023-01-23-mastodon-home-network-topology/index.html">Part I: My home network topology</a></li>
-<li><a href="../../posts/2023-01-25-mastodon-helm-chart/index.html">Part II: The Mastodon Helm chart</a></li>
-<li><a href="../../posts/2023-02-09-configuring-and-installing-prereqs/index.html">Part III: Configuring and installing prerequisites</a></li>
-<li><a href="../../posts/2023-02-16-ssl-with-lets-encrypt/index.html">Part IV: The waking nightmare that is Let’s Encrypt</a></li>
-<li>Part V: Actually installing Mastodon <em>(this post)</em></li>
-<li><a href="../../posts/2023-02-28-mastodon-conclusions/index.html">Conclusions</a></li>
-</ol>
-<p>Heyyy, we’ve finally arrived! Months and multiple blog posts later, here’s how to actually install a Mastodon instance on your k3s cluster of Raspberry Pi computers!</p>
-<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><span class="ex" style="color: null;
-background-color: null;
-font-style: inherit;">helm</span> dep update</span>
-<span id="cb1-2"><span class="ex" style="color: null;
-background-color: null;
-font-style: inherit;">helm</span> install mastodon ./ <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">\</span></span>
-<span id="cb1-3">    <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">--create-namespace</span> <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">\</span></span>
-<span id="cb1-4">    <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">--namespace</span> mastodon <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">\</span></span>
-<span id="cb1-5">    <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">-f</span> path/to/custom/values.yaml</span></code></pre></div>
-<p>The <code>dep update</code> will pull down any new versions of the Bitnami charts needed to install the prerequisites we went over in <a href="../../posts/2023-02-09-configuring-and-installing-prereqs/index.html">Part III</a>.</p>
-<p>The <code>install</code> command creates an application called <code>mastodon</code>, using the templates in the current directory (hence <code>./</code>), creates a new k3s namespace named <code>mastodon</code> for all the pods to occupy, and then the <code>-f</code> flag provides a path to the <code>values.yaml</code> file we customized back in <a href="../../posts/2023-01-25-mastodon-helm-chart/index.html">Part II</a>.</p>
-<section id="is-that-it" class="level3">
-<h3 class="anchored" data-anchor-id="is-that-it">Is that it?</h3>
-<p>A lot of things are going to happen at this point.</p>
-<p>First, there a couple of pods that will appear as one-time “jobs”, the most notable (to me) of which is the <code>precompile</code> pod. This one in particular <em>can take awhile</em>… or maybe it was just because it was running on little Raspberry Pi SBCs; the 4Bs are certainly fast, but they’re still pretty resource-constrained by workstation or server standards, so be patient here. Just because it’s taking awhile for anything to show up doesn’t mean something is wrong.</p>
-<p>Second, there is a db-migrate job that kicks off. Despite the name, this actually happens both if you’re migrating <em>and</em> if you’re installing Mastodon for the first time. For some reason, there’s a race condition among these initial one-time pods, and if the db-migrate job doesn’t kick off right when it’s supposed to, it may never happen; there’s <a href="https://github.com/mastodon/chart/issues/18">an open ticket looking at this problem</a> and a <a href="https://github.com/mastodon/chart/pull/37">PR with a proposed fix that hasn’t yet been merged</a>. It’s something to keep an eye on; there are manual fixes specified in the open issue (basically the pod equivalent of turn-off-and-back-on) that I had to employ at least a couple of times.</p>
-<p>Finally, there was an issue with sidekiq not properly registering the ingress task–kind of important for an application that relies heavily on ingress activity! But it required a very simple one-line addition to the <code>values.yaml</code> file, and it’s not even an issue anymore since <a href="https://github.com/mastodon/chart/pull/1">this PR was merged</a> back in early December 2022.</p>
-</section>
-<section id="yep-thats-it" class="level3">
-<h3 class="anchored" data-anchor-id="yep-thats-it">Yep, that’s it</h3>
-<p>And that’s pretty much it! You should have a shiny new Mastodon instance up and running at this point (hit the ingress endpoint to check it out)! Your work as instance administrator is only just beginning, though–you need to check out all the options you have available in terms of setting up and configuring your instance (creating its welcome message and purpose, setting up how new accounts register, and importing any new emojis you might want), but in terms of command line kubernetes, with the exception of continued maintenance and occasional updates, that’s it!</p>
-<p>I’ll have a wrap-up post coming soon with more of my own thoughts on the whole process.</p>
-
-
-</section>
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
-  author = {Quinn, Shannon},
-  title = {Mastodon, {Part} {V:} {Installing} and Configuring
-    {Mastodon}},
-  date = {2023-02-24},
-  url = {https://magsol.github.io/2023-02-24-installing-and-configuring-mastodon},
-  langid = {en}
-}
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2023" class="csl-entry quarto-appendix-citeas">
-Quinn, Shannon. 2023. <span>“Mastodon, Part V: Installing and
-Configuring Mastodon.”</span> February 24, 2023. <a href="https://magsol.github.io/2023-02-24-installing-and-configuring-mastodon">https://magsol.github.io/2023-02-24-installing-and-configuring-mastodon</a>.
-</div></div></section></div> ]]></description>
-  <category>personal</category>
-  <category>raspberry pi</category>
-  <category>k3s</category>
-  <category>mastodon</category>
-  <guid>https://magsol.github.io/posts/2023-02-24-installing-and-configuring-mastodon/</guid>
-  <pubDate>Fri, 24 Feb 2023 17:01:00 GMT</pubDate>
-  <media:content url="https://magsol.github.io/posts/2023-02-24-installing-and-configuring-mastodon/mastodon_crew.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 </channel>
 </rss>
