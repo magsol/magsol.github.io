@@ -1,0 +1,24 @@
+---
+title: "December Adventure: Ajani Goldmane"
+subtitle: "Day 2...ish"
+date: "2024-12-05 16:15:00"
+categories: [personal, december adventure, magic the gathering]
+citation:
+    url: https://magsol.github.io/2024-12-05-december-adventure-ajani-goldmane
+image: "ajani.jpg"
+image-alt: "Artist rendition of the MtG planeswalker Ajani Goldmane. https://magic-the-gathring-lore.fandom.com/wiki/Ajani_Goldmane"
+author: "Shannon Quinn"
+---
+![](ajani.jpg){.preview-image fig-alt="Artist rendition of the MtG planeswalker Ajani Goldmane. https://magic-the-gathring-lore.fandom.com/wiki/Ajani_Goldmane"}
+
+Not much of an update today: work was busy, and we're still putting the house back together after having contractors here for the better part of the last three weeks.
+
+But I was able to review [this Cats deck](https://tappedout.net/mtg-decks/15-11-24-cats/) and [this Commander suggestion](https://edhrec.com/commanders/arahbo-the-first-fang/cats) (courtesy of [this toot](https://infosec.exchange/@merlin/113596273800710953), thank you again!), and to start putting together my own version.
+
+It's quite rough, but what I have so far can be found **[here](https://tappedout.net/mtg-decks/04-12-24-cats/)**. I've also gone through all my current MtG cards and pulled out the ones I have (I actually have a Mirror Box!). This process is pretty tedious---it's one of my (many, lol) personal projects to get a "codex" set up for my collection, and a way of scanning all my cards so they can be automatically added and categorized, but it's still in the design phase---but it's done, so now I can start focusing on optimizing the build itself and then determining which cards I still need.
+
+While keeping in mind the whole time that I'm aiming for a single empty spot in the deck for Snowflake to slot in :)
+
+---
+
+Unrelated, but I think I'm just going to refer to the "day" number of December Adventure by the date itself going forward; e.g., today would be "day" 5, not day 2. Starting in the next update, that's the convention I'll use. It's just easier to track it that way and identify which days I missed, than try to keep a running count every time I fire up a new blog post.
