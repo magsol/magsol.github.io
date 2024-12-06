@@ -1,7 +1,7 @@
 ---
 title: "December Adventure: Y yaml tho"
 subtitle: "Day 6 bites like a snake"
-date: "2024-12-06 16:15:00"
+date: "2024-12-06 17:51:00"
 categories: [personal, december adventure, yaml, helm chart, reverse proxy, traefik]
 citation:
     url: https://magsol.github.io/2024-12-06-december-adventure-y-yaml-tho
