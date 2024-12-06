@@ -1,0 +1,20 @@
+---
+title: "December Adventure: Y yaml tho"
+subtitle: "Day 6 bites like a snake"
+date: "2024-12-06 16:15:00"
+categories: [personal, december adventure, yaml, helm chart, reverse proxy, traefik]
+citation:
+    url: https://magsol.github.io/2024-12-06-december-adventure-y-yaml-tho
+image: "busted_code.png"
+image-alt: "AI-generated image of a Python snake breaking out of a monitor that was previously showing broken Python code."
+author: "Shannon Quinn"
+---
+![](busted_code.png){.preview-image fig-alt="AI-generated image of a Python snake breaking out of a monitor that was previously showing broken Python code."}
+
+Today was also a pretty minor update, but what felt like a necessary one to making forward progress (and which reveals just how much of a kubernetes neophyte I am, despite now having a few years' experience with it).
+
+I successfully created a `traefik-values.yaml` file of my reverse proxy's configuration. It's more or less [this post](https://github.com/bplein/post-talos-setup/issues/2#issuecomment-2276603841) from the repo I linked a few days ago. Yeah, that's the extent of what I got done today.
+
+But it speaks to a much greater problem I've been wrestling with for awhile: I set up this cluster two years ago with very little experience or guidance, and have only realized since how unsustainable my deployment is. For example, when installing via helm, I downloaded the _full helm charts_ from the various repositories, then modified only the values I needed to change. Which means whenever changes come down the pipe, either from the org itself or because I need to reconfigure or update something, I need to parse through the hundred-line-plus YAML nonsense to find the exact line I need, rather than---what is apparently the standard practice---having a single YAML file that is essentially a "diff".
+
+So today was a small, but necessary, step toward making the deployment more sustainable. Also, I added `*.local.my.domain` to the list of URLs under `ports.websecure.tls.domains.sans`, which will (hopefully) allow for internal DNS routing _and_ SSL certificates.
