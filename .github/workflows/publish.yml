@@ -13,7 +13,7 @@ jobs:
       contents: write
     steps:
       - name: Check out repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
@@ -24,26 +24,3 @@ jobs:
           target: gh-pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  verify-mastodon:
-    needs: build-deploy
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: gh-pages
-      - name: Find and replace href
-        uses: jacobtomlinson/gha-find-replace@v2
-        with:
-          find: "<a href=\"https://quinnwitz.house/@magsol\" class=\"about-link\">"
-          replace: "<a rel=\"me\" href=\"https://quinnwitz.house/@magsol\" class=\"about-link\">"
-          regex: false
-          include: about.html
-      - name: Add and commit changes
-        uses: EndBug/add-and-commit@v9
-        with:
-          message: "Added rel=me attribute to Mastodon link."
-      - name: Push changes back
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages
