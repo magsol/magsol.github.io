@@ -17,7 +17,46 @@
 <width>144</width>
 </image>
 <generator>quarto-1.6.39</generator>
-<lastBuildDate>Thu, 05 Dec 2024 16:15:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 06 Dec 2024 16:15:00 GMT</lastBuildDate>
+<item>
+  <title>December Adventure: Y yaml tho</title>
+  <dc:creator>Shannon Quinn</dc:creator>
+  <link>https://magsol.github.io/posts/2024-12-06-december-adventure-y-yaml-tho/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p><img src="https://magsol.github.io/posts/2024-12-06-december-adventure-y-yaml-tho/busted_code.png" class="preview-image img-fluid" alt="AI-generated image of a Python snake breaking out of a monitor that was previously showing broken Python code."></p>
+<p>Today was also a pretty minor update, but what felt like a necessary one to making forward progress (and which reveals just how much of a kubernetes neophyte I am, despite now having a few years’ experience with it).</p>
+<p>I successfully created a <code>traefik-values.yaml</code> file of my reverse proxy’s configuration. It’s more or less <a href="https://github.com/bplein/post-talos-setup/issues/2#issuecomment-2276603841">this post</a> from the repo I linked a few days ago. Yeah, that’s the extent of what I got done today.</p>
+<p>But it speaks to a much greater problem I’ve been wrestling with for awhile: I set up this cluster two years ago with very little experience or guidance, and have only realized since how unsustainable my deployment is. For example, when installing via helm, I downloaded the <em>full helm charts</em> from the various repositories, then modified only the values I needed to change. Which means whenever changes come down the pipe, either from the org itself or because I need to reconfigure or update something, I need to parse through the hundred-line-plus YAML nonsense to find the exact line I need, rather than—what is apparently the standard practice—having a single YAML file that is essentially a “diff”.</p>
+<p>So today was a small, but necessary, step toward making the deployment more sustainable. Also, I added <code>*.local.my.domain</code> to the list of URLs under <code>ports.websecure.tls.domains.sans</code>, which will (hopefully) allow for internal DNS routing <em>and</em> SSL certificates.</p>
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2024,
+  author = {Quinn, Shannon},
+  title = {December {Adventure:} {Y} Yaml Tho},
+  date = {2024-12-06},
+  url = {https://magsol.github.io/2024-12-06-december-adventure-y-yaml-tho},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2024" class="csl-entry quarto-appendix-citeas">
+Quinn, Shannon. 2024. <span>“December Adventure: Y Yaml Tho.”</span>
+December 6, 2024. <a href="https://magsol.github.io/2024-12-06-december-adventure-y-yaml-tho">https://magsol.github.io/2024-12-06-december-adventure-y-yaml-tho</a>.
+</div></div></section></div> ]]></description>
+  <category>personal</category>
+  <category>december adventure</category>
+  <category>yaml</category>
+  <category>helm chart</category>
+  <category>reverse proxy</category>
+  <category>traefik</category>
+  <guid>https://magsol.github.io/posts/2024-12-06-december-adventure-y-yaml-tho/</guid>
+  <pubDate>Fri, 06 Dec 2024 16:15:00 GMT</pubDate>
+  <media:content url="https://magsol.github.io/posts/2024-12-06-december-adventure-y-yaml-tho/busted_code.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
 <item>
   <title>December Adventure: Ajani Goldmane</title>
   <dc:creator>Shannon Quinn</dc:creator>
@@ -1979,46 +2018,6 @@ Kingdom_.”</span> May 9, 2023. <a href="https://magsol.github.io/2023-05-09-th
   <guid>https://magsol.github.io/posts/2023-05-09-thoughts-ahead-of-totk/</guid>
   <pubDate>Tue, 09 May 2023 16:25:00 GMT</pubDate>
   <media:content url="https://magsol.github.io/posts/2023-05-09-thoughts-ahead-of-totk/totk_poster.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>Three years later</title>
-  <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2023-04-04-three-years-later/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p><img src="https://magsol.github.io/posts/2023-04-04-three-years-later/forsyth_park.jpg" class="preview-image img-fluid" alt="Head-on view of the middle of Forsyth Park in Savannah, GA, including the fountain in the middle and trees along both sides of the main walkway."></p>
-<p>Oh by the way, I have a second blog.</p>
-<p>Like this one, it fell into disuse over the past few years. And like this one, I’ve been trying to revive it recently. I’d always intended for that blog and this one to be completely non-overlapping in their respective content, but life, as they say, finds a way.</p>
-<p>(Me. I’m talking about me, here. Of course the blog isn’t alive, jeez.)</p>
-<p>At any rate, you most likely won’t see me advertise that blog here ever again, but just this once, I wanted to point to a post I made detailing my half marathon this past weekend in Savannah, GA, and the three-year history that particular event has.</p>
-<p><a href="https://wherearethepancakes.wordpress.com/2023/04/03/three-years-later/">Here’s the link</a>. Enjoy.</p>
-
-
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
-  author = {Quinn, Shannon},
-  title = {Three Years Later},
-  date = {2023-04-04},
-  url = {https://magsol.github.io/2023-04-04-three-years-later},
-  langid = {en}
-}
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2023" class="csl-entry quarto-appendix-citeas">
-Quinn, Shannon. 2023. <span>“Three Years Later.”</span> April 4, 2023.
-<a href="https://magsol.github.io/2023-04-04-three-years-later">https://magsol.github.io/2023-04-04-three-years-later</a>.
-</div></div></section></div> ]]></description>
-  <category>personal</category>
-  <category>running</category>
-  <category>covid</category>
-  <category>pandemic</category>
-  <category>getaway</category>
-  <category>travel</category>
-  <guid>https://magsol.github.io/posts/2023-04-04-three-years-later/</guid>
-  <pubDate>Tue, 04 Apr 2023 16:10:00 GMT</pubDate>
-  <media:content url="https://magsol.github.io/posts/2023-04-04-three-years-later/forsyth_park.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>
