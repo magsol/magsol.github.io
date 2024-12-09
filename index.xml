@@ -17,7 +17,53 @@
 <width>144</width>
 </image>
 <generator>quarto-1.6.39</generator>
-<lastBuildDate>Fri, 06 Dec 2024 17:51:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 09 Dec 2024 17:33:00 GMT</lastBuildDate>
+<item>
+  <title>December Adventure: I have a bad feeling about this</title>
+  <dc:creator>Shannon Quinn</dc:creator>
+  <link>https://magsol.github.io/posts/2024-12-09-december-adventure-i-have-a-bad-feeling/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p><img src="https://magsol.github.io/posts/2024-12-09-december-adventure-i-have-a-bad-feeling/bad_feeling.jpg" class="preview-image img-fluid" alt="Meme image of Obi-Wan Kenobi in a fighter from the Star Wars prequel trilogy, stating that he has a bad feeling about this."></p>
+<p>Back from the weekend. In general I suspect weekends will be consistent blank spots in my <code>#DecemberAdventure</code>-ing, as activities and parenting and <em>napping</em> make it challenging to do much else. But who knows!</p>
+<p>Anyway, today I eased back into things by doing some research into using Traefik as a reverse proxy for external services. Indeed, <a href="https://www.reddit.com/r/kubernetes/comments/1c0jjde/traefik_but_for_external_use_as_well/">it seems entirely possible</a>, even if that Reddit thread makes <a href="https://xkcd.com/979/">absolutely no mention of the solution</a>.</p>
+<p>At this point, I need to figure out a good testing setup. I need a way to get rapid feedback that things are working at each step of the process, rather than flicking the switch at the very end and wondering which of the two dozen steps before it is the one with the problem. Here’s what I’m thinking:</p>
+<ul>
+<li>Pick a single external service to start with (e.g., JellyFin—it’s already running)</li>
+<li>Design a Service and IngressRoute for JellyFin</li>
+<li>Add the JellyFin entry to my Firewalla DNS</li>
+<li>Do <em>NOT</em> use SSL, at least initially</li>
+</ul>
+<p>I figure SSL is going to be its own thing, since I need a wildcard DNS cert from Cloudflare and a whole configuration via cert-manager. So this might be more of a “part 2” once I get the above bullets working. Just proving that Traefik can manage reverse proxy requests for external services will be enough proof of concept to move forward with other parts, like SSL.</p>
+<p>I guess I’m just apprehensive, since this will require modifying my current Traefik configuration that successfully serves up my Mastodon instance. Obviously I can always revert configurations if everything breaks, but… well, I hate messing with what already works. But I know it’ll be infinitely more flexible and maintainable going forward if I’m successful.</p>
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2024,
+  author = {Quinn, Shannon},
+  title = {December {Adventure:} {I} Have a Bad Feeling about This},
+  date = {2024-12-09},
+  url = {https://magsol.github.io/2024-12-09-december-adventure-i-have-a-bad-feeling},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2024" class="csl-entry quarto-appendix-citeas">
+Quinn, Shannon. 2024. <span>“December Adventure: I Have a Bad Feeling
+about This.”</span> December 9, 2024. <a href="https://magsol.github.io/2024-12-09-december-adventure-i-have-a-bad-feeling">https://magsol.github.io/2024-12-09-december-adventure-i-have-a-bad-feeling</a>.
+</div></div></section></div> ]]></description>
+  <category>personal</category>
+  <category>december adventure</category>
+  <category>yaml</category>
+  <category>helm chart</category>
+  <category>reverse proxy</category>
+  <category>traefik</category>
+  <guid>https://magsol.github.io/posts/2024-12-09-december-adventure-i-have-a-bad-feeling/</guid>
+  <pubDate>Mon, 09 Dec 2024 17:33:00 GMT</pubDate>
+  <media:content url="https://magsol.github.io/posts/2024-12-09-december-adventure-i-have-a-bad-feeling/bad_feeling.jpg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>December Adventure: Y yaml tho</title>
   <dc:creator>Shannon Quinn</dc:creator>
@@ -1930,94 +1976,6 @@ Quinn, Shannon. 2023. <span>“This Post Is about Burnout.”</span> June 6,
   <guid>https://magsol.github.io/posts/2023-06-06-this-post-is-about-burnout/</guid>
   <pubDate>Tue, 06 Jun 2023 22:05:00 GMT</pubDate>
   <media:content url="https://magsol.github.io/posts/2023-06-06-this-post-is-about-burnout/burnout.png" medium="image" type="image/png" height="144" width="144"/>
-</item>
-<item>
-  <title>My thoughts ahead of Tears of the Kingdom</title>
-  <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2023-05-09-thoughts-ahead-of-totk/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p><img src="https://magsol.github.io/posts/2023-05-09-thoughts-ahead-of-totk/totk_poster.jpg" class="preview-image img-fluid" alt="Official Nintendo poster for The Legend of Zelda: Tears of the Kingdom."></p>
-<p>For those who aren’t following the <a href="https://quinnwitz.house/@daysuntil">increasingly unhinged ravings of my countdown bot on Mastodon</a>, <em>The Legend of Zelda: Tears of the Kingdom</em> is coming out on Friday, May 12.</p>
-<p>And for those who’ve only heard in passing–or who have perhaps never heard–of the Zelda video game franchise: its latest installment is coming out this Friday, May 12, and the Zelda community is absolutely <em>giddy</em> with anticipation.</p>
-<p>I could wax historical over its 35 years and 20 different games spanning nearly a dozen (more than a dozen?!) different Nintendo consoles; I could swoon over its cultural impact, influencing other genres and changing, perhaps even unknowingly to many people, how game and puzzle creators approach their design; I could go on about the record-shattering success of its predecessor from 2017, <em>Breath of the Wild</em>, and how this is only the second time in the history of the franchise that Nintendo has made a direct sequel to a previous game; and I could blather on <strong>for.ev.er.</strong> on the established Zelda lore and all the branching theories that its rich storytelling has spawned.</p>
-<p>But instead of doing any of that, I just want to put forward one small hope for the game: <strong>I really hope that the game opens with a playable Link getting the absolute snot beat out of him by Ganondorf.</strong></p>
-<section id="personally-guide-link-to-his-near-demise" class="level3">
-<h3 class="anchored" data-anchor-id="personally-guide-link-to-his-near-demise">Personally guide Link to his near-demise</h3>
-<p>From the trailers, we know the game starts with our eponymous heroes stumbling upon Ganondorf, and something happens where they get separated, Link is grievously injured, and the Master Sword is damaged; <a href="https://youtu.be/uHGShqcAHlQ?t=177">here’s the part of the latest trailer where it happens</a>.</p>
-<p>Here’s the relevant screenshot of it happening:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://magsol.github.io/posts/2023-05-09-thoughts-ahead-of-totk/link_injured.jpg" class="img-fluid figure-img" alt="Screen capture from the latest trailer where Ganondorf's malice is damaging the Master Sword and injuring Link."></p>
-<figcaption>This should literally not be possible.</figcaption>
-</figure>
-</div>
-<p>It’s horrifying on multiple fronts. We know it happens sometime near the very beginning of the game (setting the stage for the whole thing), and we also know—one small tidbit of Zelda lore—that it <em>should not be in any way possible for the Master Sword to be damaged by evil. It just shouldn’t.</em> So the fact that it <em>is</em>, is truly terrifying on its own.</p>
-<p>But here’s where I’m hoping the game takes it up one more notch: I’m hoping that part at the beginning, where the questing heroes find Ganondorf and get their asses kicked, is <strong>fully playable</strong>.</p>
-<p>There’s precedent for this, in fact it’s happened in at least a few games I’ve played, going back almost 20 years!</p>
-<section id="quake-4-2005" class="level4">
-<h4 class="anchored" data-anchor-id="quake-4-2005">Quake 4 (2005)</h4>
-<p>You play the part of a space marine from Earth tasked with helping push back an alien invasion. For most of the first part of the game, you’re working with your unit to sabotage one of the main “conduits” of the alien military that allows them to communicate and coordinate with each other. You’re eventually successful, but right after, a big bad thought killed in Quake 2 suddenly appears—very clearly alive—and you have to fight him.</p>
-<p>You lose. You’re guaranteed to lose. But you still have to fight him. Not only that, but you have to stay alive just long enough to see how every strategy you’ve deployed up until this point fails in spectacular fashion. You can’t even dent the guy’s armor.</p>
-<p>Of course, what follows is a long cutscene involving a partial assimilation… it’s a neat sequence, but it requires a bit of a, uh, “constitution” for gore.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://magsol.github.io/posts/2023-05-09-thoughts-ahead-of-totk/quake4_makron.png" class="img-fluid figure-img" alt="First-person screenshot of the first Makron fight from Quake 4."></p>
-<figcaption>The Makron, from the player’s perspective.</figcaption>
-</figure>
-</div>
-</section>
-<section id="jedi-outcast-2003" class="level4">
-<h4 class="anchored" data-anchor-id="jedi-outcast-2003">Jedi Outcast (2003)</h4>
-<p>You play the role of Kyle Katarn, a mercenary-turned-jedi-turned-mercenary-again. In the pre-sequel-trilogy world, he’s actually the guy who stole the Death Star plans and got them to the Rebellion (<a href="https://en.wikipedia.org/wiki/Star_Wars%3A_Dark_Forces"><em>Dark Forces</em></a>). In the next game (<a href="https://en.wikipedia.org/wiki/Star_Wars_Jedi_Knight:_Dark_Forces_II"><em>Dark Forces II: Jedi Knight</em></a>), Kyle discovers he’s force-sensitive and trains to become a Jedi. In doing so, he brushes so close to the dark side that he instead chooses to cut himself off from the Force entirely.</p>
-<p>That’s where 2003’s <a href="https://en.wikipedia.org/wiki/Star_Wars_Jedi_Knight_II:_Jedi_Outcast"><em>Jedi Outcast</em></a> picks up: he’s back to being a mercenary. One of his missions puts him in an Imperial research lab that appears to be trying to infuse objects with Force energy (think Force batteries). At the end of the mission, he runs headfirst into the Dark Jedi masterminding the whole thing, Desann.</p>
-<p>Desann promptly takes his partner hostage, and when Kyle threatens him with a blaster, Desann fires up his lightsaber and dares Kyle to take his partner back. That cues up a fully-playable fight.</p>
-<p>I mean, Kyle is a tried-and-true mercenary and at this point in the game has a pretty decent arsenal, too. But the fight is an absolute joke. Energy weapons? Desann just deflects with his lightsaber. Projectile weapons? He Force Pushes backwards and away from him. And explosives? He levitates back towards you. I don’t think it’s actually possible to land a single hit, but you still have to try, just so you can see how woefully inadequate you are when you bring a blaster to a fight with a fully-trained Dark Jedi.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://magsol.github.io/posts/2023-05-09-thoughts-ahead-of-totk/jedioutcast_kylevdesann.png" class="img-fluid figure-img" alt="Kyle versus Desann digital art, both characters locking lightsabers. Credit to [DeviantArt user wienernose](https://www.deviantart.com/wienernose/art/Kyle-Katarn-vs-Desann-758186366)."></p>
-<figcaption>An artist’s depiction of the fight at the end of the game, where you actually stand a chance of winning.</figcaption>
-</figure>
-</div>
-</section>
-</section>
-<section id="all-i-ask" class="level3">
-<h3 class="anchored" data-anchor-id="all-i-ask">All I ask</h3>
-<p>That’s what I’m hoping for from <em>Tears of the Kingdom</em>: a chance to bring everything we stocked up from <em>Breath of the Wild</em> to the opening fight against Ganondorf, and to lose badly in spite of it all, driving home just how much badder this baddie is than the one we faced at the end of the previous game.</p>
-<p>It’s hard to oversell just how overpowered Link was by the very end of <em>Breath of the Wild</em> (assuming your play style leans more toward Completionist than Speedrunner, of course); bringing all that might to bear as <em>Tears of the Kingdom</em> kicks off and seeing it just break like waves on the surf would be one hell of an opener.</p>
-<p>It’d also be a cool bonus if our last completed <em>Breath of the Wild</em> game slotted into a new <em>Tears of the Kingdom</em> game so we started with exactly the same equipment, but I’m not married to that one.</p>
-</section>
-<section id="oh-and" class="level3">
-<h3 class="anchored" data-anchor-id="oh-and">Oh, and</h3>
-<p>Speaking just for myself: <em>Breath of the Wild</em> was a singularly amazing game, reminding me how much I love to explore and create just for the sake of exploring and creating (not just in video games, either). At the end of the day, I truly don’t care if the opening fight is playable or not. If the Nintendo team can bring that same wonder, that same reward for simple curiosity—kicking over that last rock just for the sake of seeing what’s underneath—then I’ll happily sink another [REDACTED] hours into it.</p>
-<p>THREE. MORE. DAYS.</p>
-
-
-</section>
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
-  author = {Quinn, Shannon},
-  title = {My Thoughts Ahead of {\_Tears} of the {Kingdom\_}},
-  date = {2023-05-09},
-  url = {https://magsol.github.io/2023-05-09-thoughts-ahead-of-totk},
-  langid = {en}
-}
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2023" class="csl-entry quarto-appendix-citeas">
-Quinn, Shannon. 2023. <span>“My Thoughts Ahead of _Tears of the
-Kingdom_.”</span> May 9, 2023. <a href="https://magsol.github.io/2023-05-09-thoughts-ahead-of-totk">https://magsol.github.io/2023-05-09-thoughts-ahead-of-totk</a>.
-</div></div></section></div> ]]></description>
-  <category>personal</category>
-  <category>gaming</category>
-  <category>zelda</category>
-  <category>totk</category>
-  <category>tears of the kingdom</category>
-  <guid>https://magsol.github.io/posts/2023-05-09-thoughts-ahead-of-totk/</guid>
-  <pubDate>Tue, 09 May 2023 16:25:00 GMT</pubDate>
-  <media:content url="https://magsol.github.io/posts/2023-05-09-thoughts-ahead-of-totk/totk_poster.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>
