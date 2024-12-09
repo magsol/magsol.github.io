@@ -1,0 +1,27 @@
+---
+title: "December Adventure: I have a bad feeling about this"
+subtitle: "Messing with what works never works"
+date: "2024-12-09 17:33:00"
+categories: [personal, december adventure, yaml, helm chart, reverse proxy, traefik]
+citation:
+    url: https://magsol.github.io/2024-12-09-december-adventure-i-have-a-bad-feeling
+image: "bad_feeling.jpg"
+image-alt: "Meme image of Obi-Wan Kenobi in a fighter from the Star Wars prequel trilogy, stating that he has a bad feeling about this."
+author: "Shannon Quinn"
+---
+![](bad_feeling.jpg){.preview-image fig-alt="Meme image of Obi-Wan Kenobi in a fighter from the Star Wars prequel trilogy, stating that he has a bad feeling about this."}
+
+Back from the weekend. In general I suspect weekends will be consistent blank spots in my `#DecemberAdventure`-ing, as activities and parenting and _napping_ make it challenging to do much else. But who knows!
+
+Anyway, today I eased back into things by doing some research into using Traefik as a reverse proxy for external services. Indeed, [it seems entirely possible](https://www.reddit.com/r/kubernetes/comments/1c0jjde/traefik_but_for_external_use_as_well/), even if that Reddit thread makes [absolutely no mention of the solution](https://xkcd.com/979/).
+
+At this point, I need to figure out a good testing setup. I need a way to get rapid feedback that things are working at each step of the process, rather than flicking the switch at the very end and wondering which of the two dozen steps before it is the one with the problem. Here's what I'm thinking:
+
+ - Pick a single external service to start with (e.g., JellyFin---it's already running)
+ - Design a Service and IngressRoute for JellyFin
+ - Add the JellyFin entry to my Firewalla DNS
+ - Do _NOT_ use SSL, at least initially
+
+I figure SSL is going to be its own thing, since I need a wildcard DNS cert from Cloudflare and a whole configuration via cert-manager. So this might be more of a "part 2" once I get the above bullets working. Just proving that Traefik can manage reverse proxy requests for external services will be enough proof of concept to move forward with other parts, like SSL.
+
+I guess I'm just apprehensive, since this will require modifying my current Traefik configuration that successfully serves up my Mastodon instance. Obviously I can always revert configurations if everything breaks, but... well, I hate messing with what already works. But I know it'll be infinitely more flexible and maintainable going forward if I'm successful.
