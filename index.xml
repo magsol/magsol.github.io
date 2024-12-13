@@ -17,7 +17,314 @@
 <width>144</width>
 </image>
 <generator>quarto-1.6.39</generator>
-<lastBuildDate>Mon, 09 Dec 2024 17:33:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 13 Dec 2024 16:19:00 GMT</lastBuildDate>
+<item>
+  <title>December Adventure: Exploring YAML</title>
+  <dc:creator>Shannon Quinn</dc:creator>
+  <link>https://magsol.github.io/posts/2024-12-13-december-adventure-exploring-yaml/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p><img src="https://magsol.github.io/posts/2024-12-13-december-adventure-exploring-yaml/mark_yaml.jpg" class="preview-image img-fluid" alt="Two-paned meme image of Mark Hamill, with the first pane normal and the second pane showing indented blocks of Mark Hamill with the undertitle 'Mark Yaml'. Credit: https://www.reddit.com/r/ProgrammerHumor/comments/hwxsgi/ah_yes_mark_yaml/"></p>
+<p>Whew, that week went by in a flash. I’ve actually been working on this <code>#DecemberAdventure</code> project these past few days and have made some strides; I just kept running out of time (and inclination) to post about it.</p>
+<p>Part of the problem—as an aside—is that I had to close the YAML project space in my VS Code editor in order to <em>open</em> the project space for writing a blog post, which makes it difficult to cross-reference very specific issues and instead relies on “vibes” for writing the post. I’m sure it’s to the detriment of any readers, but I enjoy being as specific as I can. If anyone wants to tell me the magic key combination that allows me to open up multiple project spaces simultaneously in VS Code, please do drop me a line.</p>
+<p>Anyway, I hit upon a couple of crucial resources this past week that have helped me make some progress. First, I identified some very specific changes I need to make:</p>
+<ul>
+<li>Traefik needs to be moved to a <code>traefik</code> namespace</li>
+<li>Cert-manager needs to be moved to a <code>cert-manager</code> namespace</li>
+<li>Upgrade cert-manager CRDs</li>
+<li>Cloudflare API keys need to be moved to <code>cert-manager</code> namespace</li>
+</ul>
+<p>These are easy enough, only requiring some minor configuration tweaks to the yaml.</p>
+<p>But I have <em>a lot</em> of deeper questions about the configuration involved in having Traefik route to external services.</p>
+<ul>
+<li>A big one: just about all the examples I can find entail doing this, but for Docker-Compose, not kubernetes. Why is that? <a href="https://www.youtube.com/watch?v=n1vOfdz5Nm8">Here’s one</a>, <a href="https://www.youtube.com/watch?v=-hfejNXqOzA">another one</a>, <a href="https://community.traefik.io/t/external-services-config-yml/24793">another one</a> (I think; it doesn’t actually specify), and <a href="https://community.traefik.io/t/how-to-forward-request-to-external-host/23932">another one</a> (same problem).</li>
+<li>I did manage to find a <em>few</em> examples using kubernetes: <a href="https://www.youtube.com/watch?v=G4CmbYL9UPg">here’s one</a> (2+ years old), <a href="https://community.traefik.io/t/traefik-k8s-and-an-external-service/6305">another one</a> (4+ years old, bordering on useless), <a href="https://community.traefik.io/t/kubernetes-ingress-to-external-service/20001">another one</a> (the answer is not helpful), <a href="https://stackoverflow.com/questions/72484227/traefik-ingress-for-external-service-troubleshooting">another one</a> (also with an unhelpful “answer”), <a href="https://www.reddit.com/r/kubernetes/comments/13a2zy2/using_k3s_traefik_installation_to_reverse_proxy/">another one</a> (2+ years old), and <a href="https://www.reddit.com/r/Traefik/comments/16eskh4/external_service_load_balancer_in_kubernetes/">another one</a> (this seems the most promising).</li>
+<li>Why is my traefik <code>values.yaml</code> <a href="https://github.com/bplein/post-talos-setup/issues/2#issuecomment-2276603841">so much longer</a> than the <a href="https://github.com/techno-tim/launchpad/blob/master/kubernetes/traefik-cert-manager/traefik/values.yaml">one used in TechnoTim’s video</a>? Specifically, why is his traefik configuration devoid of <code>certResolver</code> and <code>env</code>? Is it because I’ve managed to incorrectly configure how much cluster obtains certificates?</li>
+<li>Why isn’t there a domain under his <code>ports</code> section? Is this, again, because I seem to be doing certificates differently?</li>
+<li>If I’m setting up both a <code>Service</code> and <code>Ingress</code> for each external server I want to reverse proxy behind traefik, what do I set for their ports? And names? And namespaces?</li>
+<li>How do I match namespaces with certificates?</li>
+</ul>
+<p>But anyway. I tried to take a stab at it anyway, <a href="https://www.reddit.com/r/Traefik/comments/16eskh4/comment/jzyc4vu/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button">using this</a>:</p>
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">---</span></span>
+<span id="cb1-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">apiVersion</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> v1</span></span>
+<span id="cb1-3"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">kind</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> Service</span></span>
+<span id="cb1-4"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">metadata</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span></span>
+<span id="cb1-5"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">  </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">name</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> unraid</span></span>
+<span id="cb1-6"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">  </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">namespace</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> default</span></span>
+<span id="cb1-7"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">spec</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span></span>
+<span id="cb1-8"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">  </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">type</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> ExternalName</span></span>
+<span id="cb1-9"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">  </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">externalName</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> unraid.my.local.domain</span></span>
+<span id="cb1-10"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">  </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ports</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span></span>
+<span id="cb1-11"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">    </span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">-</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">port</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> </span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">80</span></span>
+<span id="cb1-12"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">---</span></span>
+<span id="cb1-13"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">apiVersion</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> traefik.containo.us/v1alpha1</span></span>
+<span id="cb1-14"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">kind</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> IngressRoute</span></span>
+<span id="cb1-15"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">metadata</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span></span>
+<span id="cb1-16"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">  </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">name</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> unraid</span></span>
+<span id="cb1-17"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">  </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">namespace</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> default</span></span>
+<span id="cb1-18"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">  </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">annotations</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> </span></span>
+<span id="cb1-19"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">    </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">kubernetes.io/ingress.class</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> traefik</span></span>
+<span id="cb1-20"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">spec</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span></span>
+<span id="cb1-21"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">  </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">entryPoints</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span></span>
+<span id="cb1-22"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">    </span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">-</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> web</span></span>
+<span id="cb1-23"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">  </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">routes</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span></span>
+<span id="cb1-24"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">    </span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">-</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">match</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> Host(`unraid.my.local.domain`)</span></span>
+<span id="cb1-25"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">      </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">kind</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> Rule</span></span>
+<span id="cb1-26"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">      </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">services</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span></span>
+<span id="cb1-27"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">        </span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">-</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">name</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> unraid</span></span>
+<span id="cb1-28"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">          </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">namespace</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> default</span></span></code></pre></div>
+<p>No HTTPS, just regular ol’ port 80. And it worked… kind of. I got a 404 error.</p>
+<p>After thinking about it for a couple minutes, I realized: right now I have my local DNS pointing <code>unraid.my.local.domain</code> to the IP address of the <em>traefik proxy</em>, NOT the actual Unraid server. Which I guess would explain the 404, right?</p>
+<p>So then, here’s my biggest question: <strong>if I want to route all internal traffic through this proxy, but need the proxy to check with the external DNS server for the right IP address for the server… howwwww does that happen???</strong></p>
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2024,
+  author = {Quinn, Shannon},
+  title = {December {Adventure:} {Exploring} {YAML}},
+  date = {2024-12-13},
+  url = {https://magsol.github.io/2024-12-13-december-adventure-exploring-yaml},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2024" class="csl-entry quarto-appendix-citeas">
+Quinn, Shannon. 2024. <span>“December Adventure: Exploring YAML.”</span>
+December 13, 2024. <a href="https://magsol.github.io/2024-12-13-december-adventure-exploring-yaml">https://magsol.github.io/2024-12-13-december-adventure-exploring-yaml</a>.
+</div></div></section></div> ]]></description>
+  <category>personal</category>
+  <category>december adventure</category>
+  <category>yaml</category>
+  <category>reverse proxy</category>
+  <category>traefik</category>
+  <category>vs code</category>
+  <guid>https://magsol.github.io/posts/2024-12-13-december-adventure-exploring-yaml/</guid>
+  <pubDate>Fri, 13 Dec 2024 16:19:00 GMT</pubDate>
+  <media:content url="https://magsol.github.io/posts/2024-12-13-december-adventure-exploring-yaml/mark_yaml.jpg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>December Adventure: I have a bad feeling about this</title>
   <dc:creator>Shannon Quinn</dc:creator>
@@ -1869,113 +2176,6 @@ July 10, 2023. <a href="https://magsol.github.io/2023-07-10-upgrading-the-pi-clu
   <guid>https://magsol.github.io/posts/2023-07-10-upgrading-the-pi-cluster/</guid>
   <pubDate>Mon, 10 Jul 2023 21:52:00 GMT</pubDate>
   <media:content url="https://magsol.github.io/posts/2023-07-10-upgrading-the-pi-cluster/setup.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>This post is about burnout</title>
-  <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2023-06-06-this-post-is-about-burnout/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p><img src="https://magsol.github.io/posts/2023-06-06-this-post-is-about-burnout/burnout.png" class="preview-image img-fluid" alt="Midjourney-generated image of an art easel with a picture of a raging fire, anthropomorphized with a giant smile on its face. Meant to convey a ham-fisted 'this is fine' metaphor."></p>
-<p>…but before I get to that, I want to talk about a movie I saw recently and a book I read recently.</p>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Caution
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The following section contains some minor character spoilers from the 2023 film <em>Spider-Man: Across the Spider-Verse</em>. No major plot reveals.</p>
-</div>
-</div>
-<p>My wife and I were recently able to see an evening showing of <a href="https://en.wikipedia.org/wiki/Spider-Man%3A_Across_the_Spider-Verse"><em>Across the Spider-Verse</em></a>. It was phenomenal; we loved it. As someone who stuck with the MCU movies a little longer than most of my friends, I’ve been feeling “meh” toward superhero flicks for about a year now. We haven’t seen the newest <em>Black Panther</em>, <em>Ant-Man</em>, nor <em>Guardians</em> movies, nor have we felt an overriding urge to watch them even when they hit streaming (though I’ve heard the <em>Guardians</em> movie is pretty solid, so that may be the exception. Maybe).</p>
-<p>The <em>Spider-Verse</em> movies, even though solidly in the superhero genre, have been universally incredible. Possibly helped by the fact that there’s only two of them, with the third due out in March 2024. The animation is beautiful, the writing is top-notch, the humor is subtle and perfectly timed, and the characters are <em>fantastic</em>. I loved how this movie dove more into Gwen’s own background, and I was particularly pulled in by <a href="https://en.wikipedia.org/wiki/Spider-Man_2099">Spider-Man 2099</a>.</p>
-<p>He’s a relectant hero (like all the Spiders), doing what he thinks is right, ultimately trying to prevent what happened to him (which was terrible, even by the generic Spider-Trauma Barometer™️) from happening to anyone else.</p>
-<p>Except… he fought too hard for too long. Even surrounded by others, he isolated himself. He made hard decisions, and bit by bit the consequences of those decisions ate him up. He stared into the abyss, and the abyss eventually took up residence. He lost sight of <em>why</em> he started his work in the first place—when you have to repeat “We’re the good guys!” twice in a row, practically shouting it at your subordinates, one has to ask who it is you’re trying to convince—and became the very thing he ostensibly started out fighting against.</p>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Caution
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The following section contains some minor character spoilers from the 2023 novel <em>The Frugal Wizard’s Handbook For Surviving Medieval England</em>. No major plot reveals.</p>
-</div>
-</div>
-<p>I also just devoured the latest Brandon Sanderson book, <em>The Frugal Wizard’s Handbook For Surviving Medieval England</em>, which was officially called “Secret Project #2” for most of the past 12 months since his big 2022 Kickstarter. It’s not part of any of Sanderson’s other established universes, so it’s a wonderful standalone novel about a near-future dimension-hopping guy who loses his memories upon arriving in an unknown dimension set in Medieval England. He has to figure out who he is and why he’s in that dimension, as others—both natives of the dimension, and people from his own—are trying to kill him.</p>
-<p>I loved the story because, while it had many familiar beats storytelling beats around a journey of self-discovery, its final conceit and ultimate reveal about the character had a surprising amount of depth.</p>
-<p>Ultimately, it was a story of a character who’d had a lot of bad breaks in his life, coupled with a few poor decisions, which culminated in internalizing the belief that <em>he was not deserving</em>. When he inevitably failed, he believed he deserved it. His well-meaning “friends” gave him the usual “you need to try harder, good things come to those who try.” Which of course is strictly true, but leaves out important context: when you’ve had a string of failures, either from bad decisions OR simple bad luck—or most realistically, some ugly combination of both—you start internalizing those failures <em>as the default mode</em>.</p>
-<blockquote class="blockquote">
-<p>You lose a little—and that makes you wonder if you deserve to lose. So you lose some more. And it all compounds. You’re behind, no matter how you scramble to stop it. You’re too far gone.</p>
-</blockquote>
-<p>The memory loss ends up being a godsend, because by the end—when the main character has regained his memories—he can compare himself to someone who, just days before, took action he believed was right <em>without the mental baggage of failure as the default</em>, and for that very reason ended up winning more often than he lost.</p>
-<p>But the critial discovery, to me at least, was that belief in oneself does not exist in vacuum. You don’t necessarily believe in yourself because you woke up one morning and made the decision. You also look (through the lens of your own experience) at your wins and losses in the past, and use that assessment to decide <em>whether or not you’re worth believing in</em>. And that self-assessment can be brutal; it can end up digging a hole that is nigh impossible to get out of, perpetuating failure.</p>
-<section id="where-theres-smoke" class="level3">
-<h3 class="anchored" data-anchor-id="where-theres-smoke">Where there’s smoke…</h3>
-<p>In January 2015, I started a tenure-track position at the University of Georgia. In August 2021, I was officially promoted to Associate Professor, with tenure. And by early 2022, I was convinced that I needed to leave academia entirely, a sentiment that has not changed since then.</p>
-<p>Why leave? For those reasons and all the parts of that thinking that led here, I’ll have a post later. Maybe. I’ve been working on a version of it for nearly two years now, but I’m not yet sure if it will see the light of day. It may just be for me.</p>
-<p>For now, the reason is simple: I’m completely and utterly, spiritually and physically and emotionally, so-far-beyond-the-abyss, <strong>burned out</strong>.</p>
-<p>Of course, the reasons why the burnout got so bad are legion, and I will concede that many of those reasons are my own fault:</p>
-<ul>
-<li>I have a hard time asking for help</li>
-<li>I enjoy what I do to the extent of saying “yes” to things that sound exciting (everything sounds exciting!) without considering how it will get done</li>
-<li>I’ve always been somewhat of a people-pleaser, and so setting hard boundaries is difficult and exhausting, and it’s easier (in the short-term) to give people what they want</li>
-</ul>
-<p>This has led to a situation where I’ve begun to expect failure as a rule. Not with scientific experiments or with code development—that’s wholly different (at least in my brain), and that’s not what I’m talking about here; if anything, my lab’s science has been one of the bright spots in all this—but rather, interacting with people: I expect that I’ll disappoint them somehow, which becomes a self-fulfilling prophecy because it’s happened <em>so often</em> in the last few years.</p>
-<p>And it happened because I was so severely burned out that I could barely function. I mentioned this in my <a href="../../posts/2023-01-14-year-that-almost-was/index.html">new year’s post</a>, though not really the full extent of it. Honestly, I’m not sure what its full extent is. If I take a really close look at the contours, I may have been burned out since early 2019, shortly after receiving my NSF CAREER award notice. I’ve been hobbling along ever since.</p>
-<p>This burnout led to anger and resentment, and a feeling of having to single-handedly hold things together: that I was the only one competent enough to do what needed to be done. Inevitably, balls were dropped—because this is not a sustainable approach to literally anything—and the failures mounted, leading to feelings of nihilism and anhedonia.</p>
-<p>This went on for years. I stared into the abyss for far too long, and when I had a chance to step back, I did not like the person I was becoming. We’re so far beyond schedule tweaks, productivity hacks, and “write for 30 minutes each day”; we’re well into “I need an entire semester, possibly an entire academic year, off, just to begin the healing process in earnest.”</p>
-<p>And yes, that’s ostensibly what sabbaticals are there for. But in a final might-be-hilarious-in-10-years power move, I’ve been denied to even submit a <em>request</em> for a sabbatical because “there’s no one else to teach the class you’ve been assigned for the fall, and there are already 40+ students registered.”</p>
-<p>Somewhere around this time in 2022, while I was working for Quansight, I was given the opportunity to do a 3-day online training in PyTorch for a client. In classic “me” fashion, I enthusiastically volunteered. But when the day came, I was so stressed out by the idea of teaching—a primary source of my burnout—that I broke out in <em>full-body hives</em>. That has happened to me only once before, though in that case we traced it to what was most likely improperly cooked shellfish.</p>
-</section>
-<section id="embrace-the-process" class="level3">
-<h3 class="anchored" data-anchor-id="embrace-the-process">Embrace the process</h3>
-<p><em>Recognizing</em> burnout is important. <em>Counteracting</em> burnout is important. Both of these steps are difficult to ascertain and implement. This blog post about <a href="https://pyfound.blogspot.com/2023/05/the-python-language-summit-2023-burnout.html">burnout among core Python package maintainers</a> addresses some of that. But there’s a third burnout thread I have to constantly remind myself of:</p>
-<p>Burnout decimates your physical and mental capabilities, and they don’t return overnight. It’s such a kick in the teeth when just recognizing burnout is so challenging, and moreso to stem the tide, but just because these have been done does not mean life immediately snaps back to normal.</p>
-<p>I’ve spent the last couple years wondering why running seems so much harder than it used to be, while running so much slower than I used to. I spent the day after the SciPy 2023 paper submission deadline (just this past Friday evening) kicking myself for not getting the paper done and feeling like a failure because of it. Years ago, debugging Python and PyTorch errors was straightforward, and prototyping machine learning models was relatively easy for me; while writing this paper, every error message was a multi-hour-long block on my progress. Working through them was like wading through molassess, and at the time I couldn’t understand why.</p>
-<p>It’s because burnout doesn’t vanish overnight. It impedes your faculties, like sand in joints, simultaneously slowing things down and increasing the resistence. The knee-jerk reaction is to push harder, which flares the burnout and ultimately undoes forward progress. Which feeds into the failure mindset, and thus perpetuates the cycle.</p>
-</section>
-<section id="not-just-surviving-but-thriving" class="level3">
-<h3 class="anchored" data-anchor-id="not-just-surviving-but-thriving">Not just surviving, but thriving</h3>
-<p>I’ve been in survival mode for years now, just trying to get through each day and not really seeing more than a week or two ahead. It’s a good way to stay alive, but a terrible way to live. I’ve gone through long stretches where I have no motivation to create, or to learn, or to grow; instead, all my energy is focused exclusively on getting from one day to the next.</p>
-<p>I don’t want to simply survive, I want to <em>thrive</em>. I want to build, I want to learn, I want to grow. And as has become very clear over the past few years: <em>that won’t happen for me if I stay in academia</em>. I haven’t been able to make it work, and I’ve been at this for almost 9 years now. I’ve said it jokingly for years, but it’s also the hard truth: academia is a pie-eating contest where the prize is more pie.</p>
-<p><strong>So, I’m leaving</strong>. It suffices to say that by prioritizing healing from my burnout, and by extension prioritizing my family and friends and personal interests and hobbies, it is clear beyond any doubt that there is simply no viable universe in which these priorities can be met while remaining in academia. Of course, I’m existentially terrified—who leaves a tenured position for industry?!—but I’m also excited by the mere possibility of thriving.</p>
-<p>Burnout recovery is going to take awhile; after all, I spent years getting to this point. But I’ve also spent the better part of the last few months starting the recovery process, and there’s already been noticeable improvement. I have sustainable routines in place that are clearly doing me good, but I can’t make some of the biggest changes while I’m still in academia.</p>
-<p>I’ve recognized my burnout, and I’m taking every step I can to make the changes I need to thrive. But I have to keep reminding myself that things won’t improve overnight, even when I’m doing everything right. It’ll take some time for the pea soup in my brain to clear out, and it’s been an agonizingly slow process of rebuiding my physical body (not helped by potential long COVID symptoms, but that’s a post for another day).</p>
-<p>But I at least want the <em>chance</em> to thrive. So I’m taking it. Wish me luck.</p>
-
-
-</section>
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
-  author = {Quinn, Shannon},
-  title = {This Post Is about Burnout},
-  date = {2023-06-06},
-  url = {https://magsol.github.io/2023-06-05-this-post-is-about-burnout},
-  langid = {en}
-}
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2023" class="csl-entry quarto-appendix-citeas">
-Quinn, Shannon. 2023. <span>“This Post Is about Burnout.”</span> June 6,
-2023. <a href="https://magsol.github.io/2023-06-05-this-post-is-about-burnout">https://magsol.github.io/2023-06-05-this-post-is-about-burnout</a>.
-</div></div></section></div> ]]></description>
-  <category>personal</category>
-  <category>professional</category>
-  <category>burnout</category>
-  <category>movies</category>
-  <category>books</category>
-  <guid>https://magsol.github.io/posts/2023-06-06-this-post-is-about-burnout/</guid>
-  <pubDate>Tue, 06 Jun 2023 22:05:00 GMT</pubDate>
-  <media:content url="https://magsol.github.io/posts/2023-06-06-this-post-is-about-burnout/burnout.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 </channel>
 </rss>
