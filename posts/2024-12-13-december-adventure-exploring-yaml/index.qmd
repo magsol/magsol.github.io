@@ -1,0 +1,73 @@
+---
+title: "December Adventure: Exploring YAML"
+subtitle: "It's full of whitespace"
+date: "2024-12-13 16:19:00"
+categories: [personal, december adventure, yaml, reverse proxy, traefik, vs code]
+citation:
+    url: https://magsol.github.io/2024-12-13-december-adventure-exploring-yaml
+image: "mark_yaml.jpg"
+image-alt: "Two-paned meme image of Mark Hamill, with the first pane normal and the second pane showing indented blocks of Mark Hamill with the undertitle 'Mark Yaml'. Credit: https://www.reddit.com/r/ProgrammerHumor/comments/hwxsgi/ah_yes_mark_yaml/"
+author: "Shannon Quinn"
+---
+![](mark_yaml.jpg){.preview-image fig-alt="Two-paned meme image of Mark Hamill, with the first pane normal and the second pane showing indented blocks of Mark Hamill with the undertitle 'Mark Yaml'. Credit: https://www.reddit.com/r/ProgrammerHumor/comments/hwxsgi/ah_yes_mark_yaml/"}
+
+Whew, that week went by in a flash. I've actually been working on this `#DecemberAdventure` project these past few days and have made some strides; I just kept running out of time (and inclination) to post about it.
+
+Part of the problem---as an aside---is that I had to close the YAML project space in my VS Code editor in order to _open_ the project space for writing a blog post, which makes it difficult to cross-reference very specific issues and instead relies on "vibes" for writing the post. I'm sure it's to the detriment of any readers, but I enjoy being as specific as I can. If anyone wants to tell me the magic key combination that allows me to open up multiple project spaces simultaneously in VS Code, please do drop me a line.
+
+Anyway, I hit upon a couple of crucial resources this past week that have helped me make some progress. First, I identified some very specific changes I need to make:
+
+ - Traefik needs to be moved to a `traefik` namespace
+ - Cert-manager needs to be moved to a `cert-manager` namespace
+ - Upgrade cert-manager CRDs
+ - Cloudflare API keys need to be moved to `cert-manager` namespace
+
+These are easy enough, only requiring some minor configuration tweaks to the yaml.
+
+But I have _a lot_ of deeper questions about the configuration involved in having Traefik route to external services.
+
+ - A big one: just about all the examples I can find entail doing this, but for Docker-Compose, not kubernetes. Why is that? [Here's one](https://www.youtube.com/watch?v=n1vOfdz5Nm8), [another one](https://www.youtube.com/watch?v=-hfejNXqOzA), [another one](https://community.traefik.io/t/external-services-config-yml/24793) (I think; it doesn't actually specify), and [another one](https://community.traefik.io/t/how-to-forward-request-to-external-host/23932) (same problem).
+ - I did manage to find a _few_ examples using kubernetes: [here's one](https://www.youtube.com/watch?v=G4CmbYL9UPg) (2+ years old), [another one](https://community.traefik.io/t/traefik-k8s-and-an-external-service/6305) (4+ years old, bordering on useless), [another one](https://community.traefik.io/t/kubernetes-ingress-to-external-service/20001) (the answer is not helpful), [another one](https://stackoverflow.com/questions/72484227/traefik-ingress-for-external-service-troubleshooting) (also with an unhelpful "answer"), [another one](https://www.reddit.com/r/kubernetes/comments/13a2zy2/using_k3s_traefik_installation_to_reverse_proxy/) (2+ years old), and [another one](https://www.reddit.com/r/Traefik/comments/16eskh4/external_service_load_balancer_in_kubernetes/) (this seems the most promising). 
+ - Why is my traefik `values.yaml` [so much longer](https://github.com/bplein/post-talos-setup/issues/2#issuecomment-2276603841) than the [one used in TechnoTim's video](https://github.com/techno-tim/launchpad/blob/master/kubernetes/traefik-cert-manager/traefik/values.yaml)? Specifically, why is his traefik configuration devoid of `certResolver` and `env`? Is it because I've managed to incorrectly configure how much cluster obtains certificates?
+ - Why isn't there a domain under his `ports` section? Is this, again, because I seem to be doing certificates differently?
+ - If I'm setting up both a `Service` and `Ingress` for each external server I want to reverse proxy behind traefik, what do I set for their ports? And names? And namespaces?
+ - How do I match namespaces with certificates?
+
+But anyway. I tried to take a stab at it anyway, [using this](https://www.reddit.com/r/Traefik/comments/16eskh4/comment/jzyc4vu/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button):
+
+```yaml
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: unraid
+  namespace: default
+spec:
+  type: ExternalName
+  externalName: unraid.my.local.domain
+  ports:
+    - port: 80
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: unraid
+  namespace: default
+  annotations: 
+    kubernetes.io/ingress.class: traefik
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`unraid.my.local.domain`)
+      kind: Rule
+      services:
+        - name: unraid
+          namespace: default
+```
+
+No HTTPS, just regular ol' port 80. And it worked... kind of. I got a 404 error.
+
+After thinking about it for a couple minutes, I realized: right now I have my local DNS pointing `unraid.my.local.domain` to the IP address of the _traefik proxy_, NOT the actual Unraid server. Which I guess would explain the 404, right?
+
+So then, here's my biggest question: **if I want to route all internal traffic through this proxy, but need the proxy to check with the external DNS server for the right IP address for the server... howwwww does that happen???**
