@@ -1,0 +1,28 @@
+---
+title: "December Adventure: Oh that's how DNS works"
+subtitle: "Day 20. How did I get here?"
+date: "2024-12-20 16:26:00"
+categories: [personal, december adventure, traefik, dns]
+citation:
+    url: https://magsol.github.io/2024-12-20-december-adventure-oh-thats-how-dns-works
+image: "snowbun.png"
+image-alt: "Picture of our white bunny Clover enjoying a rare snowfall, from back in 2018. She was our little snowshoe hare."
+author: "Shannon Quinn"
+---
+![](snowbun.png){.preview-image fig-alt="Picture of our white bunny Clover enjoying a rare snowfall, from back in 2018. She was our little snowshoe hare."}
+
+Ok, I've been barking up the wrong tree.
+
+The wildcard subdomain I was referencing in my previous post? That's only needed for _certificates_, not for actual subdomain resolution. Also, if one can resolve `domain.org`, then one can also resolve `test.subdomain.org` (thank you, Firewalla support; keep up the truly remarkable work, y'all). Furthermore, the only role my DNS registrar serves in this process is to validate that I own the root domain; after that, Let's Encrypt does its thing, and all domain resolution happens within my home network.
+
+I realize this is all probably obvious to everyone (and parts _have been_ obvious to me, at some point previously), but for some reason it's taken me reading lots of Reddit threads, watching YouTube videos, and contacting customer support to fully connect all these dots. The only _actual_ place the wildcard domain exists (e.g., `*.local.domain.org`) is in the Traefik configuration under the "sans" header. That's it! My DNS registrar has my root domain, and my internal DNS server has all the CNAME entries pointing to various services.
+
+Seriously, DNS is so simple, it's complicated.
+
+---
+
+There's been a LOT going on this week, as work stuff has wound down and holiday preparations have kicked into very, _very_ high gear. I've been feeling a lot of different things---chief among them, sadness that my yearlong sabbatical with PredxBio is almost complete---and so I've been pretty distracted this week.
+
+We also disassembled Clover's old "condo" (the DIY home setup I built ~6 years ago), deep-cleaned the area around it, and had a bulk trash pickup for the spare items. It was more or less the final step to fully _seeing_ that Clover was gone; even though she died back at the end of September, I swear I still saw flashes of white in the corners of my eyes when I glanced past the condo. Now, it's impossible to refute, and it hurts all over again.
+
+2024 has been such a mixed bag, something I'll have to write more about later.
