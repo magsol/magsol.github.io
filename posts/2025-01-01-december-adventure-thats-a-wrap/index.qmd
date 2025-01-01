@@ -1,0 +1,47 @@
+---
+title: "December Adventure: That's a wrap!"
+subtitle: "Didn't I just start this thing?"
+date: "2025-01-01 15:36:00"
+categories: [personal, december adventure, magic the gathering, reverse proxy]
+citation:
+    url: https://magsol.github.io/2025-01-01-december-adventure-thats-a-wrap
+image: "zippy.jpg"
+image-alt: "Picture of our black cat Zippy sitting in a chair intended for our 4yo, looking like she's the most relaxed any cat has ever been."
+author: "Shannon Quinn"
+---
+![](zippy.jpg){.preview-image fig-alt="Picture of our black cat Zippy sitting in a chair intended for our 4yo, looking like she's the most relaxed any cat has ever been."}
+
+Welp.
+
+Don't know about you, but this December _flew_ by for me. I should have anticipated that, come the week of Christmas, I would have approximately negative time with which to continue `#DecemberAdventure`. Still, it took me by surprise. So let me try to wrap up where things stand.
+
+#### Cluster-wide reverse proxy
+
+Even if I haven't implemented this yet (due to reasons I'll get to), I think at this point I understand pretty well how to do it. It more or less boils down to:
+
+ 1. Set my local DNS (i.e., my Firewalla router) to point some version of `local.my.domain` to my reverse proxy
+ 2. Create local CNAME entries that point to various local services
+ 3. Add a `*.local.my.domain` sans domain in my traefik configuration to get the SSL to work for these endpoints
+ 4. Set up a kubernetes `Service` object for each local service I want traefik to be able to access
+
+That's about it! I'm still a little iffy on step 2, mainly because I don't know what will prevent any device on the network from skipping the top-level (local) domain pointing to the reverse proxy and going straight for the CNAME entry that is actually being requested. But I suppose, at this point, I just need to deploy it and see what happens.
+
+#### Cat Magic deck
+
+I haven't really made any changes to my [Cat deck](https://tappedout.net/mtg-decks/04-12-24-cats/)---i.e., it's still mostly a template---but I did receive a nice Amazon gift card for Christmas, so I used it to purchase some of the cards I'm quite sure I'll need. Hopefully that will help me winnow this thing down to a standard 60-card deck.
+
+#### Pi cluster next steps
+
+In doing all this research for the reverse proxy, it became increasingly clear that I need to overhaul the entire cluster---hence the reason why I stopped just short of implementing anything regarding the reverse proxy.
+
+Right now, the cluster has no "local" storage (meaning, no storage connected directly to any of the Pi SBCs); everything instead goes over the network. This works, certainly, but it's not ideal, particularly when the power goes out or I need to selectively shut things down: I have to be careful in what order I shut down 1) the Pi cluster, 2) the network file storage, and 3) the network hubs connecting everything. It would be _substantially_ easier if I had storage connected directly to the Pi machines that the k3s cluster could use.
+
+So I used some Christmas money to purchase a couple of SSDs. Meaning that I've also spent a lot of time looking into [Longhorn](https://longhorn.io/) and [Garage](https://garagehq.deuxfleurs.fr/) distributed block storage solutions for kubernetes clusters. I have everything ready to go there, but in so doing I need to prepare in case I'm not able to transfer everything over from the current network storage location.
+
+Meaning I need to prepare to more or less start from scratch. Which will, frankly, simplify things. It'll also give me opportunities to update the k3s clients, the base OSes (from Ubuntu 22 to 24), and the various helm charts (not to mention fixing the namespace issues I enumerated in an [earlier post](../2024-12-13-december-adventure-exploring-yaml/index.qmd)).
+
+Admittedly it does feel like every personal project ends up with some version of "re-do everything I've already done so this one tiny addition will work," but hey, isn't that what learning is all about?
+
+#### 2025
+
+I'm working on a 2024 Retrospective post. It's gonna be a doozy. Hopefully I'll have it up in the next couple days.
