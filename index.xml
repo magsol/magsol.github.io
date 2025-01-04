@@ -16,8 +16,145 @@
 <height>144</height>
 <width>144</width>
 </image>
-<generator>quarto-1.6.39</generator>
-<lastBuildDate>Wed, 01 Jan 2025 15:36:00 GMT</lastBuildDate>
+<generator>quarto-1.6.40</generator>
+<lastBuildDate>Sat, 04 Jan 2025 15:25:00 GMT</lastBuildDate>
+<item>
+  <title>Agency</title>
+  <dc:creator>Shannon Quinn</dc:creator>
+  <link>https://magsol.github.io/posts/2025-01-04-agency/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p><img src="https://magsol.github.io/posts/2025-01-04-agency/sky.png" class="preview-image img-fluid" alt="Clouds forming an incredible pattern with what looks like a crevasse down the middle, through which sun rays can be seen."></p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Content warning: language, discussion of mental health struggles, and pet death.</p>
+</div>
+</div>
+<p>I’ve been thinking a lot about “agency” this year, and how the lack thereof underlies <em>so much</em> of what I’ve been struggling with the past several years. Arguably it’s been my singular source of burnout, and is my focus for 2025.</p>
+<section id="work" class="level3">
+<h3 class="anchored" data-anchor-id="work">Work</h3>
+<p>I realize I haven’t really posted much work stuff here, despite saying I would in previous posts. Work has easily been the single greatest source of stress for me over the past decade, in no small part because it has <em>embodied</em> my lack of agency, starting—frankly—all the way back when I was initially offered the position at UGA.</p>
+<p>This past year, I worked as a “Principal AI/ML Scientist” with a small, Pittsburgh-based biotech startup called <a href="https://predxbio.com/">PredxBio</a>. I was officially on sabbatical with UGA, though my intention at the time was to leave UGA entirely sometime during 2024. Unfortunately, 2023-2024 have been extremely rough years for not-FAANG tech companies, startups in particular. Sometime in the summer, the CTO informed me that things were looking bleak funding-wise. So I started laying some other groundwork (I’ll come back to this in a minute).</p>
+<p>PredxBio is, professionally, <em>hands-down the most fun I’ve had in the last 10 years</em>. I worked with a small but incredibly talented and dedicated team on both the science and engineering around a niche but fast-growing area called “<a href="https://en.wikipedia.org/wiki/Spatial_biology">spatial biology</a>.” In practice, I helped bring some industry-standard development practices to their existing spatial proteomics pipeline, refactoring some years-old code which led to (I kid you not) a 1000% increase in performance—an operation which took two days was reduced to <em>30 seconds</em>. I also dove into the (very cool) <a href="https://scverse.org/">scverse</a> ecosystem and created the company’s first spatial transcriptomics pipeline. I was in the middle of working on a project for a client that would actually <em>combine</em> the proteomics and transcriptomics pipelines—become truly multiomics—when the year ended. It’s an incredible project, with incredible people, and I’ve been mourning having to leave since November.</p>
+<p>Now, enter said groundwork. For most of the summer, I spoke with the unit heads of both the UGA Institute of Bioinformatics (IOB) and Department of Cellular Biology, the latter of which is already one of my home units. I pitched, and was eventually able to land, a change in my “home unit” assignment: rather than being split between Computer Science and Cellular Biology, I will zero out Computer Science and move that affiliation over to IOB. There are <em>a lot</em> of reasons for this, both personal and professional, but it boils down to <em>agency</em>: I wanted to build a role that I could get excited about, where I could pursue computational biology questions that excited me, both in the classroom and the laboratory, while working with colleagues and students who were likewise excited and supportive.</p>
+<p>I’ve gotten everything out of Computer Science that I can, and it’s gotten more than its fair share out of me. This is an opportunity of <em>my own making</em>—of course, done in collaboration with people I couldn’t have done it without, and with whom I hope to continue collaborating as fruitfully for years to come. But unlike when I first accepted the CS position over a decade ago, I not only voiced my concerns and requests, but <em>stood by them</em> until we reached a consensus based on mutual understanding.</p>
+<p>Even better: I’m planning to continue consulting one day per week with PredxBio (as per my right as faculty), with the plan/hope that, if all goes well financially over the next few months, I’ll return to full-time over the summer. In my dream scenario, I’m also planning to submit an R01 grant that names PredxBio as a chief collaborator; if funded, this would solidify our professional relationship for at least the next five years, and give both of us the financial and logistical flexibility to continue working together. It’d even open up a recruiting avenue if PredxBio needs to start hiring (definitely a longer term plan!), so I’m really crossing my fingers here.</p>
+<p>Suffice to say, I’m trying to create something that actually gets me out of bed in the mornings. The perfect antidote to burnout, or at least the next step in healing. Rather than stumbling from one five-alarm fire to the next, I’m trying to be intentional.</p>
+<p>Time will tell. But for now, I’m cautiously optimistic.</p>
+<p>There is still <em>A LOT</em> I find problematic with academia in general, UGA specifically, and my units in particular. A couple weeks ago I was invited out of the blue to apply for an NIH early career reviewer program, only to have my application desk-rejected after I’d put in a few hours to assemble everything. This past summer, UGA committed the third accounting error in as many years whereby someone up the chain fucked up my financials, but in order to fix it, needed to either nuke my indirect accounts or, in this case, withhold subsequent paychecks to cover the difference (the total amount UGA has fucked me over is now in excess of $130,000, I should add). I just had a conference paper rejected, and the two reviewers’ feedback I received totaled three sentences, all of which were addressed in the paper itself.</p>
+<p>These are things I have no control over; raging against them is certainly what I’d like to do, but would ultimately be a waste of time and energy. Like the design of my new role, I need to focus on what I can control in order to create opportunities. So for the time being, I’m keeping one foot in academia.</p>
+</section>
+<section id="running" class="level3">
+<h3 class="anchored" data-anchor-id="running">Running</h3>
+<p>I’ll go into this more on my <a href="https://wherearethepancakes.wordpress.com/">running blog</a>, but since I mentioned it in my <a href="../../posts/2024-01-05-a-year-of-extremes/index.html">2023 retrospective post</a>, I wanted to say here: not only did I hit 1000 miles this year, I piled on another 70 for good measure. I also hit a week of over 30 miles (once, but still), and the Chickamauga Battlefield half marathon for the first time since 2018 (I ran the full marathon in 2019, so it’d been only five years since going to the actual location for a race).</p>
+<p>There’s still a lot to do here—I’m still feeling as though long COVID has its claws in me and I’d really like to get some answers; I’m also frustrated with how I don’t feel as though I’ve gotten any faster this year; long runs in particular have been grueling, and I’m not sure if it’s because of the first item or something innocuous (e.g., I need a better fueling strategy)—but I’m proud of the routines and habits I’ve established, and the <em>space</em> I’ve created for running, and I finally feel as though running is truly part of who I am again.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://magsol.github.io/posts/2025-01-04-agency/chickamauga.jpg" class="img-fluid figure-img"></p>
+<figcaption>A post-race photo with Cathryn, our friend Laura, and her partner Zach.</figcaption>
+</figure>
+</div>
+</section>
+<section id="personal" class="level3">
+<h3 class="anchored" data-anchor-id="personal">Personal</h3>
+<p>This year was… a lot. I go into it quite a bit in <a href="../../posts/2024-06-13-desolation/index.html">this post from the summer</a>: our 9+ year old bunny Clover dying, my parents’ house being broken into, the multiple bullshit accounting mistakes made by UGA which I had to bail them out of, starting back on SSRIs for the first time in several years, parenting a toddler-turned-young-kid, (inter)national politics. To this day, I cannot say which I find more repugnant: RG progressives who have no Middle East connections but suddenly became Middle East geopolitical experts on Oct 8, 2023, yet have been silent ever since; or TG progressives, likewise with no Middle East connections, who have since made the Middle East their entire personalities.</p>
+<p>On that note, I’ve also wrestled with a lot of my own inner demons: one of my goals for 2024 to work on my deep-seated anger and resentment. This entailed coming to terms with prior working situations, re-evaluating relationships, and making a whole lot of decisions about what was important enough to continue to make space for, and what needed to be let go. This was as innocuous as deep cleaning our garage and its 10+ years of accumulated <em>stuff</em> when contractors came to install our solar panels + battery setup: a lot of it we could easily part with, but some had pretty deep sentimental value but was otherwise just taking up space. It was also as complicated as relationships that have changed for reasons unknown, and it’s that unknown part that is the most heartbreaking and makes it so difficult to decide one way or the other whether to keep sticking it out; in the end, we need to do what’s best for us.</p>
+<p>My wife’s therapist put it nicely: we’re closing the door, but that doesn’t mean they can’t knock on it sometime later, at which point it’s up to us whether we answer.</p>
+<p>I’m also working on a mindset shift, one that understands and embraces the truth that current situations are <em>temporary</em> by definition, and I can decide whether I want to tough it out or go try something else. This is a valuable perspective both personally, but also professionally—it underlies all my efforts to create something that excited me: if things are still miserable, I can try something else. Or leave.</p>
+<p>I did set up a Signal group chat following the election, full of <em>absolutely wonderful</em> human beings who have easily been the most consistently bright point in the weeks since<sup>1</sup>. It’s not a large group, just 10 of us (some I haven’t met in person), but we’ve already had some wonderful discussions. It can be more or less summed up by the image I chose as the group avatar. National politics continues to be a shitshow and will likely only get worse over the next four years, but <a href="https://amyjko.medium.com/the-coming-storm-03a03750016b">this mindset shift should help</a>. My therapist has always said to lean into worse-case scenarios, not because they’ll necessarily become true, but because we may discover <a href="https://www.ncronline.org/opinion/editorial/editorial-hope-time-darkness">we’re more resilient than we initially thought</a>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://magsol.github.io/posts/2025-01-04-agency/log_cabin.png" class="img-fluid figure-img"></p>
+<figcaption>A cozy log cabin somewhere in Appalachia, with everything covered in snow.</figcaption>
+</figure>
+</div>
+<p>I also <a href="../../posts/2024-01-25-the-legend-of-makar/index.html">assembled the single most powerful desktop I’ve ever built</a>, organized the home upstairs office with a server rack, upgraded our home network with a <a href="https://firewalla.com/">Firewalla</a>, and have spent the last month making progress on <a href="../../posts/2024-12-04-december-adventure-2024-edition/index.html">more easily accessible homelab services</a>. We had our nearly-20-year-old roof replaced, had solar panels put on it and backup batteries installed, substantially improved the insulation in our attic space, and are epsilon-away from having a couple of windows replaced to really complete weather-ification.</p>
+</section>
+<section id="summary-of-2024" class="level3">
+<h3 class="anchored" data-anchor-id="summary-of-2024">Summary of 2024</h3>
+<p>The Good:</p>
+<ul>
+<li>Best professional work experience in 10 years, top to bottom, with PredxBio</li>
+<li>Broke 1000 miles running for the first time since 2019</li>
+<li>Forged a “new” position at UGA for myself starting in 2025</li>
+<li>Set personal and professional boundaries and held them</li>
+<li>Maintained phenomenal consistency with physical activities across the board</li>
+<li>Built some really cool shit</li>
+</ul>
+<p>The Bad:</p>
+<ul>
+<li>Mental health struggles, back on medication</li>
+<li>Running speed has not improved in a year</li>
+<li>Still a lot of lingering resentment around some relationships</li>
+<li>Losing our beloved bunny, Clover</li>
+</ul>
+<p>The Ugly:</p>
+<ul>
+<li>The fucking election</li>
+<li>Continued fallout from Oct 7, 2023</li>
+<li>Parents’ house being burglarized</li>
+<li>Having contractors in our house sucks; them breaking shit is another level</li>
+</ul>
+</section>
+<section id="plans-for-2025" class="level3">
+<h3 class="anchored" data-anchor-id="plans-for-2025">Plans for 2025</h3>
+<p>I’m still not making “resolutions” in the traditional sense. As <a href="https://mastodon.social/@glyph/113755645565821731">a recent toot made very explicit</a>: “the structure of the exercise is practically designed to set you up for failure” (like some other things of the past few years<sup>2</sup>). As <a href="https://mastodon.social/@grimalkina/113754067707608423">someone I deeply admire</a> put it: “it is always a wonder how much this [time off] ultimately actually leads to things the world sees as productive….when you make that NOT the goal”.</p>
+<p>Nevertheless, my biggest priorities this year are to focus on <strong>agency and intentionality</strong>: creating opportunities where I can, and walking away when I need to. I created this “new” role for myself at UGA; now I need to commit to doing everything I can to succeed in it. At the same time, I can always tweak things that aren’t working; alternatively, I can walk away entirely. My situation need not be permanent. Change, or choose.</p>
+<p>My other plans, in no particular order:</p>
+<ul>
+<li>1000+ miles running (again), with an emphasis on 100+ mile months, and 30+ mile weeks</li>
+<li>Finish cleaning out the garage, and start in earnest on cleaning out the upstairs</li>
+<li>Keep cultivating new opportunities through consistency and intentionality</li>
+<li>Set and hold boundaries, especially around work/life balance</li>
+</ul>
+<p>In my <a href="../../posts/2025-01-01-december-adventure-thats-a-wrap/index.html"><code>#DecemberAdventure</code> wrap-up post</a>, I laid out the next steps for getting internal/homelab services up and running with their own DNS entries and SSL certificates. I feel reasonably confident about this approach, thanks to some of the groundwork I did last year and especially during <code>#DecemberAdventure</code>. The first step? Completely reformat my Pi cluster and start over!</p>
+<p>Happy 2025, everyone. Much love to all.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://magsol.github.io/posts/2025-01-04-agency/clover.jpg" class="img-fluid figure-img"></p>
+<figcaption>Miss this sweet, sassy, beautiful girl every single day. We love you, Clover.</figcaption>
+</figure>
+</div>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Not to mention learning all about how animals are classified!↩︎</p></li>
+<li id="fn2"><p><em>shifty eyes</em>↩︎</p></li>
+</ol>
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2025,
+  author = {Quinn, Shannon},
+  title = {Agency},
+  date = {2025-01-04},
+  url = {https://magsol.github.io/2025-01-04-agency},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2025" class="csl-entry quarto-appendix-citeas">
+Quinn, Shannon. 2025. <span>“Agency.”</span> January 4, 2025. <a href="https://magsol.github.io/2025-01-04-agency">https://magsol.github.io/2025-01-04-agency</a>.
+</div></div></section></div> ]]></description>
+  <category>personal</category>
+  <category>professional</category>
+  <category>new years</category>
+  <guid>https://magsol.github.io/posts/2025-01-04-agency/</guid>
+  <pubDate>Sat, 04 Jan 2025 15:25:00 GMT</pubDate>
+  <media:content url="https://magsol.github.io/posts/2025-01-04-agency/sky.png" medium="image" type="image/png" height="192" width="144"/>
+</item>
 <item>
   <title>December Adventure: That’s a wrap!</title>
   <dc:creator>Shannon Quinn</dc:creator>
@@ -1845,192 +1982,6 @@ Quinn, Shannon. 2024. <span>“2023: A Year of Extremes.”</span> January
   <guid>https://magsol.github.io/posts/2024-01-05-a-year-of-extremes/</guid>
   <pubDate>Fri, 05 Jan 2024 19:45:00 GMT</pubDate>
   <media:content url="https://magsol.github.io/posts/2024-01-05-a-year-of-extremes/landscape.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>Advent of Adventure</title>
-  <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2023-12-08-advent-of-adventure/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p><img src="https://magsol.github.io/posts/2023-12-08-advent-of-adventure/heralds_mordor_full.jpg" class="preview-image img-fluid" alt="A gritty image from behind a small group of heroes, facing down a massive robotic army, in a shattered land that looks a lot like Mordor (generated by DALL-E)."></p>
-<p>This past Monday evening, from a tiny cabin in Dahlonega, GA, I turned to my wife and said: <a href="https://knowyourmeme.com/memes/what-a-week-huh">“What a week, huh?”</a></p>
-<p>We had a much-needed mini-vacation in the middle of the week to recoup and relax. It wasn’t nearly long enough to fully come down from the cortisol high but it at least jump-started the process. We even got a hike in, and did some stargazing. Even as relatively small as Athens is, there’s still a lot of light pollution, the lack of which is breathtaking if you can get a little further out.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://magsol.github.io/posts/2023-12-08-advent-of-adventure/milky_way.jpg" class="img-fluid figure-img" alt="A nighttime shot of the stars, including a faintly-visible Milky Way."></p>
-<figcaption>It’s tough to see, not the least of which because of iPhone 15’s aggressive low-light compensation, but the Milky Way is visible from the left-middle almost to the branches of the tree.</figcaption>
-</figure>
-</div>
-<p>I’ve felt guilty—for many reasons; there’s never a shortage, but in this case because I’d originally wanted to participate in this year’s <a href="https://adventofcode.com/">Advent of Code</a>. I was introduced to it two years ago, too late to finish it completely, but at the time I enjoyed it. Last year I was too burned out to get more than a few days in, so I was feeling particularly motivated this year.</p>
-<p>But then the end-of-semester shenanigans were an order of magnitude worse than expected, and December entered with a bang and from the mountains I lamented not having logged a single activity.</p>
-<p>Then I came across <a href="https://eli.li/december-adventure">December Adventure</a>.</p>
-<p>I <em>loved</em> the main idea: the goal is just to write a little bit of code, every day, in the month of December. Or, really, to make progress on any project or projects, a little bit each day.</p>
-<p>So consider this not only my inaugural <code>#DecemberAdventure</code> post, but a bit of a catch-up on the things I’ve been doing that have brought me a tiny bit of joy in the dismally oversaturated realities of the past couple months.</p>
-<section id="retropie-redux" class="level3">
-<h3 class="anchored" data-anchor-id="retropie-redux">RetroPie, redux</h3>
-<p>Astute readers here may recall that this is <a href="../../posts/2017-01-06-gameify-your-raspberry-pi/index.html">something I’d already done a few years back</a> (ok, <em>several</em> years back, geez). However, that was a Pi 3B+, which did ok with NES and SNES games, but ground to a complete standstill on any 3D games—N64 was beyond it.</p>
-<p>Armed with a Pi 4B with 4GB of RAM, I sought to bring RetroPie back! I’d also seen in the documentation that the Nintendo Switch Pro controllers were supported, so getting that working was another goal of mine (rather than the generic USB controllers I’d used last time).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://magsol.github.io/posts/2023-12-08-advent-of-adventure/retropie_open.jpg" class="img-fluid figure-img"></p>
-<figcaption>An open view of the Pi inside the SNES enclosure, complete with a fan.</figcaption>
-</figure>
-</div>
-<p>A few other minor changes from last time: now I had a <a href="https://www.canakit.com/raspberry-pi4-retro-gaming-case.html">cool mini-SNES enclosure</a> for the Pi, which came with room for a single fan to help keep things cool. I was pretty sure the fan was overkill, but I figured, what the heck. I also actually wired the Pi to ethernet, rather than relying on wifi like last time. It took a little bit of adjusting, but it was a change I’d wanted to make to our home network backbone anyway.</p>
-<p>The result: a snazzy new RetroPie!</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://magsol.github.io/posts/2023-12-08-advent-of-adventure/retropie.jpg" class="img-fluid figure-img"></p>
-<figcaption>The SNES enclosure, with power and ethernet cables plugged in.</figcaption>
-</figure>
-</div>
-<p>I did still run into some issues with getting the <a href="https://retropie.org.uk/docs/Nintendo-Switch-Controllers/">Nintendo Switch Pro controller</a> working. Specifically, the Bluetooth: <a href="https://retropie.org.uk/forum/topic/34226/cannot-pair-nintendo-switch-pro-controller/7">this issue in the discussion forum</a> mirrored my problems exactly. I could turn on diagnostics for the Pi and see that it was detecting every single button press and stick movement, but for some reason those changes weren’t being propagated to the <a href="https://retropie.org.uk/docs/Controller-Configuration/">emulator software</a>.</p>
-<p>In the end, I plugged the Pro controllers into the back of the Pi, and they worked beautifully. It just meant I had to sit on the floor, feet from my TV, in order to play. Like the days of Yore, I suppose.</p>
-</section>
-<section id="chatgpt-and-dall-e-for-science" class="level3">
-<h3 class="anchored" data-anchor-id="chatgpt-and-dall-e-for-science">ChatGPT and DALL-E, for “science”</h3>
-<p>I recently started a new collaboration investigating the utility of commercial LLMs—specifically, <a href="https://platform.openai.com/docs/guides/vision">the new GPT 4 with vision</a>—in understanding, deciphering, and analyzing biomedical image data.</p>
-<p>I’ve thrown a little bit of my [OPENLY AVAILABLE] data at it. To use the academic lingo: the performance to date has been decidedly unimpressive. But work continues.</p>
-<p>Nevertheless, it’s also given me the opportunity to play around again with image generators (I stopped paying Midjourney a long time ago). In particular, I’ve been keen to see if ChatGPT’s integration with DALL-E has allowed for better <em>iteration</em> on images—carrying over context from previous image prompts to iterate on and improve subsequent images.</p>
-<p>With Midjourney, iteration often entailed copy/pasting the previous prompt and making subtle changes that I thought would give me what I was looking for. Here, I was hopeful that, given the conversational interface with ChatGPT, I could now just tweak the things I wanted to change by “having a chat.”</p>
-<p>Yet again, I was disappointed. But I did come up with some interesting mash-ups. Inspired by a <a href="ai_symposium_keynote.jpg">recent keynote speech</a> at our Institute of AI Symposium, I wanted to see what favorite universes of mine I could combine.</p>
-<p>If anyone has read any of Brandon Sanderson’s Stormlight Archive, they will immediately recognize <a href="https://coppermind.net/wiki/Herald">the ten Heralds</a>. For those who haven’t: think of the Heralds as <em>deeply flawed and damaged, likely insane</em> superheroes. Maybe not “The Boys” level awful, but certainly not your aw-shucks-go-team plucky Avengers.</p>
-<p>Well, I tried putting them in different situations. First I tried oil paintings in the medieval ages.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://magsol.github.io/posts/2023-12-08-advent-of-adventure/heralds_medieval.jpg" class="img-fluid figure-img"></p>
-<figcaption>The 10 Heralds, depicted in a medieval oil painting style.</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://magsol.github.io/posts/2023-12-08-advent-of-adventure/heralds_medieval2.jpg" class="img-fluid figure-img"></p>
-<figcaption>A second attempt at the same image.</figcaption>
-</figure>
-</div>
-<p>In both cases, you may notice… there are more than 10 individuals. I couldn’t find a way to <em>guarantee</em> the number I was asking for, as you’ll see.</p>
-<p>Next I tried the Heralds in the Lego universe.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://magsol.github.io/posts/2023-12-08-advent-of-adventure/heralds_lego.jpg" class="img-fluid figure-img"></p>
-<figcaption>The 10 Heralds as LEGO heroes.</figcaption>
-</figure>
-</div>
-<p>Again, it <em>seems</em> as though there are 11 people? And what’s with the bird motif, suddenly? I said nothing about birds.</p>
-<p>This continues when I tried putting the Heralds in the Marvel Avengers universe.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://magsol.github.io/posts/2023-12-08-advent-of-adventure/heralds_avengers.jpg" class="img-fluid figure-img"></p>
-<figcaption>The 10 Heralds as the Avengers.</figcaption>
-</figure>
-</div>
-<p>Again, I count 11 individuals, with no fewer than three wearing Iron Man-like powered suits. You can’t <em>all</em> be Iron Man!</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://magsol.github.io/posts/2023-12-08-advent-of-adventure/heralds_avengers2.jpg" class="img-fluid figure-img"></p>
-<figcaption>The 10 Heralds as the Avengers, again.</figcaption>
-</figure>
-</div>
-<p>Once more, the weird bird motif shows up, despite no mention of birds in the prompt (or any part of the ChatGPT discussion thread). There also only seem to be 9? And Captain America’s shield is just… floating there. I do love that Iron Spider suit, though; I wonder which Herald that is.</p>
-<p>From here I tried pitting the Heralds against <em>Legend of Zelda: Tears of the Kingdom</em> enemies, but set in <em>The Expanse</em> universe.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://magsol.github.io/posts/2023-12-08-advent-of-adventure/heralds_mordor.jpg" class="img-fluid figure-img"></p>
-<figcaption>The 10 Heralds fighting demonic robots on a shattered landscape in a gritty world.</figcaption>
-</figure>
-</div>
-<p>As far as I can tell, there are only 5 Heralds, but otherwise this picture is pretty cool. I love how Mordor-esque the landscape is, and even though the robot army bears no resemblance to anything in <em>Tears of the Kingdom</em>, it’s still pretty neat.</p>
-<p>The second attempt was a lot closer to what I was looking for:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://magsol.github.io/posts/2023-12-08-advent-of-adventure/heralds_vs_guardians.jpg" class="img-fluid figure-img"></p>
-<figcaption>The 10 Heralds fighting demonic spider-like robots on a shattered landscape in a gritty world.</figcaption>
-</figure>
-</div>
-<p>Still only 9 Heralds as far as I can tell, and again the humanoid robots aren’t recognizable, BUT I <em>love</em> the giant arachnid enemies. I can definitely see that as an <em>Expanse</em>-ification of the classic <em>Breath of the Wild</em> <a href="https://zelda.fandom.com/wiki/Guardian">Guardians</a>.</p>
-<p>From here I tried a smattering of other things.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://magsol.github.io/posts/2023-12-08-advent-of-adventure/jez_as_pres.jpg" class="img-fluid figure-img"></p>
-<figcaption>A United States Presidential headshot of Jezrien, the leader of the Heralds.</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://magsol.github.io/posts/2023-12-08-advent-of-adventure/kaladin_botw.jpg" class="img-fluid figure-img"></p>
-<figcaption>A picture of Kaladin, one of the Knights Radiant, in the art style of Breath of the Wild.</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://magsol.github.io/posts/2023-12-08-advent-of-adventure/roci_as_zonai.jpg" class="img-fluid figure-img"></p>
-<figcaption>A depiction of the Rocinante, the Martian gunship from The Expanse, if it were engineered as a Zonai construct from Tears of the Kingdom.</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://magsol.github.io/posts/2023-12-08-advent-of-adventure/roci_in_hateno.jpg" class="img-fluid figure-img"></p>
-<figcaption>Another depiction of the Rocinante, this time showing it having landed in Hateno Village, in the art style of Breath of the Wild.</figcaption>
-</figure>
-</div>
-<p>Each one of these deviates significantly from what I would have expected, which is not a problem per se. I would say that they do seem to have a tendency to gravitate toward certain modes, and it’s <em>really hard</em> to pull the image generators off those modes.</p>
-</section>
-<section id="rae-rae-rae-your-robot" class="level3">
-<h3 class="anchored" data-anchor-id="rae-rae-rae-your-robot">Rae rae rae your robot</h3>
-<p>I backed the Luxonis kickstarter last year for the <a href="https://shop.luxonis.com/collections/oak-cameras-1/products/rae">rae robots</a> (Robotics Access for Everyone), and since getting them, they’ve been… tricky.</p>
-<p>The forums are full of folks just <a href="https://discuss.luxonis.com/t/rae">trying to get them working</a>, and the associated documentation is extremely sparse to entirely nonexistent. It’s a brand-new product, but the team definitely hasn’t had a chance to catch up on the documentation side.</p>
-<p>I ended up getting things working, but it required multiple lines of advice combined in different ways.</p>
-<p>Firstly, I started with the <a href="https://docs-beta.luxonis.com/hardware/rae/get-started/?v=Advanced+%28manual%29">Advanced (manual) setup</a>, and this… ended up being impossible, at least if you want your rae to show up on Robothub (which, currently, is the only way to install and run apps). I’ll write a later post documenting this side, but suffice to say, it just doesn’t work.</p>
-<p>Secondly, I couldn’t get the hard reset button on the bottom of the rae to work. I may have been doing it wrong. But I found <a href="https://discuss.luxonis.com/d/2328-newbee-quick-starter-to-get-code/3">this excellent post outlining a “soft reset”</a> that worked perfectly.</p>
-<p>Thirdly, from the moment I pushed the power button on the rae, I just pointed it at the QR code from Robothub (linked from the <a href="https://docs-beta.luxonis.com/hardware/rae/get-started/?v=RobotHub+Cloud">Cloud setup instructions</a>) and held it there for several minutes. Eventually, the lights started flashing blue at regular intervals and the screen indicated it was connecting to my local wifi network. The rest worked as advertised (even if the lights turn red, apparently this is a known bug).</p>
-<p>I haven’t done anything else with them yet, except name them.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://magsol.github.io/posts/2023-12-08-advent-of-adventure/rae.jpg" class="img-fluid figure-img" alt="Two rae robots, with name tags on their tops: one says 'koume', the other says 'kotake'."></p>
-<figcaption>Zelda fans, unite.</figcaption>
-</figure>
-</div>
-</section>
-<section id="whats-next" class="level3">
-<h3 class="anchored" data-anchor-id="whats-next">What’s next?</h3>
-<p>Consider this my first official entry into <code>#DecemberAdventure</code>, and maybe retroactively through the whole month of December so far.</p>
-<p>After today, I’ll try to post regular updates on Mastodon about my <code>#DecemberAdventure</code> activities. Now the semester is <em>largely</em> over—there are still some outstanding obligations, but without class there should be more time for tinkering.</p>
-<p>And relaxing.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://magsol.github.io/posts/2023-12-08-advent-of-adventure/coffee_shop_fireplace.jpg" class="img-fluid figure-img" alt="First-person perspective of the interior of a warm and cozy coffee shop, with a fireplace at one end. There's a coffee table in the middle, a decorated Christmas tree on the right, and other decorations are hung on the mantle. A painting of a reindeer is on the wall above the fireplace."></p>
-<figcaption>More of this, please.</figcaption>
-</figure>
-</div>
-
-
-</section>
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2023,
-  author = {Quinn, Shannon},
-  title = {Advent of {Adventure}},
-  date = {2023-12-08},
-  url = {https://magsol.github.io/2023-12-08-advent-of-adventure},
-  langid = {en}
-}
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2023" class="csl-entry quarto-appendix-citeas">
-Quinn, Shannon. 2023. <span>“Advent of Adventure.”</span> December 8,
-2023. <a href="https://magsol.github.io/2023-12-08-advent-of-adventure">https://magsol.github.io/2023-12-08-advent-of-adventure</a>.
-</div></div></section></div> ]]></description>
-  <category>personal</category>
-  <category>professional</category>
-  <category>advent of code</category>
-  <category>december adventure</category>
-  <category>rae</category>
-  <category>retropie</category>
-  <category>dall-e</category>
-  <guid>https://magsol.github.io/posts/2023-12-08-advent-of-adventure/</guid>
-  <pubDate>Fri, 08 Dec 2023 15:01:00 GMT</pubDate>
-  <media:content url="https://magsol.github.io/posts/2023-12-08-advent-of-adventure/heralds_mordor_full.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>

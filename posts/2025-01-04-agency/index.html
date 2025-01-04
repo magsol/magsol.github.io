@@ -8,7 +8,7 @@
 
 <meta name="author" content="Shannon Quinn">
 
-<title>December Adventure: How does DNS work – Stochastic Stenography</title>
+<title>Agency – Stochastic Stenography</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -80,22 +80,22 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="December Adventure: How does DNS work – Stochastic Stenography">
-<meta property="og:description" content="How could something so simple be so complicated">
-<meta property="og:image" content="https://magsol.github.io/posts/2024-12-17-december-adventure-how-does-dns-work/itwasdns.png">
+<meta property="og:title" content="Agency – Stochastic Stenography">
+<meta property="og:description" content="2024 in review">
+<meta property="og:image" content="https://magsol.github.io/posts/2025-01-04-agency/sky.png">
 <meta property="og:site_name" content="Stochastic Stenography">
 <meta property="og:locale" content="en_US">
-<meta property="og:image:height" content="879">
-<meta property="og:image:width" content="1475">
-<meta property="og:image:alt" content="Meme showing a haiku: 'It's not DNS / There's no way it's DNS / It was DNS.' Credit: https://www.reddit.com/r/sysadmin/comments/6qhih0/its_always_dns/">
-<meta name="twitter:title" content="December Adventure: How does DNS work – Stochastic Stenography">
-<meta name="twitter:description" content="How could something so simple be so complicated">
-<meta name="twitter:image" content="https://magsol.github.io/posts/2024-12-17-december-adventure-how-does-dns-work/itwasdns.png">
+<meta property="og:image:height" content="1024">
+<meta property="og:image:width" content="768">
+<meta property="og:image:alt" content="Clouds forming an incredible pattern with what looks like a crevasse down the middle, through which sun rays can be seen.">
+<meta name="twitter:title" content="Agency – Stochastic Stenography">
+<meta name="twitter:description" content="2024 in review">
+<meta name="twitter:image" content="https://magsol.github.io/posts/2025-01-04-agency/sky.png">
 <meta name="twitter:creator" content="@SpectralFilter">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image-height" content="879">
-<meta name="twitter:image-width" content="1475">
-<meta name="twitter:image:alt" content="Meme showing a haiku: 'It's not DNS / There's no way it's DNS / It was DNS.' Credit: https://www.reddit.com/r/sysadmin/comments/6qhih0/its_always_dns/">
+<meta name="twitter:image-height" content="1024">
+<meta name="twitter:image-width" content="768">
+<meta name="twitter:image:alt" content="Clouds forming an incredible pattern with what looks like a crevasse down the middle, through which sun rays can be seen.">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -130,14 +130,12 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">December Adventure: How does DNS work</h1>
-            <p class="subtitle lead">How could something so simple be so complicated</p>
+      <h1 class="title">Agency</h1>
+            <p class="subtitle lead">2024 in review</p>
                                 <div class="quarto-categories">
                 <div class="quarto-category">personal</div>
-                <div class="quarto-category">december adventure</div>
-                <div class="quarto-category">reverse proxy</div>
-                <div class="quarto-category">traefik</div>
-                <div class="quarto-category">dns</div>
+                <div class="quarto-category">professional</div>
+                <div class="quarto-category">new years</div>
               </div>
                   </div>
   </div>
@@ -155,7 +153,7 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">Posted on the 17th of December in the year 2024, at 9:06pm. It was Tuesday.</p>
+        <p class="date">Posted on the 4th of January in the year 2025, at 3:25pm. It was Saturday.</p>
       </div>
     </div>
     
@@ -174,43 +172,125 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 
 
 
-<p><img src="itwasdns.png" class="preview-image img-fluid" alt="Meme showing a haiku: 'It's not DNS / There's no way it's DNS / It was DNS.' Credit: https://www.reddit.com/r/sysadmin/comments/6qhih0/its_always_dns/"></p>
-<p>I always feel like I have the dumbest questions, mostly because I cannot seem to find answers on the internet.</p>
-<p>(either that, or my questions are so SMART, no one’s thought of them; or search engines have gotten SO BAD that they don’t really work anymore… equal odds, I’d say)</p>
-<p>In my last post, I’d prototyped a way of reverse proxying a service that runs on a different physical machine than the reverse proxy itself (and which perhaps should be stated explicitly: the service is also NOT part of the kubernetes cluster that the reverse proxy is). However, I couldn’t actually access it… because I didn’t have a DNS entry for said external service. I could reach the reverse proxy, but it didn’t know where to go from there.</p>
-<p>Which made me realize a conundrum: how do I actually configure DNS to do this?</p>
-<p>I’m trying to set up a subdomain on a domain I already own (quinnwitz.house), except this subdomain is <strong>only accessible from my LAN.</strong> So anytime someone goes to, say, <code>jellyfin.home.quinnwitz.house</code>, it does nothing <em>unless</em> they’re on my home LAN, in which case they’ll go to my local JellyFin instance (and it’ll have an SSL cert).</p>
-<p>It’s clear I need to create an A record for a wildcard domain… but it’s <em>not</em> clear 1) where this A record should reside (the base quinnwitz.house domain is on Cloudflare; is that where it should go, too?), and 2) what it should point to.</p>
-<p>I did manage to find a single Reddit thread asking pretty much exactly this question: <a href="https://www.reddit.com/r/homelab/comments/17h16g7/cloudflare_dns_pointed_to_internal_ip_address_safe/">is it safe to put a wildcard subdomain on Cloudflare, pointing to an <em>internal</em> IP address</a>? The answer seems to be “yes”, but I can’t help but wonder if this is the “right” way of doing it.</p>
-<p>After posting about my last update on Mastodon, I did get a couple of responses (thank you! and yes, <a href="https://doc.traefik.io/traefik-hub/api-management/external-api#create-an-externalname-service">traefik does indeed support <code>externalName</code></a>). But the crux of it all still <em>assumed</em> I had a wildcard A record set up somewhere, when… that is currently not the case, and is indeed the thing from the previous update where I mentioned that I knew what was wrong, but wasn’t sure how to fix it.</p>
-<p>If anyone has any ideas, I’d love to hear it.</p>
-<hr>
-<p>As an aside, there are some great DNS memes out there. Here are two of my favorites.</p>
+<p><img src="sky.png" class="preview-image img-fluid" alt="Clouds forming an incredible pattern with what looks like a crevasse down the middle, through which sun rays can be seen."></p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Content warning: language, discussion of mental health struggles, and pet death.</p>
+</div>
+</div>
+<p>I’ve been thinking a lot about “agency” this year, and how the lack thereof underlies <em>so much</em> of what I’ve been struggling with the past several years. Arguably it’s been my singular source of burnout, and is my focus for 2025.</p>
+<section id="work" class="level3">
+<h3 class="anchored" data-anchor-id="work">Work</h3>
+<p>I realize I haven’t really posted much work stuff here, despite saying I would in previous posts. Work has easily been the single greatest source of stress for me over the past decade, in no small part because it has <em>embodied</em> my lack of agency, starting—frankly—all the way back when I was initially offered the position at UGA.</p>
+<p>This past year, I worked as a “Principal AI/ML Scientist” with a small, Pittsburgh-based biotech startup called <a href="https://predxbio.com/">PredxBio</a>. I was officially on sabbatical with UGA, though my intention at the time was to leave UGA entirely sometime during 2024. Unfortunately, 2023-2024 have been extremely rough years for not-FAANG tech companies, startups in particular. Sometime in the summer, the CTO informed me that things were looking bleak funding-wise. So I started laying some other groundwork (I’ll come back to this in a minute).</p>
+<p>PredxBio is, professionally, <em>hands-down the most fun I’ve had in the last 10 years</em>. I worked with a small but incredibly talented and dedicated team on both the science and engineering around a niche but fast-growing area called “<a href="https://en.wikipedia.org/wiki/Spatial_biology">spatial biology</a>.” In practice, I helped bring some industry-standard development practices to their existing spatial proteomics pipeline, refactoring some years-old code which led to (I kid you not) a 1000% increase in performance—an operation which took two days was reduced to <em>30 seconds</em>. I also dove into the (very cool) <a href="https://scverse.org/">scverse</a> ecosystem and created the company’s first spatial transcriptomics pipeline. I was in the middle of working on a project for a client that would actually <em>combine</em> the proteomics and transcriptomics pipelines—become truly multiomics—when the year ended. It’s an incredible project, with incredible people, and I’ve been mourning having to leave since November.</p>
+<p>Now, enter said groundwork. For most of the summer, I spoke with the unit heads of both the UGA Institute of Bioinformatics (IOB) and Department of Cellular Biology, the latter of which is already one of my home units. I pitched, and was eventually able to land, a change in my “home unit” assignment: rather than being split between Computer Science and Cellular Biology, I will zero out Computer Science and move that affiliation over to IOB. There are <em>a lot</em> of reasons for this, both personal and professional, but it boils down to <em>agency</em>: I wanted to build a role that I could get excited about, where I could pursue computational biology questions that excited me, both in the classroom and the laboratory, while working with colleagues and students who were likewise excited and supportive.</p>
+<p>I’ve gotten everything out of Computer Science that I can, and it’s gotten more than its fair share out of me. This is an opportunity of <em>my own making</em>—of course, done in collaboration with people I couldn’t have done it without, and with whom I hope to continue collaborating as fruitfully for years to come. But unlike when I first accepted the CS position over a decade ago, I not only voiced my concerns and requests, but <em>stood by them</em> until we reached a consensus based on mutual understanding.</p>
+<p>Even better: I’m planning to continue consulting one day per week with PredxBio (as per my right as faculty), with the plan/hope that, if all goes well financially over the next few months, I’ll return to full-time over the summer. In my dream scenario, I’m also planning to submit an R01 grant that names PredxBio as a chief collaborator; if funded, this would solidify our professional relationship for at least the next five years, and give both of us the financial and logistical flexibility to continue working together. It’d even open up a recruiting avenue if PredxBio needs to start hiring (definitely a longer term plan!), so I’m really crossing my fingers here.</p>
+<p>Suffice to say, I’m trying to create something that actually gets me out of bed in the mornings. The perfect antidote to burnout, or at least the next step in healing. Rather than stumbling from one five-alarm fire to the next, I’m trying to be intentional.</p>
+<p>Time will tell. But for now, I’m cautiously optimistic.</p>
+<p>There is still <em>A LOT</em> I find problematic with academia in general, UGA specifically, and my units in particular. A couple weeks ago I was invited out of the blue to apply for an NIH early career reviewer program, only to have my application desk-rejected after I’d put in a few hours to assemble everything. This past summer, UGA committed the third accounting error in as many years whereby someone up the chain fucked up my financials, but in order to fix it, needed to either nuke my indirect accounts or, in this case, withhold subsequent paychecks to cover the difference (the total amount UGA has fucked me over is now in excess of $130,000, I should add). I just had a conference paper rejected, and the two reviewers’ feedback I received totaled three sentences, all of which were addressed in the paper itself.</p>
+<p>These are things I have no control over; raging against them is certainly what I’d like to do, but would ultimately be a waste of time and energy. Like the design of my new role, I need to focus on what I can control in order to create opportunities. So for the time being, I’m keeping one foot in academia.</p>
+</section>
+<section id="running" class="level3">
+<h3 class="anchored" data-anchor-id="running">Running</h3>
+<p>I’ll go into this more on my <a href="https://wherearethepancakes.wordpress.com/">running blog</a>, but since I mentioned it in my <a href="../../posts/2024-01-05-a-year-of-extremes/index.html">2023 retrospective post</a>, I wanted to say here: not only did I hit 1000 miles this year, I piled on another 70 for good measure. I also hit a week of over 30 miles (once, but still), and the Chickamauga Battlefield half marathon for the first time since 2018 (I ran the full marathon in 2019, so it’d been only five years since going to the actual location for a race).</p>
+<p>There’s still a lot to do here—I’m still feeling as though long COVID has its claws in me and I’d really like to get some answers; I’m also frustrated with how I don’t feel as though I’ve gotten any faster this year; long runs in particular have been grueling, and I’m not sure if it’s because of the first item or something innocuous (e.g., I need a better fueling strategy)—but I’m proud of the routines and habits I’ve established, and the <em>space</em> I’ve created for running, and I finally feel as though running is truly part of who I am again.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="historychannel.jpg" class="img-fluid figure-img" alt="Meme of the History Channel interviewee, saying 'I'm not saying it's DNS, but it's DNS.'"></p>
-<figcaption>History Channel actually gets it right.</figcaption>
+<p><img src="chickamauga.jpg" class="img-fluid figure-img"></p>
+<figcaption>A post-race photo with Cathryn, our friend Laura, and her partner Zach.</figcaption>
 </figure>
 </div>
+</section>
+<section id="personal" class="level3">
+<h3 class="anchored" data-anchor-id="personal">Personal</h3>
+<p>This year was… a lot. I go into it quite a bit in <a href="../../posts/2024-06-13-desolation/index.html">this post from the summer</a>: our 9+ year old bunny Clover dying, my parents’ house being broken into, the multiple bullshit accounting mistakes made by UGA which I had to bail them out of, starting back on SSRIs for the first time in several years, parenting a toddler-turned-young-kid, (inter)national politics. To this day, I cannot say which I find more repugnant: RG progressives who have no Middle East connections but suddenly became Middle East geopolitical experts on Oct 8, 2023, yet have been silent ever since; or TG progressives, likewise with no Middle East connections, who have since made the Middle East their entire personalities.</p>
+<p>On that note, I’ve also wrestled with a lot of my own inner demons: one of my goals for 2024 to work on my deep-seated anger and resentment. This entailed coming to terms with prior working situations, re-evaluating relationships, and making a whole lot of decisions about what was important enough to continue to make space for, and what needed to be let go. This was as innocuous as deep cleaning our garage and its 10+ years of accumulated <em>stuff</em> when contractors came to install our solar panels + battery setup: a lot of it we could easily part with, but some had pretty deep sentimental value but was otherwise just taking up space. It was also as complicated as relationships that have changed for reasons unknown, and it’s that unknown part that is the most heartbreaking and makes it so difficult to decide one way or the other whether to keep sticking it out; in the end, we need to do what’s best for us.</p>
+<p>My wife’s therapist put it nicely: we’re closing the door, but that doesn’t mean they can’t knock on it sometime later, at which point it’s up to us whether we answer.</p>
+<p>I’m also working on a mindset shift, one that understands and embraces the truth that current situations are <em>temporary</em> by definition, and I can decide whether I want to tough it out or go try something else. This is a valuable perspective both personally, but also professionally—it underlies all my efforts to create something that excited me: if things are still miserable, I can try something else. Or leave.</p>
+<p>I did set up a Signal group chat following the election, full of <em>absolutely wonderful</em> human beings who have easily been the most consistently bright point in the weeks since<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. It’s not a large group, just 10 of us (some I haven’t met in person), but we’ve already had some wonderful discussions. It can be more or less summed up by the image I chose as the group avatar. National politics continues to be a shitshow and will likely only get worse over the next four years, but <a href="https://amyjko.medium.com/the-coming-storm-03a03750016b">this mindset shift should help</a>. My therapist has always said to lean into worse-case scenarios, not because they’ll necessarily become true, but because we may discover <a href="https://www.ncronline.org/opinion/editorial/editorial-hope-time-darkness">we’re more resilient than we initially thought</a>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="itsalwaysdns.jpg" class="img-fluid figure-img" alt="Meme showing a counter of 'Days since it was DNS', with the count set to 0."></p>
-<figcaption>It’s always DNS.</figcaption>
+<p><img src="log_cabin.png" class="img-fluid figure-img"></p>
+<figcaption>A cozy log cabin somewhere in Appalachia, with everything covered in snow.</figcaption>
+</figure>
+</div>
+<p>I also <a href="../../posts/2024-01-25-the-legend-of-makar/index.html">assembled the single most powerful desktop I’ve ever built</a>, organized the home upstairs office with a server rack, upgraded our home network with a <a href="https://firewalla.com/">Firewalla</a>, and have spent the last month making progress on <a href="../../posts/2024-12-04-december-adventure-2024-edition/index.html">more easily accessible homelab services</a>. We had our nearly-20-year-old roof replaced, had solar panels put on it and backup batteries installed, substantially improved the insulation in our attic space, and are epsilon-away from having a couple of windows replaced to really complete weather-ification.</p>
+</section>
+<section id="summary-of-2024" class="level3">
+<h3 class="anchored" data-anchor-id="summary-of-2024">Summary of 2024</h3>
+<p>The Good:</p>
+<ul>
+<li>Best professional work experience in 10 years, top to bottom, with PredxBio</li>
+<li>Broke 1000 miles running for the first time since 2019</li>
+<li>Forged a “new” position at UGA for myself starting in 2025</li>
+<li>Set personal and professional boundaries and held them</li>
+<li>Maintained phenomenal consistency with physical activities across the board</li>
+<li>Built some really cool shit</li>
+</ul>
+<p>The Bad:</p>
+<ul>
+<li>Mental health struggles, back on medication</li>
+<li>Running speed has not improved in a year</li>
+<li>Still a lot of lingering resentment around some relationships</li>
+<li>Losing our beloved bunny, Clover</li>
+</ul>
+<p>The Ugly:</p>
+<ul>
+<li>The fucking election</li>
+<li>Continued fallout from Oct 7, 2023</li>
+<li>Parents’ house being burglarized</li>
+<li>Having contractors in our house sucks; them breaking shit is another level</li>
+</ul>
+</section>
+<section id="plans-for-2025" class="level3">
+<h3 class="anchored" data-anchor-id="plans-for-2025">Plans for 2025</h3>
+<p>I’m still not making “resolutions” in the traditional sense. As <a href="https://mastodon.social/@glyph/113755645565821731">a recent toot made very explicit</a>: “the structure of the exercise is practically designed to set you up for failure” (like some other things of the past few years<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>). As <a href="https://mastodon.social/@grimalkina/113754067707608423">someone I deeply admire</a> put it: “it is always a wonder how much this [time off] ultimately actually leads to things the world sees as productive….when you make that NOT the goal”.</p>
+<p>Nevertheless, my biggest priorities this year are to focus on <strong>agency and intentionality</strong>: creating opportunities where I can, and walking away when I need to. I created this “new” role for myself at UGA; now I need to commit to doing everything I can to succeed in it. At the same time, I can always tweak things that aren’t working; alternatively, I can walk away entirely. My situation need not be permanent. Change, or choose.</p>
+<p>My other plans, in no particular order:</p>
+<ul>
+<li>1000+ miles running (again), with an emphasis on 100+ mile months, and 30+ mile weeks</li>
+<li>Finish cleaning out the garage, and start in earnest on cleaning out the upstairs</li>
+<li>Keep cultivating new opportunities through consistency and intentionality</li>
+<li>Set and hold boundaries, especially around work/life balance</li>
+</ul>
+<p>In my <a href="../../posts/2025-01-01-december-adventure-thats-a-wrap/index.html"><code>#DecemberAdventure</code> wrap-up post</a>, I laid out the next steps for getting internal/homelab services up and running with their own DNS entries and SSL certificates. I feel reasonably confident about this approach, thanks to some of the groundwork I did last year and especially during <code>#DecemberAdventure</code>. The first step? Completely reformat my Pi cluster and start over!</p>
+<p>Happy 2025, everyone. Much love to all.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="clover.jpg" class="img-fluid figure-img"></p>
+<figcaption>Miss this sweet, sassy, beautiful girl every single day. We love you, Clover.</figcaption>
 </figure>
 </div>
 
 
+</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2024,
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Not to mention learning all about how animals are classified!<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p><em>shifty eyes</em><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2025,
   author = {Quinn, Shannon},
-  title = {December {Adventure:} {How} Does {DNS} Work},
-  date = {2024-12-17},
-  url = {https://magsol.github.io/2024-12-17-december-adventure-how-does-dns-work},
+  title = {Agency},
+  date = {2025-01-04},
+  url = {https://magsol.github.io/2025-01-04-agency},
   langid = {en}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2024" class="csl-entry quarto-appendix-citeas" role="listitem">
-Quinn, Shannon. 2024. <span>“December Adventure: How Does DNS
-Work.”</span> December 17, 2024. <a href="https://magsol.github.io/2024-12-17-december-adventure-how-does-dns-work">https://magsol.github.io/2024-12-17-december-adventure-how-does-dns-work</a>.
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2025" class="csl-entry quarto-appendix-citeas" role="listitem">
+Quinn, Shannon. 2025. <span>“Agency.”</span> January 4, 2025. <a href="https://magsol.github.io/2025-01-04-agency">https://magsol.github.io/2025-01-04-agency</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
