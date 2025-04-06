@@ -8,7 +8,7 @@
 
 <meta name="author" content="Shannon Quinn">
 
-<title>New year, new blog layout – Stochastic Stenography</title>
+<title>From the ground up with self-hosting – Stochastic Stenography</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -80,20 +80,18 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="New year, new blog layout – Stochastic Stenography">
-<meta property="og:description" content="Data, donuts, and detours">
-<meta property="og:image" content="https://magsol.github.io/images/logo.png">
+<meta property="og:title" content="From the ground up with self-hosting – Stochastic Stenography">
+<meta property="og:description" content="Fifty steps back, one step forward">
+<meta property="og:image" content="https://magsol.github.io/posts/2025-04-06-from-the-ground-up-with-self-hosting/light_tunnel.jpg">
 <meta property="og:site_name" content="Stochastic Stenography">
 <meta property="og:locale" content="en_US">
-<meta property="og:image:height" content="1024">
-<meta property="og:image:width" content="1024">
-<meta name="twitter:title" content="New year, new blog layout – Stochastic Stenography">
-<meta name="twitter:description" content="Data, donuts, and detours">
-<meta name="twitter:image" content="https://magsol.github.io/images/logo.png">
+<meta property="og:image:alt" content="A Playground-generated image of a walking path flanked by old-timey lights leading into what appears to be a castle (aka, the destination).">
+<meta name="twitter:title" content="From the ground up with self-hosting – Stochastic Stenography">
+<meta name="twitter:description" content="Fifty steps back, one step forward">
+<meta name="twitter:image" content="https://magsol.github.io/posts/2025-04-06-from-the-ground-up-with-self-hosting/light_tunnel.jpg">
 <meta name="twitter:creator" content="@SpectralFilter">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image-height" content="1024">
-<meta name="twitter:image-width" content="1024">
+<meta name="twitter:image:alt" content="A Playground-generated image of a walking path flanked by old-timey lights leading into what appears to be a castle (aka, the destination).">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -128,11 +126,15 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">New year, new blog layout</h1>
+      <h1 class="title">From the ground up with self-hosting</h1>
+            <p class="subtitle lead">Fifty steps back, one step forward</p>
                                 <div class="quarto-categories">
                 <div class="quarto-category">personal</div>
-                <div class="quarto-category">new year</div>
-                <div class="quarto-category">blog</div>
+                <div class="quarto-category">self hosting</div>
+                <div class="quarto-category">kubernetes</div>
+                <div class="quarto-category">k3s</div>
+                <div class="quarto-category">mastodon</div>
+                <div class="quarto-category">unraid</div>
               </div>
                   </div>
   </div>
@@ -150,7 +152,7 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">Posted on the 6th of January in the year 2018, at 5:47pm. It was Saturday.</p>
+        <p class="date">Posted on the 6th of April in the year 2025, at 2:54pm. It was Sunday.</p>
       </div>
     </div>
     
@@ -169,23 +171,27 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 
 
 
-<p>Happy 2018!</p>
-<p>I’ve been wanting to put a fresh coat of paint on things for awhile around here, especially since the old Flex template didn’t have a really good way of supporting embedded Jupyter notebooks without completely upending the CSS (love the theme otherwise!).</p>
-<p>Taking a page (or really, an entire layout) from <a href="https://jakevdp.github.io/">Jake’s blog</a>, I can now embed Jupyter notebooks without trashing the whole layout of the site. There are some posts I’ve been wanting to make for awhile that will require a considerable amount of code, so I’m excited to be able to dig into them now!</p>
-<p>I’ll be following up soon with a lengthier resolutions post, but for now I just wanted to say “I’m still alive” and roll out the new layout. Happy new year everyone!</p>
+<p><img src="light_tunnel.jpg" class="preview-image img-fluid" alt="A Playground-generated image of a walking path flanked by old-timey lights leading into what appears to be a castle (aka, the destination)."></p>
+<p>On the evening of Thursday, January 16, I shut down all my self-hosted servers and services in preparation for one final home renovation project (which, thankfully, would take only the next day and be done after that). In my head, I figured it’d take a day or two to clean the rooms involved and put all the furniture back, after which I’d need another day or two to get my home services up and running again. After all, a year ago I’d reorganized all the upstairs networking hardware and servers into a handy little mini-rack, so everything was nicely contained! Shouldn’t be too hard, right?</p>
+<p>…here we are, almost <em>three full months later</em>, and I’m starting to see the light at the end of the tunnel. Granted, it hasn’t been all-or-nothing: we were able to clean the rooms involved within 48 hours, and at least in terms of vital home networking, I was indeed able to get that back up and running within the subsequent 24 hours or so.</p>
+<p>But our Quinnwitz Mastodon instance has been down this whole time. Some internal Unraid services have been working for awhile now, but even those took a few days longer than I’d expected. Mastodon has easily been the worst casualty of them all: I had a series of structural improvements I wanted to make to how I configured my kubernetes cluster, stretching both its (and my) capabilities in that regard; this has not only been time-consuming by virtue of its novelty, but also because my return to UGA this semester has been <em>brutal</em> and draining, and I simply haven’t had the bandwidth for experimenting with kubernetes.</p>
+<p>“Experimenting with kubernetes.” Gods, what a euphemism.</p>
+<p>Anyway. But yes, I am starting to see the light at the end of this long tunnel. And while there’s still a ways to go, I’m far enough along that I’ve decided to take all the notes I’ve been making along the way and turn them into a series of blog posts (because there’s simply too much to do in a single post). Plus, it’s been over three months since my last post here, so I suppose I have some catching up to do.</p>
+<p>Hopefully, the end of this series will coincide with—or even follow up on—the return of our Mastodon instance. There are a bunch of other little improvements I’ve made (or will soon make) that I’m pretty excited about, so I’m looking forward to sharing those here in case anyone else finds them useful.</p>
+<p>Stay tuned!</p>
 
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2018,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2025,
   author = {Quinn, Shannon},
-  title = {New Year, New Blog Layout},
-  date = {2018-01-06},
-  url = {https://magsol.github.io/posts/2018-01-06-new-year-new-blog/},
+  title = {From the Ground up with Self-Hosting},
+  date = {2025-04-06},
+  url = {https://magsol.github.io/2025-04-06-from-the-ground-up-with-self-hosting},
   langid = {en}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2018" class="csl-entry quarto-appendix-citeas" role="listitem">
-Quinn, Shannon. 2018. <span>“New Year, New Blog Layout.”</span> January
-6, 2018. <a href="https://magsol.github.io/posts/2018-01-06-new-year-new-blog/">https://magsol.github.io/posts/2018-01-06-new-year-new-blog/</a>.
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2025" class="csl-entry quarto-appendix-citeas" role="listitem">
+Quinn, Shannon. 2025. <span>“From the Ground up with
+Self-Hosting.”</span> April 6, 2025. <a href="https://magsol.github.io/2025-04-06-from-the-ground-up-with-self-hosting">https://magsol.github.io/2025-04-06-from-the-ground-up-with-self-hosting</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
