@@ -1,0 +1,26 @@
+---
+title: "From the ground up with self-hosting"
+subtitle: "Fifty steps back, one step forward"
+date: "2025-04-06 14:54:00"
+categories: [personal, self hosting, kubernetes, k3s, mastodon, unraid]
+citation:
+    url: https://magsol.github.io/2025-04-06-from-the-ground-up-with-self-hosting
+image: "light_tunnel.jpg"
+image-alt: "A Playground-generated image of a walking path flanked by old-timey lights leading into what appears to be a castle (aka, the destination)."
+author: "Shannon Quinn"
+---
+![](light_tunnel.jpg){.preview-image fig-alt="A Playground-generated image of a walking path flanked by old-timey lights leading into what appears to be a castle (aka, the destination)."}
+
+On the evening of Thursday, January 16, I shut down all my self-hosted servers and services in preparation for one final home renovation project (which, thankfully, would take only the next day and be done after that). In my head, I figured it'd take a day or two to clean the rooms involved and put all the furniture back, after which I'd need another day or two to get my home services up and running again. After all, a year ago I'd reorganized all the upstairs networking hardware and servers into a handy little mini-rack, so everything was nicely contained! Shouldn't be too hard, right?
+
+...here we are, almost _three full months later_, and I'm starting to see the light at the end of the tunnel. Granted, it hasn't been all-or-nothing: we were able to clean the rooms involved within 48 hours, and at least in terms of vital home networking, I was indeed able to get that back up and running within the subsequent 24 hours or so.
+
+But our Quinnwitz Mastodon instance has been down this whole time. Some internal Unraid services have been working for awhile now, but even those took a few days longer than I'd expected. Mastodon has easily been the worst casualty of them all: I had a series of structural improvements I wanted to make to how I configured my kubernetes cluster, stretching both its (and my) capabilities in that regard; this has not only been time-consuming by virtue of its novelty, but also because my return to UGA this semester has been _brutal_ and draining, and I simply haven't had the bandwidth for experimenting with kubernetes.
+
+"Experimenting with kubernetes." Gods, what a euphemism.
+
+Anyway. But yes, I am starting to see the light at the end of this long tunnel. And while there's still a ways to go, I'm far enough along that I've decided to take all the notes I've been making along the way and turn them into a series of blog posts (because there's simply too much to do in a single post). Plus, it's been over three months since my last post here, so I suppose I have some catching up to do.
+
+Hopefully, the end of this series will coincide with---or even follow up on---the return of our Mastodon instance. There are a bunch of other little improvements I've made (or will soon make) that I'm pretty excited about, so I'm looking forward to sharing those here in case anyone else finds them useful.
+
+Stay tuned!
