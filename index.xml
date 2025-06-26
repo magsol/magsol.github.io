@@ -16,8 +16,131 @@
 <height>144</height>
 <width>144</width>
 </image>
-<generator>quarto-1.6.43</generator>
-<lastBuildDate>Sun, 06 Apr 2025 14:54:00 GMT</lastBuildDate>
+<generator>quarto-1.7.32</generator>
+<lastBuildDate>Wed, 25 Jun 2025 22:17:00 GMT</lastBuildDate>
+<item>
+  <title>Nothing Is Certain</title>
+  <dc:creator>Shannon Quinn</dc:creator>
+  <link>https://magsol.github.io/posts/2025-06-25-nothing-is-certain/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://magsol.github.io/posts/2025-06-25-nothing-is-certain/portal.png" class="preview-image img-fluid figure-img" alt="A Playground-generated image of a portal that very closely resembles an artificial wormhole from Stargate but is sufficiently different.."></p>
+<figcaption>Where does this path lead? Only one way to find out.</figcaption>
+</figure>
+</div>
+<p>…except death and taxes. Yeah, I know the quote. I just wish I knew what came next.</p>
+<section id="hunt-for-the-red-october-perfect-role" class="level3">
+<h3 class="anchored" data-anchor-id="hunt-for-the-red-october-perfect-role">Hunt for the <del>Red October</del> perfect role</h3>
+<p>In case you don’t follow me on Mastodon, I recently posted this:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://magsol.github.io/posts/2025-06-25-nothing-is-certain/toot.png" class="img-fluid figure-img"></p>
+<figcaption>A post of mine from Mastodon, detailing my acceptance of a job offer and subsequent departure from academia.</figcaption>
+</figure>
+</div>
+<p>Almost exactly two years ago, <a href="../../posts/2023-06-06-this-post-is-about-burnout/index.html">I wrote this post about burnout</a> and my then-current resolve to leave academia. A lot changed in that time: I intentionally cultivated agency, scored an incredibly productive sabbatical (both professionally and personally), and <a href="../../posts/2025-01-04-agency/index.html">set about creating a new faculty role for myself at UGA</a>. I was adament that I would make a decision about my career, and stand behind it. Set myself up to succeed. Commit.</p>
+<p>I’ll admit that, in my more cynical moments, I doubted whether I was committing or simply continuing to avoid making a decision. Inspired by the work I did at PredxBio, I was pursuing multiple interlocking federal grants that would not only jumpstart the next phase of my academic career, but catapult it in a relatively new direction. I was reaching out to faculty at in new departments to forge collaborations. I worked with the UGA Institute of Bioinformatics to move my role entirely out of Computer Science and into where it probably should have been all along. I even got a new office to reflect my changed role.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://magsol.github.io/posts/2025-06-25-nothing-is-certain/stem_office.jpg" class="img-fluid figure-img"></p>
+<figcaption>By the time I leave UGA, I’ll have been in this office for 4 months.</figcaption>
+</figure>
+</div>
+<p>At the same time, I was applying for industry jobs like a fiend; since January 1, I submitted 95 job applications. Only half of those I heard back from; most of these were what I took to calling “desk rejects,” i.e.: “thanks but no thanks.” But there were a handful that wanted to interview me. A couple halted the interview process when I said I had no interest in relocating. Another ended the process after a coding question. Yet another flew me out to their on-site HQ (after <em>five</em> rounds of remote interviews), told me after I “basically had the job,” and then rescinded the soft offer a few days later on the vague notion that I wasn’t committed enough to start-up life<sup>1</sup>.</p>
+<p>Cynicism aside, the objective truth is that I was going full-speed on both sides of the ball. But if I stopped to think about it, I still wondered: was I just putting off a decision?</p>
+</section>
+<section id="agency-agency-agency" class="level3">
+<h3 class="anchored" data-anchor-id="agency-agency-agency">Agency agency agency</h3>
+<p>Following a late May NIH grant deadline that got DOGE’d only three days before<sup>2</sup>, I went into June thinking I’d take a couple weeks off. The Spring 2025 semester was <em>brutal</em>, unlike any teaching semester I’d had in my last 10 years, and between that and the DOGE’d deadline I desperately needed a breather.</p>
+<p>Right around this time, another job opportunity hit my radar, right as I’d returned from that aforementioned whirlwind on-site interview. It also nearly ended just as quickly: after the initial intake, I was told that—because they “didn’t do business in Georgia”—I was no longer under consideration.</p>
+<p>But in a very not-me move, I pushed back: I argued that, at the very least, we should keep talking to find out if it was even a problem that needed solving, and at most, whether the problem’s solution was a win-win for all involved.</p>
+<p>This <em>actually</em> worked! They reached back out, put me on the interview calendar, and holy cow: it was easily the most enjoyable interview process of 2025. I really felt as though I was connecting with the people I met. And only a couple hours after a quick chat with their CTO, an offer came down the pipe that was, to put it simply, too good to pass up.</p>
+<p>I spent the first 24 hours after receving the offer just letting it soak in<sup>3</sup>. For the subsequent 24-36 hours, I did my homework. I really did. I considered, first and foremost: <em>Is this the job I’d leave academia for?</em> Somewhat to my surprise, the answer to this from the start had been an emphatic “Yes” but the process had, if anything, only solidified it further. I also went through the pros-and-cons process<sup>4</sup>, structuring what it would look like to stay or leave UGA, respectively. And in every case, this new role won out.</p>
+</section>
+<section id="from-imaging-to-drug-discovery" class="level3">
+<h3 class="anchored" data-anchor-id="from-imaging-to-drug-discovery">From imaging to drug discovery</h3>
+<p>I’ll have more to say about this later, but quickly: the new role is with <a href="https://www.valohealth.com/">Valo Health</a>, a drug discovery “start-up” (it’s insanely successful and has at least 150 employees, so yes it’s <em>technically</em> a start-up). I’m joining the engineering team to work on the machine learning end with a focus on reproducibility. It’s definitely a step away from where I’ve been focusing the last decade, but during the interview it was made clear that after the first year they’ll be looking to leverage that expertise more into new areas.</p>
+<p>An exciting role with room to grow. Can’t really ask for much more!</p>
+</section>
+<section id="never-a-black-and-white-scenario" class="level3">
+<h3 class="anchored" data-anchor-id="never-a-black-and-white-scenario">Never a black-and-white scenario</h3>
+<p>The decision itself may have been clear, but that did not make it <em>easy</em>, nor <em>painless</em>; quite the opposite on both counts, in fact. UGA was my first “real” job, outside of internships and assistantships. I made progress in my role, winning the proverbial Ivory Tower Pie Eating Contest<sup>5</sup>. And to be completely frank, the part I enjoyed the most—hands down—was getting to work with my dad. He’s always been a hero of mine for as long as I can remember, and <a href="https://news.uga.edu/father-son-faculty-members-team-up-on-nsf-grant/">working on a research team and publishing papers together was truly a dream come true</a>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://magsol.github.io/posts/2025-06-25-nothing-is-certain/stem_office_2.png" class="img-fluid figure-img"></p>
+<figcaption>I’ve barely begun moving into this incredible new office, and pretty soon I’ll vacate it only four months after I was officially assigned it.</figcaption>
+</figure>
+</div>
+<p>More broadly, that’s where this decision is the hardest to accept: an aching feeling of <em>letting these people down</em>. Of abandoning good people in a fight that needs to be fought. Of walking away from obligations that others will have to scramble to handle in my absence. Of leaving behind something that others put time and energy into, and of betraying trust.</p>
+<p>I’ve always been a “put the team first” sort of person, which I’ve had to unlearn in my adult years, at least to the extent where I can set and hold healthy boundaries. This has been especially true around work/life balance, something academia will take every inch you give and run a ten miles with. And that’s where at least part of the guilt comes from: obligations which I don’t necessarily <em>want</em> to do, but which I know need to be done, and which I know will fall more heavily on others.</p>
+</section>
+<section id="its-the-people" class="level3">
+<h3 class="anchored" data-anchor-id="its-the-people">It’s the people</h3>
+<p>But most of all, it’s the people I’ll miss.</p>
+<p>Of course I’ll miss the research questions I never fully answered despite having no shortage of ideas for how to try. I’ll miss the teaching pedagogies and infrastructure I was never able to finish implementing. I’ll miss the crazier ideas for new research institutes (I’ve bounced around ideas for two distinct research centers), new Freshman Odyssey courses (buy everyone in the course a Raspberry Pi; how cool would that be?!), new Data Science Practicum projects (imagine: a tournament of StarCraft bots), and new open source software contributions (I’d really hoped <code>cilia2vec</code> would eventually be a thing).</p>
+<p>But above all that, I’ll miss the colleagues I met and relationships I built. I’ll miss the students who responded positively to the <a href="https://www.17thshard.com/forums/topic/90272-mental-illness-in-the-cosmere/">everyone-is-a-Cosmere-protagonist</a> environment I seemed to cultivate from day 1. I’ll miss the people who had my back, especially in the past couple years. I’ll miss the people who were intentional about <em>lowering</em> the ladder as they climbed it, and the people who took a beat to check in with others around them. I’ll miss having a professional excuse to throw batshit ideas against the wall while having coffee with my Dad on the occasional calm work morning.</p>
+<p>This is where it’s not so much a “decision” as a “process”.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://magsol.github.io/posts/2025-06-25-nothing-is-certain/nameplate.png" class="img-fluid figure-img"></p>
+<figcaption>I never really got used to this classical sign of authority. I never really got used to being addressed as “Professor,” either. To this day, “Dr.&nbsp;Quinn” and “Prof.&nbsp;Quinn” are and always will be my Dad.</figcaption>
+</figure>
+</div>
+</section>
+<section id="disentanglement" class="level3">
+<h3 class="anchored" data-anchor-id="disentanglement">Disentanglement</h3>
+<p>Logistically, there’s a lot to unravel and wind down in the next several weeks, the biggest of which is a brand new undergraduate degree program: an applied computational science degree. I had fever dreams of seeing just about every single Franklin unit involved, making it less a degree program and more a four-year fusion of undergraduate instruction and graduate research. That could still happen, but I need to accelerate my groundwork so the lovely folks working with me on it aren’t left to pick up the pieces.</p>
+<p>Emotionally… it’s a lot more complicated.</p>
+<p>I’ve made no secret<sup>6</sup> over the post-COVID years of my dissatisfaction with academia in general and my role in particular. As part of my “agency” resolution, I wanted to experiment with changing units at UGA: moving out of Computer Science and into the Institute of Bioinformatics. This move was predicated on the hypothesis that some of the aspects of my job that were most draining could be ameliorated, e.g.: a different and less intense instructional load; not only support for, but outright embrace of, interdisciplinary research; a cohesive and concrete vision for the unit broken down into actionable milestones; just to name a few.</p>
+<p>And so far, this move had been everything I’d hoped it to be. Except for <em>expedient</em>: it’s been about a full year since I had that first meeting with the IOB, and at least on paper, that move won’t become official for another week (July 1).</p>
+<p>Just in time for me to resign a month and a half later.</p>
+<p>So another dimension of my mental gymnastics is the warped idea that I haven’t given this new self-direction enough time to mature. After all, didn’t I say I wanted to <em>commit</em>? How is leaving right before a new role kicks in “committing”?</p>
+<p>Honestly, this is the hardest part of my decision. I know it’s the right call, but I can’t and won’t ever be completely certain that—had I decided to keep going down the academic route—I wouldn’t have found a way to make it everything I’d hoped. After 10 years, I can feel pretty confident about it, but it’s impossible to be certain. And, of course, there’s never a guarantee that the grass really is greener.</p>
+<p>Nothing is certain. I’ve done the best I can; all that’s left is to hope.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://magsol.github.io/posts/2025-06-25-nothing-is-certain/clouds.png" class="img-fluid figure-img"></p>
+<figcaption>Here goes everything!</figcaption>
+</figure>
+</div>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Quite the galling thing to say when I flew out on a home-and-back-in-36-hours-flat trip on a mere 6 days’ notice, but hey, I got to see some dear friends I hadn’t seen since 2021 so as far as I’m concerned, it was their loss.↩︎</p></li>
+<li id="fn2"><p>I wish this was a joke. On May 25, it was announced that a bunch of NIH grants had been discontinued, including the one I was working on that was due May 28.↩︎</p></li>
+<li id="fn3"><p>Ask Cathryn about the shit I pulled :)↩︎</p></li>
+<li id="fn4"><p>Thanks to the 5+ year in-progress blog post about academia that may never see the light of day, I already had this pretty well laid out.↩︎</p></li>
+<li id="fn5"><p>i.e., tenure, where the prize is more pie.↩︎</p></li>
+<li id="fn6"><p>At least, no secret <em>in private</em>.↩︎</p></li>
+</ol>
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2025,
+  author = {Quinn, Shannon},
+  title = {Nothing {Is} {Certain}},
+  date = {2025-06-25},
+  url = {https://magsol.github.io/2025-06-25-nothing-is-certain},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2025" class="csl-entry quarto-appendix-citeas">
+Quinn, Shannon. 2025. <span>“Nothing Is Certain.”</span> June 25, 2025.
+<a href="https://magsol.github.io/2025-06-25-nothing-is-certain">https://magsol.github.io/2025-06-25-nothing-is-certain</a>.
+</div></div></section></div> ]]></description>
+  <category>personal</category>
+  <category>professional</category>
+  <guid>https://magsol.github.io/posts/2025-06-25-nothing-is-certain/</guid>
+  <pubDate>Wed, 25 Jun 2025 22:17:00 GMT</pubDate>
+  <media:content url="https://magsol.github.io/posts/2025-06-25-nothing-is-certain/portal.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
 <item>
   <title>From the ground up with self-hosting</title>
   <dc:creator>Shannon Quinn</dc:creator>
@@ -1333,591 +1456,6 @@ Quinn, Shannon. 2024. <span>“Burnout Marathon.”</span> March 1, 2024. <a hre
   <guid>https://magsol.github.io/posts/2024-03-01-burnout-marathon/</guid>
   <pubDate>Fri, 01 Mar 2024 16:12:00 GMT</pubDate>
   <media:content url="https://magsol.github.io/posts/2024-03-01-burnout-marathon/clouds.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>The Legend of Makar</title>
-  <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p><a href="makar.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/makar.jpg" class="preview-image img-fluid" alt="A picture of the Ubuntu landing screen for logged in users, on an ultrawide screen monitor set on a small desk."></a></p>
-<p>I built my first desktop from components when I was 15, a sophomore in high school. With the exception of my college workstation (laptops hadnt’t <em>quite</em> reached ubiquity yet), I’ve assembled every desktop I have ever owned since then.</p>
-<p>It’s a skill and a pasttime I deeply enjoy, but one which I don’t have the opportunity to explore very often. Even though “every desktop since age 15” sounds impressive, in real numbers it amounts to just a handful:</p>
-<ul>
-<li>age 15: my family’s home computer</li>
-<li>age 19: a server for my dorm room</li>
-<li>age 22: my graduate desktop</li>
-<li>age 25: the lab’s new workstation during a rotation (not mine, per se)</li>
-<li>age 29: my “first real job” home desktop</li>
-<li>now: the one in this blog post!</li>
-</ul>
-<p>There were certainly upgrades throughout that timeline—I swapped hard drives and memory in and out of that dorm server many times; my first “real job” desktop saw at least one GPU upgrade; my graduate desktop was a true exercise in frustration as I spent the first <em>two years</em> diagnosing an <a href="https://magsol.wordpress.com/2010/06/28/one-final-technical-appeal/">intermittent and nigh-irreproducible freezing</a>—but it’s actually rare I get brag to folks that I’m “assembling my new computer from parts.”</p>
-<p>So I figured: for this round, I’d go all out with full documentation in the form of a blog post 😁</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Long post ahead
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let the record show: the reader was warned of the length of the post that follows.</p>
-</div>
-</div>
-<section id="hardware" class="level3">
-<h3 class="anchored" data-anchor-id="hardware">Hardware</h3>
-<p>The first step in any desktop build: the hardware! I’ve been scoping out the major components off and on for over a year now, using resources like <a href="https://www.youtube.com/@GamersNexus">GamersNexus reviews</a> and <a href="https://www.tomshardware.com/">Tom’s Hardware</a> to get a feel for what CPUs / motherboards I should look into.</p>
-<p>As an example: I’d spent 11 of the past 12 months with the latest Intel processor locked in, but changed my mind at the [relative] last second when all the head-to-head CPU benchmarks showed the latest AMD Ryzen 9 processors going toe-to-toe with Intel on multithreaded applications (i.e., my work’s bread and butter). That, coupled with AMD’s <em>shocking</em> advantage in power draw and smaller advantage on price made it an immediate no-brainer to switch.</p>
-<p>For the curious, here’s the full list of hardware I ended up going with:</p>
-<ul>
-<li>CPU: <a href="https://www.newegg.com/amd-ryzen-9-7950x-ryzen-9-7000-series/p/N82E16819113771?Item=N82E16819113771">AMD Ryzen 9 7950X</a></li>
-<li>Cooler: <a href="https://www.newegg.com/deepcool-ak400-zero-dark-plus/p/N82E16835856230?Item=N82E16835856230">DeepCool AK400 Zero Dark Plus 120mm</a></li>
-<li>Motherboard: <a href="https://www.newegg.com/msi-mag-x670e-tomahawk-wifi/p/N82E16813144595?Item=N82E16813144595">MSI MAG X670E Tomahawk AM5 ATX</a></li>
-<li>Memory: <a href="https://www.newegg.com/g-skill-96gb/p/N82E16820374465?Item=N82E16820374465">G.SKILL Trident Z5 48GB 288-pin PC RAM DDR5 6800 PC5 54400</a> (4x)</li>
-<li>GPU: <a href="https://www.bestbuy.com/site/gigabyte-nvidia-geforce-rtx-4090-gaming-oc-24gb-gddr6x-pci-express-4-0-graphics-card-black/6521518.p">NVIDIA RTX 4090</a></li>
-<li>PSU: <a href="https://www.amazon.com/dp/B0B433ZCRP?psc=1&amp;ref=ppx_yo2ov_dt_b_product_details">MEG Ai1300P PCIE 5 1300W</a></li>
-<li>Storage: <a href="https://www.newegg.com/samsung-4gb-990-pro/p/N82E16820147878?Item=N82E16820147878">Samsung SSD 990 PRO 2TB M.2 2280</a> (2x)</li>
-<li>Case: <a href="https://www.newegg.com/black-fractal-design-torrent-atx-mid-tower/p/N82E16811352143?Item=N82E16811352143">Fractal Design Torrent Black E-ATX Mid Tower</a></li>
-<li>Monitor: <a href="https://www.amazon.com/gp/product/B088HH6LW5/ref=ppx_yo_dt_b_asin_title_o05_s00?ie=UTF8&amp;psc=1">Samsung 49-inch Odyssey G9</a></li>
-</ul>
-<p>To address the elephant in the room: no, this build was not cheap, at <em>all</em>. This is all top-of-the-line hardware, meant to 1) last a very long time, and 2) facilitate my kind of intensive number-crunching machine learning work. But I also put it together after having secured an agreement that my sabbatical employer<sup>1</sup> would kick in a small amount, too.</p>
-<p>There are all kinds of additional considerations I went through—you’re probably asking, why only M.2 drives? believe me, that was a whole thing, but oddly kinda boiled down to “supply chain problems, lol”—so I’m happy to get into it offline.</p>
-<p>But for now, let’s jump into assembly!</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="clear_desk.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="My workspace for assembly. Thanks, Gamers Nexus!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/clear_desk.jpg" class="img-fluid figure-img" alt="A clear desk space with a Gamers Nexus antistatic mat."></a></p>
-<figcaption>My workspace for assembly. Thanks, Gamers Nexus!</figcaption>
-</figure>
-</div>
-</section>
-<section id="unboxing-and-assembly" class="level3">
-<h3 class="anchored" data-anchor-id="unboxing-and-assembly">Unboxing and Assembly</h3>
-<p>Once I had all the components (this was also a Whole Thing<sup>TM</sup>), it took me about 3 days to put everything together. That’s actually a record—the longest it had taken me to assemble a desktop had previous been <em>3 hours</em>. I don’t really know what to chalk that discrepancy up to. Maybe rustiness (it’s been almost a decade since my last full build)? Reverence (I love doing this so much, I want to soak it up)? Nerves (first time building an AMD machine since the dorm room server)?</p>
-<p>General fatigue?<sup>2</sup></p>
-<p>Anyway.</p>
-<p>I started with the case. It came highly recommended through Gamers Nexus, especially for custom cooling. I’ve always dreamed of a fully water-cooled rig, but as the time to finalize the build crept closer, I decided to stick with a traditional air-cooled setup. This case was great in that it lets me do either but defaults to an excellent air-cooled configuration.</p>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[[1, 1], [1, 1]]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="case/box_case.jpg" class="lightbox" data-gallery="case" title="Unboxing the case."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/case/box_case.jpg" class="img-fluid figure-img" alt="Unboxing the case."></a></p>
-<figcaption>Unboxing the case.</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="case/case1.jpg" class="lightbox" data-gallery="case" title="I love the plexiglass covers: easy to remove, but also great for seeing inside."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/case/case1.jpg" class="img-fluid figure-img" alt="I love the plexiglass covers: easy to remove, but also great for seeing inside."></a></p>
-<figcaption>I love the plexiglass covers: easy to remove, but also great for seeing inside.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="case/case2.jpg" class="lightbox" data-gallery="case" title="Lots of airflow vents."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/case/case2.jpg" class="img-fluid figure-img" alt="Lots of airflow vents."></a></p>
-<figcaption>Lots of airflow vents.</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="case/case3.jpg" class="lightbox" data-gallery="case" title="Lots and lots of fans."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/case/case3.jpg" class="img-fluid figure-img" alt="Lots and lots of fans."></a></p>
-<figcaption>Lots and lots of fans.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p>Next were all the internal components. Since the case is really just a vehicle for the motherboard, which is really just a vehicle for <em>everything else</em>, I wanted to work my way from the inside out. Especially given the downright titanic proportions of the 4090, I wanted to assemble the motherboard as much as possible before slotting it into the case and losing a lot of physical wiggle room and visibility.</p>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[[100], [50, 50]]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="before_the_storm.jpg" class="lightbox" data-gallery="unboxing" title="All the internal components, unboxed from shipping but still in their retail boxes."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/before_the_storm.jpg" class="img-fluid figure-img" alt="All the internal components, unboxed from shipping but still in their retail boxes."></a></p>
-<figcaption>All the internal components, unboxed from shipping but still in their retail boxes.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="boxes.jpg" class="lightbox" data-gallery="unboxing" title="Everything arrived! Well, everything else arrived."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/boxes.jpg" class="img-fluid figure-img" alt="Everything arrived! Well, everything else arrived."></a></p>
-<figcaption>Everything arrived! Well, everything <em>else</em> arrived.</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="boxes_internal_components.jpg" class="lightbox" data-gallery="unboxing" title="Just the internal components that go on the motherboard… minus the GPU."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/boxes_internal_components.jpg" class="img-fluid figure-img" alt="Just the internal components that go on the motherboard… minus the GPU."></a></p>
-<figcaption>Just the internal components that go on the motherboard… minus the GPU.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p>The CPU and associated cooler were first. These were, thankfully, pretty straightforward. The only difference here from my prior experience with Intel was that AMD doesn’t seem to ship its CPUs with stock coolers; hence, I needed to get a custom one. Otherwise, everything slotted in exactly as I remembered.</p>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[[100], [100], [50, 50], [50, 50], [50, 50]]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="cpu/motherboard_unpack.jpg" class="lightbox" data-gallery="cpu" title="The motherboard is inside that antistatic wrap on the right. Zapping that with a small static discharge would be, ah, rather unfortunate!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/cpu/motherboard_unpack.jpg" class="img-fluid figure-img" alt="The motherboard is inside that antistatic wrap on the right. Zapping that with a small static discharge would be, ah, rather unfortunate!"></a></p>
-<figcaption>The motherboard is inside that antistatic wrap on the right. Zapping that with a small static discharge would be, ah, rather unfortunate!</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="cpu/motherboard.jpg" class="lightbox" data-gallery="cpu" title="The motherboard, in all its glory."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/cpu/motherboard.jpg" class="img-fluid figure-img" alt="The motherboard, in all its glory."></a></p>
-<figcaption>The motherboard, in all its glory.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="cpu/cpu_unbox.jpg" class="lightbox" data-gallery="cpu" title="The “brain” of the computer. I guess."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/cpu/cpu_unbox.jpg" class="img-fluid figure-img" alt="The “brain” of the computer. I guess."></a></p>
-<figcaption>The “brain” of the computer. I guess.</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="cpu/cpu_box.jpg" class="lightbox" data-gallery="cpu" title="The CPU box is actually quite large, but that’s because 90% of it is this “pedestal foam.” I know it’s to keep things from getting jostled, but it just looks like a throne."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/cpu/cpu_box.jpg" class="img-fluid figure-img" alt="The CPU box is actually quite large, but that’s because 90% of it is this “pedestal foam.” I know it’s to keep things from getting jostled, but it just looks like a throne."></a></p>
-<figcaption>The CPU box is actually quite large, but that’s because 90% of it is this “pedestal foam.” I know it’s to keep things from getting jostled, but it just looks like a throne.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="cpu/motherboard_cpu_slot.jpg" class="lightbox" data-gallery="cpu" title="The slot on the motherboard where the CPU goes, with a plastic safety cover on it. You do NOT want to damage the pins underneath it!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/cpu/motherboard_cpu_slot.jpg" class="img-fluid figure-img" alt="The slot on the motherboard where the CPU goes, with a plastic safety cover on it. You do NOT want to damage the pins underneath it!"></a></p>
-<figcaption>The slot on the motherboard where the CPU goes, with a plastic safety cover on it. You do NOT want to damage the pins underneath it!</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="cpu/motherboard_cpu_install.jpg" class="lightbox" data-gallery="cpu" title="After removing the plastic cover and quadruple-checking the CPU alignment, it fit perfectly!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/cpu/motherboard_cpu_install.jpg" class="img-fluid figure-img" alt="After removing the plastic cover and quadruple-checking the CPU alignment, it fit perfectly!"></a></p>
-<figcaption>After removing the plastic cover and quadruple-checking the CPU alignment, it fit perfectly!</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="cpu/cpu_cooler.jpg" class="lightbox" data-gallery="cpu" title="The custom cooler I bought. Just slots right on top of the CPU."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/cpu/cpu_cooler.jpg" class="img-fluid figure-img" alt="The custom cooler I bought. Just slots right on top of the CPU."></a></p>
-<figcaption>The custom cooler I bought. Just slots right on top of the CPU.</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="cpu/cpu_cooler_installed.jpg" class="lightbox" data-gallery="cpu" title="Everything fit! Yay!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/cpu/cpu_cooler_installed.jpg" class="img-fluid figure-img" alt="Everything fit! Yay!"></a></p>
-<figcaption>Everything fit! Yay!</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p>Next up: memory (or RAM). I was originally going with just a single 2-pack of 48GB DIMMs for a total of 96GB, but my sabbatical employer insisted I max out the memory so I can work with 100+GB single images they have from clients.</p>
-<p>That entailed a bit more research on my part on AMD-compatible motherboards to learn what their RAM limits were. I found one with 192GB as its upper limit: hence that motherboard, and hence why I have so much RAM!</p>
-<p>I think I enjoy installing RAM the most: there are no moving parts, other than the clips on the motherboard itself that very helpfully “click” when you have properly seated the memory. It’s very satisfying.</p>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[[100], [50, 50]]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="ram/motherboard_memory.jpg" class="lightbox" data-gallery="ram" title="The four RAM chips in the plastic on the right go in the four motherboard slots in front of the CPU on the left."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/ram/motherboard_memory.jpg" class="img-fluid figure-img" alt="The four RAM chips in the plastic on the right go in the four motherboard slots in front of the CPU on the left."></a></p>
-<figcaption>The four RAM chips in the plastic on the right go in the four motherboard slots in front of the CPU on the left.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="ram/motherboard_dimms.jpg" class="lightbox" data-gallery="ram" title="If you ever have fewer DIMMs than motherboard slots, look for a schematic like this that tells you which slots you should install RAM in first."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/ram/motherboard_dimms.jpg" class="img-fluid figure-img" alt="If you ever have fewer DIMMs than motherboard slots, look for a schematic like this that tells you which slots you should install RAM in first."></a></p>
-<figcaption>If you ever have fewer DIMMs than motherboard slots, look for a schematic like this that tells you which slots you should install RAM in first.</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="ram/motherboard_memory_installed.jpg" class="lightbox" data-gallery="ram" title="Everything fit! Yay!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/ram/motherboard_memory_installed.jpg" class="img-fluid figure-img" alt="Everything fit! Yay!"></a></p>
-<figcaption>Everything fit! Yay!</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p>At this point, I <em>should have</em> installed the storage devices. But for reasons lost to the passage of time, I didn’t. Instead, I installed the motherboard into the case.</p>
-<p>Part of my rationale, I think, was that I knew I couldn’t install the GPU until the motherboard was seated in the case; the GPU was just too big to be installed without the support of the case itself. I also knew some of the M.2 slots were <em>under</em> the GPU; this created some uncertainty about whether the GPU would actually sit correctly if an M.2 device was installed directly under it. My priority here was the GPU—it was so large, it could only fit in one of two slots, and of those two only one was honestly preferable—and to seat the GPU, I needed to install the motherboard into the case.</p>
-<p>All in all, motherboard installation is pretty easy: just put the motherboard in the case and carefully screw it down. If the screw holes in the motherboard don’t align with the struts in the case, then something has gone horribly wrong and you should stop.</p>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[[1, 1]]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="mobo/motherboard_installed1.jpg" class="lightbox" data-gallery="mobo" title="Everything fit! Yay!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/mobo/motherboard_installed1.jpg" class="img-fluid figure-img" alt="Everything fit! Yay!"></a></p>
-<figcaption>Everything fit! Yay!</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="mobo/motherboard_installed2.jpg" class="lightbox" data-gallery="mobo" title="Everything still fits! Yay!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/mobo/motherboard_installed2.jpg" class="img-fluid figure-img" alt="Everything still fits! Yay!"></a></p>
-<figcaption>Everything still fits! Yay!</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p>For one final diversion before the monstrosity that is the GPU, I installed the PSU, aka the power supply. Given that wholly <em>half</em> the power supply’s capacity is going to the GPU, I knew I needed something relatively beefy, hence the 1300W monster PSU. But I also knew I wouldn’t have very many other components that needed direct power.</p>
-<p>So a <em>modular</em> PSU was key: one with lots of outlets for potential devices, but whose cords could be disconnected and removed when not needed so as not to clog up the inside of the case with unplugged power cables.</p>
-<p>Another reason I love this case is because, at a time when most cases now put the PSU somewhere in the bottom, this case puts the PSU at the <em>top</em>, and even “slightly outside” the case itself! There’s a panel that pops off where the PSU sits, and the cables are then snaked through an opening to the rest of the case for added compartmentalization. It’s quite nice.</p>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[[50, 50], [33, 33, 33]]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="psu/psu.jpg" class="lightbox" data-gallery="psu" title="That’s the PSU."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/psu/psu.jpg" class="img-fluid figure-img" alt="That’s the PSU."></a></p>
-<figcaption>That’s the PSU.</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="psu/case_slot_for_psu.jpg" class="lightbox" data-gallery="psu" title="Once you pop the top cover off the case, you can see the divot where the PSU fits."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/psu/case_slot_for_psu.jpg" class="img-fluid figure-img" alt="Once you pop the top cover off the case, you can see the divot where the PSU fits."></a></p>
-<figcaption>Once you pop the top cover off the case, you can see the divot where the PSU fits.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="psu/case_with_psu.jpg" class="lightbox" data-gallery="psu" title="Fits like a glove!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/psu/case_with_psu.jpg" class="img-fluid figure-img" alt="Fits like a glove!"></a></p>
-<figcaption>Fits like a glove!</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="psu/psu_cables1.jpg" class="lightbox" data-gallery="psu" title="Literal bags’ worth of cables, depending on my hardware."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/psu/psu_cables1.jpg" class="img-fluid figure-img" alt="Literal bags’ worth of cables, depending on my hardware."></a></p>
-<figcaption>Literal bags’ worth of cables, depending on my hardware.</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="psu/psu_cables2.jpg" class="lightbox" data-gallery="psu" title="Here are cables that will provide core power to the motherboard."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/psu/psu_cables2.jpg" class="img-fluid figure-img" alt="Here are cables that will provide core power to the motherboard."></a></p>
-<figcaption>Here are cables that will provide core power to the motherboard.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p>Alright. Couldn’t ignore the <a href="https://www.artstation.com/artwork/m85BXZ">Demon King in the Depths</a> any longer. Time to install the GPU.</p>
-<p>I knew this thing would be huge going in, but I was still shocked, and I say this as a still-owner of a venerable 1080 Ti. This thing spans the volume of nearly 3x 1080s. It’s absolutely insane. And yet, still <em>technically</em> only takes the space of 2 PCI devices.</p>
-<p>Suffice to say, I made absolutely certain before purchasing that all the measurements fit what I had to work with. For a component that was almost half the entire monetary AND eletrical budgets of this build, this was the one I wanted to get right the first time.</p>
-<p>Actual installation was a snap, as it has been ever since the advent of separate GPUs. But it seriously felt like plugging an Apollo command module into a 120V home garage outlet.</p>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[[100], [33, 33, 33], [33, 33, 33]]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gpu/gpu_box_case.jpg" class="lightbox" data-gallery="gpu" title="Here we go."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/gpu/gpu_box_case.jpg" class="img-fluid figure-img" alt="Here we go."></a></p>
-<figcaption>Here we go.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gpu/gpu_unboxed1.jpg" class="lightbox" data-gallery="gpu" title="Unboxing the beast."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/gpu/gpu_unboxed1.jpg" class="img-fluid figure-img" alt="Unboxing the beast."></a></p>
-<figcaption>Unboxing the beast.</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gpu/gpu_unboxed2.jpg" class="lightbox" data-gallery="gpu" title="I could barely hold this with one hand."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/gpu/gpu_unboxed2.jpg" class="img-fluid figure-img" alt="I could barely hold this with one hand."></a></p>
-<figcaption>I could barely hold this with one hand.</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gpu/gpu_unboxed3.jpg" class="lightbox" data-gallery="gpu" title="My already-oversized DumbRunner coffee mug for scale."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/gpu/gpu_unboxed3.jpg" class="img-fluid figure-img" alt="My already-oversized DumbRunner coffee mug for scale."></a></p>
-<figcaption>My already-oversized <a href="https://dumbrunner.threadless.com/designs/1-dad-in-age-group/accessories/mug/standard">DumbRunner coffee mug</a> for scale.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gpu/gpu_installed.jpg" class="lightbox" data-gallery="gpu" title="In the immortal words of my dad’s dad: “It FITS. JUST. FINE.”"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/gpu/gpu_installed.jpg" class="img-fluid figure-img" alt="In the immortal words of my dad’s dad: “It FITS. JUST. FINE.”"></a></p>
-<figcaption>In the immortal words of my dad’s dad: “It FITS. JUST. FINE.”</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gpu/gpu_old_psu_cables.jpg" class="lightbox" data-gallery="gpu" title="If you have an older-style PSU, you’ll need no fewer than FOUR ATX CABLES to power this monster (technically three, but four is recommended)."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/gpu/gpu_old_psu_cables.jpg" class="img-fluid figure-img" alt="If you have an older-style PSU, you’ll need no fewer than FOUR ATX CABLES to power this monster (technically three, but four is recommended)."></a></p>
-<figcaption>If you have an older-style PSU, you’ll need no fewer than FOUR ATX CABLES to power this monster (technically three, but four is recommended).</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gpu/gpu_new_psu_cables.jpg" class="lightbox" data-gallery="gpu" title="If instead you have a newer PSU, you’ll have access to a single cable that supplies variable wattage, averaging 600W."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/gpu/gpu_new_psu_cables.jpg" class="img-fluid figure-img" alt="If instead you have a newer PSU, you’ll have access to a single cable that supplies variable wattage, averaging 600W."></a></p>
-<figcaption>If instead you have a newer PSU, you’ll have access to a single cable that supplies variable wattage, averaging 600W.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p>Whew.</p>
-<p>The penultimate hardware step was the two M.2 SSDs. These are the latest in long-term flash storage (NVMe drives) that plug <em>directly</em> into the motherboard for absolutely insane transfer speeds. They’re ideal for—you guessed it—data-intensive computing.</p>
-<p>But their positioning wasn’t ideal: two of the motherboard’s four slots were directly under the GPU, and I wasn’t certain the GPU would fit properly if I installed an M.2 under it.</p>
-<p>The short version is: the GPU actually fit just fine, but the M.2s themselves didn’t play nice with the arrangement of the motherboard’s southbridge. Fortunately I found a configuration that worked, but this part took a ton of swearing and <em>over an hour</em> of trial-and-error before I finally got everything seated.</p>
-<p>The next hard drive will be a standard 2.5” SSD, mmk thx bai.</p>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[[1, 1, 1]]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="nvme/nvme_boxes.jpg" class="lightbox" data-gallery="nvme" title="Storage unboxing."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/nvme/nvme_boxes.jpg" class="img-fluid figure-img" alt="Storage unboxing."></a></p>
-<figcaption>Storage unboxing.</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="nvme/nvme_unboxed1.jpg" class="lightbox" data-gallery="nvme" title="These things are TEENY."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/nvme/nvme_unboxed1.jpg" class="img-fluid figure-img" alt="These things are TEENY."></a></p>
-<figcaption>These things are TEENY.</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="nvme/nvme_installed2.jpg" class="lightbox" data-gallery="nvme" title="Slotted into two motherboard slots (GPU not shown)."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/nvme/nvme_installed2.jpg" class="img-fluid figure-img" alt="Slotted into two motherboard slots (GPU not shown)."></a></p>
-<figcaption>Slotted into two motherboard slots (GPU not shown).</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p>The last bit of the hardware was to wire everything up! In particular: the motherboard, CPU cooler, case fans, and GPU all needed to be connected directly to the PSU for power.</p>
-<p>This is always, in my opinion, the most tedious part of any build. Snaking wires throughout the inside of the case always results in snarls and makes any future work (fixing problems, upgrading hardware) tricky at best. Many cases in the last decade have “cable management” pathways built-in to help with this, but it still comes down to the human to make it happen. And it’s annoying at best.</p>
-<p>In this case, I did… ok. Well enough.</p>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[[1, 1]]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="wires/internal_wiring.jpg" class="lightbox" data-gallery="wiring" title="These pathways are along the “bottom” of the motherboard, so most of the wiring can be kept hidden and out of the way of the main components."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/wires/internal_wiring.jpg" class="img-fluid figure-img" alt="These pathways are along the “bottom” of the motherboard, so most of the wiring can be kept hidden and out of the way of the main components."></a></p>
-<figcaption>These pathways are along the “bottom” of the motherboard, so most of the wiring can be kept hidden and out of the way of the main components.</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="wires/internal_installed.jpg" class="lightbox" data-gallery="wiring" title="Everything (except the GPU) is plugged into the PSU."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/wires/internal_installed.jpg" class="img-fluid figure-img" alt="Everything (except the GPU) is plugged into the PSU."></a></p>
-<figcaption>Everything (except the GPU) is plugged into the PSU.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p>Ok! Everything is installed! What happens next?!</p>
-</section>
-<section id="boot-up-and-software" class="level3">
-<h3 class="anchored" data-anchor-id="boot-up-and-software">Boot-up and Software</h3>
-<p>We’ve got our build! And she’s gorgeous 😍</p>
-<p>Now, the moment of truth: booting up and installing an operating system. Or, in this case, two: I wanted to install Ubuntu (22.04 at time of post) on one of the M.2s, and Windows (11) on the other.</p>
-<p>I started with Ubuntu.</p>
-<p>I don’t know about other linux distributions—I’ve been on the Ubuntu train ever since Red Hat went corporate, and frankly haven’t had a reason to look back or sideways—but Ubuntu has always been relatively straightforward when it comes to install:</p>
-<ol type="1">
-<li>Create a boot disk (usually a USB disk).</li>
-<li>Boot off the disk</li>
-<li>Profit!</li>
-</ol>
-<p>Step 2 is always the tricky part, especially on a new build: I never know which function key brings up the boot order 🥴 (spoiler alert: it’s F11)</p>
-<p>Once I hit the right sequence of keys, the rest of the process was pretty much point and click. Boom! I had Ubuntu installed!</p>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[[50, 50], [100]]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="ubuntu/turn_on.jpg" class="lightbox" data-gallery="ubuntu" title="The first power-up! So much suspense!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/ubuntu/turn_on.jpg" class="img-fluid figure-img" alt="The first power-up! So much suspense!"></a></p>
-<figcaption>The first power-up! So much suspense!</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="ubuntu/turned_on.jpg" class="lightbox" data-gallery="ubuntu" title="SHE LIVES. You can tell by the lights."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/ubuntu/turned_on.jpg" class="img-fluid figure-img" alt="SHE LIVES. You can tell by the lights."></a></p>
-<figcaption>SHE LIVES. You can tell by the lights.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="ubuntu/ubuntu_install.jpg" class="lightbox" data-gallery="ubuntu" title="The Ubuntu installer screen! Things are working!"><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/ubuntu/ubuntu_install.jpg" class="img-fluid figure-img" alt="The Ubuntu installer screen! Things are working!"></a></p>
-<figcaption>The Ubuntu installer screen! Things are working!</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p>Next up: Windows.</p>
-<p>Getting Windows 11 installed, relative to Ubuntu, was a <em>giant pain</em>. In the intervening years, Mircrosoft seems to have gone the route of “install now, license later”—which, honestly, I appreciate—and has provided multiple pathways for creating an installer.</p>
-<p>Unfortunately, only one of those pathways seems to <em>actually work</em>. I initially went the ISO route, since that’s pretty much equivalent to how I installed Ubuntu.</p>
-<p>But that didn’t work. And, weirdly, the internet doesn’t seem to know why. The best hint I found came from <a href="https://answers.microsoft.com/en-us/windows/forum/all/no-device-drivers-were-found-tried-everything-w11/a53aa16b-5d4c-4f8a-abc6-e5106152a220">this forum post</a>, which seems to suggest that AMD-specific drivers <em>aren’t included</em> in the ISO installer, thereby making install via ISO on an AMD system… well, impossible.</p>
-<p>There were no details on this “include AMD drivers during the install” procedure, and by this point I’d run out of patience (I’d tried multiple sub-pathways, even and including installing Windows <em>10</em> instead; all the same result).</p>
-<p>So I went with the one procedure the internet seemed to agree would always work: “get a friend with a Windows PC and run the media installer that only works on Windows.” Yes this is an actual piece of advice on an actual Microsoft forum. Since the media installer option <em>only</em> runs on Windows, you’re in this weird Twilight Zone of needing a Windows computer in order to install Windows on a computer.</p>
-<p>Mmk.</p>
-<p>This worked, finally. Of course, that was just the warm-up; the install process itself is “<a href="https://exple.tive.org/blarg/2023/12/07/polished-glass/">a disaster from stem to stern</a>.” Thankfully, following that guide helped to minimize the worst of the creeping Windows enshittification. A few important points:</p>
-<ul>
-<li>Definitely <a href="https://answers.microsoft.com/en-us/insider/forum/all/set-up-windows-11-without-internet-oobebypassnro/4fc44554-b416-4ecb-8961-6f79fd55ae0f">create a local account</a>. It requires <em>pulling out your ethernet cable</em> and running a shell command, but it’s reasonably straightforward.</li>
-<li>For my US readers: you may also want to select “Global English” rather than “US English” in the language selection step, as this apparently eliminates some awfulness in the start-up screen.</li>
-<li>The guide mentions widgets in the traditional “Start” button location. That was the case for me too, but I don’t think I actually flipped any “Personalization” switches before realizing the Start menu was back where it should be. Not sure what I did, but at least initially that was definitely the case for me, so watch out.</li>
-</ul>
-<p>At this point, we picked up a Windows license and a couple Office licenses from a friend of the family for some steep discounts (that was awfully nice), so I could unlock the power of this <a href="https://i.makeagif.com/media/10-03-2016/hfPN-9.gif">fully armed and operational</a> Windows 11.</p>
-</section>
-<section id="whats-next" class="level3">
-<h3 class="anchored" data-anchor-id="whats-next">What’s next?</h3>
-<p>That’s about it—a complete build from components, up to installing two operating systems. So what’s next?</p>
-<p>Well, the first thing was to give it a name! I struggled with this for a bit. On one hand, I’d only just finished <em>Tears of the Kingdom</em> in late December (yeah, I intentionally sandbagged, savoring the final stages). But on the other hand, most of the devices in my house already have <em>Zelda</em>-themed names.</p>
-<p>(Devices that have a <em>Zelda</em>-themed name: 1 of 2 laptops, 2 of 2 smartphones, 1 of 2 iPads, 7 of 8 Raspberry Pis, 1 NAS, and now 1 desktop. WOW, y’all.)</p>
-<p>But! In a conversation over Mastodon, I was reminded that this isn’t really a bad thing.</p>
-<p></p><div style="position: relative; padding-bottom: 56.25%; height: 0;"> <iframe src="https://fosstodon.org/@jni/111730083884821265/embed" class="mastodon-embed" style="max-width: 100%; border: 0;" width="100%" height="400" allowfullscreen="allowfullscreen"></iframe><script src="https://mastodon.social/embed.js" async="async"></script></div> <p></p>
-<p>So I took the first name that came to mind that seemed incredibly appropriate: <a href="https://zelda.fandom.com/wiki/Makar">Makar, the ancient Sage of Wind</a>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://static.wikia.nocookie.net/zelda_gamepedia_en/images/b/b0/TWW_Makar_Artwork.png" class="lightbox" data-gallery="quarto-lightbox-gallery-43" title="Makar, in his element."><img src="https://static.wikia.nocookie.net/zelda_gamepedia_en/images/b/b0/TWW_Makar_Artwork.png" class="img-fluid figure-img" alt="Makar, in his element."></a></p>
-<figcaption>Makar, in his element.</figcaption>
-</figure>
-</div>
-<p>From there, it’s been a matter of configuring two full-blown operating systems. Ubuntu is pretty much the workhorse: that’s where I’ll make heavy use of the GPU. I’ve already installed all the CUDA dependencies and a Python environment with the basic setup, and thanks to the M.2 drives I have plenty of speedy storage for large datasets. On the Windows side, this is indeed for gaming, but also for office productivity (especially if I don’t have my laptop handy). Most of these basics are in place, but it’ll be an ongoing process.</p>
-<p>In the meantime, I have some n@zis to mow down in <em>Wolfenstein</em> and some segmentation models to run on spatial omics data. Until next time!</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="full_install.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-44" title="Beautiful. Absolutely stunning."><img src="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/full_install.jpg" class="img-fluid figure-img" alt="Beautiful. Absolutely stunning."></a></p>
-<figcaption>Beautiful. Absolutely stunning.</figcaption>
-</figure>
-</div>
-
-
-</section>
-
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>I swear, there’s a post coming about this. Sometime.↩︎</p></li>
-<li id="fn2"><p>I built this in my second week of sabbatical. The first week was a veritable <em>fire hose</em> from which I was struggling to surface. That, plus the general post-holiday malaise, plus university stuff still demanding my attention… yeah this is probably the best answer.↩︎</p></li>
-</ol>
-</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2024,
-  author = {Quinn, Shannon},
-  title = {The {Legend} of {Makar}},
-  date = {2024-01-25},
-  url = {https://magsol.github.io/2024-01-25-the-legend-of-makar},
-  langid = {en}
-}
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2024" class="csl-entry quarto-appendix-citeas">
-Quinn, Shannon. 2024. <span>“The Legend of Makar.”</span> January 25,
-2024. <a href="https://magsol.github.io/2024-01-25-the-legend-of-makar">https://magsol.github.io/2024-01-25-the-legend-of-makar</a>.
-</div></div></section></div> ]]></description>
-  <category>personal</category>
-  <category>professional</category>
-  <category>news</category>
-  <category>makar</category>
-  <guid>https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/</guid>
-  <pubDate>Thu, 25 Jan 2024 19:09:00 GMT</pubDate>
-  <media:content url="https://magsol.github.io/posts/2024-01-25-the-legend-of-makar/makar.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>
