@@ -7,14 +7,13 @@ website:
   description: "Data, donuts, and detours"
   site-url: "https://magsol.github.io"
   google-analytics: "G-XHDW9H78Z1"
+  repo-url: https://github.com/magsol/magsol.github.io
+  repo-branch: gh-pages
   image: images/logo.png
   navbar:
     search: true
     right:
       - about.qmd
-  twitter-card:
-    card-style: summary
-    creator: "@SpectralFilter"
   open-graph:
     locale: en_US
 feed: true
@@ -22,5 +21,8 @@ format:
   html:
     theme: darkly
     css: styles.css
+    include-in-header:
+      - text: |
+          <link rel="me" href="https://quinnwitz.house/@magsol" />
 execute:
   freeze: auto
