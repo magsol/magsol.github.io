@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -69,14 +69,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../images/favicon.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-befe23ebd2f54d8af2c8a89d1a1611f1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-98d7d9710456612fc4454c02b7e6ee72.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-a8fb0b7ad92d43da6d3c93b747a65c22.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -134,6 +135,8 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Stochastic Stenography</span>
     </a>
@@ -243,7 +246,7 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <section id="the-easy-stuff-storage-and-ingress" class="level3">
 <h3 class="anchored" data-anchor-id="the-easy-stuff-storage-and-ingress">The “easy” stuff: storage and ingress</h3>
 <p>Probably the easiest modification to make was the storage. Under <code>mastodon.persistence</code>, there are two main groups: <code>assets</code> and <code>system</code>. They both have their own persistent volumes in case you need to dramatically alter their respective configurations, but I went with the default, adding only one line to each subsection (since <code>storageClassName</code> wasn’t even listed in the default chart, but has templates in the backend that will handle the key-values if provided):</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">persistence</span><span class="kw">:</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">persistence</span><span class="kw">:</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">assets</span><span class="kw">:</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">      # -- ReadWriteOnce is more widely supported than ReadWriteMany, but limits</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">      # scalability, since it requires the Rails and Sidekiq pods to run on the</span></span>
@@ -258,11 +261,11 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">storageClassName</span><span class="kw">:</span><span class="at"> my-nfs-storage-class</span><span class="co"> ### ADDED THIS LINE</span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">resources</span><span class="kw">:</span></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">requests</span><span class="kw">:</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">storage</span><span class="kw">:</span><span class="at"> 100Gi</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">storage</span><span class="kw">:</span><span class="at"> 100Gi</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>That’s it! Mischief managed.</p>
 <p>For ingress, things were a little more complicated. Not because it required more configuration in the chart itself, but because it required more configuration <em>ahead of using the chart at all</em>. The ingress configuration in the Mastodon chart itself masks the hours spent getting traefik set up exactly the way I wanted. Sadly, this is beyond the scope of the Mastodon instance setup (it will definitely appear in a blog post about just getting my k3s cluster off the ground!), but I <em>will</em> discuss configuring the TLS support / SSL certificates in a later post in this series, so stay tuned.</p>
 <p>Here was my configuration (changes from the current default are marked, and comments are deleted for brevity):</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ingress</span><span class="kw">:</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ingress</span><span class="kw">:</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">enabled</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">annotations</span><span class="kw">:</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">cert-manager.io/cluster-issuer</span><span class="kw">:</span><span class="at"> </span><span class="st">"letsencrypt-prod-dns"</span><span class="co"> ### ADDED - will go over in detail in a future post in this series</span></span>
@@ -274,7 +277,7 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tls</span><span class="kw">:</span></span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">secretName</span><span class="kw">:</span><span class="at"> mastodon-tls</span></span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">hosts</span><span class="kw">:</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="kw">-</span><span class="at"> quinnwitz.house</span><span class="co"> ### MODIFIED - my instance domain name</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="kw">-</span><span class="at"> quinnwitz.house</span><span class="co"> ### MODIFIED - my instance domain name</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>That’s it! Relatively tame modifications, but belie a groundswell of configuration and wrangling that had already happened. In particular, note the <code>tls.secretName</code> field: I may not have modified it, but I did have to create a Secret named <code>mastodon-tls</code> ahead of deploying the chart! That was part of the magic of cert-manager behind the scenes, communicating with Let’s Encrypt and getting an SSL certificate set up (again, a future post–stay tuned).</p>
 </section>
 <section id="the-harder-stuff-disabling-dependencies-and-modifying-templates" class="level3">
@@ -287,9 +290,9 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <p>That’s it! They’re disabled. <strong>Your Helm chart is now fully ARM-compatible!</strong></p>
 <p>…except by disabling all the bitnami charts, you’ve introduced an insidious bug where, for some reason, the <a href="https://artifacthub.io/packages/helm/bitnami/common">Bitnami Common Library chart</a> can no longer be found. Fortunately, the fix is easy.</p>
 <p>Go to the <a href="https://github.com/mastodon/chart/blob/main/Chart.yaml">Chart.yaml file</a> and add a new entry under the <code>dependencies:</code> list:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="at"> </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> common</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="at"> </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> common</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">   </span><span class="fu">version</span><span class="kw">:</span><span class="at"> 1.x.x</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">   </span><span class="fu">repository</span><span class="kw">:</span><span class="at"> https://charts.bitnami.com/bitnami</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">   </span><span class="fu">repository</span><span class="kw">:</span><span class="at"> https://charts.bitnami.com/bitnami</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Now when you run <code>helm dep update</code> before installing the chart, the Common chart will still be downloaded and everything will work, even with the other bitnami dependencies disabled.</p>
 <p>Unfortunately, this leaves us with the trickiest part of the Helm chart modifications: actually tweaking the redis, postgres, and elasticsearch sections (and, in some cases, templates!) to work with the separate instances we’ll spin up later.</p>
 <p><strong>Elasticsearch</strong> doesn’t require any extra tweaking, so we can leave that alone for now.</p>
@@ -307,14 +310,14 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <li>weirdly, I needed to set <code>auth.existingSecret</code> too</li>
 </ul>
 <p>To the last point, I created the following <code>redis-password.yaml</code> file:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apiVersion</span><span class="kw">:</span><span class="at"> v1</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apiVersion</span><span class="kw">:</span><span class="at"> v1</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kind</span><span class="kw">:</span><span class="at"> Secret</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">metadata</span><span class="kw">:</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> mastodon-redis</span></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">namespace</span><span class="kw">:</span><span class="at"> mastodon</span></span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">type</span><span class="kw">:</span><span class="at"> Opaque</span></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">stringData</span><span class="kw">:</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">redis-password</span><span class="kw">:</span><span class="at"> &lt;same value as password&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">redis-password</span><span class="kw">:</span><span class="at"> &lt;same value as password&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Running <code>kubectl apply -f redis-password.yaml</code> into the Mastodon namespace got it working. I still don’t know why I needed both the Secret and the password in the helm chart to get it to work–it may work with just the Secret, or maybe whatever weird situation caused it was fixed and now just the password in the helm chart will work–but this operation was fairly simple and got everything working so I went with it. I <a href="https://github.com/mastodon/mastodon/pull/20819">created a PR for this</a> a few months back, but it was rolled into a broader PR tasked with migrating the chart over to its own repository, so I’m not sure if its fixes were ever implemented.</p>
 <p>There were some changes directly to the <code>templates/configmap-env.yaml</code> file that were needed, but thankfully many of these have already been addressed courtesy of some PRs:</p>
 <ul>
@@ -395,13 +398,14 @@ Chart.”</span> January 25, 2023. <a href="https://magsol.github.io/2023-01-25-
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

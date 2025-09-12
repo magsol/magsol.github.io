@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -69,14 +69,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../images/favicon.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-befe23ebd2f54d8af2c8a89d1a1611f1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-98d7d9710456612fc4454c02b7e6ee72.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-a8fb0b7ad92d43da6d3c93b747a65c22.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -132,6 +133,8 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Stochastic Stenography</span>
     </a>
@@ -236,13 +239,13 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <h3 class="anchored" data-anchor-id="postgresql">postgresql</h3>
 <p>PostgreSQL was the easiest change, at least if minimizing “number of switches I needed to flip” is our metric of choice here for determining easy versus difficult.</p>
 <p>The only real change I needed to make was how I performed the <code>helm install</code> process of the bitnami chart for postgres. Here’s the command I used:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">helm</span> install postgres bitnami/postgresql <span class="dt">\</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">helm</span> install postgres bitnami/postgresql <span class="dt">\</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">--set</span> global.postgresql.auth.postgresPassword=<span class="st">"my_postgres_password"</span> <span class="dt">\</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">--set</span> global.postgresql.auth.username=<span class="st">"my_postgres_username"</span> <span class="dt">\</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">--set</span> global.postgresql.auth.password=<span class="st">"my_postgres_password"</span> <span class="dt">\</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">--set</span> global.postgresql.auth.database=<span class="st">"my_postgres_database"</span> <span class="dt">\</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">--set</span> image.repository=<span class="st">"postgres"</span> <span class="dt">\</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">--set</span> image.tag=<span class="st">"15.0"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">--set</span> image.tag=<span class="st">"15.0"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>That’s it. The only <em>real</em> change of note is the <code>image.repository</code> target: it’s pointing to the <a href="https://hub.docker.com/_/postgres">official PostgreSQL image on DockerHub</a>, which has arm64-compatible images. The other items related to username, password, and database are items that need to be filled in anyway (here or in the <code>values.yaml</code> file), and the tag just ensures I’m using the same version that the bitnami image would have used, again to minimize any downstream conflicts.</p>
 <p>And that was it! I used the bitnami <em>chart</em> with the postgres <em>image</em>, and it worked!</p>
 </section>
@@ -251,11 +254,11 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <p>Next up, our in-memory data broker.</p>
 <p>This process was largely the same as with PostgreSQL, with one notable deviation: I also set the flag to put redis in <code>standalone</code> mode, given that my Pi cluster is resource-constrained and couldn’t afford to have the HA version that, I believe, is the default for the bitnami chart.</p>
 <p>Here’s the helm command:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">helm</span> install redis bitnami/redis <span class="dt">\</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">helm</span> install redis bitnami/redis <span class="dt">\</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">--set</span> global.redis.password=<span class="st">"my_redis_password"</span> <span class="dt">\</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">--set</span> architecture=<span class="st">"standalone"</span> <span class="dt">\</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">--set</span> image.repository=<span class="st">"redis"</span> <span class="dt">\</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">--set</span> image.tag=<span class="st">"7.0"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">--set</span> image.tag=<span class="st">"7.0"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Again, the password is something we need to set up anyway, the architecture is set to <code>standalone</code> to minimize its in-memory footprint, tag is meant to match with the bitnami version, and finally the <code>image.repository</code> points to the <a href="https://hub.docker.com/_/redis">official redis image on DockerHub</a> which, like PostgreSQL, has an arm64-compatible version.</p>
 </section>
 <section id="elasticsearch-opensearch" class="level3">
@@ -264,15 +267,15 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <p>I started off the same way as with postgres and redis: like the first two, there are <a href="https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch#global-parameters">only a few critical global parameters</a> that need to be set, and they’re the usual suspects–change the image registry to point to the official image on DockerHub, change the image tag to match the bitnami image version, and… that’s really about it.</p>
 <p>The hang-ups, crashes, and reboots started immediately. Turns out, elasticsearch is <em>incredibly resource-intensive</em>. So I set about trying to set absolutely minimal overheads: setting master and data replicas to 1, constraining the java heap size, and disabling ingest… none of which worked.</p>
 <p>Even aside from the resource constraints, there was a second problem. For whatever reason, the bitnami chart for elasticsearch has a <em>second</em> container–the “kernel settings modifier”–that is part of the pod, and which also has an image that, by default, is not compatible with ARM. So in theory, to get elasticsearch to work with the same technique, the following fields would also have to be changed in the helm chart:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">--set</span> sysctlImage.registry=<span class="st">"ghcr.io"</span> <span class="dt">\</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">--set</span> sysctlImage.registry=<span class="st">"ghcr.io"</span> <span class="dt">\</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">--set</span> sysctlImage.repository=<span class="st">"zcube/bitnami-compat/bitnami-shell"</span> <span class="dt">\</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">--set</span> sysctlImage.tag=<span class="st">"11.0.0-debian-11-r39"</span> <span class="dt">\</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">--set</span> sysctlImage.tag=<span class="st">"11.0.0-debian-11-r39"</span> <span class="dt">\</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This is a bit different from the changes made with postgres and redis. There is no “official” distribution of the “kernel settings modifier” image, as this is exclusive to bitnami. Instead, we needed to go to the <a href="https://github.com/ZCube/bitnami-compat">bitnami-compat project</a> which is attempting to make bitnami-compatible arm64 images for all the major charts, and which could feasibly serve as drop-in replacements for redis and postgres as well (I just didn’t try them because I got them working before discovering bitnami-compat). But it’s perfect for this situation.</p>
 <p>Suffice to say, this completely solved the architectural compatibility issues, but I still could not fix the resourcing problems without fundamentally hobbling elasticsearch to the point of futility.</p>
 <p>Instead, I followed some advice from the Mastodon devs who have, unofficially, been able to get <a href="https://opensearch.org/docs/latest/about/">OpenSearch to work as a drop-in elasticsearch replacement</a> in Mastodon.</p>
 <p>(Side note: OpenSearch is based on Apache Lucene, which was the progenitor project to <a href="https://mahout.apache.org/">Apache Mahout</a>, for which I’m a member of its PMC! Small world. I love open source &lt;3 )</p>
 <p>Turns out, OpenSearch is <em>remarkable</em>, both in its minimal resource usage <em>and</em> with its ease of dropping right in where elasticsearch would go. My only complaint was the chart’s use of a multi-line yaml string in its settings, which–to my limited knowledge and experience, at least–precluded its exclusive command-line use, and forced me instead to modify the <code>values.yaml</code> and pass that directly to helm. Still, there were very few modifications I needed to make–here’s an indicator with line numbers corresponding to <a href="https://github.com/opensearch-project/helm-charts/blob/c6ebc864c92e6d64cb2097269290193b3844a8e7/charts/opensearch/values.yaml">what is <em>currently</em> the latest version of the chart</a> (committed Jan 3, 2023):</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Line 8: again, needed to keep things minimal</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Line 8: again, needed to keep things minimal</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">singleNode</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Line 22: just to be obnoxiously consistent</span></span>
@@ -287,7 +290,7 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="fu">storageClass</span><span class="kw">:</span><span class="at"> &lt;my storage class&gt;</span></span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Line 299</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="fu">securityConfig.enabled</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="fu">securityConfig.enabled</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>That’s all I needed. Then by passing the edited <code>values.yaml</code> to <code>helm install</code>, it ran just fine.</p>
 </section>
 <section id="postamble" class="level3">
@@ -300,7 +303,7 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Update: Feb 24, 2023
+<span class="screen-reader-only">Note</span>Update: Feb 24, 2023
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -374,13 +377,14 @@ Installing the Prerequisites.”</span> February 9, 2023. <a href="https://magso
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

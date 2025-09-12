@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -69,14 +69,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../images/favicon.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-befe23ebd2f54d8af2c8a89d1a1611f1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-98d7d9710456612fc4454c02b7e6ee72.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-a8fb0b7ad92d43da6d3c93b747a65c22.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -133,6 +134,8 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Stochastic Stenography</span>
     </a>
@@ -227,30 +230,30 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <h4 class="anchored" data-anchor-id="step-1-create-a-strava-app"><strong>Step 1: Create a Strava app</strong></h4>
 <p>Go to your <a href="https://www.strava.com/settings/api">user settings</a> and create an app that can interface with your account. Important pieces of information you’ll need later: <strong>Client ID</strong>, <strong>Client Secret</strong>, and <strong>Your access token</strong>.</p>
 <p>We can test if it works. Fire up an IPython terminal, get your <code>access_token</code>, and run the following code:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="im">from</span> stravalib <span class="im">import</span> Client</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="im">from</span> stravalib <span class="im">import</span> Client</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    client <span class="op">=</span> Client(access_token <span class="op">=</span> access_token)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    client.get_athlete()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    client.get_athlete()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You should see something along the lines of:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    Out[]: <span class="op">&lt;</span>Athlete <span class="bu">id</span><span class="op">=</span><span class="dv">1234567</span> firstname<span class="op">=</span><span class="st">b'Firstname'</span> lastname<span class="op">=</span><span class="st">b'Lastname'</span><span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    Out[]: <span class="op">&lt;</span>Athlete <span class="bu">id</span><span class="op">=</span><span class="dv">1234567</span> firstname<span class="op">=</span><span class="st">b'Firstname'</span> lastname<span class="op">=</span><span class="st">b'Lastname'</span><span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="step-2-retrieve-last-weeks-data" class="level4">
 <h4 class="anchored" data-anchor-id="step-2-retrieve-last-weeks-data"><strong>Step 2: Retrieve last week’s data</strong></h4>
 <p>The whole point is to get weekly mileage reports. Thankfully, the <code>get_activities</code> method in stravalib has an <code>after</code> optional parameter we can use to precisely tune what time interval we want.</p>
 <p>First, though, we need to create a timestamp that represents the 1-week time frame. If we assume this will only be executed on the day we want the summary–say, every Monday–then we need to tally up all the runs from the day before all the way back to the previous Monday, inclusive.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="im">import</span> datetime</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="im">import</span> datetime</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    current <span class="op">=</span> datetime.datetime.now()</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    last_week <span class="op">=</span> current <span class="op">+</span> datetime.timedelta(weeks <span class="op">=</span> <span class="op">-</span><span class="dv">1</span>)</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    after <span class="op">=</span> datetime.datetime(last_week.year, last_week.month, last_week.day)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    activities <span class="op">=</span> client.get_activities(after <span class="op">=</span> after)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    activities <span class="op">=</span> client.get_activities(after <span class="op">=</span> after)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Assuming we run this chunk of code on a Monday, it should give us every Strava activity from the previous Monday up to the present.</p>
 <p>However, we’re not done yet. This includes everything–not just our runs, but any other activities that we recorded; yoga, weights, elliptical, and so on. We need to filter these out. We also need to filter out the edge case of any activities that have been recorded <em>today</em>, since we don’t want to include these in a report of <em>last</em> week’s activities!</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    l <span class="op">=</span> [activity.<span class="bu">id</span> <span class="cf">for</span> activity <span class="kw">in</span> activities <span class="cf">if</span> activity.<span class="bu">type</span> <span class="op">==</span> <span class="st">'Run'</span> <span class="op">\</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>        <span class="kw">and</span> a.start_date_local.day <span class="op">!=</span> current.day]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    l <span class="op">=</span> [activity.<span class="bu">id</span> <span class="cf">for</span> activity <span class="kw">in</span> activities <span class="cf">if</span> activity.<span class="bu">type</span> <span class="op">==</span> <span class="st">'Run'</span> <span class="op">\</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>        <span class="kw">and</span> a.start_date_local.day <span class="op">!=</span> current.day]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Ok, let’s pause and discuss what’s happening here.</p>
 <p>First, the most obvious: we’re looping through the <code>activities</code> generator we obtained in the last line of the previous step. Second, the <code>if</code> statement at the end filters out any activities that aren’t a run. Finally, the <code>activity.id</code> part out front says, we’re building a list of the unique IDs that identify each activity. The last part is our timeframe edge case: if we recorded an activity today, even a running activity, don’t include it.</p>
 <p>Why are we only holding onto the IDs? It has to do with detail. Strava maintains a hierarchy of details available to users that vary with authentication, connection, etc. Simply put, when we request a list of activities, <a href="http://strava.github.io/api/v3/activities/#get-activities">the default detail level is 2, which is “summary” level</a>. However, some of the metrics we need–calories in particular!–require level 3, or “detailed”. To get this level of detail, we need to query for individual activities…one at a time.</p>
 <p>Hence, a list of activity IDs! Now we can loop through the IDs, requesting details on each run and tabulating up the mileage and calories.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="im">from</span> stravalib <span class="im">import</span> unithelper</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="im">from</span> stravalib <span class="im">import</span> unithelper</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    mileage <span class="op">=</span> <span class="fl">0.0</span>, calories <span class="op">=</span> <span class="fl">0.0</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> activity_id <span class="kw">in</span> l:</span>
@@ -260,36 +263,36 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        <span class="co"># stravalib comes with a nice unit helper utility to do the conversion.</span></span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        distance <span class="op">=</span> unithelper.miles(activity.distance)</span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>        mileage <span class="op">+=</span> <span class="bu">round</span>(distance.num, <span class="dv">2</span>)  <span class="co"># Rounds to 2 sig figs.</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        calories <span class="op">+=</span> activity.calories</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        calories <span class="op">+=</span> activity.calories</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>There you have it! In those two variables–<code>mileage</code> and <code>calories</code>–you have all the data you need to summarize your running workouts for the last week. Now we just need to post this information on Twitter!</p>
 </section>
 <section id="step-3-create-a-pybot" class="level4">
 <h4 class="anchored" data-anchor-id="step-3-create-a-pybot"><strong>Step 3: Create a PyBot</strong></h4>
 <p>Ok, time for a shameless plug: yes, I’m the <a href="https://github.com/magsol/pybot">pybot</a> author. It’s still highly experimental, and largely uncompleted, but for our purposes it will suffice nicely as a barebones framework to interact with Twitter.</p>
 <p>Clone the repo and follow the setup script to create a Twitter app and connect it to your account.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">git</span> clone https://github.com/magsol/pybot.git</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">git</span> clone https://github.com/magsol/pybot.git</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">cd</span> pybot</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">sbin/create_pybot.py</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">sbin/create_pybot.py</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>That will walk you through the instructions for creating an app, generating OAuth credentials, and stubbing out your first pybot. Feel free to give it whatever name you’d like; for the purposes of this tutorial, I’ll assume we’ve named it <code>artbot</code> (don’t ask). Congratulations! You’ve created a twitter bot!</p>
 </section>
 <section id="step-4-customize-the-bots-behavior" class="level4">
 <h4 class="anchored" data-anchor-id="step-4-customize-the-bots-behavior"><strong>Step 4: Customize the bot’s behavior</strong></h4>
 <p>Our bot is pretty simple: every Monday at some specified time, it will wake up, read all the prior week’s running activities, and post the summary before going back to sleep for another week.</p>
 <p>It won’t be prompted by anything other than time. So the specific action override we’re looking for in PyBot parlance is <code>on_tweet</code>, and the interval we’ll use is <code>tweet_interval</code>. The latter is easy enough–a full week between tweets!</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.config[<span class="st">'tweet_interval'</span>] <span class="op">=</span> <span class="dv">60</span> <span class="op">*</span> <span class="dv">60</span> <span class="op">*</span> <span class="dv">24</span> <span class="op">*</span> <span class="dv">7</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.config[<span class="st">'tweet_interval'</span>] <span class="op">=</span> <span class="dv">60</span> <span class="op">*</span> <span class="dv">60</span> <span class="op">*</span> <span class="dv">24</span> <span class="op">*</span> <span class="dv">7</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Before we go any further: does anyone see anything wrong with the above code snippet?</p>
 <p>I’ll give you a hint: imagine you started this bot on a Tuesday, instead of a Monday.</p>
 <p>Yep, there it is. This interval we’ve defined is exactly 1 week, but it <em>doesn’t account for when we actually START the bot</em>. We need this to be a little more intelligent. If you want the posting to happen weekly every Monday, it shouldn’t matter when you actually start running the bot, right? It should be smart enough to figure out when it needs to post for the first time, <em>then</em> post weekly thereafter.</p>
 <p>A neat component of PyBot is that, in addition to giving hard time frames, you can also specify functions to compute the interval on-the-fly, subject to some other constraints that are dynamic (like on what day of the week you happen to fire up the bot).</p>
 <p>To make things easy on us, we’ll use the <code>datetime</code> convention in the Python documentation for <a href="https://docs.python.org/3.5/library/datetime.html#datetime.datetime.weekday">identifying individual days of the week</a>. This tutorial assumes Mondays (which corresponds to <code>0</code>), but you can use whatever value you want.</p>
 <p>We need to store this as a configuration parameter in the bot.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Put this somewhere in the bot_init() method</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.config[<span class="st">'update_day'</span>] <span class="op">=</span> <span class="dv">0</span>  <span class="co"># Corresponds to Monday.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Put this somewhere in the bot_init() method</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.config[<span class="st">'update_day'</span>] <span class="op">=</span> <span class="dv">0</span>  <span class="co"># Corresponds to Monday.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Now, we need a <em>function</em> to compute the interval between updates.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Put this somewhere in the bot_init() method</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.config[<span class="st">'tweet_interval'</span>] <span class="op">=</span> <span class="va">self</span>._compute_interval</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Put this somewhere in the bot_init() method</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.config[<span class="st">'tweet_interval'</span>] <span class="op">=</span> <span class="va">self</span>._compute_interval</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>We’ve referenced an internal method we’re calling <code>_compute_interval</code>, as of yet undefined. Let’s go ahead and define it!</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Put this somewhere in the bot class declaration</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Put this somewhere in the bot class declaration</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> _compute_interval(<span class="va">self</span>):</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>        interval <span class="op">=</span> <span class="dv">60</span> <span class="op">*</span> <span class="dv">60</span> <span class="op">*</span> <span class="dv">24</span> <span class="op">*</span> <span class="dv">7</span>  <span class="co"># The default interval; we'll start here</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -311,9 +314,9 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Essentially, all we've done is replace the 7 above with whatever</span></span>
 <span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>        <span class="co"># it needs to be in order to get us to our target day.</span></span>
-<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (target <span class="op">-</span> now) <span class="op">*</span> <span class="dv">24</span> <span class="op">*</span> <span class="dv">60</span> <span class="op">*</span> <span class="dv">60</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (target <span class="op">-</span> now) <span class="op">*</span> <span class="dv">24</span> <span class="op">*</span> <span class="dv">60</span> <span class="op">*</span> <span class="dv">60</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Now that our interval is in place, we’ll need to override the <code>on_tweet</code> action to do what we want whenever it’s called (which will be once each week on the day we’ve specified!). Remember, this method is called once we’ve hit our interval. So this is where it all comes together!</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> on_tweet(<span class="va">self</span>):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> on_tweet(<span class="va">self</span>):</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>        <span class="co"># First, pull in the stats from Strava.</span></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>        current <span class="op">=</span> datetime.datetime.now()</span>
@@ -336,9 +339,9 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Finally, use the stats to craft a tweet. This can be any format</span></span>
 <span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>        <span class="co"># you want, but I'll use the example one from the start of the post.</span></span>
 <span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>        tweet <span class="op">=</span> <span class="st">"My training last week: </span><span class="sc">{:d}</span><span class="st"> workouts for </span><span class="sc">{:.2f}</span><span class="st"> miles and </span><span class="sc">{:d}</span><span class="st"> calories burned."</span>.<span class="bu">format</span>(<span class="bu">len</span>(l), mileage, calories)</span>
-<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.update_status(tweet)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.update_status(tweet)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>That’s it! You have everything you need; now, just set the bot to run <em>ad nauseum</em>:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">python</span> artbot.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">python</span> artbot.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>It should run forever, sleeping for most of it but waking every week to post your summary. If you notice something isn’t working right, check the logs; they should specify if there are problems e.g.&nbsp;with permissions posting to Twitter, or connections hanging and disconnecting.</p>
 </section>
 </section>
@@ -402,13 +405,14 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

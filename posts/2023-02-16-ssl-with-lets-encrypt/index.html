@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -69,14 +69,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../images/favicon.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-befe23ebd2f54d8af2c8a89d1a1611f1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-98d7d9710456612fc4454c02b7e6ee72.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-a8fb0b7ad92d43da6d3c93b747a65c22.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -132,6 +133,8 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Stochastic Stenography</span>
     </a>
@@ -222,7 +225,7 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <p>This bit is actually entirely separate from Mastodon; it just <em>felt</em> like it was part of Mastodon, since it was Mastodon that I couldn’t reach. When SSL is misconfigured, your experience is strictly browser-dependent: in my case, Chrome<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> would throw up myriad warnings and, in regular mode, wouldn’t let me navigate to the page at all. In incognito mode, it would allow me to navigate there provided I clicked a link to acknowledge I was doing something “unsafe”.</p>
 <p>So let’s back up a bit. I’m using <a href="https://traefik.io/">traefik</a> as my ingress controller. Not, I should add, because it’s packaged with k3s; I actually disabled that because it’s an old version. Rather, I installed traefik via <a href="https://github.com/traefik/traefik-helm-chart">its official helm chart</a>.</p>
 <p>Now. In keeping with my philosophy of doing the simplest thing that gets results, I tried for the http-01 option when it came to <a href="https://letsencrypt.org/docs/challenge-types/">Let’s Encrypt challenge modes</a>, as it’s by far the most straightforward, at least when it comes to configuring the ingress. I had to make only very minor modifications to the traefik helm chart; it ended up looking something like this:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ports</span><span class="kw">:</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ports</span><span class="kw">:</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">websecure</span><span class="kw">:</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">tls</span><span class="kw">:</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">certResolver</span><span class="kw">:</span><span class="at"> </span><span class="st">"leresolver"</span></span>
@@ -233,14 +236,14 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">leresolver</span><span class="kw">:</span></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">email</span><span class="kw">:</span><span class="at"> &lt;my email&gt;</span></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">httpChallenge</span><span class="kw">:</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">entryPoint</span><span class="kw">:</span><span class="at"> </span><span class="st">"web"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">entryPoint</span><span class="kw">:</span><span class="at"> </span><span class="st">"web"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>That’s pretty much it! I made a few other modifications around debugging and logging, and a small addition around load balancing (to account for metallb), but simplicity won the day.</p>
 <p>…and lo, did the problems come thence <em>unceasingly</em>.</p>
 </section>
 <section id="get-problems" class="level3">
 <h3 class="anchored" data-anchor-id="get-problems">GET problems</h3>
 <p>Here’s the part that drove me absolutely insane.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-overflow-wrap code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">E1129</span> 00:45:08.092782       1 sync.go:190] cert-manager/challenges <span class="st">"msg"</span>=<span class="st">"propagation check failed"</span> <span class="st">"error"</span>=<span class="st">"failed to perform self check GET request 'http://quinnwitz.house/.well-known/acme-challenge/jVKFmi_ulnESi0pCj-KnVC5mPt0RouNcfUOEKcYe9ro': Get </span><span class="dt">\"</span><span class="st">http://quinnwitz.house/.well-known/acme-challenge/jVKFmi_ulnESi0pCj-KnVC5mPt0RouNcfUOEKcYe9ro</span><span class="dt">\"</span><span class="st">: context deadline exceeded (Client.Timeout exceeded while awaiting headers)"</span> <span class="st">"dnsName"</span>=<span class="st">"quinnwitz.house"</span> <span class="st">"resource_kind"</span>=<span class="st">"Challenge"</span> <span class="st">"resource_name"</span>=<span class="st">"mastodon-tls-lzwbv-1403372365-523260434"</span> <span class="st">"resource_namespace"</span>=<span class="st">"mastodon"</span> <span class="st">"resource_version"</span>=<span class="st">"v1"</span> <span class="st">"type"</span>=<span class="st">"HTTP-01"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-overflow-wrap code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">E1129</span> 00:45:08.092782       1 sync.go:190] cert-manager/challenges <span class="st">"msg"</span>=<span class="st">"propagation check failed"</span> <span class="st">"error"</span>=<span class="st">"failed to perform self check GET request 'http://quinnwitz.house/.well-known/acme-challenge/jVKFmi_ulnESi0pCj-KnVC5mPt0RouNcfUOEKcYe9ro': Get </span><span class="dt">\"</span><span class="st">http://quinnwitz.house/.well-known/acme-challenge/jVKFmi_ulnESi0pCj-KnVC5mPt0RouNcfUOEKcYe9ro</span><span class="dt">\"</span><span class="st">: context deadline exceeded (Client.Timeout exceeded while awaiting headers)"</span> <span class="st">"dnsName"</span>=<span class="st">"quinnwitz.house"</span> <span class="st">"resource_kind"</span>=<span class="st">"Challenge"</span> <span class="st">"resource_name"</span>=<span class="st">"mastodon-tls-lzwbv-1403372365-523260434"</span> <span class="st">"resource_namespace"</span>=<span class="st">"mastodon"</span> <span class="st">"resource_version"</span>=<span class="st">"v1"</span> <span class="st">"type"</span>=<span class="st">"HTTP-01"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This is what I saw appear over and over on <a href="https://letsdebug.net/">Let’s Debug</a> (thank you for that website, by the way!). No matter what (http-01) configuration I tried, this was what came back: timeouts.</p>
 <p>As best I can tell, <a href="https://github.com/cert-manager/cert-manager/issues/3238#issuecomment-1384438850">this recent comment on GitHub</a> miiight identify the source of the problem and how to fix it:</p>
 <blockquote class="blockquote">
@@ -255,7 +258,7 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <p>Second, I created API keys with Cloudflare specifically for modifying DNS entries. The cert-manager documentation has a whole page on dns-01 verification steps <a href="https://cert-manager.io/docs/configuration/acme/dns01/cloudflare/">and uses Cloudflare as its examplar</a>.</p>
 <p>FUN LITTLE FACTOID: Using the method outlined in the cert-manager documentation, I still encountered weird errors involving “invalid request headers.” <em>For whatever bloody reason</em>, when creating the <code>Secret</code> that stores the Cloudflare API tokens, I had to use <code>data</code> rather than <code>stringData</code> otherwise it simply wouldn’t work. <a href="https://github.com/cert-manager/cert-manager/issues/3021#issuecomment-861894010">Here’s the solution</a>. It also needs to be in the same namespace as Mastodon. Also also, I needed to use <code>api-key</code>, <code>api-token</code>, and <code>email</code> fields, <a href="https://go-acme.github.io/lego/dns/cloudflare/">since these are specific to the permissions LE will need</a>.</p>
 <p>Third, I had to make more modifications to the traefik helm chart. These included flipping the <code>certResolver.leresolver</code> from <code>httpChallenge</code> to <code>dnsChallenge</code>, and also included adding environment variables for each of the <code>data</code> fields in the cloudflare API secret. Here’s what those changes looked like:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">certResolvers</span><span class="kw">:</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">certResolvers</span><span class="kw">:</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">leresolver</span><span class="kw">:</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">email</span><span class="kw">:</span><span class="at"> &lt;my email&gt;</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">dnsChallenge</span><span class="kw">:</span></span>
@@ -278,9 +281,9 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">valueFrom</span><span class="kw">:</span></span>
 <span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">secretKeyRef</span><span class="kw">:</span></span>
 <span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">name</span><span class="kw">:</span><span class="at"> &lt;my secret&gt;</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">key</span><span class="kw">:</span><span class="at"> api-token</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">key</span><span class="kw">:</span><span class="at"> api-token</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The final step was to create a new <code>ClusterIssuer</code>, one that specifically used dns-01 verification. Here’s what it looked like:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apiVersion</span><span class="kw">:</span><span class="at"> cert-manager.io/v1</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apiVersion</span><span class="kw">:</span><span class="at"> cert-manager.io/v1</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kind</span><span class="kw">:</span><span class="at"> ClusterIssuer</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">metadata</span><span class="kw">:</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> letsencrypt-prod-dns</span></span>
@@ -295,7 +298,7 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">cloudflare</span><span class="kw">:</span></span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">apiTokenSecretRef</span><span class="kw">:</span></span>
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="at">            </span><span class="fu">name</span><span class="kw">:</span><span class="at"> &lt;my secret&gt;</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="at">            </span><span class="fu">key</span><span class="kw">:</span><span class="at"> api-token</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="at">            </span><span class="fu">key</span><span class="kw">:</span><span class="at"> api-token</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>I wouldn’t call this super-complicated, but it definitely wasn’t the ease of http-01 configuration. But unlike http-01, this actually worked!</p>
 </section>
 <section id="other-musings" class="level3">
@@ -309,7 +312,7 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Oh hey!
+<span class="screen-reader-only">Tip</span>Oh hey!
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -390,13 +393,14 @@ Encrypt.”</span> February 16, 2023. <a href="https://magsol.github.io/2023-02-
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

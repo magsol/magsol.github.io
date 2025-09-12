@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.24">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Shannon Quinn">
+
+<title>“We’ll do our best.” – Stochastic Stenography</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-a8fb0b7ad92d43da6d3c93b747a65c22.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XHDW9H78Z1"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
+</script>
+<link rel="me" href="https://quinnwitz.house/@magsol">
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="“We’ll do our best.” – Stochastic Stenography">
+<meta property="og:description" content="Kids say the darndest Sanderson-esque things.">
+<meta property="og:image" content="https://magsol.github.io/posts/2025-09-12-well-do-our-best/pix/firefly_sunrise.jpg">
+<meta property="og:site_name" content="Stochastic Stenography">
+<meta property="og:locale" content="en_US">
+<meta property="og:image:alt" content="The sun rising from the Athens Firefly trail.">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Stochastic Stenography</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About Me</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">“We’ll do our best.”</h1>
+            <p class="subtitle lead">Kids say the darndest Sanderson-esque things.</p>
+                                <div class="quarto-categories">
+                <div class="quarto-category">personal</div>
+                <div class="quarto-category">professional</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Shannon Quinn </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">Posted on the 12th of September in the year 2025, at 1:57pm. It was Friday.</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<p><img src="pix/firefly_sunrise.jpg" class="preview-image img-fluid" alt="The sun rising from the Athens Firefly trail."></p>
+<p>I’m on track this calendar to read only a single Brandon Sanderson book—Secret Project 5, aka <em>Isles of the Emberdark</em> (and it was wonderful)—but with everything that has been going on this year, some of my favorite quotes, motifs, and character arcs from his books have been sticking in my neurons.</p>
+<p>“Journey before destination” is certainly the biggest one, and not only because it’s the one I’ve said—many years before I’d even heard of Sanderson—should be my epitaph: <em>holy geez</em> it’s hard for me.</p>
+<section id="everday-im-changin" class="level3">
+<h3 class="anchored" data-anchor-id="everday-im-changin">Ever’day I’m changin’</h3>
+<p>I’ll be honest: I’ve wanted to write this blog post for weeks but just couldn’t find a way to dislodge it from my skull. I’ve made the announcements, emptied the offices, boarded the ons, and bluntly have just been trying to keep putting one foot in front of the other while moving at about a thousand miles per hour.</p>
+<p>Then NPR posted this gem: “<a href="https://www.npr.org/2025/09/12/nx-s1-5403630/signs-its-time-to-quit">7 signs it’s time to quit.</a>” (it’s a great read, and I’d highly recommend it regardless of your career circumstances)</p>
+<p>Being a month removed from a full career pivot is an interesting perspective. Suffice to say, I felt intimately familiar with each of the seven signs.</p>
+<ol type="1">
+<li>Yep, been thinking of quitting since late 2020.</li>
+<li>Yep, definitely wasn’t what I wanted, even though it <em>theoretically</em> was. And maybe, at one time, truly was.</li>
+<li>Oh, any number of reasons here. Relevant info: I’m a recovering people-pleaser! Not hard to concoct reasons to stick around.</li>
+<li>YUUUUUP.</li>
+<li>Chances of success were always tiny. Felt like I’d won the lottery several times in a row up until that point; how much longer could that luck hold, really?</li>
+<li>This was much more subtle than the others, but it was there, especially from my wonderful wife.</li>
+<li>More than I was willing to pay, I’d realized.</li>
+</ol>
+<p>And while it took most of the next 5 years to make the change happen, it’s not like I fell into business-as-usual for that whole interval. Progress isn’t linear and sometimes involves backtracking.</p>
+<p>But good luck convincing my head the truth of that <em>for ME</em>. Because at times I felt as though I actually <em>was</em> just settling into the status quo. Objectively, career changes involve a lot of hurry-up-and-wait<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, which my brain just refuses to accept.</p>
+<p>The waiting part was hard enough: waiting for relevant job postings, waiting for a response to applications, waiting for interview schedules, waiting for feedback on the interview. And then came the changes.</p>
+</section>
+<section id="well-folks-were-being-diverted-to-alabama" class="level3">
+<h3 class="anchored" data-anchor-id="well-folks-were-being-diverted-to-alabama">“Well folks, we’re being diverted to Alabama”<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></h3>
+<p>For some reason, I decided four plane trips in eight weeks was a good plan.</p>
+<p>For a little context, this easily surpasses my personal records for both total flight count within a single year AND flight frequency since the pandemic, and it also rivals some of my busiest years as a graduate student (when we traveled to 3-4 out of town half and full marathons, visited both our families over holidays, and took our own trips sans kids; not to mention conferences).</p>
+<p>There was SciPy 2025 in early July, which was fantastic as always. It was my first SciPy since they moved from their previous Austin, TX location to the current Tacoma, WA spot.</p>
+<p>Then there was a 1-week family vacation to Colorado. Ostensibly, the purpose of the trip was to attend the wedding of one of my wife’s cousins, and that indeed was a beautiful and joyous event. But we also took a few extra days to stick around and be tourists, see the sights, hile, and even swim. A heat wave in the second half of the trip put a damper on things, but we otherwise enjoyed getting out to the mountains.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pix/mountains.jpg" class="img-fluid figure-img"></p>
+<figcaption>The Colorado mountains never disappoint.</figcaption>
+</figure>
+</div>
+<p>Following that, in mid-August I took a trip to Boston for an off-site / on-site work event at my new gig’s HQ. That’s right: I got to meet folks at my new job in-person! The first day was a series of icebreakers followed by some pretty in-depth discussion of goals and strategy for the Engineering team. The second day was an actual on-site visit to the headquarters building, where we participated in “Science Day”, which entailed an informal hackathon as well as presentations by some folks on what they’ve been working on. Frankly, an incredible few days.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pix/valo.jpg" class="img-fluid figure-img"></p>
+<figcaption>Inside HQ!</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pix/braves.jpg" class="img-fluid figure-img"></p>
+<figcaption>We took a tour of nearby Fenway Park. Included in its on-site museum were original baseballs signed by every single World Series winning team. Obviously, I went straight for the 1995 ball.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pix/baberuth.jpg" class="img-fluid figure-img"></p>
+<figcaption>But I also glanced at what might be the <a href="https://en.wikipedia.org/wiki/1927_New_York_Yankees_season">single most famous World Series team</a> of all time.</figcaption>
+</figure>
+</div>
+<p>And over Labor Day weekend, my family and I journeyed to Ohio to visit my wife’s family. It was a blast, but it was wall-to-wall activities. I recall telling my wife at the Cleveland Air Show, as the F-15 was coming around to buzz us a second time: “I’m enjoying this! But if it was up to me I’d be home right now.”</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pix/thunderbirds.jpg" class="img-fluid figure-img"></p>
+<figcaption><a href="https://en.wikipedia.org/wiki/United_States_Air_Force_Thunderbirds">The Thunderbirds</a> headlined this year’s air show.</figcaption>
+</figure>
+</div>
+</section>
+<section id="flipping-the-table-setting-it-on-fire-and-blowing-it-up" class="level3">
+<h3 class="anchored" data-anchor-id="flipping-the-table-setting-it-on-fire-and-blowing-it-up">Flipping the table, setting it on fire, and blowing it up</h3>
+<p>We may have bitten off more than we could chew from globetrotting alone. Other major life events made sure we paid dearly for our decisions.</p>
+<p>In May, I attended what will very likely be my last UGA graduation to hood my final graduating doctoral student. It was definitely bittersweet… but honestly, I was mostly proud of my students, and thrilled that it really could be my final graduation ceremony.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pix/uga_graduation.jpg" class="img-fluid figure-img"></p>
+<figcaption>Someone in my dad’s department was in attendance and was kind enough to snap this for me.</figcaption>
+</figure>
+</div>
+<p>In March, I turned 40. Like a dad at the playground who just turned 40 the day before Z’s birthday said to me: “My brain thinks I’m 25, but my body thinks I’m 55.” Can’t bend down and pick something my kiddo has dropped without making all the appropriate over-30 noises.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pix/happy40th.jpg" class="img-fluid figure-img"></p>
+<figcaption>Birthday party for 1, please.</figcaption>
+</figure>
+</div>
+<p>In January, we got the first decent snowfall in Athens that we’ve had in since we moved here, and first snow of any kind in Athens since 2021. It was beautiful; Z loved playing in it, and it even canceled a few days of school. And a few days of daycare. So I now <em>really</em> understand how my parents must have felt on the occasional snow day when I was a kid.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pix/snow.jpg" class="img-fluid figure-img"></p>
+<figcaption>An increasingly rare event in the southeastern US.</figcaption>
+</figure>
+</div>
+<p>Let’s see, what else… oh! <strong>I officially began my new job at Valo on July 16, and my last official day at UGA was August 15. And Z left daycare and started public pre-K at the start of August.</strong><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pix/resignation.jpg" class="img-fluid figure-img"></p>
+<figcaption>10.5 years. Pretty incredible.</figcaption>
+</figure>
+</div>
+</section>
+<section id="permanent-impermenance" class="level3">
+<h3 class="anchored" data-anchor-id="permanent-impermenance">Permanent impermenance</h3>
+<p>So far, 2025 has been a visceral lesson on the impermanence of life. It’s something I conceptually understood, and often associated it negatively (ie death). But this year has given me a taste of its positive side. It’s a theme that has also come up in speaking with my therapist lately: that even bad situations are temporary. Life is a series of seasons, and if I’m frustrated with where I am now, I can probably do at least a little something to change it.</p>
+<p>Like the final slide of the NPR comic: if nothing else, you can allow yourself to daydream of something better.</p>
+<p>It’s somehow already mid-September and, while travel and major life transitions <em>should</em> be in the rearview mirror for at least a few months<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, I’m still finding it difficult to catch my breath. A big part of that is simply: jfc, I’m trying to find what our new daily equilibrium even is! I’m a creature of habit, and I feel like I really nailed 2024. But the playing field has changed <em>dramatically</em> since then and I’m still recalibrating.</p>
+<p>I <em>love</em> my new job (even though I feel about 10 slippery steps behind on everything): the work is exciting, the schedule is sustainable, and the people are <strong>just. lovely.</strong> I went on a 5-mile run with my direct supervisor during the Boston on-site. I’m sure there’s a rose-tinted sheen over everything right now, but even watching other folks interact—in the Slack, at the office—I’m humbled by how compassion and empathy underlie it all. They care about the work, sure, but they care even more about the people.</p>
+<p>I also… don’t really miss UGA? I’ve visited campus a few times lately, both since submitting my letter of resignation in mid-June, and even since my employment officially ended August 15. There are <em>parts</em> of it I miss: the sense of physical community, some really awesome folks, working with my Dad. But I kept expecting I’d be bowled over at some point with mourning, and it just hasn’t happened. It still could! And even if it doesn’t, those parts I mentioned will probably pop up in waves from time to time.</p>
+<p>But every day at this new job has been replete with parallel experiences: where something that, for the past 10 years, had always gone one particular way, <em>instead went this other awesome way</em>. And it’s just… normal. It’s not special, not exceptional, not a one-off; it’s just how this company does business.</p>
+<p>Mindblowing. Sometimes, the grass really <em>is</em> greener.</p>
+<p>I’m sure this new job will have its grinds. I’m sure, even once I find my footing with these new routines, stuff will hit the fan. And I’m sure that when that happens, I’ll fail miserably to embrace the journey and instead just wish it away. But like my recently-5yo<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> daughter has taken to saying lately: “We’ll do our best.”</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pix/superstardestroyer.jpg" class="img-fluid figure-img"></p>
+<figcaption>Would anyone be up for a round of Star Wars Armada?</figcaption>
+</figure>
+</div>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Much like air travel, which I’ll get to.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Yes this actually happened: on a flight home to ATL, already delayed 2+ hours on the tarmac in Colorado due to lightning, was then diverted to Birmingham because of lightning over Atlanta. I think we got home at 2am?<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>I don’t know whether it’d have been more painful to have spaced these transitions out, but I can definitely say having them hit at once was also painful.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>A tentative trip over the holidays in December is the only thing on the horizon.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>As an “elder millennial” whose brain is still jammed somewhere in the middle of 2020… HOW 5YO 😭<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2025,
+  author = {Quinn, Shannon},
+  title = {“{We’ll} Do Our Best.”},
+  date = {2025-09-12},
+  url = {https://magsol.github.io/2025-09-12-well-do-our-best},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2025" class="csl-entry quarto-appendix-citeas" role="listitem">
+Quinn, Shannon. 2025. <span>“<span>‘We’ll Do Our Best.’</span>”</span>
+September 12, 2025. <a href="https://magsol.github.io/2025-09-12-well-do-our-best">https://magsol.github.io/2025-09-12-well-do-our-best</a>.
+</div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/magsol\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<input type="hidden" id="giscus-base-theme" value="dark">
+<input type="hidden" id="giscus-alt-theme" value="dark">
+<script>
+  function loadGiscus() {
+    // Function to get the theme based on body class
+    const getTheme = () => {
+      let baseTheme = document.getElementById('giscus-base-theme').value;
+      let altTheme = document.getElementById('giscus-alt-theme').value;
+      return document.body.classList.contains('quarto-dark') ? altTheme : baseTheme;
+    };
+    const script = document.createElement("script");
+    script.src = "https://giscus.app/client.js";
+    script.async = true;
+    script.dataset.repo = "magsol/magsol.github.io";
+    script.dataset.repoId = "MDEwOlJlcG9zaXRvcnkyNzYwNTYxNw==";
+    script.dataset.category = "Announcements";
+    script.dataset.categoryId = "DIC_kwDOAaU6cc4CTutY";
+    script.dataset.mapping = "pathname";
+    script.dataset.reactionsEnabled = "1";
+    script.dataset.emitMetadata = "0";
+    script.dataset.inputPosition = "top";
+    script.dataset.theme = getTheme();
+    script.dataset.lang = "en";
+    script.crossOrigin = "anonymous";
+    // Append the script to the desired div instead of at the end of the body
+    document.getElementById("quarto-content").appendChild(script);
+  }
+  loadGiscus();
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
