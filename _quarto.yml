@@ -12,6 +12,7 @@ website:
   image: images/logo.png
   navbar:
     search: true
+    logo: images/symbol.png
     right:
       - about.qmd
   open-graph:
