@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Shannon Quinn">
+
+<title>An Ode to UGA – Stochastic Stenography</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-cd884f2855776405ca61470c593c983e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XHDW9H78Z1"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
+</script>
+<link rel="me" href="https://quinnwitz.house/@magsol">
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="An Ode to UGA – Stochastic Stenography">
+<meta property="og:description" content="And to leaving the academy">
+<meta property="og:image" content="https://magsol.github.io/posts/2025-10-01-an-ode-to-uga/pix/nameplate.jpg">
+<meta property="og:site_name" content="Stochastic Stenography">
+<meta property="og:locale" content="en_US">
+<meta property="og:image:alt" content="My UGA nameplate, which hung outside my Boyd office. It says School of Computing, University of Georgia. Shannon Quinn, PhD. Associate Professor.">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../images/symbol.png" alt="" class="navbar-logo light-content">
+    <img src="../../images/symbol.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Stochastic Stenography</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About Me</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">An Ode to UGA</h1>
+            <p class="subtitle lead">And to leaving the academy</p>
+                                <div class="quarto-categories">
+                <div class="quarto-category">professional</div>
+                <div class="quarto-category">academia</div>
+                <div class="quarto-category">research</div>
+                <div class="quarto-category">teaching</div>
+                <div class="quarto-category">mentoring</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Shannon Quinn </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">Posted on the 1st of October in the year 2025, at 10:55am. It was Wednesday.</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<p><img src="pix/nameplate.jpg" class="preview-image img-fluid" alt="My UGA nameplate, which hung outside my Boyd office. It says School of Computing, University of Georgia. Shannon Quinn, PhD. Associate Professor."></p>
+<section id="the-mid-aughts" class="level3">
+<h3 class="anchored" data-anchor-id="the-mid-aughts">The Mid-Aughts</h3>
+<p>I still remember it vividly. I was in Cleveland, Ohio, driving to or from something wedding related, as it was April 4, 2014—the day before Cathryn and I got married. I had my phone on me, and like it did a lot that weekend, it started ringing. But it was a 706 number I didn’t recognize. Uncharacteristically, I pulled off into a parking lot (normally I just let calls roll to voicemail… even when I’m just sitting at home<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>) and answered. It was none other than the Computer Science department head at UGA, offering me the job of Assistant Professor with joint appointments in Computer Science and Cellular Biology!</p>
+<p>I don’t remember exactly when I told Cathryn the news (it was sometime over the wedding weekend), but I <em>do</em> remember that, at the time, I told the department head I needed a week to consider it, as I was literally about to get married and was then immediately jetting off to an island without cell service for my honeymoon. Suffice to say I accepted, but that made for an added element of excitement to an already electrified weekend.</p>
+</section>
+<section id="present-day" class="level3">
+<h3 class="anchored" data-anchor-id="present-day">Present Day</h3>
+<p>Why then, over a decade and tenure later, did I leave UGA? Well, a lot of reasons. But that’s not the point here.</p>
+<p>Sometime during the 2020 pandemic lockdowns, I opened a blank Markdown file and began writing a document that I steadily added to over the intervening years, cataloging and distilling the various reasons that I felt academia and I were not long for this world. In reading over it again for the millionth time, I’m left with this strange feeling of simultaneous inevitability and happenstance: a sort of causal superposition.</p>
+<p>On one hand: of <em>course</em> I left, holy see you later Batman. On the other hand, it’s not difficult to envision permutations of universes in which I stayed; some of these universes differ from our own by a single grant decision, a single job offer, even a single day with one less fire to put out.</p>
+<p>This post isn’t about why I left UGA<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. It <em>is</em> a collection of complicated thoughts and feelings as I begin the process of closing the door on a place that has <em>profoundly</em> influenced the direction of every single aspect of my life. I hope you, dear reader, find some useful nugget here to take with you, but I want to be painfully blunt up front: this post is, first and foremost, for me.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pix/where_the_other_road_led.jpg" class="img-fluid figure-img"></p>
+<figcaption>I did (also, this book is amazing).</figcaption>
+</figure>
+</div>
+</section>
+<section id="what-ill-miss" class="level3">
+<h3 class="anchored" data-anchor-id="what-ill-miss">What I’ll miss</h3>
+<p>At the risk of sounding trite, it’s not <em>what</em> I’ll miss, but <em>who</em>: the people. The people are the part of UGA I will miss the most, hands down. One can’t count on an institution to always have your back, but people are another story. In no particular ordering:</p>
+<p>My Lilly Fellows cohort, and my Lilly mentor. They stoked not only my interest in teaching, but were also lovely, well-rounded people. Some became writing buddies, others gave us advice for our <a href="../../posts/2019-06-03-quinnwitz-in-ireland/index.html">2019 Ireland trip</a>.</p>
+<p>The Cellular Biology department heads, past and present: Kojo, Mark, Dennis, and Jim. Multiple longtime collaborators I met through Cellular Biology: Karl, Jonathan, Silvia, and Rachel. This department came about as close as possible to making me believe that whole institutions <em>will</em> stick by you through thick and thin, because this one sure did: from Kojo intervening on my behalf with regards to teaching assignments; Jim taking me out to lunch to discuss grant proposal strategies; all of the above <em>clearly</em> whipping votes in the department’s tenure discussion. I will deeply miss Karl’s sense of humor, Jonathan’s warm and even-keeled presence, and Rachel and Silvia’s fascinating research questions.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pix/peasant1.jpg" class="img-fluid figure-img"></p>
+<figcaption>I met Travis (left) and Jim (middle) at the Peasant for drinks shortly after informing them of my departure. I’ll deeply miss these two, and their leadership and vision.</figcaption>
+</figure>
+</div>
+<p>The Institute of Bioinformatics leadership, Travis and Holly, who took a giant risk on me in multiple ways. They are incredible leaders with a laser-focused vision for the unit and more than enough talent to execute. They singlehandedly restored my belief that we don’t <em>necessarily always</em> rise to the level of our incompetence; sometimes we actually reach exactly where we’re meant to be, where we can do the most good. And they’re just wonderful people to boot.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pix/iob_retreat.jpg" class="img-fluid figure-img"></p>
+<figcaption>Entrance to the April 2025 IOB Retreat. This is where my mind was blown at just how effectively the IOB was run.</figcaption>
+</figure>
+</div>
+<p>My research collaborators: Kyle, Russ, Nicole, Meredith, Ginger, Jason, and Michael. Lots of other folks who were at UGA but left before I did (usually to go to another university).</p>
+<p>Other faculty and staff I interacted regularly with, officially or unofficially: Carl, Brad, Mica, Kimberly, Evette, and Sandra. Special shoutout to my “work wife” <a href="https://arischlesinger.com/">Ari Schlesinger</a>, who only started at UGA in the fall of 2023, but with whom I forged a quick friendship thanks to our <a href="https://www.youtube.com/watch?v=ygxDs_zcayo">common background</a>. I tried to be the resource for her that I wish I’d had at that career stage. She’s since become a close friend of both mine and Cathryn’s (and Z really loves her too!) so I’m optimistic we’ll stay in touch.</p>
+<p><strong>But if you’re a prospective student and remotely interested in her work, reach out to her—I can’t think of a line of CS research inquiry more relevant or important right now!).</strong></p>
+<p>An uncountable number of students, but <a href="https://quinngroup.github.io/people.html">this page</a> is a good place to start.</p>
+<p>But most of all, and above all, I’ll miss working with my Dad.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pix/redandblack.png" class="img-fluid figure-img"></p>
+<figcaption>The header of the <a href="https://news.uga.edu/father-son-faculty-members-team-up-on-nsf-grant/">2016 Red and Black article</a> we appeared in when our joint research work was just beginning.</figcaption>
+</figure>
+</div>
+<p>My Dad has always been a bit of a personal and professional hero of mine, and it’s no stretch to say that my journey into the tenure-track was at least <em>slightly</em> because of him. Getting not one, but <em>two</em> federal grants with him—an NSF grant in 2015 (I was a co-PI), and an NIH grant in 2021 (I was the lead PI!)—is something I’ll cherish forever. I still hold out hope that, as I grow in my new role, I’ll be able to cultivate new opportunities for external collaboration that might include my Dad.</p>
+<p>I guess there is one “what” that I’ll miss: I’ll miss that STEM building office that I had for all of four months. At least at time of writing, it’s one of the newest buildings at UGA, and so the office itself (while nothing special) was just lovely. I even had a few opportunities to bring Z there a couple of summer days when we needed to kill some time, and she loved it.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pix/stem_building.jpg" class="img-fluid figure-img"></p>
+<figcaption>The newest building on campus (for now). It was also right next to the IOB building.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pix/new_office.jpg" class="img-fluid figure-img"></p>
+<figcaption>It was nothing flashy, but wow it was nice.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pix/z_newoffice.jpg" class="img-fluid figure-img"></p>
+<figcaption>It’s always “bring your kid to your cool office” day.</figcaption>
+</figure>
+</div>
+</section>
+<section id="what-im-proud-of" class="level3">
+<h3 class="anchored" data-anchor-id="what-im-proud-of">What I’m proud of</h3>
+<p>To pick up from the previous section: my Dad and I got a handful of publications with both our names on them. Together with the two grants, and I think that’s pretty effing awesome.</p>
+<p>I got a coveted <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1845915">NSF CAREER award</a>. That got me tenure, and was among the first times I could recall being paid to work on something that I had <em>created</em>, that I was <em>super</em> excited about, and which I really believed in.</p>
+<p>I published in <a href="http://dx.doi.org/10.1126/scitranslmed.aaa1233">Science</a>, <a href="http://dx.doi.org/10.1145/2939672.2939730">KDD</a>, <a href="https://doi.org/10.1109/ISBI.2018.8363732">ISBI</a> (<a href="https://doi.org/10.1109/ISBI.2018.8363735">twice</a>!), and even places like <a href="https://doi.org/10.21105/joss.01983">JOSS</a> that aren’t high-impact in the traditional sense but are—or so I believe—<em>incredibly</em> valuable outlets that help make more parts of modern academia sustainable.</p>
+<p>I was the chief architect of an <a href="https://www.cs.uga.edu/majors-degrees/content/data-science-bs"><em>entire undergraduate curriculum</em></a>. I’m personally not a fan of the direction it’s gone since launch, but I was really proud of the idea in principle and did my best to get it there.</p>
+<p>Along those lines, I’m really proud of all the <a href="https://github.com/eds-uga/">digital classroom materials</a> I created for all the courses I taught. Which reminds me: there are private “master” repos with things like autograders, assignment keys, and other notes that I should perhaps make visible?</p>
+<p>Around the same time I got my NSF CAREER, I also won a Lilly Teaching fellowship, a departmental teaching award, and a university research award.</p>
+<p>I received (and still receive) messages like this one:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pix/student_email.jpg" class="img-fluid figure-img"></p>
+<figcaption>A very recent email from a former student.</figcaption>
+</figure>
+</div>
+<p>and I’ve lost count of the automated UGA emails to the effect of “a student from this semester’s graduating class identified you as someone who had an outsized impact on their development”, which is just so incredibly humbling and affirming.</p>
+<p>Speaking of students, I’m <em>immensely</em> proud of everything they accomplished, especially given the circumstances under which many of them worked. Everyone’s situation is different, but the default situation of a student is <em>difficult</em>: especially graduate students, especially international students, especially students supporting themselves and/or another person, especially part-time students, especially non-traditional students, especially minority students or otherwise underprivileged students. And that’s just the baseline, the default, standard operating procedure if nothing goes <em>wrong</em>; at least a handful of my students were not so lucky. But they worked around those problems, too. I watched as students with minimal or even zero background in computing finish up as experts in their areas by the time they left; there is no single greater reward to a mentor.</p>
+<p>Publications, posters, conference talks, DOIs, awards; they’re all nice, great even. But for me, I’m proudest when I see that light go on in a student’s brain, and they transition from asking me “what do I do next” to telling me “here’s what I think we should do next”.</p>
+<p>We did some great work too, which admittedly I’ll miss (so I guess this should go in the previous section, at least in part) but which I’m also proud of. I spent over a decade working on analyzing ciliary motion, and loved it. It was my first-ever research project, and also my last (the NSF CAREER funded it). In addition, I worked with my Dad on studying the effects of tuberculosis on the mitochondria of lung cells (NSF and NIH grants); I also developed tracking and analysis methods to understand how toxoplasma parasites invade host cells (collaborator on an NIH grant). A project I was really excited for was to conduct a pilot study on how to introduce <a href="https://en.wikipedia.org/wiki/Open_science">Open Science</a> tools and techniques into graduate education; we even got an NSF grant for this work!</p>
+<p>I’m very proud of the <a href="https://osbd.github.io/">Open Science in Big Data workshop</a> I ran for four consecutive years in conjunction with the annual IEEE BigData Conference; for four years, I pulled that off pretty much single-handedly. It gave me an excuse to invite some of my professional heroes to give keynote talks, and as a result I’m still in contact with a few of them, and a few I consider friends.</p>
+<p>There were myriad other projects that were one-offs, or which never quite panned out, but which contributed to my overall portfolio in some way, and for which I am grateful.</p>
+</section>
+<section id="what-i-started-but-didnt-finish" class="level3">
+<h3 class="anchored" data-anchor-id="what-i-started-but-didnt-finish">What I started (but didn’t finish)</h3>
+<p>To a certain extent, <em>everything</em> I worked on in my 10+ years at UGA would fall in this category. It’s a blessing and a curse of academia: the work is never truly done. But here are just a few that stick out to me.</p>
+<p>By any metric, my NSF CAREER project was a rousing success, except for one stated objective: I was never able to fully reveal quantitative definitions for previously-unknown ciliary motion phenotypes, nor was I able to observe whether these phenotypes provided any insights into the specific underlying pathologies. Imagine: diagnosing ciliopathies by simply watching how cilia move! I really think the hypothesis is a good one, but I wasn’t able to close this circle, mostly due to a combination of 1) lack of data that was high enough resolution, and 2) just not enough time (the 2020 pandemic lockdowns landed right smack in the middle of this project, and shut down laboratories just as we were starting to purchase materials to conduct experiments; to say this was a <em>huge freaking wrench</em> in things would be an understatement).</p>
+<p>Along those lines, I’d written a few versions of a draft NIH R01 that posited a connection between the SARS-CoV-2 virus, ciliary health, and the virus’ ability to invade lung cells. It was rejected twice, but the third submission would have been a major overhaul, one which I think would have been extremely competitive: it brought in some of my <a href="https://en.wikipedia.org/wiki/Spatial_biology">spatial biology</a> experience from my 2024 sabbatical with <a href="https://predxbio.com/">PredxBio</a>. The program officers at NIH who read it loved it. It was a genuinely exciting project, taking and building on work I was intimately familiar with and moving it in a new direction. Work on this R01 proposal even dovetailed into some semi-serious conversations with the dean of UGA’s fledgling medical school about creating a brand new research institute focused on spatial biology in medicine and collaborations with industry. I’ve no doubt someone will pick up these ideas and run with them, but I’ll always be curious as to how they would’ve turned out had I been the one to execute.</p>
+<p>I also feel as though we weren’t able to get out of the prototype stage in the collaboration with my Dad. The reasons for this are complicated (read: the source of a great deal of acute anger<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>), but suffice to say we were dramatically and unexpectedly under-resourced. We did the best we could with what we had and still accomplished some fascinating things. But we’d hoped to use what we built to scale up into a full genome screen of the tuberculosis pathogen and identify genes that contributed to its ability to shut down host cell defenses. Sadly, we never reached that point. Nevertheless, we accomplished enough that, again, I’ve no doubt someone will pick up the pieces and run with them.</p>
+<p>The 2020 pandemic and subsequent lockdowns changed <em>a lot</em>, and projects-in-progress were no exception. A big casualty was that NSF project on Open Science in graduate education: we’d planned, submitted a proposal, and received funding to 1) recruit a variety of graduate students into our cohort, 2) organize multiple activities and workshops <em>each year</em>, and 3) collaborate with folks at <a href="https://cyverse.org/">CyVerse</a>, <a href="https://carpentries.org/">The Carpentries</a>, and even cohorts at UNC Chapel Hill and Penn State. Very little of that actually happened, as in-person arrangements were pretty much a non-starter for an entire calendar year: the lockdowns began in March, and this project was officially awarded <em>the very next month</em> in April. We did the best we could in subsequent years, but it was a shadow of what we’d originally hoped for it to be.</p>
+<p>I have an entire section at the end of my academic CV dedicated to opportunities that were canceled due to COVID. A really big one: I was offered a 1-year role at NIH in their “Data Scholar” cohort. I had to turn it down; I won’t go into specifics, but suffice to say COVID killed this 2020/2021 opportunity to take an immediate sabbatical and work on something fascinating. Who knows how my trajectory may have shifted.</p>
+<p>A very recent unfinished task was the design and proposal of a brand-new undergraduate degree: “Applied Computational Sciences.” This was pretty much the first thing IOB wanted me to tackle in moving to their unit, given my experience with building the BS in Data Science. Granted, in that previous role, I was merely a single committee member (even though I personally authored most of what was approved); this time, though, I was the actual Chair and lead of the initiative. I was incredibly excited, not just because I love anything interdisciplinary, but also because I saw this as a chance to actually do what I’d originally hoped for Data Science to be: a truly interdisciplinary computing degree that teaches the domain first and the tools second. But I left before I could finish the preliminary groundwork and data gathering required of new degree proposals.</p>
+<p>Teaching in general felt very unfinished. As part of my Lilly fellowship, I’d hoped to convert all my classes to a <a href="https://en.wikipedia.org/wiki/Flipped_classroom">flipped</a>, <a href="https://en.wikipedia.org/wiki/Ungrading">ungraded</a> format. That… didn’t happen. Partly because the pandemic crashed down very shortly after my fellowship, but also because I simply had too much teaching; surviving trumped thriving.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pix/last_class.jpg" class="img-fluid figure-img"></p>
+<figcaption>I took this picture after I finished teaching on the last day of Spring 2025 classes. It was a gorgeous day, but ended up being prescient as it was also my actual <em>last</em> day of teaching.</figcaption>
+</figure>
+</div>
+</section>
+<section id="what-id-hoped-and-still-hope" class="level3">
+<h3 class="anchored" data-anchor-id="what-id-hoped-and-still-hope">What I’d hoped (and still hope)</h3>
+<p>While he was interviewing me, my now-supervisor mentioned that he was intrigued by the professional goals on my resume. To paraphrase, they more or less amount to: “I love building things, I love building useful things for real people, and I love growing.” Those, in a nutshell, are what I’d hoped for at UGA. And, to be completely fair, I did a good amount of all three.</p>
+<p>I also believe I’ve gotten most of what I can out of UGA, so the path to continuing to do these things is elsewhere.</p>
+<p>But there are still plenty of meaningful and important and critical things to be done at UGA, and universities everywhere. They need serious, thoughtful people to do them. It is my sincerest hope that these institutions, and the people who make them what they are, continue to grow and develop their strengths and talents in the best interest of the greater collective humanity.</p>
+</section>
+<section id="three-people" class="level3">
+<h3 class="anchored" data-anchor-id="three-people">Three people</h3>
+<p>I don’t remember now where I came across this, but it struck me at the time as important enough to write down:</p>
+<blockquote class="blockquote">
+<p>List 3 people that got you where you are today in your career. Then, list 3 people where you may have been that person for them.</p>
+</blockquote>
+<p>For the first part, this is easy:</p>
+<ol type="1">
+<li><strong>My Dad</strong>. He’s been one of my role models for decades; in this case, someone I got to talk science with (both informally, and on actual projects), and who also helped me navigate the trenches of tenure track at UGA. I wouldn’t have even known what questions to ask or to whom without him.</li>
+<li><strong>Merrick Furst</strong>, a <a href="https://www.cc.gatech.edu/people/merrick-furst">professor at Georgia Tech</a>. He’s been a mentor and friend ever since he and I were on the same summer 2007 study abroad in Barcelona, Spain. His experiences with and insights into the overlap of industry and academia really helped me to cut through the crap when it came to figuring out what I wanted.</li>
+<li><strong>Chakra Chennubhotla</strong>, my PhD advisor and the co-founder of PredxBio. He created an incredibly rich environment for me to work as a graduate student, encouraging my interests and keeping me engaged through sheer joy. At PredxBio, <a href="https://www.csb.pitt.edu/2025/09/23/chief-of-ai-at-predxbio-explains-how-to-launch-a-career-in-bioimaging/">he built a company</a> that was my most enjoyable work experience in a decade.</li>
+</ol>
+<p>I truly do not know where my career would be, or what kind of person I would be, without any one of these individuals. I certainly would never have even had the opportunity to work for UGA, or anything that has since followed.</p>
+<p>As for the second part, I’m not going to speculate publicly. But I’d like to think I’ve been that person for at least one of my former students; that’s the singular joy of any faculty.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pix/boyd.jpg" class="img-fluid figure-img"></p>
+<figcaption>This was the first sight that greeted me every morning for a decade.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pix/boyd_office.jpg" class="img-fluid figure-img"></p>
+<figcaption>A lot of good work happened here: this was my office until May 2025.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pix/last_day.jpg" class="img-fluid figure-img"></p>
+<figcaption>And this is the last look I had of my STEM office before closing the door for the last time on August 15, 2025.</figcaption>
+</figure>
+</div>
+</section>
+<section id="whats-next" class="level3">
+<h3 class="anchored" data-anchor-id="whats-next">“What’s next?”</h3>
+<p>On a meta note: the precise timing of this blog post isn’t coincidental. As of today, I’ve 1) fully paid off my student loans that I started taking for grad school in 2008 and which topped out at over $100k<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, and 2) submitted the final, closing report for my NSF CAREER grant, officially the last UGA and academic obligation I had remaining. So this post <em>really is</em> “the end.”</p>
+<p>In case there are any <em>West Wing</em> fans here:</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/jy8_lYNAKbU" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>Will I ever come back to UGA, or academia in general? I don’t know! I do already have a guest speaker talk scheduled at UGA for Monday, October 13: I’ll be talking to a group of undergraduate neuroscience students about career paths! So I suppose, in some sense, I’ll be returning shortly! If only for an hour :)</p>
+<p><em>Would</em> I ever come back? I don’t know that, either. I do know that I am <em>loving</em> my current role with Valo and don’t foresee making any changes for some time; the rhythms and routines of this new position are exactly what I need, and the environment is precisely what I was looking for when I listed out those objectives in my resume.</p>
+<p>So! With all that, I’d simply like to say: thank you for 10+ years, UGA. Here’s where we part ways, but hopefully we’re both leaving richer and more fulfilled for having spent that time together. I know I am.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pix/fiercesky1.jpg" class="img-fluid figure-img"></p>
+<figcaption>What’s next?</figcaption>
+</figure>
+</div>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Like <a href="https://blueypedia.fandom.com/wiki/Maynard">Maynard</a> said: “I used to have a phone, but people kept ringing me!”<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Insofar as it won’t be, colloquially, an “airing of grievances.”<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>I don’t want to sully this post with perceived slights, so if you’re curious feel free to ask.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>There’s a slight caveat here: I <em>should</em> have been eligible for roughly $15k of that to be forgiven through the PSLF program. Of course I didn’t get my act together soon enough, and the, ah, <em>current administration</em> disqualified me on a technicality. So I just paid the fucker off. Bootstraps and all that, isn’t that right?<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2025,
+  author = {Quinn, Shannon},
+  title = {An {Ode} to {UGA}},
+  date = {2025-10-01},
+  url = {https://magsol.github.io/2025-10-01-an-ode-to-uga},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2025" class="csl-entry quarto-appendix-citeas" role="listitem">
+Quinn, Shannon. 2025. <span>“An Ode to UGA.”</span> October 1, 2025. <a href="https://magsol.github.io/2025-10-01-an-ode-to-uga">https://magsol.github.io/2025-10-01-an-ode-to-uga</a>.
+</div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/magsol\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<input type="hidden" id="giscus-base-theme" value="dark">
+<input type="hidden" id="giscus-alt-theme" value="dark">
+<script>
+  function loadGiscus() {
+    // Function to get the theme based on body class
+    const getTheme = () => {
+      let baseTheme = document.getElementById('giscus-base-theme').value;
+      let altTheme = document.getElementById('giscus-alt-theme').value;
+      return document.body.classList.contains('quarto-dark') ? altTheme : baseTheme;
+    };
+    const script = document.createElement("script");
+    script.src = "https://giscus.app/client.js";
+    script.async = true;
+    script.dataset.repo = "magsol/magsol.github.io";
+    script.dataset.repoId = "MDEwOlJlcG9zaXRvcnkyNzYwNTYxNw==";
+    script.dataset.category = "Announcements";
+    script.dataset.categoryId = "DIC_kwDOAaU6cc4CTutY";
+    script.dataset.mapping = "pathname";
+    script.dataset.reactionsEnabled = "1";
+    script.dataset.emitMetadata = "0";
+    script.dataset.inputPosition = "top";
+    script.dataset.theme = getTheme();
+    script.dataset.lang = "en";
+    script.crossOrigin = "anonymous";
+    // Append the script to the desired div instead of at the end of the body
+    document.getElementById("quarto-content").appendChild(script);
+  }
+  loadGiscus();
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
