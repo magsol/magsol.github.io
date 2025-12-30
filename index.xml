@@ -10,14 +10,134 @@
 <atom:link href="https://magsol.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description>Data, donuts, and detours</description>
 <image>
-<url>https://magsol.github.io/images/logo.png</url>
+<url>https://magsol.github.io/images/symbol.png</url>
 <title>Stochastic Stenography</title>
 <link>https://magsol.github.io/</link>
-<height>144</height>
+<height>216</height>
 <width>144</width>
 </image>
 <generator>quarto-1.8.26</generator>
-<lastBuildDate>Wed, 24 Dec 2025 09:44:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 29 Dec 2025 22:10:10 GMT</lastBuildDate>
+<item>
+  <title>Not with a bang…</title>
+  <dc:creator>Shannon Quinn</dc:creator>
+  <link>https://magsol.github.io/posts/2025-12-29-not-with-a-bang/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p><img src="https://magsol.github.io/posts/2025-12-29-not-with-a-bang/sunset.jpg" class="preview-image img-fluid" alt="A gorgeous photo of the Athens sunset around 5pm in the late fall."></p>
+<p>Let me just throw this up right here:</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There’s gon’ be LANGUAGE</p>
+<p>Also, COVID</p>
+<p>Gird your loins</p>
+</div>
+</div>
+<p>To set the scene for just how angry I am: in sitting down to write this post, to try and make sense of the crazy thoughts going through my head, to attempt to disentangle any sliver of nuance from what otherwise seems like a comically unfortunate flip of the cosmic coin, I pulled up Google Gemini (yeah, that one), fed the cover photo for this post into it, and vomited the prompt “but include a giant fucking meteor screaming through the atmosphere, destroying the calm serenity of the sunset”.</p>
+<p>I think it did an ok job; the photo quality certainly went to shit, and I feel like the comet could have been even angrier. But it’s a start, I suppose.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://magsol.github.io/posts/2025-12-29-not-with-a-bang/sunset_meteor.png" class="img-fluid figure-img"></p>
+<figcaption>AI generated, because fuck it.</figcaption>
+</figure>
+</div>
+<section id="tldr" class="level3">
+<h3 class="anchored" data-anchor-id="tldr">tl;dr</h3>
+<p>Yeah, I got COVID. No, it’s “not too bad” this second time around. No, I don’t know where I got it from. YEAH, I’ve been fucking careful, more careful than literally 99.99% of the human population that can go take a giant step back and FUCK itself. No, the rest of my family doesn’t have it, thank God for small miracles.</p>
+<p>Because I seem to process things better by writing, I’m gonna go into some detail here on the when, how, and—most annoyingly—why.</p>
+</section>
+<section id="part-one-timeline" class="level3">
+<h3 class="anchored" data-anchor-id="part-one-timeline">Part One: Timeline</h3>
+<p>I spent last week in Arizona, visiting extended family for the first time in three years. As will be a frequent source of cosmic amusement forevermore, the last time I was in Arizona—in 2022, at exactly this same time of year—was also the <em>last</em> time I caught COVID<sup>1</sup>.</p>
+<p>Per our travel habits since 2020, we masked up—from the moment we stepped onto the off-site parking bus, through the airport, on the plane, through the airport on the other side, and until we reached our rental car—only <em>briefly</em> removing them for things like eating and drinking.</p>
+<p>You may think I’m being hyperbolic. I assure you, I am not. After my 2022 bout of COVID left me with the Long version (not the Pratchett-Baxter one; that’d be infinitely cooler), I took absofuckinglutely no prisoners when it came to protecting not just my own health, but that of my family. I mask in crowded, indoor spaces; I get the COVID jab every 6 months; I take rapid tests every day for at least three (usually four) days after travel, and for longer trips (like this one to AZ) I’ll even take rapid tests while I’m traveling.</p>
+<p><strong>I do not fuck around with COVID. Neither should you.</strong></p>
+<p>But alas, the collective fuckery of 2020-2021, the enduring fuckery of RFK Jr.&nbsp;<em>et al</em>, and simple microbiology-101 conspired such that on the morning of Friday, December 26—the literal morning of our return trip home—I tested positive for COVID during said routine mid-travel testing.</p>
+<p>We’d started testing Tuesday, and “only” every 48 hours with the two of us staggered—the assumption being, if one of us was exposed, then so was the other, so in the short-term, testing either one of us should be more or less equivalent. Cathryn tested Tuesday, I tested Wednesday, she tested Thursday, and I tested Friday.</p>
+<p>I had <em>zero</em> symptoms. Like, not a whiff. I woke up that Friday morning stoked to be heading home. I took the swab and went about packing; then, just because I needed to pack something in the bathroom, walked back in, glanced at the test, and my heart fucking <em>cratered</em>. I was so unspeakably shocked that, despite my <em>knowing</em> and <em>understanding</em> that these things have like a 0.005% false positive rate, I took a second rapid test anyway. Statistically unsurprising but Shannon-ily shocking, it was also positive.</p>
+<p>We didn’t have much choice at that point, but we did the best we could. I stayed masked, even moreso than I would have otherwise (i.e., I kept my mask on in cars, didn’t partake of the in-flight refreshments for an over-three-hour flight).</p>
+<p>Twelve hours, door-to-door. For those twelve hours, I masked up.</p>
+<p>Upon arriving home, I sequestered myself in our spare bedroom, where I’ve been ever since unless I mask up to be around my family. We notified the extended family we stayed with, and so far, no one has tested positive. We also updated my family here in Athens.</p>
+</section>
+<section id="part-two-diagnosis" class="level3">
+<h3 class="anchored" data-anchor-id="part-two-diagnosis">Part Two: Diagnosis</h3>
+<p>I’m sure your first question is: <strong>but where did you get COVID?</strong> Hand to God, I’ve <em>no fucking clue</em>. This is the singular question my brain has been spinning on for 96 hours and I truly, madly, deeply have absolutely no idea.</p>
+<p>Last time I got COVID, the chain of transmission was crystal clear: a small outbreak among our extended family gathering, with at least one person (and critical link) ignoring symptoms (don’t ignore symptoms, kids).</p>
+<p>This time, though? To test negative on Wednesday but positive on Friday, it would mean I picked up the bug either in-transit on Monday or at our first large family gathering on Tuesday evening (though even that would be a pretty quick incubation period: technically less than 72 hours). For the sake of clarity, let’s call these Scenario A (in-transit) and Scenario B (family event).</p>
+<p>Scenario A seems more likely in the general sense; after all, it has the most uncontrolled variables: parking shuttles, airports, lounges, a 3+ hour flight, plus more trains and buses at the other end. Yeah, I took my mask off to eat in the lounge before our flight and again on the plane during the in-flight service. But if I wasn’t <em>actively</em> eating, I was wearing my mask. Cathryn was doing the same, and we were together the whole time.</p>
+<p>Scenario B makes more sense in terms of the specific events of the trip; after all, these were the people I was <em>consistently</em> with. But at least at time of writing, I’ve not heard of anyone else coming down with symptoms or testing positive, and we’ve heard from most of the folks we saw and all the people we stayed with.</p>
+<p>But the fact that none of the people we stayed with in the Airbnb, nor Cathryn and kiddo, have tested positive is <em>baffling</em>! A huge relief, for sure!! But also <em>baffling</em>. We were together <em>the whole week</em>, but somehow I came away with COVID and no one else did. Literally the only time I was off by myself was Wednesday and Thursday mornings: I went outside for a walk and a run, respectively.</p>
+<p>I have no explanation<sup>2</sup>.</p>
+</section>
+<section id="part-three-prognosis" class="level3">
+<h3 class="anchored" data-anchor-id="part-three-prognosis">Part Three: Prognosis</h3>
+<p>…but this is the <em>real</em> question, isn’t it. Two components here: physical and mental.</p>
+<p>Physically, this has been extremely mild so far. I can give a list of <em>possible</em> symptoms, but for every one I can also give a mundane explanation. To wit:</p>
+<ul>
+<li><strong>Tired</strong>: I’ve been tired, but no more than usual <em>and</em> no more than one would expect after a 5-day trip across two time zones with a 5yo in tow.</li>
+<li><strong>Drainage / runny nose</strong>: The drainage was in Arizona, which I can very easily chalk up to the dry desert climate after being in humid Athens, and vice versa on the return side. The runny nose could also be that; it could <em>also</em> be that I’ve been wearing a mask for practically 12 of every 24 hours for the past 96.</li>
+<li><strong>GI distress</strong>: This one gives me pause. On one hand, the mundane explanation is: I’m a runner; <a href="https://quinnwitz.house/@magsol/115792458524682173">it’s kinda our thing</a>. But the first 48 hours had an intensity that was a step up from “business as usual” and coincidentally calmed its shit (heh) when I started on paxlovid. But <em>but</em>, I’d also just returned from a 5-day trip; things get upset from travel in your 40s.</li>
+</ul>
+<p>I did wake up at 3am on Saturday with some body aches and even some shivers; both were gone by 8am. I suspect for at least a few hours in the wee morning I was running a small fever, so that’s definitely a symptom and is even somewhat consistent with how my first round of COVID presented. But the symptoms were gone a few hours later and I’ve felt fine ever since.</p>
+<p>I started on Paxlovid Saturday evening, because again: <strong>I don’t fuck around with COVID.</strong> But I’m somewhat optimistic that respiratory involvement seems minimal, if not nonexistent; the GI thing is odd, but we <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8238098/">knew as early as 2021</a> that COVID would occasionally present with GI symptoms.</p>
+<p>Now. Mentally…</p>
+<p></p><div style="position: relative; padding-bottom: 56.25%; height: 0;"> <iframe src="https://quinnwitz.house/@magsol/115786521347760728/embed" class="mastodon-embed" style="max-width: 100%; border: 0;" width="100%" height="400" allowfullscreen="allowfullscreen"></iframe><script src="https://mastodon.social/embed.js" async="async"></script></div> <p></p>
+<p>I’m trying to stay busy: optimize resource usage on my homelab, do some home improvement projects, write some blog posts! Clean up rooms. Sort through books and clothes and donate. Go through closets and post stuff on Buy Nothing. Figure out how to pay down holiday credit cards in time for the next holiday.</p>
+<p>Because, frankly: stopping and considering the existential consequences of a second round of COVID when the first never technically fully resolved is <strong><em>too fucking terrifying</em></strong>.</p>
+<p>The only thing—the <em>only</em> thing—that calms my brain when I start circling these thoughts is that I’m protecting the rest of my family. I’m taking care of myself, and in doing so, taking care of them. They’re still testing negative, still not showing a hint of any symptoms; so I’m going to be <em>super fucking careful</em> so that they don’t catch this literal piece of ribonucleic bullshit.</p>
+<p>But it’s hard, made even harder by a vengeful return of the long-simmering anger and resentment around how cavalier so many people were when COVID first appeared on the scene and in the years following. I spoke with Merrick Furst about this a few years back, and he highlighted that there’s actually a term for this feeling: “<a href="https://en.wikipedia.org/wiki/Moral_injury">moral injury</a>”. Actual studies have been conducted on this concept in the context of the COVID-19 pandemic and its aftermath, mostly around <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8900218/">healthcare workers</a> but even some that highlight how the massive ripple effects of political and societal douchebaggery <a href="https://www.scientificamerican.com/article/moral-injury-is-an-invisible-epidemic-that-affects-millions/">have affected millions more</a>.</p>
+<p>I relate to that <em>so hard</em>. I’ve been careful, so fucking careful; meanwhile, these vapid dingbats are throwing caution to the wind and <em>I’m</em> the one who catches this fucking virus?! What the actual FUCK, universe?! Of course I don’t <em>wish</em> COVID on anyone… but when I hear fucking <em>bullshit</em> like “I’m not going to live in fear”—congrats on that cereal box, F-150 bumper sticker, nickelodeon tier life motto, by the way—I start to wonder whether humanity will survive another generation.</p>
+<p>God fucking <strong><em>dammit</em></strong>.</p>
+</section>
+<section id="whats-next" class="level3">
+<h3 class="anchored" data-anchor-id="whats-next">What’s next?</h3>
+<p>I don’t know.</p>
+<p>I’m just here, feeling physically ok but like I’m on the edge of a cliff in my mind’s eye, waiting to see whether I tumble over or not. I feel sad, angry, betrayed, resentful, and anxious; I feel impatient, terrified, cautious, irate, disappointed, and numb. I feel like I want to destroy the world and also save it. The literal bitter metal taste in my mouth doesn’t help to banish these racing thoughts.</p>
+<p>(Seriously though, <em>damn</em> does paxlovid give you a perma-metallic taste. Of course, that it’s the biggest complaint I have right now should tell you just how not-having-any-symptoms I am right now. Which I’m grateful for!!!)</p>
+<p>But I’ve read enough research on COVID to know that acute symptoms != long-term symptoms; hell, acute <em>severity</em> doesn’t even have anything but a weak-at-best correlation with long-term symptoms or their severity. So yeah, we’re in the world’s worst holding pattern for now; one of the dumbest incarnations of “nothing is within my control” that my therapist so often reminds me of.</p>
+<p>Right now, I’m just getting from one day to the next. Do <a href="https://youtu.be/kFkClV2gM-s?si=y3W4fcrkXWw8vg4V">the next right thing</a> (we’ve been watching <em>Frozen 2</em> a lot lately). So I guess, for now, we’ll see what tomorrow holds.</p>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>You read that right! We’re two-for-two now on getting COVID from our last two trips to AZ, so believe me when I say we are <em>not</em> planning another trip to AZ for a bit.↩︎</p></li>
+<li id="fn2"><p>My best guess, my <em>PhD educated conjecture</em>, is that I sat next to someone in the ATL Sky Club ahead of our departing flight that was shedding virus like a sieve and picked up just enough of it while I was eating lunch. It incubated for the next four days, culminating in Friday morning’s positive test.↩︎</p></li>
+</ol>
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2025,
+  author = {Quinn, Shannon},
+  title = {Not with a Bang...},
+  date = {2025-12-29},
+  url = {https://magsol.github.io/2025-12-29-not-with-a-bang},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2025" class="csl-entry quarto-appendix-citeas">
+Quinn, Shannon. 2025. <span>“Not with a Bang...”</span> December 29,
+2025. <a href="https://magsol.github.io/2025-12-29-not-with-a-bang">https://magsol.github.io/2025-12-29-not-with-a-bang</a>.
+</div></div></section></div> ]]></description>
+  <category>personal</category>
+  <category>covid</category>
+  <category>health</category>
+  <category>covid-19</category>
+  <guid>https://magsol.github.io/posts/2025-12-29-not-with-a-bang/</guid>
+  <pubDate>Mon, 29 Dec 2025 22:10:10 GMT</pubDate>
+  <media:content url="https://magsol.github.io/posts/2025-12-29-not-with-a-bang/sunset.jpg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>It’s decorative gourd season</title>
   <dc:creator>Shannon Quinn</dc:creator>
@@ -1704,44 +1824,6 @@ Extravaganza.”</span> May 10, 2024. <a href="https://magsol.github.io/2024-05-
   <category>homelab</category>
   <guid>https://magsol.github.io/posts/2024-05-10-weblogpomo2024-day-10-homelab-extravaganza/</guid>
   <pubDate>Fri, 10 May 2024 16:32:00 GMT</pubDate>
-</item>
-<item>
-  <title>#WeblogPoMo2024, Day 7: The importance of personal projects</title>
-  <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2024-05-07-weblogpomo2024-day-7-the-importance-of-personal-projects/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p>I don’t think I’m alone in having a menagerie of personal projects. The constituents of said menagerie morph (some slowly, some quickly) as time passes, but it’s never empty. It hasn’t been empty since… high school? Earlier?</p>
-<p>Yes, it’s sometimes disheartening to see how little progress I make on so many different fronts. Though, by simply writing out that sentence, I get just an inkling of how ridiculous it sounds.</p>
-<p>But these projects, simply, keep me sane. I love creating things; I love building things; I love trying something out in the real world that is often outside the narrow purview of what my immediate employer is looking for. I like trying things for things’ sakes, though sometimes there is also a practical reason.</p>
-<p>Lately I’ve been trying to get a new outdoor wildlife camera setup working. It’s a bit more technically complicated than <a href="https://magsol.github.io/posts/2023-02-15-calibrating-a-wildlife-camera/index.html">the one I posted about last year</a> so it’s taking me a bit longer to get things working. But I’m really enjoying doing it.</p>
-<p>Personal projects are, after all, <a href="https://angelostavrow.blog/a-love-letter-to-personal-projects">all about delight</a>.</p>
-<hr>
-<p>Like most things, I think when it comes to <code>#WeblogPomo2024</code>, it’ll be a cadence of “when I can” as opposed to “EVERY F#$&amp;ING DAY OR DIAF”. After all, <a href="https://www.tumblr.com/rsingwriting/187070321479/i-saw-a-post-talking-about-how-terry-pratchett">if I’m writing a nontrivial fraction of the number of words Sir Terry Pratchett wrote on a daily basis during his illustrious career</a>, I’d say I’m doing pretty well.</p>
-
-
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2024,
-  author = {Quinn, Shannon},
-  title = {\#WeblogPoMo2024, {Day} 7: {The} Importance of Personal
-    Projects},
-  date = {2024-05-07},
-  url = {https://magsol.github.io/2024-05-07-weblogpomo2024-day-7-the-importance-of-personal-projects},
-  langid = {en}
-}
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2024" class="csl-entry quarto-appendix-citeas">
-Quinn, Shannon. 2024. <span>“#WeblogPoMo2024, Day 7: The Importance of
-Personal Projects.”</span> May 7, 2024. <a href="https://magsol.github.io/2024-05-07-weblogpomo2024-day-7-the-importance-of-personal-projects">https://magsol.github.io/2024-05-07-weblogpomo2024-day-7-the-importance-of-personal-projects</a>.
-</div></div></section></div> ]]></description>
-  <category>personal</category>
-  <category>writing</category>
-  <category>weblogpomo</category>
-  <guid>https://magsol.github.io/posts/2024-05-07-weblogpomo2024-day-7-the-importance-of-personal-projects/</guid>
-  <pubDate>Tue, 07 May 2024 16:25:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
