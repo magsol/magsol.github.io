@@ -1,0 +1,114 @@
+---
+title: "Not with a bang..."
+subtitle: "...but some serious bullsh*t"
+date: "2025-12-29 22:10:10"
+categories: [personal, covid, health, covid-19]
+citation:
+    url: https://magsol.github.io/2025-12-29-not-with-a-bang
+image: "sunset.jpg"
+image-alt: "A gorgeous photo of the Athens sunset around 5pm in the late fall."
+author: "Shannon Quinn"
+---
+![](sunset.jpg){.preview-image fig-alt="A gorgeous photo of the Athens sunset around 5pm in the late fall."}
+
+Let me just throw this up right here:
+
+::: {.callout-warning}
+There's gon' be LANGUAGE
+
+Also, COVID
+
+Gird your loins
+:::
+
+To set the scene for just how angry I am: in sitting down to write this post, to try and make sense of the crazy thoughts going through my head, to attempt to disentangle any sliver of nuance from what otherwise seems like a comically unfortunate flip of the cosmic coin, I pulled up Google Gemini (yeah, that one), fed the cover photo for this post into it, and vomited the prompt "but include a giant fucking meteor screaming through the atmosphere, destroying the calm serenity of the sunset".
+
+I think it did an ok job; the photo quality certainly went to shit, and I feel like the comet could have been even angrier. But it's a start, I suppose.
+
+![AI generated, because fuck it.](sunset_meteor.png)
+
+### tl;dr
+
+Yeah, I got COVID. No, it's "not too bad" this second time around. No, I don't know where I got it from. YEAH, I've been fucking careful, more careful than literally 99.99% of the human population that can go take a giant step back and FUCK itself. No, the rest of my family doesn't have it, thank God for small miracles.
+
+Because I seem to process things better by writing, I'm gonna go into some detail here on the when, how, and---most annoyingly---why.
+
+### Part One: Timeline
+
+I spent last week in Arizona, visiting extended family for the first time in three years. As will be a frequent source of cosmic amusement forevermore, the last time I was in Arizona---in 2022, at exactly this same time of year---was also the _last_ time I caught COVID^[You read that right! We're two-for-two now on getting COVID from our last two trips to AZ, so believe me when I say we are _not_ planning another trip to AZ for a bit.].
+
+Per our travel habits since 2020, we masked up---from the moment we stepped onto the off-site parking bus, through the airport, on the plane, through the airport on the other side, and until we reached our rental car---only _briefly_ removing them for things like eating and drinking.
+
+You may think I'm being hyperbolic. I assure you, I am not. After my 2022 bout of COVID left me with the Long version (not the Pratchett-Baxter one; that'd be infinitely cooler), I took absofuckinglutely no prisoners when it came to protecting not just my own health, but that of my family. I mask in crowded, indoor spaces; I get the COVID jab every 6 months; I take rapid tests every day for at least three (usually four) days after travel, and for longer trips (like this one to AZ) I'll even take rapid tests while I'm traveling.
+
+**I do not fuck around with COVID. Neither should you.**
+
+But alas, the collective fuckery of 2020-2021, the enduring fuckery of RFK Jr. _et al_, and simple microbiology-101 conspired such that on the morning of Friday, December 26---the literal morning of our return trip home---I tested positive for COVID during said routine mid-travel testing.
+
+We'd started testing Tuesday, and "only" every 48 hours with the two of us staggered---the assumption being, if one of us was exposed, then so was the other, so in the short-term, testing either one of us should be more or less equivalent. Cathryn tested Tuesday, I tested Wednesday, she tested Thursday, and I tested Friday.
+
+I had _zero_ symptoms. Like, not a whiff. I woke up that Friday morning stoked to be heading home. I took the swab and went about packing; then, just because I needed to pack something in the bathroom, walked back in, glanced at the test, and my heart fucking _cratered_. I was so unspeakably shocked that, despite my _knowing_ and _understanding_ that these things have like a 0.005% false positive rate, I took a second rapid test anyway. Statistically unsurprising but Shannon-ily shocking, it was also positive.
+
+We didn't have much choice at that point, but we did the best we could. I stayed masked, even moreso than I would have otherwise (i.e., I kept my mask on in cars, didn't partake of the in-flight refreshments for an over-three-hour flight).
+
+Twelve hours, door-to-door. For those twelve hours, I masked up.
+
+Upon arriving home, I sequestered myself in our spare bedroom, where I've been ever since unless I mask up to be around my family. We notified the extended family we stayed with, and so far, no one has tested positive. We also updated my family here in Athens.
+
+### Part Two: Diagnosis
+
+I'm sure your first question is: **but where did you get COVID?** Hand to God, I've _no fucking clue_. This is the singular question my brain has been spinning on for 96 hours and I truly, madly, deeply have absolutely no idea.
+
+Last time I got COVID, the chain of transmission was crystal clear: a small outbreak among our extended family gathering, with at least one person (and critical link) ignoring symptoms (don't ignore symptoms, kids).
+
+This time, though? To test negative on Wednesday but positive on Friday, it would mean I picked up the bug either in-transit on Monday or at our first large family gathering on Tuesday evening (though even that would be a pretty quick incubation period: technically less than 72 hours). For the sake of clarity, let's call these Scenario A (in-transit) and Scenario B (family event).
+
+Scenario A seems more likely in the general sense; after all, it has the most uncontrolled variables: parking shuttles, airports, lounges, a 3+ hour flight, plus more trains and buses at the other end. Yeah, I took my mask off to eat in the lounge before our flight and again on the plane during the in-flight service. But if I wasn't _actively_ eating, I was wearing my mask. Cathryn was doing the same, and we were together the whole time.
+
+Scenario B makes more sense in terms of the specific events of the trip; after all, these were the people I was _consistently_ with. But at least at time of writing, I've not heard of anyone else coming down with symptoms or testing positive, and we've heard from most of the folks we saw and all the people we stayed with.
+
+But the fact that none of the people we stayed with in the Airbnb, nor Cathryn and kiddo, have tested positive is _baffling_! A huge relief, for sure!! But also _baffling_. We were together _the whole week_, but somehow I came away with COVID and no one else did. Literally the only time I was off by myself was Wednesday and Thursday mornings: I went outside for a walk and a run, respectively.
+
+I have no explanation^[My best guess, my _PhD educated conjecture_, is that I sat next to someone in the ATL Sky Club ahead of our departing flight that was shedding virus like a sieve and picked up just enough of it while I was eating lunch. It incubated for the next four days, culminating in Friday morning's positive test.].
+
+### Part Three: Prognosis
+
+...but this is the _real_ question, isn't it. Two components here: physical and mental.
+
+Physically, this has been extremely mild so far. I can give a list of _possible_ symptoms, but for every one I can also give a mundane explanation. To wit:
+
+ - **Tired**: I've been tired, but no more than usual _and_ no more than one would expect after a 5-day trip across two time zones with a 5yo in tow.
+ - **Drainage / runny nose**: The drainage was in Arizona, which I can very easily chalk up to the dry desert climate after being in humid Athens, and vice versa on the return side. The runny nose could also be that; it could _also_ be that I've been wearing a mask for practically 12 of every 24 hours for the past 96.
+ - **GI distress**: This one gives me pause. On one hand, the mundane explanation is: I'm a runner; [it's kinda our thing](https://quinnwitz.house/@magsol/115792458524682173). But the first 48 hours had an intensity that was a step up from "business as usual" and coincidentally calmed its shit (heh) when I started on paxlovid. But _but_, I'd also just returned from a 5-day trip; things get upset from travel in your 40s.
+
+I did wake up at 3am on Saturday with some body aches and even some shivers; both were gone by 8am. I suspect for at least a few hours in the wee morning I was running a small fever, so that's definitely a symptom and is even somewhat consistent with how my first round of COVID presented. But the symptoms were gone a few hours later and I've felt fine ever since.
+
+I started on Paxlovid Saturday evening, because again: **I don't fuck around with COVID.** But I'm somewhat optimistic that respiratory involvement seems minimal, if not nonexistent; the GI thing is odd, but we [knew as early as 2021](https://pmc.ncbi.nlm.nih.gov/articles/PMC8238098/) that COVID would occasionally present with GI symptoms.
+
+Now. Mentally...
+
+{{< mastodon https://quinnwitz.house/@magsol/115786521347760728>}}
+
+I'm trying to stay busy: optimize resource usage on my homelab, do some home improvement projects, write some blog posts! Clean up rooms. Sort through books and clothes and donate. Go through closets and post stuff on Buy Nothing. Figure out how to pay down holiday credit cards in time for the next holiday.
+
+Because, frankly: stopping and considering the existential consequences of a second round of COVID when the first never technically fully resolved is ***too fucking terrifying***.
+
+The only thing---the _only_ thing---that calms my brain when I start circling these thoughts is that I'm protecting the rest of my family. I'm taking care of myself, and in doing so, taking care of them. They're still testing negative, still not showing a hint of any symptoms; so I'm going to be _super fucking careful_ so that they don't catch this literal piece of ribonucleic bullshit.
+
+But it's hard, made even harder by a vengeful return of the long-simmering anger and resentment around how cavalier so many people were when COVID first appeared on the scene and in the years following. I spoke with Merrick Furst about this a few years back, and he highlighted that there's actually a term for this feeling: "[moral injury](https://en.wikipedia.org/wiki/Moral_injury)". Actual studies have been conducted on this concept in the context of the COVID-19 pandemic and its aftermath, mostly around [healthcare workers](https://pmc.ncbi.nlm.nih.gov/articles/PMC8900218/) but even some that highlight how the massive ripple effects of political and societal douchebaggery [have affected millions more](https://www.scientificamerican.com/article/moral-injury-is-an-invisible-epidemic-that-affects-millions/).
+
+I relate to that _so hard_. I've been careful, so fucking careful; meanwhile, these vapid dingbats are throwing caution to the wind and _I'm_ the one who catches this fucking virus?! What the actual FUCK, universe?! Of course I don't _wish_ COVID on anyone... but when I hear fucking _bullshit_ like "I'm not going to live in fear"---congrats on that cereal box, F-150 bumper sticker, nickelodeon tier life motto, by the way---I start to wonder whether humanity will survive another generation.
+
+God fucking ***dammit***.
+
+### What's next?
+
+I don't know.
+
+I'm just here, feeling physically ok but like I'm on the edge of a cliff in my mind's eye, waiting to see whether I tumble over or not. I feel sad, angry, betrayed, resentful, and anxious; I feel impatient, terrified, cautious, irate, disappointed, and numb. I feel like I want to destroy the world and also save it. The literal bitter metal taste in my mouth doesn't help to banish these racing thoughts.
+
+(Seriously though, _damn_ does paxlovid give you a perma-metallic taste. Of course, that it's the biggest complaint I have right now should tell you just how not-having-any-symptoms I am right now. Which I'm grateful for!!!)
+
+But I've read enough research on COVID to know that acute symptoms != long-term symptoms; hell, acute _severity_ doesn't even have anything but a weak-at-best correlation with long-term symptoms or their severity. So yeah, we're in the world's worst holding pattern for now; one of the dumbest incarnations of "nothing is within my control" that my therapist so often reminds me of.
+
+Right now, I'm just getting from one day to the next. Do [the next right thing](https://youtu.be/kFkClV2gM-s?si=y3W4fcrkXWw8vg4V) (we've been watching _Frozen 2_ a lot lately). So I guess, for now, we'll see what tomorrow holds.
