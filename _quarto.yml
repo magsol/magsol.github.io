@@ -2,14 +2,14 @@ project:
   type: website
 
 website:
-  favicon: images/favicon.png
+  favicon: images/symbol.png
   title: "Stochastic Stenography"
   description: "Data, donuts, and detours"
   site-url: "https://magsol.github.io"
   google-analytics: "G-XHDW9H78Z1"
   repo-url: https://github.com/magsol/magsol.github.io
   repo-branch: gh-pages
-  image: images/logo.png
+  image: images/symbol.png
   navbar:
     search: true
     logo: images/symbol.png
@@ -25,5 +25,6 @@ format:
     include-in-header:
       - text: |
           <link rel="me" href="https://quinnwitz.house/@magsol" />
+          <meta name="fediverse:creator" content="@magsol@quinnwitz.house" />
 execute:
   freeze: auto
