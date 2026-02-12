@@ -177,7 +177,7 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="zelink.jpg" class="preview-image img-fluid figure-img" alt="A screenshot from _Hyrule Warriors: Age of Imprisonment_ showing Zelda and the Knight Construct walking into battle under a blood moon."></p>
-<figcaption>A good metaphor for life, lately.</figcaption>
+<figcaption>I know I used this photo in a previous post here, but it’s just too good. Plus, a good metaphor for life, lately.</figcaption>
 </figure>
 </div>
 <p>I had a whole joke ready when I started writing this post…<em>six months ago</em>. Yeah, it’s been a busy year. Yeah, I know I’ve written <em>other</em> posts in that time; see previous sentence. But anyway, here’s the joke from six months ago:</p>
@@ -198,7 +198,12 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <section id="may-2025-to-december-2025" class="level2">
 <h2 class="anchored" data-anchor-id="may-2025-to-december-2025">May 2025 to December 2025</h2>
 <p>I won’t go over everything that happened, but suffice to say, I did a <em>lot</em> more work on it. To sum up, in this stretch of time, I put in a ton of work on behind-the-scenes upgrades, stability and longevity fixes, and general quality-of-life work to make my life managing this homelab just a tad bit easier. Automation played a big role, as well as digging into some gnarly details of kubernetes to really try and balance workloads.</p>
-<p>Just a few quick examples, but know that this is <em>not by any stretch</em> an exhaustive list: - I swapped out the standard postgres deployment with <a href="https://cloudnative-pg.io">cloudnative-pg</a>, a Postgres Operator built specifically for kubernetes. Not only have I had 0 problems with it since installing, but it actually uses even fewer resources than the standard postgres. Blindingly one-sided win with this. - The Mastodon instance’s media storage, from late 2022 until I took it down in January 2025, was actually on our NAS via NFS. This… wasn’t great. But it was <em>easy</em>, hence why I stuck with that configuration for so long. But this time I went a different route: purchased 3x 2TB SSDs, spun up <a href="https://longhorn.io">longhorn block storage</a>, and dropped <a href="https://garagehq.deuxfleurs.fr">garage</a> on top for an S3-compatible storage layer. This took a <em>ton</em> of work, and I still occasionally run into problems, but this was, once again, an unequivocal win for long-term maintenability and immediate improvements in robustness. - Previously, the entire SSL/TLS chain was embedded in the traefik configuration. What an absolute <em>nightmare</em> to upgrade traefik, especially when I wanted it to be my reverse proxy for lots of internal-only services. So I spent a TON of time refactoring this out and back into cert-manager where it should have been to begin with. Combined with finally leveraging the power of traefik IngressRoutes and Middlewares, traefik went from incidental-unsung-hero to powerhouse-of-the-cluster.</p>
+<p>Just a few quick examples, but know that this is <em>not by any stretch</em> an exhaustive list:</p>
+<ul>
+<li>I swapped out the standard postgres deployment with <a href="https://cloudnative-pg.io">cloudnative-pg</a>, a Postgres Operator built specifically for kubernetes. Not only have I had 0 problems with it since installing, but it actually uses even fewer resources than the standard postgres. Blindingly one-sided win with this.</li>
+<li>The Mastodon instance’s media storage, from late 2022 until I took it down in January 2025, was actually on our NAS via NFS. This… wasn’t great. But it was <em>easy</em>, hence why I stuck with that configuration for so long. But this time I went a different route: purchased 3x 2TB SSDs, spun up <a href="https://longhorn.io">longhorn block storage</a>, and dropped <a href="https://garagehq.deuxfleurs.fr">garage</a> on top for an S3-compatible storage layer. This took a <em>ton</em> of work, and I still occasionally run into problems, but this was, once again, an unequivocal win for long-term maintenability and immediate improvements in robustness.</li>
+<li>Previously, the entire SSL/TLS chain was embedded in the traefik configuration. What an absolute <em>nightmare</em> to upgrade traefik, especially when I wanted it to be my reverse proxy for lots of internal-only services. So I spent a TON of time refactoring this out and back into cert-manager where it should have been to begin with. Combined with finally leveraging the power of traefik IngressRoutes and Middlewares, traefik went from incidental-unsung-hero to powerhouse-of-the-cluster.</li>
+</ul>
 <p>Yeah. I’ve been working on this quite a bit. Amazing what some work-life balance will do for your interest and bandwidth in side projects, am I right?</p>
 </section>
 <section id="present-day" class="level2">
@@ -219,9 +224,33 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <section id="software" class="level3">
 <h3 class="anchored" data-anchor-id="software">Software</h3>
 <p>The software gets interesting.</p>
-<p>The Pi cluster runs high-availability k3s. In a nutshell, the apps running on it are: - traefik, for the reverse proxy (both internal and external facing services) - metallb, for load balancing - cnpg, which is a massive improvement over vanilla postgres in a k8s environment - longhorn + garage for redundant, S3-compatible storage - cert-manager for the SSL certs (so many SSL certs) - prometheus + grafana for monitoring ALL the things with pretty graphs - mastodon, doncha know</p>
+<p>The Pi cluster runs high-availability k3s. In a nutshell, the apps running on it are:</p>
+<ul>
+<li>traefik, for the reverse proxy (both internal and external facing services)</li>
+<li>metallb, for load balancing</li>
+<li>cnpg, which is a massive improvement over vanilla postgres in a k8s environment</li>
+<li>longhorn + garage for redundant, S3-compatible storage</li>
+<li>cert-manager for the SSL certs (so many SSL certs)</li>
+<li>prometheus + grafana for monitoring ALL the things with pretty graphs</li>
+<li>mastodon, doncha know</li>
+</ul>
 <p>A few years ago I <a href="https://github.com/magsol/countdown-mastobot">had a CronJob running</a> on the cluster that powered my <a href="https://quinnwitz.house/@daysuntil">TotK countdown bot</a>; I should probably delete that, especially since none of the images load anymore.</p>
-<p>The Unraid server is kind of my catch-all for Docker and Docker-Compose applications. Here are the services running on it: - *arr stack (radarr, sonarr, homarr, bazarr, flaresolverr, prowlarr, jellyseerr, delugevpn, tdarr, and <a href="https://github.com/automatic-ripping-machine/automatic-ripping-machine">automatic-ripping-machine</a>) - Nextcloud AIO (this might be my favorite app ever) - Forgejo (my own private repo) - Renovate bot (helps keep stuff up to date) - Ollama and Open-WebUI (local AI models; don’t need more surveillance thanks) - n8n (incredible bit of software I’ve barely scratched the surface of) - Postgres and Redis (mainly for some other applications) - Wallabag (helping me work through my 900+ browser bookmark count) - NTFY (this really came in handy when those winter storms hit a few weeks back) - SearXNG - Terraria server 🌳 - Wishlist (this is going to haunt my family during the 2026 holidays) - A couple other custom Docker images I’ve created locally, mostly for testing out crazy ideas</p>
+<p>The Unraid server is kind of my catch-all for Docker and Docker-Compose applications. Here are the services running on it:</p>
+<ul>
+<li>*arr stack (radarr, sonarr, homarr, bazarr, flaresolverr, prowlarr, jellyseerr, delugevpn, tdarr, and <a href="https://github.com/automatic-ripping-machine/automatic-ripping-machine">automatic-ripping-machine</a>)</li>
+<li>Nextcloud AIO (this might be my favorite app ever)</li>
+<li>Forgejo (my own private repo)</li>
+<li>Renovate bot (helps keep stuff up to date)</li>
+<li>Ollama and Open-WebUI (local AI models; don’t need more surveillance thanks)</li>
+<li>n8n (incredible bit of software I’ve barely scratched the surface of)</li>
+<li>Postgres and Redis (mainly for some other applications)</li>
+<li>Wallabag (helping me work through my 900+ browser bookmark count)</li>
+<li>NTFY (this really came in handy when those winter storms hit a few weeks back)</li>
+<li>SearXNG</li>
+<li>Terraria server 🌳</li>
+<li>Wishlist (this is going to haunt my family during the 2026 holidays)</li>
+<li>A couple other custom Docker images I’ve created locally, mostly for testing out crazy ideas</li>
+</ul>
 <p>If you can believe it, ALL these apps only take up about half of the standing 32gb of RAM. Pretty remarkable!</p>
 </section>
 </section>
