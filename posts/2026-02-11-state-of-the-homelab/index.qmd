@@ -9,7 +9,7 @@ image: "zelink.jpg"
 image-alt: "A screenshot from _Hyrule Warriors: Age of Imprisonment_ showing Zelda and the Knight Construct walking into battle under a blood moon."
 author: "Shannon Quinn"
 ---
-![A good metaphor for life, lately.](zelink.jpg){.preview-image fig-alt="A screenshot from _Hyrule Warriors: Age of Imprisonment_ showing Zelda and the Knight Construct walking into battle under a blood moon."}
+![I know I used this photo in a previous post here, but it's just too good. Plus, a good metaphor for life, lately.](zelink.jpg){.preview-image fig-alt="A screenshot from _Hyrule Warriors: Age of Imprisonment_ showing Zelda and the Knight Construct walking into battle under a blood moon."}
 
 I had a whole joke ready when I started writing this post..._six months ago_. Yeah, it's been a busy year. Yeah, I know I've written _other_ posts in that time; see previous sentence. But anyway, here's the joke from six months ago:
 
@@ -32,6 +32,7 @@ BUT of course I couldn't just "turn it back on"; I had to over-engineer it.
 I won't go over everything that happened, but suffice to say, I did a _lot_ more work on it. To sum up, in this stretch of time, I put in a ton of work on behind-the-scenes upgrades, stability and longevity fixes, and general quality-of-life work to make my life managing this homelab just a tad bit easier. Automation played a big role, as well as digging into some gnarly details of kubernetes to really try and balance workloads.
 
 Just a few quick examples, but know that this is _not by any stretch_ an exhaustive list:
+
  - I swapped out the standard postgres deployment with [cloudnative-pg](https://cloudnative-pg.io), a Postgres Operator built specifically for kubernetes. Not only have I had 0 problems with it since installing, but it actually uses even fewer resources than the standard postgres. Blindingly one-sided win with this.
  - The Mastodon instance's media storage, from late 2022 until I took it down in January 2025, was actually on our NAS via NFS. This... wasn't great. But it was _easy_, hence why I stuck with that configuration for so long. But this time I went a different route: purchased 3x 2TB SSDs, spun up [longhorn block storage](https://longhorn.io), and dropped [garage](https://garagehq.deuxfleurs.fr) on top for an S3-compatible storage layer. This took a _ton_ of work, and I still occasionally run into problems, but this was, once again, an unequivocal win for long-term maintenability and immediate improvements in robustness.
  - Previously, the entire SSL/TLS chain was embedded in the traefik configuration. What an absolute _nightmare_ to upgrade traefik, especially when I wanted it to be my reverse proxy for lots of internal-only services. So I spent a TON of time refactoring this out and back into cert-manager where it should have been to begin with. Combined with finally leveraging the power of traefik IngressRoutes and Middlewares, traefik went from incidental-unsung-hero to powerhouse-of-the-cluster.
@@ -67,6 +68,7 @@ With the exception of the AP7s and MoCA nodes, the rest of the hardware is beaut
 The software gets interesting.
 
 The Pi cluster runs high-availability k3s. In a nutshell, the apps running on it are:
+
  - traefik, for the reverse proxy (both internal and external facing services)
  - metallb, for load balancing
  - cnpg, which is a massive improvement over vanilla postgres in a k8s environment
@@ -78,6 +80,7 @@ The Pi cluster runs high-availability k3s. In a nutshell, the apps running on it
 A few years ago I [had a CronJob running](https://github.com/magsol/countdown-mastobot) on the cluster that powered my [TotK countdown bot](https://quinnwitz.house/@daysuntil); I should probably delete that, especially since none of the images load anymore.
 
 The Unraid server is kind of my catch-all for Docker and Docker-Compose applications. Here are the services running on it:
+
  - *arr stack (radarr, sonarr, homarr, bazarr, flaresolverr, prowlarr, jellyseerr, delugevpn, tdarr, and [automatic-ripping-machine](https://github.com/automatic-ripping-machine/automatic-ripping-machine))
  - Nextcloud AIO (this might be my favorite app ever)
  - Forgejo (my own private repo)
