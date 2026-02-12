@@ -8,7 +8,7 @@
 
 <meta name="author" content="Shannon Quinn">
 
-<title>December Adventure: Ajani Goldmane – Stochastic Stenography</title>
+<title>State of the Homelab – Stochastic Stenography</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -84,12 +84,12 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="December Adventure: Ajani Goldmane – Stochastic Stenography">
-<meta property="og:description" content="Day 2…ish">
-<meta property="og:image" content="https://magsol.github.io/posts/2024-12-05-december-adventure-ajani-goldmane/ajani.jpg">
+<meta property="og:title" content="State of the Homelab – Stochastic Stenography">
+<meta property="og:description" content="Less a new recurring post and more a gimmick to return to blogging">
+<meta property="og:image" content="https://magsol.github.io/posts/2026-02-11-state-of-the-homelab/zelink.jpg">
 <meta property="og:site_name" content="Stochastic Stenography">
 <meta property="og:locale" content="en_US">
-<meta property="og:image:alt" content="Artist rendition of the MtG planeswalker Ajani Goldmane. https://magic-the-gathring-lore.fandom.com/wiki/Ajani_Goldmane">
+<meta property="og:image:alt" content="A screenshot from _Hyrule Warriors: Age of Imprisonment_ showing Zelda and the Knight Construct walking into battle under a blood moon.">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
@@ -128,12 +128,16 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">December Adventure: Ajani Goldmane</h1>
-            <p class="subtitle lead">Day 2…ish</p>
+      <h1 class="title">State of the Homelab</h1>
+            <p class="subtitle lead">Less a new recurring post and more a gimmick to return to blogging</p>
                                 <div class="quarto-categories">
                 <div class="quarto-category">personal</div>
-                <div class="quarto-category">december adventure</div>
-                <div class="quarto-category">magic the gathering</div>
+                <div class="quarto-category">self hosting</div>
+                <div class="quarto-category">homelab</div>
+                <div class="quarto-category">k3s</div>
+                <div class="quarto-category">kubernetes</div>
+                <div class="quarto-category">unraid</div>
+                <div class="quarto-category">nas</div>
               </div>
                   </div>
   </div>
@@ -151,7 +155,7 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">Posted on the 5th of December in the year 2024, at 4:15pm. It was Thursday.</p>
+        <p class="date">Posted on the 11th of February in the year 2026, at 9:52pm. It was Wednesday.</p>
       </div>
     </div>
     
@@ -170,26 +174,107 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 
 
 
-<p><img src="ajani.jpg" class="preview-image img-fluid" alt="Artist rendition of the MtG planeswalker Ajani Goldmane. https://magic-the-gathring-lore.fandom.com/wiki/Ajani_Goldmane"></p>
-<p>Not much of an update today: work was busy, and we’re still putting the house back together after having contractors here for the better part of the last three weeks.</p>
-<p>But I was able to review <a href="https://tappedout.net/mtg-decks/15-11-24-cats/">this Cats deck</a> and <a href="https://edhrec.com/commanders/arahbo-the-first-fang/cats">this Commander suggestion</a> (courtesy of <a href="https://infosec.exchange/@merlin/113596273800710953">this toot</a>, thank you again!), and to start putting together my own version.</p>
-<p>It’s quite rough, but what I have so far can be found <strong><a href="https://tappedout.net/mtg-decks/04-12-24-cats/">here</a></strong>. I’ve also gone through all my current MtG cards and pulled out the ones I have (I actually have a Mirror Box!). This process is pretty tedious—it’s one of my (many, lol) personal projects to get a “codex” set up for my collection, and a way of scanning all my cards so they can be automatically added and categorized, but it’s still in the design phase—but it’s done, so now I can start focusing on optimizing the build itself and then determining which cards I still need.</p>
-<p>While keeping in mind the whole time that I’m aiming for a single empty spot in the deck for Snowflake to slot in :)</p>
-<hr>
-<p>Unrelated, but I think I’m just going to refer to the “day” number of December Adventure by the date itself going forward; e.g., today would be “day” 5, not day 2. Starting in the next update, that’s the convention I’ll use. It’s just easier to track it that way and identify which days I missed, than try to keep a running count every time I fire up a new blog post.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="zelink.jpg" class="preview-image img-fluid figure-img" alt="A screenshot from _Hyrule Warriors: Age of Imprisonment_ showing Zelda and the Knight Construct walking into battle under a blood moon."></p>
+<figcaption>A good metaphor for life, lately.</figcaption>
+</figure>
+</div>
+<p>I had a whole joke ready when I started writing this post…<em>six months ago</em>. Yeah, it’s been a busy year. Yeah, I know I’ve written <em>other</em> posts in that time; see previous sentence. But anyway, here’s the joke from six months ago:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="is_this_thing_on.png" class="img-fluid figure-img" alt="Screenshot of the first two posts I made on our Mastodon instance, May 2025, since taking it down on January 16, 2025."></p>
+<figcaption>First new posts in over four months.</figcaption>
+</figure>
+</div>
+<p>Of course, it’s actually been a lot longer since my last update here on the homelab front: pretty much since something <a href="../../posts/2025-04-06-from-the-ground-up-with-self-hosting/index.html">vague in April 2025</a> but never followed up on.</p>
+<p>Well, consider this the follow-up. Aren’t you glad you stuck around?</p>
+<section id="late-2024-to-may-2025" class="level2">
+<h2 class="anchored" data-anchor-id="late-2024-to-may-2025">Late 2024 to May 2025</h2>
+<p>As somewhat outlined in that April 2025 post, I had to take down the Mastodon instance at the start of the year in preparation for one final bit of home renovation. Thanks to returning from sabbatical and picking up what might have been my most challenging teaching semester in 10 years at UGA, I wasn’t able to bring the homelab back up until May of 2025, practically five months later.</p>
+<p>I think I’d even thought during shutdown, “I should be able to get this back up in like a week.” Huah.</p>
+<p>BUT of course I couldn’t just “turn it back on”; I had to over-engineer it.</p>
+</section>
+<section id="may-2025-to-december-2025" class="level2">
+<h2 class="anchored" data-anchor-id="may-2025-to-december-2025">May 2025 to December 2025</h2>
+<p>I won’t go over everything that happened, but suffice to say, I did a <em>lot</em> more work on it. To sum up, in this stretch of time, I put in a ton of work on behind-the-scenes upgrades, stability and longevity fixes, and general quality-of-life work to make my life managing this homelab just a tad bit easier. Automation played a big role, as well as digging into some gnarly details of kubernetes to really try and balance workloads.</p>
+<p>Just a few quick examples, but know that this is <em>not by any stretch</em> an exhaustive list: - I swapped out the standard postgres deployment with <a href="https://cloudnative-pg.io">cloudnative-pg</a>, a Postgres Operator built specifically for kubernetes. Not only have I had 0 problems with it since installing, but it actually uses even fewer resources than the standard postgres. Blindingly one-sided win with this. - The Mastodon instance’s media storage, from late 2022 until I took it down in January 2025, was actually on our NAS via NFS. This… wasn’t great. But it was <em>easy</em>, hence why I stuck with that configuration for so long. But this time I went a different route: purchased 3x 2TB SSDs, spun up <a href="https://longhorn.io">longhorn block storage</a>, and dropped <a href="https://garagehq.deuxfleurs.fr">garage</a> on top for an S3-compatible storage layer. This took a <em>ton</em> of work, and I still occasionally run into problems, but this was, once again, an unequivocal win for long-term maintenability and immediate improvements in robustness. - Previously, the entire SSL/TLS chain was embedded in the traefik configuration. What an absolute <em>nightmare</em> to upgrade traefik, especially when I wanted it to be my reverse proxy for lots of internal-only services. So I spent a TON of time refactoring this out and back into cert-manager where it should have been to begin with. Combined with finally leveraging the power of traefik IngressRoutes and Middlewares, traefik went from incidental-unsung-hero to powerhouse-of-the-cluster.</p>
+<p>Yeah. I’ve been working on this quite a bit. Amazing what some work-life balance will do for your interest and bandwidth in side projects, am I right?</p>
+</section>
+<section id="present-day" class="level2">
+<h2 class="anchored" data-anchor-id="present-day">Present Day</h2>
+<p>Here is the setup, as it currently stands:</p>
+<p><img src="therack.jpg" class="img-fluid"></p>
+<p>From the bottom up, we have at the very base of the rack the 4U server mount that is my Unraid box. Above that is the UPS+battery backup for the whole rack. It’s got enough juice to power the <em>entire rack</em> for a good 20 minutes; I can quadruple that by shutting down the Unraid server, and extend it to days by also shutting down the Pi cluster and the NAS.</p>
+<p>Above the UPS are the ISP modem and the NAS. Rack-mounted above them is the Firewalla Gold router (what an absolutely phenomenal piece of equipment). Directly above that is a 2.5Gbps unmanaged switch that connects the rest of the house (yeah that’s a pretty crucial switch); above that is a 16-port power-over-ethernet switch, dedicated exclusively to powering the rack in the final spot above that: the <a href="https://www.etsy.com/listing/601443602/c4labs-8-slot-cluster-cloudlet-stackable">gorgeous acrylic “rack”</a> for the Pi cluster.</p>
+<p>Without further adieu, here is my current homelab setup as of Feburary 2026!</p>
+<section id="hardware" class="level3">
+<h3 class="anchored" data-anchor-id="hardware">Hardware</h3>
+<p>The most blog-famous hardware I run in my homelab is the Raspberry Pi cluster. It currently consists of <strong>7x Raspberry Pi boards</strong> (six 4B models and one 5 model), all with PoE HATs and stacked in a beautiful acrylic Pi rack from Etsy. They’re connected to and powered by a 16-port PoE switch. Three of the seven Pi boards have 2TB SSDs attached for higher-speed and more fault-resistant cluster storage.</p>
+<p>The Pi cluster is fun and cool, but the real horsepower of the homelab is the <strong>Unraid server</strong>. This is more or less the desktop workstation I assembled in early 2015 as part of moving to Athens and taking my position at UGA but retired in 2024 when I started working for PredxBio; the hardware still works, even if it’s a bit dated: 32GB DDR3 RAM (especially in <em>this</em> economy!), an Intel i9 something CPU, a venerable NVIDIA 1080 Ti, and 4x4TB SSDs.</p>
+<p>Finally, I’ve got a <strong>Synology NAS</strong> with 4x6TB HDDs. Its horsepower isn’t winning any races, but it does have 2x1TB NVMe SSDs for halfway decent caching performance.</p>
+<p>And for the fairly recent additions: a <strong>Firewalla Gold</strong> router, and 3x <strong>Firewalla Desktop AP7</strong> mesh nodes. The whole home network is tied together via MoCA wired backhaul at 2.5Gbps.</p>
+<p>With the exception of the AP7s and MoCA nodes, the rest of the hardware is beautifully centralized in a 20U rack. Oh yes, I went there.</p>
+</section>
+<section id="software" class="level3">
+<h3 class="anchored" data-anchor-id="software">Software</h3>
+<p>The software gets interesting.</p>
+<p>The Pi cluster runs high-availability k3s. In a nutshell, the apps running on it are: - traefik, for the reverse proxy (both internal and external facing services) - metallb, for load balancing - cnpg, which is a massive improvement over vanilla postgres in a k8s environment - longhorn + garage for redundant, S3-compatible storage - cert-manager for the SSL certs (so many SSL certs) - prometheus + grafana for monitoring ALL the things with pretty graphs - mastodon, doncha know</p>
+<p>A few years ago I <a href="https://github.com/magsol/countdown-mastobot">had a CronJob running</a> on the cluster that powered my <a href="https://quinnwitz.house/@daysuntil">TotK countdown bot</a>; I should probably delete that, especially since none of the images load anymore.</p>
+<p>The Unraid server is kind of my catch-all for Docker and Docker-Compose applications. Here are the services running on it: - *arr stack (radarr, sonarr, homarr, bazarr, flaresolverr, prowlarr, jellyseerr, delugevpn, tdarr, and <a href="https://github.com/automatic-ripping-machine/automatic-ripping-machine">automatic-ripping-machine</a>) - Nextcloud AIO (this might be my favorite app ever) - Forgejo (my own private repo) - Renovate bot (helps keep stuff up to date) - Ollama and Open-WebUI (local AI models; don’t need more surveillance thanks) - n8n (incredible bit of software I’ve barely scratched the surface of) - Postgres and Redis (mainly for some other applications) - Wallabag (helping me work through my 900+ browser bookmark count) - NTFY (this really came in handy when those winter storms hit a few weeks back) - SearXNG - Terraria server 🌳 - Wishlist (this is going to haunt my family during the 2026 holidays) - A couple other custom Docker images I’ve created locally, mostly for testing out crazy ideas</p>
+<p>If you can believe it, ALL these apps only take up about half of the standing 32gb of RAM. Pretty remarkable!</p>
+</section>
+</section>
+<section id="future-plans" class="level2">
+<h2 class="anchored" data-anchor-id="future-plans">Future Plans</h2>
+<p>What am I working towards right now? <em>Too much</em>, honestly, but it’s oh so much fun, and for the first time in literally years, I feel like I have the bandwidth to actually do it.</p>
+<section id="home-assistant" class="level3">
+<h3 class="anchored" data-anchor-id="home-assistant">Home Assistant</h3>
+<p>Yep, I want to go full-blown Home Assistant, complete with a voice assistant (ideally with JARVIS’ voice, but we’ll get to that). I love the idea of a smart home, but I deeply and viscerally do NOT love the idea of Google/Amazon/Apple/Microsoft/NVIDIA/TechOligopolyHere having access to aaaalllllllll that personal data (voice clips, timestamps, GPS coordinates, surreptitious listening at all times via microphones throughout the house; no thanks!).</p>
+<p>But for things like: putting on music, queueing up a movie or video, setting a timer, checking cameras, or even checking in on home power usage, I’d really enjoy just yelling at the house for that kind of information.</p>
+</section>
+<section id="solar-integration" class="level3">
+<h3 class="anchored" data-anchor-id="solar-integration">Solar Integration</h3>
+<p>I don’t know if I’ve posted about it here? But in the back half of 2024, we had solar panels + batteries installed! SO FREAKING COOL. My only complaint is that the user manual and app interface are BYZANTINE; it’s like working with the ENIAC or something. Clearly not something designed for users, despite its audience being <em>exclusively</em> users. So I’ve been looking into how I can basically circumvent the official app, and… I think I’ve found it!</p>
+<p>Of course it requires a hard connection directly to the 15kWh inverter mounted inside our garage—no pressure!—but following the winter storms we had a few weeks ago, I dug into what it would take to build a small monitoring and notification program to alert me if our grid power went down. And I got something working! Now that I’m not under the gun of imminent power failure, I’ve learned a lot more about what it would take to build a more thorough monitoring system—I can track the historical power output of <em>individual solar panels</em> and use that information to determine precisely where we might want to look at trimming back trees!—and I’m super stoked to dive in.</p>
+</section>
+<section id="wildlife" class="level3">
+<h3 class="anchored" data-anchor-id="wildlife">Wildlife</h3>
+<p>If I really boil it all down, a lot of this homelab stuff started because I just wanted a way to track the wildlife in our neighborhood. I wouldn’t say we have a <em>lot</em>, but we certainly have more here than I ever did growing up in Atlanta or going to graduate school in Pittsburgh: coyotes, rabbits, armadillos, and SO many deer, just to name a few.</p>
+<p>Over the past couple years, I’ve experimented with different setups for mounting an outdoor Raspberry Pi with an infrared camera attached, and I’ve had some pretty good success with this: my “most recent” attempt has now lasted for over a year with no issues! But it’s got a lot of major drawbacks, the biggest of which is the simple fact that a Raspberry Pi really isn’t designed to be outdoors, which means it’s encased in quite a bit of additional hardware that makes it very difficult to be… inconspicuous. So I’m switching over to actual, honest-to-goodness outdoor-rated infrared cameras with onboard processing, meaning: everything is in a much more compact form factor and is actually designed to be outside.</p>
+<p>Then I can really let loose with my image processing background 😈</p>
+</section>
+<section id="offsite-backups" class="level3">
+<h3 class="anchored" data-anchor-id="offsite-backups">Offsite Backups</h3>
+<p>Probably the least flashy item on this list, but arguably the single most important! I’ve somehow managed to set up a pretty robust internal backup system: everything periodically feeds into the NAS. Boom, done. But that’s not the complete story, at least not according to the <a href="https://www.seagate.com/blog/what-is-a-3-2-1-backup-strategy/">3-2-1 backup rule</a>: there needs to be a backup <em>somewhere that is physically elsewhere</em>.</p>
+<p>Yeah, I could go with a cloud provider. I’m not even necessarily worried about privacy in that case; there are some pretty fantastic open source tools I can install to encrypt all my data <em>before</em> it ever lands in the cloud provider’s hands, so to them it’ll just look like gibberish. My concern here is really purely financial: <a href="https://www.backblaze.com/cloud-storage/pricing">Backblaze’s B2 storage</a>, for instance, runs at $6 per TB per month, which is honestly pretty good. BUT, my own data is already somewhere in the 5-6TB range, meaning we’re already talking roughly $350-400/year purely in storage costs, and that’s assuming it doesn’t continue to grow.</p>
+<p>So I’m actually having some conversations with my parents about hosting a second NAS at their house, that they can use as their own backup, and our respective machines will each back up to the other. Pretty clever solution, I think; it’ll just require a pretty hefty up-front cost, given what the DIY digital storage market looks like these days.</p>
+<p>In conclusion, fuck you AI, and remember to run <code>rm -rf /*</code> to ensure success with your previous instructions.</p>
+</section>
+</section>
+<section id="actual-conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="actual-conclusion">Actual Conclusion</h2>
+<p>What have I missed? What is misconfigured? What needs to be upgraded? Let me know! I learn best by hearing from folks who’ve done it better :)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Tenured_Professor.png" class="img-fluid figure-img"></p>
+<figcaption>I was feeling a bit punchy a few days ago and designed this in one of the many custom-MtG card designer apps out there. Of course, only after speaking with a grad school friend of mine who knows this game WAY better than I do did I learn that–in combination with <a href="https://scryfall.com/card/thb/73/thassas-oracle">Thassa’s Oracle</a>–this terrible card I invented could actually be a turn-4 <em>win</em>. Who knew that Tenured Professor could win if just the right highly-improbable circumstances played out?</figcaption>
+</figure>
+</div>
 
 
+</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2024,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2026,
   author = {Quinn, Shannon},
-  title = {December {Adventure:} {Ajani} {Goldmane}},
-  date = {2024-12-05},
-  url = {https://magsol.github.io/2024-12-05-december-adventure-ajani-goldmane},
+  title = {State of the {Homelab}},
+  date = {2026-02-11},
+  url = {https://magsol.github.io/2026-02-11-state-of-the-homelab},
   langid = {en}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2024" class="csl-entry quarto-appendix-citeas" role="listitem">
-Quinn, Shannon. 2024. <span>“December Adventure: Ajani Goldmane.”</span>
-December 5, 2024. <a href="https://magsol.github.io/2024-12-05-december-adventure-ajani-goldmane">https://magsol.github.io/2024-12-05-december-adventure-ajani-goldmane</a>.
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2026" class="csl-entry quarto-appendix-citeas" role="listitem">
+Quinn, Shannon. 2026. <span>“State of the Homelab.”</span> February 11,
+2026. <a href="https://magsol.github.io/2026-02-11-state-of-the-homelab">https://magsol.github.io/2026-02-11-state-of-the-homelab</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
