@@ -1,0 +1,234 @@
+---
+title: "The Long Year"
+subtitle: "Apologies to Sir Terry Pratchett and Stephen Baxter"
+date: "2026-07-18 14:42:00"
+categories: [professional]
+citation:
+    url: https://magsol.github.io/2026-07-18-the-long-year
+image: "images/parktrail.jpeg"
+image-alt: "Foggy morning on a trail run around a park on Bainbridge Island. You can see the sun poking through the trees and the fog laying across a field with a water tower on the opposite side from the rising sun."
+author: "Shannon Quinn"
+---
+![](images/parktrail.jpeg){.preview-image fig-alt="Foggy morning on a trail run around a park on Bainbridge Island. You can see the sun poking through the trees and the fog laying across a field with a water tower on the opposite side from the rising sun."}
+
+One year ago, I started at my current position at Valo Health. In another month, I'll have officially been out of academia for one year, too.
+
+Wild.
+
+I don't have any navel-gazing (per se) to go through here, suffice to say: I am incredibly grateful not just to have a job in my preferred field during what can only be described as a brutal hiring market, but I am _beyond_ grateful that it is a job I find rewarding and energizing and something that literally gets me out of bed in the mornings.
+
+So I thought I'd just take the opportunity to run down a few things, some work-related and some not, that have happened since I took the Valo job one year ago.
+
+### July 2025
+
+Started working on Valo on July 16, 2025!
+
+![](images/valo_start.png)
+
+Spent some time in Colorado for a family member's wedding.
+
+![](images/colorado_rocks_0724.jpeg)
+
+Kiddo continues to wow us with their original artwork.
+
+![](images/kiddo_selfportrait_0721.jpeg)
+
+### August
+
+Had my first on-site Valo meeting in Boston, MA. Went for multiple runs (including one with my supervisor), met a ton of my coworkers, and had some of the most work-related fun I can remember.
+
+![](images/boston_run_selfie_0811.jpeg)
+
+Celebrated the end of an era: my official last day at UGA, a 10.5-year run. Bought myself a small gift to help celebrate.
+
+![](images/super_star_destroyer_0821.jpg)
+
+Attended my first-ever minis painting at a local board game shop.
+
+![](images/painted_mini_0819.jpeg)
+
+Read a fantastic Sanderson book (I mean, they're all fantastic, but this was _really_ fantastic).
+
+![](images/emberdark_0829.jpeg)
+
+The whole family went to the Cleveland Air Show. Saw some incredible aircraft. Lots of loud noises.
+
+![](images/f18_0831.jpeg)
+
+### September
+
+Busy month--September always seems busy--so I didn't take many pictures. But there was at least one rainbow.
+
+![](images/rainbow_0926.jpeg)
+
+### October
+
+Our car hit 100,000 miles.
+
+![](images/100k_miles_1006.jpeg)
+
+My 2025 Halloween getup!
+
+![](images/f4_1006.jpeg)
+
+Our family took a few days' getaway in the Appalachians. My goodness, the views.
+
+![](images/nc_mountains_1011.jpeg)
+
+The first porch pumpkin carved entirely by our kiddo!
+
+![](images/jackolantern_1016.jpeg)
+
+We saw a DOUBLE rainbow on a run!
+
+![](images/double_rainbow_1019.jpeg)
+
+Attended a birthday party for one of kiddo's friends at a wall climbing gym. Gave us quite a few ideas!
+
+![](images/climbing_gym_1026.jpeg)
+
+### November
+
+This is usually when the leaves really start turning for us. Absolutely love it.
+
+![](images/tree_leaves_1105.jpeg)
+
+During Cathryn's birthday month, we had a longtime mutual friend come stay with us.
+
+![](images/danimal_1109.jpeg)
+
+### December
+
+I joined the "Latke Daddies" for the second year in row in prepping industrial-sized numbers of latkes. So much freaking fun.
+
+![](images/latke_daddies_1214.jpeg)
+
+*Hyrule Warriors: Age of Imprisonment* was released, though I didn't really get a chance to dig into it until the new year. Still, I was incredibly thrilled for it and have absolutely _loved_ playing it.
+
+![](images/construct_sword_1218.jpg)
+
+Celebrating all the holidays in our interfaith household.
+
+![](images/multifaith_household_1221.jpeg)
+
+Kiddo continued expanding their artistic talents on our trip to AZ to see extended family over Christmas.
+
+![](images/kiddo_grandpa_1223.jpeg)
+
+For the second time in a row, we brought COVID back home with us following our AZ trip (I might be permanently done visiting AZ).
+
+![](images/covid_1228.jpeg)
+
+### January 2026
+
+Cathryn and I attended a wedding in Ohio (child-free!) for one of Cathryn's longtime friends. It was FRIGID but also such a blast to clean up a bit.
+
+![](images/wedding_0117.jpeg)
+
+We've been together for 20 years, y'all :)
+
+![](images/wedding_selfie_0117.jpeg)
+
+We got snow this year, and a decent amount of it! Decent enough to make snow angels. Of course it also canceled school for a handful of days, so there was that too.
+
+![](images/snow_angel_0131.jpeg)
+
+### February
+
+Made some more homelab hardware upgrades. Y'know, just _after_ the prices started surging.
+
+![](images/homelab_0211.jpeg)
+
+Nope, still not a fan of [The Depths](https://zelda.fandom.com/wiki/The_Depths). Still love the game though.
+
+![](images/nope_to_thedepths_0219.jpeg)
+
+### March
+
+Took my second work trip to Boston! This time, it was for an all-day workshop that I organized from start to finish. By all accounts it was a huge hit.
+
+![](images/boston_0309.jpeg)
+
+Also, my birthday month! Got myself a lovely new running watch.
+
+![](images/new_watch_0316.jpeg)
+
+Cathryn and also picked out a new living couch to replace our 40+ year old one.
+
+![](images/new_couch_0316.jpeg)
+
+I read another mind-blowing science fiction book by one of my all-time favorite authors.
+
+![](images/children_of_strife_0320.jpeg)
+
+### April
+
+Installed new shelving in my home office (picture not available, but it was life-changing).
+
+Went to a UGA softball game with friends!
+
+![](images/softball_0410.jpeg)
+
+Dealing with a broken bathtub faucet. Homeownership, am I right.
+
+![](images/broken_faucet_0427.jpeg)
+
+Got inspired one day after watching the Faceytalk episode of Bluey, and just... coded my own version. Kiddo _LOVED IT_. I promise I'll open source it one of these days!
+
+![](images/faceytalk_0429.jpeg)
+
+### May
+
+We got one of the funniest AI-generated stickers in the mail from a friend across the pond (it's a joke about how bad AI generated images can be).
+
+![](images/aerolobster_0511.jpeg)
+
+We finished our living room makeover! This was the first time we seriously moved things around since we moved in almost 11 years ago.
+
+![](images/tv_layout_0517.jpeg)
+
+I broke a window at our local YMCA during sled pushes. Oops. Don't worry, I immediately notified the folks who worked there and paid for its replacement myself.
+
+![](images/cracked_window_0519.jpeg)
+
+Our family went to an event at our public library that featured a petting zoo. Lots of cute fuzzy animals!
+
+![](images/chicks_bunny_0530.jpeg)
+
+### June
+
+We've started seeing the new baby deer out on our runs through neighborhoods.
+
+![](images/baby_deer_0604.jpeg)
+
+Another of our lontime friends, this time here in town, got married!
+
+![](images/wedding_cake_0605.jpeg)
+
+[1.0 release day](../2026-06-27-from-0-to-1/index.qmd), woohoo!
+
+![](images/release_day_0611.jpeg)
+
+Don't mind me, just over here setting new personal bests on deadlift. Seriously, I don't think I could deadlift 360lbs even at my height of high school football, and certainly not over _5 sets of 2-3 reps each set_.
+
+![](images/deadlift_0618.jpg)
+
+And flipping tires for the heckuvit. That I used to do in high school, so it feels like seeing an old friend for the first time in decades. Then you get tired of them _real_ quick.
+
+![](images/tire_flippin_0618.jpg)
+
+We kicked off our two-week trip to Seattle! Fun fact: this trip had been in the making for _six years_. We'd even purchased tickets for the trip... for _May 2020_. Suffice to say, that iteration did not happen. But we finally made it happen.
+
+![](images/seattle_rooftop_0629.jpeg)
+
+### July
+
+We wrapped up our two-week trip in Seattle.
+
+![](images/mountains_sky_0712.jpeg)
+
+Just in time for me to celebrate a full year at Valo. Incredible.
+
+Here's to many more!
+
+![](images/hiding_found_0709.jpeg)
