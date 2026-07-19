@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Shannon Quinn">
+
+<title>From 0 to 1 – Stochastic Stenography</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/symbol.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-da3db1b9613c489e4dbcb35a3c3b79cd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XHDW9H78Z1"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
+</script>
+<link rel="me" href="https://quinnwitz.house/@magsol">
+<meta name="fediverse:creator" content="@magsol@quinnwitz.house">
+<link rel="human-json" href="../../human.json">
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="From 0 to 1 – Stochastic Stenography">
+<meta property="og:description" content="Both small, and infinite">
+<meta property="og:image" content="https://magsol.github.io/posts/2026-06-27-from-0-to-1/recovery.jpeg">
+<meta property="og:site_name" content="Stochastic Stenography">
+<meta property="og:locale" content="en_US">
+<meta property="og:image:alt" content="My Garmin Forerunner running watch displaying its 'Training Readiness' metric, with a giant red '1' (out of 100) score, and a 'Poor: Let your body recover' tagline underneath.">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../images/symbol.png" alt="" class="navbar-logo light-content">
+    <img src="../../images/symbol.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Stochastic Stenography</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About Me</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">From 0 to 1</h1>
+            <p class="subtitle lead">Both small, and infinite</p>
+                                <div class="quarto-categories">
+                <div class="quarto-category">professional</div>
+                <div class="quarto-category">personal</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Shannon Quinn </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">Posted on the 27th of June in the year 2026, at 6:59pm. It was Saturday.</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="recovery.jpeg" class="preview-image img-fluid figure-img" alt="My Garmin Forerunner running watch displaying its 'Training Readiness' metric, with a giant red '1' (out of 100) score, and a 'Poor: Let your body recover' tagline underneath."></p>
+<figcaption>It was a bruising few days. I mean weeks. I mean… oh fuck it: what a decade, huh Captain.</figcaption>
+</figure>
+</div>
+<p>A few weeks ago on Thursday, June 11, my team and I released version 1.0 of the software we’d been building from the ground-up since mid-October 2025.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="itshappening.gif" class="img-fluid figure-img"></p>
+<figcaption>I posted this gif in the Valo Slack channel on 1.0 release day. Got some good reactions.</figcaption>
+</figure>
+</div>
+<p>It’s an internal-only SDK so I can’t go into too much detail on it, but in short: it was built to help, accelerate, and otherwise augment the workflows of other scientists at Valo. I intentionally brought an open source ethos modeled after the scientific Python community: I used all open tooling (pixi, pip and conda, Sphinx), adopted <a href="https://www.conventionalcommits.org/en/v1.0.0/">conventional commits</a> and <a href="https://keepachangelog.com/en/1.0.0/">keep a changelog</a> and <a href="https://en.wikipedia.org/wiki/Single_source_of_truth">single source of truth</a>, enforced PEP compliant coding standards, and encouraged <a href="https://en.wikipedia.org/wiki/Test-driven_development">test-driven development</a>. We also had a biweekly release cadence (<a href="https://semver.org">SemVer</a>, at least for now) that coincided with three stand-ups in each sprint, one weekly meeting with higher-ups to make sure requirements were being met, and one weekly meeting with users to either demo a new release or solicit feedback on the previous one. We included a suite of fully-worked end-to-end examples, probably a <em>paragraph</em> of documentation per line of code (I actually <em>tightened</em> the docs ahead of the 1.0 release), and my personal favorite: an entire API of custom exceptions that included intelligent feedback for users to figure out what went wrong and how to recover from it. We had CI/CD that not only ran all our tests, built our docs and compatibility matrices, and ran said examples, but also pushed the software into the highly-restricted environments of our collaborators, outright removing that <em>significant</em> technical hurdle from our users before they ever had to begin to figure out a fix.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="release_day.jpeg" class="img-fluid figure-img"></p>
+<figcaption>On the day of the 1.0 release, I wore my fantastic Georgia Tech Yellow Jackets shirt, one of my favorites, and had my dailly coffee in one of my favorite mugs. Bonus points if you recognize what “CEDA” on the mug actually means without looking it up.</figcaption>
+</figure>
+</div>
+<p>The single biggest compliment I received over that period of time came from my direct supervisor. Apparently, <em>his</em> supervisor informed him that, over the course of the ~8 months of active development, this particular business case went from being a “weekly high priority concern” to something they barely needed to discuss anymore other than to pass on my regular progress updates.</p>
+<p>The software isn’t perfect, by any measure. Frankly, there are more questions now than when we started! There are still some known issues, an entire API surface we’re going to deprecate over the next several minor versions, and I have enough “post-1.0” high-effort design specifications to <em>essentially fill out the entire roadmap to a 2.0 release</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<p>I think my favorite part(s) of the entire development cycle was the accidental way in which I surfaced multiple subtle-but-related-and-showstopping bugs. At least twice (there may have been a third; I just don’t explicitly recall it now), I was working on a release-day Jupyter notebook to demo the newest features. In both cases, when it came time to test the notebook—since the notebooks lived in a separate, demo repo that I, being <em>very silly</em>, had not (yet) wired into a pixi setup—rather than do things <em>correctly</em> and create said pixi environment, or even activate a conda environment, I instead invoked the conda Python executable via an absolute path, like this:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span><span class="op">&gt;</span> /path/to/conda/bin/jupyter <span class="ex">notebook</span> release_demo.ipynb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This is silly for <em>a lot of very good reasons</em>, but: in doing so, I triggered failure conditions for certain poorly-built parts of the package’s backend communication with an external server. The immediate cause of failure was (of course) me using conda environments in ways they were never supposed to be used, but in both cases I surfaced very brittle and poorly-abstracted client-server negotiation, leading to some of the best hardening and future-proofing work that I think I’ve done.</p>
+<p>I’m so, so freaking proud of it. Of us. Of <em>me</em>. It went from high-priority concept in September 2025 to a stable 1.0 release in June 2026.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="logo.png" class="img-fluid figure-img"></p>
+<figcaption>This is the logo I commissioned <a href="https://www.andycarolan.com">Andy Carolan</a> to design for the core of the project, and then update for the 1.0 release. I think it’s pretty awesome! Go check out his stuff, he’s incredibly talented.</figcaption>
+</figure>
+</div>
+<section id="beyond-the-technical" class="level3">
+<h3 class="anchored" data-anchor-id="beyond-the-technical">Beyond the technical</h3>
+<p>I took the entire week after the release off from work for a staycation. We’d been in nose-to-grindstone mode for basically three straight months, ever since an on-site in March where we spelled out the roadmap-to-1.0. So I figured some time off—no travel, no specific reason, just time off to rest and recover—was warranted. All the better with which to do the uncomfortable thing and sit with the accomplishment for a bit, rather than immediately moving the goalpost to the next big milestone.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Content warning: language, mostly
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There’s gonna be some spicy language in the following section. If you’re not ok with that, that’s totally fine, but you may want to stop reading here.</p>
+</div>
+</div>
+<p>It’s hard to believe I’m solidly in the midpoint of my professional career; in a lot of ways, I feel like I’ve barely started. The transition from academia to industry certainly has a lot to do with that, but in some ways, academic productivity<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> is<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> slow enough that it could feel as though I wasn’t progressing very quickly.</p>
+<p>An honest assessment, though, underscores a lot of highlights, a <em>lot</em> of lowlights, and lot of friction moving from one to the other and back again. Many of these lowlights <em>and</em> highlights were invisible from all but the closest collaborators, friends, and family. Another perpetual source of anxiety: it’s hard to express to external reviewers, or especially <em>people outside academia altogether</em>, the kind of absolutely necessary work that was always happening but which was largely invisible.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="tireflippin.jpg" class="img-fluid figure-img"></p>
+<figcaption>Nobody sees the insanely grindy and absolutely necessary work out the back side of the building that creates and strengthens the foundation on which literally everything else depends. Even harder, very few care.</figcaption>
+</figure>
+</div>
+<p>I’ve had my share of both fuck-ups and fuck-yeahs—with plenty more of both to come, I’m sure—but I have to stop and acknowledge that my brain is <em>really</em> fucking good at skipping right off the latter and focusing exclusively on the former.</p>
+<p>Which is why I want to sit with this accomplishment: I haven’t even been at Valo for a year yet (next month!), but I’ve already got this feather in my cap and it’s <em>so fucking awesome</em>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dl345booya.jpg" class="img-fluid figure-img"></p>
+<figcaption>I’ve been lifting with a coach for six months now, and I’ve already exceeded my lifetime maximum on deadlifts. Yes, including when I was 18 years old and a starting defensive end on a perennial state championship contender football team.</figcaption>
+</figure>
+</div>
+<p>And, perhaps as another cake entirely rather than mere icing, I want to soak this up in the context of my Valo annual review from this past January/February. It was the first annual review I’ve ever had in industry, and it was the first annual review <em>ever</em> to provide concrete feedback that I could actually act on<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</p>
+<p>But what blew me away more than anything: the annual review looked at the <em>how</em>, in addition to the <em>what</em>…and rewarded me for it. Here are some of the key excerpts:</p>
+<blockquote class="blockquote">
+<p>Shannon led with curiosity and empathy</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Through leaning into curiosity and empathy,</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>He is focused on usability of the tools, and leads through empathy, enthusiasm, and transparency.</p>
+</blockquote>
+<p>These particular quotes have been sticking in my brain ever since I received the review earlier this year. Not just because they <em>actually reflect how I perceive myself</em><a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>, but also because it’s my view that qualities like these are only going to be more important in the coming years. As the technical parts of the job seem increasingly “attributable to AI workflows” or “for sale to the most egregious of AI scraper bots”—depending on which end of the AI adoption spectrum you most closely align with—I’m trying to focus more and more on what makes <em>me</em> uniquely good at what I do. In many ways, AI is “merely”<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> accelerating trends that were already happening.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="youareloved.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Not exactly to this extent, but basically: my Valo colleagues see me and accept me, as I am. I can’t tell you how much that counts for… or maybe I can? I suspect I’m far from alone on this one 🥰</figcaption>
+</figure>
+</div>
+<p>But even before AI really arrived on the scene, it was always batshit to me how little some people and some employers cared about the <em>how</em> of productivity<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>, even (and perhaps, especially) if they <em>said</em> it was something they valued. Invariably, it would be “extra credit”, and extra credit only applied if the baseline productivity got through; and if the baseline <em>wasn’t</em> reached, these values might actually count <em>against</em> you.</p>
+<p>These bits of feedback are so small in the grand scheme of things. And yet, to me, they’re <em>everything</em>.</p>
+<p>Fucking wild.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="jk2.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Also wild, but in a totally different way: <a href="../../posts/2018-04-26-jedi-outcast-echoes-of-a-bygone-gaming-era/index.html">Jedi Knight II sighting</a> in the most recent PC Gamer edition!</figcaption>
+</figure>
+</div>
+<p>Which really just underscores how so, so, so grateful I am for the position I’ve found and where I am in this moment. Who knows what will happen tomorrow? I’m too busy having fun now to worry too much about it.</p>
+<p>Plus, THIS motherfucker is coming out later this year, and while my wife grew up playing it on N64 I was a latecomer to the series—basically started with Skyward Sword, and have played every installment to death since, though I did play <em>Link’s Awakening</em> on the OG Game Boy so there’s that—I am <em>loving</em> all the memes about “activating millennial sleeper agents” with just three musical notes.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="oot.jpeg" class="img-fluid figure-img"></p>
+<figcaption>OCARINA <a href="https://www.youtube.com/watch?v=OiDx6aQ928o">SMASH</a>.</figcaption>
+</figure>
+</div>
+<p>Anyway. Yeah, I know it’s been a hot minute since my last update over two months ago, but I’m hoping with 1.0 in the rear mirror now, we’ll all be able to take a collective breath and slow down a tad, so I can get back to <a href="https://blog.jim-nielsen.com/2026/blogging-stating-the-obvious/">stating the obvious</a>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="sunrise_at_y.jpeg" class="img-fluid figure-img"></p>
+<figcaption>The summer weather <em>sucks</em> but it does produce some gorgeous sunrises.</figcaption>
+</figure>
+</div>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Some estimates have already pegged the developer hours at 500+ to implement this roadmap. So, <em>months</em>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p><em>Visible</em> academic productivity, for sure.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Sorry, <em>was</em>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>A perennial problem with feedback in academia—annual reviews, paper reviews, grant feedback, you name it—is that it <em>always</em> arrives too late to do anything about.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>This has been a low-key constant struggle in previous positions, and my brain just happens to be wired in such a way that I’m easily gaslit in this area. Not a great combination when you’re at the ass-end of a post-capitalist hellscape.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>I don’t want to get into this whole debate here; just know that this word is <em>extraordinarily</em> load-bearing.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>Including some people/employers I’ve worked for.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2026,
+  author = {Quinn, Shannon},
+  title = {From 0 to 1},
+  date = {2026-06-27},
+  url = {https://magsol.github.io/2026-06-27-from-0-to-1},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2026" class="csl-entry quarto-appendix-citeas" role="listitem">
+Quinn, Shannon. 2026. <span>“From 0 to 1.”</span> June 27. <a href="https://magsol.github.io/2026-06-27-from-0-to-1">https://magsol.github.io/2026-06-27-from-0-to-1</a>.
+</div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/magsol\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<input type="hidden" id="giscus-base-theme" value="dark">
+<input type="hidden" id="giscus-alt-theme" value="dark">
+<script>
+  function loadGiscus() {
+    // Function to get the theme based on body class
+    const getTheme = () => {
+      let baseTheme = document.getElementById('giscus-base-theme').value;
+      let altTheme = document.getElementById('giscus-alt-theme').value;
+      return document.body.classList.contains('quarto-dark') ? altTheme : baseTheme;
+    };
+    const script = document.createElement("script");
+    script.src = "https://giscus.app/client.js";
+    script.async = true;
+    script.dataset.repo = "magsol/magsol.github.io";
+    script.dataset.repoId = "MDEwOlJlcG9zaXRvcnkyNzYwNTYxNw==";
+    script.dataset.category = "Announcements";
+    script.dataset.categoryId = "DIC_kwDOAaU6cc4CTutY";
+    script.dataset.mapping = "pathname";
+    script.dataset.reactionsEnabled = "1";
+    script.dataset.emitMetadata = "0";
+    script.dataset.inputPosition = "top";
+    script.dataset.theme = getTheme();
+    script.dataset.lang = "en";
+    script.crossOrigin = "anonymous";
+    // Append the script to the desired div instead of at the end of the body
+    document.getElementById("quarto-content").appendChild(script);
+  }
+  loadGiscus();
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

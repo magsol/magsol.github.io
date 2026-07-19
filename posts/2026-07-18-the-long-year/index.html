@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Shannon Quinn">
+
+<title>The Long Year – Stochastic Stenography</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/symbol.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-da3db1b9613c489e4dbcb35a3c3b79cd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XHDW9H78Z1"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
+</script>
+<link rel="me" href="https://quinnwitz.house/@magsol">
+<meta name="fediverse:creator" content="@magsol@quinnwitz.house">
+<link rel="human-json" href="../../human.json">
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="The Long Year – Stochastic Stenography">
+<meta property="og:description" content="Apologies to Sir Terry Pratchett and Stephen Baxter">
+<meta property="og:image" content="https://magsol.github.io/posts/2026-07-18-the-long-year/images/parktrail.jpeg">
+<meta property="og:site_name" content="Stochastic Stenography">
+<meta property="og:locale" content="en_US">
+<meta property="og:image:alt" content="Foggy morning on a trail run around a park on Bainbridge Island. You can see the sun poking through the trees and the fog laying across a field with a water tower on the opposite side from the rising sun.">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../images/symbol.png" alt="" class="navbar-logo light-content">
+    <img src="../../images/symbol.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Stochastic Stenography</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About Me</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">The Long Year</h1>
+            <p class="subtitle lead">Apologies to Sir Terry Pratchett and Stephen Baxter</p>
+                                <div class="quarto-categories">
+                <div class="quarto-category">professional</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Shannon Quinn </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">Posted on the 18th of July in the year 2026, at 2:42pm. It was Saturday.</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<p><img src="images/parktrail.jpeg" class="preview-image img-fluid" alt="Foggy morning on a trail run around a park on Bainbridge Island. You can see the sun poking through the trees and the fog laying across a field with a water tower on the opposite side from the rising sun."></p>
+<p>One year ago, I started at my current position at Valo Health. In another month, I’ll have officially been out of academia for one year, too.</p>
+<p>Wild.</p>
+<p>I don’t have any navel-gazing (per se) to go through here, suffice to say: I am incredibly grateful not just to have a job in my preferred field during what can only be described as a brutal hiring market, but I am <em>beyond</em> grateful that it is a job I find rewarding and energizing and something that literally gets me out of bed in the mornings.</p>
+<p>So I thought I’d just take the opportunity to run down a few things, some work-related and some not, that have happened since I took the Valo job one year ago.</p>
+<section id="july-2025" class="level3">
+<h3 class="anchored" data-anchor-id="july-2025">July 2025</h3>
+<p>Started working on Valo on July 16, 2025!</p>
+<p><img src="images/valo_start.png" class="img-fluid"></p>
+<p>Spent some time in Colorado for a family member’s wedding.</p>
+<p><img src="images/colorado_rocks_0724.jpeg" class="img-fluid"></p>
+<p>Kiddo continues to wow us with their original artwork.</p>
+<p><img src="images/kiddo_selfportrait_0721.jpeg" class="img-fluid"></p>
+</section>
+<section id="august" class="level3">
+<h3 class="anchored" data-anchor-id="august">August</h3>
+<p>Had my first on-site Valo meeting in Boston, MA. Went for multiple runs (including one with my supervisor), met a ton of my coworkers, and had some of the most work-related fun I can remember.</p>
+<p><img src="images/boston_run_selfie_0811.jpeg" class="img-fluid"></p>
+<p>Celebrated the end of an era: my official last day at UGA, a 10.5-year run. Bought myself a small gift to help celebrate.</p>
+<p><img src="images/super_star_destroyer_0821.jpg" class="img-fluid"></p>
+<p>Attended my first-ever minis painting at a local board game shop.</p>
+<p><img src="images/painted_mini_0819.jpeg" class="img-fluid"></p>
+<p>Read a fantastic Sanderson book (I mean, they’re all fantastic, but this was <em>really</em> fantastic).</p>
+<p><img src="images/emberdark_0829.jpeg" class="img-fluid"></p>
+<p>The whole family went to the Cleveland Air Show. Saw some incredible aircraft. Lots of loud noises.</p>
+<p><img src="images/f18_0831.jpeg" class="img-fluid"></p>
+</section>
+<section id="september" class="level3">
+<h3 class="anchored" data-anchor-id="september">September</h3>
+<p>Busy month–September always seems busy–so I didn’t take many pictures. But there was at least one rainbow.</p>
+<p><img src="images/rainbow_0926.jpeg" class="img-fluid"></p>
+</section>
+<section id="october" class="level3">
+<h3 class="anchored" data-anchor-id="october">October</h3>
+<p>Our car hit 100,000 miles.</p>
+<p><img src="images/100k_miles_1006.jpeg" class="img-fluid"></p>
+<p>My 2025 Halloween getup!</p>
+<p><img src="images/f4_1006.jpeg" class="img-fluid"></p>
+<p>Our family took a few days’ getaway in the Appalachians. My goodness, the views.</p>
+<p><img src="images/nc_mountains_1011.jpeg" class="img-fluid"></p>
+<p>The first porch pumpkin carved entirely by our kiddo!</p>
+<p><img src="images/jackolantern_1016.jpeg" class="img-fluid"></p>
+<p>We saw a DOUBLE rainbow on a run!</p>
+<p><img src="images/double_rainbow_1019.jpeg" class="img-fluid"></p>
+<p>Attended a birthday party for one of kiddo’s friends at a wall climbing gym. Gave us quite a few ideas!</p>
+<p><img src="images/climbing_gym_1026.jpeg" class="img-fluid"></p>
+</section>
+<section id="november" class="level3">
+<h3 class="anchored" data-anchor-id="november">November</h3>
+<p>This is usually when the leaves really start turning for us. Absolutely love it.</p>
+<p><img src="images/tree_leaves_1105.jpeg" class="img-fluid"></p>
+<p>During Cathryn’s birthday month, we had a longtime mutual friend come stay with us.</p>
+<p><img src="images/danimal_1109.jpeg" class="img-fluid"></p>
+</section>
+<section id="december" class="level3">
+<h3 class="anchored" data-anchor-id="december">December</h3>
+<p>I joined the “Latke Daddies” for the second year in row in prepping industrial-sized numbers of latkes. So much freaking fun.</p>
+<p><img src="images/latke_daddies_1214.jpeg" class="img-fluid"></p>
+<p><em>Hyrule Warriors: Age of Imprisonment</em> was released, though I didn’t really get a chance to dig into it until the new year. Still, I was incredibly thrilled for it and have absolutely <em>loved</em> playing it.</p>
+<p><img src="images/construct_sword_1218.jpg" class="img-fluid"></p>
+<p>Celebrating all the holidays in our interfaith household.</p>
+<p><img src="images/multifaith_household_1221.jpeg" class="img-fluid"></p>
+<p>Kiddo continued expanding their artistic talents on our trip to AZ to see extended family over Christmas.</p>
+<p><img src="images/kiddo_grandpa_1223.jpeg" class="img-fluid"></p>
+<p>For the second time in a row, we brought COVID back home with us following our AZ trip (I might be permanently done visiting AZ).</p>
+<p><img src="images/covid_1228.jpeg" class="img-fluid"></p>
+</section>
+<section id="january-2026" class="level3">
+<h3 class="anchored" data-anchor-id="january-2026">January 2026</h3>
+<p>Cathryn and I attended a wedding in Ohio (child-free!) for one of Cathryn’s longtime friends. It was FRIGID but also such a blast to clean up a bit.</p>
+<p><img src="images/wedding_0117.jpeg" class="img-fluid"></p>
+<p>We’ve been together for 20 years, y’all :)</p>
+<p><img src="images/wedding_selfie_0117.jpeg" class="img-fluid"></p>
+<p>We got snow this year, and a decent amount of it! Decent enough to make snow angels. Of course it also canceled school for a handful of days, so there was that too.</p>
+<p><img src="images/snow_angel_0131.jpeg" class="img-fluid"></p>
+</section>
+<section id="february" class="level3">
+<h3 class="anchored" data-anchor-id="february">February</h3>
+<p>Made some more homelab hardware upgrades. Y’know, just <em>after</em> the prices started surging.</p>
+<p><img src="images/homelab_0211.jpeg" class="img-fluid"></p>
+<p>Nope, still not a fan of <a href="https://zelda.fandom.com/wiki/The_Depths">The Depths</a>. Still love the game though.</p>
+<p><img src="images/nope_to_thedepths_0219.jpeg" class="img-fluid"></p>
+</section>
+<section id="march" class="level3">
+<h3 class="anchored" data-anchor-id="march">March</h3>
+<p>Took my second work trip to Boston! This time, it was for an all-day workshop that I organized from start to finish. By all accounts it was a huge hit.</p>
+<p><img src="images/boston_0309.jpeg" class="img-fluid"></p>
+<p>Also, my birthday month! Got myself a lovely new running watch.</p>
+<p><img src="images/new_watch_0316.jpeg" class="img-fluid"></p>
+<p>Cathryn and also picked out a new living couch to replace our 40+ year old one.</p>
+<p><img src="images/new_couch_0316.jpeg" class="img-fluid"></p>
+<p>I read another mind-blowing science fiction book by one of my all-time favorite authors.</p>
+<p><img src="images/children_of_strife_0320.jpeg" class="img-fluid"></p>
+</section>
+<section id="april" class="level3">
+<h3 class="anchored" data-anchor-id="april">April</h3>
+<p>Installed new shelving in my home office (picture not available, but it was life-changing).</p>
+<p>Went to a UGA softball game with friends!</p>
+<p><img src="images/softball_0410.jpeg" class="img-fluid"></p>
+<p>Dealing with a broken bathtub faucet. Homeownership, am I right.</p>
+<p><img src="images/broken_faucet_0427.jpeg" class="img-fluid"></p>
+<p>Got inspired one day after watching the Faceytalk episode of Bluey, and just… coded my own version. Kiddo <em>LOVED IT</em>. I promise I’ll open source it one of these days!</p>
+<p><img src="images/faceytalk_0429.jpeg" class="img-fluid"></p>
+</section>
+<section id="may" class="level3">
+<h3 class="anchored" data-anchor-id="may">May</h3>
+<p>We got one of the funniest AI-generated stickers in the mail from a friend across the pond (it’s a joke about how bad AI generated images can be).</p>
+<p><img src="images/aerolobster_0511.jpeg" class="img-fluid"></p>
+<p>We finished our living room makeover! This was the first time we seriously moved things around since we moved in almost 11 years ago.</p>
+<p><img src="images/tv_layout_0517.jpeg" class="img-fluid"></p>
+<p>I broke a window at our local YMCA during sled pushes. Oops. Don’t worry, I immediately notified the folks who worked there and paid for its replacement myself.</p>
+<p><img src="images/cracked_window_0519.jpeg" class="img-fluid"></p>
+<p>Our family went to an event at our public library that featured a petting zoo. Lots of cute fuzzy animals!</p>
+<p><img src="images/chicks_bunny_0530.jpeg" class="img-fluid"></p>
+</section>
+<section id="june" class="level3">
+<h3 class="anchored" data-anchor-id="june">June</h3>
+<p>We’ve started seeing the new baby deer out on our runs through neighborhoods.</p>
+<p><img src="images/baby_deer_0604.jpeg" class="img-fluid"></p>
+<p>Another of our lontime friends, this time here in town, got married!</p>
+<p><img src="images/wedding_cake_0605.jpeg" class="img-fluid"></p>
+<p><a href="../../posts/2026-06-27-from-0-to-1/index.html">1.0 release day</a>, woohoo!</p>
+<p><img src="images/release_day_0611.jpeg" class="img-fluid"></p>
+<p>Don’t mind me, just over here setting new personal bests on deadlift. Seriously, I don’t think I could deadlift 360lbs even at my height of high school football, and certainly not over <em>5 sets of 2-3 reps each set</em>.</p>
+<p><img src="images/deadlift_0618.jpg" class="img-fluid"></p>
+<p>And flipping tires for the heckuvit. That I used to do in high school, so it feels like seeing an old friend for the first time in decades. Then you get tired of them <em>real</em> quick.</p>
+<p><img src="images/tire_flippin_0618.jpg" class="img-fluid"></p>
+<p>We kicked off our two-week trip to Seattle! Fun fact: this trip had been in the making for <em>six years</em>. We’d even purchased tickets for the trip… for <em>May 2020</em>. Suffice to say, that iteration did not happen. But we finally made it happen.</p>
+<p><img src="images/seattle_rooftop_0629.jpeg" class="img-fluid"></p>
+</section>
+<section id="july" class="level3">
+<h3 class="anchored" data-anchor-id="july">July</h3>
+<p>We wrapped up our two-week trip in Seattle.</p>
+<p><img src="images/mountains_sky_0712.jpeg" class="img-fluid"></p>
+<p>Just in time for me to celebrate a full year at Valo. Incredible.</p>
+<p>Here’s to many more!</p>
+<p><img src="images/hiding_found_0709.jpeg" class="img-fluid"></p>
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2026,
+  author = {Quinn, Shannon},
+  title = {The {Long} {Year}},
+  date = {2026-07-18},
+  url = {https://magsol.github.io/2026-07-18-the-long-year},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2026" class="csl-entry quarto-appendix-citeas" role="listitem">
+Quinn, Shannon. 2026. <span>“The Long Year.”</span> July 18. <a href="https://magsol.github.io/2026-07-18-the-long-year">https://magsol.github.io/2026-07-18-the-long-year</a>.
+</div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/magsol\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<input type="hidden" id="giscus-base-theme" value="dark">
+<input type="hidden" id="giscus-alt-theme" value="dark">
+<script>
+  function loadGiscus() {
+    // Function to get the theme based on body class
+    const getTheme = () => {
+      let baseTheme = document.getElementById('giscus-base-theme').value;
+      let altTheme = document.getElementById('giscus-alt-theme').value;
+      return document.body.classList.contains('quarto-dark') ? altTheme : baseTheme;
+    };
+    const script = document.createElement("script");
+    script.src = "https://giscus.app/client.js";
+    script.async = true;
+    script.dataset.repo = "magsol/magsol.github.io";
+    script.dataset.repoId = "MDEwOlJlcG9zaXRvcnkyNzYwNTYxNw==";
+    script.dataset.category = "Announcements";
+    script.dataset.categoryId = "DIC_kwDOAaU6cc4CTutY";
+    script.dataset.mapping = "pathname";
+    script.dataset.reactionsEnabled = "1";
+    script.dataset.emitMetadata = "0";
+    script.dataset.inputPosition = "top";
+    script.dataset.theme = getTheme();
+    script.dataset.lang = "en";
+    script.crossOrigin = "anonymous";
+    // Append the script to the desired div instead of at the end of the body
+    document.getElementById("quarto-content").appendChild(script);
+  }
+  loadGiscus();
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Shannon Quinn">
+
+<title>2023: A year of extremes – Stochastic Stenography</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/symbol.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-da3db1b9613c489e4dbcb35a3c3b79cd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XHDW9H78Z1"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
+</script>
+<link rel="me" href="https://quinnwitz.house/@magsol">
+<meta name="fediverse:creator" content="@magsol@quinnwitz.house">
+<link rel="human-json" href="../../human.json">
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="2023: A year of extremes – Stochastic Stenography">
+<meta property="og:description" content="Unmixed Gaussians but very mixed emotions">
+<meta property="og:image" content="https://magsol.github.io/posts/2024-01-05-a-year-of-extremes/landscape.jpg">
+<meta property="og:site_name" content="Stochastic Stenography">
+<meta property="og:locale" content="en_US">
+<meta property="og:image:alt" content="A picture of a forested landscape at sunset, the sun coming through the bare tree branches.">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../images/symbol.png" alt="" class="navbar-logo light-content">
+    <img src="../../images/symbol.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Stochastic Stenography</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About Me</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">2023: A year of extremes</h1>
+            <p class="subtitle lead">Unmixed Gaussians but very mixed emotions</p>
+                                <div class="quarto-categories">
+                <div class="quarto-category">personal</div>
+                <div class="quarto-category">professional</div>
+                <div class="quarto-category">news</div>
+                <div class="quarto-category">new year</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Shannon Quinn </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">Posted on the 5th of January in the year 2024, at 7:45pm. It was Friday.</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<p><img src="landscape.jpg" class="preview-image img-fluid" alt="A picture of a forested landscape at sunset, the sun coming through the bare tree branches."></p>
+<p>Where 2022 tried its hardest to kill me, 2023 merely put that killer instinct in neutral. A vast improvement to be sure, but it requires substantial context to fully appreciate.</p>
+<p>Ok, maybe that’s not fair to 2023. It had some highs. It also had some lows. All told, 2023 was one of the most bimodal years in my recent memory, perhaps second only to 2020.</p>
+<section id="the-good" class="level3">
+<h3 class="anchored" data-anchor-id="the-good">The Good</h3>
+<ul>
+<li>Running (and health + fitness in general) was <em>huge</em> for both me and my wife in 2023. We both set annual running mileage records<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> that outpaced the last couple years by massive margins.</li>
+<li>Burnout recovery was tangible. The difference is night and day. Even though I still have a long way to go, I can get through most typical weeks—even the occasional atypically strenuous week—without needing to aggressively power down.</li>
+<li>Related to the previous point, I set and held some boundaries, especially around work.</li>
+<li>I snagged myself a pretty sweet gig with <a href="https://predxbio.com/">PredxBio</a> as their Principal AI/ML Scientist, starting January 2024. It’s technically a sabbatical (I’ll post about this later in more detail), but I’m really excited for the change.</li>
+<li>I’ve picked up a few at-home side projects that I’m really enjoying. This culminated in a <code>#DecemberAdventure</code> over on Mastodon that saw a lot of tinkering around building out a homelab. It’s still in the proof-of-concept stages but I’m really having fun with it!</li>
+<li>My wife and I downloaded, played through, and beat <em>Tears of the Kingdom</em>. It was pretty much <a href="https://www.youtube.com/watch?v=_wxU3z9VxOY">the opposite of this, but just as beautiful</a>.</li>
+</ul>
+<p>I cannot underscore enough how groundbreaking it was for us to find a stride<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> with our running and general activity levels.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="running_yearoveryear.png" class="img-fluid figure-img" alt="A screenshot from a Garmin Connect progress report, showing huge running mileage increases in 2023 relative to 2022 and 2021."></p>
+<figcaption>A Garmin Connect annual mileage summary. The second column is number of runs, third column is total annual mileage, and the last column is average milege per run.</figcaption>
+</figure>
+</div>
+<p>My own health improved dramatically over the course of the year (especially after being kicked while down by getting COVID on the evening of December 31, 2022): not only did my labs empirically show this improvement at my end-of-year physical, but my two half marathons this year were separated by 6 months (April and October) and by <em>20 minutes</em> (<a href="https://track.rtrt.me/e/DMP-SAVWHALF-2023#/tracker/RW4KTAP2">2:31</a> in April, <a href="https://results.raceroster.com/v2/en-US/results/cbqshhkjvt39snge/detail/egpe264973f6ynms">2:12</a> in October). Both still technically rank among my slowest half marathon finishing times, but the trend is so, so encouraging.</p>
+<p>My burnout has also improved dramatically. Where I could barely make it through a work week in 2022, this past year—through careful planning, tracking of my activity and burnout levels, and changing course as needed—I could maintain relatively normal levels of work intensity, while still protecting time for things I needed and wanted (workouts, hobbies, socializing, sleeping).</p>
+<p>Part of this burnout management culminated in seeking out an opportunity with PredxBio, a Pittsburgh-based startup in spatial biology. I started with them just this past Tuesday, and I’m thrilled to see where this change of pace takes me.</p>
+</section>
+<section id="the-bad" class="level3">
+<h3 class="anchored" data-anchor-id="the-bad">The Bad</h3>
+<ul>
+<li>Despite my burnout recovery, I still had some weeks that fried me so badly I needed to clear my schedule to power down. Not often, but more than zero.</li>
+<li>I can’t recall a time when I’ve muted, unfollowed, or blocked more people than after October 7. The sudden influx of middle east geopolitical “expertise” was unreal.</li>
+<li>My frustration levels with professionals and their uncritical embrace of hype around AI are high. I’ll be the first to admit: AI does cool stuff, but putting everything else aside to build AI into our workflows without acknowledging its real, myriad weaknesses is really disheartening.</li>
+</ul>
+<p>I submitted a large grant application in late September, and three days later submitted a smaller seed grant application. This was one example of a week where I pushed myself too hard and needed an acute and immediate recovery period. Another example was mid-November: I was in charge of organizing and MCing a panel on “AI in Higher Education” at my department’s annual “Research Day”, and it just happened to coincide with several instructional milestones that same week. In both cases, I needed to clear my schedule for a couple days. I’m fortunate to be able to do that, but I was also completely non-functional those days.</p>
+<p>Speaking of the seed grant: I heard back only weeks ago that our application was denied. Certainly not an unlikely outcome, but what really frustrated me was the following:</p>
+<blockquote class="blockquote">
+<p>Due to the volume of proposals, reviewers were not asked to prepare written critiques.</p>
+</blockquote>
+<p>This is one of my biggest critiques of the academic system on a whole<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>: feedback either isn’t given, or it’s given too late to use, or—at its most destructive—it’s actively misleading.</p>
+</section>
+<section id="the-ugly" class="level3">
+<h3 class="anchored" data-anchor-id="the-ugly">The Ugly</h3>
+<ul>
+<li>We started the year with COVID. I got the “long” version.</li>
+<li>While burnout recovery has improved my overall bandwidth, it’s made room for long-simmering and unresolved resentment, frustration, and anger around a variety of things. This needlessly consumed a lot of spare cycles and left me run down.</li>
+<li>Everything happening in the middle east since early October.</li>
+<li>Nihilism crept in this year. <a href="https://infosec.town/notes/9nx5yvs2am7mdbcs">This toot</a> helped point it out to me, but charting a path out is proving difficult.</li>
+</ul>
+<p>After almost three years of avoiding COVID, my wife and I caught it just before leaving a holiday family reunion in Arizona (though didn’t show symptoms until days after returning home). Our infections were both relatively “minor”—the medical term, though I had a fever hovering just below 102F and she had the worst congestion of her life—but even after I tested negative (it took me almost two weeks to fully clear it), I developed new and lingering respiratory symptoms I’d never had previously. These symptoms lasted for months, nearly into the summer, and included exercise-induced asthma: I would start every run feeling like I was drowning. For the first 20 minutes of a run, my lungs wouldn’t open; I’d feel like I had an elephant sitting on my chest. Eventually my lungs would open, but I’d often be exhausted by that point, making my return to running <a href="https://wherearethepancakes.wordpress.com/2023/10/05/return-of-the-100-mile-month/">very slow and very frustrating</a>. Even now, a year later, I still deal with occasional symptoms, though they have thankfully substantially decreased in intensity and frequency.</p>
+<p>I’ve also noticed that my brain has spent a lot more time (and energy) spinning on people who and events that have left me angry or otherwise upset. This has always been a weakness of mine and a regular point of discussion and focused work with my therapists over the years, but in 2023 it got a lot worse.</p>
+<p>Resentment was a big problem, especially since I’ve no way of knowing whether the resentment came from something real or because <a href="https://theness.com/neurologicablog/conspiracy-thinking-and-pattern-recognition/">my brain connected disparate events in a way that was completely fictitious</a>.</p>
+<p>Combined with real-world events, an impending US Presidential elections with massive implications, and ongoing ambivalence or outright antipathy toward any kind of COVID countermeasures (<a href="https://covid.cdc.gov/covid-data-tracker/#maps_new-admissions-rate-county">despite the current wave that is second only to the massive Omicron wave of late 2021</a>), real nihilism crept in. What kind of world am I raising our daughter in? What kind of world am I handing off to her? What can I possibly do to change any of this? <a href="https://amyjko.medium.com/things-i-hope-for-in-2024-8688c4fbd959">Reading Amy Ko’s hopes for 2024</a> helped, as did the numerous reminders to “think global, act local”.</p>
+</section>
+<section id="plans-for-2024" class="level3">
+<h3 class="anchored" data-anchor-id="plans-for-2024">Plans for 2024</h3>
+<p>I gave up on resolutions years ago, but I still set goals and make plans for achieving those goals. I also try to prioritize and set my goals up for success.</p>
+<p><strong>My biggest priority this year, I think, is to tackle the lingering resentment and default-to-anger</strong>. It drained me so needlessly last year, and there’s never going to be any shortage of things and people to be outraged about / at. I’ve seen a lot of memes with pithy reframings, and while I think those are valuable, they don’t quite hit the mark for me; “consider if a person is worth your anger” still feels too antagonistic, too “me-vs-them.”</p>
+<p>Instead—and in line with what we teach our daughter!—I want to allow myself space to feel and observe these reactions, and then to inspect and interrogate them. This not only refocuses on me outside of a combative context, but also forges new neural pathways to make this process second-nature.</p>
+<p>My other plans, in no particular order:</p>
+<ul>
+<li>1000+ miles running (will probably write about this on my running blog soon-ish)</li>
+<li>Reorganize my upstairs office, complete with a home server rack to consolidate hardware</li>
+<li>Donate donate donate! (there is SO MUCH STUFF around the house we just don’t use)</li>
+<li>Set and hold boundaries, especially around work, but also around family and friends</li>
+</ul>
+<p>There are other smaller items in there too—I’ve learned a lot more about kubernetes networking and foresee an overhaul of my cluster configuration in the near future; I’m also toying with some yard improvement ideas to try and improve the drainage; and I cannot underscore how much I want to clear out the garage, since it’s about 1/3 full of stuff we literally never touch and most likely never will again—but those are on more of a “as time and energy allow” basis.</p>
+<p>I wish everyone a wonderful 2024.</p>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Post-COVID lockdown mileage records. My insane all-time annual record set in 2014 still stands. For now.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>What can I say? The past few years have been a <em>marathon</em>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>I have an entire draft written about my issues with academia at the institutional, state, and local levels, but I don’t know when, or even if, I’ll post it; if you want to talk about it though, I’m happy to.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2024,
+  author = {Quinn, Shannon},
+  title = {2023: {A} Year of Extremes},
+  date = {2024-01-05},
+  url = {https://magsol.github.io/2024-01-05-a-year-of-extremes},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2024" class="csl-entry quarto-appendix-citeas" role="listitem">
+Quinn, Shannon. 2024. <span>“2023: A Year of Extremes.”</span> January
+5. <a href="https://magsol.github.io/2024-01-05-a-year-of-extremes">https://magsol.github.io/2024-01-05-a-year-of-extremes</a>.
+</div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/magsol\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<input type="hidden" id="giscus-base-theme" value="dark">
+<input type="hidden" id="giscus-alt-theme" value="dark">
+<script>
+  function loadGiscus() {
+    // Function to get the theme based on body class
+    const getTheme = () => {
+      let baseTheme = document.getElementById('giscus-base-theme').value;
+      let altTheme = document.getElementById('giscus-alt-theme').value;
+      return document.body.classList.contains('quarto-dark') ? altTheme : baseTheme;
+    };
+    const script = document.createElement("script");
+    script.src = "https://giscus.app/client.js";
+    script.async = true;
+    script.dataset.repo = "magsol/magsol.github.io";
+    script.dataset.repoId = "MDEwOlJlcG9zaXRvcnkyNzYwNTYxNw==";
+    script.dataset.category = "Announcements";
+    script.dataset.categoryId = "DIC_kwDOAaU6cc4CTutY";
+    script.dataset.mapping = "pathname";
+    script.dataset.reactionsEnabled = "1";
+    script.dataset.emitMetadata = "0";
+    script.dataset.inputPosition = "top";
+    script.dataset.theme = getTheme();
+    script.dataset.lang = "en";
+    script.crossOrigin = "anonymous";
+    // Append the script to the desired div instead of at the end of the body
+    document.getElementById("quarto-content").appendChild(script);
+  }
+  loadGiscus();
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
