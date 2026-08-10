@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -13,10 +13,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -41,10 +44,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-ed92704ab8322e54cf2a5ea516634c9c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-9c0859bcc9b8a1b9af14519a9fc68dfa.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -188,7 +191,7 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <li>Conclusions <em>(this post)</em></li>
 </ol>
 <p>I know what you’re thinking:</p>
-<p></p><div id="tweet-19528"></div><script>tweet={"url":"https:\/\/x.com\/dexhorthy\/status\/856639005462417409","author_name":"dex","author_url":"https:\/\/x.com\/dexhorthy","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EDeployed my blog on Kubernetes \u003Ca href=\"https:\/\/t.co\/XHXWLrmYO4\"\u003Epic.twitter.com\/XHXWLrmYO4\u003C\/a\u003E\u003C\/p\u003E&mdash; dex (@dexhorthy) \u003Ca href=\"https:\/\/x.com\/dexhorthy\/status\/856639005462417409?ref_src=twsrc%5Etfw\"\u003EApril 24, 2017\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.x.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"X","provider_url":"https:\/\/x.com","version":"1.0"};document.getElementById("tweet-19528").innerHTML = tweet["html"];</script><p></p>
+<p></p><div id="tweet-54559"></div><script>tweet={"url":"https:\/\/x.com\/dexhorthy\/status\/856639005462417409","author_name":"dex","author_url":"https:\/\/x.com\/dexhorthy","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EDeployed my blog on Kubernetes \u003Ca href=\"https:\/\/t.co\/XHXWLrmYO4\"\u003Epic.twitter.com\/XHXWLrmYO4\u003C\/a\u003E\u003C\/p\u003E&mdash; dex (@dexhorthy) \u003Ca href=\"https:\/\/x.com\/dexhorthy\/status\/856639005462417409?ref_src=twsrc%5Etfw\"\u003EApril 24, 2017\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.x.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"X","provider_url":"https:\/\/x.com","version":"1.0"};document.getElementById("tweet-54559").innerHTML = tweet["html"];</script><p></p>
 <p>And honestly… you’re not wrong.</p>
 <section id="running-mastodon-has-gotten-easier" class="level3">
 <h3 class="anchored" data-anchor-id="running-mastodon-has-gotten-easier">Running Mastodon has gotten easier</h3>
