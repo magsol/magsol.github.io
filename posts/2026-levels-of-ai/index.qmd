@@ -1,0 +1,47 @@
+---
+title: "Levels of AI"
+subtitle: "Seems like everyone has an opinion, anyway here's mine"
+date: "2026-08-10 14:17:00"
+categories: [personal, professional]
+citation:
+    url: https://magsol.github.io/2026-08-10-hope
+image: "moonrise.jpeg"
+image-alt: "A recent moonrise throwing out J.J. Abrams-magnitude lens flares."
+author: "Shannon Quinn"
+---
+![](moonrise.jpeg){.preview-image fig-alt="A recent moonrise throwing out J.J. Abrams-magnitude lens flares."}
+
+::: {.callout-note}
+## Discussion of AI
+
+None of the content of this post was created with or even discussed with the assistance of AI. In fact, that's been true of this blog since late 2022 (yes I dabbled with image generators for a bit, but haven't posted any image slop since then, and have _never_ posted any AI-generated writing; I'm far too attached to my own writing to allow someone or some*thing* else to speak for me), and it won't change anytime soon.
+
+Not entirely relevant to the subsequent post, but just something I wanted to throw out there as a preamble.
+
+:::
+
+## Brain progression under heavy AI use
+
+
+
+### Level 1: This is remarkable
+
+### Level 2: This is powerful, but exhausting
+
+### Level 3: This is *The Matrix*
+
+## "AI Apocalypse"
+
+::: {.callout-warning}
+## Recent AI headlines
+
+In the last part of this post, I'm going to discuss some recent AI-related news headlines that people have asked me for my take on. These are not light discussions, and honestly it's weighing on me too, but I think it's worthwhile to bring up; suffice to say, if you'd rather not, then don't.
+
+:::
+
+https://youtu.be/KSXm_KCMR60?si=ZSvmPele2d_wI_xO
+
+"Centralization of human power"
+
+
+
