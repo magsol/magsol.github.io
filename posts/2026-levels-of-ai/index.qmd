@@ -30,7 +30,7 @@ Not entirely relevant to the subsequent post, but just something I wanted to thr
 
 ### Level 3: This is *The Matrix*
 
-## "AI Apocalypse"
+## "AI Apocalypse", aka p(doom)
 
 ::: {.callout-warning}
 ## Recent AI headlines
@@ -39,9 +39,26 @@ In the last part of this post, I'm going to discuss some recent AI-related news 
 
 :::
 
+![I can't remember where on Mastodon I found this image, so please at least know that this brilliance isn't mine.](ai.jpg)
+
+
 https://youtu.be/KSXm_KCMR60?si=ZSvmPele2d_wI_xO
 
 "Centralization of human power"
 
+All these "effective altruists" would, I think, unironically agree with Director Pierce's vision of the world from *Captain America: Winter Soldier*: "I can bring peace to 8 billion people by sacrificing a few million."
 
+https://yoshuabengio.org/en/blog/why-are-ai-agents-lying-cheating-and-coordinating
 
+Slightly more interesting technical details, much less interesting mitigation suggestions other than to "do better; by the way here's a thing I sponsor that I think would be great." 
+
+I'm kind of fed up with these "Godfathers of AI" to be honest.
+
+https://gist.github.com/bg50/23bdbf4f7032024c71d7585e53a4be69
+
+> \[This\] is a failure of specification and containment, the oldest failure 
+> mode in computing, running for the first time on something that can improvise.
+
+https://www.nytimes.com/2026/09/04/podcasts/hugging-face-hack-reports.html
+
+*The Hard Fork* podcast by the New York Times. Recommended to me by a friend. This has an actual expert on AI safety walk through things. Can get a bit overly alarmist, but lands at pretty much the same point as me: I'm less worried about these AI systems than I am about the people designing, building, and training them. It's the "data scientist" mindset of the early-to-mid 2010s run amok: "I know enough about machine learning to be dangerous, so now I'm going to stick my know-how in areas it *really doesn't belong* but do so with absolute confidence not only that I'm right, but that I'm the *only* person who can be trusted to do this."
