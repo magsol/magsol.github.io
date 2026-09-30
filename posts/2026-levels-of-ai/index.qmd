@@ -11,24 +11,112 @@ author: "Shannon Quinn"
 ---
 ![](moonrise.jpeg){.preview-image fig-alt="A recent moonrise throwing out J.J. Abrams-magnitude lens flares."}
 
+I've been thinking a lot about AI lately.
+
+Not just because it's been in the news (and geez, has it ever); not just because it is, in many ways, my day job (both prior and current); but also because, in spite of everything, I've been giving it a try.
+
+I know, I know: I could just, y'know, *not*. And honestly, that's what I'd prefer. But I'm nothing if not curious---and objectively, the technology underpinning "AI" is super freaking cool; I made no secret of that when I would teach Transformers and chat bots at UGA!---and Valo gave me the opportunity back in August 2025 to give it a spin. I've kept my finger on its pulse ever since, and I'd like to share some general musings I've had in that time.
+
+Given the recent AI-related headlines, I've also had a large number of friends and family approach me to ask for my take. I'll put that at the end, in case you'd rather just skip straight there.
+
+But first, a disclaimer.
+
 ::: {.callout-note}
+
 ## Discussion of AI
 
-None of the content of this post was created with or even discussed with the assistance of AI. In fact, that's been true of this blog since late 2022 (yes I dabbled with image generators for a bit, but haven't posted any image slop since then, and have _never_ posted any AI-generated writing; I'm far too attached to my own writing to allow someone or some*thing* else to speak for me), and it won't change anytime soon.
+None of the content of this post was created with or even discussed with the assistance of AI. In fact, that's been true of this blog since late 2022, and even then the AI-generated content consisted only of a handful of slopped images.
+
+I've posted no AI-generated images since then, and I've *never* posted AI-generated text, nor have I even "collaborated" on blog content with a chatbot. I'm far too attached to my own writing to allow someone or some*thing* else to speak for me, and that won't change.
 
 Not entirely relevant to the subsequent post, but just something I wanted to throw out there as a preamble.
 
 :::
 
-## Brain progression under heavy AI use
+::: {.callout-warning}
 
+## Oh yeah, and
 
+I'm fully, *painfully* aware of the socioeconomic, environmental, geopolitical, educational, and psychological consequences of AI and everything around its buildout. I have barely begun to grapple with the existential implications of what is happening to the field that has captured my interest for most of my life.
+
+It's impossible to separate these concerns and consider AI in a void. As such, I'm not going to justify my use of AI over the past year, given these concerns. I'll just say: in this post, I'm writing about my own personal experience with using AI.
+
+:::
+
+## Brain progression under AI use
+
+As mentioned, in August 2025, Valo sponsored an "LLM hackathon" as part of its annual "Science Day": they purchased AWS Bedrock accounts that had Claude (then Opus / Sonnet 3.5) and basically set us loose: "see what you can do." It was meant to be a sandbox to play in, to see if we could design anything with Claude that would actually help with our work.
+
+I should also mention, as somewhat of an aside: Valo has been refreshingly sane when it comes to AI adoption. Yes, they've provided us with these tools, but there's 1) absolutely no obligation to use them, and 2) an explicit expectation that anything we produce for work, we *own* (as in, *own the consequences of*).
+
+Given that I'd barely even hit 1 month of employment at Valo in August 2025, I didn't have good work-related exemplars to throw at AI, so I mostly tried to see if Claude could recreate [Frigate](https://frigate.video), only badly (to be fair, I didn't even know Frigate existed at this point in time).
+
+At that, it succeeded! It was so bad, it didn't even work!
+
+It really struggled back then with integrating context outside of the task it was working on *right that second*. In essence, it would spit out code that was oblivious to other code it'd written 10 minutes earlier, even as part of the same session. So things would *kind of* work, but we in The Programming Business would still call it "horrifically broken": imagine trying to code up a multi-module program as [10-Second Tom](https://sandlerverse.fandom.com/wiki/Ten_Second_Tom), and you have the rough contours of the situation.
+
+But by October, things started changing.
 
 ### Level 1: This is remarkable
 
+Before I gained a full-time partner in the twilight days of 2025 for the project I was working on, it was Just Me. I was trying to build a brand-new SDK from the literal ground. I had a few examples of what *not* to do, and requirements for what folks *wanted* it to do, but I had to fill in the rest of the blanks myself.
+
+So I effectively started my AI journey by having it function as my own personal [Red Team](https://en.wikipedia.org/wiki/Red_team). I didn't trust AI one single iota to do anything the way I actually wanted it to (see the hackathon outcomes), but I figured: why not take advantage of BOTH my own skepticism of AI, AND its tendency to struggle with longer-term context?
+
+I'd throw particular design ideas at it, and later on even modules of code I'd written, and ask it to deconstruct them given what I was trying to build. What alternative approaches should I consider? What were the failure modes of what I'd built? How might users find my implementation confusing / insufficient / otherwise suboptimal, given their requirements?
+
+I don't know if it was because these models *lept* in ability in just the back half of 2025, or if I really had found a killer use-case for AI models, but me in my one-person situation found this particular application *incredibly useful and powerful*. There were plenty of such red teams that weren't helpful (meaning: it didn't change my design or implementation), but even those would still generate some question or other about the design that I'd bring back to actual stakeholders.
+
+Creeping into 2026, my project had expanded to two full-time developers (myself, plus one other), so I had less need for the red team now that I could bounce ideas off someone else. As AI models had continued to improve their long-term contextual reasoning, I now started having Claude research and build entire alternative implementations: exploring different architectures, shifting focus on the problem itself, or even "the road not taken" exercises where I'd wipe the entire slate clean and build around whatever the latest top priority was from stakeholders.
+
+I was still *deeply skeptical* of the AI output (this has not changed^[In fact, I might be even *more* skeptical of AI output now than I was a year ago when its failures were more obvious. More on that later.]) and I still reviewed every single line of code Claude spit out, arguably making my work days *longer* in sum than the Tech Bro promise of 10x'ing my productivity. But I felt like I'd found a genuinely useful use-case: a check, or challenge, to my own flawed thinking. A way to keep me poking at the edges of the envelope within which my brain operated.
+
 ### Level 2: This is powerful, but exhausting
 
+Policy, moral, and ethical issues with AI's implementations "aside^[Again, see the warning callout at the top of the post.]", I have a couple red lines when it comes to using AI in my work:
+
+ - I need to read, review, and understand *every single line of code* that I use from an AI chatbot
+ - I need to approve *every single action* an AI chatbot takes (file write, system `grep`, web search, etc)
+
+A big justification for these red lines is simply that I need to understand what I'm building. I need to have that mental model that comes from building something myself; the intuition that forms is invaluable to fixing things down the road, and irreplaceable for deciding what gets built next and how. It's also how I learn best: by digging in and getting my hands dirty. I've never learned well from just watching someone else; it's fine to have that component, but I also need a chance to work for myself what I've seen someone else do.
+
+These two rules effectively mean that it's impossible for me to use AI chatbots to "vibe code" anything. But it also means I'm more or less using AI chatbots in the *opposite* way for which they're intended, which by definition introduces a *ton* of friction.
+
+I become a glorified babysitter, reviewing chatbot output and approving/denying chatbot actions.
+
+As chatbot capability has improved, the number of times I've rejected output or denied an action have definitely decreased, *but still not reached zero*. I've been more impressed with the problem-solving over longer horizons and larger codebases, but they still have to be watched, carefully.
+
+That's exhausting. Not just tiring or boring, but actually *exhausting*. The mental and cognitive burden of manually reviewing output at something even approximating the rate at which it's created is *massive*.  Combine that with the emotional burden of worrying that I'm missing something, and the drain is real. And it's getting worse as the models get better: their failures become harder and harder to sniff out. I've seen a few blog posts talking about this phenomenon, and *whew* I feel it.
+
+I have a friend who jokingly-but-actually-dying-inside refers to themselves as "Claude's Best Meat Arms" and, yeah, I see it.
+
 ### Level 3: This is *The Matrix*
+
+More than the "p(doom)" shit in the next part of this post, this is what scares *me* the most.
+
+These chatbots are convincing. They are, increasingly, effective. We have enough problems with media literacy, scientific literacy, critical thinking skills, and even simply figuring out whether someone is being truthful of not.
+
+As more and more of our lives become directly or indirectly curated via these chatbots, **how do I know that any of what they're telling me is true?**
+
+For funsies, a few months ago I played around with one of the literally hundreds of "multi-agent orchestration" tools that hit the scene by the dozens each week. I gave the "mayor" instance a requirements document I'd written for a complicated new feature involving [PyTorch](https://pytorch.org)^[Arguably, if a feature involves PyTorch, its implementation will be complicated as a baseline... but I digress.], and basically turned it loose. I had no intention of keeping whatever it spat out, but I was just curious what would happen.
+
+It was, likely to no one's surprise, about 80% correct. Some mistakes were bafflingly obvious, but others were so insidious that only someone who 1) was already looking for them, 2) knew the existing architecture well enough to *a priori* understand how it could fail, and 3) actually had working knowledge of the new feature itself, could actually find them.
+
+Critically, the obvious mistakes were the *minority*; the majority of bugs were subtle. To the uninitiated, or someone doing a "once-over" review, they'd likely miss every single one of those bugs. Given the size of the new feature, a thorough review took me the better part of an entire workday. How often does someone have that kind of time?
+
+And, to me, that's not even the scariest bit. The scariest bit is that I am *absolutely convinced* I missed some bugs; I just couldn't find them. PyTorch, on a *good* day, is an opaque monstrosity with a penchant for kicking me when I'm already down. Deep learning is an exercise in equal parts science and mysticism: there are days when you can set all the random seeds, calibrate your hyperparameters perfectly, and correctly normalize all your gradients, and the PyTorch Pantheon will still descend from high atop the thing and smite the shit out of your validation score because you forgot to [go outside, turn around three times, spit, and curse](https://www.youtube.com/watch?v=N1tyiWP9MSk).
+
+**The scariest bit is that I have absolutely no idea whether or not I'm being lied to.** It reminds me of when I was a kid, tooling around with our brand-new IBM-Compatible 386, and I learned that the twirling hourglass icon in Windows 3.1 wasn't actually indicative of anything meaningful happening. It was just a little animated image doing its dance.
+
+When Claude does its "Confabulating..." TUI animation and a bunch of `grep`s and `ls`s and diffs scroll by in rapid succession, all I can think of is every movie in the past 30 years that has used the "loop the CCTV feed" trick. How do I know that *anything* I'm seeing from these chatbots is *actually* happening?
+
+I mean yes, I can go and review it all. By hand. Spend hours, days, *weeks* pouring through the endless output from chatbots. Wash, rinse, repeat, and beg for the sweet release of death.
+
+But---and please forgive me if I'm stepping on any toes here---isn't the *literal selling point* of AI to automate all this? If I'm reviewing every single command, every single change, every line of code these chatbots spit out... why use them at all? And if I *don't* review all their output, how do I even know they did what they said they did?
+
+As AI chatbots are being shoved into more and more parts of our lives, even those of us with enough technical literacy to *choose* when and how we interface with AI chatbots are still going to bounce on the wake of decisions made by chatbots elsewhere, or decisions made by other people on the "advice" of chatbots. One way or another, a growing part of our lives will be influenced by chatbots: interfaces that I have no confidence in *anyone's* ability to interpret.
+
+That scares the shit out of me.
 
 ## "AI Apocalypse", aka p(doom)
 
@@ -62,3 +150,15 @@ https://gist.github.com/bg50/23bdbf4f7032024c71d7585e53a4be69
 https://www.nytimes.com/2026/09/04/podcasts/hugging-face-hack-reports.html
 
 *The Hard Fork* podcast by the New York Times. Recommended to me by a friend. This has an actual expert on AI safety walk through things. Can get a bit overly alarmist, but lands at pretty much the same point as me: I'm less worried about these AI systems than I am about the people designing, building, and training them. It's the "data scientist" mindset of the early-to-mid 2010s run amok: "I know enough about machine learning to be dangerous, so now I'm going to stick my know-how in areas it *really doesn't belong* but do so with absolute confidence not only that I'm right, but that I'm the *only* person who can be trusted to do this."
+
+
+
+
+I'm both blessed and cursed to have a deep technical understanding of how these chatbots are built, trained, and put into production. Blessed, because I legitimately think the actual underlying technologies are *cool as hell*^[While I was at UGA, I *loved* lecturing about [Transformers](https://en.wikipedia.org/wiki/Transformer_(deep_learning)), the core technology underlying modern chatbots. I loved it not only because Transformers are legitimately cool, but also because they built on an incredibly rich history of similarly amazing theoretical and technological advancements that were absolutely necessary to enabling Transformers.]. Cursed, because I know that
+
+ 1. these chatbots aren't human, no matter how much they sound human; and
+ 2. randomness is built in at a fundamental level
+
+These chatbots are *not deterministic*: identical input will NOT give you identical output. They don't "think" or "reason", at least not the way humans do, and so their output is not something we can dissect and try to understand in human terms. People have said it pithier than me, but essentially: what chatbots output is not THE answer, but rather AN answer that *statistically* "sounds like" THE answer. Sometimes those two things overlap, but they do not *necessarily* overlap.
+
+In sum: modern chatbots are designed to output something that statistically resembles an answer to whatever input I initially provided. Not only does that very explicitly NOT guarantee the output is correct, but even the underlying process by which the chatbots arrive at this "statistically plausible output" is fraught with more statistically-plausible justifications that may or may not reflect reality.
