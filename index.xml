@@ -17,7 +17,66 @@
 <width>144</width>
 </image>
 <generator>quarto-1.10.18</generator>
-<lastBuildDate>Mon, 10 Aug 2026 14:17:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 02 Oct 2026 16:10:00 GMT</lastBuildDate>
+<item>
+  <title>Captain, it’s October</title>
+  <dc:creator>Shannon Quinn</dc:creator>
+  <link>https://magsol.github.io/posts/2026-10-02-captain-its-october/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p><img src="https://magsol.github.io/posts/2026-10-02-captain-its-october/resilience.jpg" class="preview-image img-fluid" alt="Oil-on-canvas painting of a riverbed with lots of greenery both in and out of the water, hanging on the wall at the local Botanical Gardens."></p>
+<p>I’ve spent the better part of the past month working on not just one, but <em>two</em> posts inspired by recent conversations I’ve had about AI with friends and family. There’s a ton of information I’m trying to distill: my own experiences using AI chatbots, breaking down recent news headlines, separating hype from reality, and also trying to convey the things I’m <em>actually</em> worried about.</p>
+<p>But I’m just too fucking tired to finish them right now. They’re like 80% done, but are also in desperate need of an editing pass (or several), and I have <a href="https://en.wikipedia.org/wiki/Spoon_theory">negative spoons</a>.</p>
+<p>The consequences of not using AI to write my posts, am i rite?</p>
+<p>Honestly I’ve been struggling to find a routine again after the most recent work travel. My body is clearly trying to recover, and I keep misreading the room and doing things like “most intense lifting workout in weeks” and “longest run in months” when I really probably need to ease off the gas just a bit longer.</p>
+<p>Anyway. Please enjoy some recent photos from my recent goings-on. I’ll get those posts up soon, I promise.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://magsol.github.io/posts/2026-10-02-captain-its-october/orion.jpg" class="img-fluid figure-img"></p>
+<figcaption>The iPhone just doesn’t want to let dark things be dark, but you can still make out the constellation Orion from the brightest points here.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://magsol.github.io/posts/2026-10-02-captain-its-october/memory.jpg" class="img-fluid figure-img"></p>
+<figcaption>Another beautiful oil-on-canvas painting hanging up at the local Botanical Gardens, this one a bit more abstract than the first and of a bit swampier area.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://magsol.github.io/posts/2026-10-02-captain-its-october/pv.jpg" class="img-fluid figure-img"></p>
+<figcaption>Looking at this solar incidence data from the past four days, I’ll give you zero guesses as to when we had some tree trimming work done.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://magsol.github.io/posts/2026-10-02-captain-its-october/disappointment.jpg" class="img-fluid figure-img"></p>
+<figcaption>Academia in a nutshell.</figcaption>
+</figure>
+</div>
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2026,
+  author = {Quinn, Shannon},
+  title = {Captain, It’s {October}},
+  date = {2026-10-02},
+  url = {https://magsol.github.io/2026-10-02-captain-its-october},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2026" class="csl-entry quarto-appendix-citeas">
+Quinn, Shannon. 2026. <span>“Captain, It’s October.”</span> October 2.
+<a href="https://magsol.github.io/2026-10-02-captain-its-october">https://magsol.github.io/2026-10-02-captain-its-october</a>.
+</div></div></section></div> ]]></description>
+  <category>personal</category>
+  <guid>https://magsol.github.io/posts/2026-10-02-captain-its-october/</guid>
+  <pubDate>Fri, 02 Oct 2026 16:10:00 GMT</pubDate>
+  <media:content url="https://magsol.github.io/posts/2026-10-02-captain-its-october/resilience.jpg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>Hope</title>
   <dc:creator>Shannon Quinn</dc:creator>
@@ -2801,45 +2860,6 @@ about This.”</span> December 9. <a href="https://magsol.github.io/2024-12-09-d
   <guid>https://magsol.github.io/posts/2024-12-09-december-adventure-i-have-a-bad-feeling/</guid>
   <pubDate>Mon, 09 Dec 2024 17:33:00 GMT</pubDate>
   <media:content url="https://magsol.github.io/posts/2024-12-09-december-adventure-i-have-a-bad-feeling/bad_feeling.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>December Adventure: Y yaml tho</title>
-  <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2024-12-06-december-adventure-y-yaml-tho/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p><img src="https://magsol.github.io/posts/2024-12-06-december-adventure-y-yaml-tho/busted_code.png" class="preview-image img-fluid" alt="AI-generated image of a Python snake breaking out of a monitor that was previously showing broken Python code."></p>
-<p>Today was also a pretty minor update, but what felt like a necessary one to making forward progress (and which reveals just how much of a kubernetes neophyte I am, despite now having a few years’ experience with it).</p>
-<p>I successfully created a <code>traefik-values.yaml</code> file of my reverse proxy’s configuration. It’s more or less <a href="https://github.com/bplein/post-talos-setup/issues/2#issuecomment-2276603841">this post</a> from the repo I linked a few days ago. Yeah, that’s the extent of what I got done today.</p>
-<p>But it speaks to a much greater problem I’ve been wrestling with for awhile: I set up this cluster two years ago with very little experience or guidance, and have only realized since how unsustainable my deployment is. For example, when installing via helm, I downloaded the <em>full helm charts</em> from the various repositories, then modified only the values I needed to change. Which means whenever changes come down the pipe, either from the org itself or because I need to reconfigure or update something, I need to parse through the hundred-line-plus YAML nonsense to find the exact line I need, rather than—what is apparently the standard practice—having a single YAML file that is essentially a “diff”.</p>
-<p>So today was a small, but necessary, step toward making the deployment more sustainable. Also, I added <code>*.local.my.domain</code> to the list of URLs under <code>ports.websecure.tls.domains.sans</code>, which will (hopefully) allow for internal DNS routing <em>and</em> SSL certificates.</p>
-
-
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2024,
-  author = {Quinn, Shannon},
-  title = {December {Adventure:} {Y} Yaml Tho},
-  date = {2024-12-06},
-  url = {https://magsol.github.io/2024-12-06-december-adventure-y-yaml-tho},
-  langid = {en}
-}
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2024" class="csl-entry quarto-appendix-citeas">
-Quinn, Shannon. 2024. <span>“December Adventure: Y Yaml Tho.”</span>
-December 6. <a href="https://magsol.github.io/2024-12-06-december-adventure-y-yaml-tho">https://magsol.github.io/2024-12-06-december-adventure-y-yaml-tho</a>.
-</div></div></section></div> ]]></description>
-  <category>personal</category>
-  <category>december adventure</category>
-  <category>yaml</category>
-  <category>helm chart</category>
-  <category>reverse proxy</category>
-  <category>traefik</category>
-  <guid>https://magsol.github.io/posts/2024-12-06-december-adventure-y-yaml-tho/</guid>
-  <pubDate>Fri, 06 Dec 2024 17:51:00 GMT</pubDate>
-  <media:content url="https://magsol.github.io/posts/2024-12-06-december-adventure-y-yaml-tho/busted_code.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 </channel>
 </rss>
