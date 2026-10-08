@@ -8,7 +8,7 @@
 
 <meta name="author" content="Shannon Quinn">
 
-<title>#WeblogPoMo2024, Day 16: Python Profiling Rocks – Stochastic Stenography</title>
+<title>Human thoughts on AI (Part 1) – Stochastic Stenography</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,41 +26,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -123,42 +88,14 @@ gtag('config', 'G-XHDW9H78Z1', { 'anonymize_ip': true});
 <meta name="fediverse:creator" content="@magsol@quinnwitz.house">
 <link rel="human-json" href="../../human.json">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="#WeblogPoMo2024, Day 16: Python Profiling Rocks – Stochastic Stenography">
-<meta property="og:description" content="Lack of profiling is the root of all evil">
-<meta property="og:image" content="https://magsol.github.io/posts/2024-05-16-weblogpomo2024-day-16-python-profiling-rocks/images/symbol.png">
+<meta property="og:title" content="Human thoughts on AI (Part 1) – Stochastic Stenography">
+<meta property="og:description" content="Seems like everyone has an opinion, anyway here’s mine">
+<meta property="og:image" content="https://magsol.github.io/posts/2026-10-08-human-thoughts-on-ai-the-first-part/moonrise.jpeg">
 <meta property="og:site_name" content="Stochastic Stenography">
 <meta property="og:locale" content="en_US">
+<meta property="og:image:alt" content="A recent moonrise throwing out J.J. Abrams-magnitude lens flares.">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
@@ -197,14 +134,12 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">#WeblogPoMo2024, Day 16: Python Profiling Rocks</h1>
-            <p class="subtitle lead">Lack of profiling is the root of all evil</p>
+      <h1 class="title">Human thoughts on AI (Part 1)</h1>
+            <p class="subtitle lead">Seems like everyone has an opinion, anyway here’s mine</p>
                                 <div class="quarto-categories">
                 <div class="quarto-category">professional</div>
-                <div class="quarto-category">writing</div>
-                <div class="quarto-category">weblogpomo</div>
-                <div class="quarto-category">programming</div>
-                <div class="quarto-category">python</div>
+                <div class="quarto-category">personal</div>
+                <div class="quarto-category">ai</div>
               </div>
                   </div>
   </div>
@@ -222,7 +157,7 @@ window.Quarto = {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">Posted on the 16th of May in the year 2024, at 9:59pm. It was Thursday.</p>
+        <p class="date">Posted on the 8th of October in the year 2026, at 7:04pm. It was Thursday.</p>
       </div>
     </div>
     
@@ -241,38 +176,149 @@ window.Quarto = {
 
 
 
-<p>Today I was digging through some code written by somebody else and trying to establish benchmarks against some new data we had just received. In doing so, I noticed the application was spending a <em>lot</em> of time at one particular stage. Upon inquiry, my coworkers said something to the effect of “oh yeah, that part always takes a long time to run.”</p>
-<p>In looking through the code in question, some ideas began to form in my head, but I was missing data. So I turned to an old Python friend: <code>cProfile</code>!</p>
-<p><code>cProfile</code> is a built-in package—as in, part of the default Python distribution—that performs code profiling and is dead-simple to use. Given that I was interested only in a small slice of the overall program, I did have to dig a bit to understand how to essentially “wrap” a certain part of the program in profiling, so that was new for me.</p>
-<p>It basically amounted to:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cProfile, pstats</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>profiler <span class="op">=</span> cProfile.Profile()</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>profiler.enable()</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">###</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># All the code you want to profile goes here!</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">###</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>profiler.disable()</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>stats <span class="op">=</span> pstats.Stats(profiler)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>stats.dump_stats(<span class="st">"outputdir/outputfile.stats"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>That dumps out the profile information (in a binary format, sorry) to a file. From there, you can spin up something like IPython to read the binary and print out the stats:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> pstats.Stats(<span class="st">"outputdir/outputfile.stats"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>s.sort_stats(<span class="st">"tottime"</span>).print_stats()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>And then you have all the runtime stats of the code enclosed by your profiler! It even helped me identify a strange <span class="math inline">\(O(n^2)\)</span> search loop; easy to miss, because it was a 1-liner, but was responsible for <em>over 50%</em> of the observed runtime! I probably would never have found it on my own.</p>
-<p>For more information, <a href="https://docs.python.org/3/library/profile.html">check out the docs on the built-in Python profilers</a>!</p>
+<p><img src="moonrise.jpeg" class="preview-image img-fluid" alt="A recent moonrise throwing out J.J. Abrams-magnitude lens flares."></p>
+<p>I’ve been thinking a lot about AI lately.</p>
+<p>Not just because it’s been in the news; not just because it’s been, in many ways, my day job for the better part of the last two decades<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>; but also because, in spite of everything, I’ve been giving it a try.</p>
+<p>I know, I know: I could just, y’know, <em>not</em>. And honestly, that’s what I’d prefer. But I’m nothing if not curious, and Valo gave me the opportunity back in August 2025 to give it a spin with Claude. I’ve kept my finger on its pulse ever since, and I’d like to share some general musings and impressions I’ve had in that time.</p>
+<p>I’ve also had a large number of friends and family approach me to ask for my take on the recent “AI agents escaped their sandbox and fucked up a company” headlines. I’ll put that in the next post, in case you’d rather just wait for that. But my feeling in writing this is that the first part sets up a lot of relevant context for the last part.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Discussion of AI
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>None of the content of this post was created with or even discussed with the assistance of AI. In fact, that’s been true of this blog since late 2022, and even then the AI-generated content consisted only of a handful of slopped images.</p>
+<p>I’ve posted no AI-generated images since then, and I’ve <em>never</em> posted AI-generated text, nor have I even “collaborated” on blog content with a chatbot. I’m far too attached to my own uniquely terrible writing to allow someone or some<em>thing</em> else to speak for me, and that won’t change.</p>
+<p>Not entirely relevant to the subsequent post, but just something I wanted to throw out there as a preamble.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Oh yeah, and
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>I’m fully, <em>painfully</em> aware of the socioeconomic, environmental, geopolitical, educational, and psychological consequences of AI and everything around its buildout. I have barely begun to grapple with the existential implications of what is happening to the field I’ve built my professional life around, and I won’t try here.</p>
+<p>It’s impossible to separate these concerns and consider AI in a void. As such, I’m not going to justify my use of AI over the past year, given these concerns. I’ll just say: in this post, I’m writing about my own personal experience with using AI.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Finally
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There’s occasional rough language.</p>
+<p>Also I just really like callout boxes. Sorry not sorry.</p>
+</div>
+</div>
+<section id="brain-progression-under-ai-use" class="level2">
+<h2 class="anchored" data-anchor-id="brain-progression-under-ai-use">Brain progression under AI use</h2>
+<p>It started in August 2025 when Valo organized an “LLM hackathon” as part of its annual “Science Day.” They purchased AWS Bedrock accounts that had Claude (then Opus / Sonnet 3.5) and basically set us loose: “see what you can come up with!” It was meant to be a sandbox, to see if we could design anything with Claude that would actually help with our work.</p>
+<p>Somewhat of an aside: Valo has been refreshingly sane when it comes to AI adoption. Yes, they’ve provided us with these tools, but there’s 1) absolutely no obligation to use them, and 2) an explicit expectation that anything we produce for work, we <em>own</em> (as in, <em>own the consequences of</em>).</p>
+<p>Given that I’d barely even hit 1 month of employment at Valo in August 2025, I didn’t have good work-related exemplars to throw at AI, so I mostly tried to see if Claude could recreate <a href="https://frigate.video">Frigate</a>, only badly<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+<p>At that, it succeeded! It was so bad, it didn’t even work!</p>
+<p>Parts of the code it wrote was oblivious to other code it’d written 10 minutes earlier as part of the same session. So things <em>kind of</em> worked, but in a very “Frankenstein’s monster” kind of way. We in The Programming Business would still call it “horrifically broken”: imagine trying to build something with <a href="https://sandlerverse.fandom.com/wiki/Ten_Second_Tom">10-Second Tom</a> as your partner, and you have the rough outline of the situation.</p>
+<p>But by October, things started changing.</p>
+<section id="level-1-this-is-remarkable" class="level3">
+<h3 class="anchored" data-anchor-id="level-1-this-is-remarkable">Level 1: This is remarkable</h3>
+<p>Before the project I was working on gained a full-time human<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> colleague in the twilight days of 2025, it was Just Me. I was building a brand-new SDK from the literal ground. I had a few examples of what <em>not</em> to do, and requirements for what folks <em>wanted</em> it to do, but I had to fill in the rest of the blanks myself.</p>
+<p>I didn’t trust AI one single iota to build anything the way I actually wanted it to (see the hackathon outcomes), but I thought: why not take advantage of BOTH my own skepticism of AI, AND its tendency to struggle with longer-term context?</p>
+<p>So, I began my AI journey by having it function as my own <a href="https://en.wikipedia.org/wiki/Red_team">Red Team</a>: I’d throw design ideas at it (and later, even modules of code I’d written) and ask it to deconstruct them given what I was trying to build. What alternative approaches should I consider? What were the failure modes of what I’d built? How might users find my implementation confusing / insufficient / otherwise suboptimal, given their requirements?</p>
+<p>I don’t know if it was the sudden capability jump of these models in the back half of 2025, or if I really had found a killer use-case for AI models, but I in my one-person situation found this particular application <em>incredibly useful and powerful</em>. There were plenty of sessions that didn’t change my plans, but even those would still generate some question or insight about the design that I’d bring back to the actual human stakeholders.</p>
+<p>Creeping into 2026, I started having Claude research and build entire alternative designs: exploring different architectures, shifting focus on different parts of the problem (e.g., “how would this change if we focused on speed, instead of ease-of-use?”), or even “the road not taken” exercises where I’d wipe the entire slate clean and build around whatever the latest top priority was from stakeholders.</p>
+<p>I was still <em>deeply skeptical</em> of chatbot output<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> and I still reviewed every single line of code it spat out, arguably making my work days <em>longer</em> in sum than the Tech Bro promise of 10x’ing my productivity.</p>
+<p>But I felt like I’d found a genuinely useful use-case: a check, or challenge, to my own pattern of thinking. A way to keep me aware of and poking at the edges of the envelope within which my brain operated.</p>
+</section>
+<section id="level-2-this-is-powerful-but-exhausting" class="level3">
+<h3 class="anchored" data-anchor-id="level-2-this-is-powerful-but-exhausting">Level 2: This is powerful, but exhausting</h3>
+<p>Policy, moral, and ethical issues with AI’s implementations “aside<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>”, I quickly found two personal red lines when it came to using AI in my work:</p>
+<ul>
+<li>I need to read, review, and understand <em>every single line of code</em> that I use from an AI chatbot</li>
+<li>I need to approve <em>every single action</em> an AI chatbot takes (file write, system <code>grep</code>, web search, etc)</li>
+</ul>
+<p>A big justification for these red lines is simply that I need to understand what I’m building. I need to have that mental model that comes from building something myself; that intuition is invaluable for fixing things down the road, and irreplaceable for deciding what gets built next and how. It’s also how I learn best: by digging in and getting my hands dirty.</p>
+<p>These two rules effectively doom “<a href="https://en.wikipedia.org/wiki/Vibe_coding">vibe coding</a>” for me. It also means I’m using AI chatbots in the <em>opposite</em> way for which they’re intended, which by definition introduces a <em>ton</em> of friction<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>.</p>
+<p>I became a glorified babysitter, reviewing chatbot output and approving/denying chatbot actions.</p>
+<p>As chatbot capability improved, the number of times I rejected output or denied an action decreased, <em>but still hasn’t reached zero</em>. I’ve been impressed with the problem-solving abilities over longer horizons and larger codebases, but I still watch chatbots’ actions, carefully.</p>
+<p>That’s exhausting. Not just boring (though it can also be that), but actually <em>exhausting</em>. The cognitive burden of manually reviewing chatbot output, combined with the emotional burden of worrying I’ve missed something, is <em>massive</em>. And the problem is actually getting <em>worse</em> as the models get better: their failures become more challenging to find.</p>
+</section>
+<section id="level-3-this-is-the-matrix" class="level3">
+<h3 class="anchored" data-anchor-id="level-3-this-is-the-matrix">Level 3: This is <em>The Matrix</em></h3>
+<p>Even moreso than the recent news headlines, this bit is what scares <em>me</em> the most.</p>
+<p>On one hand, these chatbots are convincing, and their task effectiveness is increasing. On the other hand, we have enough problems with media literacy, scientific literacy, critical thinking skills, and even simply figuring out whether or not another human is being truthful with us.</p>
+<p>As more and more of our lives become directly or indirectly curated via these chatbots, <strong>how will I know that any of what they’re telling me is true?</strong><a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></p>
+<p>For funsies, a few months ago I played around with one of the many “multi-agent orchestration” tools out there. I gave the “mayor” instance a requirements document I’d written for a complicated new feature involving <a href="https://pytorch.org">PyTorch</a>, and then—in a move that explicitly crossed one of my red lines!—set it loose on the problem.</p>
+<p>To be clear, I had no intention of keeping whatever it spat out; I was just curious what would happen. And indeed, it was only about 80% correct. Some mistakes were bafflingly obvious, but others were so insidiously subtle that only someone who 1) was already looking for them, and 2) knew the contours of the problem space well enough to <em>anticipate</em> the mistakes, could actually find them.</p>
+<p>Critically, the obvious mistakes were the <em>minority</em>. To the uninitiated, or someone doing a “once-over” review, they’d likely miss every single one of the subtle bugs. A thorough review took me the better part of an entire workday, given the size of the new feature. How often does someone have that kind of time?</p>
+<p>But, to me, that’s not even the scariest bit. The scariest bit is that I am <em>absolutely certain</em> I missed some bugs.</p>
+<p>PyTorch, on a <em>good</em> day, is an opaque monstrosity with a penchant for kicking me when I’m already down. Deep learning is an exercise of equal parts science and mysticism: there are days when you can set all the random seeds, calibrate your hyperparameters perfectly, and correctly normalize all your gradients, and the PyTorch Pantheon will still descend from high atop the thing and smite the shit out of your validation score because you forgot to <a href="https://www.youtube.com/watch?v=N1tyiWP9MSk">go outside, turn around three times, spit, and curse</a>. The number of places subtle bugs can hide in a feature involving PyTorch are legion.</p>
+<p><strong>The scariest bit is that I have absolutely no idea whether or not I’m being lied to.</strong> It reminds me of when I was a kid, tooling around with our brand-new IBM-Compatible 386, and I learned that the twirling hourglass icon in Windows 3.1 wasn’t actually indicative of anything meaningful happening. It was just a little animated gif doing its dance.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>“Alignment”
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You may have come across the term “alignment” in the news. That’s exactly what I’m talking about here: <a href="https://en.wikipedia.org/wiki/AI_alignment">alignment</a> is a semi-defined term that measures how well—or poorly—an AI system adheres to the instructions it’s given.</p>
+</div>
+</div>
+<p>When Claude does its “Confabulating…” TUI animation and a bunch of <code>grep</code>s and <code>ls</code>s and diffs scroll by in rapid succession, all I can think of is every movie in the past 30 years that has used the “loop the CCTV feed” trick. How do I know that <em>anything</em> I’m seeing from these chatbots is <em>actually</em> happening?</p>
+<p>I mean yes, I can go and review it all. Myself. By hand. Spend hours, days, <em>weeks</em> pouring through the endless output from chatbots. Wash, rinse, repeat, and beg for the sweet release of death.</p>
+<p>But if I’m reviewing every single command, every single change, every line of code these chatbots spit out, why use them at all? And if I <em>don’t</em> review all their output, how do I <em>really</em> know they did what they said they did?</p>
+<p>As AI chatbots are being shoved into more and more parts of our lives, even those of us with enough technical literacy to <em>choose</em> when and how we interface with AI chatbots are still going to bounce on the wake of the consequences of decisions made by chatbots elsewhere, or decisions made by other people on the “advice” of chatbots<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>. One way or another, a growing part of our lives will be influenced by chatbots. This influence will come at a scale that will be impossible to completely filter out.</p>
+<p><em>That</em> scares the shit out of me.</p>
+</section>
+</section>
+<section id="to-clarify" class="level2">
+<h2 class="anchored" data-anchor-id="to-clarify">To clarify</h2>
+<p>Contrary to what some folks might think, I’m not universally anti-AI; the underlying technology is <em>cool as hell</em>. But I’m also not an AI-optimist, or even a tech-optimist<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>; I don’t think AI will solve the world’s problems.</p>
+<p>In my own personal experience with AI chatbots, I’ve found some decent use-cases. It’s a technology that could have legitimate staying power in some areas, <em>if we fix the ethics of how it’s built and deployed</em>. But I’d still be worried about the alignment problem, and the downstream societal effects that would have on an already-fractured media ecosystem.</p>
+<p>More in the next post.</p>
 
 
+</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2024,
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Yes, I’m very explicitly considering machine learning and deep learning research part of the current AI obsession we find ourselves in. As I’ll discuss later, you <em>literally</em> cannot have “AI” without machine learning.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>I didn’t even know Frigate existed in August 2025, I just knew this was something I wanted to build.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>It is WILD that I have to specify this. Fucking wild, man.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>In fact, as model capability has increased, so has my skepticism. More on that later.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Again, see the warning callout at the top of the post.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Cue up Hank Green shouting “THE FRICTION IS THE POINT!”<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>Or, as Morpheus put it: “What is ‘real’? How do you define ‘real’?”<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p><a href="https://arstechnica.com/ai/2026/09/report-us-almost-boarded-chinese-ship-over-hallucinated-ai-arms-report/">Plenty of stories in the news about this already</a>.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>I was once. I’ve been thoroughly disabused of that notion.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2026,
   author = {Quinn, Shannon},
-  title = {\#WeblogPoMo2024, {Day} 16: {Python} {Profiling} {Rocks}},
-  date = {2024-05-16},
-  url = {https://magsol.github.io/2024-05-16-weblogpomo2024-day-16-python-profiling-rocks},
+  title = {Human Thoughts on {AI} {(Part} 1)},
+  date = {2026-10-08},
+  url = {https://magsol.github.io/2026-10-08-human-thoughts-on-ai-the-first-part},
   langid = {en}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2024" class="csl-entry quarto-appendix-citeas" role="listitem">
-Quinn, Shannon. 2024. <span>“#WeblogPoMo2024, Day 16: Python Profiling
-Rocks.”</span> May 16. <a href="https://magsol.github.io/2024-05-16-weblogpomo2024-day-16-python-profiling-rocks">https://magsol.github.io/2024-05-16-weblogpomo2024-day-16-python-profiling-rocks</a>.
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2026" class="csl-entry quarto-appendix-citeas" role="listitem">
+Quinn, Shannon. 2026. <span>“Human Thoughts on AI (Part 1).”</span>
+October 8. <a href="https://magsol.github.io/2026-10-08-human-thoughts-on-ai-the-first-part">https://magsol.github.io/2026-10-08-human-thoughts-on-ai-the-first-part</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {

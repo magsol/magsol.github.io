@@ -16,8 +16,169 @@
 <height>216</height>
 <width>144</width>
 </image>
-<generator>quarto-1.10.18</generator>
-<lastBuildDate>Fri, 02 Oct 2026 16:10:00 GMT</lastBuildDate>
+<generator>quarto-1.10.19</generator>
+<lastBuildDate>Thu, 08 Oct 2026 19:04:00 GMT</lastBuildDate>
+<item>
+  <title>Human thoughts on AI (Part 1)</title>
+  <dc:creator>Shannon Quinn</dc:creator>
+  <link>https://magsol.github.io/posts/2026-10-08-human-thoughts-on-ai-the-first-part/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p><img src="https://magsol.github.io/posts/2026-10-08-human-thoughts-on-ai-the-first-part/moonrise.jpeg" class="preview-image img-fluid" alt="A recent moonrise throwing out J.J. Abrams-magnitude lens flares."></p>
+<p>I’ve been thinking a lot about AI lately.</p>
+<p>Not just because it’s been in the news; not just because it’s been, in many ways, my day job for the better part of the last two decades<sup>1</sup>; but also because, in spite of everything, I’ve been giving it a try.</p>
+<p>I know, I know: I could just, y’know, <em>not</em>. And honestly, that’s what I’d prefer. But I’m nothing if not curious, and Valo gave me the opportunity back in August 2025 to give it a spin with Claude. I’ve kept my finger on its pulse ever since, and I’d like to share some general musings and impressions I’ve had in that time.</p>
+<p>I’ve also had a large number of friends and family approach me to ask for my take on the recent “AI agents escaped their sandbox and fucked up a company” headlines. I’ll put that in the next post, in case you’d rather just wait for that. But my feeling in writing this is that the first part sets up a lot of relevant context for the last part.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Discussion of AI
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>None of the content of this post was created with or even discussed with the assistance of AI. In fact, that’s been true of this blog since late 2022, and even then the AI-generated content consisted only of a handful of slopped images.</p>
+<p>I’ve posted no AI-generated images since then, and I’ve <em>never</em> posted AI-generated text, nor have I even “collaborated” on blog content with a chatbot. I’m far too attached to my own uniquely terrible writing to allow someone or some<em>thing</em> else to speak for me, and that won’t change.</p>
+<p>Not entirely relevant to the subsequent post, but just something I wanted to throw out there as a preamble.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Oh yeah, and
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>I’m fully, <em>painfully</em> aware of the socioeconomic, environmental, geopolitical, educational, and psychological consequences of AI and everything around its buildout. I have barely begun to grapple with the existential implications of what is happening to the field I’ve built my professional life around, and I won’t try here.</p>
+<p>It’s impossible to separate these concerns and consider AI in a void. As such, I’m not going to justify my use of AI over the past year, given these concerns. I’ll just say: in this post, I’m writing about my own personal experience with using AI.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Finally
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There’s occasional rough language.</p>
+<p>Also I just really like callout boxes. Sorry not sorry.</p>
+</div>
+</div>
+<section id="brain-progression-under-ai-use" class="level2">
+<h2 class="anchored" data-anchor-id="brain-progression-under-ai-use">Brain progression under AI use</h2>
+<p>It started in August 2025 when Valo organized an “LLM hackathon” as part of its annual “Science Day.” They purchased AWS Bedrock accounts that had Claude (then Opus / Sonnet 3.5) and basically set us loose: “see what you can come up with!” It was meant to be a sandbox, to see if we could design anything with Claude that would actually help with our work.</p>
+<p>Somewhat of an aside: Valo has been refreshingly sane when it comes to AI adoption. Yes, they’ve provided us with these tools, but there’s 1) absolutely no obligation to use them, and 2) an explicit expectation that anything we produce for work, we <em>own</em> (as in, <em>own the consequences of</em>).</p>
+<p>Given that I’d barely even hit 1 month of employment at Valo in August 2025, I didn’t have good work-related exemplars to throw at AI, so I mostly tried to see if Claude could recreate <a href="https://frigate.video">Frigate</a>, only badly<sup>2</sup>.</p>
+<p>At that, it succeeded! It was so bad, it didn’t even work!</p>
+<p>Parts of the code it wrote was oblivious to other code it’d written 10 minutes earlier as part of the same session. So things <em>kind of</em> worked, but in a very “Frankenstein’s monster” kind of way. We in The Programming Business would still call it “horrifically broken”: imagine trying to build something with <a href="https://sandlerverse.fandom.com/wiki/Ten_Second_Tom">10-Second Tom</a> as your partner, and you have the rough outline of the situation.</p>
+<p>But by October, things started changing.</p>
+<section id="level-1-this-is-remarkable" class="level3">
+<h3 class="anchored" data-anchor-id="level-1-this-is-remarkable">Level 1: This is remarkable</h3>
+<p>Before the project I was working on gained a full-time human<sup>3</sup> colleague in the twilight days of 2025, it was Just Me. I was building a brand-new SDK from the literal ground. I had a few examples of what <em>not</em> to do, and requirements for what folks <em>wanted</em> it to do, but I had to fill in the rest of the blanks myself.</p>
+<p>I didn’t trust AI one single iota to build anything the way I actually wanted it to (see the hackathon outcomes), but I thought: why not take advantage of BOTH my own skepticism of AI, AND its tendency to struggle with longer-term context?</p>
+<p>So, I began my AI journey by having it function as my own <a href="https://en.wikipedia.org/wiki/Red_team">Red Team</a>: I’d throw design ideas at it (and later, even modules of code I’d written) and ask it to deconstruct them given what I was trying to build. What alternative approaches should I consider? What were the failure modes of what I’d built? How might users find my implementation confusing / insufficient / otherwise suboptimal, given their requirements?</p>
+<p>I don’t know if it was the sudden capability jump of these models in the back half of 2025, or if I really had found a killer use-case for AI models, but I in my one-person situation found this particular application <em>incredibly useful and powerful</em>. There were plenty of sessions that didn’t change my plans, but even those would still generate some question or insight about the design that I’d bring back to the actual human stakeholders.</p>
+<p>Creeping into 2026, I started having Claude research and build entire alternative designs: exploring different architectures, shifting focus on different parts of the problem (e.g., “how would this change if we focused on speed, instead of ease-of-use?”), or even “the road not taken” exercises where I’d wipe the entire slate clean and build around whatever the latest top priority was from stakeholders.</p>
+<p>I was still <em>deeply skeptical</em> of chatbot output<sup>4</sup> and I still reviewed every single line of code it spat out, arguably making my work days <em>longer</em> in sum than the Tech Bro promise of 10x’ing my productivity.</p>
+<p>But I felt like I’d found a genuinely useful use-case: a check, or challenge, to my own pattern of thinking. A way to keep me aware of and poking at the edges of the envelope within which my brain operated.</p>
+</section>
+<section id="level-2-this-is-powerful-but-exhausting" class="level3">
+<h3 class="anchored" data-anchor-id="level-2-this-is-powerful-but-exhausting">Level 2: This is powerful, but exhausting</h3>
+<p>Policy, moral, and ethical issues with AI’s implementations “aside<sup>5</sup>”, I quickly found two personal red lines when it came to using AI in my work:</p>
+<ul>
+<li>I need to read, review, and understand <em>every single line of code</em> that I use from an AI chatbot</li>
+<li>I need to approve <em>every single action</em> an AI chatbot takes (file write, system <code>grep</code>, web search, etc)</li>
+</ul>
+<p>A big justification for these red lines is simply that I need to understand what I’m building. I need to have that mental model that comes from building something myself; that intuition is invaluable for fixing things down the road, and irreplaceable for deciding what gets built next and how. It’s also how I learn best: by digging in and getting my hands dirty.</p>
+<p>These two rules effectively doom “<a href="https://en.wikipedia.org/wiki/Vibe_coding">vibe coding</a>” for me. It also means I’m using AI chatbots in the <em>opposite</em> way for which they’re intended, which by definition introduces a <em>ton</em> of friction<sup>6</sup>.</p>
+<p>I became a glorified babysitter, reviewing chatbot output and approving/denying chatbot actions.</p>
+<p>As chatbot capability improved, the number of times I rejected output or denied an action decreased, <em>but still hasn’t reached zero</em>. I’ve been impressed with the problem-solving abilities over longer horizons and larger codebases, but I still watch chatbots’ actions, carefully.</p>
+<p>That’s exhausting. Not just boring (though it can also be that), but actually <em>exhausting</em>. The cognitive burden of manually reviewing chatbot output, combined with the emotional burden of worrying I’ve missed something, is <em>massive</em>. And the problem is actually getting <em>worse</em> as the models get better: their failures become more challenging to find.</p>
+</section>
+<section id="level-3-this-is-the-matrix" class="level3">
+<h3 class="anchored" data-anchor-id="level-3-this-is-the-matrix">Level 3: This is <em>The Matrix</em></h3>
+<p>Even moreso than the recent news headlines, this bit is what scares <em>me</em> the most.</p>
+<p>On one hand, these chatbots are convincing, and their task effectiveness is increasing. On the other hand, we have enough problems with media literacy, scientific literacy, critical thinking skills, and even simply figuring out whether or not another human is being truthful with us.</p>
+<p>As more and more of our lives become directly or indirectly curated via these chatbots, <strong>how will I know that any of what they’re telling me is true?</strong><sup>7</sup></p>
+<p>For funsies, a few months ago I played around with one of the many “multi-agent orchestration” tools out there. I gave the “mayor” instance a requirements document I’d written for a complicated new feature involving <a href="https://pytorch.org">PyTorch</a>, and then—in a move that explicitly crossed one of my red lines!—set it loose on the problem.</p>
+<p>To be clear, I had no intention of keeping whatever it spat out; I was just curious what would happen. And indeed, it was only about 80% correct. Some mistakes were bafflingly obvious, but others were so insidiously subtle that only someone who 1) was already looking for them, and 2) knew the contours of the problem space well enough to <em>anticipate</em> the mistakes, could actually find them.</p>
+<p>Critically, the obvious mistakes were the <em>minority</em>. To the uninitiated, or someone doing a “once-over” review, they’d likely miss every single one of the subtle bugs. A thorough review took me the better part of an entire workday, given the size of the new feature. How often does someone have that kind of time?</p>
+<p>But, to me, that’s not even the scariest bit. The scariest bit is that I am <em>absolutely certain</em> I missed some bugs.</p>
+<p>PyTorch, on a <em>good</em> day, is an opaque monstrosity with a penchant for kicking me when I’m already down. Deep learning is an exercise of equal parts science and mysticism: there are days when you can set all the random seeds, calibrate your hyperparameters perfectly, and correctly normalize all your gradients, and the PyTorch Pantheon will still descend from high atop the thing and smite the shit out of your validation score because you forgot to <a href="https://www.youtube.com/watch?v=N1tyiWP9MSk">go outside, turn around three times, spit, and curse</a>. The number of places subtle bugs can hide in a feature involving PyTorch are legion.</p>
+<p><strong>The scariest bit is that I have absolutely no idea whether or not I’m being lied to.</strong> It reminds me of when I was a kid, tooling around with our brand-new IBM-Compatible 386, and I learned that the twirling hourglass icon in Windows 3.1 wasn’t actually indicative of anything meaningful happening. It was just a little animated gif doing its dance.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>“Alignment”
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You may have come across the term “alignment” in the news. That’s exactly what I’m talking about here: <a href="https://en.wikipedia.org/wiki/AI_alignment">alignment</a> is a semi-defined term that measures how well—or poorly—an AI system adheres to the instructions it’s given.</p>
+</div>
+</div>
+<p>When Claude does its “Confabulating…” TUI animation and a bunch of <code>grep</code>s and <code>ls</code>s and diffs scroll by in rapid succession, all I can think of is every movie in the past 30 years that has used the “loop the CCTV feed” trick. How do I know that <em>anything</em> I’m seeing from these chatbots is <em>actually</em> happening?</p>
+<p>I mean yes, I can go and review it all. Myself. By hand. Spend hours, days, <em>weeks</em> pouring through the endless output from chatbots. Wash, rinse, repeat, and beg for the sweet release of death.</p>
+<p>But if I’m reviewing every single command, every single change, every line of code these chatbots spit out, why use them at all? And if I <em>don’t</em> review all their output, how do I <em>really</em> know they did what they said they did?</p>
+<p>As AI chatbots are being shoved into more and more parts of our lives, even those of us with enough technical literacy to <em>choose</em> when and how we interface with AI chatbots are still going to bounce on the wake of the consequences of decisions made by chatbots elsewhere, or decisions made by other people on the “advice” of chatbots<sup>8</sup>. One way or another, a growing part of our lives will be influenced by chatbots. This influence will come at a scale that will be impossible to completely filter out.</p>
+<p><em>That</em> scares the shit out of me.</p>
+</section>
+</section>
+<section id="to-clarify" class="level2">
+<h2 class="anchored" data-anchor-id="to-clarify">To clarify</h2>
+<p>Contrary to what some folks might think, I’m not universally anti-AI; the underlying technology is <em>cool as hell</em>. But I’m also not an AI-optimist, or even a tech-optimist<sup>9</sup>; I don’t think AI will solve the world’s problems.</p>
+<p>In my own personal experience with AI chatbots, I’ve found some decent use-cases. It’s a technology that could have legitimate staying power in some areas, <em>if we fix the ethics of how it’s built and deployed</em>. But I’d still be worried about the alignment problem, and the downstream societal effects that would have on an already-fractured media ecosystem.</p>
+<p>More in the next post.</p>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Yes, I’m very explicitly considering machine learning and deep learning research part of the current AI obsession we find ourselves in. As I’ll discuss later, you <em>literally</em> cannot have “AI” without machine learning.↩︎</p></li>
+<li id="fn2"><p>I didn’t even know Frigate existed in August 2025, I just knew this was something I wanted to build.↩︎</p></li>
+<li id="fn3"><p>It is WILD that I have to specify this. Fucking wild, man.↩︎</p></li>
+<li id="fn4"><p>In fact, as model capability has increased, so has my skepticism. More on that later.↩︎</p></li>
+<li id="fn5"><p>Again, see the warning callout at the top of the post.↩︎</p></li>
+<li id="fn6"><p>Cue up Hank Green shouting “THE FRICTION IS THE POINT!”↩︎</p></li>
+<li id="fn7"><p>Or, as Morpheus put it: “What is ‘real’? How do you define ‘real’?”↩︎</p></li>
+<li id="fn8"><p><a href="https://arstechnica.com/ai/2026/09/report-us-almost-boarded-chinese-ship-over-hallucinated-ai-arms-report/">Plenty of stories in the news about this already</a>.↩︎</p></li>
+<li id="fn9"><p>I was once. I’ve been thoroughly disabused of that notion.↩︎</p></li>
+</ol>
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2026,
+  author = {Quinn, Shannon},
+  title = {Human Thoughts on {AI} {(Part} 1)},
+  date = {2026-10-08},
+  url = {https://magsol.github.io/2026-10-08-human-thoughts-on-ai-the-first-part},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2026" class="csl-entry quarto-appendix-citeas">
+Quinn, Shannon. 2026. <span>“Human Thoughts on AI (Part 1).”</span>
+October 8. <a href="https://magsol.github.io/2026-10-08-human-thoughts-on-ai-the-first-part">https://magsol.github.io/2026-10-08-human-thoughts-on-ai-the-first-part</a>.
+</div></div></section></div> ]]></description>
+  <category>professional</category>
+  <category>personal</category>
+  <category>ai</category>
+  <guid>https://magsol.github.io/posts/2026-10-08-human-thoughts-on-ai-the-first-part/</guid>
+  <pubDate>Thu, 08 Oct 2026 19:04:00 GMT</pubDate>
+  <media:content url="https://magsol.github.io/posts/2026-10-08-human-thoughts-on-ai-the-first-part/moonrise.jpeg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>Captain, it’s October</title>
   <dc:creator>Shannon Quinn</dc:creator>
@@ -2814,52 +2975,6 @@ December 13. <a href="https://magsol.github.io/2024-12-13-december-adventure-exp
   <guid>https://magsol.github.io/posts/2024-12-13-december-adventure-exploring-yaml/</guid>
   <pubDate>Fri, 13 Dec 2024 16:19:00 GMT</pubDate>
   <media:content url="https://magsol.github.io/posts/2024-12-13-december-adventure-exploring-yaml/mark_yaml.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>December Adventure: I have a bad feeling about this</title>
-  <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2024-12-09-december-adventure-i-have-a-bad-feeling/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p><img src="https://magsol.github.io/posts/2024-12-09-december-adventure-i-have-a-bad-feeling/bad_feeling.jpg" class="preview-image img-fluid" alt="Meme image of Obi-Wan Kenobi in a fighter from the Star Wars prequel trilogy, stating that he has a bad feeling about this."></p>
-<p>Back from the weekend. In general I suspect weekends will be consistent blank spots in my <code>#DecemberAdventure</code>-ing, as activities and parenting and <em>napping</em> make it challenging to do much else. But who knows!</p>
-<p>Anyway, today I eased back into things by doing some research into using Traefik as a reverse proxy for external services. Indeed, <a href="https://www.reddit.com/r/kubernetes/comments/1c0jjde/traefik_but_for_external_use_as_well/">it seems entirely possible</a>, even if that Reddit thread makes <a href="https://xkcd.com/979/">absolutely no mention of the solution</a>.</p>
-<p>At this point, I need to figure out a good testing setup. I need a way to get rapid feedback that things are working at each step of the process, rather than flicking the switch at the very end and wondering which of the two dozen steps before it is the one with the problem. Here’s what I’m thinking:</p>
-<ul>
-<li>Pick a single external service to start with (e.g., JellyFin—it’s already running)</li>
-<li>Design a Service and IngressRoute for JellyFin</li>
-<li>Add the JellyFin entry to my Firewalla DNS</li>
-<li>Do <em>NOT</em> use SSL, at least initially</li>
-</ul>
-<p>I figure SSL is going to be its own thing, since I need a wildcard DNS cert from Cloudflare and a whole configuration via cert-manager. So this might be more of a “part 2” once I get the above bullets working. Just proving that Traefik can manage reverse proxy requests for external services will be enough proof of concept to move forward with other parts, like SSL.</p>
-<p>I guess I’m just apprehensive, since this will require modifying my current Traefik configuration that successfully serves up my Mastodon instance. Obviously I can always revert configurations if everything breaks, but… well, I hate messing with what already works. But I know it’ll be infinitely more flexible and maintainable going forward if I’m successful.</p>
-
-
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2024,
-  author = {Quinn, Shannon},
-  title = {December {Adventure:} {I} Have a Bad Feeling about This},
-  date = {2024-12-09},
-  url = {https://magsol.github.io/2024-12-09-december-adventure-i-have-a-bad-feeling},
-  langid = {en}
-}
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2024" class="csl-entry quarto-appendix-citeas">
-Quinn, Shannon. 2024. <span>“December Adventure: I Have a Bad Feeling
-about This.”</span> December 9. <a href="https://magsol.github.io/2024-12-09-december-adventure-i-have-a-bad-feeling">https://magsol.github.io/2024-12-09-december-adventure-i-have-a-bad-feeling</a>.
-</div></div></section></div> ]]></description>
-  <category>personal</category>
-  <category>december adventure</category>
-  <category>yaml</category>
-  <category>helm chart</category>
-  <category>reverse proxy</category>
-  <category>traefik</category>
-  <guid>https://magsol.github.io/posts/2024-12-09-december-adventure-i-have-a-bad-feeling/</guid>
-  <pubDate>Mon, 09 Dec 2024 17:33:00 GMT</pubDate>
-  <media:content url="https://magsol.github.io/posts/2024-12-09-december-adventure-i-have-a-bad-feeling/bad_feeling.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>
