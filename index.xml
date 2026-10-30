@@ -17,7 +17,60 @@
 <width>144</width>
 </image>
 <generator>quarto-1.10.20</generator>
-<lastBuildDate>Thu, 08 Oct 2026 19:04:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 30 Oct 2026 16:03:00 GMT</lastBuildDate>
+<item>
+  <title>The Homelab is Down</title>
+  <dc:creator>Shannon Quinn</dc:creator>
+  <link>https://magsol.github.io/posts/2026-10-30-the-homelab-is-down/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p><img src="https://magsol.github.io/posts/2026-10-30-the-homelab-is-down/junctionbox.jpg" class="preview-image img-fluid" alt="iPhone camera photo of an open 3-gang junction box on a wall, with wires chaotically spilling out like tentacles from some kind of [Eldrazi horror](https://mtg.fandom.com/wiki/Eldrazi)."></p>
+<p>Today is Day Two of unplanned homelab downtime, and while the initial anxiety in my brain has settled down as the inevitability of a Day Three (and likely Four) looms, I can feel a deeper anxiety slowly gathering and pushing for a <em>plan</em>.</p>
+<p>The original plan had been to take down the homelab for just a few hours on Thursday, at worst the full day. But I began by replacing some dead light switches in my home office (these had been dead for Y-E-A-R-S).</p>
+<p>As with any homelab, home improvement, or (let’s be real) “project” in general, things quickly spiraled: it took significantly longer than I’d initially hoped just to identify the wires I was working with<sup>1</sup>, and so in trying to close up until Friday, I somehow missed that <em>this junction box passed the ENTIRE room’s circuit through it</em>: in leaving two of the switches disconnected, that broke some circuit that otherwise powered all the other lights and outlets in the room.</p>
+<p>Including the one that our home internet and wifi was hooked up to. This made me spiral a bit.</p>
+<p>I broke out a heavy extension cord that tided us over for that night, and today I managed to install new switches (and correctly! took a single false start and a third <a href="https://www.homedepot.com/p/IDEAL-In-Sure-Lever-Wire-Connector-12-AWG-3-Port-Bag-of-50-30-05L23/320628223">lever connector</a> to get the wiring right) that restored power in the room.</p>
+<p>But consequently, I never got to any of the homelab maintenance work and upgrades I’d planned. I’d been kind of hoping to do it this weekend, but with Halloween on the horizon—plus a 10+ mile long run, and a <em>very</em> exhausting week behind me<sup>2</sup>—I’m not sure that’s a reasonable expectation.</p>
+<p>So yeah, maybe I should just switch everything back on and try again some other time. Would be nice to have Mastodon again. And my wildlife sensors. And my file transfer service. And my media server. And my smart home trappings. And… yeah I’ll probably just do that.</p>
+<p>It would fix the deeper anxiety. I’ll just have to find another time for the planned maintenance and upgrades.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://magsol.github.io/posts/2026-10-30-the-homelab-is-down/spools.jpg" class="img-fluid figure-img"></p>
+<figcaption>I actually purchased spools of 14-gauge electrical wire to fix the light switches. And used both of them! I’m not just a A Real Homeowner<sup>TM</sup>, I am My Father’s Son<sup>TM</sup> and my Grandfather’s Grandson<sup>TM</sup>.</figcaption>
+</figure>
+</div>
+
+
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>HOLY SHIT Y’ALL, THESE SWITCHES WEREN’T GROUNDED. IN A 2006 BUILD. WT ACTUAL F.↩︎</p></li>
+<li id="fn2"><p>This was supposed to be my <em>week OFF</em>, and I spent it with gut issues, contractor woes, and homelab snafus. From my body’s perspective, I have not rested; in fact, I’ve had one of the most stressful weeks all year.↩︎</p></li>
+</ol>
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2026,
+  author = {Quinn, Shannon},
+  title = {The {Homelab} Is {Down}},
+  date = {2026-10-30},
+  url = {https://magsol.github.io/2026-10-30-the-homelab-is-down},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2026" class="csl-entry quarto-appendix-citeas">
+Quinn, Shannon. 2026. <span>“The Homelab Is Down.”</span> October 30. <a href="https://magsol.github.io/2026-10-30-the-homelab-is-down">https://magsol.github.io/2026-10-30-the-homelab-is-down</a>.
+</div></div></section></div> ]]></description>
+  <category>personal</category>
+  <category>homelab</category>
+  <category>home improvement</category>
+  <category>contractors</category>
+  <guid>https://magsol.github.io/posts/2026-10-30-the-homelab-is-down/</guid>
+  <pubDate>Fri, 30 Oct 2026 16:03:00 GMT</pubDate>
+  <media:content url="https://magsol.github.io/posts/2026-10-30-the-homelab-is-down/junctionbox.jpg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>Human thoughts on AI (Part 1)</title>
   <dc:creator>Shannon Quinn</dc:creator>
@@ -237,59 +290,6 @@ Quinn, Shannon. 2026. <span>“Captain, It’s October.”</span> October 2.
   <guid>https://magsol.github.io/posts/2026-10-02-captain-its-october/</guid>
   <pubDate>Fri, 02 Oct 2026 16:10:00 GMT</pubDate>
   <media:content url="https://magsol.github.io/posts/2026-10-02-captain-its-october/resilience.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>The Homelab is Down</title>
-  <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2026-10-30-the-homelab-is-down/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p><img src="https://magsol.github.io/posts/2026-10-30-the-homelab-is-down/junctionbox.jpg" class="preview-image img-fluid" alt="iPhone camera photo of an open 3-gang junction box on a wall, with wires chaotically spilling out like tentacles from some kind of [Eldrazi horror](https://mtg.fandom.com/wiki/Eldrazi)."></p>
-<p>Today is Day Two of unplanned homelab downtime, and while the initial anxiety in my brain has settled down as the inevitability of a Day Three (and likely Four) looms, I can feel a deeper anxiety slowly gathering and pushing for a <em>plan</em>.</p>
-<p>The original plan had been to take down the homelab for just a few hours on Thursday, at worst the full day. But I began by replacing some dead light switches in my home office (these had been dead for Y-E-A-R-S).</p>
-<p>As with any homelab, home improvement, or (let’s be real) “project” in general, things quickly spiraled: it took significantly longer than I’d initially hoped just to identify the wires I was working with<sup>1</sup>, and so in trying to close up until Friday, I somehow missed that <em>this junction box passed the ENTIRE room’s circuit through it</em>: in leaving two of the switches disconnected, that broke some circuit that otherwise powered all the other lights and outlets in the room.</p>
-<p>Including the one that our home internet and wifi was hooked up to. This made me spiral a bit.</p>
-<p>I broke out a heavy extension cord that tided us over for that night, and today I managed to install new switches (and correctly! took a single false start and a third <a href="https://www.homedepot.com/p/IDEAL-In-Sure-Lever-Wire-Connector-12-AWG-3-Port-Bag-of-50-30-05L23/320628223">lever connector</a> to get the wiring right) that restored power in the room.</p>
-<p>But consequently, I never got to any of the homelab maintenance work and upgrades I’d planned. I’d been kind of hoping to do it this weekend, but with Halloween on the horizon—plus a 10+ mile long run, and a <em>very</em> exhausting week behind me<sup>2</sup>—I’m not sure that’s a reasonable expectation.</p>
-<p>So yeah, maybe I should just switch everything back on and try again some other time. Would be nice to have Mastodon again. And my wildlife sensors. And my file transfer service. And my media server. And my smart home trappings. And… yeah I’ll probably just do that.</p>
-<p>It would fix the deeper anxiety. I’ll just have to find another time for the planned maintenance and upgrades.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://magsol.github.io/posts/2026-10-30-the-homelab-is-down/spools.jpg" class="img-fluid figure-img"></p>
-<figcaption>I actually purchased spools of 14-gauge electrical wire to fix the light switches. And used both of them! I’m not just a A Real Homeowner<sup>TM</sup>, I am My Father’s Son<sup>TM</sup> and my Grandfather’s Grandson<sup>TM</sup>.</figcaption>
-</figure>
-</div>
-
-
-
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>HOLY SHIT Y’ALL, THESE SWITCHES WEREN’T GROUNDED. IN A 2006 BUILD. WT ACTUAL F.↩︎</p></li>
-<li id="fn2"><p>This was supposed to be my <em>week OFF</em>, and I spent it with gut issues, contractor woes, and homelab snafus. From my body’s perspective, I have not rested; in fact, I’ve had one of the most stressful weeks all year.↩︎</p></li>
-</ol>
-</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2026,
-  author = {Quinn, Shannon},
-  title = {The {Homelab} Is {Down}},
-  date = {2026-10-02},
-  url = {https://magsol.github.io/2026-10-30-the-homelab-is-down},
-  langid = {en}
-}
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2026" class="csl-entry quarto-appendix-citeas">
-Quinn, Shannon. 2026. <span>“The Homelab Is Down.”</span> October 2. <a href="https://magsol.github.io/2026-10-30-the-homelab-is-down">https://magsol.github.io/2026-10-30-the-homelab-is-down</a>.
-</div></div></section></div> ]]></description>
-  <category>personal</category>
-  <category>homelab</category>
-  <category>home improvement</category>
-  <category>contractors</category>
-  <guid>https://magsol.github.io/posts/2026-10-30-the-homelab-is-down/</guid>
-  <pubDate>Fri, 02 Oct 2026 15:43:00 GMT</pubDate>
-  <media:content url="https://magsol.github.io/posts/2026-10-30-the-homelab-is-down/junctionbox.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Hope</title>
