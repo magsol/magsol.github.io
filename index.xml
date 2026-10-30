@@ -16,7 +16,7 @@
 <height>216</height>
 <width>144</width>
 </image>
-<generator>quarto-1.10.19</generator>
+<generator>quarto-1.10.20</generator>
 <lastBuildDate>Thu, 08 Oct 2026 19:04:00 GMT</lastBuildDate>
 <item>
   <title>Human thoughts on AI (Part 1)</title>
@@ -237,6 +237,59 @@ Quinn, Shannon. 2026. <span>“Captain, It’s October.”</span> October 2.
   <guid>https://magsol.github.io/posts/2026-10-02-captain-its-october/</guid>
   <pubDate>Fri, 02 Oct 2026 16:10:00 GMT</pubDate>
   <media:content url="https://magsol.github.io/posts/2026-10-02-captain-its-october/resilience.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>The Homelab is Down</title>
+  <dc:creator>Shannon Quinn</dc:creator>
+  <link>https://magsol.github.io/posts/2026-10-30-the-homelab-is-down/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p><img src="https://magsol.github.io/posts/2026-10-30-the-homelab-is-down/junctionbox.jpg" class="preview-image img-fluid" alt="iPhone camera photo of an open 3-gang junction box on a wall, with wires chaotically spilling out like tentacles from some kind of [Eldrazi horror](https://mtg.fandom.com/wiki/Eldrazi)."></p>
+<p>Today is Day Two of unplanned homelab downtime, and while the initial anxiety in my brain has settled down as the inevitability of a Day Three (and likely Four) looms, I can feel a deeper anxiety slowly gathering and pushing for a <em>plan</em>.</p>
+<p>The original plan had been to take down the homelab for just a few hours on Thursday, at worst the full day. But I began by replacing some dead light switches in my home office (these had been dead for Y-E-A-R-S).</p>
+<p>As with any homelab, home improvement, or (let’s be real) “project” in general, things quickly spiraled: it took significantly longer than I’d initially hoped just to identify the wires I was working with<sup>1</sup>, and so in trying to close up until Friday, I somehow missed that <em>this junction box passed the ENTIRE room’s circuit through it</em>: in leaving two of the switches disconnected, that broke some circuit that otherwise powered all the other lights and outlets in the room.</p>
+<p>Including the one that our home internet and wifi was hooked up to. This made me spiral a bit.</p>
+<p>I broke out a heavy extension cord that tided us over for that night, and today I managed to install new switches (and correctly! took a single false start and a third <a href="https://www.homedepot.com/p/IDEAL-In-Sure-Lever-Wire-Connector-12-AWG-3-Port-Bag-of-50-30-05L23/320628223">lever connector</a> to get the wiring right) that restored power in the room.</p>
+<p>But consequently, I never got to any of the homelab maintenance work and upgrades I’d planned. I’d been kind of hoping to do it this weekend, but with Halloween on the horizon—plus a 10+ mile long run, and a <em>very</em> exhausting week behind me<sup>2</sup>—I’m not sure that’s a reasonable expectation.</p>
+<p>So yeah, maybe I should just switch everything back on and try again some other time. Would be nice to have Mastodon again. And my wildlife sensors. And my file transfer service. And my media server. And my smart home trappings. And… yeah I’ll probably just do that.</p>
+<p>It would fix the deeper anxiety. I’ll just have to find another time for the planned maintenance and upgrades.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://magsol.github.io/posts/2026-10-30-the-homelab-is-down/spools.jpg" class="img-fluid figure-img"></p>
+<figcaption>I actually purchased spools of 14-gauge electrical wire to fix the light switches. And used both of them! I’m not just a A Real Homeowner<sup>TM</sup>, I am My Father’s Son<sup>TM</sup> and my Grandfather’s Grandson<sup>TM</sup>.</figcaption>
+</figure>
+</div>
+
+
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>HOLY SHIT Y’ALL, THESE SWITCHES WEREN’T GROUNDED. IN A 2006 BUILD. WT ACTUAL F.↩︎</p></li>
+<li id="fn2"><p>This was supposed to be my <em>week OFF</em>, and I spent it with gut issues, contractor woes, and homelab snafus. From my body’s perspective, I have not rested; in fact, I’ve had one of the most stressful weeks all year.↩︎</p></li>
+</ol>
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2026,
+  author = {Quinn, Shannon},
+  title = {The {Homelab} Is {Down}},
+  date = {2026-10-02},
+  url = {https://magsol.github.io/2026-10-30-the-homelab-is-down},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2026" class="csl-entry quarto-appendix-citeas">
+Quinn, Shannon. 2026. <span>“The Homelab Is Down.”</span> October 2. <a href="https://magsol.github.io/2026-10-30-the-homelab-is-down">https://magsol.github.io/2026-10-30-the-homelab-is-down</a>.
+</div></div></section></div> ]]></description>
+  <category>personal</category>
+  <category>homelab</category>
+  <category>home improvement</category>
+  <category>contractors</category>
+  <guid>https://magsol.github.io/posts/2026-10-30-the-homelab-is-down/</guid>
+  <pubDate>Fri, 02 Oct 2026 15:43:00 GMT</pubDate>
+  <media:content url="https://magsol.github.io/posts/2026-10-30-the-homelab-is-down/junctionbox.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Hope</title>
@@ -2668,313 +2721,6 @@ Work.”</span> December 17. <a href="https://magsol.github.io/2024-12-17-decemb
   <guid>https://magsol.github.io/posts/2024-12-17-december-adventure-how-does-dns-work/</guid>
   <pubDate>Tue, 17 Dec 2024 21:06:00 GMT</pubDate>
   <media:content url="https://magsol.github.io/posts/2024-12-17-december-adventure-how-does-dns-work/itwasdns.png" medium="image" type="image/png" height="86" width="144"/>
-</item>
-<item>
-  <title>December Adventure: Exploring YAML</title>
-  <dc:creator>Shannon Quinn</dc:creator>
-  <link>https://magsol.github.io/posts/2024-12-13-december-adventure-exploring-yaml/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p><img src="https://magsol.github.io/posts/2024-12-13-december-adventure-exploring-yaml/mark_yaml.jpg" class="preview-image img-fluid" alt="Two-paned meme image of Mark Hamill, with the first pane normal and the second pane showing indented blocks of Mark Hamill with the undertitle 'Mark Yaml'. Credit: https://www.reddit.com/r/ProgrammerHumor/comments/hwxsgi/ah_yes_mark_yaml/"></p>
-<p>Whew, that week went by in a flash. I’ve actually been working on this <code>#DecemberAdventure</code> project these past few days and have made some strides; I just kept running out of time (and inclination) to post about it.</p>
-<p>Part of the problem—as an aside—is that I had to close the YAML project space in my VS Code editor in order to <em>open</em> the project space for writing a blog post, which makes it difficult to cross-reference very specific issues and instead relies on “vibes” for writing the post. I’m sure it’s to the detriment of any readers, but I enjoy being as specific as I can. If anyone wants to tell me the magic key combination that allows me to open up multiple project spaces simultaneously in VS Code, please do drop me a line.</p>
-<p>Anyway, I hit upon a couple of crucial resources this past week that have helped me make some progress. First, I identified some very specific changes I need to make:</p>
-<ul>
-<li>Traefik needs to be moved to a <code>traefik</code> namespace</li>
-<li>Cert-manager needs to be moved to a <code>cert-manager</code> namespace</li>
-<li>Upgrade cert-manager CRDs</li>
-<li>Cloudflare API keys need to be moved to <code>cert-manager</code> namespace</li>
-</ul>
-<p>These are easy enough, only requiring some minor configuration tweaks to the yaml.</p>
-<p>But I have <em>a lot</em> of deeper questions about the configuration involved in having Traefik route to external services.</p>
-<ul>
-<li>A big one: just about all the examples I can find entail doing this, but for Docker-Compose, not kubernetes. Why is that? <a href="https://www.youtube.com/watch?v=n1vOfdz5Nm8">Here’s one</a>, <a href="https://www.youtube.com/watch?v=-hfejNXqOzA">another one</a>, <a href="https://community.traefik.io/t/external-services-config-yml/24793">another one</a> (I think; it doesn’t actually specify), and <a href="https://community.traefik.io/t/how-to-forward-request-to-external-host/23932">another one</a> (same problem).</li>
-<li>I did manage to find a <em>few</em> examples using kubernetes: <a href="https://www.youtube.com/watch?v=G4CmbYL9UPg">here’s one</a> (2+ years old), <a href="https://community.traefik.io/t/traefik-k8s-and-an-external-service/6305">another one</a> (4+ years old, bordering on useless), <a href="https://community.traefik.io/t/kubernetes-ingress-to-external-service/20001">another one</a> (the answer is not helpful), <a href="https://stackoverflow.com/questions/72484227/traefik-ingress-for-external-service-troubleshooting">another one</a> (also with an unhelpful “answer”), <a href="https://www.reddit.com/r/kubernetes/comments/13a2zy2/using_k3s_traefik_installation_to_reverse_proxy/">another one</a> (2+ years old), and <a href="https://www.reddit.com/r/Traefik/comments/16eskh4/external_service_load_balancer_in_kubernetes/">another one</a> (this seems the most promising).</li>
-<li>Why is my traefik <code>values.yaml</code> <a href="https://github.com/bplein/post-talos-setup/issues/2#issuecomment-2276603841">so much longer</a> than the <a href="https://github.com/techno-tim/launchpad/blob/master/kubernetes/traefik-cert-manager/traefik/values.yaml">one used in TechnoTim’s video</a>? Specifically, why is his traefik configuration devoid of <code>certResolver</code> and <code>env</code>? Is it because I’ve managed to incorrectly configure how much cluster obtains certificates?</li>
-<li>Why isn’t there a domain under his <code>ports</code> section? Is this, again, because I seem to be doing certificates differently?</li>
-<li>If I’m setting up both a <code>Service</code> and <code>Ingress</code> for each external server I want to reverse proxy behind traefik, what do I set for their ports? And names? And namespaces?</li>
-<li>How do I match namespaces with certificates?</li>
-</ul>
-<p>But anyway. I tried to take a stab at it anyway, <a href="https://www.reddit.com/r/Traefik/comments/16eskh4/comment/jzyc4vu/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button">using this</a>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><span class="pp" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">---</span></span>
-<span id="cb1-2"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">apiVersion</span><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">:</span><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;"> v1</span></span>
-<span id="cb1-3"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">kind</span><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">:</span><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;"> Service</span></span>
-<span id="cb1-4"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">metadata</span><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">:</span></span>
-<span id="cb1-5"><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">  </span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">name</span><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">:</span><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;"> unraid</span></span>
-<span id="cb1-6"><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">  </span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">namespace</span><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">:</span><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;"> default</span></span>
-<span id="cb1-7"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">spec</span><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">:</span></span>
-<span id="cb1-8"><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">  </span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">type</span><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">:</span><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;"> ExternalName</span></span>
-<span id="cb1-9"><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">  </span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">externalName</span><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">:</span><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;"> unraid.my.local.domain</span></span>
-<span id="cb1-10"><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">  </span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">ports</span><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">:</span></span>
-<span id="cb1-11"><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">    </span><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">-</span><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;"> </span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">port</span><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">:</span><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;"> </span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">80</span></span>
-<span id="cb1-12"><span class="pp" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">---</span></span>
-<span id="cb1-13"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">apiVersion</span><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">:</span><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;"> traefik.containo.us/v1alpha1</span></span>
-<span id="cb1-14"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">kind</span><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">:</span><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;"> IngressRoute</span></span>
-<span id="cb1-15"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">metadata</span><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">:</span></span>
-<span id="cb1-16"><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">  </span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">name</span><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">:</span><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;"> unraid</span></span>
-<span id="cb1-17"><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">  </span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">namespace</span><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">:</span><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;"> default</span></span>
-<span id="cb1-18"><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">  </span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">annotations</span><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">:</span><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;"> </span></span>
-<span id="cb1-19"><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">    </span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">kubernetes.io/ingress.class</span><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">:</span><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;"> traefik</span></span>
-<span id="cb1-20"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">spec</span><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">:</span></span>
-<span id="cb1-21"><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">  </span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">entryPoints</span><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">:</span></span>
-<span id="cb1-22"><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">    </span><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">-</span><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;"> web</span></span>
-<span id="cb1-23"><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">  </span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">routes</span><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">:</span></span>
-<span id="cb1-24"><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">    </span><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">-</span><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;"> </span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">match</span><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">:</span><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;"> Host(`unraid.my.local.domain`)</span></span>
-<span id="cb1-25"><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">      </span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">kind</span><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">:</span><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;"> Rule</span></span>
-<span id="cb1-26"><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">      </span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">services</span><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">:</span></span>
-<span id="cb1-27"><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">        </span><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">-</span><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;"> </span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">name</span><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">:</span><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;"> unraid</span></span>
-<span id="cb1-28"><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">          </span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">namespace</span><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">:</span><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;"> default</span></span></code></pre></div></div>
-<p>No HTTPS, just regular ol’ port 80. And it worked… kind of. I got a 404 error.</p>
-<p>After thinking about it for a couple minutes, I realized: right now I have my local DNS pointing <code>unraid.my.local.domain</code> to the IP address of the <em>traefik proxy</em>, NOT the actual Unraid server. Which I guess would explain the 404, right?</p>
-<p>So then, here’s my biggest question: <strong>if I want to route all internal traffic through this proxy, but need the proxy to check with the external DNS server for the right IP address for the server… howwwww does that happen???</strong></p>
-
-
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinn2024,
-  author = {Quinn, Shannon},
-  title = {December {Adventure:} {Exploring} {YAML}},
-  date = {2024-12-13},
-  url = {https://magsol.github.io/2024-12-13-december-adventure-exploring-yaml},
-  langid = {en}
-}
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinn2024" class="csl-entry quarto-appendix-citeas">
-Quinn, Shannon. 2024. <span>“December Adventure: Exploring YAML.”</span>
-December 13. <a href="https://magsol.github.io/2024-12-13-december-adventure-exploring-yaml">https://magsol.github.io/2024-12-13-december-adventure-exploring-yaml</a>.
-</div></div></section></div> ]]></description>
-  <category>personal</category>
-  <category>december adventure</category>
-  <category>yaml</category>
-  <category>reverse proxy</category>
-  <category>traefik</category>
-  <category>vs code</category>
-  <guid>https://magsol.github.io/posts/2024-12-13-december-adventure-exploring-yaml/</guid>
-  <pubDate>Fri, 13 Dec 2024 16:19:00 GMT</pubDate>
-  <media:content url="https://magsol.github.io/posts/2024-12-13-december-adventure-exploring-yaml/mark_yaml.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>
